@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-08
+อัปเดตล่าสุด: 2026-05-08 (adrenal-fatigue เพิ่ม)
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -12,7 +12,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-------|-------|---------|
 | Phase 0 — Security & Foundation | ✅ เสร็จ | Netlify, DNS, API health endpoint พร้อม |
 | Phase 1 — Astro Bootstrap | ⏳ ยังไม่เริ่ม | รอ scaffold Astro project |
-| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance เสร็จแล้ว |
+| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
 | Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
@@ -76,13 +76,63 @@ Repository: https://github.com/achotirat/thrive-website
 | Technical SEO | 3/10 | 7/10 |
 | **Overall** | **4.8/10** | **7.2/10** |
 
+### `/adrenal-fatigue` — adrenal-fatigue.html
+สร้าง: 2026-05-08 | Priority: Tier A #2 (1,421 views)
+
+#### ✅ สิ่งที่ทำแล้ว
+- [x] Meta title: `ภาวะต่อมหมวกไตล้า Adrenal Fatigue คืออะไร อาการ รักษา | Thrive Wellness Clinic`
+- [x] Meta description (155 chars)
+- [x] Canonical URL
+- [x] Open Graph tags (7 รายการ)
+- [x] Twitter Card tags (4 รายการ)
+- [x] GEO Targeting tags (4 รายการ)
+- [x] Hreflang tags (th-TH, en, x-default)
+- [x] JSON-LD: MedicalCondition
+- [x] JSON-LD: FAQPage (5 questions)
+- [x] JSON-LD: MedicalClinic (@id #clinic)
+- [x] JSON-LD: BreadcrumbList
+- [x] JSON-LD: Person — หมอนุ่น (@id #dr-chanakan)
+- [x] Hero section พร้อม CTA สองปุ่ม (โทร + LINE)
+- [x] Section: Adrenal Fatigue คืออะไร
+- [x] Section: อาการ (symptom grid 18 items)
+- [x] Section: Burnout vs Adrenal Fatigue comparison table
+- [x] Section: ฮอร์โมน 3 ตัวสำคัญ (Cortisol, DHEA, Aldosterone)
+- [x] Section: สารอาหารสนับสนุน (4 วิตามิน)
+- [x] Section: ปรับไลฟ์สไตล์ 8 ขั้นตอน
+- [x] Section: Related services (4 cards) + CTA
+- [x] Section: Doctor attribution — หมอนุ่น
+- [x] Section: FAQ accordion (5 คำถาม)
+- [x] Section: CTA กลางหน้า
+- [x] Scientific references (4 PubMed sources)
+- [x] Footer พร้อมข้อมูลคลินิกครบ
+- [x] Mobile sticky CTA bar
+- [x] Hero image: `adrenal-fatigue-hero-1200x630.jpg`
+
+#### 🔲 สิ่งที่ยังเพิ่มได้อีก
+- [ ] ราคา/แพ็คเกจตรวจฮอร์โมน (ตอนนี้ไม่มี)
+- [ ] Cortisol Saliva test อธิบายเพิ่ม (4-point testing)
+- [ ] Testimonial section (ก่อน/หลัง)
+- [ ] English version สำหรับ expat
+- [ ] Internal link ไปยัง blog ที่เกี่ยวข้อง
+
+#### SEO Score (pre-Astro)
+| Dimension | ประเมินเบื้องต้น |
+|-----------|----------------|
+| Search Intent | 7/10 |
+| E-E-A-T | 6/10 |
+| Content Quality | 7/10 |
+| On-Page SEO | 8/10 |
+| Content Structure | 8/10 |
+| Technical SEO | 7/10 |
+| **Overall** | **7.2/10** |
+
 ---
 
 ## หน้าที่ยังต้องสร้าง (Tier A)
 
 | URL | Views | Priority | สถานะ |
 |-----|------:|---------|-------|
-| `/adrenal-fatigue` | 1,421 | 🔴 High | ⏳ ยังไม่เริ่ม |
+| `/adrenal-fatigue` | 1,421 | 🔴 High | ✅ เสร็จ |
 | `/hormones-quiz` | 1,344 | 🔴 High | ⏳ ยังไม่เริ่ม |
 | `/hbot` | 705 | 🔴 High | ⏳ ยังไม่เริ่ม |
 | `/iv-drip` | 492 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
@@ -152,6 +202,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | หน้าที่ใส่ข้อมูลหมอนุ่นแล้ว | วันที่ |
 |--------------------------|-------|
 | `food-intolerance.html` | 2026-05-08 |
+| `adrenal-fatigue.html` | 2026-05-08 |
 
 ---
 
