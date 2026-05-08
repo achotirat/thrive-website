@@ -14,6 +14,9 @@ Updated: 2026-05-08
 
 ## Completed Locally
 
+- [x] Initialized local git repository.
+- [x] Pushed repository to GitHub: `https://github.com/achotirat/thrive-website`.
+- [x] Added `CONTRIBUTING.md`, pull request template, and Phase 0 GitHub Actions checks.
 - [x] Added `netlify.toml` with `/api/leads` routed to a Netlify Function.
 - [x] Added `netlify/functions/leads.js` lead capture endpoint.
 - [x] Added `netlify/functions/health.js` health endpoint for uptime monitoring.
