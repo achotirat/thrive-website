@@ -1,0 +1,226 @@
+import {defineField, defineType} from 'sanity'
+
+const serviceCategories = [
+  {title: 'Diagnostic Testing', value: 'diagnostic-testing'},
+  {title: 'IV Therapy', value: 'iv-therapy'},
+  {title: 'Hormone & Longevity', value: 'hormone-longevity'},
+  {title: 'Regenerative Wellness', value: 'regenerative-wellness'},
+  {title: 'Personalized Program', value: 'personalized-program'},
+  {title: 'Other', value: 'other'},
+]
+
+const serviceSchemaTypes = [
+  {title: 'Service', value: 'Service'},
+  {title: 'MedicalProcedure', value: 'MedicalProcedure'},
+  {title: 'MedicalTest', value: 'MedicalTest'},
+  {title: 'MedicalTherapy', value: 'MedicalTherapy'},
+]
+
+export const service = defineType({
+  name: 'service',
+  title: 'Service',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (Rule) => Rule.required().max(120),
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: serviceCategories,
+        layout: 'dropdown',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'schemaType',
+      title: 'Structured data type',
+      type: 'string',
+      options: {
+        list: serviceSchemaTypes,
+        layout: 'radio',
+      },
+      initialValue: 'Service',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'alternateNames',
+      title: 'Alternate names',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(10),
+    }),
+    defineField({
+      name: 'shortDescription',
+      title: 'Short description',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required().max(240),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'richText',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'benefits',
+      title: 'Benefits',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.min(1).max(8),
+    }),
+    defineField({
+      name: 'medicalSpecialties',
+      title: 'Medical specialties',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'relatedTopics',
+      title: 'Related topics',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'topic'}]}],
+      validation: (Rule) => Rule.unique().max(12),
+    }),
+    defineField({
+      name: 'relatedConditions',
+      title: 'Related conditions',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'condition'}]}],
+      validation: (Rule) => Rule.unique().max(12),
+    }),
+    defineField({
+      name: 'targetSymptoms',
+      title: 'Target symptoms',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'symptom'}]}],
+      validation: (Rule) => Rule.unique().max(16),
+    }),
+    defineField({
+      name: 'whoIsItFor',
+      title: 'Who is it for?',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(10),
+    }),
+    defineField({
+      name: 'notSuitableFor',
+      title: 'Not suitable for / contraindications',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Use conservative wording and confirm with the medical team.',
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'preparation',
+      title: 'Preparation',
+      type: 'richText',
+    }),
+    defineField({
+      name: 'procedureSteps',
+      title: 'Procedure steps',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'aftercare',
+      title: 'Aftercare / what happens after',
+      type: 'richText',
+    }),
+    defineField({
+      name: 'medicalDisclaimer',
+      title: 'Medical disclaimer',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.max(500),
+    }),
+    defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+      description: 'Use copy such as "เริ่มต้น 3,500 บาท" or "สอบถามราคา".',
+      validation: (Rule) => Rule.max(80),
+    }),
+    defineField({
+      name: 'duration',
+      title: 'Duration',
+      type: 'string',
+      description: 'Use copy such as "ประมาณ 60 นาที".',
+      validation: (Rule) => Rule.max(80),
+    }),
+    defineField({
+      name: 'reviewedBy',
+      title: 'Medical reviewer',
+      type: 'reference',
+      to: [{type: 'doctor'}],
+    }),
+    defineField({
+      name: 'lastReviewedAt',
+      title: 'Last medically reviewed at',
+      type: 'date',
+    }),
+    defineField({
+      name: 'references',
+      title: 'References',
+      type: 'array',
+      of: [{type: 'citation'}],
+      validation: (Rule) => Rule.max(20),
+    }),
+    defineField({
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'imageWithAlt',
+    }),
+    defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'array',
+      of: [{type: 'imageWithAlt'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'faq',
+      title: 'FAQ',
+      type: 'array',
+      of: [{type: 'faqItem'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'relatedServices',
+      title: 'Related services',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'service'}]}],
+      validation: (Rule) => Rule.unique().max(6),
+    }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoMeta',
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'category',
+      media: 'mainImage',
+    },
+  },
+})

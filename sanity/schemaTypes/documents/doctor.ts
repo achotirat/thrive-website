@@ -1,0 +1,137 @@
+import {defineField, defineType} from 'sanity'
+
+export const doctor = defineType({
+  name: 'doctor',
+  title: 'Doctor',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+      validation: (Rule) => Rule.required().max(120),
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'title',
+      title: 'Professional title',
+      type: 'string',
+      validation: (Rule) => Rule.required().max(160),
+    }),
+    defineField({
+      name: 'alternateNames',
+      title: 'Alternate names',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(6),
+    }),
+    defineField({
+      name: 'photo',
+      title: 'Photo',
+      type: 'imageWithAlt',
+    }),
+    defineField({
+      name: 'shortBio',
+      title: 'Short bio',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.max(260),
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Full bio',
+      type: 'richText',
+    }),
+    defineField({
+      name: 'specialties',
+      title: 'Specialties',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'credentials',
+      title: 'Credentials',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'licenseNumber',
+      title: 'Medical license number',
+      type: 'string',
+      description: 'Only publish if approved for public display.',
+      validation: (Rule) => Rule.max(80),
+    }),
+    defineField({
+      name: 'education',
+      title: 'Education',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(12),
+    }),
+    defineField({
+      name: 'certifications',
+      title: 'Certifications',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(16),
+    }),
+    defineField({
+      name: 'medicalSpecialties',
+      title: 'Medical specialties',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(16),
+    }),
+    defineField({
+      name: 'knowsAbout',
+      title: 'Knows about',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Entity terms for Person / Physician structured data.',
+      validation: (Rule) => Rule.max(24),
+    }),
+    defineField({
+      name: 'languages',
+      title: 'Languages',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(8),
+    }),
+    defineField({
+      name: 'sameAs',
+      title: 'Same-as profiles',
+      type: 'array',
+      of: [{type: 'externalLink'}],
+      validation: (Rule) => Rule.max(10),
+    }),
+    defineField({
+      name: 'featured',
+      title: 'Featured on website',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoMeta',
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'title',
+      media: 'photo',
+    },
+  },
+})
