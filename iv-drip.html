@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    .iv-hero { background: linear-gradient(135deg, #0a1228 0%, #1a2060 50%, #2d358c 100%); }
+    .iv-card { background: var(--white); border-radius: var(--r-xl); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 28px; transition: all .28s; }
+    .iv-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
+    .iv-card-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .iv-card-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-family: var(--font-en); }
+    .iv-card-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; }
+    .therapy-card { background: var(--white); border-radius: var(--r-xl); border: 2px solid var(--border-l); padding: 36px 28px; text-align: center; transition: all .28s; }
+    .therapy-card:hover { border-color: var(--teal); box-shadow: var(--sh-lg); transform: translateY(-4px); }
+    .therapy-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .therapy-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-family: var(--font-en); }
+    .therapy-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
+    .therapy-btn { display: inline-block; padding: 10px 22px; background: var(--teal); color: white; border-radius: var(--r-pill); font-size: .82rem; font-weight: 600; font-family: var(--font-en); transition: background .2s; }
+    .therapy-btn:hover { background: var(--teal-d); color: white; }
+    .when-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--white); border-radius: var(--r-md); border: 1px solid var(--border-l); }
+    .when-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .when-text { font-size: .9rem; color: var(--text-2); line-height: 1.6; }
+    .chelation-box { background: linear-gradient(135deg, var(--navy-xl), var(--teal-l)); border-radius: var(--r-xl); padding: 40px; border: 1px solid var(--border-l); }
+  </style>
+
+  <!-- SEO Core -->
+  <title>วิตามินดริป IV Drip Bangkok | NAD+ Chelation Glutathione | Thrive Wellness Center</title>
+  <meta name="description" content="วิตามินดริปเกรดพรีเมียม NAD+ Therapy, Chelation, Gut Health, Essential Booster, Glutathione, Stem Cell Facial ดริปโดยแพทย์เฉพาะทาง ที่เดอะคริสตัล เอกมัย-รามอินทรา">
+  <meta name="keywords" content="วิตามินดริป Bangkok, IV Drip คลินิก, NAD+ Therapy ไทย, Chelation Bangkok, Glutathione drip, Thrive Wellness">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Thrive Wellness Center">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/iv-drip">
+  <meta name="language" content="th">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/iv-drip">
+  <meta property="og:title" content="วิตามินดริป IV Drip Bangkok | NAD+ Chelation Glutathione | Thrive Wellness Center">
+  <meta property="og:description" content="วิตามินดริปเกรดพรีเมียม NAD+ Therapy, Chelation, Gut Health, Essential Booster, Glutathione, Stem Cell Facial ดริปโดยแพทย์เฉพาะทาง">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Center">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="วิตามินดริป IV Drip Bangkok | Thrive Wellness Center">
+  <meta name="twitter:description" content="วิตามินดริปเกรดพรีเมียม NAD+ Chelation Glutathione โดยแพทย์เฉพาะทาง">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok">
+  <meta name="geo.position" content="13.8078;100.6073">
+  <meta name="ICBM" content="13.8078, 100.6073">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:0959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:30</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div>
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link active">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#glutathione"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link">HBOT</a>
+      <a href="health-architect.html" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link">คลังความรู้</a>
+      <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;background:var(--navy-xl);color:var(--navy);font-weight:600;">💉 วิตามินดริป</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="page-hero iv-hero">
+  <div class="container">
+    <div class="breadcrumb" style="margin-bottom:24px;">
+      <a href="index.html">หน้าแรก</a>
+      <span>วิตามินดริป</span>
+    </div>
+    <div class="page-hero__label">IV DRIP THERAPY</div>
+    <h1 class="page-hero__title">วิตามินที่กินได้แค่ 20% — ดริปได้ 100%</h1>
+    <p class="page-hero__subtitle">ส่งตรงเข้ากระแสเลือด ไม่ผ่านระบบย่อย ไม่สูญเสียระหว่างทาง — รู้สึกต่างได้ภายในชั่วโมงเดียว ดูแลโดยแพทย์ทุกครั้ง</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+      <a href="contact.html" class="btn btn-primary btn-lg">📅 นัดหมายดริป</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">LINE ปรึกษาฟรี</a>
+    </div>
+  </div>
+</div>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-bar__item"><span class="trust-bar__icon">💉</span><span>ดูดซึม 100%</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">⚡</span><span>เห็นผลทันที</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">👨‍⚕️</span><span>ดริปโดยแพทย์</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">🧪</span><span>วิตามินเกรดพรีเมียม</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">✅</span><span>ปลอดภัย มีมาตรฐาน</span></div>
+  </div>
+</div>
+
+<!-- What is IV Drip -->
+<section class="section section--white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div class="section-label">WHAT IS IV DRIP?</div>
+        <h2 style="margin-bottom:20px;">ทำไมดริปถึงต่างจากการกินวิตามินธรรมดา?</h2>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:16px;">วิตามินที่กินปาก ต้องผ่านระบบย่อยอาหาร ตับ และระบบดูดซึมก่อน — สุดท้ายร่างกายได้รับจริงแค่ 15–30% เท่านั้น แต่ IV Drip ส่งตรงเข้าเส้นเลือด ร่างกายได้ครบ 100% โดยไม่เสียระหว่างทาง</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:24px;">นักกีฬา ผู้บริหาร คนรักสุขภาพ ไปจนถึงคนที่แค่อยากฟื้นสภาพหลังทำงานหนัก — ดริปกลายเป็นสิ่งที่หลายคนทำเป็นประจำ เพราะมันเวิร์คจริงและเห็นผลเร็ว</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--teal-l);border-radius:var(--r-md);">
+            <span style="color:var(--teal);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--teal-d);font-weight:600;">ดูดซึม 100%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--navy-l);border-radius:var(--r-md);">
+            <span style="color:var(--navy);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--navy);font-weight:600;">เห็นผลทันที</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--cream-d);border-radius:var(--r-md);">
+            <span style="color:var(--navy);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--navy);font-weight:600;">ปลอดภัยภายใต้แพทย์</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);position:relative;">
+        <img src="image/IV Drip Room.jpg" alt="ห้อง IV Drip Thrive Wellness Center" loading="lazy" style="width:100%;height:360px;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,18,40,.7));padding:20px 24px;display:flex;gap:20px;justify-content:space-around;">
+          <div style="text-align:center;color:white;">
+            <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-en);">100%</div>
+            <div style="font-size:.75rem;opacity:.9;">ดูดซึมวิตามิน</div>
+          </div>
+          <div style="text-align:center;color:white;">
+            <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-en);">30–60</div>
+            <div style="font-size:.75rem;opacity:.9;">นาทีต่อเซสชัน</div>
+          </div>
+          <div style="text-align:center;color:white;">
+            <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-en);">7+</div>
+            <div style="font-size:.75rem;opacity:.9;">สูตรดริปให้เลือก</div>
+          </div>
+          <div style="text-align:center;color:white;">
+            <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-en);">★ 4.9</div>
+            <div style="font-size:.75rem;opacity:.9;">คะแนนจากลูกค้า</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- When to Drip -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">WHEN TO DRIP</div>
+      <h2>แบบไหนที่ควรดริป? (คุณอาจเข้าข่ายมากกว่า 1 ข้อ)</h2>
+      <p style="color:var(--text-2);margin-top:12px;">ไม่ต้องรอป่วยถึงจะดริป — คนที่ดูแลสุขภาพเชิงรุกนิยมดริปในสถานการณ์เหล่านี้</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div class="when-item reveal"><div class="when-icon">🤢</div><div class="when-text">รู้สึกคลื่นไส้ เหนื่อยล้าจากการทำงานหนัก ต้องการพักฟื้นร่างกายอย่างเร่งด่วน</div></div>
+      <div class="when-item reveal"><div class="when-icon">💪</div><div class="when-text">หลังออกกำลังกายหนัก ต้องการฟื้นฟูกล้ามเนื้อและเติมเกลือแร่</div></div>
+      <div class="when-item reveal"><div class="when-icon">✈️</div><div class="when-text">ก่อนและหลังการเดินทางต่างประเทศ เพื่อต่อต้าน Jet Lag และป้องกันการติดเชื้อ</div></div>
+      <div class="when-item reveal"><div class="when-icon">👔</div><div class="when-text">ก่อนการประชุมสำคัญ งานเปิดตัว หรืออีเวนต์ที่ต้องการความคมชัด</div></div>
+      <div class="when-item reveal"><div class="when-icon">😴</div><div class="when-text">มีอาการนอนไม่หลับเรื้อรัง ต้องการปรับสมดุลระบบประสาทและการนอนหลับ</div></div>
+      <div class="when-item reveal"><div class="when-icon">😓</div><div class="when-text">รู้สึกล้า อ่อนแรง อ่อนเพลียเรื้อรัง ทั้งที่นอนหลับพักผ่อนแล้ว</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Special Cases -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">CONTINUOUS DRIP</div>
+      <h2>บางคนต้องดริปต่อเนื่อง — คุณเป็นหนึ่งในนั้นไหม?</h2>
+      <p style="color:var(--text-2);margin-top:12px;">ภาวะบางอย่างต้องการวิตามินในระดับที่การกินปากให้ไม่ถึง การดริปสม่ำเสมอคือคำตอบที่ได้ผลจริง</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">👶</div>
+        <div class="iv-card-title">เตรียมความพร้อมตั้งครรภ์</div>
+        <div class="iv-card-desc">วิตามินดริปช่วยเตรียมร่างกายให้พร้อม เสริมสารอาหารสำคัญสำหรับการตั้งครรภ์</div>
+      </div>
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">🧹</div>
+        <div class="iv-card-title">ขจัดสารพิษโลหะหนัก</div>
+        <div class="iv-card-desc">โลหะหนักสะสมในร่างกายจากสิ่งแวดล้อมปนเปื้อน ดริปช่วยเร่งกระบวนการขจัดออก</div>
+      </div>
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">💜</div>
+        <div class="iv-card-title">ภาวะต่อมหมวกไตล้า</div>
+        <div class="iv-card-desc">เมื่อร่างกายเครียดสะสม ต่อมหมวกไตต้องการสารอาหารเพื่อฟื้นฟูสมรรถนะ</div>
+      </div>
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">🏥</div>
+        <div class="iv-card-title">ตับอักเสบ ค่าตับสูง</div>
+        <div class="iv-card-desc">วิตามินดริปช่วยสนับสนุนการทำงานของตับ เร่งการฟื้นฟูเซลล์ตับ</div>
+      </div>
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">🏃</div>
+        <div class="iv-card-title">ส่งเสริมการออกกำลังกาย</div>
+        <div class="iv-card-desc">เพิ่มพลังงาน เพิ่มอัตราการเผาผลาญ รองรับโปรแกรมลดน้ำหนักอย่างมีประสิทธิภาพ</div>
+      </div>
+      <div class="iv-card reveal">
+        <div class="iv-card-icon">🌿</div>
+        <div class="iv-card-title">ซ่อมผนังลำไส้รั่ว</div>
+        <div class="iv-card-desc">ส่งสารอาหารสำคัญโดยตรง ช่วยซ่อมแซมผนังลำไส้รั่ว (Leaky Gut Syndrome)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our IV Drips -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">OUR TREATMENTS</div>
+      <h2>เลือกสูตรดริปที่ใช่สำหรับคุณ</h2>
+      <p style="color:var(--text-2);margin-top:12px;">แต่ละสูตรออกแบบมาเพื่อเป้าหมายสุขภาพที่ต่างกัน — ไม่แน่ใจว่าต้องการอะไร? ปรึกษาแพทย์ฟรีก่อนได้เลย</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;">
+      <div class="therapy-card reveal" id="nad">
+        <div class="therapy-icon">🧬</div>
+        <div class="therapy-name">NAD+ Therapy</div>
+        <div class="therapy-desc">ชะลอวัยระดับ DNA ฟื้นฟูพลังงานเซลล์ สมองชัดเจน อ่อนเยาว์จากภายใน</div>
+        <a href="nad-plus.html" class="therapy-btn">ดูรายละเอียด →</a>
+      </div>
+      <div class="therapy-card reveal" id="chelation">
+        <div class="therapy-icon">🫀</div>
+        <div class="therapy-name">Chelation Therapy</div>
+        <div class="therapy-desc">ล้างสารพิษโลหะหนักในหลอดเลือด ฟื้นฟูหลอดเลือด ป้องกันโรคหัวใจ ความดัน เบาหวาน</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+      <div class="therapy-card reveal" id="gut">
+        <div class="therapy-icon">🌿</div>
+        <div class="therapy-name">Gut Health IV Drip</div>
+        <div class="therapy-desc">ดริปวิตามินเพื่อสุขภาพลำไส้ ซ่อมแซมผนังลำไส้ ลดอาการท้องไส้ปั่นป่วน</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+      <div class="therapy-card reveal" id="booster">
+        <div class="therapy-icon">⚡</div>
+        <div class="therapy-name">Essential Booster</div>
+        <div class="therapy-desc">เติม Vitamin C, B-complex, Zinc เพิ่มพลังงาน ภูมิคุ้มกัน เหมาะสำหรับการบำรุงรักษาประจำ</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+      <div class="therapy-card reveal" id="glutathione">
+        <div class="therapy-icon">✨</div>
+        <div class="therapy-name">Glutathione</div>
+        <div class="therapy-desc">สารต้านอนุมูลอิสระที่ทรงพลัง ผิวสว่างใส ลดเลือนริ้วรอย ชะลอความเสื่อมของเซลล์</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+      <div class="therapy-card reveal" id="stem">
+        <div class="therapy-icon">🌸</div>
+        <div class="therapy-name">Stem Cell Facial</div>
+        <div class="therapy-desc">สเต็มเซลล์บำบัดผิวหน้า กระตุ้นการสร้างคอลลาเจน ผิวอ่อนเยาว์ กระจ่างใส</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+      <div class="therapy-card reveal" id="quercetin">
+        <div class="therapy-icon">🌼</div>
+        <div class="therapy-name">Quercetin Cell Therapy</div>
+        <div class="therapy-desc">สารฟลาโวนอยด์ทรงพลัง ต้านการอักเสบ ชะลอวัยเซลล์ เสริมภูมิคุ้มกันระยะยาว</div>
+        <a href="contact.html" class="therapy-btn">ปรึกษาแพทย์ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chelation Deep Dive -->
+<section class="section section--white">
+  <div class="container">
+    <div class="chelation-box">
+      <div class="section-label" style="margin-bottom:16px;">SPOTLIGHT</div>
+      <h2 style="margin-bottom:16px;">คีเลชั่น — ล้างโลหะหนักที่สะสมมาทั้งชีวิต</h2>
+      <p style="color:var(--text-2);line-height:1.8;margin-bottom:28px;">ตะกั่วจากไอเสีย ปรอทจากปลา สารหนูจากน้ำ — ร่างกายได้รับสิ่งเหล่านี้ทีละนิดทุกวัน แต่ขับออกไม่ทัน Chelation Therapy คือการ "ดึง" โลหะหนักออกจากเลือดโดยตรง ฟื้นฟูหลอดเลือด และลดความเสี่ยงโรคหัวใจ ความดัน และเบาหวาน — เหมาะมากสำหรับคนที่อยู่ในเมืองและสัมผัสมลพิษทุกวัน</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+        <div style="background:var(--white);border-radius:var(--r-md);padding:20px;text-align:center;border:1px solid var(--border-l);">
+          <div style="font-size:1.8rem;margin-bottom:8px;">🎯</div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.9rem;">โลหะหนักสะสม</div>
+          <div style="font-size:.825rem;color:var(--text-2);">พิษจากสิ่งแวดล้อมสะสมในร่างกายโดยไม่รู้ตัว</div>
+        </div>
+        <div style="background:var(--white);border-radius:var(--r-md);padding:20px;text-align:center;border:1px solid var(--border-l);">
+          <div style="font-size:1.8rem;margin-bottom:8px;">💚</div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.9rem;">การบำบัดคีเลชั่น</div>
+          <div style="font-size:.825rem;color:var(--text-2);">สารคีเลตจับกับโลหะหนักและขับออกทางปัสสาวะ</div>
+        </div>
+        <div style="background:var(--white);border-radius:var(--r-md);padding:20px;text-align:center;border:1px solid var(--border-l);">
+          <div style="font-size:1.8rem;margin-bottom:8px;">❤️</div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.9rem;">ป้องกันโรคเรื้อรัง</div>
+          <div style="font-size:.825rem;color:var(--text-2);">ลดความเสี่ยงโรคหัวใจ ความดัน เส้นเลือด และเบาหวาน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process / How to Book -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">HOW IT WORKS</div>
+      <h2>ดริปกับเรา ง่ายกว่าที่คิด</h2>
+      <p style="color:var(--text-2);margin-top:12px;">ตั้งแต่ปรึกษาจนถึงดริปเสร็จ ใช้เวลาแค่ไม่กี่ชั่วโมง — คุณรับผิดชอบแค่มา ที่เหลือแพทย์ดูแลให้หมด</p>
+    </div>
+    <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border-l);" class="reveal">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-en);font-size:1.1rem;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">ปรึกษาแพทย์ก่อนดริป</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">แพทย์ซักประวัติและรับฟังเป้าหมาย เพื่อแนะนำสูตรดริปที่ตรงกับความต้องการของคุณ ไม่ขาย ไม่กดดัน</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border-l);" class="reveal">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-en);font-size:1.1rem;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">เริ่มดริปในห้องพักส่วนตัว</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">นอนพักสบาย ห้องแอร์เย็น มี Wi-Fi ดริปใช้เวลา 30–90 นาที ไม่ต้องทำอะไรนอกจากผ่อนคลาย</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border-l);" class="reveal">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-en);font-size:1.1rem;flex-shrink:0;">3</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">รู้สึกต่างภายใน 1–2 ชั่วโมง</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">หลายคนรู้สึกกระปรี้กระเปร่า ชัดเจนขึ้น และมีพลังงานมากขึ้นทันทีหลังดริปเสร็จ</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border-l);" class="reveal">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-en);font-size:1.1rem;flex-shrink:0;">4</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">ออกแบบโปรแกรมดริประยะยาว</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">แพทย์แนะนำความถี่ที่เหมาะสมสำหรับเป้าหมายของคุณ ตั้งแต่บำรุงรักษารายเดือนไปจนถึง Protocol เฉพาะทาง</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">FAQ</div>
+      <h2>คำถามที่พบบ่อย</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;">
+      <div class="faq-item">
+        <button class="faq-question">IV Drip ดีกว่าการทานวิตามินปากอย่างไร?</button>
+        <div class="faq-answer"><p>IV Drip ส่งวิตามินเข้ากระแสเลือดโดยตรง ดูดซึม 100% เทียบกับการทานปากที่ดูดซึมได้เพียง 15–30% นอกจากนี้ยังเห็นผลเร็วกว่ามาก เหมาะสำหรับผู้ที่ต้องการผลทันทีหรือมีปัญหาการดูดซึมในลำไส้</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">ควรทำ IV Drip บ่อยแค่ไหน?</button>
+        <div class="faq-answer"><p>ขึ้นอยู่กับสูตรและเป้าหมาย โดยทั่วไปแนะนำ 1–4 ครั้งต่อเดือน Essential Booster อาจทำสัปดาห์ละครั้ง ส่วน NAD+ มักทำเป็น Protocol 3–5 ครั้งติดกัน แพทย์จะออกแบบความถี่ที่เหมาะสมกับคุณ</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">มีสูตรดริปอะไรบ้างที่ Thrive Wellness?</button>
+        <div class="faq-answer"><p>เรามี 7 สูตรหลัก ได้แก่ NAD+ Therapy, Chelation, Gut Health IV, Essential Booster, Glutathione, Stem Cell Facial และ Quercetin Cell Therapy แต่ละสูตรถูกออกแบบเพื่อเป้าหมายสุขภาพที่ต่างกัน</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">IV Drip ใช้เวลานานแค่ไหน?</button>
+        <div class="faq-answer"><p>โดยทั่วไปใช้เวลา 30–90 นาทีต่อเซสชัน ขึ้นอยู่กับสูตรที่เลือก NAD+ ใช้เวลานานกว่า (2–4 ชั่วโมง) เนื่องจากต้องหยดช้าเพื่อประสิทธิภาพสูงสุด</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--cream" style="text-align:center;">
+  <div class="container">
+    <h2 style="margin-bottom:8px;">ไม่รู้จะเริ่มสูตรไหนดี? ปรึกษาแพทย์ก่อนได้เลย</h2>
+    <p style="margin-bottom:32px;color:var(--text-2);">บอกเราว่าคุณต้องการอะไร — เพิ่มพลังงาน ฟื้นตัวเร็ว หรือแค่อยากรู้สึกดีขึ้น เราจะแนะนำสูตรที่เหมาะที่สุดให้</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-lg">📅 นัดหมายเลย</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-lg" style="border:2px solid var(--navy);color:var(--navy);background:transparent;">LINE @thrivewellnessth</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">ไธรฟ์ เวลเนส เซนเตอร์</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการตรวจสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="check-up.html">ตรวจสุขภาพเชิงลึก</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:0959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Center. สงวนลิขสิทธิ์</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="contact.html" class="btn btn-primary">📅 นัดหมาย</a>
+    <a href="tel:0959349640" class="btn btn-navy">📞 โทรเลย</a>
+  </div>
+</div>
+<script>
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('drawer').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "IV Drip Vitamin Therapy",
+      "alternateName": "วิตามินดริป",
+      "url": "https://www.thrivewellnessth.com/iv-drip",
+      "description": "การให้วิตามินและสารอาหารเข้าสู่กระแสเลือดโดยตรง ดูดซึม 100% เห็นผลทันที",
+      "procedureType": "https://schema.org/TherapeuticProcedure",
+      "performer": {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Center"
+      },
+      "availableService": [
+        {"@type": "MedicalProcedure", "name": "NAD+ Therapy"},
+        {"@type": "MedicalProcedure", "name": "Chelation Therapy"},
+        {"@type": "MedicalProcedure", "name": "Gut Health IV Drip"},
+        {"@type": "MedicalProcedure", "name": "Essential Booster IV"},
+        {"@type": "MedicalProcedure", "name": "Glutathione IV Drip"},
+        {"@type": "MedicalProcedure", "name": "Stem Cell Facial Therapy"},
+        {"@type": "MedicalProcedure", "name": "Quercetin Cell Therapy"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "IV Drip ดีกว่าการทานวิตามินปากอย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "IV Drip ส่งวิตามินเข้ากระแสเลือดโดยตรง ดูดซึม 100% เทียบกับการทานปากที่ดูดซึมได้เพียง 15-30% เห็นผลเร็วกว่า เหมาะสำหรับผู้ที่ต้องการผลทันทีหรือมีปัญหาการดูดซึมในลำไส้"}
+        },
+        {
+          "@type": "Question",
+          "name": "ควรทำ IV Drip บ่อยแค่ไหน?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ขึ้นอยู่กับสูตรและเป้าหมาย โดยทั่วไปแนะนำ 1-4 ครั้งต่อเดือน แพทย์จะออกแบบความถี่ที่เหมาะสมกับแต่ละคน"}
+        },
+        {
+          "@type": "Question",
+          "name": "มีสูตรดริปอะไรบ้างที่ Thrive Wellness?",
+          "acceptedAnswer": {"@type": "Answer", "text": "มี 7 สูตรหลัก: NAD+ Therapy, Chelation, Gut Health IV, Essential Booster, Glutathione, Stem Cell Facial และ Quercetin Cell Therapy"}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/"},
+        {"@type": "ListItem", "position": 2, "name": "วิตามินดริป IV Drip", "item": "https://www.thrivewellnessth.com/iv-drip"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

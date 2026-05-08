@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="thrive-styles.css">
+<style>
+.ha-hero { background: linear-gradient(135deg, #0d1235 0%, #1a2060 50%, #2d358c 100%); }
+.gold { color: #c9a96e; }
+.package-wrap { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; align-items: start; }
+.pkg-card { background: var(--white); border-radius: 24px; border: 2px solid var(--border-l); padding: 40px 32px; position: relative; transition: all .3s; }
+.pkg-card:hover { box-shadow: var(--sh-lg); transform: translateY(-4px); }
+.pkg-card.featured { border-color: var(--teal); box-shadow: 0 20px 60px rgba(0,171,158,.15); }
+.pkg-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--teal); color: white; padding: 4px 22px; border-radius: 100px; font-size: .72rem; font-weight: 700; font-family: var(--font-en); white-space: nowrap; }
+.pkg-price { font-family: var(--font-en); font-size: 2.4rem; font-weight: 800; color: var(--navy); line-height: 1; margin: 16px 0 4px; }
+.pkg-price small { font-size: 1rem; font-weight: 400; color: var(--text-2); }
+.pkg-for { font-size: .8rem; color: var(--text-3); font-family: var(--font-en); margin-bottom: 24px; }
+.pkg-feature { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border-l); font-size: .875rem; color: var(--text-2); }
+.pkg-feature::before { content: "✓"; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+.compare-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 0; }
+.compare-row > div { padding: 14px 16px; border-bottom: 1px solid var(--border-l); font-size: .875rem; }
+.compare-row > div:nth-child(1) { color: var(--text-2); }
+.compare-row > div:nth-child(2) { text-align: center; color: var(--text-3); background: var(--navy-xl); }
+.compare-row > div:nth-child(3) { text-align: center; color: var(--teal-d); font-weight: 600; background: var(--teal-xl); }
+.compare-header { font-weight: 700; background: var(--navy) !important; color: white !important; }
+.value-item { text-align: center; padding: 32px 24px; }
+.value-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.value-title { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; font-family: var(--font-en); }
+.value-desc { font-size: .85rem; color: rgba(255,255,255,.65); line-height: 1.7; }
+.testimonial-card { background: var(--white); border-radius: 16px; padding: 32px; border-left: 4px solid var(--teal); }
+.testimonial-star { color: #ffd700; font-size: .9rem; margin-bottom: 12px; }
+.testimonial-text { color: var(--text-2); font-size: .9rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testimonial-author { font-weight: 600; color: var(--navy); font-size: .875rem; margin-bottom: 4px; }
+.testimonial-program { font-size: .8rem; color: var(--text-3); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+.step-item { text-align: center; }
+.step-num { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--navy); color: white; border-radius: 50%; font-weight: 700; font-size: 1.2rem; margin-bottom: 16px; }
+.step-title { font-weight: 600; color: var(--navy); margin-bottom: 12px; font-size: 1rem; }
+.step-desc { font-size: .85rem; color: var(--text-2); line-height: 1.6; }
+.trust-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 32px; }
+.trust-item { display: flex; align-items: center; gap: 12px; font-size: .9rem; color: var(--white); }
+.trust-item::before { content: "✓"; color: var(--teal); font-weight: 700; font-size: 1.1rem; }
+@media(max-width:768px){ .package-wrap { grid-template-columns: 1fr; } .compare-row { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; } .trust-row { grid-template-columns: 1fr; } }
+</style>
+
+  <!-- SEO Core -->
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Open Graph (Facebook, Line, etc.) -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Twitter Card -->
+  
+  
+  
+  
+
+  <!-- Geo / Local SEO -->
+  
+  
+  
+  
+  
+  <!-- SEO Core -->
+  <title>Health Architect | ออกแบบสุขภาพเฉพาะคุณ | Thrive Wellness Center Bangkok</title>
+  <meta name="description" content="Health Architect บริการออกแบบโปรแกรมสุขภาพเฉพาะบุคคล วิเคราะห์เชิงลึก สร้าง Health Blueprint ติดตามผลต่อเนื่อง เริ่มต้นด้วยการปรึกษาฟรี">
+  <meta name="keywords" content="Health Architect Bangkok, Personalized Health Program, Health Blueprint, Functional Medicine Thailand">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Thrive Wellness Center">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/health-architect">
+  <meta name="language" content="th">
+
+  <!-- Open Graph (Facebook, Line, etc.) -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/health-architect">
+  <meta property="og:title" content="Health Architect | ออกแบบสุขภาพเฉพาะคุณ | Thrive Wellness Center Bangkok">
+  <meta property="og:description" content="Health Architect บริการออกแบบโปรแกรมสุขภาพเฉพาะบุคคล วิเคราะห์เชิงลึก สร้าง Health Blueprint ติดตามผลต่อเนื่อง เริ่มต้นด้วยการปรึกษาฟรี">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Center">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Health Architect | ออกแบบสุขภาพเฉพาะคุณ | Thrive Wellness Center Bangkok">
+  <meta name="twitter:description" content="Health Architect บริการออกแบบโปรแกรมสุขภาพเฉพาะบุคคล วิเคราะห์เชิงลึก สร้าง Health Blueprint ติดตามผลต่อเนื่อง เริ่มต้นด้วยการปรึกษาฟรี">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok">
+  <meta name="geo.position" content="13.8078;100.6073">
+  <meta name="ICBM" content="13.8078, 100.6073">
+  </head>
+<body><div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:0959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:30</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div><nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link ">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#glutathione"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link ">HBOT</a>
+      <a href="health-architect.html" class="nav-link active" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link">คลังความรู้</a>
+      <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;background:var(--navy-xl);color:var(--navy);font-weight:600;">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+<section class="page-hero ha-hero reveal">
+  <div class="container">
+    <div style="text-align:center; color:white; max-width:1000px; margin:0 auto;">
+      <div style="font-family:var(--font-en); font-size:.9rem; font-weight:700; letter-spacing:.1em; margin-bottom:16px;">
+        ✦ SIGNATURE SERVICE
+      </div>
+      <h1 style="font-size:3.5rem; font-weight:800; margin-bottom:12px; color:white; font-family:var(--font-en);">Health Architect</h1>
+      <h2 style="font-size:2rem; font-style:italic; color:#00ab9e; margin-bottom:32px; font-family:'Noto Sans Thai',sans-serif; font-weight:400;">เพราะสุขภาพดีไม่มีสูตรสำเร็จ</h2>
+      <p style="font-size:1.1rem; line-height:1.8; color:rgba(255,255,255,.85); margin-bottom:40px;">
+        ทำไมบางคนกินวิตามินเหมือนกัน ออกกำลังกายเหมือนกัน แต่ผลลัพธ์ต่างกันคนละโลก? เพราะร่างกายของคุณมีสูตรเฉพาะตัว — Health Architect ถอดรหัสร่างกายคุณแบบรายบุคคล แล้วออกแบบทุกอย่างให้ตรงกับคุณจริงๆ ไม่ใช่แค่ตรวจ แต่คือการวางแผนชีวิตร่วมกัน
+      </p>
+      
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
+        <a href="contact.html" class="btn btn-primary btn-lg">เริ่มต้น Health Architect →</a>
+        <a href="contact.html" class="btn btn-ghost btn-lg">ปรึกษาฟรี (ไม่มีค่าใช้จ่าย)</a>
+      </div>
+      
+      <div class="trust-row">
+        <div class="trust-item">ปรึกษาฟรีครั้งแรก</div>
+        <div class="trust-item">ไม่มีข้อผูกมัด</div>
+        <div class="trust-item">ออกแบบโดยแพทย์เชี่ยวชาญ</div>
+        <div class="trust-item">ติดตามผลต่อเนื่อง</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--cream reveal" style="padding:80px 20px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+      <div>
+        <h2 style="font-size:2.2rem; font-weight:700; color:var(--navy); margin-bottom:32px;">ได้ผลแล็บมาแล้ว แต่ยังงงอยู่ว่าต้องทำอะไรต่อ?</h2>
+
+        <p style="font-size:1rem; line-height:1.8; color:var(--text-2); margin-bottom:24px;">
+          เราเข้าใจ — นั่นคือจุดบอดของการตรวจสุขภาพแบบเดิม ได้กระดาษ ได้ตัวเลข แต่ไม่มีใครอธิบายว่า <strong>"แล้วคุณต้องทำยังไงต่อ?"</strong> Health Architect แตกต่างตรงนี้ แพทย์จะวิเคราะห์ทุกมิติ สร้าง Health Blueprint ที่เป็นแผนชัดเจน อ่านเข้าใจง่าย และทำตามได้จริง
+        </p>
+
+        <p style="font-size:1rem; line-height:1.8; color:var(--text-2);">
+          ไม่ใช่แค่ตรวจแล้วจบ — <strong>Health Architect มอบ "แผนที่" สุขภาพที่ตามคุณไปตลอด</strong> ปรับได้เมื่อชีวิตเปลี่ยน ดูแลต่อเนื่องจนคุณรู้สึกได้ถึงความเปลี่ยนแปลงจริงๆ ไม่ใช่แค่ตัวเลขที่ดีขึ้นบนกระดาษ
+        </p>
+      </div>
+      
+      <div>
+        <div class="compare-row compare-header">
+          <div>ลักษณะ</div>
+          <div>ตรวจทั่วไป</div>
+          <div>Health Architect</div>
+        </div>
+        <div class="compare-row">
+          <div>แนวทาง</div>
+          <div>One-size-fits-all</div>
+          <div>เฉพาะบุคคล 100%</div>
+        </div>
+        <div class="compare-row">
+          <div>การวิเคราะห์</div>
+          <div>ผลแล็บเท่านั้น</div>
+          <div>หลายมิติ รอบด้าน</div>
+        </div>
+        <div class="compare-row">
+          <div>แผนดูแล</div>
+          <div>ไม่มี / ทั่วไป</div>
+          <div>Blueprint ส่วนตัว</div>
+        </div>
+        <div class="compare-row">
+          <div>การติดตาม</div>
+          <div>ไม่มี</div>
+          <div>ต่อเนื่อง</div>
+        </div>
+        <div class="compare-row">
+          <div>ราคา</div>
+          <div>ถูกกว่า</div>
+          <div>คุ้มค่ากว่า</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0; overflow:hidden; max-height:420px;">
+  <img src="image/Consultation room.jpg" alt="ห้องให้คำปรึกษา Thrive Wellness Center" loading="lazy" style="width:100%;height:420px;object-fit:cover;display:block;object-position:center 30%;">
+</section>
+
+<section class="reveal" style="padding:80px 20px; background:white;">
+  <div class="container">
+    <h2 style="font-size:2.2rem; font-weight:700; color:var(--navy); margin-bottom:48px; text-align:center;">จากสงสัย สู่สุขภาพที่ออกแบบมาเพื่อคุณ — ใน 4 ขั้นตอน</h2>
+    
+    <div class="steps">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div style="font-size:2rem; margin-bottom:16px;">💬</div>
+        <h3 class="step-title">คุยกัน — แบบจริงๆ</h3>
+        <p class="step-desc">แพทย์นั่งฟังคุณอย่างตั้งใจ ไม่เร่ง ไม่ดูนาฬิกา รับฟังทุกอาการ ทุกความกังวล และทุกเป้าหมาย ฟรี ไม่มีข้อผูกมัด</p>
+      </div>
+      
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div style="font-size:2rem; margin-bottom:16px;">🔬</div>
+        <h3 class="step-title">ตรวจเฉพาะที่จำเป็น</h3>
+        <p class="step-desc">ออกแบบชุดตรวจเฉพาะสำหรับคุณ — ตรงจุด ไม่มากเกินจำเป็น ไม่น้อยจนเกิดช่องว่าง ใช้แล็บมาตรฐานสากลที่เชื่อถือได้</p>
+      </div>
+      
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div style="font-size:2rem; margin-bottom:16px;">📋</div>
+        <h3 class="step-title">Blueprint ของคุณ</h3>
+        <p class="step-desc">ได้รับ Health Blueprint ฉบับส่วนตัว — ครบทั้งอาหาร วิตามิน โปรแกรมบำบัด และไลฟ์สไตล์ อ่านแล้วรู้เลยว่าต้องทำอะไร ทำไม และเมื่อไหร่</p>
+      </div>
+      
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div style="font-size:2rem; margin-bottom:16px;">🌱</div>
+        <h3 class="step-title">เราไม่ทิ้งคุณกลางทาง</h3>
+        <p class="step-desc">Check-in สม่ำเสมอ ปรับแผนตามผลลัพธ์จริง ดูแลคุณระยะยาวจนเห็นการเปลี่ยนแปลง ไม่ใช่แค่ให้เอกสารแล้วจบกัน</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--cream reveal" style="padding:80px 20px;">
+  <div class="container">
+    <h2 style="font-size:2.2rem; font-weight:700; color:var(--navy); margin-bottom:20px;">เริ่มได้เลย — ตั้งแต่ฟรี</h2>
+    <p style="font-size:1rem; color:var(--text-2); margin-bottom:48px;">ไม่ต้องลงทุนเยอะเพื่อรู้ว่าสุขภาพคุณต้องการอะไร เริ่มปรึกษาฟรีก่อนก็ได้ ไม่มีข้อผูกมัด</p>
+    
+    <div class="package-wrap">
+      <div class="pkg-card">
+        <h3 style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:1.2rem;">Health Blueprint</h3>
+        <div class="pkg-price">ฟรี</div>
+        <div class="pkg-for">สำหรับผู้เริ่มต้น</div>
+        
+        <div style="margin-bottom:24px;">
+          <div class="pkg-feature">ปรึกษาแพทย์ 30 นาที</div>
+          <div class="pkg-feature">ประเมินสุขภาพเบื้องต้น</div>
+          <div class="pkg-feature">คำแนะนำเฉพาะบุคคล</div>
+          <div class="pkg-feature">สรุปโปรแกรมที่เหมาะสม</div>
+          <div class="pkg-feature">ไม่มีข้อผูกมัด</div>
+        </div>
+        
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">นัดปรึกษาฟรี →</a>
+      </div>
+      
+      <div class="pkg-card featured">
+        <div class="pkg-badge">ยอดนิยม</div>
+        <h3 style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:1.2rem;">Comprehensive Design</h3>
+        <div class="pkg-price">฿12,500</div>
+        <div class="pkg-for">สำหรับผู้ต้องการผลจริงจัง</div>
+        
+        <div style="margin-bottom:24px;">
+          <div class="pkg-feature">ปรึกษาแพทย์เชิงลึก 60 นาที</div>
+          <div class="pkg-feature">ชุดตรวจสุขภาพเฉพาะบุคคล</div>
+          <div class="pkg-feature">วิเคราะห์ผลและ Health Blueprint</div>
+          <div class="pkg-feature">แผนโภชนาการและวิตามิน</div>
+          <div class="pkg-feature">แผนโปรแกรมบำบัด</div>
+          <div class="pkg-feature">ติดตามผล 3 เดือน</div>
+          <div class="pkg-feature">รายงานสุขภาพเป็นเล่ม</div>
+        </div>
+        
+        <a href="contact.html" class="btn btn-primary" style="width:100%; text-align:center; display:block;">เลือกแพ็กเกจนี้ →</a>
+      </div>
+
+      <div class="pkg-card">
+        <h3 style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:1.2rem;">Elite Health System</h3>
+        <div class="pkg-price">฿38,000</div>
+        <div class="pkg-for">สำหรับการดูแลระดับ VIP</div>
+
+        <div style="margin-bottom:24px;">
+          <div class="pkg-feature">ทุกอย่างใน Comprehensive</div>
+          <div class="pkg-feature">Annual Health Blueprint</div>
+          <div class="pkg-feature">ตรวจสุขภาพเชิงลึกรายปี</div>
+          <div class="pkg-feature">Priority Booking ไม่ต้องรอ</div>
+          <div class="pkg-feature">Monthly Check-in กับแพทย์</div>
+          <div class="pkg-feature">ส่วนลดบริการ 15%</div>
+          <div class="pkg-feature">VIP Welcome Kit</div>
+        </div>
+
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">สอบถามรายละเอียด →</a>
+      </div>
+
+    </div>
+    
+    <p style="text-align:center; font-size:.85rem; color:var(--text-3); margin-top:32px; padding-top:32px; border-top:1px solid var(--border-l);">
+      💡 ราคาทุกแพ็กเกจไม่รวมค่าตรวจแล็บ ซึ่งจะถูกออกแบบเฉพาะตามความต้องการของแต่ละบุคคล
+    </p>
+  </div>
+</section>
+
+<section class="section--dark reveal" style="padding:80px 20px;">
+  <div class="container">
+    <h2 style="font-size:2.2rem; font-weight:700; color:white; margin-bottom:48px; text-align:center;">คุณจะได้มากกว่าแค่ผลตรวจ</h2>
+    
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div class="value-item">
+        <div class="value-icon">📊</div>
+        <div class="value-title">Health Blueprint Report</div>
+        <div class="value-desc">รายงานสุขภาพส่วนตัวที่อ่านเข้าใจได้จริง — ไม่ใช่แค่ตัวเลขในกระดาษ แต่คำอธิบายที่บอกว่าหมายความว่าอะไรสำหรับ คุณ</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">🎯</div>
+        <div class="value-title">แผนเฉพาะบุคคล</div>
+        <div class="value-desc">ออกแบบจากร่างกายและไลฟ์สไตล์ของคุณจริงๆ ไม่ใช่ copy-paste มาจากคนอื่น</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">💊</div>
+        <div class="value-title">โปรแกรมวิตามิน</div>
+        <div class="value-desc">ระบุชัดว่าร่างกายคุณขาดอะไร และควรเติมด้วยอะไร — ไม่ต้องเดาเองหรือซื้อตามรีวิวอีกต่อไป</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">🔬</div>
+        <div class="value-title">การตรวจที่ถูกจุด</div>
+        <div class="value-desc">เราบอกว่าคุณควรตรวจอะไร — ไม่ตรวจทุกอย่างเพื่อให้ราคาขึ้น แต่ตรวจเพื่อให้ได้คำตอบที่ต้องการ</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">📅</div>
+        <div class="value-title">การติดตามผล</div>
+        <div class="value-desc">เราอยู่กับคุณตลอดเส้นทาง ไม่ใช่แค่วันที่คุณมาคลินิก แต่จนกว่าคุณจะรู้สึกถึงความเปลี่ยนแปลงจริงๆ</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">💬</div>
+        <div class="value-title">คำแนะนำจากแพทย์จริง</div>
+        <div class="value-desc">ไม่ใช่ AI ไม่ใช่แอป แต่แพทย์ที่รู้จักร่างกายและบริบทชีวิตของคุณโดยเฉพาะ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--cream reveal" style="padding:80px 20px;">
+  <div class="container">
+    <h2 style="font-size:2.2rem; font-weight:700; color:var(--navy); margin-bottom:48px; text-align:center;">พวกเขาก็เคยสงสัยเหมือนคุณ</h2>
+    
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div class="testimonial-card">
+        <div class="testimonial-star">★★★★★</div>
+        <div class="testimonial-text">
+          "หลังทำ Health Architect ถึงได้รู้ว่าที่เหนื่อยมาตลอดเพราะขาดวิตามิน D และ B12 ไม่ใช่แค่ทำงานหนัก แพทย์ไม่ได้เร่งขายอะไร แค่หาสาเหตุที่แท้จริง"
+        </div>
+        <div class="testimonial-author">คุณวิไล อ. อายุ 52</div>
+        <div class="testimonial-program">Program: Comprehensive Design</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-star">★★★★★</div>
+        <div class="testimonial-text">
+          "ได้ Blueprint ส่วนตัวที่ระบุชัดเจนมากว่าต้องทำอะไรบ้าง ไม่ต้องเดาเองอีกต่อไป ติดตามผลทาง LINE ได้เลยสะดวกมาก"
+        </div>
+        <div class="testimonial-author">คุณธนพล ก. อายุ 38</div>
+        <div class="testimonial-program">Program: Comprehensive Design</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-star">★★★★★</div>
+        <div class="testimonial-text">
+          "เคยตรวจที่อื่นได้ผลแล็บมาแต่ไม่รู้จะทำยังไงต่อ ที่นี่อธิบายได้ชัดเจนและวางแผนให้เป็นขั้นเป็นตอน รู้สึกว่าสุขภาพดีขึ้นจริงๆ ใน 3 เดือน"
+        </div>
+        <div class="testimonial-author">คุณสุดา ป. อายุ 45</div>
+        <div class="testimonial-program">Program: Comprehensive Design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner reveal" style="padding:60px 20px; background:linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); color:white; text-align:center;">
+  <div class="container">
+    <h2 style="font-size:2.2rem; font-weight:700; margin-bottom:16px;">อยากรู้ว่าร่างกายคุณต้องการอะไร? คุยกับเราก่อนได้เลย</h2>
+    <p style="font-size:1.1rem; color:rgba(255,255,255,.85); margin-bottom:32px;">
+      ปรึกษาฟรี ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด แค่บอกว่าคุณรู้สึกยังไง แล้วเราจะช่วยหาคำตอบด้วยกัน
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-lg">เริ่มต้นเลย →</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">LINE @thrivewellnessth</a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">ไธรฟ์ เวลเนส เซนเตอร์</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการตรวจสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="check-up.html">ตรวจสุขภาพเชิงลึก</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:0959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Center. All rights reserved.</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="contact.html" class="btn btn-primary">📅 นัดหมาย</a>
+    <a href="tel:0959349640" class="btn btn-navy">📞 โทรเลย</a>
+  </div>
+</div>
+<script>
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('drawer').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Center",
+      "alternateName": "ไธรฟ์ เวลเนส เซนเตอร์",
+      "url": "https://www.thrivewellnessth.com",
+      "logo": "https://www.thrivewellnessth.com/logo.png",
+      "image": "https://www.thrivewellnessth.com/og-image.jpg",
+      "description": "คลินิกสุขภาพเชิงลึกเฉพาะบุคคล เชี่ยวชาญด้านเวชศาสตร์ชะลอวัย IV Drip HBOT NAD+ Therapy และการตรวจสุขภาพเฉพาะบุคคล",
+      "telephone": "+66-95-934-9640",
+      "email": "info@thrivewellnessth.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา",
+        "addressLocality": "กรุงเทพมหานคร",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.8078,
+        "longitude": 100.6073
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "19:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/thrivewellnessth",
+        "https://www.instagram.com/thrivewellnessth",
+        "https://www.youtube.com/@thrivewellnessth"
+      ],
+      "priceRange": "฿฿฿",
+      "currenciesAccepted": "THB",
+      "paymentAccepted": "Cash, Credit Card",
+      "medicalSpecialty": [
+        "Anti-Aging Medicine",
+        "Functional Medicine",
+        "Preventive Medicine"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "NAD+ Therapy"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "IV Drip"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "HBOT Hyperbaric Oxygen Therapy"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Food Intolerance IgG Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Hormone Balance Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "NK Cell Cancer Screening"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "DNA Health & Life Genomics"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Health Architect",
+      "description": "บริการออกแบบโปรแกรมสุขภาพเฉพาะบุคคลครบวงจร วิเคราะห์เชิงลึก สร้าง Health Blueprint ติดตามผลต่อเนื่อง",
+      "provider": {
+        "@id": "https://www.thrivewellnessth.com/#clinic"
+      },
+      "serviceType": "Personalized Health Program Design",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Health Blueprint",
+          "price": "0",
+          "priceCurrency": "THB",
+          "description": "ปรึกษาแพทย์ฟรี ไม่มีค่าใช้จ่าย"
+        },
+        {
+          "@type": "Offer",
+          "name": "Comprehensive Design",
+          "price": "12500",
+          "priceCurrency": "THB"
+        },
+        {
+          "@type": "Offer",
+          "name": "Elite Health System",
+          "price": "38000",
+          "priceCurrency": "THB",
+          "description": "ราคาต่อปี"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Bangkok"
+      },
+      "availableLanguage": [
+        "Thai",
+        "English"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://www.thrivewellnessth.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Health Architect",
+          "item": "https://www.thrivewellnessth.com/health-architect"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Center",
+      "alternateName": "ไธรฟ์ เวลเนส เซนเตอร์",
+      "url": "https://www.thrivewellnessth.com",
+      "logo": "https://www.thrivewellnessth.com/logo.png",
+      "image": "https://www.thrivewellnessth.com/og-image.jpg",
+      "description": "คลินิกสุขภาพเชิงลึกเฉพาะบุคคล เชี่ยวชาญด้านเวชศาสตร์ชะลอวัย IV Drip HBOT NAD+ Therapy และการตรวจสุขภาพเฉพาะบุคคล",
+      "telephone": "+66-95-934-9640",
+      "email": "info@thrivewellnessth.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา",
+        "addressLocality": "กรุงเทพมหานคร",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.8078,
+        "longitude": 100.6073
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "19:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/thrivewellnessth",
+        "https://www.instagram.com/thrivewellnessth",
+        "https://www.youtube.com/@thrivewellnessth"
+      ],
+      "priceRange": "฿฿฿",
+      "currenciesAccepted": "THB",
+      "paymentAccepted": "Cash, Credit Card",
+      "medicalSpecialty": [
+        "Anti-Aging Medicine",
+        "Functional Medicine",
+        "Preventive Medicine"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "NAD+ Therapy"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "IV Drip"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "HBOT Hyperbaric Oxygen Therapy"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Food Intolerance IgG Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Hormone Balance Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "NK Cell Cancer Screening"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "DNA Health & Life Genomics"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Health Architect",
+      "description": "บริการออกแบบโปรแกรมสุขภาพเฉพาะบุคคลครบวงจร วิเคราะห์เชิงลึก สร้าง Health Blueprint ติดตามผลต่อเนื่อง",
+      "provider": {
+        "@id": "https://www.thrivewellnessth.com/#clinic"
+      },
+      "serviceType": "Personalized Health Program Design",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Health Blueprint",
+          "price": "0",
+          "priceCurrency": "THB",
+          "description": "ปรึกษาแพทย์ฟรี ไม่มีค่าใช้จ่าย"
+        },
+        {
+          "@type": "Offer",
+          "name": "Comprehensive Design",
+          "price": "12500",
+          "priceCurrency": "THB"
+        },
+        {
+          "@type": "Offer",
+          "name": "Elite Health System",
+          "price": "38000",
+          "priceCurrency": "THB",
+          "description": "ราคาต่อปี"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Bangkok"
+      },
+      "availableLanguage": [
+        "Thai",
+        "English"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://www.thrivewellnessth.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Health Architect",
+          "item": "https://www.thrivewellnessth.com/health-architect"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</body>
+</html>

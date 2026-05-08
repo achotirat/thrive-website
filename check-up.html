@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    .checkup-hero { background: linear-gradient(135deg, #071520 0%, #0d2a4a 50%, #1a3a6a 100%); }
+    .test-card { background: var(--white); border-radius: var(--r-xl); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 28px; transition: all .28s; }
+    .test-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--teal); }
+    .test-icon { font-size: 2rem; margin-bottom: 12px; }
+    .test-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-family: var(--font-en); }
+    .test-desc { font-size: .875rem; color: var(--text-2); line-height: 1.75; }
+    .test-badge { display: inline-block; margin-top: 12px; padding: 4px 12px; background: var(--teal-l); color: var(--teal-d); border-radius: var(--r-pill); font-size: .72rem; font-weight: 700; font-family: var(--font-en); }
+    .category-header { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+    .category-icon-big { width: 52px; height: 52px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .process-step { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); }
+    .step-num-circle { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-en); font-size: 1.1rem; flex-shrink: 0; }
+  </style>
+
+  <!-- SEO Core -->
+  <title>ตรวจสุขภาพเชิงลึก Bangkok | Food IgG DNA ฮอร์โมน NK Cell | Thrive Wellness</title>
+  <meta name="description" content="ตรวจสุขภาพเชิงลึกเฉพาะบุคคล ภูมิแพ้อาหารแฝง IgG, สมดุลฮอร์โมน, DNA, NK Cell, Oligoscan, Urine Organic ออกแบบโปรแกรมตามร่างกายคุณ ปรึกษาฟรี">
+  <meta name="keywords" content="ตรวจสุขภาพเชิงลึก, Food Intolerance IgG, ตรวจฮอร์โมน, NK Cell, DNA Health, Oligoscan Bangkok">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Thrive Wellness Center">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/check-up">
+  <meta name="language" content="th">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/check-up">
+  <meta property="og:title" content="ตรวจสุขภาพเชิงลึก Bangkok | Food IgG DNA ฮอร์โมน NK Cell | Thrive Wellness">
+  <meta property="og:description" content="ตรวจสุขภาพเชิงลึกเฉพาะบุคคล ภูมิแพ้อาหารแฝง IgG สมดุลฮอร์โมน DNA NK Cell Oligoscan Urine Organic ออกแบบโปรแกรมตามร่างกายคุณ">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Center">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ตรวจสุขภาพเชิงลึก Bangkok | Thrive Wellness">
+  <meta name="twitter:description" content="ตรวจสุขภาพเชิงลึกเฉพาะบุคคล Food IgG ฮอร์โมน DNA NK Cell ปรึกษาฟรี">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok">
+  <meta name="geo.position" content="13.8078;100.6073">
+  <meta name="ICBM" content="13.8078, 100.6073">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:0959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:30</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div>
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#glutathione"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link active">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link">HBOT</a>
+      <a href="health-architect.html" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link">คลังความรู้</a>
+      <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;background:var(--navy-xl);color:var(--navy);font-weight:600;">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="page-hero checkup-hero">
+  <div class="container">
+    <div class="breadcrumb" style="margin-bottom:24px;">
+      <a href="index.html">หน้าแรก</a>
+      <span>ตรวจสุขภาพเชิงลึก</span>
+    </div>
+    <div class="page-hero__label">HEALTH CHECK-UP</div>
+    <h1 class="page-hero__title">ตรวจแล้วรู้จริง ไม่ใช่แค่รู้ว่า "ปกติ"</h1>
+    <p class="page-hero__subtitle">ผลแล็บกองหนึ่งที่อ่านไม่รู้เรื่องไม่ใช่คำตอบ — แพทย์เราจะอ่านให้เข้าใจ หาต้นตอให้เจอ และบอกว่าต้องทำอะไรต่อ</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+      <a href="contact.html" class="btn btn-primary btn-lg">📅 นัดตรวจเลย</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">LINE ถามแพทย์</a>
+    </div>
+  </div>
+</div>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-bar__item"><span class="trust-bar__icon">🔬</span><span>แล็บมาตรฐานสากล</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">👤</span><span>ออกแบบเฉพาะบุคคล</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">👨‍⚕️</span><span>แพทย์วิเคราะห์ผล</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">📊</span><span>รายงานละเอียด</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">🤝</span><span>ติดตามผลต่อเนื่อง</span></div>
+  </div>
+</div>
+
+<!-- Intro -->
+<section class="section section--white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div class="section-label">WHY DEEP CHECK-UP?</div>
+        <h2 style="margin-bottom:20px;">เคยตรวจสุขภาพแล้วได้ยินว่า "ปกติ" แต่ยังรู้สึกไม่ดีอยู่ไหม?</h2>
+        <p style="color:var(--text-2);line-height:1.8;font-size:1.05rem;">การตรวจสุขภาพทั่วไปบอกได้แค่ว่า "ไม่เป็นโรค" — แต่ไม่ได้บอกว่าทำไมคุณถึงเหนื่อยง่าย นอนไม่หลับ หรือน้ำหนักขึ้นทั้งที่กินน้อยแล้ว การตรวจเชิงลึกคือการ<strong>ค้นหาต้นตอที่แท้จริง</strong>ในระดับเซลล์ เพื่อให้รู้ว่าต้องแก้อะไร ไม่ใช่แค่รู้ว่า "ยังไม่ตาย"</p>
+      </div>
+      <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);">
+        <img src="image/Thrive_Wellness_Checkup.jpg" alt="ตรวจสุขภาพเชิงลึก Thrive Wellness Center" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Immune & Allergy -->
+<section class="section section--cream" id="igg">
+  <div class="container">
+    <div class="category-header">
+      <div class="category-icon-big" style="background:var(--teal-l);">🔬</div>
+      <div>
+        <div class="section-label" style="margin-bottom:4px;">IMMUNITY</div>
+        <h2 style="margin:0;">ภูมิแพ้ & ระบบภูมิคุ้มกัน</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="test-card reveal">
+        <div class="test-icon">🥕</div>
+        <div class="test-name">Food Intolerance IgG 216</div>
+        <div class="test-desc">ตรวจภูมิแพ้อาหารแฝงจากเลือด ค้นพบอาหารที่ร่างกายไม่ยอมรับในระดับลึก เช่น ปวดศีรษะเรื้อรัง ท้องอืด ผื่น และลดน้ำหนักไม่ลง</div>
+        <span class="test-badge">POPULAR</span>
+      </div>
+      <div class="test-card reveal" id="ige">
+        <div class="test-icon">⚡</div>
+        <div class="test-name">ภูมิแพ้เฉียบพลัน IgE</div>
+        <div class="test-desc">ตรวจหาภูมิแพ้อาหารที่เกิดขึ้นทันทีและรุนแรง เช่น แพ้นม แพ้ถั่วลิสง แพ้อาหารทะเล เพื่อหลีกเลี่ยงอาการรุนแรง</div>
+        <span class="test-badge">ALLERGY</span>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-icon">🛡️</div>
+        <div class="test-name">ระบบภูมิคุ้มกัน (Immunity Panel)</div>
+        <div class="test-desc">ตรวจวัดความแข็งแรงของระบบภูมิคุ้มกันโดยรวม เพื่อวางแผนการเสริมสร้างสุขภาพระยะยาว</div>
+        <span class="test-badge">IMMUNITY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hormones -->
+<section class="section section--white" id="hormones">
+  <div class="container">
+    <div class="category-header">
+      <div class="category-icon-big" style="background:var(--navy-l);">⚗️</div>
+      <div>
+        <div class="section-label" style="margin-bottom:4px;">HORMONES</div>
+        <h2 style="margin:0;">ฮอร์โมน & ต่อมไร้ท่อ</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="test-card reveal">
+        <div class="test-icon">💜</div>
+        <div class="test-name">สมดุลฮอร์โมน (Hormone Balance)</div>
+        <div class="test-desc">ระดับฮอร์โมนเปลี่ยนแปลงเมื่ออายุมากขึ้น ก่อให้เกิดอาการผิดปกติ เช่น เผาผลาญลดลง ผิวเหี่ยวย่น มวลกล้ามเนื้อลด ความจำลดลง</div>
+        <span class="test-badge">POPULAR</span>
+      </div>
+      <div class="test-card reveal" id="adrenal">
+        <div class="test-icon">😓</div>
+        <div class="test-name">ต่อมหมวกไตล้า (Adrenal Fatigue)</div>
+        <div class="test-desc">เมื่อร่างกายเครียดสะสมเป็นเวลานาน ต่อมหมวกไตอาจเสื่อมสมรรถนะ ตรวจเพื่อวางแผนการฟื้นฟู</div>
+        <span class="test-badge">STRESS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cancer Screening -->
+<section class="section section--cream" id="cancer">
+  <div class="container">
+    <div class="category-header">
+      <div class="category-icon-big" style="background:rgba(220,50,50,.1);">🛡️</div>
+      <div>
+        <div class="section-label" style="margin-bottom:4px;">CANCER SCREENING</div>
+        <h2 style="margin:0;">ตรวจมะเร็งเชิงป้องกัน</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="test-card reveal">
+        <div class="test-icon">🔍</div>
+        <div class="test-name">ตรวจหาโรคมะเร็งเชิงป้องกัน</div>
+        <div class="test-desc">การตรวจหามะเร็งในระยะเริ่มแรก เพิ่มโอกาสในการรักษาและหายได้มากที่สุด การตรวจเชิงป้องกันคือการลงทุนที่คุ้มค่าที่สุด</div>
+        <span class="test-badge">PREVENTION</span>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-icon">🔬</div>
+        <div class="test-name">NK Cell Activity — เซลล์เพชรฆาต</div>
+        <div class="test-desc">ตรวจวัดความสามารถของเซลล์ NK (Natural Killer Cell) ในการต่อต้านเซลล์มะเร็งและการติดเชื้อ NK Cell ต่ำหมายถึงภูมิคุ้มกันอ่อนแอ</div>
+        <span class="test-badge">NK CELL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vitamins & Gut -->
+<section class="section section--white" id="vitamins">
+  <div class="container">
+    <div class="category-header">
+      <div class="category-icon-big" style="background:var(--teal-l);">💊</div>
+      <div>
+        <div class="section-label" style="margin-bottom:4px;">NUTRITION & GUT</div>
+        <h2 style="margin:0;">วิตามิน ลำไส้ & เผาผลาญ</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="test-card reveal">
+        <div class="test-icon">💊</div>
+        <div class="test-name">วิตามิน & สารต้านอนุมูลอิสระ</div>
+        <div class="test-desc">ตรวจระดับวิตามินและแร่ธาตุ 10–20 รายการ และสารต้านอนุมูลอิสระที่จำเป็น เพื่อสร้างสมดุลร่างกายที่ดีอย่างแม่นยำ</div>
+        <span class="test-badge">NUTRITION</span>
+      </div>
+      <div class="test-card reveal" id="urine">
+        <div class="test-icon">🧪</div>
+        <div class="test-name">Urine Organic Acid Test</div>
+        <div class="test-desc">ตรวจสอบสมดุลลำไส้และบ่งบอกระบบเผาผลาญ ความสามารถในการสร้างพลังงาน และภาวะ Leaky Gut</div>
+        <span class="test-badge">GUT HEALTH</span>
+      </div>
+      <div class="test-card reveal" id="oligoscan">
+        <div class="test-icon">📊</div>
+        <div class="test-name">Oligoscan — โลหะหนัก</div>
+        <div class="test-desc">หากรู้สึกเหนื่อยล้า อ่อนเพลียเรื้อรัง อาจเกิดจากโลหะหนักสะสม Oligoscan วิเคราะห์โลหะหนักและแร่ธาตุในร่างกายแบบไม่ต้องเจาะเลือด</div>
+        <span class="test-badge">DETOX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Special Tests -->
+<section class="section section--cream" id="dna">
+  <div class="container">
+    <div class="category-header">
+      <div class="category-icon-big" style="background:var(--navy-l);">🧬</div>
+      <div>
+        <div class="section-label" style="margin-bottom:4px;">SPECIAL TESTS</div>
+        <h2 style="margin:0;">การตรวจพิเศษ</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="test-card reveal">
+        <div class="test-icon">🧬</div>
+        <div class="test-name">DNA: Health & Life Genomics</div>
+        <div class="test-desc">พันธุกรรมเปรียบเสมือนพิมพ์เขียวชีวิต บอกระดับเผาผลาญ ความต้องการสารอาหาร การตอบสนองต่อการออกกำลัง การนอน และโอกาสเกิดโรค</div>
+        <span class="test-badge">DNA</span>
+      </div>
+      <div class="test-card reveal" id="family">
+        <div class="test-icon">👶</div>
+        <div class="test-name">วางแผนมีบุตร (Family Planning)</div>
+        <div class="test-desc">เตรียมพร้อมก่อนตั้งครรภ์ด้วยการตรวจเชิงลึก ตรวจฮอร์โมน สารอาหาร และภาวะที่อาจส่งผลต่อการตั้งครรภ์</div>
+        <span class="test-badge">WOMEN</span>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-icon">🧴</div>
+        <div class="test-name">Acne Solution — Clear Skin</div>
+        <div class="test-desc">ตรวจหาต้นตอการเกิดสิวที่แท้จริง ทั้งจากฮอร์โมน อาหาร และสภาวะภูมิคุ้มกัน เพื่อการรักษาที่ตรงจุดและมีประสิทธิภาพ</div>
+        <span class="test-badge">SKIN</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">HOW IT WORKS</div>
+      <h2>ตรวจกับเรา ขั้นตอนง่ายกว่าที่คิด</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
+      <div class="process-step reveal">
+        <div class="step-num-circle">1</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">ปรึกษาแพทย์ฟรี</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">แพทย์จะพูดคุยเกี่ยวกับอาการ เป้าหมาย และประวัติสุขภาพ เพื่อออกแบบแพ็กเกจตรวจที่เหมาะสมกับคุณโดยเฉพาะ</div>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num-circle">2</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">เข้ารับการตรวจ</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">เจาะเลือด ตรวจปัสสาวะ หรือ Oligoscan ตามแพ็กเกจที่กำหนด ใช้เวลาไม่นาน สะดวกสบาย</div>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num-circle">3</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">รับผลและวิเคราะห์กับแพทย์</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">แพทย์อ่านผลและอธิบายความหมายทุกรายการ พร้อมออกแบบแผนสุขภาพที่เหมาะสม</div>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num-circle">4</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">ติดตามผลต่อเนื่อง</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.7;">เราไม่ทิ้งกลางทาง ดูแลติดตามผล ปรับแผน และตรวจซ้ำตามความเหมาะสมระยะยาว</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">REVIEWS</div>
+      <h2>คนที่ตรวจกับเราบอกว่าอะไร?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-l);box-shadow:var(--sh-sm);padding:28px;" class="reveal">
+        <div style="color:var(--teal);font-size:1.1rem;margin-bottom:12px;">★★★★★</div>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.8;margin-bottom:16px;">"ตรวจ IgG แล้วพบว่าแพ้นม ไข่ และข้าวสาลีแบบซ่อนเร้น หลังจากเลี่ยงอาหารเหล่านั้น ปวดหัวเรื้อรัง 5 ปีหายไปภายใน 3 สัปดาห์ ไม่เชื่อถ้าไม่ได้ลอง"</p>
+        <div style="font-weight:600;color:var(--navy);font-size:.875rem;">คุณพิม — อายุ 34 ปี</div>
+        <div style="font-size:.78rem;color:var(--text-3);">Food IgG Test</div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-l);box-shadow:var(--sh-sm);padding:28px;" class="reveal">
+        <div style="color:var(--teal);font-size:1.1rem;margin-bottom:12px;">★★★★★</div>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.8;margin-bottom:16px;">"ตรวจฮอร์โมนครั้งแรกตอนอายุ 42 แล้วพบว่าฮอร์โมนเพศชายต่ำมากทั้งที่รู้สึก 'ปกติ' หลังปรับสมดุลกับแพทย์ พลังงานเพิ่มขึ้น หัวใสขึ้น นอนหลับดีขึ้นชัดเจน"</p>
+        <div style="font-weight:600;color:var(--navy);font-size:.875rem;">คุณวีระ — อายุ 43 ปี</div>
+        <div style="font-size:.78rem;color:var(--text-3);">Hormone Balance Test</div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-l);box-shadow:var(--sh-sm);padding:28px;" class="reveal">
+        <div style="color:var(--teal);font-size:1.1rem;margin-bottom:12px;">★★★★★</div>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.8;margin-bottom:16px;">"ทำ DNA Health Test แล้วพบว่ามีความเสี่ยงเรื่องหัวใจจากกรรมพันธุ์ แพทย์ช่วยวางแผนป้องกันได้ตรงจุดมาก รู้สึกว่าเราควบคุมสุขภาพตัวเองได้มากขึ้นจริงๆ"</p>
+        <div style="font-weight:600;color:var(--navy);font-size:.875rem;">คุณนุ่น — อายุ 38 ปี</div>
+        <div style="font-size:.78rem;color:var(--text-3);">DNA Health & Life Genomics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">FAQ</div>
+      <h2>คำถามที่พบบ่อย</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;">
+      <div class="faq-item">
+        <button class="faq-question">ตรวจ Food IgG ต่างจากการแพ้ IgE อย่างไร?</button>
+        <div class="faq-answer"><p>IgE คือปฏิกิริยาแพ้ที่เกิดขึ้นทันที (Acute Allergy) เช่น แพ้กุ้ง มีผื่นขึ้นทันที ส่วน IgG คือความไม่ทนต่ออาหาร (Food Intolerance) ที่เกิดขึ้นช้า 2–72 ชั่วโมงหลังกิน เป็นสาเหตุของปัญหาเรื้อรัง เช่น ปวดหัว ท้องอืด อ่อนเพลีย</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">ใครควรตรวจ Hormone Test?</button>
+        <div class="faq-answer"><p>เหมาะสำหรับผู้ที่มีอาการเหนื่อยง่าย นอนไม่หลับ น้ำหนักขึ้นง่าย ผิวเหี่ยวย่นเร็ว สำหรับผู้หญิงใกล้หมดประจำเดือน ผู้ชายสูงอายุ หรือทุกคนที่ต้องการดูแลสุขภาพเชิงลึก</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">DNA Health Test บอกอะไรได้บ้าง?</button>
+        <div class="faq-answer"><p>DNA Test บอกความเสี่ยงต่อโรคมะเร็ง โรคหัวใจ เบาหวาน รูปแบบการดูดซึมวิตามิน การตอบสนองต่อการออกกำลังกาย คุณภาพการนอน และยีนที่มีผลต่อสุขภาพระยะยาว ช่วยให้วางแผนป้องกันได้ก่อนเกิดโรค</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">NK Cell Test ใช้เพื่ออะไร?</button>
+        <div class="faq-answer"><p>NK Cell (Natural Killer Cell) คือเซลล์อาวุธในร่างกายที่ทำลายเซลล์มะเร็งและเชื้อโรค ถ้า NK Cell ต่ำ หมายถึงภูมิคุ้มกันอ่อนแอและเสี่ยงต่อโรคมากขึ้น การตรวจช่วยให้วางแผนเสริมภูมิคุ้มกันได้ตรงจุด</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">ต้องงดอาหารก่อนตรวจไหม?</button>
+        <div class="faq-answer"><p>ขึ้นอยู่กับประเภทการตรวจ บางรายการต้องงดอาหาร 8–12 ชั่วโมง แพทย์จะแจ้งรายละเอียดการเตรียมตัวล่วงหน้าหลังจากนัดหมาย</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--white" style="text-align:center;">
+  <div class="container">
+    <h2 style="margin-bottom:8px;">บอกแพทย์ว่ากังวลเรื่องอะไร — เราจะออกแบบการตรวจให้</h2>
+    <p style="margin-bottom:32px;color:var(--text-2);">ไม่ต้องรู้ชื่อโปรแกรม ไม่ต้องตัดสินใจเอง — แค่บอกอาการหรือสิ่งที่กังวล แพทย์จะแนะนำการตรวจที่ตรงที่สุดสำหรับคุณ ปรึกษาฟรี ไม่มีข้อผูกมัด</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-lg">📅 นัดปรึกษาแพทย์ฟรี</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-lg" style="border:2px solid var(--navy);color:var(--navy);background:transparent;">LINE @thrivewellnessth</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">ไธรฟ์ เวลเนส เซนเตอร์</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการตรวจสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="check-up.html">ตรวจสุขภาพเชิงลึก</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:0959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Center. สงวนลิขสิทธิ์</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="contact.html" class="btn btn-primary">📅 นัดหมาย</a>
+    <a href="tel:0959349640" class="btn btn-navy">📞 โทรเลย</a>
+  </div>
+</div>
+<script>
+function toggleDrawer(){
+  document.getElementById("drawer").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("open");
+  document.body.style.overflow=document.getElementById("drawer").classList.contains("open")?"hidden":"";
+}
+window.addEventListener("scroll",()=>{
+  document.getElementById("navbar").classList.toggle("scrolled",window.scrollY>40);
+});
+document.querySelectorAll(".reveal").forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add("visible");},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>btn.closest(".faq-item").classList.toggle("open"));
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalTest",
+      "name": "Deep Health Check-Up",
+      "alternateName": "ตรวจสุขภาพเชิงลึก",
+      "url": "https://www.thrivewellnessth.com/check-up",
+      "description": "การตรวจสุขภาพเชิงลึกเฉพาะบุคคล ค้นหาต้นตอแท้จริงของปัญหาสุขภาพในระดับเซลล์",
+      "usedToDiagnose": [
+        {"@type": "MedicalCondition", "name": "Food Intolerance"},
+        {"@type": "MedicalCondition", "name": "Hormone Imbalance"},
+        {"@type": "MedicalCondition", "name": "Heavy Metal Toxicity"},
+        {"@type": "MedicalCondition", "name": "Vitamin Deficiency"}
+      ],
+      "performer": {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Center"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ตรวจ Food IgG ต่างจากการแพ้ IgE อย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "IgE คือปฏิกิริยาแพ้ที่เกิดขึ้นทันที ส่วน IgG คือความไม่ทนต่ออาหารที่เกิดขึ้นช้า 2-72 ชั่วโมง เป็นสาเหตุของปัญหาเรื้อรัง เช่น ปวดหัว ท้องอืด อ่อนเพลีย"}
+        },
+        {
+          "@type": "Question",
+          "name": "ใครควรตรวจ Hormone Test?",
+          "acceptedAnswer": {"@type": "Answer", "text": "เหมาะสำหรับผู้ที่มีอาการเหนื่อยง่าย นอนไม่หลับ น้ำหนักขึ้นง่าย ผู้หญิงใกล้หมดประจำเดือน ผู้ชายสูงอายุ หรือทุกคนที่ต้องการดูแลสุขภาพเชิงลึก"}
+        },
+        {
+          "@type": "Question",
+          "name": "DNA Health Test บอกอะไรได้บ้าง?",
+          "acceptedAnswer": {"@type": "Answer", "text": "บอกความเสี่ยงต่อโรคมะเร็ง โรคหัวใจ เบาหวาน รูปแบบดูดซึมวิตามิน การตอบสนองต่อการออกกำลัง และคุณภาพการนอน ช่วยวางแผนป้องกันก่อนเกิดโรค"}
+        },
+        {
+          "@type": "Question",
+          "name": "NK Cell Test ใช้เพื่ออะไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "NK Cell เป็นเซลล์ภูมิคุ้มกันที่ทำลายเซลล์มะเร็ง ถ้า NK Cell ต่ำหมายถึงภูมิคุ้มกันอ่อนแอ การตรวจช่วยวางแผนเสริมภูมิคุ้มกันได้ตรงจุด"}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/"},
+        {"@type": "ListItem", "position": 2, "name": "ตรวจสุขภาพเชิงลึก", "item": "https://www.thrivewellnessth.com/check-up"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

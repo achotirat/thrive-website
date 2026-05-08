@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    .about-hero { background: linear-gradient(135deg, #0f1328 0%, #1e2460 55%, #2d358c 100%); }
+    .mission-card { background: var(--white); border-radius: var(--r-xl); padding: 40px; border: 1px solid var(--border-l); box-shadow: var(--sh-sm); text-align: center; }
+    .mission-icon { font-size: 3rem; margin-bottom: 16px; }
+    .mission-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; font-family: var(--font-en); }
+    .mission-desc { font-size: .9rem; color: var(--text-2); line-height: 1.75; }
+    .doctor-card { background: var(--white); border-radius: var(--r-xl); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); overflow: hidden; transition: all .28s; }
+    .doctor-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
+    .doctor-avatar { height: 260px; overflow: hidden; }
+    .doctor-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .doctor-body { padding: 28px; }
+    .doctor-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; font-family: var(--font-en); }
+    .doctor-title { font-size: .82rem; color: var(--teal); font-weight: 600; font-family: var(--font-en); margin-bottom: 12px; }
+    .doctor-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; margin-bottom: 16px; }
+    .doctor-specialty { display: flex; flex-wrap: wrap; gap: 6px; }
+    .specialty-tag { padding: 4px 10px; background: var(--teal-l); color: var(--teal-d); border-radius: var(--r-pill); font-size: .72rem; font-weight: 600; font-family: var(--font-en); }
+    .timeline-item { display: flex; gap: 24px; margin-bottom: 32px; }
+    .timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 4px; position: relative; }
+    .timeline-dot::after { content: ''; position: absolute; left: 7px; top: 16px; width: 2px; height: calc(100% + 20px); background: var(--border); }
+    .timeline-item:last-child .timeline-dot::after { display: none; }
+    .timeline-year { font-family: var(--font-en); font-weight: 700; color: var(--teal); font-size: .85rem; margin-bottom: 4px; }
+    .timeline-title { font-weight: 600; color: var(--navy); margin-bottom: 6px; font-size: .95rem; }
+    .timeline-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; }
+    .location-card { background: var(--white); border-radius: var(--r-xl); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 36px; }
+    .loc-info { display: flex; flex-direction: column; gap: 16px; }
+    .loc-row { display: flex; align-items: flex-start; gap: 14px; }
+    .loc-icon { width: 40px; height: 40px; background: var(--teal-l); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .loc-label { font-size: .75rem; font-weight: 700; color: var(--teal); font-family: var(--font-en); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+    .loc-value { font-size: .9rem; color: var(--text-2); line-height: 1.6; }
+    .map-placeholder { background: linear-gradient(135deg, var(--navy-l), var(--teal-l)); border-radius: var(--r-lg); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--navy); font-size: .9rem; border: 2px dashed var(--border); }
+    .transport-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: var(--r-md); background: var(--navy-xl); margin-bottom: 10px; }
+    .transport-icon { width: 36px; height: 36px; background: var(--navy); color: white; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    @media(max-width:768px){ .timeline-item { flex-direction: column; gap: 8px; } }
+  </style>
+
+  <!-- SEO Core -->
+  <title>เกี่ยวกับเรา | Thrive Wellness Center คลินิกสุขภาพเอกมัย-รามอินทรา</title>
+  <meta name="description" content="Thrive Wellness Center คลินิกสุขภาพเชิงลึกเฉพาะบุคคล ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เชี่ยวชาญเวชศาสตร์ชะลอวัย ดูแลสุขภาพแบบองค์รวมระดับเซลล์">
+  <meta name="keywords" content="Thrive Wellness Center, คลินิกสุขภาพ เอกมัย, คลินิกชะลอวัย กรุงเทพ, เดอะคริสตัล เอกมัย">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Thrive Wellness Center">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/about">
+  <meta name="language" content="th">
+
+  <!-- Open Graph (Facebook, Line, etc.) -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/about">
+  <meta property="og:title" content="เกี่ยวกับเรา | Thrive Wellness Center คลินิกสุขภาพเอกมัย-รามอินทรา">
+  <meta property="og:description" content="Thrive Wellness Center คลินิกสุขภาพเชิงลึกเฉพาะบุคคล ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เชี่ยวชาญเวชศาสตร์ชะลอวัย ดูแลสุขภาพแบบองค์รวมระดับเซลล์">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Center">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="เกี่ยวกับเรา | Thrive Wellness Center คลินิกสุขภาพเอกมัย-รามอินทรา">
+  <meta name="twitter:description" content="Thrive Wellness Center คลินิกสุขภาพเชิงลึกเฉพาะบุคคล ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เชี่ยวชาญเวชศาสตร์ชะลอวัย ดูแลสุขภาพแบบองค์รวมระดับเซลล์">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok">
+  <meta name="geo.position" content="13.8078;100.6073">
+  <meta name="ICBM" content="13.8078, 100.6073">
+  </head>
+<body>
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:0959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:30</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div><nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#glutathione"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link">HBOT</a>
+      <a href="health-architect.html" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link">คลังความรู้</a>
+      <a href="about.html" class="nav-link  active">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);background:var(--navy-xl);color:var(--navy);font-weight:600;">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+  <div class="page-hero about-hero">
+    <div class="container">
+      <div class="breadcrumb" style="margin-bottom:24px;">
+        <a href="index.html">หน้าแรก</a>
+        <span>เกี่ยวกับเรา</span>
+      </div>
+      <div class="page-hero__label">ABOUT US</div>
+      <h1 class="page-hero__title">เกี่ยวกับ Thrive Wellness Center</h1>
+      <p class="page-hero__subtitle">ไธรฟ์ เวลเนส เซนเตอร์ — คลินิกสุขภาพเชิงลึกที่เชื่อว่าการดูแลสุขภาพที่ดีที่สุดคือการรู้จักร่างกายตัวเองอย่างแท้จริง</p>
+    </div>
+  </div>
+
+  <!-- Philosophy Section -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:48px;">
+        <div class="section-label">OUR PHILOSOPHY</div>
+        <h2>เราเชื่ออะไร?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
+        <div class="mission-card reveal">
+          <div class="mission-icon">🔬</div>
+          <div class="mission-title">วิทยาศาสตร์เป็นรากฐาน</div>
+          <div class="mission-desc">เราใช้ข้อมูลเชิงลึกจากการตรวจวิเคราะห์มาตรฐานสากล ไม่เดา ไม่สันนิษฐาน ให้วิทยาศาสตร์บอก</div>
+        </div>
+        <div class="mission-card reveal">
+          <div class="mission-icon">👤</div>
+          <div class="mission-title">เฉพาะบุคคลคือหัวใจ</div>
+          <div class="mission-desc">ร่างกายทุกคนไม่เหมือนกัน โปรแกรมที่ดีที่สุดจึงต้องออกแบบมาเพื่อคุณโดยเฉพาะ ไม่ใช่สูตรสำเร็จรูป</div>
+        </div>
+        <div class="mission-card reveal">
+          <div class="mission-icon">🤝</div>
+          <div class="mission-title">ดูแลระยะยาวคือเป้าหมาย</div>
+          <div class="mission-desc">เราไม่ได้แค่ตรวจแล้วจบ แต่ร่วมเดินทางด้านสุขภาพกับคุณในระยะยาว</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Thrive Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;">
+        <div>
+          <h2 style="margin-bottom:24px;">เกี่ยวกับ Thrive</h2>
+          <p style="margin-bottom:16px;line-height:1.8;color:var(--text-2);">Thrive Wellness Center ก่อตั้งขึ้นด้วยความเชื่อว่าการดูแลสุขภาพเชิงลึกในระดับเซลล์ควรเข้าถึงได้สำหรับทุกคน ไม่ใช่เพียงแค่เรื่องของดารา เซเลบ หรือผู้มีอันจะกิน</p>
+          <p style="margin-bottom:16px;line-height:1.8;color:var(--text-2);">เราเชี่ยวชาญด้านเวชศาสตร์ชะลอวัย (Anti-Aging Medicine) และการออกแบบโปรแกรมสุขภาพเฉพาะบุคคล ทั้ง IV Drip, HBOT, การตรวจสุขภาพเชิงลึก และ Health Architect — บริการที่ถูกออกแบบมาเพื่อตอบโจทย์ไลฟ์สไตล์ของคุณโดยเฉพาะ</p>
+          <p style="line-height:1.8;color:var(--text-2);">ที่ตั้งของเราที่ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา ถูกเลือกเพื่อให้ลูกค้าเข้าถึงได้สะดวก ในบรรยากาศที่สงบ ผ่อนคลาย และเป็นส่วนตัว</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:var(--navy);color:white;border-radius:var(--r-lg);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;font-weight:700;font-family:var(--font-en);margin-bottom:4px;">10+</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.8);">ปี ประสบการณ์</div>
+          </div>
+          <div style="background:var(--navy);color:white;border-radius:var(--r-lg);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;font-weight:700;font-family:var(--font-en);margin-bottom:4px;">5,000+</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.8);">คน ได้รับการดูแล</div>
+          </div>
+          <div style="background:var(--teal);color:white;border-radius:var(--r-lg);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;font-weight:700;font-family:var(--font-en);margin-bottom:4px;">20+</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.8);">โปรแกรม เฉพาะบุคคล</div>
+          </div>
+          <div style="background:var(--teal);color:white;border-radius:var(--r-lg);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;font-weight:700;font-family:var(--font-en);margin-bottom:4px;">★ 4.9/5</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.8);">คะแนนรีวิว</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:48px;">
+        <div class="section-label">OUR TEAM</div>
+        <h2>ดูแลโดยแพทย์เชี่ยวชาญ</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:24px;">
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar"><img src="image/Thrive-Wellness-แนะนำคุณหมอ-1x1-011.jpg" alt="แพทย์เวชศาสตร์ชะลอวัย Thrive Wellness" loading="lazy"></div>
+          <div class="doctor-body">
+            <div class="doctor-name">พญ. [แพทย์ผู้เชี่ยวชาญ]</div>
+            <div class="doctor-title">แพทย์เวชศาสตร์ชะลอวัย</div>
+            <div class="doctor-desc">เชี่ยวชาญด้านการออกแบบโปรแกรมสุขภาพเฉพาะบุคคล การวิเคราะห์ผลแล็บเชิงลึก และ IV Therapy สำหรับ Anti-Aging และ Longevity Wellness</div>
+            <div class="doctor-specialty">
+              <span class="specialty-tag">Anti-Aging Medicine</span>
+              <span class="specialty-tag">IV Therapy</span>
+              <span class="specialty-tag">Longevity</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar"><img src="image/Thrive-Wellness-แนะนำคุณหมอ-1x1-033.jpg" alt="แพทย์เวชศาสตร์ฮอร์โมน Thrive Wellness" loading="lazy"></div>
+          <div class="doctor-body">
+            <div class="doctor-name">พญ. [แพทย์ผู้เชี่ยวชาญ]</div>
+            <div class="doctor-title">แพทย์เวชศาสตร์ฮอร์โมน</div>
+            <div class="doctor-desc">เชี่ยวชาญด้านการวินิจฉัยและรักษาภาวะฮอร์โมนไม่สมดุล สุขภาพผู้หญิง และการวางแผนสุขภาพระยะยาว</div>
+            <div class="doctor-specialty">
+              <span class="specialty-tag">Hormone Balance</span>
+              <span class="specialty-tag">Women's Health</span>
+              <span class="specialty-tag">Functional Medicine</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar"><img src="image/Thrive-Wellness-แนะนำคุณหมอ-1x1-011.jpg" alt="แพทย์เวชศาสตร์ครอบครัว Thrive Wellness" loading="lazy"></div>
+          <div class="doctor-body">
+            <div class="doctor-name">นพ. [แพทย์ผู้เชี่ยวชาญ]</div>
+            <div class="doctor-title">แพทย์เวชศาสตร์ครอบครัว</div>
+            <div class="doctor-desc">เชี่ยวชาญด้าน HBOT Oxygen Therapy การดูแลสุขภาพเชิงป้องกัน และการออกแบบโปรแกรมฟื้นฟูร่างกาย</div>
+            <div class="doctor-specialty">
+              <span class="specialty-tag">HBOT</span>
+              <span class="specialty-tag">Preventive Medicine</span>
+              <span class="specialty-tag">Family Medicine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:.85rem;color:var(--text-3);font-style:italic;">* ชื่อแพทย์จะแสดงเมื่อได้รับการยืนยันจากทางคลินิก กรุณาติดต่อสอบถามโดยตรง</p>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:48px;">
+        <div class="section-label">OUR JOURNEY</div>
+        <h2>จากความเชื่อสู่การปฏิบัติ</h2>
+      </div>
+      <div style="max-width:600px;margin:0 auto;">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">ก่อตั้ง Thrive Wellness</div>
+            <div class="timeline-desc">เปิดให้บริการครั้งแรก มุ่งเน้นการตรวจสุขภาพเชิงลึกเฉพาะบุคคล</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="timeline-year">2019</div>
+            <div class="timeline-title">เพิ่ม IV Drip Programs</div>
+            <div class="timeline-desc">เปิดตัวโปรแกรม NAD+ Chelation และ Essential Booster ครั้งแรกในไทย</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title">ขยาย Health Checkup</div>
+            <div class="timeline-desc">เพิ่มการตรวจ DNA, NK Cell, Urine Organic และโปรแกรมสุขภาพผู้หญิง</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">เปิดตัว Health Architect</div>
+            <div class="timeline-desc">บริการออกแบบสุขภาพเฉพาะบุคคลครบวงจร</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">HBOT Technology</div>
+            <div class="timeline-desc">เพิ่มเทคโนโลยี Hyperbaric Oxygen Therapy สำหรับ Longevity Wellness</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="section section--cream">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:48px;">ที่ตั้งและการเดินทาง</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <div class="location-card">
+            <div class="loc-info">
+              <div class="loc-row">
+                <div class="loc-icon">📍</div>
+                <div>
+                  <div class="loc-label">ที่อยู่</div>
+                  <div class="loc-value">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา กรุงเทพมหานคร</div>
+                </div>
+              </div>
+              <div class="loc-row">
+                <div class="loc-icon">📞</div>
+                <div>
+                  <div class="loc-label">โทรศัพท์</div>
+                  <div class="loc-value"><a href="tel:0959349640" style="color:var(--teal);text-decoration:none;">095-934-9640</a></div>
+                </div>
+              </div>
+              <div class="loc-row">
+                <div class="loc-icon">💬</div>
+                <div>
+                  <div class="loc-label">LINE</div>
+                  <div class="loc-value"><a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:var(--teal);text-decoration:none;">@thrivewellnessth</a></div>
+                </div>
+              </div>
+              <div class="loc-row">
+                <div class="loc-icon">🕐</div>
+                <div>
+                  <div class="loc-label">เวลาทำการ</div>
+                  <div class="loc-value">เปิดทุกวัน 10:00–19:30 น.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-placeholder" style="margin-top:24px;">
+            <a href="https://maps.google.com/?q=The+Crystal+Ekkamai+Ramintra" target="_blank" style="text-align:center;color:var(--navy);text-decoration:none;">
+              <div>📍 เดอะ คริสตัล เอกมัย-รามอินทรา</div>
+              <div style="font-size:.8rem;margin-top:4px;">คลิกเพื่อเปิดแผนที่ใน Google Maps</div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:24px;color:var(--navy);">การเดินทาง</h3>
+          <div class="transport-item">
+            <div class="transport-icon">🚇</div>
+            <div>
+              <div style="font-weight:600;color:var(--navy);margin-bottom:4px;font-size:.9rem;">MRT</div>
+              <div style="color:var(--text-2);font-size:.85rem;line-height:1.6;">ลงสถานีรามอินทรา กม. 4 หรือสถานีเลียบด่วนรามอินทรา ต่อวินหรือ Grab ไปเดอะ คริสตัล</div>
+            </div>
+          </div>
+          <div class="transport-item">
+            <div class="transport-icon">🚗</div>
+            <div>
+              <div style="font-weight:600;color:var(--navy);margin-bottom:4px;font-size:.9rem;">รถยนต์</div>
+              <div style="color:var(--text-2);font-size:.85rem;line-height:1.6;">ที่จอดรถฟรีบริเวณเดอะ คริสตัล เอกมัย-รามอินทรา มีพื้นที่จอดรถกว้างขวาง</div>
+            </div>
+          </div>
+          <div class="transport-item">
+            <div class="transport-icon">🛺</div>
+            <div>
+              <div style="font-weight:600;color:var(--navy);margin-bottom:4px;font-size:.9rem;">Grab/Taxi</div>
+              <div style="color:var(--text-2);font-size:.85rem;line-height:1.6;">บอก "เดอะ คริสตัล เอกมัย-รามอินทรา" แล้วขึ้นลิฟต์ชั้น 2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section section--white">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:48px;">ทำไมต้องเลือก Thrive?</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">✓</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">แพทย์เชี่ยวชาญเวชศาสตร์ชะลอวัย</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">ไม่ใช่แพทย์ทั่วไป แต่เชี่ยวชาญเฉพาะด้าน</div>
+        </div>
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">🔬</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">แล็บมาตรฐานสากล</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">ผลการตรวจแม่นยำ เชื่อถือได้</div>
+        </div>
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">👤</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">ออกแบบเฉพาะบุคคล</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">ไม่มีสูตรสำเร็จรูป ทุกโปรแกรมออกแบบเพื่อคุณ</div>
+        </div>
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">🤝</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">ไม่เร่งขาย</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">ให้ข้อมูลตรงไปตรงมา คุณตัดสินใจเอง</div>
+        </div>
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">📅</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">ติดตามผลต่อเนื่อง</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">ไม่ทิ้งกลางทาง ดูแลระยะยาว</div>
+        </div>
+        <div class="reveal" style="text-align:center;padding:24px;">
+          <div style="font-size:2rem;margin-bottom:12px;">📍</div>
+          <div style="font-weight:600;color:var(--navy);margin-bottom:8px;">ทำเลสะดวก</div>
+          <div style="color:var(--text-2);font-size:.875rem;line-height:1.7;">กลางเมือง ที่จอดรถฟรี บรรยากาศสงบ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Banner -->
+  <section class="section section--cream" style="text-align:center;">
+    <div class="container">
+      <h2 style="margin-bottom:8px;">พร้อมเริ่มต้นดูแลสุขภาพกับเราแล้วหรือยัง?</h2>
+      <p style="margin-bottom:32px;color:var(--text-2);font-size:.95rem;">ปรึกษาแพทย์ผู้เชี่ยวชาญของเราได้เลย — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg">ปรึกษาฟรี →</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-lg" style="border:2px solid var(--navy);color:var(--navy);background:transparent;">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">ไธรฟ์ เวลเนส เซนเตอร์</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการตรวจสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="check-up.html">ตรวจสุขภาพเชิงลึก</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:0959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Center. สงวนลิขสิทธิ์</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="contact.html" class="btn btn-primary">📅 นัดหมาย</a>
+    <a href="tel:0959349640" class="btn btn-navy">📞 โทรเลย</a>
+  </div>
+</div><script>
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('drawer').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Center",
+      "alternateName": "ไธรฟ์ เวลเนส เซนเตอร์",
+      "url": "https://www.thrivewellnessth.com",
+      "logo": "https://www.thrivewellnessth.com/logo.png",
+      "image": "https://www.thrivewellnessth.com/og-image.jpg",
+      "description": "คลินิกสุขภาพเชิงลึกเฉพาะบุคคล เชี่ยวชาญด้านเวชศาสตร์ชะลอวัย IV Drip HBOT NAD+ Therapy และการตรวจสุขภาพเฉพาะบุคคล",
+      "telephone": "+66-95-934-9640",
+      "email": "info@thrivewellnessth.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา",
+        "addressLocality": "กรุงเทพมหานคร",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.8078,
+        "longitude": 100.6073
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "19:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/thrivewellnessth",
+        "https://www.instagram.com/thrivewellnessth",
+        "https://www.youtube.com/@thrivewellnessth"
+      ],
+      "priceRange": "฿฿฿",
+      "currenciesAccepted": "THB",
+      "paymentAccepted": "Cash, Credit Card",
+      "medicalSpecialty": [
+        "Anti-Aging Medicine",
+        "Functional Medicine",
+        "Preventive Medicine"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "NAD+ Therapy"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "IV Drip"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "HBOT Hyperbaric Oxygen Therapy"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Food Intolerance IgG Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Hormone Balance Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "NK Cell Cancer Screening"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "DNA Health & Life Genomics"
+        }
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "url": "https://www.thrivewellnessth.com/about",
+      "name": "เกี่ยวกับ Thrive Wellness Center",
+      "description": "ประวัติและข้อมูลคลินิก Thrive Wellness Center คลินิกสุขภาพเชิงลึกเฉพาะบุคคล กรุงเทพมหานคร"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://www.thrivewellnessth.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "เกี่ยวกับเรา",
+          "item": "https://www.thrivewellnessth.com/about"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</html>

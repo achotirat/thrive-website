@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    .knowledge-hero { background: linear-gradient(135deg, #0f1328 0%, #1a2050 50%, #2d358c 100%); }
+    .topic-card { background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 28px; transition: all .28s; cursor: pointer; text-decoration: none; display: block; }
+    .topic-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--teal-l); }
+    .topic-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .topic-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; font-family: var(--font-en); }
+    .topic-count { font-size: .78rem; color: var(--teal); font-family: var(--font-en); font-weight: 600; margin-bottom: 10px; }
+    .topic-desc { font-size: .85rem; color: var(--text-2); line-height: 1.65; }
+    .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .art-card { background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); overflow: hidden; transition: all .28s; }
+    .art-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
+    .art-thumb { height: 180px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .art-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .art-body { padding: 20px; }
+    .art-cat { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; font-family: var(--font-en); }
+    .art-title { font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .art-excerpt { font-size: .83rem; color: var(--text-2); line-height: 1.7; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .art-meta { font-size: .75rem; color: var(--text-3); font-family: var(--font-en); display: flex; justify-content: space-between; align-items: center; }
+    .art-read { font-size: .8rem; color: var(--teal); font-weight: 600; font-family: var(--font-en); }
+    @media(max-width:768px){ .article-grid { grid-template-columns: 1fr; } }
+    @media(max-width:1024px){ .article-grid { grid-template-columns: repeat(2,1fr); } }
+  </style>
+
+  <!-- SEO Core -->
+  <title>คลังความรู้สุขภาพ | Anti-Aging ฮอร์โมน Mental Health | Thrive Wellness</title>
+  <meta name="description" content="บทความสุขภาพจากแพทย์ผู้เชี่ยวชาญ ครอบคลุม Anti-Aging, ฮอร์โมน, ลำไส้, Mental Health, ภูมิแพ้ และสุขภาพผู้หญิง อัปเดตสม่ำเสมอ">
+  <meta name="keywords" content="บทความสุขภาพ, Anti-Aging, ฮอร์โมนสมดุล, Mental Health Thailand, NAD+ ข้อมูล, HBOT คืออะไร">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Thrive Wellness Center">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/knowledge">
+  <meta name="language" content="th">
+
+  <!-- Open Graph (Facebook, Line, etc.) -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/knowledge">
+  <meta property="og:title" content="คลังความรู้สุขภาพ | Anti-Aging ฮอร์โมน Mental Health | Thrive Wellness">
+  <meta property="og:description" content="บทความสุขภาพจากแพทย์ผู้เชี่ยวชาญ ครอบคลุม Anti-Aging, ฮอร์โมน, ลำไส้, Mental Health, ภูมิแพ้ และสุขภาพผู้หญิง อัปเดตสม่ำเสมอ">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Center">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="คลังความรู้สุขภาพ | Anti-Aging ฮอร์โมน Mental Health | Thrive Wellness">
+  <meta name="twitter:description" content="บทความสุขภาพจากแพทย์ผู้เชี่ยวชาญ ครอบคลุม Anti-Aging, ฮอร์โมน, ลำไส้, Mental Health, ภูมิแพ้ และสุขภาพผู้หญิง อัปเดตสม่ำเสมอ">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/og-image.jpg">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok">
+  <meta name="geo.position" content="13.8078;100.6073">
+  <meta name="ICBM" content="13.8078, 100.6073">
+  </head>
+<body>
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:0959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:30</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div><nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#glutathione"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link">HBOT</a>
+      <a href="health-architect.html" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link  active">คลังความรู้</a>
+      <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);background:var(--navy-xl);color:var(--navy);font-weight:600;">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+  <div class="page-hero knowledge-hero">
+    <div class="container">
+      <div class="breadcrumb" style="margin-bottom:24px;">
+        <a href="index.html">หน้าแรก</a>
+        <span>คลังความรู้</span>
+      </div>
+      <div class="page-hero__label">KNOWLEDGE HUB</div>
+      <h1 class="page-hero__title">คลังความรู้สุขภาพ</h1>
+      <p class="page-hero__subtitle">บทความและความรู้จากทีมแพทย์ผู้เชี่ยวชาญ ช่วยให้คุณเข้าใจสุขภาพของตัวเองได้ดีขึ้น</p>
+      <div class="page-hero__hint">ครอบคลุม 7 หมวดหมู่สุขภาพ | 20+ บทความ | อัปเดตสม่ำเสมอ</div>
+    </div>
+  </div>
+
+  <!-- Topic Clusters Section -->
+  <section class="section section--cream" id="topics">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:48px;">
+        <div class="section-label">TOPIC CLUSTERS</div>
+        <h2>เลือกหัวข้อที่คุณสนใจ</h2>
+      </div>
+      <div style="display:grid;grid-auto-flow:dense;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+        <a href="#anti-aging" class="topic-card reveal">
+          <div class="topic-icon">⏳</div>
+          <div class="topic-title">Anti-Aging & ชะลอวัย</div>
+          <div class="topic-count">8 บทความ</div>
+          <div class="topic-desc">ความรู้เรื่องการชะลอวัย NAD+ HBOT และการดูแลระดับเซลล์</div>
+        </a>
+        <a href="#hormone" class="topic-card reveal">
+          <div class="topic-icon">⚗️</div>
+          <div class="topic-title">ฮอร์โมนสมดุล</div>
+          <div class="topic-count">6 บทความ</div>
+          <div class="topic-desc">ฮอร์โมนเพศ ต่อมหมวกไต ไทรอยด์ และความสมดุลของระบบต่อมไร้ท่อ</div>
+        </a>
+        <a href="#gut" class="topic-card reveal">
+          <div class="topic-icon">🌱</div>
+          <div class="topic-title">ลำไส้ & Microbiome</div>
+          <div class="topic-count">5 บทความ</div>
+          <div class="topic-desc">สุขภาพลำไส้ ภูมิแพ้อาหารแฝง Leaky Gut และ Urine Organic Test</div>
+        </a>
+        <a href="#mental" class="topic-card reveal">
+          <div class="topic-icon">🧠</div>
+          <div class="topic-title">Mental Health</div>
+          <div class="topic-count">5 บทความ</div>
+          <div class="topic-desc">สุขภาพจิต ความเครียด Smiling Depression และ Bach Flower Therapy</div>
+        </a>
+        <a href="#allergy" class="topic-card reveal">
+          <div class="topic-icon">🛡️</div>
+          <div class="topic-title">ภูมิแพ้ & ภูมิคุ้มกัน</div>
+          <div class="topic-count">4 บทความ</div>
+          <div class="topic-desc">IgG IgE NK Cell และการตรวจระบบภูมิคุ้มกัน</div>
+        </a>
+        <a href="#womens-health" class="topic-card reveal">
+          <div class="topic-icon">🌸</div>
+          <div class="topic-title">สุขภาพผู้หญิง</div>
+          <div class="topic-count">7 บทความ</div>
+          <div class="topic-desc">ประจำเดือน การวางแผนมีบุตร ฮอร์โมนเพศหญิง และสุขภาพช่วงต่างๆ</div>
+        </a>
+        <a href="#vitamins" class="topic-card reveal">
+          <div class="topic-icon">💊</div>
+          <div class="topic-title">วิตามิน & โภชนาการ</div>
+          <div class="topic-count">4 บทความ</div>
+          <div class="topic-desc">วิตามินที่จำเป็น โลหะหนัก Oligoscan และโภชนาการเฉพาะบุคคล</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Articles Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:40px;">
+        <div class="section-label">LATEST ARTICLES</div>
+        <h2>อ่านบทความสุขภาพ</h2>
+      </div>
+      <!-- Anchor targets for topic links -->
+      <span id="anti-aging" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
+      <div class="article-grid">
+        <div class="art-card reveal">
+          <div class="art-thumb" style="background:linear-gradient(135deg,#1a2050,#2d358c);">🧬</div>
+          <div class="art-body">
+            <div class="art-cat">ANTI-AGING</div>
+            <div class="art-title">NAD+ พัฒนาการล่าสุดของการชะลอวัย</div>
+            <div class="art-excerpt">NAD+ คือโคเอนไซม์สำคัญที่ร่างกายสร้างน้อยลงตามวัย ส่งผลต่อพลังงาน ความจำ และกระบวนการซ่อมแซม DNA ทำไม NAD+ Therapy ถึงเป็นที่นิยมในวงการ Longevity?</div>
+            <div class="art-meta">
+              <span>15 ม.ค. 2568</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <span id="hormone" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
+        <div class="art-card reveal">
+          <div class="art-thumb"><img src="image/ปีนี้คุณตรวจฮอร์โมนหรือยัง-01.jpg" alt="ฮอร์โมนไม่สมดุล" loading="lazy"></div>
+          <div class="art-body">
+            <div class="art-cat">ฮอร์โมน</div>
+            <div class="art-title">ฮอร์โมนไม่สมดุล บอกอาการอย่างไร?</div>
+            <div class="art-excerpt">เมื่อฮอร์โมนในร่างกายเริ่มเปลี่ยนแปลงตามวัย ส่งผลต่อการเผาผลาญ ผิวพรรณ ความจำ และอารมณ์ มาทำความรู้จักสัญญาณเตือนที่ไม่ควรมองข้าม</div>
+            <div class="art-meta">
+              <span>2 ก.พ. 2568</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <span id="gut" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
+        <div class="art-card reveal">
+          <div class="art-thumb"><img src="image/แก้ปัญหาดูโทรม-IV Drip Advance.jpg" alt="IV Drip สุขภาพ" loading="lazy"></div>
+          <div class="art-body">
+            <div class="art-cat">ลำไส้</div>
+            <div class="art-title">ปวดท้องบ่อย ท้องเสียประจำ?</div>
+            <div class="art-excerpt">ลำไส้มีความสำคัญไม่แพ้สมองหรือหัวใจ เรียกได้ว่าเป็น 'สมองลำดับที่สอง' ในร่างกาย อาการปวดท้องเรื้อรังอาจบ่งบอกถึงปัญหาที่ต้องตรวจเชิงลึก</div>
+            <div class="art-meta">
+              <span>31 มี.ค. 2565</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <span id="mental" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
+        <div class="art-card reveal">
+          <div class="art-thumb" style="background:linear-gradient(135deg,#2a1a3a,#5a2d8c);">🧠</div>
+          <div class="art-body">
+            <div class="art-cat">MENTAL HEALTH</div>
+            <div class="art-title">Smiling Depression รอยยิ้มที่เป็นหน้ากาก</div>
+            <div class="art-excerpt">มีคนอีกกลุ่มหนึ่งที่เวลาพบเจอมักเห็นแต่รอยยิ้มที่ดูสดใส ร่าเริง แต่ลึกในใจมีแต่ความเศร้าหมองเก็บฝังไว้ข้างใน คุณรู้จักภาวะนี้ไหม?</div>
+            <div class="art-meta">
+              <span>29 พ.ย. 2566</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <div class="art-card reveal">
+          <div class="art-thumb"><img src="image/ปีนี้คุณตรวจฮอร์โมนหรือยัง-02.jpg" alt="ตรวจฮอร์โมนสุขภาพผู้หญิง" loading="lazy"></div>
+          <div class="art-body">
+            <div class="art-cat">สุขภาพผู้หญิง</div>
+            <div class="art-title">ประจำเดือนไม่มา 3 เดือน บอกอะไร?</div>
+            <div class="art-excerpt">ประจำเดือนไม่มาติดต่อกัน 3 เดือนขึ้นไป ไม่ใช่แค่เรื่องปกติ อาจเป็นสัญญาณของฮอร์โมนไม่สมดุล ความเครียดสะสม หรือปัญหาสุขภาพ</div>
+            <div class="art-meta">
+              <span>10 ธ.ค. 2566</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <div class="art-card reveal">
+          <div class="art-thumb"><img src="image/ของขวัญของคนรักสุขภาพ-Health profile - Check up.jpg" alt="ตรวจสุขภาพ Health Profile" loading="lazy"></div>
+          <div class="art-body">
+            <div class="art-cat">ภูมิแพ้</div>
+            <div class="art-title">ภูมิแพ้อาหารแฝง IgG คืออะไร?</div>
+            <div class="art-excerpt">เกินครึ่งของประชากรโลกป่วยเป็นโรคภูมิแพ้อาหารแฝงโดยไม่รู้ตัว อาการแพ้ไม่เกิดทันที แต่สะสมและแสดงออก</div>
+            <div class="art-meta">
+              <span>5 ม.ค. 2568</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <div class="art-card reveal">
+          <div class="art-thumb" style="background:linear-gradient(135deg,#1a0d2a,#4a1a7a);">🧠</div>
+          <div class="art-body">
+            <div class="art-cat">MENTAL HEALTH</div>
+            <div class="art-title">Mental Health ป่วย นำไปสู่โรคอะไร?</div>
+            <div class="art-excerpt">ประเทศไทยมีผู้ป่วยจิตเวชเพิ่มขึ้นเกือบ 2 เท่าในช่วง 6 ปี สุขภาพจิตส่งผลกระทบต่อสุขภาพกายมากกว่าที่หลายคนคิด</div>
+            <div class="art-meta">
+              <span>1 มี.ค. 2566</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+        <div class="art-card reveal">
+          <div class="art-thumb" style="background:linear-gradient(135deg,#1a1a0d,#6a6a1a);">🌺</div>
+          <div class="art-body">
+            <div class="art-cat">MENTAL HEALTH</div>
+            <div class="art-title">Bach Flower Remedies การบำบัดใจ</div>
+            <div class="art-excerpt">Bach Flower คือการบำบัดทางเลือกที่ใช้สาระสกัดจากดอกไม้ธรรมชาติ 38 ชนิด ช่วยปรับสมดุลอารมณ์และจิตใจ</div>
+            <div class="art-meta">
+              <span>20 ต.ค. 2566</span>
+              <span class="art-read">อ่านต่อ →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section section--navy" style="text-align:center;">
+    <div class="container">
+      <div style="max-width:580px;margin:0 auto;">
+        <div style="font-size:2.5rem;margin-bottom:16px;">📬</div>
+        <h2 style="color:white;margin-bottom:8px;">รับบทความสุขภาพใหม่ก่อนใคร</h2>
+        <p style="color:rgba(255,255,255,.8);margin-bottom:28px;font-size:.95rem;line-height:1.8;">แพทย์ผู้เชี่ยวชาญของเราเขียนบทความใหม่ทุกสัปดาห์ — ส่งตรงถึง LINE ของคุณ</p>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-lg" style="background:#06C755;color:white;font-weight:600;margin-bottom:14px;display:inline-block;">เพิ่มเพื่อน LINE @thrivewellnessth</a>
+        <p style="color:rgba(255,255,255,.7);font-size:.85rem;">ไม่มีสแปม ยกเลิกได้ตลอด</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--cream">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:8px;">มีคำถามด้านสุขภาพ?</h2>
+      <p style="margin-bottom:32px;color:var(--text-2);font-size:.95rem;">ปรึกษาแพทย์ผู้เชี่ยวชาญของเราได้เลย</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg">ปรึกษาฟรี →</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-lg" style="border:2px solid var(--navy);color:var(--navy);background:transparent;">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">ไธรฟ์ เวลเนส เซนเตอร์</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการตรวจสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="check-up.html">ตรวจสุขภาพเชิงลึก</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:0959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Center. สงวนลิขสิทธิ์</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="contact.html" class="btn btn-primary">📅 นัดหมาย</a>
+    <a href="tel:0959349640" class="btn btn-navy">📞 โทรเลย</a>
+  </div>
+</div><script>
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('drawer').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Center",
+      "alternateName": "ไธรฟ์ เวลเนส เซนเตอร์",
+      "url": "https://www.thrivewellnessth.com",
+      "logo": "https://www.thrivewellnessth.com/logo.png",
+      "image": "https://www.thrivewellnessth.com/og-image.jpg",
+      "description": "คลินิกสุขภาพเชิงลึกเฉพาะบุคคล เชี่ยวชาญด้านเวชศาสตร์ชะลอวัย IV Drip HBOT NAD+ Therapy และการตรวจสุขภาพเฉพาะบุคคล",
+      "telephone": "+66-95-934-9640",
+      "email": "info@thrivewellnessth.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา",
+        "addressLocality": "กรุงเทพมหานคร",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.8078,
+        "longitude": 100.6073
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "19:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/thrivewellnessth",
+        "https://www.instagram.com/thrivewellnessth",
+        "https://www.youtube.com/@thrivewellnessth"
+      ],
+      "priceRange": "฿฿฿",
+      "currenciesAccepted": "THB",
+      "paymentAccepted": "Cash, Credit Card",
+      "medicalSpecialty": [
+        "Anti-Aging Medicine",
+        "Functional Medicine",
+        "Preventive Medicine"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "NAD+ Therapy"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "IV Drip"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "HBOT Hyperbaric Oxygen Therapy"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Food Intolerance IgG Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Hormone Balance Test"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "NK Cell Cancer Screening"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "DNA Health & Life Genomics"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "บทความสุขภาพ Thrive Wellness Center",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NAD+ พัฒนาการล่าสุดของการชะลอวัย",
+          "url": "https://www.thrivewellnessth.com/knowledge/nad-anti-aging"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ฮอร์โมนไม่สมดุล บอกอาการอย่างไร?",
+          "url": "https://www.thrivewellnessth.com/knowledge/hormone-imbalance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า",
+          "url": "https://www.thrivewellnessth.com/post/smiling-depression"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "ภูมิแพ้อาหารแฝง IgG คืออะไร ทำไมต้องตรวจ?",
+          "url": "https://www.thrivewellnessth.com/knowledge/food-intolerance-igg"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mental Health ป่วย นำไปสู่โรคอะไรได้บ้าง?",
+          "url": "https://www.thrivewellnessth.com/post/mental-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Bach Flower Remedies การบำบัดใจด้วยดอกไม้",
+          "url": "https://www.thrivewellnessth.com/post/bachflower"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "ปวดท้องบ่อย ท้องเสียประจำ? คุณอาจเสี่ยงลำไส้อักเสบ",
+          "url": "https://www.thrivewellnessth.com/post/gut-inflammation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "ประจำเดือนไม่มา 3 เดือน บอกอะไรได้บ้าง?",
+          "url": "https://www.thrivewellnessth.com/post/abnormal-period"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://www.thrivewellnessth.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "คลังความรู้",
+          "item": "https://www.thrivewellnessth.com/knowledge"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</html>
