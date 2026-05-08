@@ -22,4 +22,6 @@ build/
 .netlify/
 .vercel/
 .omc/
+.sanity/
 Icon?
+.worktrees/
