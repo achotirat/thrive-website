@@ -1,0 +1,96 @@
+---
+---
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span>📞 095-934-9640</span>
+    <span>💬 LINE: @thrivewellnessth</span>
+    <span>🕐 เปิดทุกวัน 10:00-19:30</span>
+  </div>
+  <div class="top-bar-right">
+    <a href="#" class="social-icon" title="Facebook">f</a>
+    <a href="#" class="social-icon" title="YouTube">▶</a>
+    <a href="#" class="social-icon" title="Instagram">@</a>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="/" class="navbar__logo">
+      <img src="/Thrive-logo-160px.png" alt="Thrive Wellness Center" style="height:40px;width:auto;display:block;" />
+    </a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="/iv-drip" class="nav-link">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="/nad"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="/iv-drip#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="/iv-drip#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="/iv-drip#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="/gluta"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="/iv-drip#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/check-up" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="/food-intolerance"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="/check-up#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="/nk-cell"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="/check-up#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health &amp; Life</a>
+          <a href="/personalized-vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน &amp; ต้านอนุมูล</a>
+          <a href="/check-up#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="/check-up#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="/check-up#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="/hbot" class="nav-link">HBOT</a>
+      <a href="/health-architect" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="/blog" class="nav-link">คลังความรู้</a>
+      <a href="/about" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="/contact" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer Overlay -->
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="/" style="padding:12px;border-radius:8px;background:var(--navy-xl);color:var(--navy);font-weight:600;">🏠 หน้าแรก</a>
+    <a href="/iv-drip" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="/nad" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="/check-up" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="/hbot" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="/health-architect" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="/blog" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="/about" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="/contact" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+
+<script>
+  function toggleDrawer() {
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    if (drawer && overlay) {
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+  }
+  (window as any).toggleDrawer = toggleDrawer;
+</script>
