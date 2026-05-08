@@ -43,10 +43,41 @@ const ATTRIBUTION_FIELDS = [
   "gbraid",
 ];
 
+const MAX_TEXT_LENGTHS = {
+  name: 120,
+  phone: 32,
+  line_id: 80,
+  email: 160,
+  service_interest: 120,
+  preferred_date: 10,
+  message: 2000,
+  source_page: 120,
+  utm_source: 120,
+  utm_medium: 120,
+  utm_campaign: 180,
+  utm_term: 180,
+  utm_content: 180,
+  gclid: 220,
+  fbclid: 220,
+  wbraid: 220,
+  gbraid: 220,
+  landing_page: 1000,
+  referrer: 1000,
+  device_type: 40,
+  user_agent: 500,
+  session_id: 120,
+  consent_version: 80,
+};
+
 const emptyToNull = (value) => {
   if (typeof value !== "string") return value ?? null;
   const trimmed = value.trim();
   return trimmed.length > 0 ? trimmed : null;
+};
+
+const truncate = (value, maxLength) => {
+  if (typeof value !== "string" || !maxLength) return value;
+  return value.length > maxLength ? value.slice(0, maxLength) : value;
 };
 
 const response = (statusCode, body) => ({
@@ -122,12 +153,12 @@ const buildLeadPayload = (data, event) => {
   const payload = {};
 
   for (const field of ALLOWED_FIELDS) {
-    payload[field] = emptyToNull(data[field]);
+    payload[field] = truncate(emptyToNull(data[field]), MAX_TEXT_LENGTHS[field]);
   }
 
-  payload.name = payload.name || emptyToNull(data.full_name);
-  payload.phone = payload.phone || emptyToNull(data.tel);
-  payload.message = payload.message || emptyToNull(data.notes);
+  payload.name = payload.name || truncate(emptyToNull(data.full_name), MAX_TEXT_LENGTHS.name);
+  payload.phone = payload.phone || truncate(emptyToNull(data.tel), MAX_TEXT_LENGTHS.phone);
+  payload.message = payload.message || truncate(emptyToNull(data.notes), MAX_TEXT_LENGTHS.message);
   payload.age = payload.age ? Number.parseInt(payload.age, 10) : null;
   if (Number.isNaN(payload.age)) payload.age = null;
   payload.landing_page = payload.landing_page || event.headers.referer || event.headers.referrer || null;
@@ -161,6 +192,10 @@ exports.handler = async (event) => {
 
   try {
     const data = await parseBody(event);
+    if (emptyToNull(data.website)) {
+      return response(200, { ok: true, lead_id: null });
+    }
+
     const turnstileToken = data["cf-turnstile-response"] || data.turnstile_token;
     const ip =
       event.headers["x-nf-client-connection-ip"] ||

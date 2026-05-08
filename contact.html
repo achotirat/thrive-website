@@ -813,6 +813,10 @@
                 <input type="hidden" name="device_type" id="lead-device-type">
                 <input type="hidden" name="session_id" id="lead-session-id">
                 <input type="hidden" name="consent_timestamp" id="lead-consent-timestamp">
+                <div aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                    <label for="lead-website">Website</label>
+                    <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </div>
                 <div>
                     <label for="lead-name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--navy);">ชื่อ-นามสกุล *</label>
                     <input id="lead-name" name="name" type="text" autocomplete="name" required maxlength="120" style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: var(--r-md); font-size: 14px; font-family: var(--font-en);">
