@@ -17,6 +17,9 @@ Updated: 2026-05-08
 - [x] Initialized local git repository.
 - [x] Pushed repository to GitHub: `https://github.com/achotirat/thrive-website`.
 - [x] Added `CONTRIBUTING.md`, pull request template, and Phase 0 GitHub Actions checks.
+- [x] Verified `api.thrivewellnessth.com/api/health` returns a healthy JSON response.
+- [x] Verified `new.thrivewellnessth.com` returns HTTP 200 from Netlify.
+- [x] Added global `X-Robots-Tag: noindex, nofollow, noarchive` for the Netlify pre-cutover site.
 - [x] Added `netlify.toml` with `/api/leads` routed to a Netlify Function.
 - [x] Added `netlify/functions/leads.js` lead capture endpoint.
 - [x] Added `netlify/functions/health.js` health endpoint for uptime monitoring.
@@ -33,15 +36,24 @@ Updated: 2026-05-08
   - `seth.ns.cloudflare.com`
 - `www.thrivewellnessth.com` currently resolves through Cloudflare IPs.
 - `app.thrivewellnessth.com` currently resolves through Cloudflare IPs.
-- `new.thrivewellnessth.com` has no public A/CNAME record found.
-- `api.thrivewellnessth.com` has no public A/CNAME record found.
+- `new.thrivewellnessth.com` resolves to `thrive-website.netlify.app`.
+- `api.thrivewellnessth.com` resolves to `thrive-website.netlify.app`.
 
-This means DNS control is likely in Cloudflare, but account access still needs to be confirmed.
+This means DNS control is in Cloudflare and the Phase 0 Netlify subdomains are configured.
+
+## Verified DNS / HTTP
+
+- `new.thrivewellnessth.com` resolves to `thrive-website.netlify.app`.
+- `api.thrivewellnessth.com` resolves to `thrive-website.netlify.app`.
+- `https://api.thrivewellnessth.com/api/health` returns `{"ok":true,...}`.
+- `https://new.thrivewellnessth.com` returns HTTP 200 from Netlify.
+
+Cutover note: remove the global noindex header from `_headers` before pointing `www.thrivewellnessth.com` to this Netlify deployment.
 
 ## Needs Account Access
 
-- [ ] Confirm Cloudflare account access and registrar/DNS ownership.
-- [ ] Configure Netlify project and custom domains:
+- [x] Confirm Cloudflare DNS control.
+- [x] Configure Netlify project and custom domains:
   - `new.thrivewellnessth.com`
   - `api.thrivewellnessth.com`
 - [ ] Create Supabase project for leads/workflow.
