@@ -861,6 +861,8 @@
                     <input name="consent" type="checkbox" value="yes" required style="margin-top: 4px;">
                     <span>ยินยอมให้ Thrive Wellness Center ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
                 </label>
+                <input type="hidden" name="cf-turnstile-response" id="lead-turnstile-token">
+                <div id="lead-turnstile" style="min-height: 0;"></div>
                 <p id="lead-form-status" role="status" aria-live="polite" style="display:none; margin:0; font-size:14px; color:var(--text-2);"></p>
                 <button id="lead-submit" type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">ส่งข้อมูลนัดหมาย</button>
             </form>
@@ -976,6 +978,8 @@
         const leadStatus = document.getElementById('lead-form-status');
         const leadSubmit = document.getElementById('lead-submit');
         const leadParams = new URLSearchParams(window.location.search);
+        const turnstileContainer = document.getElementById('lead-turnstile');
+        const turnstileToken = document.getElementById('lead-turnstile-token');
         const attributionStorageKey = 'thrive_lead_attribution';
         const attributionFields = [
             'utm_source',
@@ -1048,6 +1052,52 @@
             const input = document.getElementById(inputId);
             if (input) input.value = currentAttribution[field] || '';
         });
+
+        const renderTurnstile = (siteKey) => {
+            if (!siteKey || !window.turnstile || !turnstileContainer) return;
+            turnstileContainer.style.minHeight = '65px';
+            window.turnstile.render(turnstileContainer, {
+                sitekey: siteKey,
+                callback: (token) => {
+                    turnstileToken.value = token;
+                },
+                'expired-callback': () => {
+                    turnstileToken.value = '';
+                },
+                'error-callback': () => {
+                    turnstileToken.value = '';
+                }
+            });
+        };
+
+        const loadTurnstile = async () => {
+            try {
+                const response = await fetch('/api/public-config', {
+                    headers: {'Accept': 'application/json'},
+                    credentials: 'same-origin'
+                });
+                if (!response.ok) return;
+
+                const config = await response.json();
+                if (!config.turnstileSiteKey) return;
+
+                if (window.turnstile) {
+                    renderTurnstile(config.turnstileSiteKey);
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+                script.async = true;
+                script.defer = true;
+                script.onload = () => renderTurnstile(config.turnstileSiteKey);
+                document.head.appendChild(script);
+            } catch (error) {
+                // Turnstile is optional until configured; backend enforces it when a secret exists.
+            }
+        };
+
+        loadTurnstile();
 
         leadForm.addEventListener('submit', async (event) => {
             event.preventDefault();

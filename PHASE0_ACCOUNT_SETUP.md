@@ -45,6 +45,7 @@ SUPABASE_URL
 SUPABASE_SERVICE_ROLE_KEY
 SUPABASE_LEADS_TABLE=leads
 LEAD_API_TOKEN
+TURNSTILE_SITE_KEY
 TURNSTILE_SECRET_KEY
 ```
 
@@ -52,6 +53,7 @@ Important:
 
 - Keep service-role keys server-side only.
 - Do not add Supabase service-role keys to frontend JavaScript.
+- Turnstile site key is public and is exposed through `/api/public-config`; Turnstile secret key stays server-side.
 - Set `new.thrivewellnessth.com` to `noindex` until cutover.
 
 ## 3. Supabase
@@ -89,4 +91,3 @@ Suggested external monitors:
 
 - Renew through December 2026 as a safety buffer.
 - Do not point `www` away from Wix until Phase 7 cutover.
-
