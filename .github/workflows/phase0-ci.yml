@@ -1,0 +1,49 @@
+name: Phase 0 Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  static-security:
+    name: Static security and function checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check Netlify Function syntax
+        run: |
+          node --check netlify/functions/leads.js
+          node --check netlify/functions/health.js
+
+      - name: Confirm required Phase 0 files exist
+        run: |
+          test -f netlify.toml
+          test -f netlify/functions/leads.js
+          test -f netlify/functions/health.js
+          test -f supabase/leads_schema.sql
+          test -f .env.example
+          test -f SECURITY.md
+          test -f PHASE0_STATUS.md
+          test -f PHASE0_ACCOUNT_SETUP.md
+
+      - name: Block accidentally committed local secrets
+        run: |
+          ! find . -path ./.git -prune -o -type f \( \
+            -name ".env" -o \
+            -name ".env.local" -o \
+            -name "*.pem" -o \
+            -name "*.key" -o \
+            -name "*.p8" -o \
+            -name "*.p12" \
+          \) -print | grep .
+

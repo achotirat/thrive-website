@@ -14,6 +14,8 @@ git push origin feature/short-description
 
 Open a pull request before merging into `main`.
 
+The GitHub workflow in `.github/workflows/phase0-ci.yml` runs basic Phase 0 checks on pushes and pull requests.
+
 ## Local Files
 
 Do not commit:
@@ -48,4 +50,3 @@ The planned hosting stack is:
 - DNS: Cloudflare
 
 Do not point `www.thrivewellnessth.com` away from the current production site until the cutover phase.
-
