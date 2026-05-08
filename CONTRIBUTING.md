@@ -38,6 +38,7 @@ Important docs:
 - `plan_08052026.md`
 - `PHASE0_STATUS.md`
 - `PHASE0_ACCOUNT_SETUP.md`
+- `ASTRO_NETLIFY_SANITY_WORKFLOW.md`
 - `SECURITY.md`
 
 ## Deployment Notes
