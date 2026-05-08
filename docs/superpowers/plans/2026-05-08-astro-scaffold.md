@@ -6,7 +6,7 @@
 
 **Architecture:** Astro static-output project in `astro/` subdirectory of existing repo. Existing root static HTML and `netlify.toml` are untouched. Design system is ported from `thrive-styles.css` as a single global CSS file. Components mirror existing markup class names exactly for visual parity.
 
-**Tech Stack:** Astro 5, TypeScript strict, npm, Node 20 LTS, Google Fonts (Noto Sans Thai), CSS Custom Properties (from `thrive-styles.css`)
+**Tech Stack:** Astro 6, TypeScript strict, npm, Node 22 LTS, Google Fonts (Noto Sans Thai), CSS Custom Properties (from `thrive-styles.css`)
 
 ---
 
