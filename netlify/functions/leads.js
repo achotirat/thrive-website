@@ -31,6 +31,18 @@ const ALLOWED_FIELDS = [
   "consent_version",
 ];
 
+const ATTRIBUTION_FIELDS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "gclid",
+  "fbclid",
+  "wbraid",
+  "gbraid",
+];
+
 const emptyToNull = (value) => {
   if (typeof value !== "string") return value ?? null;
   const trimmed = value.trim();
@@ -42,6 +54,19 @@ const response = (statusCode, body) => ({
   headers: JSON_HEADERS,
   body: JSON.stringify(body),
 });
+
+const fillAttributionFromUrl = (payload, value) => {
+  if (!value) return;
+
+  try {
+    const url = new URL(value, "https://www.thrivewellnessth.com");
+    for (const field of ATTRIBUTION_FIELDS) {
+      payload[field] = payload[field] || emptyToNull(url.searchParams.get(field));
+    }
+  } catch (error) {
+    // Ignore invalid URLs; attribution is best-effort.
+  }
+};
 
 const parseBody = async (event) => {
   const contentType = event.headers["content-type"] || event.headers["Content-Type"] || "";
@@ -108,6 +133,8 @@ const buildLeadPayload = (data, event) => {
   payload.landing_page = payload.landing_page || event.headers.referer || event.headers.referrer || null;
   payload.referrer = payload.referrer || event.headers.referer || event.headers.referrer || null;
   payload.user_agent = payload.user_agent || event.headers["user-agent"] || null;
+  fillAttributionFromUrl(payload, payload.landing_page);
+  fillAttributionFromUrl(payload, payload.referrer);
   payload.status = "new";
   payload.consent_at = emptyToNull(data.consent_timestamp) || new Date().toISOString();
   payload.created_at = payload.consent_at;

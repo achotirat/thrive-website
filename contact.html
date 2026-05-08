@@ -805,6 +805,13 @@
                 <input type="hidden" name="utm_campaign" id="lead-utm-campaign">
                 <input type="hidden" name="utm_content" id="lead-utm-content">
                 <input type="hidden" name="utm_term" id="lead-utm-term">
+                <input type="hidden" name="gclid" id="lead-gclid">
+                <input type="hidden" name="fbclid" id="lead-fbclid">
+                <input type="hidden" name="wbraid" id="lead-wbraid">
+                <input type="hidden" name="gbraid" id="lead-gbraid">
+                <input type="hidden" name="landing_page" id="lead-landing-page">
+                <input type="hidden" name="device_type" id="lead-device-type">
+                <input type="hidden" name="session_id" id="lead-session-id">
                 <input type="hidden" name="consent_timestamp" id="lead-consent-timestamp">
                 <div>
                     <label for="lead-name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--navy);">ชื่อ-นามสกุล *</label>
@@ -965,11 +972,77 @@
         const leadStatus = document.getElementById('lead-form-status');
         const leadSubmit = document.getElementById('lead-submit');
         const leadParams = new URLSearchParams(window.location.search);
+        const attributionStorageKey = 'thrive_lead_attribution';
+        const attributionFields = [
+            'utm_source',
+            'utm_medium',
+            'utm_campaign',
+            'utm_content',
+            'utm_term',
+            'gclid',
+            'fbclid',
+            'wbraid',
+            'gbraid'
+        ];
+
+        const getStoredAttribution = () => {
+            try {
+                return JSON.parse(sessionStorage.getItem(attributionStorageKey) || '{}');
+            } catch (error) {
+                return {};
+            }
+        };
+
+        const setStoredAttribution = (attribution) => {
+            try {
+                sessionStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+            } catch (error) {
+                // Ignore storage failures; the form still submits visible fields.
+            }
+        };
+
+        const getDeviceType = () => {
+            const width = window.innerWidth || document.documentElement.clientWidth || 0;
+            if (width < 768) return 'mobile';
+            if (width < 1024) return 'tablet';
+            return 'desktop';
+        };
+
+        const getSessionId = () => {
+            const key = 'thrive_lead_session_id';
+            try {
+                const existing = sessionStorage.getItem(key);
+                if (existing) return existing;
+
+                const browserCrypto = window.crypto || {};
+                const generated = browserCrypto.randomUUID
+                    ? browserCrypto.randomUUID()
+                    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+                sessionStorage.setItem(key, generated);
+                return generated;
+            } catch (error) {
+                return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+            }
+        };
+
+        const currentAttribution = getStoredAttribution();
+        attributionFields.forEach((field) => {
+            const value = leadParams.get(field);
+            if (value) currentAttribution[field] = value;
+        });
+        if (!currentAttribution.landing_page) currentAttribution.landing_page = window.location.href;
+        setStoredAttribution(currentAttribution);
 
         document.getElementById('lead-referrer').value = document.referrer || '';
-        ['source', 'medium', 'campaign', 'content', 'term'].forEach((key) => {
-            const field = document.getElementById(`lead-utm-${key}`);
-            field.value = leadParams.get(`utm_${key}`) || '';
+        document.getElementById('lead-landing-page').value = currentAttribution.landing_page || window.location.href;
+        document.getElementById('lead-device-type').value = getDeviceType();
+        document.getElementById('lead-session-id').value = getSessionId();
+        attributionFields.forEach((field) => {
+            const inputId = field.startsWith('utm_')
+                ? `lead-utm-${field.replace('utm_', '')}`
+                : `lead-${field}`;
+            const input = document.getElementById(inputId);
+            if (input) input.value = currentAttribution[field] || '';
         });
 
         leadForm.addEventListener('submit', async (event) => {
