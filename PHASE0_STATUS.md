@@ -25,6 +25,10 @@ Updated: 2026-05-08
 - [x] Added `netlify/functions/health.js` health endpoint for uptime monitoring.
 - [x] Added `.env.example` for server-side Netlify/Supabase secrets.
 - [x] Added `supabase/leads_schema.sql` for the leads/workflow table baseline.
+- [x] Created Supabase leads/workflow project.
+- [x] Created `public.leads` using `supabase/leads_schema.sql`.
+- [x] Verified test leads insert into `public.leads`.
+- [x] Verified lead attribution fields: `utm_*`, `referrer`, `landing_page`, and `source_page`.
 - [x] Confirmed `.gitignore` excludes `.env*`, PEM/key files, private folders, data exports, build outputs, and Netlify local state.
 - [x] Confirmed existing `_headers` blocks indexing/caching for `/api/*`, `/data/*`, `/admin/*`, and `/private/*`.
 - [x] Public DNS lookup: `thrivewellnessth.com` uses Cloudflare nameservers.
@@ -56,9 +60,9 @@ Cutover note: remove the global noindex header from `_headers` before pointing `
 - [x] Configure Netlify project and custom domains:
   - `new.thrivewellnessth.com`
   - `api.thrivewellnessth.com`
-- [ ] Create Supabase project for leads/workflow.
-- [ ] Create the `leads` table using `supabase/leads_schema.sql`.
-- [ ] Add Netlify environment variables from `.env.example`.
+- [x] Create Supabase project for leads/workflow.
+- [x] Create the `leads` table using `supabase/leads_schema.sql`.
+- [x] Add Netlify environment variables from `.env.example`.
 - [ ] Configure uptime monitoring for:
   - `https://new.thrivewellnessth.com`
   - `https://api.thrivewellnessth.com/api/health`
@@ -67,6 +71,8 @@ Cutover note: remove the global noindex header from `_headers` before pointing `
 ## Notes
 
 - The current static `contact.html` already posts to `/api/leads`.
+- Lead capture is verified end-to-end from `new.thrivewellnessth.com/contact` into Supabase.
+- Attribution capture is verified for landing URL UTM flow before contact form submission.
 - Turnstile verification is optional until `TURNSTILE_SECRET_KEY` is set.
 - The function requires `name` and `phone`.
 - Service-role keys must stay server-side in Netlify environment variables only.
