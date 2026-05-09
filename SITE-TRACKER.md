@@ -258,7 +258,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/about` | 35 | ✅ เสร็จ |
 | `/oligoscan` | 25 | ✅ เสร็จ |
 | `/cancer-screening` | 24 | ✅ เสร็จ |
-| `/dna-test` | 18 | ⏳ ยังไม่เริ่ม |
+| `/dna-test` | 18 | ✅ เสร็จ |
 | `/contact` | 4 | ⏳ ยังไม่เริ่ม |
 
 ---
