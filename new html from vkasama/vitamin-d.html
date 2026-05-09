@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    :root {
+      --sun: #d97706;
+      --sun-d: #b45309;
+      --sun-l: #fef3c7;
+      --sun-xl: #fffbeb;
+      --gold: #78350f;
+    }
+    .vitd-hero { background: linear-gradient(135deg, #1c0f00 0%, #7c2d12 50%, #c2410c 100%); }
+    .level-card { border-radius: var(--r-lg); padding: 22px 20px; text-align: center; }
+    .level-deficient { background: #fee2e2; border: 2px solid #fca5a5; }
+    .level-insufficient { background: #fef3c7; border: 2px solid #fcd34d; }
+    .level-optimal { background: #d1fae5; border: 2px solid #6ee7b7; }
+    .level-high { background: #e0e7ff; border: 2px solid #a5b4fc; }
+    .benefit-row { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); }
+    .process-num { width: 44px; height: 44px; border-radius: 50%; background: var(--sun); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-en); font-size: 1.1rem; flex-shrink: 0; }
+  </style>
+
+  <!-- SEO Core -->
+  <title>ตรวจวิตามิน D ขาด ภาวะพร่อง รักษา กรุงเทพ | Thrive Wellness Clinic ลาดพร้าว</title>
+  <meta name="description" content="ตรวจระดับวิตามิน D (25-OH Vitamin D) รู้ว่าขาดหรือไม่ พร้อมแผนเสริมที่เหมาะกับคุณ แก้เหนื่อย ปวดกระดูก ภูมิคุ้มกันต่ำ — Thrive Wellness Clinic Crystal Park ลาดพร้าว โทร 095-934-9640">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="พญ. ชนากานต์ ตระหง่านศรี — Thrive Wellness Clinic">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/vitamin-d">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:title" content="ตรวจวิตามิน D ขาด รักษา กรุงเทพ | Thrive Wellness Clinic">
+  <meta property="og:description" content="ตรวจระดับ 25-OH Vitamin D รู้ว่าขาดหรือไม่ แก้เหนื่อย ปวดกระดูก ภูมิคุ้มกันต่ำ — Thrive Wellness Clinic ลาดพร้าว">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/image/vitamin-d-hero-1200x630.jpg">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/vitamin-d">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ตรวจวิตามิน D กรุงเทพ | Thrive Wellness Clinic">
+  <meta name="twitter:description" content="คนไทยขาดวิตามิน D มากกว่าที่คิด แม้อยู่เมืองร้อน — ตรวจ แก้ไข และเสริมอย่างถูกวิธี">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/image/vitamin-d-hero-1200x630.jpg">
+
+  <!-- GEO Targeting -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8049;100.6026">
+  <meta name="ICBM" content="13.8049, 100.6026">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="th-TH" href="https://www.thrivewellnessth.com/vitamin-d">
+  <link rel="alternate" hreflang="en" href="https://www.thrivewellnessth.com/vitamin-d">
+  <link rel="alternate" hreflang="x-default" href="https://www.thrivewellnessth.com/vitamin-d">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Clinic",
+        "alternateName": "ไทรฟ์ เวลเนส คลินิก",
+        "url": "https://www.thrivewellnessth.com",
+        "telephone": "+66959349640",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+          "addressLocality": "ลาดพร้าว กรุงเทพฯ",
+          "postalCode": "10230",
+          "addressCountry": "TH"
+        },
+        "openingHours": "Mo-Su 10:00-19:00",
+        "image": "https://www.thrivewellnessth.com/image/vitamin-d-hero-1200x630.jpg"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.thrivewellnessth.com/#dr-chanakan",
+        "name": "พญ. ชนากานต์ ตระหง่านศรี",
+        "alternateName": "Chanakan Trangansri, MD.",
+        "jobTitle": "แพทย์ด้าน Anti-aging & Regenerative Medicine",
+        "worksFor": { "@id": "https://www.thrivewellnessth.com/#clinic" },
+        "image": "https://www.thrivewellnessth.com/image/dr-chanakan-trangansri-thrive-400x400.jpg"
+      },
+      {
+        "@type": "MedicalTest",
+        "name": "ตรวจระดับวิตามิน D (25-OH Vitamin D Test)",
+        "alternateName": "Serum 25-hydroxyvitamin D",
+        "description": "การตรวจเลือดเพื่อวัดระดับ 25-hydroxyvitamin D ในกระแสเลือด ซึ่งเป็นรูปแบบที่สะท้อนปริมาณวิตามิน D สะสมในร่างกายได้ดีที่สุด ใช้วินิจฉัยภาวะพร่องวิตามิน D และติดตามการรักษา",
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "ภาวะพร่องวิตามิน D (Vitamin D Deficiency)"
+        },
+        "relevantSpecialty": "Endocrinology",
+        "recognizingAuthority": { "@id": "https://www.thrivewellnessth.com/#clinic" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "คนไทยอยู่เมืองร้อนยังขาดวิตามิน D ได้ไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ได้ และพบบ่อยมาก งานวิจัยพบว่าคนไทยในเมืองขาดวิตามิน D สูงถึง 40–60% เพราะทำงานในอาคาร ใช้ครีมกันแดด และหลีกเลี่ยงแดด ผิวที่สร้างวิตามิน D ได้ต้องรับแสง UVB โดยตรง แต่กระจกรถและกระจกอาคารกรองรังสี UVB ออกหมด"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ระดับวิตามิน D เท่าไหรถึงปกติ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ระดับ 25-OH Vitamin D ที่เหมาะสมคือ 40–60 ng/mL ต่ำกว่า 20 ng/mL คือขาด (Deficiency) ช่วง 20–29 ng/mL คือไม่เพียงพอ (Insufficiency) สูงกว่า 100 ng/mL อาจเป็นพิษ แพทย์จะแนะนำปริมาณเสริมที่เหมาะสมกับแต่ละคน"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ต้องกินวิตามิน D เสริมวันละเท่าไหร่?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ขึ้นกับระดับเริ่มต้นและน้ำหนักตัว โดยทั่วไปใช้ 2,000–5,000 IU/วัน ในกรณีขาดรุนแรงอาจต้องการ 10,000 IU/วัน หรือเสริมในรูป Injection ในช่วงโหลด แพทย์จะตรวจซ้ำหลัง 8–12 สัปดาห์เพื่อปรับขนาด"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "วิตามิน D กับแคลเซียมต้องกินพร้อมกันไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "วิตามิน D ช่วยเพิ่มการดูดซึมแคลเซียมในลำไส้ หากขาดทั้งคู่ควรเสริมร่วมกัน แต่หากระดับแคลเซียมปกติ ไม่จำเป็นต้องเสริมแคลเซียมเพิ่ม ทั้งนี้ควรตรวจระดับ Calcium และ PTH ร่วมด้วยเพื่อความปลอดภัย"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "วิตามิน D กินมากเกินไปเป็นอันตรายไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ได้ หากระดับสูงกว่า 150 ng/mL อาจเกิด Hypercalcemia (แคลเซียมสูงเกิน) ทำให้คลื่นไส้ อ่อนเพลีย ไตทำงานหนัก การเสริมควรอยู่ภายใต้การดูแลของแพทย์และตรวจติดตามระดับอย่างสม่ำเสมอ"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/" },
+          { "@type": "ListItem", "position": 2, "name": "ตรวจวิตามิน D", "item": "https://www.thrivewellnessth.com/vitamin-d" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav-wrap">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="/iv-drip">IV Drip</a>
+        <a href="/food-intolerance">ภูมิแพ้อาหาร</a>
+        <a href="/hbot">HBOT</a>
+        <a href="/nad">NAD+</a>
+        <a href="/check-up">Check-up</a>
+      </div>
+      <a href="tel:+66959349640" class="btn btn-primary btn-sm">โทรนัดหมาย</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="vitd-hero hero-section">
+    <div class="hero-img-wrap">
+      <img src="image/vitamin-d-hero-1200x630.jpg" alt="ตรวจวิตามิน D ภาวะพร่องวิตามิน D" class="hero-img">
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <div class="hero-badge">Vitamin D Deficiency Test &amp; Treatment</div>
+        <h1>อยู่เมืองร้อน แต่ยังขาดวิตามิน D<br>และไม่รู้ตัว</h1>
+        <p class="hero-sub">คนไทยในเมืองขาดวิตามิน D สูงถึง 40–60% เพราะชีวิตในอาคาร ครีมกันแดด และแสงที่กระจกกรองไว้ทั้งหมด ตรวจเลือดง่าย ๆ รู้ผลและแก้ได้ตรงจุด</p>
+        <div class="hero-cta">
+          <a href="tel:+66959349640" class="btn btn-white">โทรนัดตรวจ 095-934-9640</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">40–60%</span><span class="hero-stat-label">คนไทยในเมืองขาด Vit D</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">1 หลอด</span><span class="hero-stat-label">เลือดรู้ระดับทันที</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">8–12 สัปดาห์</span><span class="hero-stat-label">เวลาฟื้นระดับ</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">หน้าแรก</a>
+        <span>/</span>
+        <span>ตรวจวิตามิน D</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- WHY DEFICIENT IN THAILAND -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--sun)">ทำไมถึงขาดได้แม้อยู่เมืองร้อน</div>
+      <h2 class="section-title">แดดมี แต่ร่างกายไม่ได้รับ</h2>
+      <p class="section-desc">วิตามิน D สังเคราะห์ได้จากรังสี <strong>UVB</strong> ที่กระทบผิวหนังโดยตรง แต่วิถีชีวิตคนเมืองปิดกั้นสิ่งนี้ไว้ทั้งหมด</p>
+      <div class="grid grid-2" style="margin-top:32px; gap:16px;">
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:18px 20px; background:var(--sun-xl); border-radius:var(--r-lg); border:1px solid var(--sun-l);">
+          <span style="font-size:1.6rem; flex-shrink:0;">🏢</span>
+          <div><strong>ทำงานในอาคารทั้งวัน</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">กระจกอาคารและรถกรองรังสี UVB ออกทั้งหมด ได้แดดในอาคาร = ไม่สังเคราะห์วิตามิน D</p></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:18px 20px; background:var(--sun-xl); border-radius:var(--r-lg); border:1px solid var(--sun-l);">
+          <span style="font-size:1.6rem; flex-shrink:0;">🧴</span>
+          <div><strong>ใช้ครีมกันแดด SPF สูง</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">SPF 15 กรอง UVB ได้ 93% SPF 30 กรองได้ 97% ป้องกันมะเร็งผิวหนังได้ แต่หยุดการสังเคราะห์วิตามิน D</p></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:18px 20px; background:var(--sun-xl); border-radius:var(--r-lg); border:1px solid var(--sun-l);">
+          <span style="font-size:1.6rem; flex-shrink:0;">👕</span>
+          <div><strong>สวมเสื้อผ้ามิดชิด</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ผิวที่รับแสงน้อย ผลิตวิตามิน D ได้น้อยตามไปด้วย ต้องรับแสงบริเวณแขนขาอย่างน้อย 15–30 นาที/วัน</p></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:18px 20px; background:var(--sun-xl); border-radius:var(--r-lg); border:1px solid var(--sun-l);">
+          <span style="font-size:1.6rem; flex-shrink:0;">🍽️</span>
+          <div><strong>อาหารไทยมีวิตามิน D น้อย</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">แหล่งอาหาร เช่น ปลาแซลมอน ปลาซาร์ดีน ไข่แดง ไม่ใช่อาหารที่กินบ่อยในชีวิตประจำวันของคนไทย</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYMPTOMS -->
+  <section class="section" style="background:var(--sun-xl)">
+    <div class="container">
+      <div class="section-label" style="color:var(--sun)">อาการที่พบบ่อย</div>
+      <h2 class="section-title">สัญญาณของภาวะพร่องวิตามิน D</h2>
+      <p class="section-desc">หลายอาการเหล่านี้คล้ายกับความเครียดหรือการนอนน้อย ทำให้มักถูกมองข้ามหรือไม่ได้รับการวินิจฉัย</p>
+      <div class="grid grid-3" style="margin-top:40px; gap:16px;">
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">😴</span>
+          <strong>เหนื่อยล้าเรื้อรัง ไม่มีแรง</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D มีบทบาทในการสร้างพลังงานระดับเซลล์ ขาดแล้วรู้สึกหมดแรงตลอดเวลา</p>
+        </div>
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">🦴</span>
+          <strong>ปวดกระดูก ปวดกล้ามเนื้อ</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D ควบคุมการดูดซึมแคลเซียม ขาดแล้วกระดูกและกล้ามเนื้ออ่อนแอลง</p>
+        </div>
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">🤒</span>
+          <strong>ป่วยบ่อย ภูมิคุ้มกันต่ำ</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D กระตุ้น Antimicrobial Peptides ในเซลล์ภูมิคุ้มกัน ขาดแล้วติดเชื้อง่ายขึ้น</p>
+        </div>
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">😞</span>
+          <strong>ซึมเศร้า อารมณ์แปรปรวน</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">VDR receptors พบในสมอง วิตามิน D มีส่วนในการผลิต Serotonin ขาดแล้วอารมณ์ตก</p>
+        </div>
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">🧠</span>
+          <strong>สมองล้า จำแย่ลง</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D ต่ำสัมพันธ์กับประสิทธิภาพสมองที่ลดลง โดยเฉพาะในกลุ่มอายุ 40 ปีขึ้นไป</p>
+        </div>
+        <div class="benefit-row" style="flex-direction:column; align-items:flex-start; padding:20px;">
+          <span style="font-size:1.8rem; margin-bottom:8px;">🌙</span>
+          <strong>นอนหลับยาก คุณภาพการนอนต่ำ</strong>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">งานวิจัยพบความสัมพันธ์ระหว่างวิตามิน D ต่ำกับการนอนหลับไม่ลึกและตื่นกลางดึก</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVELS -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--sun)">ค่าอ้างอิง</div>
+      <h2 class="section-title">ระดับวิตามิน D — คุณอยู่ตรงไหน?</h2>
+      <p class="section-desc">การแปลผล 25-OH Vitamin D (หน่วย ng/mL) ตามแนวทาง Endocrine Society</p>
+      <div class="grid grid-4" style="margin-top:32px; gap:16px;">
+        <div class="level-card level-deficient">
+          <p style="font-size:1.6rem; font-weight:800; font-family:var(--font-en); color:#991b1b; margin:0 0 4px;">&lt; 20</p>
+          <p style="font-weight:700; color:#991b1b; margin:0 0 8px;">ขาดรุนแรง</p>
+          <p style="font-size:.82rem; color:#7f1d1d; margin:0;">Deficiency — ต้องเสริมทันที มีความเสี่ยงต่อกระดูกและภูมิคุ้มกัน</p>
+        </div>
+        <div class="level-card level-insufficient">
+          <p style="font-size:1.6rem; font-weight:800; font-family:var(--font-en); color:#92400e; margin:0 0 4px;">20–29</p>
+          <p style="font-weight:700; color:#92400e; margin:0 0 8px;">ไม่เพียงพอ</p>
+          <p style="font-size:.82rem; color:#78350f; margin:0;">Insufficiency — ควรเสริมและติดตามระดับ</p>
+        </div>
+        <div class="level-card level-optimal">
+          <p style="font-size:1.6rem; font-weight:800; font-family:var(--font-en); color:#065f46; margin:0 0 4px;">40–60</p>
+          <p style="font-weight:700; color:#065f46; margin:0 0 8px;">ระดับเหมาะสม</p>
+          <p style="font-size:.82rem; color:#064e3b; margin:0;">Optimal — เป้าหมายที่ต้องการ ร่างกายทำงานได้เต็มที่</p>
+        </div>
+        <div class="level-card level-high">
+          <p style="font-size:1.6rem; font-weight:800; font-family:var(--font-en); color:#3730a3; margin:0 0 4px;">&gt; 100</p>
+          <p style="font-weight:700; color:#3730a3; margin:0 0 8px;">สูงเกินไป</p>
+          <p style="font-size:.82rem; color:#312e81; margin:0;">Toxicity Risk — แคลเซียมอาจสูง ต้องปรึกษาแพทย์</p>
+        </div>
+      </div>
+      <div class="info-box" style="background:var(--sun-xl); border-color:var(--sun-l); margin-top:28px;">
+        <p style="margin:0; font-size:.93rem;">💡 <strong>หมายเหตุ:</strong> ค่า "ปกติ" ในรายงานแล็บทั่วไปมักตั้งไว้ที่ &gt;30 ng/mL ซึ่งต่ำกว่าระดับเหมาะสม (40–60 ng/mL) หลายคนจึงได้รับผลว่า "ปกติ" แต่ยังขาดอยู่จริง</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS OF OPTIMAL LEVEL -->
+  <section class="section" style="background:var(--sun-xl)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--sun)">ประโยชน์</div>
+      <h2 class="section-title">เมื่อวิตามิน D อยู่ในระดับเหมาะสม</h2>
+      <div style="display:flex; flex-direction:column; gap:14px; margin-top:32px;">
+        <div class="benefit-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">💪</span>
+          <div><strong>กระดูกและกล้ามเนื้อแข็งแรง</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">เพิ่มการดูดซึมแคลเซียมในลำไส้ ลดความเสี่ยงกระดูกพรุนและกล้ามเนื้ออ่อนแรง</p></div>
+        </div>
+        <div class="benefit-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">🛡️</span>
+          <div><strong>ภูมิคุ้มกันแข็งแกร่ง</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">กระตุ้น T-cell และ Macrophage ช่วยลดความเสี่ยงติดเชื้อทางเดินหายใจและโรคภูมิคุ้มกันบกพร่อง</p></div>
+        </div>
+        <div class="benefit-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">❤️</span>
+          <div><strong>สุขภาพหัวใจและหลอดเลือด</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D ช่วยควบคุมความดันโลหิตผ่าน Renin-Angiotensin System ลดการอักเสบในหลอดเลือด</p></div>
+        </div>
+        <div class="benefit-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">🧬</span>
+          <div><strong>ลดความเสี่ยงมะเร็ง</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">งานวิจัยพบความสัมพันธ์ระหว่างวิตามิน D เพียงพอกับความเสี่ยงมะเร็งลำไส้ใหญ่ มะเร็งเต้านม และมะเร็งต่อมลูกหมากที่ลดลง</p></div>
+        </div>
+        <div class="benefit-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">⚖️</span>
+          <div><strong>ควบคุมน้ำหนักและ Insulin</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วิตามิน D มีส่วนในการควบคุม Insulin Sensitivity ระดับที่เหมาะสมช่วยลดความเสี่ยงเบาหวานชนิดที่ 2</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO TEST & TREAT -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--sun)">ขั้นตอน</div>
+      <h2 class="section-title">ตรวจและเสริมอย่างถูกวิธี</h2>
+      <div class="process-list" style="margin-top:40px;">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <h3>ตรวจเลือด 25-OH Vitamin D</h3>
+            <p>เจาะเลือด 1 หลอด ไม่ต้องอดอาหาร ทราบระดับวิตามิน D สะสมในร่างกายจริง ๆ ไม่ใช่แค่ที่รับประทานเข้าไปล่าสุด</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <h3>แพทย์แปลผลและวางแผน</h3>
+            <p>หมอนุ่นพิจารณาระดับที่ได้ร่วมกับอาการ น้ำหนักตัว และโรคประจำตัว เพื่อกำหนดขนาดและรูปแบบการเสริมที่เหมาะสม</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <h3>เสริมวิตามิน D ในปริมาณที่แม่นยำ</h3>
+            <p>เลือกรูปแบบที่เหมาะ ทั้ง Oral Supplement (D3 พร้อม K2), IM Injection สำหรับกรณีดูดซึมต่ำ หรือ IV Drip สำหรับการโหลดเร็ว</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <h3>ตรวจซ้ำหลัง 8–12 สัปดาห์</h3>
+            <p>ติดตามระดับที่เปลี่ยนแปลง ปรับขนาดให้อยู่ในช่วงเหมาะสม ป้องกันทั้งการขาดและการสะสมเกิน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--gold) 0%, var(--sun-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">รู้ระดับวิตามิน D จริงของคุณ — ไม่ต้องเดา</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">ตรวจเลือด 1 หลอด วางแผนเสริมอย่างถูกต้อง ไม่มากไม่น้อย</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="doctor-card">
+        <div class="doctor-img-wrap">
+          <img src="image/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น Thrive Wellness Clinic" class="doctor-img">
+        </div>
+        <div class="doctor-info">
+          <div class="section-label" style="color:var(--sun)">แพทย์ประจำคลินิก</div>
+          <h2 class="doctor-name">พญ. ชนากานต์ ตระหง่านศรี</h2>
+          <p class="doctor-en">Chanakan Trangansri, MD. (หมอนุ่น)</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Anti-aging &amp; Regenerative Medicine</span>
+            <span class="doctor-tag">Nutrition Wellness</span>
+            <span class="doctor-tag">Hormone Balance</span>
+            <span class="doctor-tag">Lifestyle Medicine</span>
+            <span class="doctor-tag">Chelation &amp; Detoxification</span>
+          </div>
+          <p class="doctor-bio">หมอนุ่นเน้นการตรวจระดับวิตามินและแร่ธาตุอย่างแม่นยำก่อนวางแผนเสริม เพราะการเสริมโดยไม่รู้ระดับจริงอาจให้มากหรือน้อยเกินไปได้ทั้งคู่ — วิทยาศาสตร์ที่แม่นยำคือรากฐานของการดูแลที่ได้ผล</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-l)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--sun)">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">FAQ — วิตามิน D</h2>
+      <div class="faq-list" style="margin-top:40px;">
+        <details class="faq-item">
+          <summary class="faq-q">คนไทยอยู่เมืองร้อนยังขาดวิตามิน D ได้ไหม?</summary>
+          <div class="faq-a">ได้ และพบบ่อยมาก งานวิจัยพบว่าคนไทยในเมืองขาดวิตามิน D สูงถึง 40–60% เพราะทำงานในอาคาร ใช้ครีมกันแดด และหลีกเลี่ยงแดด ผิวที่สร้างวิตามิน D ได้ต้องรับแสง UVB โดยตรง แต่กระจกรถและกระจกอาคารกรองรังสี UVB ออกหมด</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ระดับวิตามิน D เท่าไหรถึงปกติ?</summary>
+          <div class="faq-a">ระดับ 25-OH Vitamin D ที่เหมาะสมคือ 40–60 ng/mL ต่ำกว่า 20 ng/mL คือขาด (Deficiency) ช่วง 20–29 ng/mL คือไม่เพียงพอ (Insufficiency) สูงกว่า 100 ng/mL อาจเป็นพิษ แพทย์จะแนะนำปริมาณเสริมที่เหมาะสมกับแต่ละคน</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ต้องกินวิตามิน D เสริมวันละเท่าไหร่?</summary>
+          <div class="faq-a">ขึ้นกับระดับเริ่มต้นและน้ำหนักตัว โดยทั่วไปใช้ 2,000–5,000 IU/วัน ในกรณีขาดรุนแรงอาจต้องการ 10,000 IU/วัน หรือเสริมในรูป Injection ในช่วงโหลด แพทย์จะตรวจซ้ำหลัง 8–12 สัปดาห์เพื่อปรับขนาด</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">วิตามิน D กับแคลเซียมต้องกินพร้อมกันไหม?</summary>
+          <div class="faq-a">วิตามิน D ช่วยเพิ่มการดูดซึมแคลเซียมในลำไส้ หากขาดทั้งคู่ควรเสริมร่วมกัน แต่หากระดับแคลเซียมปกติ ไม่จำเป็นต้องเสริมแคลเซียมเพิ่ม ควรตรวจระดับ Calcium และ PTH ร่วมด้วยเพื่อความปลอดภัย</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">วิตามิน D กินมากเกินไปเป็นอันตรายไหม?</summary>
+          <div class="faq-a">ได้ หากระดับสูงกว่า 150 ng/mL อาจเกิด Hypercalcemia (แคลเซียมสูงเกิน) ทำให้คลื่นไส้ อ่อนเพลีย ไตทำงานหนัก การเสริมควรอยู่ภายใต้การดูแลของแพทย์และตรวจติดตามระดับอย่างสม่ำเสมอ</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+      <div class="grid grid-4" style="margin-top:32px;">
+        <a href="/personalized-vitamins" class="related-card">
+          <div class="related-icon">💊</div>
+          <h3>วิตามินเฉพาะบุคคล</h3>
+          <p>ตรวจครบ เสริมตรงจุด ไม่เดา</p>
+        </a>
+        <a href="/iv-drip" class="related-card">
+          <div class="related-icon">💉</div>
+          <h3>IV Drip Immune Boost</h3>
+          <p>วิตามินเข้าเลือด ดูดซึม 100%</p>
+        </a>
+        <a href="/adrenal-fatigue" class="related-card">
+          <div class="related-icon">⚡</div>
+          <h3>ภาวะต่อมหมวกไตล้า</h3>
+          <p>อาการคล้ายกัน วินิจฉัยให้ถูกต้น</p>
+        </a>
+        <a href="/check-up" class="related-card">
+          <div class="related-icon">🩺</div>
+          <h3>โปรแกรม Check-up</h3>
+          <p>ตรวจสุขภาพครบจุดเดียว</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--gold) 0%, var(--sun-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">เริ่มต้นจากการรู้ระดับจริง</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">Thrive Wellness Clinic — Crystal Park ลาดพร้าว เปิดทุกวัน 10:00–19:00</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <h3 style="font-size:1rem; color:var(--text-muted); margin-bottom:16px;">อ้างอิงทางวิทยาศาสตร์</h3>
+      <ul class="ref-list">
+        <li>Holick MF. "Vitamin D deficiency." <em>N Engl J Med.</em> 2007;357(3):266–281. PMID: 17634462</li>
+        <li>Holick MF et al. "Evaluation, treatment, and prevention of vitamin D deficiency: an Endocrine Society Clinical Practice Guideline." <em>J Clin Endocrinol Metab.</em> 2011;96(7):1911–1930. PMID: 21646368</li>
+        <li>Pludowski P et al. "Vitamin D supplementation guidelines." <em>J Steroid Biochem Mol Biol.</em> 2018;175:125–135. PMID: 28216084</li>
+        <li>Forrest KY, Stuhldreher WL. "Prevalence and correlates of vitamin D deficiency in US adults." <em>Nutr Res.</em> 2011;31(1):48–54. PMID: 21310306</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="40">
+          <p class="footer-tagline">ดูแลสุขภาพเชิงลึก ด้วยวิทยาศาสตร์และความใส่ใจ</p>
+        </div>
+        <div class="footer-col">
+          <h4>บริการ</h4>
+          <ul>
+            <li><a href="/personalized-vitamins">วิตามินเฉพาะบุคคล</a></li>
+            <li><a href="/iv-drip">IV Drip</a></li>
+            <li><a href="/food-intolerance">ตรวจภูมิแพ้อาหาร IgG</a></li>
+            <li><a href="/hbot">HBOT</a></li>
+            <li><a href="/nad">NAD+</a></li>
+            <li><a href="/chelation">Chelation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ข้อมูลคลินิก</h4>
+          <ul>
+            <li>📍 The Crystal Park ชั้น 2 อาคาร B<br>เลขที่ 199 ถนนประดิษฐ์มนูธรรม<br>ลาดพร้าว กรุงเทพฯ 10230</li>
+            <li>📞 <a href="tel:+66959349640">095-934-9640</a></li>
+            <li>💬 <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener">LINE @thrivewellnessth</a></li>
+            <li>🕐 เปิดทุกวัน 10:00–19:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thrive Wellness Clinic. สงวนลิขสิทธิ์.</p>
+        <p style="font-size:.8rem; color:var(--text-muted); margin-top:8px;">เนื้อหานี้จัดทำโดย พญ. ชนากานต์ ตระหง่านศรี เพื่อการให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์เฉพาะบุคคล</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+66959349640" class="sticky-btn sticky-call">📞 โทรนัดหมาย</a>
+    <a href="https://line.me/R/ti/p/@thrivewellnessth" class="sticky-btn sticky-line" target="_blank" rel="noopener">💬 LINE</a>
+  </div>
+
+</body>
+</html>

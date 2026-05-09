@@ -251,7 +251,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-----|------:|-------|
 | `/allergy-ige` | 74 | ✅ เสร็จ |
 | `/urine-organic-test` | 55 | ✅ เสร็จ |
-| `/vitamin-d` | 47 | ⏳ ยังไม่เริ่ม |
+| `/vitamin-d` | 47 | ✅ เสร็จ |
 | `/doctors` | 45 | ⏳ ยังไม่เริ่ม |
 | `/vitamins-and-micronutrients` | 42 | ⏳ ยังไม่เริ่ม |
 | `/check-up` | 38 | ⏳ ยังไม่เริ่ม |
