@@ -254,7 +254,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/vitamin-d` | 47 | ✅ เสร็จ |
 | `/doctors` | 45 | ⏳ ยังไม่เริ่ม |
 | `/vitamins-and-micronutrients` | 42 | ✅ เสร็จ |
-| `/check-up` | 38 | ⏳ ยังไม่เริ่ม |
+| `/check-up` | 38 | ✅ เสร็จ |
 | `/about` | 35 | ⏳ ยังไม่เริ่ม |
 | `/oligoscan` | 25 | ⏳ ยังไม่เริ่ม |
 | `/cancer-screening` | 24 | ⏳ ยังไม่เริ่ม |
