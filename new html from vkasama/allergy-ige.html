@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    :root {
+      --teal: #0d9488;
+      --teal-d: #0f766e;
+      --teal-l: #ccfbf1;
+      --teal-xl: #f0fdfa;
+      --forest: #134e4a;
+    }
+    .ige-hero { background: linear-gradient(135deg, #021a17 0%, #134e4a 50%, #0f766e 100%); }
+    .allergen-card { background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 24px 20px; text-align: center; transition: all .28s; }
+    .allergen-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--teal-l); }
+    .symptom-chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--teal-xl); border: 1px solid var(--teal-l); border-radius: 999px; font-size: .9rem; color: var(--teal-d); font-weight: 500; }
+    .process-num { width: 44px; height: 44px; border-radius: 50%; background: var(--teal); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-en); font-size: 1.1rem; flex-shrink: 0; }
+    .compare-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+    .badge-ige { background: #fee2e2; color: #991b1b; }
+    .badge-igg { background: var(--teal-l); color: var(--forest); }
+  </style>
+
+  <!-- SEO Core -->
+  <title>ตรวจภูมิแพ้ IgE แพ้อาหาร ฝุ่น สัตว์ กรุงเทพ | Thrive Wellness Clinic ลาดพร้าว</title>
+  <meta name="description" content="ตรวจภูมิแพ้ IgE ครอบคลุม อาหาร ละอองเกสร ฝุ่น ขนสัตว์ รู้สาเหตุจริงของผื่น จาม น้ำมูก หายใจไม่ออก ผลเลือดแม่นยำ — Thrive Wellness Clinic Crystal Park ลาดพร้าว โทร 095-934-9640">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="พญ. ชนากานต์ ตระหง่านศรี — Thrive Wellness Clinic">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/allergy-ige">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:title" content="ตรวจภูมิแพ้ IgE แพ้อาหาร ฝุ่น สัตว์ กรุงเทพ | Thrive Wellness Clinic">
+  <meta property="og:description" content="ตรวจภูมิแพ้ IgE ครอบคลุม อาหาร ละอองเกสร ฝุ่น ขนสัตว์ รู้สาเหตุจริงของผื่น จาม น้ำมูก หายใจไม่ออก ผลเลือดแม่นยำ — Thrive Wellness Clinic ลาดพร้าว">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/image/allergy-ige-hero-1200x630.jpg">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/allergy-ige">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ตรวจภูมิแพ้ IgE กรุงเทพ | Thrive Wellness Clinic">
+  <meta name="twitter:description" content="ตรวจภูมิแพ้ IgE ครอบคลุมอาหาร ฝุ่น ขนสัตว์ เกสร — รู้สาเหตุจริง รักษาตรงจุด">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/image/allergy-ige-hero-1200x630.jpg">
+
+  <!-- GEO Targeting -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8049;100.6026">
+  <meta name="ICBM" content="13.8049, 100.6026">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="th-TH" href="https://www.thrivewellnessth.com/allergy-ige">
+  <link rel="alternate" hreflang="en" href="https://www.thrivewellnessth.com/allergy-ige">
+  <link rel="alternate" hreflang="x-default" href="https://www.thrivewellnessth.com/allergy-ige">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Clinic",
+        "alternateName": "ไทรฟ์ เวลเนส คลินิก",
+        "url": "https://www.thrivewellnessth.com",
+        "telephone": "+66959349640",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+          "addressLocality": "ลาดพร้าว กรุงเทพฯ",
+          "postalCode": "10230",
+          "addressCountry": "TH"
+        },
+        "openingHours": "Mo-Su 10:00-19:00",
+        "image": "https://www.thrivewellnessth.com/image/allergy-ige-hero-1200x630.jpg"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.thrivewellnessth.com/#dr-chanakan",
+        "name": "พญ. ชนากานต์ ตระหง่านศรี",
+        "alternateName": "Chanakan Trangansri, MD.",
+        "jobTitle": "แพทย์ด้าน Anti-aging & Regenerative Medicine",
+        "worksFor": { "@id": "https://www.thrivewellnessth.com/#clinic" },
+        "image": "https://www.thrivewellnessth.com/image/dr-chanakan-trangansri-thrive-400x400.jpg"
+      },
+      {
+        "@type": "MedicalTest",
+        "name": "ตรวจภูมิแพ้ IgE (Specific IgE Allergy Panel)",
+        "alternateName": "IgE Allergy Blood Test",
+        "description": "การตรวจเลือดเพื่อวัดระดับแอนติบอดี IgE จำเพาะต่อสารก่อภูมิแพ้ ครอบคลุมอาหาร ละอองเกสร ฝุ่น และขนสัตว์ ช่วยระบุสาเหตุของอาการภูมิแพ้ได้อย่างแม่นยำ",
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "ภูมิแพ้ (Allergic Disease)"
+        },
+        "relevantSpecialty": "Allergy and Immunology",
+        "recognizingAuthority": { "@id": "https://www.thrivewellnessth.com/#clinic" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "IgE กับ IgG ต่างกันอย่างไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "IgE คือแอนติบอดีที่ทำให้เกิดภูมิแพ้แบบเฉียบพลัน (ภายใน 2–30 นาที) เช่น ผื่น บวม หายใจไม่ออก ส่วน IgG คือแอนติบอดีที่เกี่ยวกับภูมิแพ้แฝง (ปฏิกิริยาช้า 2–72 ชั่วโมง) เช่น ท้องอืด ปวดหัว ผิวหนังอักเสบเรื้อรัง ทั้งสองชนิดตรวจได้จากเลือด แต่วิเคราะห์คนละ panel"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ใครควรตรวจ IgE บ้าง?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ผู้ที่มีอาการผื่นลมพิษ หอบหืด จามถี่ น้ำมูกไหล ตาแดงคัน แพ้อากาศ หรือเคยมีปฏิกิริยาแพ้รุนแรง (anaphylaxis) ควรตรวจเพื่อหาสารก่อภูมิแพ้ที่แท้จริงและวางแผนหลีกเลี่ยง"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ต้องงดอาหารก่อนตรวจไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "โดยทั่วไปไม่จำเป็นต้องงดอาหาร แต่ควรแจ้งแพทย์หากรับประทานยาต้านฮิสตามีน (antihistamine) เพราะอาจส่งผลต่อการทดสอบผิวหนัง สำหรับการตรวจเลือด IgE ไม่มีผลต่อความแม่นยำ"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ผลตรวจ IgE สูงหมายความว่าอะไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Total IgE สูงบ่งชี้ว่าร่างกายมีปฏิกิริยาภูมิแพ้สูง แต่ต้องดู Specific IgE ด้วยว่าแพ้สารชนิดใดบ้าง บางคน Total IgE ปกติแต่ Specific IgE บางชนิดสูง ซึ่งก็มีความสำคัญทางคลินิก แพทย์จะแปลผลร่วมกับอาการเสมอ"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "หลังรู้ผลควรทำอะไรต่อ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "แพทย์จะวางแผน 3 ทาง: (1) หลีกเลี่ยงสารก่อภูมิแพ้ (2) ใช้ยาควบคุมอาการ และ (3) Immunotherapy สำหรับกรณีแพ้รุนแรง บางกรณีอาจแนะนำให้ตรวจ IgG ร่วมด้วยเพื่อให้เห็นภาพครบ"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/" },
+          { "@type": "ListItem", "position": 2, "name": "ตรวจภูมิแพ้ IgE", "item": "https://www.thrivewellnessth.com/allergy-ige" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav-wrap">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="/iv-drip">IV Drip</a>
+        <a href="/food-intolerance">ภูมิแพ้อาหาร</a>
+        <a href="/hbot">HBOT</a>
+        <a href="/nad">NAD+</a>
+        <a href="/check-up">Check-up</a>
+      </div>
+      <a href="tel:+66959349640" class="btn btn-primary btn-sm">โทรนัดหมาย</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="ige-hero hero-section">
+    <div class="hero-img-wrap">
+      <img src="image/allergy-ige-hero-1200x630.jpg" alt="ตรวจภูมิแพ้ IgE" class="hero-img">
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <div class="hero-badge">ตรวจภูมิแพ้แบบจำเพาะ</div>
+        <h1>จาม ผื่น หายใจไม่ออก<br>ร่างกายกำลังบอกอะไรคุณอยู่</h1>
+        <p class="hero-sub">ภูมิแพ้ IgE ไม่ได้เพิ่งเกิด — มันรอสารกระตุ้นอยู่แล้ว ตรวจเลือดครั้งเดียว รู้ว่าแพ้อะไร หลีกเลี่ยงได้ตรงจุด</p>
+        <div class="hero-cta">
+          <a href="tel:+66959349640" class="btn btn-white">โทรนัดตรวจ 095-934-9640</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">IgE</span><span class="hero-stat-label">ภูมิแพ้เฉียบพลัน</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">100+</span><span class="hero-stat-label">สารก่อภูมิแพ้</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">1 วัน</span><span class="hero-stat-label">เจาะเลือดครั้งเดียว</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">หน้าแรก</a>
+        <span>/</span>
+        <span>ตรวจภูมิแพ้ IgE</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- WHAT IS IgE ALLERGY -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--teal)">ภูมิแพ้ IgE คืออะไร</div>
+      <h2 class="section-title">ปฏิกิริยาที่เร็วเกินกว่าจะเดา</h2>
+      <p class="section-desc">IgE (Immunoglobulin E) คือแอนติบอดีที่ระบบภูมิคุ้มกันสร้างขึ้นเพื่อต่อต้านสารก่อภูมิแพ้ เมื่อร่างกายพบสารนั้นซ้ำ จะปล่อยฮิสตามีนและสารอักเสบอื่น ๆ ออกมาภายใน <strong>2–30 นาที</strong> ทำให้เกิดอาการทันที</p>
+
+      <div class="info-box" style="background:var(--teal-xl); border-color:var(--teal-l); margin-top:32px;">
+        <h3 style="color:var(--teal-d); margin-bottom:16px;">กลไก 3 ขั้นของภูมิแพ้ IgE</h3>
+        <div class="steps-row">
+          <div class="step-item">
+            <div class="process-num">1</div>
+            <div>
+              <strong>Sensitization</strong>
+              <p style="margin:4px 0 0; font-size:.9rem; color:var(--text-muted);">ร่างกายพบสารก่อภูมิแพ้ครั้งแรก สร้าง IgE จำเพาะและยึดบน Mast Cell</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="process-num">2</div>
+            <div>
+              <strong>Re-exposure</strong>
+              <p style="margin:4px 0 0; font-size:.9rem; color:var(--text-muted);">พบสารนั้นอีกครั้ง IgE จับสาร → Mast Cell แตก ปล่อยฮิสตามีน</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="process-num">3</div>
+            <div>
+              <strong>Allergic Reaction</strong>
+              <p style="margin:4px 0 0; font-size:.9rem; color:var(--text-muted);">อาการเกิดภายในนาที — ผื่น บวม จาม หายใจยาก หรือรุนแรงถึงช็อก</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYMPTOMS -->
+  <section class="section" style="background:var(--teal-xl)">
+    <div class="container">
+      <div class="section-label" style="color:var(--teal)">อาการที่พบบ่อย</div>
+      <h2 class="section-title">สัญญาณที่ร่างกายส่งมา</h2>
+      <p class="section-desc">อาการภูมิแพ้ IgE เกิดเร็วและชัดเจน ต่างจากภูมิแพ้แฝง IgG ที่ค่อย ๆ สะสม</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:32px;">
+        <div class="symptom-chip">🤧 จามถี่ น้ำมูกใส</div>
+        <div class="symptom-chip">👁️ ตาแดง คัน น้ำตาไหล</div>
+        <div class="symptom-chip">🌿 ผื่นลมพิษ (Urticaria)</div>
+        <div class="symptom-chip">😮‍💨 หายใจไม่สะดวก หอบ</div>
+        <div class="symptom-chip">🫁 หืดหอบ (Asthma)</div>
+        <div class="symptom-chip">💨 คันจมูก คันปาก</div>
+        <div class="symptom-chip">😰 หน้าบวม ริมฝีปากบวม</div>
+        <div class="symptom-chip">🤢 คลื่นไส้ ปวดท้องทันที</div>
+        <div class="symptom-chip">❗ Anaphylaxis (ช็อคแพ้รุนแรง)</div>
+        <div class="symptom-chip">🔴 ผิวหนังแดง ร้อน บวม</div>
+        <div class="symptom-chip">👃 จมูกบวม อุดตัน</div>
+        <div class="symptom-chip">😵 วิงเวียน หน้ามืด</div>
+      </div>
+      <div class="info-box" style="background:#fff3cd; border-color:#ffc107; margin-top:32px; max-width:640px; margin-inline:auto;">
+        <p style="margin:0; font-size:.95rem;"><strong>⚠️ สำคัญ:</strong> Anaphylaxis คือภาวะฉุกเฉิน ต้องฉีด Epinephrine และไปโรงพยาบาลทันที หากเคยเกิดขึ้น ควรตรวจ IgE เพื่อหาสาเหตุและป้องกันซ้ำ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON ALLERGENS -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-label" style="color:var(--teal)">สารก่อภูมิแพ้</div>
+      <h2 class="section-title">แพ้อะไรได้บ้าง?</h2>
+      <p class="section-desc">การตรวจ Specific IgE Panel ครอบคลุมสารก่อภูมิแพ้หลัก 4 กลุ่ม</p>
+      <div class="grid grid-4" style="margin-top:40px;">
+        <div class="allergen-card">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🍤</div>
+          <h3 style="color:var(--teal-d); font-size:1.05rem; margin-bottom:8px;">อาหาร</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">อาหารทะเล ถั่วลิสง นม ไข่ข้าวสาลี ถั่วเหลือง แป้งสาลี</p>
+        </div>
+        <div class="allergen-card">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🌸</div>
+          <h3 style="color:var(--teal-d); font-size:1.05rem; margin-bottom:8px;">ละอองเกสร &amp; เชื้อรา</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">เกสรหญ้า เกสรต้นไม้ เชื้อรา Aspergillus Cladosporium</p>
+        </div>
+        <div class="allergen-card">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🐾</div>
+          <h3 style="color:var(--teal-d); font-size:1.05rem; margin-bottom:8px;">ขนและสะเก็ดสัตว์</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">แมว สุนัข กระต่าย นก สารคัดหลั่งจากสัตว์</p>
+        </div>
+        <div class="allergen-card">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🪲</div>
+          <h3 style="color:var(--teal-d); font-size:1.05rem; margin-bottom:8px;">ไรฝุ่น &amp; แมลง</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">ไรฝุ่นบ้าน แมลงสาบ ผึ้ง ต่อ แตน แมลงกัด</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IgE vs IgG COMPARISON -->
+  <section class="section" style="background:var(--bg-l)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--teal)">เปรียบเทียบ</div>
+      <h2 class="section-title">IgE vs IgG — ตรวจต่างกันอย่างไร?</h2>
+      <p class="section-desc">ภูมิแพ้มีสองประเภทหลัก — รู้ว่าตัวเองแบบไหนช่วยให้รักษาตรงจุดกว่า</p>
+      <div class="compare-table" style="margin-top:32px;">
+        <table>
+          <thead>
+            <tr>
+              <th>ลักษณะ</th>
+              <th><span class="compare-badge badge-ige">IgE — ภูมิแพ้เฉียบพลัน</span></th>
+              <th><span class="compare-badge badge-igg">IgG — ภูมิแพ้แฝง</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>เวลาที่อาการปรากฏ</td><td>2–30 นาที</td><td>2–72 ชั่วโมง</td></tr>
+            <tr><td>ระดับความรุนแรง</td><td>อาจรุนแรงถึงชีวิต</td><td>ไม่อันตราย แต่เรื้อรัง</td></tr>
+            <tr><td>อาการที่พบ</td><td>ผื่น บวม หืด Anaphylaxis</td><td>ท้องอืด ปวดหัว ผิวหนังอักเสบ อ้วน</td></tr>
+            <tr><td>วิธีตรวจ</td><td>Specific IgE Blood Test</td><td>IgG Food Intolerance Panel</td></tr>
+            <tr><td>การรักษา</td><td>หลีกเลี่ยง + ยา + Immunotherapy</td><td>Elimination Diet + Gut Healing</td></tr>
+            <tr><td>Thrive ให้บริการ</td><td>✅ ตรวจ IgE Panel</td><td>✅ <a href="/food-intolerance" style="color:var(--teal-d)">ตรวจ IgG 216 ชนิด</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO TEST -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--teal)">ขั้นตอนการตรวจ</div>
+      <h2 class="section-title">ตรวจง่าย รู้ผลชัด</h2>
+      <div class="process-list" style="margin-top:40px;">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <h3>ปรึกษาแพทย์</h3>
+            <p>แพทย์ซักประวัติอาการ ระยะเวลา และสภาพแวดล้อม เพื่อเลือก Panel IgE ที่เหมาะสม (Food / Inhalant / Comprehensive)</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <h3>เจาะเลือด 1 ครั้ง</h3>
+            <p>ใช้เลือดเพียง 5–10 mL ส่งตรวจ Specific IgE ครอบคลุมสารก่อภูมิแพ้ที่เลือก ไม่ต้องงดอาหาร</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <h3>รอผล 3–5 วันทำการ</h3>
+            <p>ผลระบุระดับ IgE ต่อสารแต่ละชนิด แสดงเป็นค่า Class 0–6 พร้อมกราฟ</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <h3>แปลผลและวางแผน</h3>
+            <p>แพทย์อธิบายผล แนะนำการหลีกเลี่ยง ยาที่เหมาะสม และพิจารณา Immunotherapy สำหรับกรณีที่เหมาะสม</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD TEST -->
+  <section class="section" style="background:var(--teal-xl)">
+    <div class="container">
+      <div class="section-label" style="color:var(--teal)">ผู้ที่ควรตรวจ</div>
+      <h2 class="section-title">คุณเข้าข่ายไหน?</h2>
+      <div class="grid grid-3" style="margin-top:40px;">
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">🤧</span>
+          <div>
+            <strong>จามทุกเช้า น้ำมูกไม่หยุด</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">แพ้อากาศเรื้อรัง อาจมาจากไรฝุ่นหรือเชื้อราในบ้าน</p>
+          </div>
+        </div>
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">🌿</span>
+          <div>
+            <strong>ผื่นลมพิษไม่ทราบสาเหตุ</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ขึ้นแล้วหาย ขึ้นซ้ำ ไม่รู้ว่ากระตุ้นจากอะไร</p>
+          </div>
+        </div>
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">🫁</span>
+          <div>
+            <strong>หืดหอบ หายใจไม่คล่อง</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">อาการแย่ลงในบางสถานที่หรือบางฤดูกาล</p>
+          </div>
+        </div>
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">🐱</span>
+          <div>
+            <strong>เลี้ยงสัตว์แล้วมีอาการ</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ตาแดง จาม หรือผื่นหลังจับสัตว์เลี้ยง</p>
+          </div>
+        </div>
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">🍤</span>
+          <div>
+            <strong>แพ้อาหารบางชนิดอย่างชัดเจน</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">กินแล้วบวม คันปาก หรือท้องเสียทันที</p>
+          </div>
+        </div>
+        <div class="who-card" style="background:white; border-radius:var(--r-lg); padding:20px; border:1px solid var(--teal-l);">
+          <span style="font-size:1.8rem;">❗</span>
+          <div>
+            <strong>เคยมีประวัติ Anaphylaxis</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ต้องรู้สาเหตุเพื่อป้องกันซ้ำ พกยาฉุกเฉิน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--forest) 0%, var(--teal-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">ไม่แน่ใจว่าแพ้อะไร — ตรวจให้รู้จริง</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">ปรึกษาหมอนุ่นฟรีก่อนเลือก Panel ที่เหมาะกับอาการของคุณ</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="doctor-card">
+        <div class="doctor-img-wrap">
+          <img src="image/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น Thrive Wellness Clinic" class="doctor-img">
+        </div>
+        <div class="doctor-info">
+          <div class="section-label" style="color:var(--teal)">แพทย์ประจำคลินิก</div>
+          <h2 class="doctor-name">พญ. ชนากานต์ ตระหง่านศรี</h2>
+          <p class="doctor-en">Chanakan Trangansri, MD. (หมอนุ่น)</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Anti-aging &amp; Regenerative Medicine</span>
+            <span class="doctor-tag">Nutrition Wellness</span>
+            <span class="doctor-tag">Hormone Balance</span>
+            <span class="doctor-tag">Lifestyle Medicine</span>
+            <span class="doctor-tag">Chelation &amp; Detoxification</span>
+          </div>
+          <p class="doctor-bio">หมอนุ่นให้ความสำคัญกับการหาต้นเหตุของอาการ ไม่ใช่แค่รักษาปลายเหตุ การตรวจ IgE เป็นส่วนหนึ่งของการประเมินสุขภาพองค์รวมเพื่อวางแผนการดูแลที่เหมาะกับแต่ละคน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-l)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--teal)">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">FAQ — ตรวจภูมิแพ้ IgE</h2>
+      <div class="faq-list" style="margin-top:40px;">
+        <details class="faq-item">
+          <summary class="faq-q">IgE กับ IgG ต่างกันอย่างไร?</summary>
+          <div class="faq-a">IgE คือแอนติบอดีที่ทำให้เกิดภูมิแพ้แบบเฉียบพลัน (ภายใน 2–30 นาที) เช่น ผื่น บวม หายใจไม่ออก ส่วน IgG คือแอนติบอดีที่เกี่ยวกับภูมิแพ้แฝง ปฏิกิริยาช้า 2–72 ชั่วโมง เช่น ท้องอืด ปวดหัว ผิวหนังอักเสบเรื้อรัง ทั้งสองชนิดตรวจได้จากเลือด แต่วิเคราะห์คนละ panel</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ใครควรตรวจ IgE บ้าง?</summary>
+          <div class="faq-a">ผู้ที่มีอาการผื่นลมพิษ หอบหืด จามถี่ น้ำมูกไหล ตาแดงคัน แพ้อากาศ หรือเคยมีปฏิกิริยาแพ้รุนแรง (anaphylaxis) ควรตรวจเพื่อหาสารก่อภูมิแพ้ที่แท้จริง</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ต้องงดอาหารก่อนตรวจไหม?</summary>
+          <div class="faq-a">โดยทั่วไปไม่จำเป็นต้องงดอาหาร แต่ควรแจ้งแพทย์หากรับประทานยาต้านฮิสตามีน เพราะอาจส่งผลต่อการทดสอบผิวหนัง สำหรับการตรวจเลือด IgE ไม่มีผลต่อความแม่นยำ</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ผลตรวจ IgE สูงหมายความว่าอะไร?</summary>
+          <div class="faq-a">Total IgE สูงบ่งชี้ว่าร่างกายมีปฏิกิริยาภูมิแพ้สูง แต่ต้องดู Specific IgE ด้วยว่าแพ้สารชนิดใดบ้าง บางคน Total IgE ปกติแต่ Specific IgE บางชนิดสูง ซึ่งก็มีความสำคัญทางคลินิก แพทย์จะแปลผลร่วมกับอาการเสมอ</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">หลังรู้ผลควรทำอะไรต่อ?</summary>
+          <div class="faq-a">แพทย์จะวางแผน 3 ทาง: (1) หลีกเลี่ยงสารก่อภูมิแพ้ (2) ใช้ยาควบคุมอาการ และ (3) Immunotherapy สำหรับกรณีแพ้รุนแรง บางกรณีอาจแนะนำให้ตรวจ IgG ร่วมด้วยเพื่อให้เห็นภาพครบ</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+      <div class="grid grid-4" style="margin-top:32px;">
+        <a href="/food-intolerance" class="related-card">
+          <div class="related-icon">🧪</div>
+          <h3>ตรวจภูมิแพ้อาหารแฝง IgG</h3>
+          <p>216 ชนิด ปฏิกิริยาช้า เรื้อรัง</p>
+        </a>
+        <a href="/gluta" class="related-card">
+          <div class="related-icon">✨</div>
+          <h3>Glutathione IV</h3>
+          <p>ต้านอักเสบ เสริมภูมิคุ้มกัน</p>
+        </a>
+        <a href="/personalized-vitamins" class="related-card">
+          <div class="related-icon">💊</div>
+          <h3>วิตามินเฉพาะบุคคล</h3>
+          <p>ตรวจและเติมเต็มสิ่งที่ขาด</p>
+        </a>
+        <a href="/iv-drip" class="related-card">
+          <div class="related-icon">💉</div>
+          <h3>IV Drip Immune Boost</h3>
+          <p>เสริมภูมิคุ้มกัน ฟื้นฟูร่างกาย</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--forest) 0%, var(--teal-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">รู้ว่าแพ้อะไร ชีวิตเปลี่ยนได้จริง</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">Thrive Wellness Clinic — Crystal Park ลาดพร้าว เปิดทุกวัน 10:00–19:00</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <h3 style="font-size:1rem; color:var(--text-muted); margin-bottom:16px;">อ้างอิงทางวิทยาศาสตร์</h3>
+      <ul class="ref-list">
+        <li>Johansson SG et al. "Revised nomenclature for allergy for global use." <em>Allergy.</em> 2004;59(8):813–815. PMID: 15180812</li>
+        <li>Galli SJ, Tsai M, Piliponsky AM. "The development of allergic inflammation." <em>Nature.</em> 2008;454(7203):445–454. PMID: 18650915</li>
+        <li>Platts-Mills TA. "The allergy epidemics: 1870–2010." <em>J Allergy Clin Immunol.</em> 2015;136(1):3–13. PMID: 26145982</li>
+        <li>Muraro A et al. "Anaphylaxis: guidelines from the European Academy of Allergy and Clinical Immunology." <em>Allergy.</em> 2014;69(8):1026–1045. PMID: 24909803</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="40">
+          <p class="footer-tagline">ดูแลสุขภาพเชิงลึก ด้วยวิทยาศาสตร์และความใส่ใจ</p>
+        </div>
+        <div class="footer-col">
+          <h4>บริการ</h4>
+          <ul>
+            <li><a href="/iv-drip">IV Drip</a></li>
+            <li><a href="/food-intolerance">ตรวจภูมิแพ้อาหาร IgG</a></li>
+            <li><a href="/allergy-ige">ตรวจภูมิแพ้ IgE</a></li>
+            <li><a href="/hbot">HBOT</a></li>
+            <li><a href="/nad">NAD+</a></li>
+            <li><a href="/chelation">Chelation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ข้อมูลคลินิก</h4>
+          <ul>
+            <li>📍 The Crystal Park ชั้น 2 อาคาร B<br>เลขที่ 199 ถนนประดิษฐ์มนูธรรม<br>ลาดพร้าว กรุงเทพฯ 10230</li>
+            <li>📞 <a href="tel:+66959349640">095-934-9640</a></li>
+            <li>💬 <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener">LINE @thrivewellnessth</a></li>
+            <li>🕐 เปิดทุกวัน 10:00–19:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thrive Wellness Clinic. สงวนลิขสิทธิ์.</p>
+        <p style="font-size:.8rem; color:var(--text-muted); margin-top:8px;">เนื้อหานี้จัดทำโดย พญ. ชนากานต์ ตระหง่านศรี เพื่อการให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์เฉพาะบุคคล</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+66959349640" class="sticky-btn sticky-call">📞 โทรนัดหมาย</a>
+    <a href="https://line.me/R/ti/p/@thrivewellnessth" class="sticky-btn sticky-line" target="_blank" rel="noopener">💬 LINE</a>
+  </div>
+
+</body>
+</html>

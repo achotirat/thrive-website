@@ -229,8 +229,11 @@ Repository: https://github.com/achotirat/thrive-website
 
 ## หน้าที่ยังต้องสร้าง (Tier A)
 
+### Tier A — Priority 1 (เสร็จแล้ว)
+
 | URL | Views | Priority | สถานะ |
 |-----|------:|---------|-------|
+| `/food-intolerance` | 3,903 | 🔴 High | ✅ เสร็จ |
 | `/adrenal-fatigue` | 1,421 | 🔴 High | ✅ เสร็จ |
 | `/hormones-quiz` | 1,344 | 🔴 High | ✅ เสร็จ |
 | `/hbot` | 705 | 🔴 High | ✅ เสร็จ |
@@ -241,6 +244,22 @@ Repository: https://github.com/achotirat/thrive-website
 | `/personalized-vitamins` | 148 | 🟢 Normal | ✅ เสร็จ |
 | `/nad` | 120 | 🟢 Normal | ✅ เสร็จ |
 | `/nk-cell` | 116 | 🟢 Normal | ✅ เสร็จ |
+
+### Tier A — Priority 2 (Secondary)
+
+| URL | Views | สถานะ |
+|-----|------:|-------|
+| `/allergy-ige` | 74 | ✅ เสร็จ |
+| `/urine-organic-test` | 55 | ⏳ ยังไม่เริ่ม |
+| `/vitamin-d` | 47 | ⏳ ยังไม่เริ่ม |
+| `/doctors` | 45 | ⏳ ยังไม่เริ่ม |
+| `/vitamins-and-micronutrients` | 42 | ⏳ ยังไม่เริ่ม |
+| `/check-up` | 38 | ⏳ ยังไม่เริ่ม |
+| `/about` | 35 | ⏳ ยังไม่เริ่ม |
+| `/oligoscan` | 25 | ⏳ ยังไม่เริ่ม |
+| `/cancer-screening` | 24 | ⏳ ยังไม่เริ่ม |
+| `/dna-test` | 18 | ⏳ ยังไม่เริ่ม |
+| `/contact` | 4 | ⏳ ยังไม่เริ่ม |
 
 ---
 
