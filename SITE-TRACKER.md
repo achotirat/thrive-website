@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-08 (adrenal-fatigue เพิ่ม)
+อัปเดตล่าสุด: 2026-05-09 (hormones-quiz เพิ่ม)
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -12,7 +12,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-------|-------|---------|
 | Phase 0 — Security & Foundation | ✅ เสร็จ | Netlify, DNS, API health endpoint พร้อม |
 | Phase 1 — Astro Bootstrap | ⏳ ยังไม่เริ่ม | รอ scaffold Astro project |
-| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ |
+| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
 | Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
@@ -133,7 +133,7 @@ Repository: https://github.com/achotirat/thrive-website
 | URL | Views | Priority | สถานะ |
 |-----|------:|---------|-------|
 | `/adrenal-fatigue` | 1,421 | 🔴 High | ✅ เสร็จ |
-| `/hormones-quiz` | 1,344 | 🔴 High | ⏳ ยังไม่เริ่ม |
+| `/hormones-quiz` | 1,344 | 🔴 High | ✅ เสร็จ |
 | `/hbot` | 705 | 🔴 High | ⏳ ยังไม่เริ่ม |
 | `/iv-drip` | 492 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
 | `/` (homepage) | 465 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
