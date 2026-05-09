@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-09 (hbot เพิ่ม)
+อัปเดตล่าสุด: 2026-05-09 (iv-drip เพิ่ม)
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -12,7 +12,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-------|-------|---------|
 | Phase 0 — Security & Foundation | ✅ เสร็จ | Netlify, DNS, API health endpoint พร้อม |
 | Phase 1 — Astro Bootstrap | ⏳ ยังไม่เริ่ม | รอ scaffold Astro project |
-| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ /hbot ✅ |
+| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ /hbot ✅ /iv-drip ✅ |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
 | Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
@@ -176,6 +176,55 @@ Repository: https://github.com/achotirat/thrive-website
 | Technical SEO | 8/10 |
 | **Overall** | **7.3/10** |
 
+### `/iv-drip` — iv-drip.html
+สร้าง: 2026-05-09 | Priority: Tier A #5 (492 views)
+
+#### ✅ สิ่งที่ทำแล้ว
+- [x] Meta title: `วิตามินดริป IV Drip กรุงเทพ 7 สูตร | Thrive Wellness Clinic ลาดพร้าว`
+- [x] Meta description (155 chars)
+- [x] Canonical URL
+- [x] Open Graph tags (7 รายการ) + OG image: iv-drip-hero-1200x630.jpg
+- [x] Twitter Card tags (4 รายการ)
+- [x] GEO Targeting tags (4 รายการ)
+- [x] Hreflang tags (th-TH, en, x-default)
+- [x] JSON-LD: MedicalProcedure (7 sub-procedures)
+- [x] JSON-LD: FAQPage (5 questions)
+- [x] JSON-LD: MedicalClinic (@id #clinic) พร้อมที่อยู่ถูกต้อง
+- [x] JSON-LD: BreadcrumbList
+- [x] JSON-LD: Person — หมอนุ่น (@id #dr-chanakan)
+- [x] Hero section + 4 stats badges + CTA สองปุ่ม
+- [x] Section: ทำไมดริปถึงต่างจากกินวิตามิน (IV Drip Room.jpg)
+- [x] Section: เมื่อไหรควรดริป (6 situations)
+- [x] Section: บางคนต้องดริปต่อเนื่อง (6 cases)
+- [x] Section: 7 สูตรดริป (therapy cards)
+- [x] Section: Chelation spotlight
+- [x] Section: How it works (4 steps)
+- [x] Section: Mid-page CTA
+- [x] Section: Doctor attribution — หมอนุ่น
+- [x] Section: FAQ accordion (5 คำถาม)
+- [x] Section: Related services (4 cards)
+- [x] Section: Final CTA
+- [x] Scientific references (4 PubMed sources)
+- [x] Footer — ที่อยู่ถูกต้อง (Crystal Park ลาดพร้าว), เวลา 19:00
+- [x] Mobile sticky CTA bar
+
+#### 🔲 สิ่งที่ยังเพิ่มได้อีก
+- [ ] ราคา/แพ็คเกจแต่ละสูตร
+- [ ] Testimonial section
+- [ ] English version สำหรับ expat
+- [ ] Internal link ไปยัง blog ที่เกี่ยวข้อง
+
+#### SEO Score (pre-Astro)
+| Dimension | ประเมินเบื้องต้น |
+|-----------|----------------|
+| Search Intent | 7/10 |
+| E-E-A-T | 6/10 |
+| Content Quality | 7/10 |
+| On-Page SEO | 8/10 |
+| Content Structure | 8/10 |
+| Technical SEO | 8/10 |
+| **Overall** | **7.3/10** |
+
 ---
 
 ## หน้าที่ยังต้องสร้าง (Tier A)
@@ -185,7 +234,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/adrenal-fatigue` | 1,421 | 🔴 High | ✅ เสร็จ |
 | `/hormones-quiz` | 1,344 | 🔴 High | ✅ เสร็จ |
 | `/hbot` | 705 | 🔴 High | ✅ เสร็จ |
-| `/iv-drip` | 492 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
+| `/iv-drip` | 492 | 🟡 Medium | ✅ เสร็จ |
 | `/` (homepage) | 465 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
 | `/gluta` | 252 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
 | `/chelation` | 187 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
