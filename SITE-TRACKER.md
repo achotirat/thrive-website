@@ -253,7 +253,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/urine-organic-test` | 55 | ✅ เสร็จ |
 | `/vitamin-d` | 47 | ✅ เสร็จ |
 | `/doctors` | 45 | ⏳ ยังไม่เริ่ม |
-| `/vitamins-and-micronutrients` | 42 | ⏳ ยังไม่เริ่ม |
+| `/vitamins-and-micronutrients` | 42 | ✅ เสร็จ |
 | `/check-up` | 38 | ⏳ ยังไม่เริ่ม |
 | `/about` | 35 | ⏳ ยังไม่เริ่ม |
 | `/oligoscan` | 25 | ⏳ ยังไม่เริ่ม |
