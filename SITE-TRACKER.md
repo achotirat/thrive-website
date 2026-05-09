@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-09 (nad-plus เพิ่ม)
+อัปเดตล่าสุด: 2026-05-09 (nk-cell เพิ่ม)
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -12,7 +12,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-------|-------|---------|
 | Phase 0 — Security & Foundation | ✅ เสร็จ | Netlify, DNS, API health endpoint พร้อม |
 | Phase 1 — Astro Bootstrap | ⏳ ยังไม่เริ่ม | รอ scaffold Astro project |
-| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ /hbot ✅ /iv-drip ✅ /gluta ✅ /chelation ✅ /personalized-vitamins ✅ /nad ✅ |
+| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ /hbot ✅ /iv-drip ✅ /gluta ✅ /chelation ✅ /personalized-vitamins ✅ /nad ✅ /nk-cell ✅ |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
 | Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
@@ -240,7 +240,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/chelation` | 187 | 🟡 Medium | ✅ เสร็จ |
 | `/personalized-vitamins` | 148 | 🟢 Normal | ✅ เสร็จ |
 | `/nad` | 120 | 🟢 Normal | ✅ เสร็จ |
-| `/nk-cell` | 116 | 🟢 Normal | ⏳ ยังไม่เริ่ม |
+| `/nk-cell` | 116 | 🟢 Normal | ✅ เสร็จ |
 
 ---
 
