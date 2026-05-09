@@ -256,7 +256,7 @@ Repository: https://github.com/achotirat/thrive-website
 | `/vitamins-and-micronutrients` | 42 | ✅ เสร็จ |
 | `/check-up` | 38 | ✅ เสร็จ |
 | `/about` | 35 | ✅ เสร็จ |
-| `/oligoscan` | 25 | ⏳ ยังไม่เริ่ม |
+| `/oligoscan` | 25 | ✅ เสร็จ |
 | `/cancer-screening` | 24 | ⏳ ยังไม่เริ่ม |
 | `/dna-test` | 18 | ⏳ ยังไม่เริ่ม |
 | `/contact` | 4 | ⏳ ยังไม่เริ่ม |

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    :root {
+      --violet: #7c3aed;
+      --violet-d: #6d28d9;
+      --violet-l: #ede9fe;
+      --violet-xl: #f5f3ff;
+      --deep: #2e1065;
+    }
+    .oligo-hero { background: linear-gradient(135deg, #0d0520 0%, #2e1065 50%, #4c1d95 100%); }
+    .mineral-card { background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 20px 18px; transition: all .28s; }
+    .mineral-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--violet-l); }
+    .mineral-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .75rem; font-weight: 700; margin-bottom: 8px; }
+    .badge-essential { background: #d1fae5; color: #065f46; }
+    .badge-toxic { background: #fee2e2; color: #991b1b; }
+    .process-num { width: 44px; height: 44px; border-radius: 50%; background: var(--violet); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-en); font-size: 1.1rem; flex-shrink: 0; }
+    .result-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--white); border-radius: var(--r-md); border: 1px solid var(--border-l); }
+  </style>
+
+  <!-- SEO Core -->
+  <title>OligoScan ตรวจแร่ธาตุโลหะหนักในร่างกาย กรุงเทพ | Thrive Wellness Clinic ลาดพร้าว</title>
+  <meta name="description" content="OligoScan ตรวจแร่ธาตุ 21 ชนิด และโลหะหนัก 14 ชนิด ผ่านผิวหนังไม่ต้องเจาะเลือด ทราบผลภายใน 3 นาที — Thrive Wellness Clinic Crystal Park ลาดพร้าว โทร 095-934-9640">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="พญ. ชนากานต์ ตระหง่านศรี — Thrive Wellness Clinic">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/oligoscan">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:title" content="OligoScan ตรวจแร่ธาตุ โลหะหนัก กรุงเทพ | Thrive Wellness Clinic">
+  <meta property="og:description" content="ตรวจแร่ธาตุ 21 ชนิด และโลหะหนัก 14 ชนิด ผ่านผิวหนัง ไม่ต้องเจาะเลือด ทราบผลภายใน 3 นาที — Thrive Wellness Clinic ลาดพร้าว">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/image/oligoscan-hero-1200x630.jpg">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/oligoscan">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OligoScan ตรวจแร่ธาตุ โลหะหนัก | Thrive Wellness Clinic กรุงเทพ">
+  <meta name="twitter:description" content="ตรวจระดับแร่ธาตุและโลหะหนักในร่างกายโดยไม่ต้องเจาะเลือด ผลใน 3 นาที">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/image/oligoscan-hero-1200x630.jpg">
+
+  <!-- GEO Targeting -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8049;100.6026">
+  <meta name="ICBM" content="13.8049, 100.6026">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="th-TH" href="https://www.thrivewellnessth.com/oligoscan">
+  <link rel="alternate" hreflang="en" href="https://www.thrivewellnessth.com/oligoscan">
+  <link rel="alternate" hreflang="x-default" href="https://www.thrivewellnessth.com/oligoscan">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Clinic",
+        "alternateName": "ไทรฟ์ เวลเนส คลินิก",
+        "url": "https://www.thrivewellnessth.com",
+        "telephone": "+66959349640",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+          "addressLocality": "ลาดพร้าว กรุงเทพฯ",
+          "postalCode": "10230",
+          "addressCountry": "TH"
+        },
+        "openingHours": "Mo-Su 10:00-19:00",
+        "image": "https://www.thrivewellnessth.com/image/oligoscan-hero-1200x630.jpg"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.thrivewellnessth.com/#dr-chanakan",
+        "name": "พญ. ชนากานต์ ตระหง่านศรี",
+        "alternateName": "Chanakan Trangansri, MD.",
+        "jobTitle": "แพทย์ด้าน Anti-aging & Regenerative Medicine",
+        "worksFor": { "@id": "https://www.thrivewellnessth.com/#clinic" },
+        "image": "https://www.thrivewellnessth.com/image/dr-chanakan-trangansri-thrive-400x400.jpg"
+      },
+      {
+        "@type": "MedicalTest",
+        "name": "OligoScan — การตรวจแร่ธาตุและโลหะหนักผ่านผิวหนัง",
+        "alternateName": "Spectrophotometry Mineral and Heavy Metal Analysis",
+        "description": "การตรวจวิเคราะห์ระดับแร่ธาตุจำเป็น 21 ชนิด และโลหะหนัก 14 ชนิดในเนื้อเยื่อ ผ่านเทคโนโลยี Spectrophotometry โดยไม่ต้องเจาะเลือด ทราบผลภายใน 3 นาที",
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "ภาวะขาดแร่ธาตุและการสะสมโลหะหนัก (Mineral Deficiency and Heavy Metal Toxicity)"
+        },
+        "relevantSpecialty": "Functional Medicine",
+        "recognizingAuthority": { "@id": "https://www.thrivewellnessth.com/#clinic" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "OligoScan คืออะไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OligoScan คืออุปกรณ์ตรวจวิเคราะห์ระดับแร่ธาตุและโลหะหนักในเนื้อเยื่อผ่านเทคโนโลยี Spectrophotometry ส่องแสงผ่านฝ่ามือ วิเคราะห์การดูดกลืนแสงของสารต่าง ๆ ไม่ต้องเจาะเลือดหรือเก็บตัวอย่าง"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "OligoScan แม่นยำไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OligoScan วัดระดับแร่ธาตุในเนื้อเยื่อ (Tissue Level) ซึ่งอาจสะท้อนการสะสมในระยะยาวได้ดีกว่าการตรวจเลือดที่วัด ณ ขณะนั้น แพทย์จะแปลผลร่วมกับอาการทางคลินิกและผลตรวจอื่นเสมอ"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ใครควรตรวจ OligoScan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "เหมาะสำหรับผู้ที่ต้องการรู้ระดับแร่ธาตุในเนื้อเยื่อ ผู้ที่มีอาการเหนื่อยล้าเรื้อรัง ผู้ที่อยู่ในสภาพแวดล้อมที่อาจมีโลหะหนัก หรือผู้ที่ต้องการ Detox โปรแกรมและต้องการรู้ข้อมูลเบื้องต้นก่อนเริ่ม"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "หากพบโลหะหนักสูงต้องทำอะไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "แพทย์จะประเมินระดับและอาการร่วมกัน หากจำเป็นอาจแนะนำ Chelation Therapy ซึ่งเป็นการให้สาร EDTA ทางหลอดเลือดเพื่อจับโลหะหนักและขับออกทางไต พร้อมเสริมแร่ธาตุที่ขาดเพื่อทดแทน"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ก่อนตรวจ OligoScan ต้องเตรียมตัวอย่างไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ไม่ต้องงดอาหาร ไม่ต้องเตรียมตัวพิเศษ แต่ควรล้างมือให้สะอาดและไม่ทาครีมหรือโลชั่นบริเวณฝ่ามือก่อนตรวจ เพื่อไม่ให้สารเคมีภายนอกรบกวนผลการอ่านค่า"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/" },
+          { "@type": "ListItem", "position": 2, "name": "OligoScan", "item": "https://www.thrivewellnessth.com/oligoscan" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav-wrap">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="/iv-drip">IV Drip</a>
+        <a href="/food-intolerance">ภูมิแพ้อาหาร</a>
+        <a href="/chelation">Chelation</a>
+        <a href="/check-up">Check-up</a>
+        <a href="/about">เกี่ยวกับเรา</a>
+      </div>
+      <a href="tel:+66959349640" class="btn btn-primary btn-sm">โทรนัดหมาย</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="oligo-hero hero-section">
+    <div class="hero-img-wrap">
+      <img src="image/oligoscan-hero-1200x630.jpg" alt="OligoScan ตรวจแร่ธาตุโลหะหนัก Thrive Wellness Clinic" class="hero-img">
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <div class="hero-badge">Spectrophotometry Mineral Analysis</div>
+        <h1>รู้ระดับแร่ธาตุและโลหะหนัก<br>ใน 3 นาที ไม่ต้องเจาะเลือด</h1>
+        <p class="hero-sub">OligoScan ใช้แสงวิเคราะห์เนื้อเยื่อฝ่ามือ บอกระดับแร่ธาตุจำเป็น 21 ชนิด และโลหะหนักอันตราย 14 ชนิด — รู้ผลทันที วางแผน Detox และเสริมแร่ธาตุได้ตรงจุด</p>
+        <div class="hero-cta">
+          <a href="tel:+66959349640" class="btn btn-white">โทรนัดตรวจ 095-934-9640</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">21</span><span class="hero-stat-label">แร่ธาตุจำเป็น</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">14</span><span class="hero-stat-label">โลหะหนักอันตราย</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">3 นาที</span><span class="hero-stat-label">ทราบผลทันที</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">หน้าแรก</a>
+        <span>/</span>
+        <span>OligoScan</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- WHAT IS OLIGOSCAN -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--violet)">OligoScan คืออะไร</div>
+      <h2 class="section-title">เทคโนโลยีอ่านแสงจากเนื้อเยื่อ</h2>
+      <p class="section-desc">OligoScan ใช้หลักการ <strong>Spectrophotometry</strong> ส่องแสงความยาวคลื่นต่าง ๆ ผ่านฝ่ามือ วัดการดูดกลืนแสงของโมเลกุลในเนื้อเยื่อ และคำนวณระดับแร่ธาตุและโลหะหนักที่สะสมอยู่</p>
+
+      <div class="info-box" style="background:var(--violet-xl); border-color:var(--violet-l); margin-top:28px;">
+        <h3 style="color:var(--violet-d); margin-bottom:16px;">OligoScan ต่างจากการตรวจเลือดอย่างไร?</h3>
+        <div class="grid grid-2" style="gap:20px;">
+          <div>
+            <p style="font-weight:600; color:var(--text-dark); margin-bottom:6px;">การตรวจเลือด</p>
+            <ul style="font-size:.9rem; color:var(--text-muted); padding-left:18px; margin:0; line-height:1.8;">
+              <li>วัดระดับในกระแสเลือด ณ ขณะนั้น</li>
+              <li>ต้องเจาะเลือดและรอผล</li>
+              <li>เห็นสิ่งที่ "วนเวียน" ในเลือด</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight:600; color:var(--violet-d); margin-bottom:6px;">OligoScan</p>
+            <ul style="font-size:.9rem; color:var(--text-muted); padding-left:18px; margin:0; line-height:1.8;">
+              <li>วัดระดับที่สะสมในเนื้อเยื่อ</li>
+              <li>ไม่ต้องเจาะเลือด ทราบผลใน 3 นาที</li>
+              <li>เห็นสิ่งที่ "สะสม" ในเซลล์ระยะยาว</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT MEASURES -->
+  <section class="section" style="background:var(--violet-xl)">
+    <div class="container">
+      <div class="section-label" style="color:var(--violet)">สิ่งที่ตรวจได้</div>
+      <h2 class="section-title">35 ตัวชี้วัดในการตรวจครั้งเดียว</h2>
+      <p class="section-desc">แบ่งเป็น 2 กลุ่มหลักที่ส่งผลต่อสุขภาพในทางตรงข้ามกัน</p>
+      <div class="grid grid-2" style="margin-top:40px; gap:24px;">
+
+        <div>
+          <h3 style="color:#065f46; font-size:1.1rem; margin-bottom:20px;">แร่ธาตุจำเป็น 21 ชนิด <span style="font-size:.8rem; color:var(--text-muted);">(Essential Minerals)</span></h3>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Macro</div><p style="font-size:.9rem; font-weight:600; margin:0;">Calcium (Ca)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">กระดูก ฟัน กล้ามเนื้อ</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Macro</div><p style="font-size:.9rem; font-weight:600; margin:0;">Magnesium (Mg)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">พลังงาน ระบบประสาท</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Macro</div><p style="font-size:.9rem; font-weight:600; margin:0;">Phosphorus (P)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">กระดูก DNA ATP</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Trace</div><p style="font-size:.9rem; font-weight:600; margin:0;">Zinc (Zn)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ภูมิคุ้มกัน ฮอร์โมน</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Trace</div><p style="font-size:.9rem; font-weight:600; margin:0;">Iron (Fe)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ออกซิเจน พลังงาน</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Trace</div><p style="font-size:.9rem; font-weight:600; margin:0;">Selenium (Se)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ต้านอนุมูลอิสระ</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Trace</div><p style="font-size:.9rem; font-weight:600; margin:0;">Copper (Cu)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">เม็ดเลือด คอลลาเจน</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-essential">Trace</div><p style="font-size:.9rem; font-weight:600; margin:0;">Chromium (Cr)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">น้ำตาลในเลือด</p></div>
+          </div>
+          <p style="font-size:.83rem; color:var(--text-muted); margin-top:12px;">+ Silicon, Boron, Manganese, Cobalt, Iodine, Lithium, Molybdenum, Vanadium, Nickel, Germanium, Sulfur</p>
+        </div>
+
+        <div>
+          <h3 style="color:#991b1b; font-size:1.1rem; margin-bottom:20px;">โลหะหนักอันตราย 14 ชนิด <span style="font-size:.8rem; color:var(--text-muted);">(Toxic Heavy Metals)</span></h3>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Lead (Pb)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ทำลายระบบประสาท</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Mercury (Hg)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ไต สมอง ประสาท</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Arsenic (As)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ผิวหนัง มะเร็ง</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Cadmium (Cd)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ไต กระดูก</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Aluminum (Al)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">สมอง ระบบประสาท</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Barium (Ba)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">หัวใจ กล้ามเนื้อ</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Tin (Sn)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ตับ ภูมิคุ้มกัน</p></div>
+            <div class="mineral-card"><div class="mineral-badge badge-toxic">Toxic</div><p style="font-size:.9rem; font-weight:600; margin:0;">Beryllium (Be)</p><p style="font-size:.8rem; color:var(--text-muted); margin:4px 0 0;">ปอด ระบบทางเดินหายใจ</p></div>
+          </div>
+          <p style="font-size:.83rem; color:var(--text-muted); margin-top:12px;">+ Bismuth, Antimony, Platinum, Thallium, Titanium, Silver</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES OF HEAVY METALS -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--violet)">แหล่งที่มา</div>
+      <h2 class="section-title">โลหะหนักเข้าร่างกายได้จากไหน?</h2>
+      <p class="section-desc">คนเมืองในกรุงเทพฯ สัมผัสโลหะหนักมากกว่าที่คิด โดยไม่รู้ตัว</p>
+      <div class="grid grid-2" style="margin-top:32px; gap:14px;">
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🐟</span>
+          <div><strong>อาหารทะเลและปลา</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ปลาใหญ่อายุยาว เช่น ทูน่า ฉลาม กะพง สะสม Mercury ระดับสูงในเนื้อปลา</p></div>
+        </div>
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🚗</span>
+          <div><strong>มลพิษทางอากาศ</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ไอเสียรถยนต์ ฝุ่น PM2.5 และควันโรงงานมี Lead, Cadmium, Arsenic ปนเปื้อน</p></div>
+        </div>
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🪥</span>
+          <div><strong>ทันตกรรม (amalgam fillings)</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">วัสดุอุดฟันแบบเก่า (silver amalgam) มี Mercury ปนเปื้อนในบางกรณี</p></div>
+        </div>
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🧴</span>
+          <div><strong>เครื่องสำอางและผลิตภัณฑ์บางชนิด</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ผลิตภัณฑ์ whitening บางรายการมี Mercury, Lead สีบางชนิดมี Lead</p></div>
+        </div>
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🌾</span>
+          <div><strong>อาหารและน้ำปนเปื้อน</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ข้าวจากพื้นที่มีสาร Arsenic ในดิน, น้ำจากท่อเก่า มี Lead ปะปน</p></div>
+        </div>
+        <div class="result-row">
+          <span style="font-size:1.6rem; flex-shrink:0;">🏭</span>
+          <div><strong>สิ่งแวดล้อมในที่ทำงาน</strong><p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">อุตสาหกรรมโลหะ พิมพ์ดิด สี แบตเตอรี่ อิเล็กทรอนิกส์ มีโลหะหนักสูง</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" style="background:var(--violet-xl)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--violet)">ขั้นตอน</div>
+      <h2 class="section-title">ตรวจง่าย รู้ผลเร็ว</h2>
+      <div class="process-list" style="margin-top:40px;">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <h3>ล้างมือและเตรียมฝ่ามือ</h3>
+            <p>ล้างมือด้วยน้ำสะอาด ไม่ทาครีม โลชั่น หรือน้ำหอมบริเวณฝ่ามือ เพื่อไม่ให้สารเคมีภายนอกรบกวนผลการอ่านค่า</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <h3>วางฝ่ามือบนอุปกรณ์ 3 นาที</h3>
+            <p>วาง 4 จุดบนฝ่ามือตามลำดับที่กำหนด อุปกรณ์ส่องแสงและอ่านค่าการดูดกลืนแสงของเนื้อเยื่อ ไม่เจ็บปวด ไม่มีผลข้างเคียง</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <h3>ระบบประมวลผลและออกรายงาน</h3>
+            <p>ซอฟต์แวร์คำนวณระดับแร่ธาตุและโลหะหนัก 35 ชนิด พร้อมแสดงผลเปรียบเทียบกับค่าอ้างอิง ออกรายงานทันที</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <h3>แพทย์แปลผลและวางแผน</h3>
+            <p>หมอนุ่นอธิบายผลทีละชนิด ระบุว่าขาดหรือสะสมเกินตรงไหน และออกแบบแผน: เสริมแร่ธาตุ, Chelation Therapy หากโลหะหนักสูง, หรือปรับพฤติกรรม</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS AFTER -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--violet)">หลังตรวจ</div>
+      <h2 class="section-title">ผลบอกอะไร — ทำอะไรต่อ?</h2>
+      <div style="display:flex; flex-direction:column; gap:14px; margin-top:32px;">
+        <div class="result-row" style="background:var(--violet-xl); border-color:var(--violet-l);">
+          <span style="font-size:1.8rem; flex-shrink:0;">🟢</span>
+          <div>
+            <strong>แร่ธาตุขาด → เสริมเฉพาะตัวที่ขาด</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">แพทย์แนะนำ Oral Supplement หรือ IV Drip เฉพาะแร่ธาตุที่ต้องการ ไม่เสริมสิ่งที่ร่างกายไม่ขาด</p>
+          </div>
+        </div>
+        <div class="result-row" style="background:#fff1f2; border-color:#fca5a5;">
+          <span style="font-size:1.8rem; flex-shrink:0;">🔴</span>
+          <div>
+            <strong>โลหะหนักสูง → Chelation Therapy</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">หาก Lead, Mercury, Arsenic หรือ Cadmium สูงเกินเกณฑ์ แพทย์จะพิจารณา <a href="/chelation" style="color:var(--violet-d);">Chelation Therapy</a> ร่วมกับการตรวจเลือดยืนยัน</p>
+          </div>
+        </div>
+        <div class="result-row" style="background:#fefce8; border-color:#fde047;">
+          <span style="font-size:1.8rem; flex-shrink:0;">🟡</span>
+          <div>
+            <strong>ค่าชายขอบ → ปรับพฤติกรรมและติดตาม</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">แพทย์แนะนำการหลีกเลี่ยงแหล่งสัมผัส ปรับอาหาร และนัดตรวจซ้ำใน 3–6 เดือน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--deep) 0%, var(--violet-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">รู้ว่าร่างกายสะสมโลหะหนักมากแค่ไหน — ก่อนจะส่งผลเสีย</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">OligoScan 3 นาที ข้อมูลครบ 35 ตัวชี้วัด</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="doctor-card">
+        <div class="doctor-img-wrap">
+          <img src="image/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น Thrive Wellness Clinic" class="doctor-img">
+        </div>
+        <div class="doctor-info">
+          <div class="section-label" style="color:var(--violet)">แพทย์ประจำคลินิก</div>
+          <h2 class="doctor-name">พญ. ชนากานต์ ตระหง่านศรี</h2>
+          <p class="doctor-en">Chanakan Trangansri, MD. (หมอนุ่น)</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Anti-aging &amp; Regenerative Medicine</span>
+            <span class="doctor-tag">Chelation &amp; Detoxification</span>
+            <span class="doctor-tag">Nutrition Wellness</span>
+            <span class="doctor-tag">Lifestyle Medicine</span>
+          </div>
+          <p class="doctor-bio">หมอนุ่นใช้ OligoScan เป็นส่วนหนึ่งของการประเมินสุขภาพองค์รวม โดยเฉพาะสำหรับผู้ที่ต้องการ Detox หรือสงสัยว่ามีการสะสมโลหะหนัก ผลจาก OligoScan ช่วยให้วางแผน Chelation Therapy และการเสริมแร่ธาตุได้อย่างแม่นยำและปลอดภัย</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-l)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--violet)">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">FAQ — OligoScan</h2>
+      <div class="faq-list" style="margin-top:40px;">
+        <details class="faq-item">
+          <summary class="faq-q">OligoScan คืออะไร?</summary>
+          <div class="faq-a">OligoScan คืออุปกรณ์ตรวจวิเคราะห์ระดับแร่ธาตุและโลหะหนักในเนื้อเยื่อผ่านเทคโนโลยี Spectrophotometry ส่องแสงผ่านฝ่ามือ วิเคราะห์การดูดกลืนแสงของสารต่าง ๆ ไม่ต้องเจาะเลือดหรือเก็บตัวอย่าง</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">OligoScan แม่นยำไหม?</summary>
+          <div class="faq-a">OligoScan วัดระดับแร่ธาตุในเนื้อเยื่อ (Tissue Level) ซึ่งอาจสะท้อนการสะสมในระยะยาวได้ดีกว่าการตรวจเลือดที่วัด ณ ขณะนั้น แพทย์จะแปลผลร่วมกับอาการทางคลินิกและผลตรวจอื่นเสมอ</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ใครควรตรวจ OligoScan?</summary>
+          <div class="faq-a">เหมาะสำหรับผู้ที่ต้องการรู้ระดับแร่ธาตุในเนื้อเยื่อ ผู้ที่มีอาการเหนื่อยล้าเรื้อรัง ผู้ที่อยู่ในสภาพแวดล้อมที่อาจมีโลหะหนัก หรือผู้ที่ต้องการ Detox โปรแกรมและต้องการรู้ข้อมูลเบื้องต้นก่อนเริ่ม</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">หากพบโลหะหนักสูงต้องทำอะไร?</summary>
+          <div class="faq-a">แพทย์จะประเมินระดับและอาการร่วมกัน หากจำเป็นอาจแนะนำ Chelation Therapy ซึ่งเป็นการให้สาร EDTA ทางหลอดเลือดเพื่อจับโลหะหนักและขับออกทางไต พร้อมเสริมแร่ธาตุที่ขาดเพื่อทดแทน</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ก่อนตรวจ OligoScan ต้องเตรียมตัวอย่างไร?</summary>
+          <div class="faq-a">ไม่ต้องงดอาหาร ไม่ต้องเตรียมตัวพิเศษ แต่ควรล้างมือให้สะอาดและไม่ทาครีมหรือโลชั่นบริเวณฝ่ามือก่อนตรวจ เพื่อไม่ให้สารเคมีภายนอกรบกวนผลการอ่านค่า</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+      <div class="grid grid-4" style="margin-top:32px;">
+        <a href="/chelation" class="related-card">
+          <div class="related-icon">🧲</div>
+          <h3>Chelation Therapy</h3>
+          <p>ขับโลหะหนักออกจากร่างกาย</p>
+        </a>
+        <a href="/personalized-vitamins" class="related-card">
+          <div class="related-icon">💊</div>
+          <h3>วิตามินเฉพาะบุคคล</h3>
+          <p>เสริมแร่ธาตุที่ขาดตามผล OligoScan</p>
+        </a>
+        <a href="/iv-drip" class="related-card">
+          <div class="related-icon">💉</div>
+          <h3>IV Drip</h3>
+          <p>ส่งแร่ธาตุเข้าเลือดโดยตรง</p>
+        </a>
+        <a href="/urine-organic-test" class="related-card">
+          <div class="related-icon">🔬</div>
+          <h3>Urine Organic Acids</h3>
+          <p>ตรวจการเผาผลาญระดับเซลล์</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--deep) 0%, var(--violet-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">รู้ก่อน แก้ได้ก่อน</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">Thrive Wellness Clinic — Crystal Park ลาดพร้าว เปิดทุกวัน 10:00–19:00</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <h3 style="font-size:1rem; color:var(--text-muted); margin-bottom:16px;">อ้างอิงทางวิทยาศาสตร์</h3>
+      <ul class="ref-list">
+        <li>Tchounwou PB et al. "Heavy metal toxicity and the environment." <em>Experientia Suppl.</em> 2012;101:133–164. PMID: 22945569</li>
+        <li>Järup L. "Hazards of heavy metal contamination." <em>Br Med Bull.</em> 2003;68:167–182. PMID: 14757716</li>
+        <li>Saper RB, Rash R. "Zinc: an essential micronutrient." <em>Am Fam Physician.</em> 2009;79(9):768–772. PMID: 19621856</li>
+        <li>Nordberg GF et al. "Biological monitoring of cadmium." <em>Toxicol Appl Pharmacol.</em> 2018;238(3):201–208. PMID: 19786048</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="40">
+          <p class="footer-tagline">ดูแลสุขภาพเชิงลึก ด้วยวิทยาศาสตร์และความใส่ใจ</p>
+        </div>
+        <div class="footer-col">
+          <h4>บริการ</h4>
+          <ul>
+            <li><a href="/chelation">Chelation Therapy</a></li>
+            <li><a href="/iv-drip">IV Drip</a></li>
+            <li><a href="/personalized-vitamins">วิตามินเฉพาะบุคคล</a></li>
+            <li><a href="/food-intolerance">ตรวจภูมิแพ้อาหาร IgG</a></li>
+            <li><a href="/check-up">Wellness Check-up</a></li>
+            <li><a href="/nad">NAD+</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ข้อมูลคลินิก</h4>
+          <ul>
+            <li>📍 The Crystal Park ชั้น 2 อาคาร B<br>เลขที่ 199 ถนนประดิษฐ์มนูธรรม<br>ลาดพร้าว กรุงเทพฯ 10230</li>
+            <li>📞 <a href="tel:+66959349640">095-934-9640</a></li>
+            <li>💬 <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener">LINE @thrivewellnessth</a></li>
+            <li>🕐 เปิดทุกวัน 10:00–19:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thrive Wellness Clinic. สงวนลิขสิทธิ์.</p>
+        <p style="font-size:.8rem; color:var(--text-muted); margin-top:8px;">เนื้อหานี้จัดทำโดย พญ. ชนากานต์ ตระหง่านศรี เพื่อการให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์เฉพาะบุคคล</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+66959349640" class="sticky-btn sticky-call">📞 โทรนัดหมาย</a>
+    <a href="https://line.me/R/ti/p/@thrivewellnessth" class="sticky-btn sticky-line" target="_blank" rel="noopener">💬 LINE</a>
+  </div>
+
+</body>
+</html>
