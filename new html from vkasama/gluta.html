@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    :root {
+      --rose: #db2777;
+      --rose-d: #be185d;
+      --rose-l: #fce7f3;
+      --rose-xl: #fff1f5;
+      --plum: #7c2d6f;
+    }
+    .gluta-hero { background: linear-gradient(135deg, #1a0a20 0%, #5c1040 50%, #9b2565 100%); }
+    .benefit-card { background: var(--white); border-radius: var(--r-xl); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 28px; transition: all .28s; text-align: center; }
+    .benefit-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--rose-l); }
+    .benefit-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .benefit-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .benefit-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; }
+    .who-card { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; background: var(--white); border-radius: var(--r-md); border: 1px solid var(--border-l); }
+    .who-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .compare-table { width: 100%; border-collapse: collapse; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-sm); }
+    .compare-table th { padding: 16px 20px; font-size: .9rem; font-weight: 700; }
+    .compare-table td { padding: 14px 20px; font-size: .875rem; border-bottom: 1px solid var(--border-l); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .col-oral { background: #f8f9fa; color: var(--text-2); }
+    .compare-table .col-iv { background: var(--rose-xl); color: var(--navy); }
+    .compare-table .th-oral { background: #e5e7eb; color: var(--text-2); }
+    .compare-table .th-iv { background: var(--rose); color: white; }
+  </style>
+
+  <!-- SEO Core -->
+  <title>กลูต้าไธโอนดริป Glutathione IV กรุงเทพ | ผิวสว่างใส ต้านอนุมูลอิสระ | Thrive Wellness Clinic</title>
+  <meta name="description" content="กลูต้าไธโอนดริป IV ดูดซึม 100% สว่างใสจากข้างใน ต้านอนุมูลอิสระ ดีท็อกซ์ตับ ชะลอวัย ดูแลโดยแพทย์เฉพาะทาง ที่ The Crystal Park ลาดพร้าว โทร 095-934-9640">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="พญ. ชนากานต์ ตระหง่านศรี — Thrive Wellness Clinic">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/gluta">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/gluta">
+  <meta property="og:title" content="กลูต้าไธโอนดริป Glutathione IV กรุงเทพ | Thrive Wellness Clinic">
+  <meta property="og:description" content="กลูต้าไธโอนดริป IV ดูดซึม 100% สว่างใสจากข้างใน ต้านอนุมูลอิสระ ดีท็อกซ์ตับ ชะลอวัย ดูแลโดยแพทย์เฉพาะทาง">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/image/gluta-hero-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="กลูต้าไธโอนดริป Glutathione IV | Thrive Wellness Clinic">
+  <meta name="twitter:description" content="กลูต้าไธโอนดริป IV ดูดซึม 100% สว่างใสจากข้างใน ต้านอนุมูลอิสระ ดีท็อกซ์ตับ ดูแลโดยแพทย์เฉพาะทาง">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/image/gluta-hero-1200x630.jpg">
+
+  <!-- GEO Targeting -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Lat Phrao">
+  <meta name="geo.position" content="13.8187;100.5739">
+  <meta name="ICBM" content="13.8187, 100.5739">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="th-TH" href="https://www.thrivewellnessth.com/gluta">
+  <link rel="alternate" hreflang="en" href="https://www.thrivewellnessth.com/gluta">
+  <link rel="alternate" hreflang="x-default" href="https://www.thrivewellnessth.com/gluta">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__info">
+      <a href="tel:+66959349640">📞 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank">💬 LINE: @thrivewellnessth</a>
+      <span><span class="pulse-dot"></span> เปิดทุกวัน 10:00–19:00</span>
+    </div>
+    <div class="topbar__social">
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+      <a href="#" title="Instagram">IG</a>
+    </div>
+  </div>
+</div>
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Clinic" style="height:40px;width:auto;display:block;"></a>
+    <div class="navbar__links">
+      <div class="nav-item">
+        <a href="iv-drip.html" class="nav-link active">วิตามินดริป ▾</a>
+        <div class="nav-dropdown">
+          <a href="nad-plus.html"><span class="nav-dropdown__icon">🧬</span>NAD+ Therapy</a>
+          <a href="gluta.html"><span class="nav-dropdown__icon">✨</span>Glutathione</a>
+          <a href="iv-drip.html#chelation"><span class="nav-dropdown__icon">🫀</span>Chelation คีเลชั่น</a>
+          <a href="iv-drip.html#gut"><span class="nav-dropdown__icon">🌿</span>Gut Health IV</a>
+          <a href="iv-drip.html#booster"><span class="nav-dropdown__icon">⚡</span>Essential Booster</a>
+          <a href="iv-drip.html#stem"><span class="nav-dropdown__icon">🌸</span>Stem Cell Facial</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="check-up.html" class="nav-link">ตรวจสุขภาพ ▾</a>
+        <div class="nav-dropdown">
+          <a href="check-up.html#igg"><span class="nav-dropdown__icon">🔬</span>ภูมิแพ้อาหารแฝง IgG</a>
+          <a href="check-up.html#hormones"><span class="nav-dropdown__icon">⚗️</span>สมดุลฮอร์โมน</a>
+          <a href="check-up.html#cancer"><span class="nav-dropdown__icon">🛡️</span>ตรวจมะเร็ง NK Cell</a>
+          <a href="check-up.html#dna"><span class="nav-dropdown__icon">🧬</span>DNA Health & Life</a>
+          <a href="check-up.html#vitamins"><span class="nav-dropdown__icon">💊</span>วิตามิน & ต้านอนุมูล</a>
+          <a href="check-up.html#urine"><span class="nav-dropdown__icon">🧪</span>สมดุลลำไส้ Urine</a>
+          <a href="check-up.html#oligoscan"><span class="nav-dropdown__icon">📊</span>Oligoscan</a>
+          <a href="check-up.html#family"><span class="nav-dropdown__icon">👨‍👩‍👧</span>วางแผนมีบุตร</a>
+        </div>
+      </div>
+      <a href="hbot.html" class="nav-link">HBOT</a>
+      <a href="health-architect.html" class="nav-link" style="color:var(--teal);font-weight:600;">Health Architect ✦</a>
+      <a href="knowledge.html" class="nav-link">คลังความรู้</a>
+      <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:+66959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
+    </div>
+    <button class="navbar__hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+<div class="mobile-drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <strong style="color:var(--navy);font-family:var(--font-en);">THRIVE</strong>
+    <button onclick="toggleDrawer()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="index.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🏠 หน้าแรก</a>
+    <a href="iv-drip.html" style="padding:12px;border-radius:8px;color:var(--text-2);">💉 วิตามินดริป</a>
+    <a href="gluta.html" style="padding:12px 12px 12px 28px;border-radius:8px;background:var(--rose-xl);color:var(--plum);font-weight:600;font-size:.875rem;">└ ✨ Glutathione</a>
+    <a href="nad-plus.html" style="padding:12px 12px 12px 28px;border-radius:8px;color:var(--text-2);font-size:.875rem;">└ 🧬 NAD+ Therapy</a>
+    <a href="check-up.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🔬 ตรวจสุขภาพ</a>
+    <a href="hbot.html" style="padding:12px;border-radius:8px;color:var(--text-2);">🫁 HBOT</a>
+    <a href="health-architect.html" style="padding:12px;border-radius:8px;color:var(--teal);font-weight:600;">✦ Health Architect</a>
+    <a href="knowledge.html" style="padding:12px;border-radius:8px;color:var(--text-2);">📚 คลังความรู้</a>
+    <a href="about.html" style="padding:12px;border-radius:8px;color:var(--text-2);">👥 เกี่ยวกับเรา</a>
+    <a href="contact.html" style="padding:12px;border-radius:8px;background:var(--teal);color:white;font-weight:600;text-align:center;margin-top:8px;">ปรึกษาฟรี →</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="page-hero gluta-hero">
+  <div class="container">
+    <div class="breadcrumb" style="margin-bottom:24px;">
+      <a href="index.html">หน้าแรก</a>
+      <a href="iv-drip.html">วิตามินดริป</a>
+      <span>Glutathione</span>
+    </div>
+    <div class="page-hero__label">GLUTATHIONE IV DRIP — THRIVE WELLNESS CLINIC</div>
+    <h1 class="page-hero__title">กลูต้าดริป — ผิวสว่างจากข้างใน<br>ไม่ใช่แค่ขาว แต่สุขภาพดีจริง</h1>
+    <p class="page-hero__subtitle">Glutathione คือสารต้านอนุมูลอิสระที่ทรงพลังที่สุดในร่างกาย — ดริปตรงเข้าเลือด ดูดซึม 100% สว่างใส ดีท็อกซ์ตับ ชะลอวัยระดับเซลล์ ดูแลโดยแพทย์ทุกครั้ง</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+      <a href="tel:+66959349640" class="btn btn-primary btn-lg">📞 โทรนัดหมาย</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">💬 LINE ปรึกษาฟรี</a>
+    </div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:36px;">
+      <div style="text-align:center;color:rgba(255,255,255,.9);">
+        <div style="font-size:2rem;font-weight:800;font-family:var(--font-en);">100%</div>
+        <div style="font-size:.8rem;opacity:.8;">ดูดซึมทันที</div>
+      </div>
+      <div style="text-align:center;color:rgba(255,255,255,.9);">
+        <div style="font-size:2rem;font-weight:800;font-family:var(--font-en);">30–45</div>
+        <div style="font-size:.8rem;opacity:.8;">นาทีต่อเซสชัน</div>
+      </div>
+      <div style="text-align:center;color:rgba(255,255,255,.9);">
+        <div style="font-size:2rem;font-weight:800;font-family:var(--font-en);">#1</div>
+        <div style="font-size:.8rem;opacity:.8;">สารต้านอนุมูลอิสระในร่างกาย</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-bar__item"><span class="trust-bar__icon">✨</span><span>สว่างใสจากข้างใน</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">🛡️</span><span>ต้านอนุมูลอิสระ</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">🫀</span><span>ดีท็อกซ์ตับ</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">👨‍⚕️</span><span>ดูแลโดยแพทย์</span></div>
+    <div class="trust-bar__item"><span class="trust-bar__icon">💉</span><span>ดูดซึม 100%</span></div>
+  </div>
+</div>
+
+<!-- What is Glutathione -->
+<section class="section section--white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div class="section-label">MASTER ANTIOXIDANT</div>
+        <h2 style="margin-bottom:20px;">Glutathione คืออะไร — ทำไมร่างกายถึงขาดไม่ได้?</h2>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:16px;">Glutathione (กลูต้าไธโอน) คือสารต้านอนุมูลอิสระที่ร่างกายสร้างขึ้นเองตามธรรมชาติ ประกอบด้วยกรดอะมิโน 3 ชนิด ได้แก่ Glutamine, Cysteine และ Glycine — ทำงานอยู่ในทุกเซลล์ของร่างกาย</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:16px;">ปัญหาคือ ระดับ Glutathione ในร่างกายลดลงตามอายุ ความเครียด มลพิษ แอลกอฮอล์ และการนอนไม่หลับ — เมื่อขาด ร่างกายจะเริ่มแก่เร็ว ผิวหมอง และภูมิคุ้มกันอ่อนแอลง</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:24px;">การดริป Glutathione โดยตรงเข้าเส้นเลือด ให้ร่างกายได้รับในระดับที่การกินปากไม่มีทางให้ได้ เห็นผลเร็ว ชัดเจน และปลอดภัยภายใต้การดูแลของแพทย์</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--rose-xl);border-radius:var(--r-md);">
+            <span style="color:var(--rose);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--plum);font-weight:600;">สร้างโดยร่างกาย</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--teal-l);border-radius:var(--r-md);">
+            <span style="color:var(--teal);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--teal-d);font-weight:600;">ลดลงตามอายุ</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--cream-d);border-radius:var(--r-md);">
+            <span style="color:var(--navy);font-weight:700;">✓</span>
+            <span style="font-size:.875rem;color:var(--navy);font-weight:600;">ดริปเติมได้ตรงจุด</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--rose-xl),var(--cream));border-radius:var(--r-xl);padding:36px;border:1px solid #fce7f3;">
+        <div style="font-size:.8rem;font-weight:700;color:var(--rose);font-family:var(--font-en);letter-spacing:.1em;margin-bottom:20px;">3 กลไกหลักของ Glutathione</div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--rose);color:white;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">1</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);margin-bottom:4px;font-size:.95rem;">ยับยั้งเมลานิน</div>
+              <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">บล็อกเอนไซม์ Tyrosinase ที่สร้างเม็ดสีเมลานิน ทำให้ผิวสว่างกระจ่างใสอย่างเป็นธรรมชาติ</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--rose);color:white;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">2</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);margin-bottom:4px;font-size:.95rem;">ต้านอนุมูลอิสระระดับเซลล์</div>
+              <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">วางตัวเป็นโล่ป้องกัน DNA จากความเสียหาย ชะลอการเสื่อมของเซลล์ทั่วร่างกาย</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--rose);color:white;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">3</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);margin-bottom:4px;font-size:.95rem;">ดีท็อกซ์และล้างพิษตับ</div>
+              <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">จับสารพิษ โลหะหนัก และผลพลอยได้จากยา แล้วนำออกจากร่างกายทางไต</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">BENEFITS</div>
+      <h2>ประโยชน์ของ Glutathione IV ที่เกินกว่าแค่ผิวขาว</h2>
+      <p style="color:var(--text-2);margin-top:12px;">Glutathione ทำงานในระดับเซลล์ ผลลัพธ์จึงครอบคลุมทั้งร่างกาย ไม่ใช่แค่ผิวพรรณ</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">✨</div>
+        <div class="benefit-title">ผิวสว่างกระจ่างใส</div>
+        <div class="benefit-desc">ลดเมลานิน ผิวหมองคล้ำกระจ่างขึ้นอย่างเป็นธรรมชาติ ไม่ใช่ฟอกสีแต่เป็นการฟื้นฟูจากภายใน</div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🛡️</div>
+        <div class="benefit-title">ต้านอนุมูลอิสระสูงสุด</div>
+        <div class="benefit-desc">ปกป้อง DNA จากความเสียหาย ลดการอักเสบเรื้อรัง ชะลอวัยในระดับเซลล์</div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🫀</div>
+        <div class="benefit-title">ดีท็อกซ์ตับ</div>
+        <div class="benefit-desc">เพิ่มประสิทธิภาพการล้างพิษของตับ เหมาะสำหรับผู้ที่ดื่มแอลกอฮอล์หรือกินยาเป็นประจำ</div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">⚡</div>
+        <div class="benefit-title">พลังงานเพิ่มขึ้น</div>
+        <div class="benefit-desc">Glutathione ฟื้นฟู Mitochondria ให้ผลิตพลังงานได้อย่างเต็มประสิทธิภาพ ลดอาการเหนื่อยล้าเรื้อรัง</div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🧠</div>
+        <div class="benefit-title">ปกป้องสมอง</div>
+        <div class="benefit-desc">ต้านการอักเสบในระบบประสาท ลดความเสี่ยงโรคสมองเสื่อม ช่วยให้สมองทำงานคมชัดขึ้น</div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">💪</div>
+        <div class="benefit-title">เสริมภูมิคุ้มกัน</div>
+        <div class="benefit-desc">กระตุ้นการทำงานของ T-cell และ NK cell เพิ่มความสามารถในการต่อสู้กับเชื้อโรคและเซลล์ผิดปกติ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Oral vs IV Comparison -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">ORAL VS IV</div>
+      <h2>กลูต้ากิน VS กลูต้าดริป — ต่างกันมากแค่ไหน?</h2>
+      <p style="color:var(--text-2);margin-top:12px;">คำถามที่ถามมากที่สุด — คำตอบอยู่ในตารางนี้</p>
+    </div>
+    <div style="max-width:720px;margin:0 auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="background:#f3f4f6;color:var(--text-2);padding:16px 20px;text-align:left;font-size:.875rem;">หัวข้อ</th>
+            <th class="th-oral" style="text-align:center;">กินแคปซูล / เซรั่ม</th>
+            <th class="th-iv" style="text-align:center;">ดริป IV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:14px 20px;font-size:.875rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border-l);">การดูดซึม</td>
+            <td class="col-oral" style="text-align:center;">10–15%</td>
+            <td class="col-iv" style="text-align:center;font-weight:700;color:var(--rose);">100%</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px;font-size:.875rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border-l);">ระยะเวลาเห็นผล</td>
+            <td class="col-oral" style="text-align:center;">2–4 เดือน</td>
+            <td class="col-iv" style="text-align:center;font-weight:700;color:var(--rose);">3–5 เซสชัน</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px;font-size:.875rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border-l);">ระดับในเลือด</td>
+            <td class="col-oral" style="text-align:center;">ขึ้นช้า ไม่สม่ำเสมอ</td>
+            <td class="col-iv" style="text-align:center;font-weight:700;color:var(--rose);">สูงทันที แม่นยำ</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px;font-size:.875rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border-l);">ผ่านระบบย่อย</td>
+            <td class="col-oral" style="text-align:center;">ใช่ — สูญเสียระหว่างทาง</td>
+            <td class="col-iv" style="text-align:center;font-weight:700;color:var(--rose);">ไม่ผ่าน — ตรงสู่เลือด</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px;font-size:.875rem;font-weight:600;color:var(--navy);">เหมาะกับใคร</td>
+            <td class="col-oral" style="text-align:center;">บำรุงรักษาระยะยาว</td>
+            <td class="col-iv" style="text-align:center;font-weight:700;color:var(--rose);">เร่งผล หรือปัญหาหนัก</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Who Should -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">WHO SHOULD GET IT</div>
+      <h2>คุณเหมาะกับ Glutathione IV ไหม?</h2>
+      <p style="color:var(--text-2);margin-top:12px;">ถ้าเข้าข่ายข้อใดข้อหนึ่ง — กลูต้าดริปอาจเป็นคำตอบที่คุณต้องการ</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:900px;margin:0 auto;">
+      <div class="who-card reveal">
+        <div class="who-icon">😞</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">ผิวหมองคล้ำ ดูโทรม ไม่สดใส</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">กลูต้าลดเมลานินและฟื้นฟูความสว่างใสจากระดับเซลล์</div>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">☀️</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">สัมผัสแสงแดดหรือมลพิษเป็นประจำ</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">คนกรุงเทพที่รับมลพิษทุกวัน ร่างกายต้องการ Glutathione มากกว่าปกติ</div>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">🍷</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">ดื่มแอลกอฮอล์เป็นประจำ</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">แอลกอฮอล์ทำลาย Glutathione ในตับโดยตรง การดริปช่วยฟื้นฟูและป้องกันตับเสื่อม</div>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">⚡</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">อ่อนเพลียเรื้อรัง พลังงานตก</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">Glutathione ต่ำทำให้ Mitochondria ทำงานไม่เต็มประสิทธิภาพ เหนื่อยง่ายแม้นอนพอ</div>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">🕰️</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">ต้องการชะลอวัย ดูอ่อนกว่าอายุ</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">Glutathione ป้องกัน DNA เสียหาย ลดริ้วรอย และชะลอกระบวนการแก่ตัวในระดับเซลล์</div>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">💊</div>
+        <div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px;">ต้องกินยาหลายชนิดเป็นประจำ</div>
+          <div style="font-size:.875rem;color:var(--text-2);line-height:1.6;">ยาหลายชนิดใช้ Glutathione ในการ metabolize ในตับ ทำให้ระดับลดลงเร็วกว่าปกติ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Protocol -->
+<section class="section section--white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:860px;margin:0 auto;">
+      <div>
+        <div class="section-label">PROTOCOL</div>
+        <h2 style="margin-bottom:24px;">ควรดริปกลูต้าบ่อยแค่ไหน?</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="padding:24px;background:var(--rose-xl);border-radius:var(--r-xl);border:1px solid #fce7f3;">
+            <div style="font-weight:700;color:var(--plum);margin-bottom:8px;font-family:var(--font-en);">Phase 1 — Loading</div>
+            <div style="font-size:.9rem;color:var(--text-2);line-height:1.7;margin-bottom:12px;">1 ครั้ง/สัปดาห์ × 4–8 ครั้ง<br>เพื่อเติม Glutathione ให้ถึงระดับที่เห็นผลได้ชัด</div>
+            <div style="font-size:.8rem;color:var(--rose);font-weight:600;">เห็นผลชัดเจนในเซสชันที่ 3–5</div>
+          </div>
+          <div style="padding:24px;background:var(--cream);border-radius:var(--r-xl);border:1px solid var(--border-l);">
+            <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-family:var(--font-en);">Phase 2 — Maintenance</div>
+            <div style="font-size:.9rem;color:var(--text-2);line-height:1.7;margin-bottom:12px;">1–2 ครั้ง/เดือน<br>รักษาระดับ Glutathione ให้คงที่ในระยะยาว</div>
+            <div style="font-size:.8rem;color:var(--teal-d);font-weight:600;">ผลลัพธ์ยั่งยืน ผิวสว่างสม่ำเสมอ</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">OFTEN PAIRED WITH</div>
+        <h2 style="margin-bottom:24px;">จับคู่ร่วมกับอะไรได้บ้าง?</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:14px;align-items:center;padding:16px 20px;background:var(--cream);border-radius:var(--r-md);border:1px solid var(--border-l);">
+            <span style="font-size:1.5rem;">💊</span>
+            <div>
+              <div style="font-weight:700;color:var(--navy);font-size:.9rem;">Vitamin C สูง</div>
+              <div style="font-size:.8rem;color:var(--text-2);">ช่วย regenerate Glutathione ให้กลับมาใช้งานได้ใหม่ เพิ่มประสิทธิภาพ 2 เท่า</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;padding:16px 20px;background:var(--cream);border-radius:var(--r-md);border:1px solid var(--border-l);">
+            <span style="font-size:1.5rem;">🧬</span>
+            <div>
+              <div style="font-weight:700;color:var(--navy);font-size:.9rem;">NAD+ Therapy</div>
+              <div style="font-size:.8rem;color:var(--text-2);">เสริมพลังงานระดับเซลล์ ทำให้ Glutathione ทำงานได้อย่างเต็มประสิทธิภาพ</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;padding:16px 20px;background:var(--cream);border-radius:var(--r-md);border:1px solid var(--border-l);">
+            <span style="font-size:1.5rem;">🫁</span>
+            <div>
+              <div style="font-weight:700;color:var(--navy);font-size:.9rem;">HBOT ออกซิเจนบำบัด</div>
+              <div style="font-size:.8rem;color:var(--text-2);">ออกซิเจนสูงช่วยเพิ่มการสังเคราะห์ Glutathione ในร่างกายได้เอง</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<section class="section" style="background:linear-gradient(135deg,#5c1040,#9b2565);text-align:center;">
+  <div class="container">
+    <h2 style="color:white;margin-bottom:12px;">ผิวสว่างใสจากข้างใน เริ่มต้นได้วันนี้</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;">ปรึกษาแพทย์ฟรี — บอกปัญหาผิว เป้าหมายสุขภาพ แพทย์จะออกแบบโปรโตคอล Glutathione ที่เหมาะกับคุณโดยเฉพาะ</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="tel:+66959349640" class="btn btn-primary btn-lg">📞 โทร 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">💬 LINE @thrivewellnessth</a>
+    </div>
+  </div>
+</section>
+
+<!-- Doctor Section -->
+<section class="section section--white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:820px;margin:0 auto;background:var(--cream);border-radius:var(--r-xl);padding:40px;border:1px solid var(--border-l);">
+      <div style="text-align:center;flex-shrink:0;">
+        <img src="image/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี — แพทย์ Glutathione IV Thrive Wellness Clinic" loading="lazy" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid white;box-shadow:var(--sh-md);">
+        <div style="margin-top:12px;">
+          <div style="font-weight:700;color:var(--navy);font-size:.95rem;">พญ. ชนากานต์</div>
+          <div style="font-size:.8rem;color:var(--text-2);">ตระหง่านศรี (หมอนุ่น)</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:8px;">SUPERVISED BY</div>
+        <h2 style="font-size:1.4rem;margin-bottom:8px;">Chanakan Trangansri, MD.</h2>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.7;margin-bottom:16px;">แพทย์เฉพาะทางด้าน Anti-aging & Regenerative Medicine ออกแบบโปรโตคอล Glutathione ที่เหมาะกับสภาพผิวและสุขภาพโดยรวมของแต่ละคน — ไม่ใช่สูตรสำเร็จรูป</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="padding:4px 12px;background:var(--rose-xl);color:var(--plum);border-radius:var(--r-pill);font-size:.775rem;font-weight:600;">Anti-aging Medicine</span>
+          <span style="padding:4px 12px;background:var(--teal-l);color:var(--teal-d);border-radius:var(--r-pill);font-size:.775rem;font-weight:600;">Nutrition Wellness</span>
+          <span style="padding:4px 12px;background:var(--cream-d);color:var(--navy);border-radius:var(--r-pill);font-size:.775rem;font-weight:600;">Lifestyle Medicine</span>
+          <span style="padding:4px 12px;background:var(--navy-xl);color:var(--navy);border-radius:var(--r-pill);font-size:.775rem;font-weight:600;">Chelation & Detox</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">FAQ</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับ Glutathione IV</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;">
+      <div class="faq-item">
+        <button class="faq-question">กลูต้าดริปทำให้ผิวขาวถาวรไหม?</button>
+        <div class="faq-answer"><p>Glutathione IV ทำให้ผิวสว่างกระจ่างใสโดยการลดการสร้างเมลานิน ผลจะยั่งยืนมากขึ้นถ้าทำเป็น Maintenance โปรแกรมต่อเนื่อง เมื่อหยุดทำผิวอาจค่อยๆ กลับมาคล้ำขึ้นได้ตามธรรมชาติ เพราะร่างกายยังคงผลิตเมลานินเป็นปกติ</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">กลูต้าดริปต่างจากกลูต้ากินอย่างไร?</button>
+        <div class="faq-answer"><p>การกินแคปซูล Glutathione ดูดซึมได้เพียง 10–15% เพราะถูกทำลายในระบบย่อยอาหารและตับก่อนเข้าเลือด การดริป IV ส่งโดยตรงเข้ากระแสเลือด ดูดซึม 100% เห็นผลเร็วกว่ามาก เหมาะสำหรับผู้ที่ต้องการผลชัดเจนในระยะเวลาสั้น</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">กลูต้าดริปปลอดภัยไหม มีผลข้างเคียงอะไรบ้าง?</button>
+        <div class="faq-answer"><p>Glutathione เป็นสารที่ร่างกายสร้างขึ้นเองตามธรรมชาติ จึงปลอดภัยสูงเมื่อดูแลโดยแพทย์ที่มีประสบการณ์ ผลข้างเคียงที่พบได้บ้างคืออาการแน่นท้องหรือคลื่นไส้เล็กน้อยระหว่างดริป ซึ่งหายไปเองหลังหยุดดริป แพทย์จะปรับความเร็วการหยดให้เหมาะกับแต่ละคน</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">ต้องดริปกี่ครั้งถึงเห็นผล?</button>
+        <div class="faq-answer"><p>ส่วนใหญ่เริ่มเห็นผิวสว่างขึ้นในเซสชันที่ 3–5 และเห็นผลชัดเจนเมื่อดริปครบ 6–8 ครั้ง ทั้งนี้ขึ้นอยู่กับสภาพผิวเริ่มต้น ระดับ Glutathione ในร่างกาย และปัจจัยชีวิต เช่น การนอนหลับ ความเครียด และอาหารที่กิน</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">ใครบ้างที่ไม่ควรดริป Glutathione?</button>
+        <div class="faq-answer"><p>ผู้ที่มีภาวะหอบหืดรุนแรง (Glutathione อาจกระตุ้น bronchospasm ได้ในบางราย) หรือมีประวัติแพ้ Glutathione ควรแจ้งแพทย์ก่อนเสมอ แพทย์ของเราจะซักประวัติและประเมินความเหมาะสมอย่างละเอียดก่อนทุกเซสชัน</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Services -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">RELATED SERVICES</div>
+      <h2>บริการที่เสริมผลของ Glutathione</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+      <a href="iv-drip.html" style="text-decoration:none;display:block;padding:28px;background:var(--cream);border-radius:var(--r-xl);border:1px solid var(--border-l);transition:all .25s;text-align:center;" class="reveal" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:2.2rem;margin-bottom:12px;">💉</div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;">IV Drip ทุกสูตร</div>
+        <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">จับคู่ Glutathione กับ Vitamin C หรือ Essential Booster เพื่อผลลัพธ์ที่ดีขึ้น</div>
+      </a>
+      <a href="nad-plus.html" style="text-decoration:none;display:block;padding:28px;background:var(--cream);border-radius:var(--r-xl);border:1px solid var(--border-l);transition:all .25s;text-align:center;" class="reveal" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:2.2rem;margin-bottom:12px;">🧬</div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;">NAD+ Therapy</div>
+        <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">เสริมพลังงานระดับ DNA ให้ Glutathione ทำงานได้อย่างเต็มศักยภาพ</div>
+      </a>
+      <a href="hbot.html" style="text-decoration:none;display:block;padding:28px;background:var(--cream);border-radius:var(--r-xl);border:1px solid var(--border-l);transition:all .25s;text-align:center;" class="reveal" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:2.2rem;margin-bottom:12px;">🫁</div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;">HBOT ออกซิเจนบำบัด</div>
+        <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">ออกซิเจนสูงช่วยเพิ่มการสังเคราะห์ Glutathione ในร่างกาย</div>
+      </a>
+      <a href="food-intolerance.html" style="text-decoration:none;display:block;padding:28px;background:var(--cream);border-radius:var(--r-xl);border:1px solid var(--border-l);transition:all .25s;text-align:center;" class="reveal" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:2.2rem;margin-bottom:12px;">🔬</div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;">ตรวจภูมิแพ้อาหารแฝง IgG</div>
+        <div style="font-size:.85rem;color:var(--text-2);line-height:1.6;">การอักเสบจากอาหารแฝงทำให้ Glutathione ร่อยหรอเร็วขึ้น</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section" style="background:linear-gradient(135deg,#1a0a20,#5c1040);text-align:center;">
+  <div class="container">
+    <h2 style="color:white;margin-bottom:12px;">พร้อมให้ผิวสว่างใสจากข้างในแล้วใช่ไหม?</h2>
+    <p style="color:rgba(255,255,255,.75);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;">ปรึกษาแพทย์ฟรี ไม่มีค่าใช้จ่าย — มาเจอกันที่ The Crystal Park ชั้น 2 ลาดพร้าว เปิดทุกวัน 10:00–19:00</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="tel:+66959349640" class="btn btn-primary btn-lg">📞 โทร 095-934-9640</a>
+      <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-ghost btn-lg">💬 LINE @thrivewellnessth</a>
+    </div>
+  </div>
+</section>
+
+<!-- References -->
+<section class="section section--white" style="padding:40px 0;">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;">
+      <h3 style="font-size:1rem;color:var(--navy);margin-bottom:16px;font-family:var(--font-en);">Scientific References</h3>
+      <ol style="font-size:.8rem;color:var(--text-3);line-height:1.8;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+        <li>Weschawalit S et al. Glutathione and its antiaging and antimelanogenic effects. <em>Clin Cosmet Investig Dermatol.</em> 2017;10:147–153. PMID: 28490897</li>
+        <li>Dröge W, Breitkreutz R. Glutathione and immune function. <em>Proc Nutr Soc.</em> 2000;59(4):595–600. PMID: 11115795</li>
+        <li>Ballatori N et al. Glutathione dysregulation and the etiology and progression of human diseases. <em>Biol Chem.</em> 2009;390(3):191–214. PMID: 19166318</li>
+        <li>Sinha R et al. Oral supplementation with liposomal glutathione elevates body stores of glutathione and markers of immune function. <em>Eur J Clin Nutr.</em> 2018;72(1):105–111. PMID: 28853742</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="image/Thrive-logo-160px.png" alt="Thrive Wellness Clinic" style="height:44px;width:auto;margin-bottom:8px;display:block;">
+        <div class="footer__brand-tagline">Thrive Wellness Clinic</div>
+        <p class="footer__brand-desc">คลินิกสุขภาพเชิงลึก เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและการฟื้นฟูสุขภาพเฉพาะบุคคล ดูแลสุขภาพแบบองค์รวมในระดับเซลล์</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">f</a>
+          <a href="#" class="footer__social-link">▶</a>
+          <a href="#" class="footer__social-link">◉</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="footer__social-link" target="_blank">L</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">บริการ</div>
+        <div class="footer__links">
+          <a href="iv-drip.html">วิตามินดริป IV Drip</a>
+          <a href="gluta.html">Glutathione กลูต้า</a>
+          <a href="nad-plus.html">NAD+ Therapy</a>
+          <a href="hbot.html">HBOT ออกซิเจนบำบัด</a>
+          <a href="health-architect.html">Health Architect ✦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">คลังความรู้</div>
+        <div class="footer__links">
+          <a href="knowledge.html">บทความสุขภาพทั้งหมด</a>
+          <a href="knowledge.html#anti-aging">ชะลอวัย & Anti-Aging</a>
+          <a href="knowledge.html#hormone">ฮอร์โมนสมดุล</a>
+          <a href="knowledge.html#mental">Mental Health</a>
+          <a href="knowledge.html#gut">ลำไส้ & Microbiome</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">ติดต่อเรา</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📍</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">The Crystal Park ชั้น 2 อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230</span>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">📞</div>
+          <a href="tel:+66959349640" style="color:rgba(255,255,255,.65);font-size:.875rem;">095-934-9640</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">💬</div>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="color:rgba(255,255,255,.65);font-size:.875rem;">LINE: @thrivewellnessth</a>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon">🕐</div>
+          <span style="color:rgba(255,255,255,.65);font-size:.875rem;">เปิดทุกวัน 10:00–19:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Thrive Wellness Clinic. สงวนลิขสิทธิ์</div>
+      <div class="footer__legal-links"><a href="#">นโยบายความเป็นส่วนตัว</a><a href="#">เงื่อนไขการใช้บริการ</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <div class="sticky-bar__inner">
+    <a href="tel:+66959349640" class="btn btn-navy">📞 โทรเลย</a>
+    <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" class="btn btn-primary">💬 LINE ปรึกษาฟรี</a>
+  </div>
+</div>
+
+<script>
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('drawer').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Clinic",
+      "alternateName": "ไธรฟ์ เวลเนส คลินิก",
+      "url": "https://www.thrivewellnessth.com",
+      "telephone": "+66959349640",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "The Crystal Park ชั้น 2 อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม",
+        "addressLocality": "ลาดพร้าว",
+        "addressRegion": "กรุงเทพมหานคร",
+        "postalCode": "10230",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.8187,
+        "longitude": 100.5739
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      "medicalSpecialty": "Anti-aging Medicine"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.thrivewellnessth.com/#dr-chanakan",
+      "name": "Chanakan Trangansri",
+      "alternateName": "พญ. ชนากานต์ ตระหง่านศรี",
+      "jobTitle": "Medical Doctor",
+      "worksFor": {"@id": "https://www.thrivewellnessth.com/#clinic"},
+      "knowsAbout": ["Glutathione Therapy","Anti-aging Medicine","IV Drip","Nutrition Wellness","Chelation & Detox"]
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Glutathione IV Drip",
+      "alternateName": "กลูต้าไธโอนดริป",
+      "url": "https://www.thrivewellnessth.com/gluta",
+      "description": "การให้ Glutathione เข้าสู่กระแสเลือดโดยตรง ดูดซึม 100% เพื่อผิวสว่างใส ต้านอนุมูลอิสระ ดีท็อกซ์ตับ และชะลอวัยระดับเซลล์",
+      "procedureType": "https://schema.org/TherapeuticProcedure",
+      "performer": {"@id": "https://www.thrivewellnessth.com/#clinic"},
+      "recognizingAuthority": {"@id": "https://www.thrivewellnessth.com/#dr-chanakan"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "กลูต้าดริปทำให้ผิวขาวถาวรไหม?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Glutathione IV ทำให้ผิวสว่างกระจ่างใสโดยการลดการสร้างเมลานิน ผลจะยั่งยืนมากขึ้นถ้าทำเป็น Maintenance โปรแกรมต่อเนื่อง เมื่อหยุดทำผิวอาจค่อยๆ กลับมาคล้ำขึ้นได้ตามธรรมชาติ"}
+        },
+        {
+          "@type": "Question",
+          "name": "กลูต้าดริปต่างจากกลูต้ากินอย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "การกินแคปซูล Glutathione ดูดซึมได้เพียง 10-15% การดริป IV ส่งโดยตรงเข้ากระแสเลือด ดูดซึม 100% เห็นผลเร็วกว่ามาก เหมาะสำหรับผู้ที่ต้องการผลชัดเจนในระยะเวลาสั้น"}
+        },
+        {
+          "@type": "Question",
+          "name": "กลูต้าดริปปลอดภัยไหม มีผลข้างเคียงอะไรบ้าง?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Glutathione เป็นสารที่ร่างกายสร้างขึ้นเองตามธรรมชาติ จึงปลอดภัยสูงเมื่อดูแลโดยแพทย์ ผลข้างเคียงที่พบบ้างคืออาการแน่นท้องหรือคลื่นไส้เล็กน้อยระหว่างดริป ซึ่งหายเองหลังหยุดดริป"}
+        },
+        {
+          "@type": "Question",
+          "name": "ต้องดริปกี่ครั้งถึงเห็นผล?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ส่วนใหญ่เริ่มเห็นผิวสว่างขึ้นในเซสชันที่ 3-5 และเห็นผลชัดเจนเมื่อดริปครบ 6-8 ครั้ง ขึ้นอยู่กับสภาพผิวเริ่มต้นและปัจจัยชีวิตแต่ละคน"}
+        },
+        {
+          "@type": "Question",
+          "name": "ใครบ้างที่ไม่ควรดริป Glutathione?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ผู้ที่มีภาวะหอบหืดรุนแรงหรือมีประวัติแพ้ Glutathione ควรแจ้งแพทย์ก่อนเสมอ แพทย์จะซักประวัติและประเมินความเหมาะสมอย่างละเอียดก่อนทุกเซสชัน"}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/"},
+        {"@type": "ListItem", "position": 2, "name": "วิตามินดริป", "item": "https://www.thrivewellnessth.com/iv-drip"},
+        {"@type": "ListItem", "position": 3, "name": "Glutathione", "item": "https://www.thrivewellnessth.com/gluta"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
