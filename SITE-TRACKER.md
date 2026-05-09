@@ -165,6 +165,11 @@ Repository: https://github.com/achotirat/thrive-website
 - [ ] หน้าที่เหมาะสม: FAQPage, MedicalTest, MedicalProcedure, BreadcrumbList
 - [ ] ตรวจสอบใน Google Rich Results Test ก่อน deploy
 
+### Images (ตรวจก่อนเริ่มเขียน HTML ทุกครั้ง)
+- [ ] `[topic]-hero-1200x630.jpg` — OG/social share image (วางใน `image/`) ✅ มีอยู่แล้ว / ❌ ต้องสร้างหรือ rename
+- [ ] `dr-chanakan-trangansri-thrive-400x400.jpg` — Doctor section (มีอยู่แล้วเสมอ) ✅
+- [ ] รูป content เพิ่มเติม (ถ้ามี) — ระบุชื่อตามนิยาม `[topic]-content-800x600.jpg`
+
 ### Content
 - [ ] Hero image: `[topic]-hero-1200x630.jpg` วางใน `image/`
 - [ ] Doctor section พร้อมรูปหมอนุ่น
