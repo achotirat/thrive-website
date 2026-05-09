@@ -322,10 +322,29 @@ Specializations: Anti-aging & Regenerative Medicine · Nutrition Wellness · Lif
 
 JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 
+**กฎ:** ทุกครั้งที่สร้างหรืออัปเดตหน้าที่มีโปรไฟล์หมอนุ่น ต้องอัปเดตตารางนี้ทันที ก่อน commit
+
 | หน้าที่ใส่ข้อมูลหมอนุ่นแล้ว | วันที่ |
 |--------------------------|-------|
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
+| `hormones-quiz.html` | 2026-05-09 |
+| `hbot.html` | 2026-05-09 |
+| `iv-drip.html` | 2026-05-09 |
+| `gluta.html` | 2026-05-09 |
+| `chelation.html` | 2026-05-09 |
+| `personalized-vitamins.html` | 2026-05-09 |
+| `nad-plus.html` | 2026-05-09 |
+| `nk-cell.html` | 2026-05-09 |
+| `allergy-ige.html` | 2026-05-09 |
+| `urine-organic-test.html` | 2026-05-09 |
+| `vitamin-d.html` | 2026-05-09 |
+| `vitamins-and-micronutrients.html` | 2026-05-09 |
+| `check-up.html` | 2026-05-09 |
+| `about.html` | 2026-05-09 |
+| `oligoscan.html` | 2026-05-09 |
+| `cancer-screening.html` | 2026-05-09 |
+| `dna-test.html` | 2026-05-09 |
 
 ---
 
