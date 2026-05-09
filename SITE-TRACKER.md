@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-09 (hormones-quiz เพิ่ม)
+อัปเดตล่าสุด: 2026-05-09 (hbot เพิ่ม)
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -12,7 +12,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-------|-------|---------|
 | Phase 0 — Security & Foundation | ✅ เสร็จ | Netlify, DNS, API health endpoint พร้อม |
 | Phase 1 — Astro Bootstrap | ⏳ ยังไม่เริ่ม | รอ scaffold Astro project |
-| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ |
+| Phase 2 — Tier A Pages | 🔄 กำลังทำ | /food-intolerance ✅ /adrenal-fatigue ✅ /hormones-quiz ✅ /hbot ✅ |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
 | Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
@@ -126,6 +126,56 @@ Repository: https://github.com/achotirat/thrive-website
 | Technical SEO | 7/10 |
 | **Overall** | **7.2/10** |
 
+### `/hbot` — hbot.html
+สร้าง: 2026-05-09 | Priority: Tier A #4 (705 views)
+
+#### ✅ สิ่งที่ทำแล้ว
+- [x] Meta title: `HBOT ออกซิเจนความดันสูง บำบัดฟื้นฟู | Thrive Wellness Clinic กรุงเทพ`
+- [x] Meta description (155 chars)
+- [x] Canonical URL
+- [x] Open Graph tags (7 รายการ)
+- [x] Twitter Card tags (4 รายการ)
+- [x] GEO Targeting tags (4 รายการ)
+- [x] Hreflang tags (th-TH, en, x-default)
+- [x] JSON-LD: MedicalProcedure
+- [x] JSON-LD: FAQPage (5 questions)
+- [x] JSON-LD: MedicalClinic (@id #clinic)
+- [x] JSON-LD: BreadcrumbList
+- [x] JSON-LD: Person — หมอนุ่น (@id #dr-chanakan)
+- [x] Hero section พร้อม CTA สองปุ่ม (โทร + LINE) + 3 stats badges
+- [x] Section: วิทยาศาสตร์เบื้องหลัง HBOT (21% vs 100% O₂ comparison box)
+- [x] Section: ประโยชน์ 6 ด้าน (benefit cards)
+- [x] Section: ใครควรทำ HBOT (6 profiles)
+- [x] Section: ประสบการณ์ 4 ขั้นตอน
+- [x] Section: การเตรียมตัว checklist
+- [x] Section: Mid-page CTA
+- [x] Section: Doctor attribution — หมอนุ่น
+- [x] Section: FAQ accordion (5 คำถาม)
+- [x] Section: Related services (4 cards)
+- [x] Section: Final CTA
+- [x] Scientific references (4 PubMed sources)
+- [x] Footer พร้อมข้อมูลคลินิกครบ
+- [x] Mobile sticky CTA bar
+- [x] Hero image: `hbot-hero-1200x630.jpg`
+
+#### 🔲 สิ่งที่ยังเพิ่มได้อีก
+- [ ] ราคา/แพ็คเกจ session (ตอนนี้ไม่มี)
+- [ ] Contraindications section (ข้อห้ามใช้)
+- [ ] Testimonial section (ก่อน/หลัง)
+- [ ] English version สำหรับ expat
+- [ ] Video embed (ถ้ามีคลิปอธิบาย HBOT)
+
+#### SEO Score (pre-Astro)
+| Dimension | ประเมินเบื้องต้น |
+|-----------|----------------|
+| Search Intent | 7/10 |
+| E-E-A-T | 6/10 |
+| Content Quality | 7/10 |
+| On-Page SEO | 8/10 |
+| Content Structure | 8/10 |
+| Technical SEO | 8/10 |
+| **Overall** | **7.3/10** |
+
 ---
 
 ## หน้าที่ยังต้องสร้าง (Tier A)
@@ -134,7 +184,7 @@ Repository: https://github.com/achotirat/thrive-website
 |-----|------:|---------|-------|
 | `/adrenal-fatigue` | 1,421 | 🔴 High | ✅ เสร็จ |
 | `/hormones-quiz` | 1,344 | 🔴 High | ✅ เสร็จ |
-| `/hbot` | 705 | 🔴 High | ⏳ ยังไม่เริ่ม |
+| `/hbot` | 705 | 🔴 High | ✅ เสร็จ |
 | `/iv-drip` | 492 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
 | `/` (homepage) | 465 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
 | `/gluta` | 252 | 🟡 Medium | ⏳ ยังไม่เริ่ม |
