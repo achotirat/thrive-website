@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="thrive-styles.css">
+  <style>
+    :root {
+      --rose: #e11d48;
+      --rose-d: #be123c;
+      --rose-l: #ffe4e6;
+      --rose-xl: #fff1f2;
+      --plum: #881337;
+    }
+    .oat-hero { background: linear-gradient(135deg, #1a0010 0%, #4c0519 50%, #9f1239 100%); }
+    .marker-card { background: var(--white); border-radius: var(--r-lg); border: 1px solid var(--border-l); box-shadow: var(--sh-sm); padding: 22px 18px; transition: all .28s; }
+    .marker-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); border-color: var(--rose-l); }
+    .marker-icon { width: 44px; height: 44px; border-radius: var(--r-md); background: var(--rose-xl); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 12px; }
+    .process-num { width: 44px; height: 44px; border-radius: 50%; background: var(--rose); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-en); font-size: 1.1rem; flex-shrink: 0; }
+    .symptom-row { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; background: var(--white); border-radius: var(--r-md); border: 1px solid var(--border-l); }
+  </style>
+
+  <!-- SEO Core -->
+  <title>ตรวจกรดอินทรีย์ในปัสสาวะ Urine Organic Acids Test กรุงเทพ | Thrive Wellness Clinic</title>
+  <meta name="description" content="ตรวจ Urine Organic Acids (OAT) วิเคราะห์การทำงานของไมโตคอนเดรีย ลำไส้ สารสื่อประสาท และวิตามิน จากปัสสาวะ ไม่ต้องเจาะเลือด — Thrive Wellness Clinic Crystal Park ลาดพร้าว โทร 095-934-9640">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="พญ. ชนากานต์ ตระหง่านศรี — Thrive Wellness Clinic">
+  <link rel="canonical" href="https://www.thrivewellnessth.com/urine-organic-test">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:title" content="ตรวจ Urine Organic Acids (OAT) กรุงเทพ | Thrive Wellness Clinic">
+  <meta property="og:description" content="ตรวจกรดอินทรีย์ในปัสสาวะ วิเคราะห์ไมโตคอนเดรีย ลำไส้ สารสื่อประสาท และวิตามิน ไม่ต้องเจาะเลือด — Thrive Wellness Clinic ลาดพร้าว">
+  <meta property="og:image" content="https://www.thrivewellnessth.com/image/urine-organic-test-hero-1200x630.jpg">
+  <meta property="og:url" content="https://www.thrivewellnessth.com/urine-organic-test">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ตรวจ Urine Organic Acids (OAT) กรุงเทพ | Thrive Wellness Clinic">
+  <meta name="twitter:description" content="วิเคราะห์การเผาผลาญระดับเซลล์จากปัสสาวะ — เหนื่อย สมองล้า ลำไส้แปรปรวน รู้สาเหตุจริง">
+  <meta name="twitter:image" content="https://www.thrivewellnessth.com/image/urine-organic-test-hero-1200x630.jpg">
+
+  <!-- GEO Targeting -->
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8049;100.6026">
+  <meta name="ICBM" content="13.8049, 100.6026">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="th-TH" href="https://www.thrivewellnessth.com/urine-organic-test">
+  <link rel="alternate" hreflang="en" href="https://www.thrivewellnessth.com/urine-organic-test">
+  <link rel="alternate" hreflang="x-default" href="https://www.thrivewellnessth.com/urine-organic-test">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.thrivewellnessth.com/#clinic",
+        "name": "Thrive Wellness Clinic",
+        "alternateName": "ไทรฟ์ เวลเนส คลินิก",
+        "url": "https://www.thrivewellnessth.com",
+        "telephone": "+66959349640",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+          "addressLocality": "ลาดพร้าว กรุงเทพฯ",
+          "postalCode": "10230",
+          "addressCountry": "TH"
+        },
+        "openingHours": "Mo-Su 10:00-19:00",
+        "image": "https://www.thrivewellnessth.com/image/urine-organic-test-hero-1200x630.jpg"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.thrivewellnessth.com/#dr-chanakan",
+        "name": "พญ. ชนากานต์ ตระหง่านศรี",
+        "alternateName": "Chanakan Trangansri, MD.",
+        "jobTitle": "แพทย์ด้าน Anti-aging & Regenerative Medicine",
+        "worksFor": { "@id": "https://www.thrivewellnessth.com/#clinic" },
+        "image": "https://www.thrivewellnessth.com/image/dr-chanakan-trangansri-thrive-400x400.jpg"
+      },
+      {
+        "@type": "MedicalTest",
+        "name": "Urine Organic Acids Test (OAT)",
+        "alternateName": "การตรวจกรดอินทรีย์ในปัสสาวะ",
+        "description": "การตรวจวิเคราะห์กรดอินทรีย์ในปัสสาวะมากกว่า 70 ตัวชี้วัด เพื่อประเมินการทำงานของไมโตคอนเดรีย การเผาผลาญพลังงาน สมดุลลำไส้ สารสื่อประสาท และระดับวิตามิน B",
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "ความผิดปกติของการเผาผลาญ ไมโตคอนเดรียบกพร่อง และ Gut Dysbiosis"
+        },
+        "relevantSpecialty": "Functional Medicine",
+        "recognizingAuthority": { "@id": "https://www.thrivewellnessth.com/#clinic" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Urine Organic Acids Test คืออะไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OAT คือการตรวจวิเคราะห์สารเคมีที่เรียกว่า 'กรดอินทรีย์' ในปัสสาวะ สารเหล่านี้เป็นผลพลอยได้จากกระบวนการเผาผลาญในเซลล์ ระดับที่ผิดปกติบ่งบอกถึงความบกพร่องในการทำงานของไมโตคอนเดรีย ลำไส้ หรือการขาดสารอาหาร"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ตรวจ OAT ต้องเจาะเลือดไหม?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ไม่ต้องเจาะเลือด OAT ใช้ตัวอย่างปัสสาวะตอนเช้าครั้งแรก (First Morning Urine) เพียงอย่างเดียว เก็บตัวอย่างเองที่บ้านได้ ไม่เจ็บปวด"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "OAT บอกอะไรได้บ้าง?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OAT วิเคราะห์ได้ 7 กลุ่มใหญ่: (1) การทำงานของไมโตคอนเดรีย (2) ลำไส้และ Gut Dysbiosis (3) สารสื่อประสาท Dopamine Serotonin (4) Detoxification ของตับ (5) ระดับวิตามิน B (6) Oxidative Stress (7) กรดไขมันและน้ำตาล"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ใครควรตรวจ OAT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "เหมาะสำหรับผู้ที่มีอาการเหนื่อยเรื้อรังไม่ทราบสาเหตุ สมองล้า ปวดกล้ามเนื้อ ลำไส้แปรปรวน วิตกกังวล นอนไม่หลับ หรือต้องการประเมินการทำงานของร่างกายระดับเซลล์อย่างละเอียด"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ผล OAT ผิดปกติรักษาอย่างไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "แพทย์จะออกแบบแผนการรักษาตามผล เช่น เสริมวิตามิน B / CoQ10 / Alpha Lipoic Acid สำหรับไมโตคอนเดรีย ปรับจุลินทรีย์ลำไส้ด้วย Probiotic/Prebiotic หรือใช้ IV Drip เพื่อส่งสารอาหารตรงเข้าเซลล์"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://www.thrivewellnessth.com/" },
+          { "@type": "ListItem", "position": 2, "name": "ตรวจกรดอินทรีย์ในปัสสาวะ", "item": "https://www.thrivewellnessth.com/urine-organic-test" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav-wrap">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="/iv-drip">IV Drip</a>
+        <a href="/food-intolerance">ภูมิแพ้อาหาร</a>
+        <a href="/hbot">HBOT</a>
+        <a href="/nad">NAD+</a>
+        <a href="/check-up">Check-up</a>
+      </div>
+      <a href="tel:+66959349640" class="btn btn-primary btn-sm">โทรนัดหมาย</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="oat-hero hero-section">
+    <div class="hero-img-wrap">
+      <img src="image/urine-organic-test-hero-1200x630.jpg" alt="ตรวจกรดอินทรีย์ในปัสสาวะ Urine Organic Acids Test" class="hero-img">
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <div class="hero-badge">Functional Medicine Lab Test</div>
+        <h1>เหนื่อยเรื้อรัง สมองล้า<br>ทั้งที่เลือดปกติทุกอย่าง</h1>
+        <p class="hero-sub">ร่างกายทำงานในระดับเซลล์ — แต่การตรวจเลือดทั่วไปมองไม่ถึง Urine Organic Acids Test อ่านการเผาผลาญของคุณจากปัสสาวะ ไม่ต้องเจาะเลือด</p>
+        <div class="hero-cta">
+          <a href="tel:+66959349640" class="btn btn-white">โทรนัดตรวจ 095-934-9640</a>
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">70+</span><span class="hero-stat-label">ตัวชี้วัดใน 1 การตรวจ</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">ปัสสาวะ</span><span class="hero-stat-label">ไม่ต้องเจาะเลือด</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">7 กลุ่ม</span><span class="hero-stat-label">ระบบที่ประเมินได้</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">หน้าแรก</a>
+        <span>/</span>
+        <span>ตรวจกรดอินทรีย์ในปัสสาวะ (OAT)</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- WHAT IS OAT -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--rose)">OAT คืออะไร</div>
+      <h2 class="section-title">แผนที่การเผาผลาญของร่างกายคุณ</h2>
+      <p class="section-desc">Urine Organic Acids Test (OAT) คือการตรวจวิเคราะห์สารเคมีมากกว่า <strong>70 ชนิด</strong> ที่เรียกว่า "กรดอินทรีย์" ในปัสสาวะ สารเหล่านี้เป็นผลพลอยได้จากกระบวนการเผาผลาญทุกขั้นตอนในเซลล์ ระดับที่ผิดปกติจึงบ่งบอกถึงความบกพร่องที่ซ่อนอยู่ก่อนที่อาการจะรุนแรงถึงขั้นตรวจเจอในการตรวจเลือดปกติ</p>
+
+      <div class="info-box" style="background:var(--rose-xl); border-color:var(--rose-l); margin-top:32px;">
+        <h3 style="color:var(--rose-d); margin-bottom:16px;">ทำไม OAT ถึงบอกสิ่งที่เลือดบอกไม่ได้?</h3>
+        <div class="grid grid-2" style="gap:20px;">
+          <div>
+            <p style="font-weight:600; color:var(--text-dark); margin-bottom:6px;">การตรวจเลือดทั่วไป</p>
+            <ul style="font-size:.9rem; color:var(--text-muted); padding-left:18px; margin:0;">
+              <li>วัดระดับสารในกระแสเลือด ณ ขณะนั้น</li>
+              <li>มองเห็นผลลัพธ์ ไม่ใช่กระบวนการ</li>
+              <li>ปกติได้แม้มีปัญหาในเซลล์</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight:600; color:var(--rose-d); margin-bottom:6px;">Urine Organic Acids Test</p>
+            <ul style="font-size:.9rem; color:var(--text-muted); padding-left:18px; margin:0;">
+              <li>วัดสารที่เซลล์ขับออกมาระหว่างทำงาน</li>
+              <li>เห็นว่ากระบวนการเผาผลาญทำงานได้จริงไหม</li>
+              <li>ตรวจจับความบกพร่องในระดับไมโตคอนเดรีย</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT MEASURES -->
+  <section class="section" style="background:var(--rose-xl)">
+    <div class="container">
+      <div class="section-label" style="color:var(--rose)">สิ่งที่ตรวจได้</div>
+      <h2 class="section-title">7 กลุ่มระบบที่ OAT วิเคราะห์ได้</h2>
+      <p class="section-desc">การตรวจเดียว ครอบคลุมการทำงานของร่างกายในหลายมิติพร้อมกัน</p>
+      <div class="grid grid-3" style="margin-top:40px; gap:20px;">
+        <div class="marker-card">
+          <div class="marker-icon">⚡</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">ไมโตคอนเดรีย &amp; พลังงาน</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">วัดประสิทธิภาพการสร้าง ATP ของเซลล์ ตรวจจับสาเหตุของความเหนื่อยล้าเรื้อรัง Fibromyalgia และกล้ามเนื้ออ่อนแรง</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🦠</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">ลำไส้ &amp; Gut Dysbiosis</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">ตรวจสารที่แบคทีเรียและยีสต์ในลำไส้ผลิต บ่งชี้ภาวะ SIBO Candida Overgrowth และ Leaky Gut</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🧠</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">สารสื่อประสาท</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">ประเมินการสังเคราะห์ Dopamine, Serotonin และ Norepinephrine เชื่อมโยงกับอารมณ์ การนอน และสมาธิ</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🫀</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">Detoxification ตับ</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">วัดประสิทธิภาพการกำจัดสารพิษ บ่งบอกถึงภาระสารพิษสะสมและความสามารถในการ detox ของร่างกาย</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">💊</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">วิตามิน B &amp; โคแฟกเตอร์</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">ตรวจระดับ B1, B2, B3, B5, B6, B12 และ Biotin ในระดับฟังก์ชัน ไม่ใช่แค่ระดับในเลือด</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🔥</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">Oxidative Stress</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">วัด 8-OHdG และ markers อื่น ๆ บ่งบอกความเสียหายของ DNA และเซลล์จากอนุมูลอิสระ</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🧬</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">กรดอะมิโนและกรดไขมัน</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">ตรวจเส้นทางเผาผลาญกรดไขมันและกรดอะมิโน บ่งชี้ปัญหาการดูดซึมและการสังเคราะห์โปรตีน</p>
+        </div>
+        <div class="marker-card">
+          <div class="marker-icon">🩸</div>
+          <h3 style="font-size:1rem; color:var(--rose-d); margin-bottom:8px;">น้ำตาลและอินซูลิน</h3>
+          <p style="font-size:.88rem; color:var(--text-muted); margin:0;">markers ที่สัมพันธ์กับ Insulin Resistance และการเผาผลาญน้ำตาลในระดับเซลล์</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYMPTOMS / WHO SHOULD TEST -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--rose)">สัญญาณที่ควรตรวจ</div>
+      <h2 class="section-title">อาการที่ OAT ช่วยอธิบายได้</h2>
+      <p class="section-desc">อาการเหล่านี้มักตรวจเลือดปกติ แต่มีต้นเหตุในระดับการเผาผลาญของเซลล์</p>
+      <div style="display:flex; flex-direction:column; gap:12px; margin-top:32px;">
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">😴</span>
+          <div>
+            <strong>เหนื่อยล้าเรื้อรัง (Chronic Fatigue)</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">นอนหลับเต็มอิ่มแล้วยังเหนื่อย พลังงานหมดกลางวัน — อาจเกิดจากไมโตคอนเดรียทำงานบกพร่อง</p>
+          </div>
+        </div>
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">🧠</span>
+          <div>
+            <strong>Brain Fog &amp; สมาธิสั้น</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">คิดไม่ออก ความจำสั้น สมองล้าตอนบ่าย — อาจเกี่ยวกับ Dopamine/Serotonin หรือ Gut-Brain Axis</p>
+          </div>
+        </div>
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">🫃</span>
+          <div>
+            <strong>ลำไส้แปรปรวน ท้องอืดเรื้อรัง</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">อาหารแปรเปลี่ยนเป็นก๊าซมาก อาจมี SIBO หรือ Candida Overgrowth ที่ยังไม่ได้รับการวินิจฉัย</p>
+          </div>
+        </div>
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">😰</span>
+          <div>
+            <strong>วิตกกังวล &amp; อารมณ์แปรปรวน</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">ระดับสารสื่อประสาทผิดสมดุล อาจไม่ใช่ปัญหาจิตใจ แต่เป็นปัญหาการสังเคราะห์สารเคมีในร่างกาย</p>
+          </div>
+        </div>
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">💪</span>
+          <div>
+            <strong>ปวดกล้ามเนื้อ &amp; ปวดข้อเรื้อรัง</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">โดยเฉพาะ Fibromyalgia — พบ markers ไมโตคอนเดรียผิดปกติบ่อยในกลุ่มนี้</p>
+          </div>
+        </div>
+        <div class="symptom-row">
+          <span style="font-size:1.5rem; flex-shrink:0;">🌙</span>
+          <div>
+            <strong>นอนไม่หลับ &amp; คุณภาพการนอนต่ำ</strong>
+            <p style="font-size:.88rem; color:var(--text-muted); margin:4px 0 0;">Serotonin เป็นสารตั้งต้นของ Melatonin — OAT ช่วยระบุว่าการผลิต Serotonin บกพร่องหรือเปล่า</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO TEST -->
+  <section class="section" style="background:var(--rose-xl)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--rose)">ขั้นตอนการตรวจ</div>
+      <h2 class="section-title">ง่ายกว่าที่คิด — แค่ปัสสาวะตอนเช้า</h2>
+      <div class="process-list" style="margin-top:40px;">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <h3>ปรึกษาแพทย์และรับชุดเก็บตัวอย่าง</h3>
+            <p>หมอนุ่นซักประวัติอาการและพิจารณาว่า OAT เหมาะกับคุณหรือไม่ รับชุดเก็บปัสสาวะพร้อมคำแนะนำ</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <h3>เก็บปัสสาวะตอนเช้าที่บ้าน</h3>
+            <p>ใช้ปัสสาวะครั้งแรกของวัน (First Morning Urine) ซึ่งมีความเข้มข้นสูงสุด เก็บในขวดที่คลินิกจัดให้ แช่เย็นทันที</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <h3>นำส่งคลินิกหรือจัดส่งผ่าน Courier</h3>
+            <p>นำตัวอย่างส่งคลินิกภายใน 24 ชั่วโมง หรือติดต่อทีมเพื่อประสานการจัดส่งพร้อม Cold Pack</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <h3>รอผล 10–14 วันทำการ</h3>
+            <p>ผลการตรวจเป็นรายงาน 70+ markers พร้อมกราฟและค่าอ้างอิง</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">5</div>
+          <div class="process-content">
+            <h3>แปลผลและวางแผนรักษา</h3>
+            <p>หมอนุ่นแปลผลทีละ marker อธิบายความเชื่อมโยงกับอาการ และออกแบบแผนเสริมสารอาหาร ปรับลำไส้ หรือ IV Drip ที่ตรงกับผล</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--plum) 0%, var(--rose-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">เหนื่อยมานานโดยไม่รู้สาเหตุ — ถึงเวลาหาคำตอบจากระดับเซลล์</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">ปรึกษาหมอนุ่นก่อนตรวจฟรี เพื่อเลือก Panel ที่เหมาะกับอาการของคุณ</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <div class="doctor-card">
+        <div class="doctor-img-wrap">
+          <img src="image/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น Thrive Wellness Clinic" class="doctor-img">
+        </div>
+        <div class="doctor-info">
+          <div class="section-label" style="color:var(--rose)">แพทย์ประจำคลินิก</div>
+          <h2 class="doctor-name">พญ. ชนากานต์ ตระหง่านศรี</h2>
+          <p class="doctor-en">Chanakan Trangansri, MD. (หมอนุ่น)</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Anti-aging &amp; Regenerative Medicine</span>
+            <span class="doctor-tag">Nutrition Wellness</span>
+            <span class="doctor-tag">Lifestyle Medicine</span>
+            <span class="doctor-tag">Hormone Balance</span>
+            <span class="doctor-tag">Chelation &amp; Detoxification</span>
+          </div>
+          <p class="doctor-bio">หมอนุ่นใช้แนวทาง Functional Medicine ในการวิเคราะห์ต้นเหตุของอาการ ไม่ใช่แค่บรรเทาอาการ OAT เป็นหนึ่งในเครื่องมือที่ช่วยให้เห็นภาพการทำงานของร่างกายในระดับที่ละเอียดและลึกกว่าการตรวจเลือดทั่วไป</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-l)">
+    <div class="container narrow">
+      <div class="section-label" style="color:var(--rose)">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">FAQ — Urine Organic Acids Test</h2>
+      <div class="faq-list" style="margin-top:40px;">
+        <details class="faq-item">
+          <summary class="faq-q">Urine Organic Acids Test คืออะไร?</summary>
+          <div class="faq-a">OAT คือการตรวจวิเคราะห์สารเคมีที่เรียกว่า "กรดอินทรีย์" ในปัสสาวะ สารเหล่านี้เป็นผลพลอยได้จากกระบวนการเผาผลาญในเซลล์ ระดับที่ผิดปกติบ่งบอกถึงความบกพร่องในการทำงานของไมโตคอนเดรีย ลำไส้ หรือการขาดสารอาหาร</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ตรวจ OAT ต้องเจาะเลือดไหม?</summary>
+          <div class="faq-a">ไม่ต้องเจาะเลือด OAT ใช้ตัวอย่างปัสสาวะตอนเช้าครั้งแรก (First Morning Urine) เพียงอย่างเดียว เก็บตัวอย่างเองที่บ้านได้ ไม่เจ็บปวด</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">OAT บอกอะไรได้บ้าง?</summary>
+          <div class="faq-a">OAT วิเคราะห์ได้ 7 กลุ่มใหญ่: (1) การทำงานของไมโตคอนเดรีย (2) ลำไส้และ Gut Dysbiosis (3) สารสื่อประสาท Dopamine Serotonin (4) Detoxification ของตับ (5) ระดับวิตามิน B (6) Oxidative Stress (7) กรดไขมันและน้ำตาล</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ใครควรตรวจ OAT?</summary>
+          <div class="faq-a">เหมาะสำหรับผู้ที่มีอาการเหนื่อยเรื้อรังไม่ทราบสาเหตุ สมองล้า ปวดกล้ามเนื้อ ลำไส้แปรปรวน วิตกกังวล นอนไม่หลับ หรือต้องการประเมินการทำงานของร่างกายระดับเซลล์อย่างละเอียด</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">ผล OAT ผิดปกติรักษาอย่างไร?</summary>
+          <div class="faq-a">แพทย์จะออกแบบแผนการรักษาตามผล เช่น เสริมวิตามิน B / CoQ10 / Alpha Lipoic Acid สำหรับไมโตคอนเดรีย ปรับจุลินทรีย์ลำไส้ด้วย Probiotic/Prebiotic หรือใช้ IV Drip เพื่อส่งสารอาหารตรงเข้าเซลล์</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+      <div class="grid grid-4" style="margin-top:32px;">
+        <a href="/personalized-vitamins" class="related-card">
+          <div class="related-icon">💊</div>
+          <h3>วิตามินเฉพาะบุคคล</h3>
+          <p>เสริมสิ่งที่ร่างกายขาดตามผลตรวจ</p>
+        </a>
+        <a href="/iv-drip" class="related-card">
+          <div class="related-icon">💉</div>
+          <h3>IV Drip</h3>
+          <p>ส่งสารอาหารตรงเข้าเซลล์ 100%</p>
+        </a>
+        <a href="/food-intolerance" class="related-card">
+          <div class="related-icon">🧪</div>
+          <h3>ตรวจภูมิแพ้อาหารแฝง IgG</h3>
+          <p>216 ชนิด ค้นหาต้นเหตุลำไส้แปรปรวน</p>
+        </a>
+        <a href="/nad" class="related-card">
+          <div class="related-icon">🔋</div>
+          <h3>NAD+ IV</h3>
+          <p>ฟื้นฟูพลังงานไมโตคอนเดรียโดยตรง</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" style="background:linear-gradient(135deg, var(--plum) 0%, var(--rose-d) 100%);">
+    <div class="container narrow text-center">
+      <h2 style="color:white; margin-bottom:12px;">เข้าใจร่างกายในระดับที่ลึกกว่า</h2>
+      <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">Thrive Wellness Clinic — Crystal Park ลาดพร้าว เปิดทุกวัน 10:00–19:00</p>
+      <div class="hero-cta">
+        <a href="tel:+66959349640" class="btn btn-white">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-outline-white" target="_blank" rel="noopener">LINE @thrivewellnessth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section bg-white">
+    <div class="container narrow">
+      <h3 style="font-size:1rem; color:var(--text-muted); margin-bottom:16px;">อ้างอิงทางวิทยาศาสตร์</h3>
+      <ul class="ref-list">
+        <li>Rinaldo P, Cowan TM, Matern D. "Acylcarnitine profile analysis." <em>Genet Med.</em> 2008;10(2):151–156. PMID: 18281924</li>
+        <li>Hoffmann GF et al. "Clinical and biochemical phenotype in 11 patients with mevalonic aciduria." <em>Pediatrics.</em> 1993;91(5):915–921. PMID: 8474811</li>
+        <li>Sweetman L. "Organic acid analysis." In: Techniques in Diagnostic Human Biochemical Genetics. Wiley-Liss; 1991.</li>
+        <li>Wajner M, Goodman SI. "Disruption of mitochondrial homeostasis in organic acidurias." <em>J Bioenerg Biomembr.</em> 2011;43(1):31–38. PMID: 21246281</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="image/Thrive-Logo-600px.png" alt="Thrive Wellness Clinic" height="40">
+          <p class="footer-tagline">ดูแลสุขภาพเชิงลึก ด้วยวิทยาศาสตร์และความใส่ใจ</p>
+        </div>
+        <div class="footer-col">
+          <h4>บริการ</h4>
+          <ul>
+            <li><a href="/iv-drip">IV Drip</a></li>
+            <li><a href="/food-intolerance">ตรวจภูมิแพ้อาหาร IgG</a></li>
+            <li><a href="/allergy-ige">ตรวจภูมิแพ้ IgE</a></li>
+            <li><a href="/urine-organic-test">Urine Organic Acids</a></li>
+            <li><a href="/hbot">HBOT</a></li>
+            <li><a href="/nad">NAD+</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ข้อมูลคลินิก</h4>
+          <ul>
+            <li>📍 The Crystal Park ชั้น 2 อาคาร B<br>เลขที่ 199 ถนนประดิษฐ์มนูธรรม<br>ลาดพร้าว กรุงเทพฯ 10230</li>
+            <li>📞 <a href="tel:+66959349640">095-934-9640</a></li>
+            <li>💬 <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener">LINE @thrivewellnessth</a></li>
+            <li>🕐 เปิดทุกวัน 10:00–19:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thrive Wellness Clinic. สงวนลิขสิทธิ์.</p>
+        <p style="font-size:.8rem; color:var(--text-muted); margin-top:8px;">เนื้อหานี้จัดทำโดย พญ. ชนากานต์ ตระหง่านศรี เพื่อการให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์เฉพาะบุคคล</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+66959349640" class="sticky-btn sticky-call">📞 โทรนัดหมาย</a>
+    <a href="https://line.me/R/ti/p/@thrivewellnessth" class="sticky-btn sticky-line" target="_blank" rel="noopener">💬 LINE</a>
+  </div>
+
+</body>
+</html>
