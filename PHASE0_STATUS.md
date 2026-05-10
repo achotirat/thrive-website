@@ -67,7 +67,7 @@ Cutover note: remove the global noindex header from `_headers` before pointing `
 - [x] Configure uptime monitoring for:
   - `https://new.thrivewellnessth.com`
   - `https://api.thrivewellnessth.com/api/health`
-- [ ] Renew Wix through December 2026 as safety buffer. See `WIX_RENEWAL_CHECKLIST.md`.
+- [x] Renew Wix through December 2026 as safety buffer. See `WIX_RENEWAL_CHECKLIST.md`.
 
 ## Phase 0 Exit Status
 
@@ -80,7 +80,7 @@ Technical Phase 0 is complete:
 - Uptime monitoring is configured in GitHub Actions.
 - Secrets are stored in Netlify environment variables, not in Git.
 
-The only remaining Phase 0 item is the Wix billing renewal, which requires account owner/payment access.
+Phase 0 is complete.
 
 ## Notes
 
