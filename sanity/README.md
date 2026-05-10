@@ -80,3 +80,11 @@ The CLI config enables Sanity Studio auto-updates so deployed Studio builds can 
 - Keep Tier A service pages manually reviewed before publish.
 - Use redirect mappings only for public Wix URLs that will not be rebuilt.
 - Do not store private keys, raw CRM exports, lead records, or PMS/customer data in Sanity.
+
+## Phase 1 Integration Boundary
+
+Tier A service pages stay in Astro content collections / MDX first. This keeps SEO-critical pages version controlled while the migration from Wix is still active.
+
+Sanity is planned for Tier B blog posts, testimonials, doctor profiles, reusable FAQs, topic clusters, and redirect metadata if the team wants non-code redirect editing later.
+
+Sanity is not used for website leads, lead status/workflow, assignments, notes, follow-up dates, PMS data, customer analytics, or campaign attribution. Those operational records remain in Supabase and authenticated dashboard/API systems only.

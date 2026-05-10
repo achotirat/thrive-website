@@ -1,0 +1,25 @@
+---
+export interface Props {
+  items: { q: string; a: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="section faq-section">
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">คำถามที่พบบ่อย</h2>
+    </div>
+    <div class="faq-list">
+      {items.map((item) => (
+        <details class="faq-item" data-gtm-event="faq_expand" data-gtm-label={item.q}>
+          <summary><h3>{item.q}</h3></summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+

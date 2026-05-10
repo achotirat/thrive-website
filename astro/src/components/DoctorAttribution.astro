@@ -1,0 +1,32 @@
+---
+type Doctor = {
+  name: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+  bio: string;
+  specializations: string[];
+};
+
+export interface Props {
+  doctor: Doctor;
+}
+
+const { doctor } = Astro.props;
+---
+
+<section class="section doctor-section">
+  <div class="section-container doctor-card">
+    <img src={doctor.image} alt={doctor.imageAlt} width="400" height="400" loading="lazy" />
+    <div>
+      <span class="section-label">Reviewed by</span>
+      <h2>{doctor.name}</h2>
+      <p class="doctor-card__title">{doctor.title}</p>
+      <p>{doctor.bio}</p>
+      <div class="doctor-card__tags">
+        {doctor.specializations.map((item) => <span>{item}</span>)}
+      </div>
+    </div>
+  </div>
+</section>
+

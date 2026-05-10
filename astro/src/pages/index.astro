@@ -2,12 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import CTASection from '../components/CTASection.astro';
 ---
 
-<BaseLayout
-  title="Thrive Wellness Center — ดูแลสุขภาพแบบองค์รวมในระดับเซลล์"
-  description="คลินิกสุขภาพเชิงลึก Bangkok — ตรวจสุขภาพ, IV Drip, HBOT, Food Intolerance, ฮอร์โมน ดูแลสุขภาพในระดับเซลล์"
->
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="Thrive Wellness Center — ดูแลสุขภาพแบบองค์รวมในระดับเซลล์"
+    description="คลินิกสุขภาพเชิงลึก Bangkok — ตรวจสุขภาพ, IV Drip, HBOT, Food Intolerance, ฮอร์โมน ดูแลสุขภาพในระดับเซลล์"
+    canonicalPath="/"
+    ogImage="/og-image.jpg"
+    noIndex={false}
+  />
   <Header />
 
   <!-- Hero Section -->
@@ -39,6 +46,13 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
+
+  <CTASection
+    headline="เริ่มต้นออกแบบสุขภาพเฉพาะคุณ"
+    subline="ปรึกษาทีม Thrive เพื่อเลือกโปรแกรมตรวจและดูแลสุขภาพที่เหมาะกับเป้าหมายของคุณ"
+    primaryBtn={{ label: 'ปรึกษาฟรี', href: '/contact' }}
+    secondaryBtn={{ label: 'LINE @thrivewellnessth', href: 'https://line.me/R/ti/p/@thrivewellnessth' }}
+  />
 
   <Footer />
 </BaseLayout>

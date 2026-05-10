@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="ขอบคุณที่ติดต่อ Thrive Wellness Clinic"
+    description="ทีมงาน Thrive Wellness Clinic ได้รับข้อมูลของคุณแล้ว และจะติดต่อกลับเพื่อยืนยันรายละเอียดการนัดหมาย"
+    canonicalPath="/thank-you"
+    ogImage="/og-image.jpg"
+    noIndex={true}
+  />
+  <Header />
+  <main class="thank-you-page">
+    <section class="section">
+      <div class="section-container thank-you-card">
+        <span class="section-label">Thank you</span>
+        <h1>ส่งข้อมูลเรียบร้อยแล้ว</h1>
+        <p>ทีมงาน Thrive Wellness Center จะติดต่อกลับเร็ว ๆ นี้เพื่อช่วยดูแลขั้นตอนถัดไป</p>
+        <div class="cta-section__actions">
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-primary" data-gtm-event="line_click">คุยกับเราทาง LINE</a>
+          <a href="/" class="btn btn-secondary">กลับหน้าแรก</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    const params = new URLSearchParams(window.location.search);
+    window.dataLayer.push({
+      event: 'lead_submit',
+      service: params.get('service') || '',
+      page_path: window.location.pathname,
+    });
+  </script>
+</BaseLayout>
+
