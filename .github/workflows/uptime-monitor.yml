@@ -1,0 +1,33 @@
+name: Uptime Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  uptime:
+    name: Check Phase 0 public endpoints
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Netlify preview site
+        run: |
+          curl --fail --silent --show-error --location --max-time 20 \
+            https://new.thrivewellnessth.com \
+            --output /tmp/new-site.html
+          test -s /tmp/new-site.html
+
+      - name: Confirm preview site remains noindex
+        run: |
+          curl --fail --silent --show-error --head --max-time 20 \
+            https://new.thrivewellnessth.com \
+            | grep -i "x-robots-tag: noindex"
+
+      - name: Check lead API health endpoint
+        run: |
+          curl --fail --silent --show-error --max-time 20 \
+            https://api.thrivewellnessth.com/api/health \
+            | tee /tmp/api-health.json
+          grep '"ok":true' /tmp/api-health.json
+

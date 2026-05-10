@@ -1,6 +1,6 @@
 # Phase 0 Status — Security And Foundation
 
-Updated: 2026-05-08
+Updated: 2026-05-10
 
 ## Decisions
 
@@ -20,6 +20,7 @@ Updated: 2026-05-08
 - [x] Verified `api.thrivewellnessth.com/api/health` returns a healthy JSON response.
 - [x] Verified `new.thrivewellnessth.com` returns HTTP 200 from Netlify.
 - [x] Added global `X-Robots-Tag: noindex, nofollow, noarchive` for the Netlify pre-cutover site.
+- [x] Added scheduled GitHub Actions uptime monitoring for `new.thrivewellnessth.com` and `api.thrivewellnessth.com/api/health`.
 - [x] Added `netlify.toml` with `/api/leads` routed to a Netlify Function.
 - [x] Added `netlify/functions/leads.js` lead capture endpoint.
 - [x] Added `netlify/functions/health.js` health endpoint for uptime monitoring.
@@ -63,10 +64,23 @@ Cutover note: remove the global noindex header from `_headers` before pointing `
 - [x] Create Supabase project for leads/workflow.
 - [x] Create the `leads` table using `supabase/leads_schema.sql`.
 - [x] Add Netlify environment variables from `.env.example`.
-- [ ] Configure uptime monitoring for:
+- [x] Configure uptime monitoring for:
   - `https://new.thrivewellnessth.com`
   - `https://api.thrivewellnessth.com/api/health`
-- [ ] Renew Wix through December 2026 as safety buffer.
+- [ ] Renew Wix through December 2026 as safety buffer. See `WIX_RENEWAL_CHECKLIST.md`.
+
+## Phase 0 Exit Status
+
+Technical Phase 0 is complete:
+
+- Netlify preview domain is live and noindexed.
+- Netlify API domain is live.
+- Lead API health endpoint is verified.
+- Supabase lead capture is verified.
+- Uptime monitoring is configured in GitHub Actions.
+- Secrets are stored in Netlify environment variables, not in Git.
+
+The only remaining Phase 0 item is the Wix billing renewal, which requires account owner/payment access.
 
 ## Notes
 
