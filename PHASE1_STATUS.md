@@ -33,6 +33,7 @@ Component/content implementation belongs primarily to `feature/phase1-content-co
 - [x] `cd astro && npm run check`
 - [x] `cd astro && npm run build`
 - [x] `cd sanity && npm run typecheck`
+- [x] GitHub Actions passed on `feature/phase1-astro-foundation`.
 - [ ] Netlify deploy keeps `/api/health` working.
 - [ ] Netlify deploy keeps `/api/leads` working.
 - [ ] `new.thrivewellnessth.com` remains noindexed.
