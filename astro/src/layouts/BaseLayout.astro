@@ -2,44 +2,20 @@
 import '../styles/global.css';
 
 export interface Props {
-  title: string;
-  description: string;
-  ogImage?: string;
+  lang?: string;
 }
 
-const {
-  title,
-  description,
-  ogImage = '/og-image.jpg',
-} = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { lang = 'th' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="th">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-
-    <title>{title}</title>
-
-    <link rel="canonical" href={canonicalURL} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-192.png" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
 
     <!-- Google Fonts: Noto Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,8 +24,71 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <slot name="head" />
   </head>
   <body>
     <slot />
+    <script is:inline>
+      (() => {
+        window.dataLayer = window.dataLayer || [];
+
+        const params = new URLSearchParams(window.location.search);
+        const attributionKeys = [
+          'utm_source',
+          'utm_medium',
+          'utm_campaign',
+          'utm_term',
+          'utm_content',
+          'gclid',
+          'fbclid',
+          'wbraid',
+          'gbraid',
+        ];
+
+        if (!sessionStorage.getItem('landing_page')) {
+          sessionStorage.setItem('landing_page', window.location.href);
+          sessionStorage.setItem('referrer', document.referrer || '');
+        }
+
+        attributionKeys.forEach((key) => {
+          const value = params.get(key);
+          if (value) sessionStorage.setItem(key, value);
+        });
+
+        window.dataLayer.push({
+          event: 'content_view',
+          page_path: window.location.pathname,
+          page_title: document.title,
+        });
+
+        let engaged = false;
+        const reportEngaged = () => {
+          if (engaged) return;
+          const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+          if (scrollable <= 0) return;
+          if (window.scrollY / scrollable >= 0.5) {
+            engaged = true;
+            window.dataLayer.push({
+              event: 'content_engaged',
+              page_path: window.location.pathname,
+            });
+            window.removeEventListener('scroll', reportEngaged);
+          }
+        };
+        window.addEventListener('scroll', reportEngaged, { passive: true });
+
+        document.addEventListener('click', (event) => {
+          if (!(event.target instanceof Element)) return;
+          const target = event.target.closest('[data-gtm-event]');
+          if (!target) return;
+          window.dataLayer.push({
+            event: target.dataset.gtmEvent,
+            event_label: target.dataset.gtmLabel || target.textContent.trim(),
+            event_href: target.getAttribute('href') || '',
+            page_path: window.location.pathname,
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

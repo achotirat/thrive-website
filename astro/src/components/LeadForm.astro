@@ -1,0 +1,149 @@
+---
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
+export interface Props {
+  serviceSlug: string;
+  formTitle?: string;
+}
+
+const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟรี' } = Astro.props;
+---
+
+<section class="section lead-form-section" id="lead-form">
+  <div class="section-container lead-form-card">
+    <div>
+      <span class="section-label">Appointment</span>
+      <h2>{formTitle}</h2>
+      <p>ฝากข้อมูลไว้ ทีมงาน Thrive Wellness Center จะติดต่อกลับเพื่อช่วยเลือกโปรแกรมที่เหมาะกับคุณ</p>
+    </div>
+    <form class="lead-form" data-service-slug={serviceSlug}>
+      <input type="hidden" name="service_interest" value={serviceSlug} />
+      <input type="hidden" name="source_page" value={serviceSlug} />
+      <input type="hidden" name="landing_page" />
+      <input type="hidden" name="referrer" />
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="fbclid" />
+      <input type="hidden" name="wbraid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="consent_version" value="phase1-2026-05" />
+
+      <label>
+        ชื่อ-นามสกุล *
+        <input name="name" type="text" autocomplete="name" required maxlength="120" />
+      </label>
+      <label>
+        เบอร์โทรศัพท์ *
+        <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
+      </label>
+      <label>
+        LINE ID
+        <input name="line_id" type="text" autocomplete="off" maxlength="80" />
+      </label>
+      <label>
+        ข้อความเพิ่มเติม
+        <textarea name="message" rows="4" maxlength="2000"></textarea>
+      </label>
+      <label class="lead-form__consent">
+        <input name="consent" type="checkbox" value="yes" required />
+        <span>ยินยอมให้ Thrive Wellness Center ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
+      </label>
+
+      {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>}
+      <p class="lead-form__status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-primary">ส่งข้อมูลนัดหมาย</button>
+    </form>
+  </div>
+</section>
+
+{turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  type DataLayerWindow = Window & {
+    dataLayer?: Array<Record<string, unknown>>;
+  };
+
+  document.querySelectorAll('.lead-form').forEach((element) => {
+    if (!(element instanceof HTMLFormElement)) return;
+
+    const form = element;
+    const attributionKeys = [
+      'landing_page',
+      'referrer',
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_term',
+      'utm_content',
+      'gclid',
+      'fbclid',
+      'wbraid',
+      'gbraid',
+    ];
+    let started = false;
+
+    const fillAttribution = () => {
+      attributionKeys.forEach((key) => {
+        const input = form.querySelector(`[name="${key}"]`);
+        if (input instanceof HTMLInputElement) input.value = sessionStorage.getItem(key) || '';
+      });
+    };
+
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      const dataLayerWindow = window as DataLayerWindow;
+      dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
+      dataLayerWindow.dataLayer.push({
+        event: 'form_start',
+        service: form.dataset.serviceSlug,
+        page_path: window.location.pathname,
+      });
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      fillAttribution();
+      const status = form.querySelector('.lead-form__status');
+      const button = form.querySelector('button[type="submit"]');
+      const serviceSlug = form.dataset.serviceSlug || '';
+      const formData = new FormData(form);
+      formData.set('consent_at', new Date().toISOString());
+
+      if (button instanceof HTMLButtonElement) button.disabled = true;
+      if (status instanceof HTMLElement) {
+        status.textContent = 'กำลังส่งข้อมูล...';
+        status.dataset.state = 'loading';
+      }
+
+      try {
+        const response = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+
+        if (!response.ok) throw new Error('Lead submission failed');
+        const dataLayerWindow = window as DataLayerWindow;
+        dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
+        dataLayerWindow.dataLayer.push({
+          event: 'form_submit',
+          service: serviceSlug,
+          page_path: window.location.pathname,
+        });
+        window.location.href = `/thank-you?service=${encodeURIComponent(serviceSlug)}`;
+      } catch (error) {
+        if (status instanceof HTMLElement) {
+          status.textContent = 'ยังส่งแบบฟอร์มไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
+          status.dataset.state = 'error';
+        }
+      } finally {
+        if (button instanceof HTMLButtonElement) button.disabled = false;
+      }
+    });
+  });
+</script>

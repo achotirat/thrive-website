@@ -1,0 +1,42 @@
+---
+type Button = { label: string; href: string };
+type Stat = { value: string; label: string };
+
+export interface Props {
+  headline: string;
+  subline: string;
+  image: string;
+  imageAlt: string;
+  primaryBtn: Button;
+  secondaryBtn?: Button;
+  stats?: Stat[];
+}
+
+const { headline, subline, image, imageAlt, primaryBtn, secondaryBtn, stats = [] } = Astro.props;
+---
+
+<section class="service-hero">
+  <div class="service-hero__content">
+    <div class="service-hero__badge">Thrive Wellness Clinic</div>
+    <h1>{headline}</h1>
+    <p>{subline}</p>
+    <div class="service-hero__actions">
+      <a href={primaryBtn.href} class="btn btn-primary" data-gtm-event="cta_click" data-gtm-label={primaryBtn.label}>{primaryBtn.label}</a>
+      {secondaryBtn && <a href={secondaryBtn.href} class="btn btn-secondary" data-gtm-event="cta_click" data-gtm-label={secondaryBtn.label}>{secondaryBtn.label}</a>}
+    </div>
+    {stats.length > 0 && (
+      <div class="service-hero__stats">
+        {stats.map((stat) => (
+          <div>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+  <div class="service-hero__media">
+    <img src={image} alt={imageAlt} width="1200" height="630" loading="eager" fetchpriority="high" />
+  </div>
+</section>
+

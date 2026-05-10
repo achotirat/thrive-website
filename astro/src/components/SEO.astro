@@ -1,0 +1,96 @@
+---
+import JsonLd from './JsonLd.astro';
+
+type Hreflang = { lang: string; href: string };
+type Geo = {
+  region: string;
+  placename: string;
+  position: string;
+  icbm: string;
+};
+
+export interface Props {
+  seoTitle: string;
+  description: string;
+  canonicalPath: string;
+  ogImage: string;
+  ogLocale?: string;
+  hreflang?: Hreflang[];
+  geo?: Geo;
+  heroImage?: string;
+  noIndex?: boolean;
+  publishedAt?: Date | string;
+  updatedAt?: Date | string;
+  lastMedicalReview?: Date | string;
+  reviewedBy?: string;
+  medicalSpecialty?: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  seoTitle,
+  description,
+  canonicalPath,
+  ogImage,
+  ogLocale = 'th_TH',
+  hreflang = [],
+  geo,
+  heroImage,
+  noIndex = false,
+  publishedAt,
+  updatedAt,
+  lastMedicalReview,
+  reviewedBy,
+  medicalSpecialty,
+  jsonLd = [],
+} = Astro.props;
+
+const absoluteUrl = (path: string) => new URL(path, Astro.site).toString();
+const canonicalUrl = absoluteUrl(canonicalPath);
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : absoluteUrl(ogImage);
+const heroImageUrl = heroImage ? (heroImage.startsWith('http') ? heroImage : absoluteUrl(heroImage)) : '';
+const formatDate = (date?: Date | string) => (date ? new Date(date).toISOString().slice(0, 10) : undefined);
+---
+
+<title>{seoTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+<meta name="author" content="Thrive Wellness Clinic" />
+{reviewedBy && <meta name="reviewed-by" content={reviewedBy} />}
+{medicalSpecialty && <meta name="medical-specialty" content={medicalSpecialty} />}
+{publishedAt && <meta property="article:published_time" content={formatDate(publishedAt)} />}
+{updatedAt && <meta property="article:modified_time" content={formatDate(updatedAt)} />}
+{lastMedicalReview && <meta name="last-medical-review" content={formatDate(lastMedicalReview)} />}
+<link rel="canonical" href={canonicalUrl} />
+{heroImageUrl && <link rel="preload" as="image" href={heroImageUrl} />}
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={seoTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Thrive Wellness Clinic" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={seoTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+{geo && (
+  <>
+    <meta name="geo.region" content={geo.region} />
+    <meta name="geo.placename" content={geo.placename} />
+    <meta name="geo.position" content={geo.position} />
+    <meta name="ICBM" content={geo.icbm} />
+  </>
+)}
+
+{hreflang.map((item) => (
+  <link rel="alternate" hreflang={item.lang} href={item.href} />
+))}
+
+{jsonLd.map((schema) => <JsonLd schema={schema} />)}
+
