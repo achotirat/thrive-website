@@ -1,6 +1,11 @@
 [build]
-  publish = "."
+  command = "cd astro && npm ci && npm run build"
+  publish = "astro/dist"
   functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22.14.0"
+  ASTRO_TELEMETRY_DISABLED = "1"
 
 [[redirects]]
   from = "/api/leads"
@@ -13,6 +18,17 @@
   to = "/.netlify/functions/health"
   status = 200
   force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self' https://api.thrivewellnessth.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://qr-official.line.me; connect-src 'self' https://api.thrivewellnessth.com; frame-src https://challenges.cloudflare.com; upgrade-insecure-requests"
 
 [[headers]]
   for = "/api/*"

@@ -1,10 +1,11 @@
-name: Phase 0 Checks
+name: Project Checks
 
 on:
   pull_request:
   push:
     branches:
       - main
+      - "feature/**"
 
 jobs:
   static-security:
@@ -18,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22.14.0"
 
       - name: Check Netlify Function syntax
         run: |
@@ -47,3 +48,52 @@ jobs:
             -name "*.p12" \
           \) -print | grep .
 
+  astro-build:
+    name: Astro build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.14.0"
+          cache: npm
+          cache-dependency-path: astro/package-lock.json
+
+      - name: Install Astro dependencies
+        working-directory: astro
+        run: npm ci
+
+      - name: Check Astro project
+        working-directory: astro
+        run: npm run check
+
+      - name: Build Astro project
+        working-directory: astro
+        run: npm run build
+
+  sanity-typecheck:
+    name: Sanity typecheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.14.0"
+          cache: npm
+          cache-dependency-path: sanity/package-lock.json
+
+      - name: Install Sanity dependencies
+        working-directory: sanity
+        run: npm ci
+
+      - name: Typecheck Sanity project
+        working-directory: sanity
+        run: npm run typecheck
