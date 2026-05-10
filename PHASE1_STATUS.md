@@ -34,11 +34,14 @@ Component/content implementation belongs primarily to `feature/phase1-content-co
 - [x] `cd astro && npm run build`
 - [x] `cd sanity && npm run typecheck`
 - [x] GitHub Actions passed on `feature/phase1-astro-foundation`.
-- [ ] Netlify deploy keeps `/api/health` working.
-- [ ] Netlify deploy keeps `/api/leads` working.
-- [ ] `new.thrivewellnessth.com` remains noindexed.
+- [x] Netlify deploy preview keeps `/api/health` working.
+- [x] Netlify deploy preview keeps `/api/leads` working.
+- [x] Netlify deploy preview includes `robots.txt`, `llms.txt`, and `sitemap.xml`.
+- [x] Netlify deploy preview remains noindexed.
 
 ## Notes
 
 - Remove the global `X-Robots-Tag: noindex, nofollow, noarchive` before final `www` cutover.
 - Netlify should use Node `22.14.0` for Astro 6.
+- Deploy preview verified at `https://deploy-preview-1--thrive-website.netlify.app`.
+- Test lead inserted through deploy preview API: `c8fa05f2-71f2-4339-b8ed-c71aac650632`.
