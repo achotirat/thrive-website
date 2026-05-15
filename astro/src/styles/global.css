@@ -298,6 +298,13 @@ h1.th, h2.th, h3.th {
   max-width: var(--container-wide);
 }
 
+.section-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
 .section {
   padding-block: var(--sp-20);
 }
@@ -2117,6 +2124,186 @@ h1.th, h2.th, h3.th {
   text-align: center;
 }
 
+/* ─── Homepage: Services Section ─────────────────────────────────── */
+
+.service-featured-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  background: var(--white);
+  border: 2px solid var(--teal-l);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6) var(--sp-8);
+  margin-bottom: var(--sp-5);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+
+.service-featured-card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--sh-md);
+}
+
+.service-featured-card__icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.service-featured-card__label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  margin-bottom: var(--sp-1);
+}
+
+.service-featured-card__content {
+  flex: 1;
+}
+
+.service-featured-card__content h3 {
+  font-size: var(--text-xl);
+  color: var(--navy);
+  margin-bottom: var(--sp-2);
+}
+
+.service-featured-card__content p {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin: 0;
+}
+
+.service-featured-card__cta {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--teal);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.service-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3) var(--sp-4);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--navy);
+  transition: border-color var(--dur-base) var(--ease), background var(--dur-base) var(--ease);
+}
+
+.service-chip:hover {
+  border-color: var(--teal);
+  background: var(--teal-xl);
+  color: var(--teal-d);
+}
+
+.service-chip--more {
+  border-style: dashed;
+  color: var(--teal);
+  border-color: var(--teal);
+  background: var(--teal-xl);
+}
+
+/* ─── Homepage: Testimonials ──────────────────────────────────────── */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.testimonial-card__stars {
+  color: #f59e0b;
+  font-size: var(--text-base);
+  letter-spacing: 0.1em;
+}
+
+.testimonial-card__quote {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: 1.8;
+  flex: 1;
+  margin: 0;
+}
+
+.testimonial-card__author {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Contact Page: Channels Block ───────────────────────────────── */
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.contact-channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-8) var(--sp-5);
+  border-radius: var(--r-xl);
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+  text-align: center;
+  transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+
+.contact-channel:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.contact-channel--line   { background: #06c755; }
+.contact-channel--phone  { background: var(--teal-d); }
+.contact-channel--walkin { background: #b45309; }
+
+.contact-channel__icon {
+  font-size: 2rem;
+}
+
+.contact-channel__name {
+  font-size: var(--text-lg);
+}
+
+.contact-channel__detail {
+  font-size: var(--text-sm);
+  opacity: 0.9;
+  font-weight: 400;
+}
+
 @media (max-width: 900px) {
   .service-hero,
   .doctor-card,
@@ -2136,5 +2323,28 @@ h1.th, h2.th, h3.th {
 
   .doctor-card {
     padding: 24px;
+  }
+
+  .service-featured-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .service-featured-card__cta {
+    align-self: flex-end;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channels {
+    grid-template-columns: 1fr;
+    max-width: 340px;
   }
 }

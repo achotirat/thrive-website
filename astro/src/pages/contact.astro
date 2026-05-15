@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import CTASection from '../components/CTASection.astro';
 import LeadForm from '../components/LeadForm.astro';
+import CTASection from '../components/CTASection.astro';
 
 const jsonLd = [
   {
@@ -14,25 +14,27 @@ const jsonLd = [
       {
         '@type': 'MedicalClinic',
         '@id': 'https://www.thrivewellnessth.com/#clinic',
-        name: 'Thrive Wellness Clinic',
-        alternateName: 'ไธรฟ์ เวลเนส คลินิก',
-        url: 'https://www.thrivewellnessth.com',
+        name: 'Thrive Wellness Center',
         telephone: '+66959349640',
         email: 'info@thrivewellnessth.com',
+        url: 'https://www.thrivewellnessth.com',
         image: 'https://www.thrivewellnessth.com/og-image.jpg',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา',
-          addressLocality: 'กรุงเทพมหานคร',
+          streetAddress: '199 ถนนประดิษฐ์มนูธรรม ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค',
+          addressLocality: 'ลาดพร้าว',
+          addressRegion: 'กรุงเทพมหานคร',
           postalCode: '10230',
           addressCountry: 'TH',
         },
-        openingHoursSpecification: {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          opens: '10:00',
-          closes: '19:30',
-        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '10:00',
+            closes: '19:00',
+          },
+        ],
         sameAs: [
           'https://www.facebook.com/thrivewellnessth',
           'https://www.instagram.com/thrivewellnessth',
@@ -42,7 +44,7 @@ const jsonLd = [
       {
         '@type': 'ContactPage',
         url: 'https://www.thrivewellnessth.com/contact',
-        name: 'ติดต่อนัดหมาย Thrive Wellness Clinic',
+        name: 'ติดต่อนัดหมาย Thrive Wellness Center',
       },
       {
         '@type': 'BreadcrumbList',
@@ -64,8 +66,8 @@ const crumbs = [
 <BaseLayout>
   <SEO
     slot="head"
-    seoTitle="ติดต่อนัดหมาย | Thrive Wellness Clinic | 095-934-9640"
-    description="นัดหมายและติดต่อ Thrive Wellness Clinic โทร 095-934-9640 LINE @thrivewellnessth ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เปิดทุกวัน 10:00-19:30"
+    seoTitle="ติดต่อนัดหมาย | Thrive Wellness Center | 095-934-9640"
+    description="นัดหมายและติดต่อ Thrive Wellness Center โทร 095-934-9640 LINE @thrivewellnessth เดอะ คริสตัล พาร์ค ชั้น 2 ประดิษฐ์มนูธรรม ลาดพร้าว เปิดทุกวัน 10:00–19:00"
     canonicalPath="/contact"
     ogImage="/og-image.jpg"
     noIndex={false}
@@ -74,58 +76,93 @@ const crumbs = [
   <Header />
   <Breadcrumbs crumbs={crumbs} />
 
-  <section class="service-hero">
-    <div class="service-hero__content">
-      <div class="service-hero__badge">Contact Thrive</div>
-      <h1>ติดต่อและนัดหมาย Thrive Wellness Clinic</h1>
-      <p>โทร, LINE หรือฝากข้อมูลไว้ ทีมงานจะติดต่อกลับเพื่อช่วยเลือกบริการและเวลานัดหมายที่เหมาะกับคุณ</p>
-      <div class="service-hero__actions">
-        <a href="tel:+66959349640" class="btn btn-primary" data-gtm-event="call_click" data-gtm-label="โทรปรึกษา">โทร 095-934-9640</a>
-        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-secondary" data-gtm-event="line_click" data-gtm-label="LINE ปรึกษาฟรี">LINE @thrivewellnessth</a>
-      </div>
-      <div class="service-hero__stats">
-        <div><strong>10:00-19:30</strong><span>เปิดทุกวัน</span></div>
-        <div><strong>Crystal</strong><span>เอกมัย-รามอินทรา</span></div>
-        <div><strong>LINE</strong><span>@thrivewellnessth</span></div>
-      </div>
-    </div>
-    <div class="service-hero__media">
-      <img src="/thrive-clinic-home.jpg" alt="บรรยากาศ Thrive Wellness Clinic เดอะ คริสตัล เอกมัย-รามอินทรา" width="1200" height="630" loading="eager" fetchpriority="high" />
-    </div>
-  </section>
-
   <main>
+    <!-- ── Page header ────────────────────────────────────────── -->
     <section class="section section--white">
-      <div class="container">
-        <div class="section-title-center">
-          <span class="section-label">Contact Info</span>
-          <h2 class="section-title">ข้อมูลติดต่อ</h2>
+      <div class="section-container" style="text-align:center">
+        <span class="section-label">ติดต่อ</span>
+        <h1 class="section-title">ติดต่อและนัดหมาย</h1>
+        <p style="color:var(--text-2);max-width:480px;margin:0 auto;">เลือกช่องทางที่สะดวกที่สุดสำหรับคุณ ทีมงานพร้อมตอบทุกวัน 10:00–19:00 น.</p>
+      </div>
+    </section>
+
+    <!-- ── Channels (channels-first layout) ─────────────────────── -->
+    <section class="section section--light">
+      <div class="section-container">
+        <div class="contact-channels">
+          <a
+            href="https://line.me/R/ti/p/@thrivewellnessth"
+            class="contact-channel contact-channel--line"
+            data-gtm-event="line_click"
+            data-gtm-label="contact-page-LINE"
+          >
+            <span class="contact-channel__icon">💬</span>
+            <span class="contact-channel__name">LINE</span>
+            <span class="contact-channel__detail">@thrivewellnessth</span>
+          </a>
+          <a
+            href="tel:+66959349640"
+            class="contact-channel contact-channel--phone"
+            data-gtm-event="call_click"
+            data-gtm-label="contact-page-phone"
+          >
+            <span class="contact-channel__icon">📞</span>
+            <span class="contact-channel__name">โทร</span>
+            <span class="contact-channel__detail">095-934-9640</span>
+          </a>
+          <a
+            href="https://maps.google.com/?q=199+Pradit+Manutham+Road+Bangkok+10230"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-channel contact-channel--walkin"
+            data-gtm-event="walkin_click"
+            data-gtm-label="contact-page-walkin"
+          >
+            <span class="contact-channel__icon">📍</span>
+            <span class="contact-channel__name">Walk-in</span>
+            <span class="contact-channel__detail">เดอะ คริสตัล พาร์ค ชั้น 2</span>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ── Clinic info bar ───────────────────────────────────────── -->
+    <section class="section section--white">
+      <div class="section-container">
         <div class="grid-4">
           <div class="card card-body">
-            <h3>ที่ตั้ง</h3>
-            <p class="text-muted">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา กรุงเทพฯ 10230</p>
+            <h3>📍 ที่ตั้ง</h3>
+            <p class="text-muted">ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค<br />199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230</p>
           </div>
           <div class="card card-body">
-            <h3>โทรศัพท์</h3>
-            <p><a href="tel:+66959349640">095-934-9640</a></p>
+            <h3>📞 โทรศัพท์</h3>
+            <p><a href="tel:+66959349640" data-gtm-event="call_click" data-gtm-label="info-bar-phone">095-934-9640</a></p>
           </div>
           <div class="card card-body">
-            <h3>LINE</h3>
-            <p><a href="https://line.me/R/ti/p/@thrivewellnessth">@thrivewellnessth</a></p>
+            <h3>💬 LINE</h3>
+            <p><a href="https://line.me/R/ti/p/@thrivewellnessth" data-gtm-event="line_click" data-gtm-label="info-bar-LINE">@thrivewellnessth</a></p>
           </div>
           <div class="card card-body">
-            <h3>เวลาเปิดบริการ</h3>
-            <p class="text-muted">เปิดทุกวัน<br />10:00-19:30 น.</p>
+            <h3>⏰ เวลาเปิดบริการ</h3>
+            <p class="text-muted">เปิดทุกวัน<br />10:00–19:00 น.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── Lead form ─────────────────────────────────────────── -->
+    <section class="section section--light">
+      <div class="section-container" style="text-align:center;padding-bottom:0">
+        <span class="section-label">แบบฟอร์ม</span>
+        <h2 class="section-title">ต้องการให้เราติดต่อกลับ?</h2>
+        <p style="color:var(--text-2);max-width:480px;margin:0 auto;">ฝากข้อมูลไว้ได้เลย ทีมงานจะตอบกลับภายใน 1 วันทำการ</p>
+      </div>
+    </section>
     <LeadForm serviceSlug="contact" formTitle="แบบฟอร์มนัดหมาย" />
 
-    <section class="section section--light">
-      <div class="container">
+    <!-- ── Getting here ───────────────────────────────────────── -->
+    <section class="section section--white">
+      <div class="section-container">
         <div class="section-title-center">
           <span class="section-label">How To Visit</span>
           <h2 class="section-title">วิธีการเข้าถึงเรา</h2>
@@ -133,20 +170,21 @@ const crumbs = [
         <div class="grid-3">
           <div class="card card-body">
             <h3>MRT</h3>
-            <p class="text-muted">สถานีรามอินทรา กม. 4 หรือสถานีเลียบด่วนรามอินทรา แล้วต่อรถมายังเดอะ คริสตัล</p>
+            <p class="text-muted">สถานีรามอินทรา กม.4 หรือสถานีเลียบด่วนรามอินทรา แล้วต่อรถมายังเดอะ คริสตัล พาร์ค</p>
           </div>
           <div class="card card-body">
             <h3>BTS</h3>
-            <p class="text-muted">ลงสถานีเอกมัย แล้วต่อรถมายังเดอะ คริสตัล เอกมัย-รามอินทรา</p>
+            <p class="text-muted">ลงสถานีเอกมัย แล้วต่อรถมายังเดอะ คริสตัล พาร์ค ประดิษฐ์มนูธรรม</p>
           </div>
           <div class="card card-body">
             <h3>รถยนต์</h3>
-            <p class="text-muted">มีที่จอดรถภายในเดอะ คริสตัล เอกมัย-รามอินทรา</p>
+            <p class="text-muted">มีที่จอดรถภายในเดอะ คริสตัล พาร์ค บริเวณถนนประดิษฐ์มนูธรรม</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── Final CTA ──────────────────────────────────────────── -->
     <CTASection
       headline="สะดวกคุยทาง LINE?"
       subline="แอด LINE เพื่อส่งอาการ เป้าหมายสุขภาพ หรือรูปผลตรวจเดิมให้ทีมงานช่วยประเมินเบื้องต้น"
@@ -154,5 +192,6 @@ const crumbs = [
       secondaryBtn={{ label: 'โทร 095-934-9640', href: 'tel:+66959349640' }}
     />
   </main>
+
   <Footer />
 </BaseLayout>

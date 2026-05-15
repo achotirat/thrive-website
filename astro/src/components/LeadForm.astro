@@ -201,7 +201,7 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
         const dataLayerWindow = window as DataLayerWindow;
         dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
         dataLayerWindow.dataLayer.push({
-          event: 'form_submit',
+          event: 'lead_submit',
           service: serviceSlug,
           page_path: window.location.pathname,
         });
