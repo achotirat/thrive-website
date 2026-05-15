@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalClinic',
+        '@id': 'https://www.thrivewellnessth.com/#clinic',
+        name: 'Thrive Wellness Clinic',
+        alternateName: 'ไธรฟ์ เวลเนส คลินิก',
+        url: 'https://www.thrivewellnessth.com',
+        telephone: '+66959349640',
+        email: 'info@thrivewellnessth.com',
+        image: 'https://www.thrivewellnessth.com/og-image.jpg',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา',
+          addressLocality: 'กรุงเทพมหานคร',
+          postalCode: '10230',
+          addressCountry: 'TH',
+        },
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '10:00',
+          closes: '19:30',
+        },
+        sameAs: [
+          'https://www.facebook.com/thrivewellnessth',
+          'https://www.instagram.com/thrivewellnessth',
+          'https://line.me/R/ti/p/@thrivewellnessth',
+        ],
+      },
+      {
+        '@type': 'ContactPage',
+        url: 'https://www.thrivewellnessth.com/contact',
+        name: 'ติดต่อนัดหมาย Thrive Wellness Clinic',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://www.thrivewellnessth.com' },
+          { '@type': 'ListItem', position: 2, name: 'ติดต่อเรา', item: 'https://www.thrivewellnessth.com/contact' },
+        ],
+      },
+    ],
+  },
+];
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'ติดต่อเรา', href: '/contact' },
+];
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="ติดต่อนัดหมาย | Thrive Wellness Clinic | 095-934-9640"
+    description="นัดหมายและติดต่อ Thrive Wellness Clinic โทร 095-934-9640 LINE @thrivewellnessth ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เปิดทุกวัน 10:00-19:30"
+    canonicalPath="/contact"
+    ogImage="/og-image.jpg"
+    noIndex={false}
+    jsonLd={jsonLd}
+  />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="service-hero">
+    <div class="service-hero__content">
+      <div class="service-hero__badge">Contact Thrive</div>
+      <h1>ติดต่อและนัดหมาย Thrive Wellness Clinic</h1>
+      <p>โทร, LINE หรือฝากข้อมูลไว้ ทีมงานจะติดต่อกลับเพื่อช่วยเลือกบริการและเวลานัดหมายที่เหมาะกับคุณ</p>
+      <div class="service-hero__actions">
+        <a href="tel:+66959349640" class="btn btn-primary" data-gtm-event="call_click" data-gtm-label="โทรปรึกษา">โทร 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-secondary" data-gtm-event="line_click" data-gtm-label="LINE ปรึกษาฟรี">LINE @thrivewellnessth</a>
+      </div>
+      <div class="service-hero__stats">
+        <div><strong>10:00-19:30</strong><span>เปิดทุกวัน</span></div>
+        <div><strong>Crystal</strong><span>เอกมัย-รามอินทรา</span></div>
+        <div><strong>LINE</strong><span>@thrivewellnessth</span></div>
+      </div>
+    </div>
+    <div class="service-hero__media">
+      <img src="/thrive-clinic-home.jpg" alt="บรรยากาศ Thrive Wellness Clinic เดอะ คริสตัล เอกมัย-รามอินทรา" width="1200" height="630" loading="eager" fetchpriority="high" />
+    </div>
+  </section>
+
+  <main>
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">Contact Info</span>
+          <h2 class="section-title">ข้อมูลติดต่อ</h2>
+        </div>
+        <div class="grid-4">
+          <div class="card card-body">
+            <h3>ที่ตั้ง</h3>
+            <p class="text-muted">ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา กรุงเทพฯ 10230</p>
+          </div>
+          <div class="card card-body">
+            <h3>โทรศัพท์</h3>
+            <p><a href="tel:+66959349640">095-934-9640</a></p>
+          </div>
+          <div class="card card-body">
+            <h3>LINE</h3>
+            <p><a href="https://line.me/R/ti/p/@thrivewellnessth">@thrivewellnessth</a></p>
+          </div>
+          <div class="card card-body">
+            <h3>เวลาเปิดบริการ</h3>
+            <p class="text-muted">เปิดทุกวัน<br />10:00-19:30 น.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <LeadForm serviceSlug="contact" formTitle="แบบฟอร์มนัดหมาย" />
+
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">How To Visit</span>
+          <h2 class="section-title">วิธีการเข้าถึงเรา</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card card-body">
+            <h3>MRT</h3>
+            <p class="text-muted">สถานีรามอินทรา กม. 4 หรือสถานีเลียบด่วนรามอินทรา แล้วต่อรถมายังเดอะ คริสตัล</p>
+          </div>
+          <div class="card card-body">
+            <h3>BTS</h3>
+            <p class="text-muted">ลงสถานีเอกมัย แล้วต่อรถมายังเดอะ คริสตัล เอกมัย-รามอินทรา</p>
+          </div>
+          <div class="card card-body">
+            <h3>รถยนต์</h3>
+            <p class="text-muted">มีที่จอดรถภายในเดอะ คริสตัล เอกมัย-รามอินทรา</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline="สะดวกคุยทาง LINE?"
+      subline="แอด LINE เพื่อส่งอาการ เป้าหมายสุขภาพ หรือรูปผลตรวจเดิมให้ทีมงานช่วยประเมินเบื้องต้น"
+      primaryBtn={{ label: 'เพิ่มเพื่อน LINE', href: 'https://line.me/R/ti/p/@thrivewellnessth' }}
+      secondaryBtn={{ label: 'โทร 095-934-9640', href: 'tel:+66959349640' }}
+    />
+  </main>
+  <Footer />
+</BaseLayout>
