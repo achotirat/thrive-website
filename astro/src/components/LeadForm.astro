@@ -89,7 +89,17 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
     // Store each attribution param from URL query string
     attributionKeys.forEach((key) => {
       const value = url.searchParams.get(key);
-      if (value) sessionStorage.setItem(key, value);
+      if (value) {
+        sessionStorage.setItem(key, value);
+        console.log(`[LeadForm] Captured ${key}=${value}`);
+      }
+    });
+
+    // Debug log
+    console.log('[LeadForm] sessionStorage:', {
+      landing_page: sessionStorage.getItem('landing_page'),
+      gclid: sessionStorage.getItem('gclid'),
+      utm_source: sessionStorage.getItem('utm_source'),
     });
   })();
 
