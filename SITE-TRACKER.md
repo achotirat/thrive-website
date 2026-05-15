@@ -65,6 +65,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-magnesium.html` | 2026-05-15 |
 | `blog-skin-immunity.html` | 2026-05-15 |
 | `blog-vitamin-b6.html` | 2026-05-15 |
+| `blog-gut-3p.html` | 2026-05-15 |
 
 ---
 
@@ -930,7 +931,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | ✅ Merged → #41 | Merged into blog-magnesium.html — canonical post/magnesium. |
 | 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | ✅ HTML พร้อม | `blog-skin-immunity.html` — ~3,000 words, 5 H2 signs, 5 H3 mechanisms, 2 tables, 5-card grid, 6 FAQ, 5 refs (PMC6450064, PMC7215310, PMC8470589, PMC5793244, PMC4098727). SEO: 8.8/10. Plagiarism: original ✅. Toprank: ✅. Hero: skin-immunity-hero-1200x630.jpg ✅. Teal/cyan gradient. |
 | 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | ✅ HTML พร้อม | `blog-vitamin-b6.html` — ~3,000 words, 7 H2, 2 tables, 6-card grid, 5-step list, 6 FAQ, 5 refs (PMID7485315, PMID10334745, PMC5470355, PMC8469759, PMC2077351). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-b6-hero-1200x630.jpg ✅. Warm amber-gold gradient. |
-| 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | ⏳ รอทำ | Rewrite Pre/Pro/Postbiotic. Good GEO topic. |
+| 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | ✅ HTML พร้อม | `blog-gut-3p.html` — ~3,100 words, 6 H2, 3P card grid, SCFA grid, 2 tables, chip lists, 6 FAQ, 5 refs (PMC8387233 ISAPP postbiotics, PMC6522433 prebiotics, PMC4326510 probiotics, PMC3070119 butyrate, PMC4056765 microbiota immunity). SEO: 8.7/10. Plagiarism: original ✅. Toprank: ✅. Hero: probiotic-foods-gut-health-hero-1200x630.jpg ✅. Forest green gradient. |
 | 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | ⏳ รอทำ | Rewrite for clarity and search intent. |
 | 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | ⏳ รอทำ | 3 backlinks. Medical — rewrite carefully with FAQ. |
 | 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | ⏳ รอทำ | Rewrite with clinical detail + FAQ. |
