@@ -3,30 +3,137 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import LeadForm from '../components/LeadForm.astro';
+import DoctorAttribution from '../components/DoctorAttribution.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const DR_NOON = {
+  name: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น)',
+  title: 'Chanakan Trangansri, MD. — Anti-aging & Regenerative Medicine',
+  image: '/image/dr-chanakan-trangansri-thrive-400x400.jpg',
+  imageAlt: 'พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น แพทย์ Anti-aging Thrive Wellness Center Bangkok',
+  bio: 'ผู้เชี่ยวชาญด้าน Functional Medicine และ Anti-aging ดูแลสุขภาพเชิงลึกโดยหาต้นเหตุ ไม่ใช่แค่รักษาอาการ เชี่ยวชาญด้านฮอร์โมน ภูมิแพ้ และการฟื้นฟูระดับเซลล์',
+  specializations: [
+    'Anti-aging & Regenerative Medicine',
+    'Nutrition Wellness',
+    'Lifestyle Medicine',
+    'Hormone Balance',
+    'Chelation & Detoxification',
+  ],
+};
+
+const FAQ_ITEMS = [
+  {
+    q: 'ต้องนัดล่วงหน้าไหม?',
+    a: 'แนะนำให้นัดล่วงหน้าเพื่อความสะดวก สามารถนัดผ่าน LINE @thrivewellnessth หรือโทร 095-934-9640 ทีมงานจะยืนยันเวลานัดที่เหมาะสมกับคุณ',
+  },
+  {
+    q: 'Thrive ต่างจากคลินิกทั่วไปอย่างไร?',
+    a: 'เราใช้แนวทาง Functional Medicine — ตรวจเจาะลึกหาต้นเหตุของอาการ ไม่ใช่แค่รักษาตามอาการ ทุกแผนการดูแลออกแบบเฉพาะบุคคลตามผลตรวจและเป้าหมายสุขภาพของแต่ละคน',
+  },
+  {
+    q: 'ราคาโดยประมาณเป็นอย่างไร?',
+    a: 'ราคาขึ้นอยู่กับโปรแกรมที่เลือก ตั้งแต่การตรวจวิเคราะห์ไปจนถึงการดูแลแบบครบวงจร ทีมงานจะแนะนำโปรแกรมที่เหมาะสมและแจ้งราคาในการปรึกษาครั้งแรก ซึ่งฟรีไม่มีค่าใช้จ่าย',
+  },
+  {
+    q: 'ผลตรวจออกเร็วแค่ไหน?',
+    a: 'ผลตรวจเลือดพื้นฐานได้ภายในวันเดียวกัน สำหรับการตรวจเฉพาะทาง เช่น Food Intolerance IgG หรือ DNA Test จะใช้เวลา 7–14 วันทำการขึ้นอยู่กับ lab',
+  },
+  {
+    q: 'มีบริการสำหรับชาวต่างชาติไหม?',
+    a: 'มีครับ/ค่ะ ทีมงานสื่อสารภาษาอังกฤษได้ บริการทั้งหมดรองรับผู้ป่วยชาวต่างชาติ รวมถึงเอกสารและผลตรวจที่แสดงผลเป็นภาษาอังกฤษ',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://www.thrivewellnessth.com/#website',
+        url: 'https://www.thrivewellnessth.com',
+        name: 'Thrive Wellness Center',
+        inLanguage: ['th', 'en'],
+      },
+      {
+        '@type': 'MedicalClinic',
+        '@id': 'https://www.thrivewellnessth.com/#clinic',
+        name: 'Thrive Wellness Center',
+        alternateName: 'ไธรฟ์ เวลเนส เซ็นเตอร์',
+        url: 'https://www.thrivewellnessth.com',
+        telephone: '+66959349640',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '199 ถนนประดิษฐ์มนูธรรม ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค',
+          addressLocality: 'ลาดพร้าว',
+          addressRegion: 'กรุงเทพมหานคร',
+          postalCode: '10230',
+          addressCountry: 'TH',
+        },
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '10:00',
+          closes: '19:00',
+        },
+        medicalSpecialty: ['Anti-aging Medicine', 'Functional Medicine', 'Regenerative Medicine'],
+        sameAs: [
+          'https://www.facebook.com/thrivewellnessth',
+          'https://www.instagram.com/thrivewellnessth',
+          'https://line.me/R/ti/p/@thrivewellnessth',
+        ],
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://www.thrivewellnessth.com/#dr-chanakan',
+        name: 'พญ. ชนากานต์ ตระหง่านศรี',
+        alternateName: 'Dr. Chanakan Trangansri',
+        jobTitle: 'Anti-aging & Regenerative Medicine Physician',
+        worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
+        knowsAbout: ['Functional Medicine', 'Anti-aging Medicine', 'Hormone Therapy', 'IV Nutrition', 'Food Intolerance Testing'],
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout>
   <SEO
     slot="head"
-    seoTitle="Thrive Wellness Center — ดูแลสุขภาพแบบองค์รวมในระดับเซลล์"
-    description="คลินิกสุขภาพเชิงลึก Bangkok — ตรวจสุขภาพ, IV Drip, HBOT, Food Intolerance, ฮอร์โมน ดูแลสุขภาพในระดับเซลล์"
+    seoTitle="Thrive Wellness Center Bangkok — ดูแลสุขภาพแบบองค์รวมในระดับเซลล์"
+    description="คลินิก Functional Medicine กรุงเทพฯ — ตรวจภูมิแพ้อาหารแฝง, Adrenal Fatigue, IV Drip, HBOT, ฮอร์โมน ดูแลโดยแพทย์เฉพาะทาง Anti-aging เปิดทุกวัน 10:00–19:00"
     canonicalPath="/"
     ogImage="/og-image.jpg"
     noIndex={false}
+    jsonLd={jsonLd}
   />
   <Header />
 
-  <!-- Hero Section -->
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="container">
       <div class="hero__inner">
         <div>
-          <h1 class="hero__title">ร่างกายคุณสมควรได้รับมากกว่าการตรวจเลือดปกติ</h1>
-          <p class="hero__subtitle">เราไม่ได้แค่ "ตรวจ" — เราช่วยคุณค้นหาต้นตอ วางแผน และดูแลสุขภาพในระดับที่คลินิกทั่วไปทำไม่ได้</p>
+          <h1 class="hero__title">เหนื่อยไม่หาย<br>ไม่ใช่เรื่องปกติ</h1>
+          <p class="hero__subtitle">
+            ภูมิแพ้แฝง · ฮอร์โมนแปรปรวน · Adrenal Fatigue<br>
+            หาสาเหตุจริงๆ แทนแค่รักษาอาการ
+          </p>
           <div class="hero__actions">
-            <a href="/contact" class="btn btn-primary">ปรึกษาแพทย์ฟรี →</a>
-            <a href="/check-up" class="btn btn-secondary">ดูบริการทั้งหมด</a>
+            <a
+              href="#lead-form"
+              class="btn btn-primary"
+              data-gtm-event="cta_click"
+              data-gtm-label="hero-นัดปรึกษาฟรี"
+            >นัดปรึกษาฟรี →</a>
+            <a
+              href="#services"
+              class="btn btn-secondary"
+              data-gtm-event="cta_click"
+              data-gtm-label="hero-ดูบริการทั้งหมด"
+            >ดูบริการทั้งหมด</a>
           </div>
           <div class="hero__stats">
             <div>
@@ -47,10 +154,94 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+  <!-- ── Services ──────────────────────────────────────────────── -->
+  <section class="section section--white" id="services">
+    <div class="section-container">
+      <div class="section-title-center">
+        <span class="section-label">บริการ</span>
+        <h2 class="section-title">เลือกโปรแกรมที่ตรงกับคุณ</h2>
+      </div>
+
+      <a
+        href="/food-intolerance"
+        class="service-featured-card"
+        data-gtm-event="service_click"
+        data-gtm-label="food-intolerance"
+      >
+        <div class="service-featured-card__icon">🔬</div>
+        <div class="service-featured-card__content">
+          <div class="service-featured-card__label">อันดับ 1 ที่ลูกค้าถามถึง</div>
+          <h3>ตรวจภูมิแพ้อาหารแฝง IgG</h3>
+          <p>ท้องอืด ผิวลาย เหนื่อยตลอด? อาจเกิดจากอาหารที่กินทุกวัน ตรวจพบ 216 ชนิด ผลชัด รู้สาเหตุจริง</p>
+        </div>
+        <span class="service-featured-card__cta">ดูเพิ่มเติม →</span>
+      </a>
+
+      <div class="services-grid">
+        <a href="/adrenal-fatigue" class="service-chip" data-gtm-event="service_click" data-gtm-label="adrenal-fatigue">
+          <span>💊</span>Adrenal Fatigue
+        </a>
+        <a href="/hormones-quiz" class="service-chip" data-gtm-event="service_click" data-gtm-label="hormones-quiz">
+          <span>🧬</span>ตรวจฮอร์โมน
+        </a>
+        <a href="/hbot" class="service-chip" data-gtm-event="service_click" data-gtm-label="hbot">
+          <span>🫧</span>HBOT
+        </a>
+        <a href="/iv-drip" class="service-chip" data-gtm-event="service_click" data-gtm-label="iv-drip">
+          <span>💉</span>IV Drip
+        </a>
+        <a href="/gluta" class="service-chip" data-gtm-event="service_click" data-gtm-label="gluta">
+          <span>✨</span>Glutathione IV
+        </a>
+        <a href="/about" class="service-chip service-chip--more" data-gtm-event="service_click" data-gtm-label="see-all-services">
+          <span>+</span>ดูทั้งหมด 14+ บริการ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Doctor trust ───────────────────────────────────────────── -->
+  <DoctorAttribution doctor={DR_NOON} />
+
+  <!-- ── Testimonials ──────────────────────────────────────────── -->
+  <section class="section section--light">
+    <div class="section-container">
+      <div class="section-title-center">
+        <span class="section-label">รีวิว</span>
+        <h2 class="section-title">เสียงจากผู้ที่ไว้ใจ Thrive</h2>
+      </div>
+      <!-- TODO: replace with real testimonials from Sanity when Phase 5 content is available -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"ตรวจภูมิแพ้อาหารแฝงแล้วพบว่าแพ้นม ไข่ และกลูเตน หลังงด 3 เดือนท้องอืดหายไปเลย ผิวดีขึ้นมาก หมอนุ่นอธิบายผลตรวจละเอียดมากค่ะ"</p>
+          <div class="testimonial-card__author">ณัฐ. · ตรวจภูมิแพ้อาหารแฝง IgG</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"มาทำ IV Drip และตรวจ Adrenal Fatigue หลังจากเหนื่อยมา 2 ปีแล้วไม่รู้สาเหตุ หมอหาต้นเหตุเจอและวางแผนดูแลชัดเจน พลังงานดีขึ้นมากหลัง 6 สัปดาห์"</p>
+          <div class="testimonial-card__author">วิ. · IV Drip + Adrenal Fatigue</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"ตรวจฮอร์โมนและได้วิตามินแบบ personalized ค่ะ รู้สึกว่าร่างกายได้รับสิ่งที่ขาดไปจริงๆ ไม่ใช่แค่กินวิตามินรวมไปงั้น ประทับใจมากที่สุดคือการ follow up"</p>
+          <div class="testimonial-card__author">ป. · Hormone Check + Personalized Vitamins</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Lead form ──────────────────────────────────────────────── -->
+  <LeadForm serviceSlug="homepage" formTitle="นัดปรึกษาแพทย์ฟรี" />
+
+  <!-- ── FAQ ───────────────────────────────────────────────────── -->
+  <FAQSection items={FAQ_ITEMS} />
+
+  <!-- ── Final CTA ─────────────────────────────────────────────── -->
   <CTASection
-    headline="เริ่มต้นออกแบบสุขภาพเฉพาะคุณ"
-    subline="ปรึกษาทีม Thrive เพื่อเลือกโปรแกรมตรวจและดูแลสุขภาพที่เหมาะกับเป้าหมายของคุณ"
-    primaryBtn={{ label: 'ปรึกษาฟรี', href: '/contact' }}
+    headline="พร้อมเริ่มดูแลสุขภาพในระดับที่ลึกกว่า?"
+    subline="ปรึกษาหมอนุ่นฟรี ทีมงานช่วยเลือกโปรแกรมที่เหมาะกับเป้าหมายสุขภาพของคุณ"
+    primaryBtn={{ label: 'นัดปรึกษาฟรี', href: '#lead-form' }}
     secondaryBtn={{ label: 'LINE @thrivewellnessth', href: 'https://line.me/R/ti/p/@thrivewellnessth' }}
   />
 
