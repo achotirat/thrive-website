@@ -1013,14 +1013,21 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 - [ ] มี Table หรือ Comparison อย่างน้อย 1 รายการ
 - [ ] เนื้อหาครอบคลุม search intent — ตอบคำถามหลักได้ครบ
 
-### ✅ Plagiarism Check (บังคับทุกหน้า)
-ทำหลังเขียนเนื้อหาเสร็จก่อน commit เสมอ:
-1. **Web search check** — ค้น 2–3 ประโยคเด่นจากเนื้อหาใน Google เพื่อตรวจว่าไม่ซ้ำกับเว็บอื่น
-2. **Phrase originality** — ตรวจว่า analogy, doctor quote, และ section framing เป็นของ Thrive เอง
-3. **Free tool** (optional แต่แนะนำ):
+### ✅ Toprank SEO/GEO Flow (บังคับทุก Blog — ทำก่อนเขียน)
+1. **`/toprank keyword-research`** — หา Thai search terms จริงสำหรับหัวข้อ → ใช้ใน title, H2, FAQ
+2. **`/toprank geo-optimizer`** — วาง GEO signals, local schema, location intent ก่อนเขียน
+
+### ✅ Toprank SEO Audit (บังคับทุก Blog — ทำหลังเขียน)
+3. **`/toprank seo-page`** — audit เนื้อหาที่เขียนแล้วเทียบ E-E-A-T, on-page SEO, search intent
+4. **`/toprank meta-tags-optimizer`** — ตรวจ title, description, OG tags ให้ได้มาตรฐาน
+
+### ✅ Plagiarism Check (บังคับทุกหน้า — ทำหลัง toprank audit)
+5. **Web search check** — ค้น 2–3 ประโยคเด่นจากเนื้อหาใน Google เพื่อตรวจว่าไม่ซ้ำกับเว็บอื่น
+6. **Phrase originality** — ตรวจว่า analogy, doctor quote, และ section framing เป็นของ Thrive เอง
+7. **Free tool** (optional แต่แนะนำ):
    - [Quetext](https://www.quetext.com) — รองรับภาษาไทย, 5 checks/วันฟรี
    - [Copyscape](https://www.copyscape.com) — ใช้หลัง publish (ตรวจ URL)
-4. **บันทึกผล** ในตาราง Bucket 2 ว่า `Plagiarism check: original ✅` ก่อน commit
+8. **บันทึกผลทั้งหมด** ในตาราง Bucket 2: `Toprank: ✅ | Plagiarism: original ✅` ก่อน commit
 
 ---
 
