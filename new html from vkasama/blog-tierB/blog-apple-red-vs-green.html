@@ -1,0 +1,470 @@
+<!--
+  ============================================================
+  BLOG MIGRATION — "แอปเปิ้ลแดง vs แอปเปิ้ลเขียว"
+  Source: Wix post (original content)
+  Target: WordPress (Custom HTML block OR Classic Editor > Text tab)
+  ============================================================
+
+  HOW TO USE
+  ----------
+  1. WordPress → Add New Post → Block Editor → "Custom HTML" block
+     → paste this entire file content
+  2. Upload hero image via Media Library — ตั้งชื่อไฟล์รูปว่า:
+       blog-apple-red-vs-green-thrivewellness.jpg  (1200 × 630 px)
+     แล้วแทนที่ [[HERO_IMAGE_URL]] ด้วย URL จริงจาก Media Library
+  3. Set WordPress post slug: apple-red-vs-green
+  4. Set 301 redirect จาก Wix URL เดิม → /apple-red-vs-green/
+  5. Validate JSON-LD ที่ https://validator.schema.org/
+
+  IMAGE FILENAME (สำคัญ):
+  ➡️  blog-apple-red-vs-green-thrivewellness.jpg
+      ขนาดที่แนะนำ: 1200 × 630 px (สำหรับ OG + featured image)
+
+  POST-PUBLISH CHECKLIST
+  [ ] Validate JSON-LD: https://validator.schema.org/
+  [ ] Rich results test: https://search.google.com/test/rich-results
+  [ ] Set 301 redirect Wix URL → /apple-red-vs-green/
+  [ ] Submit URL ใน Google Search Console
+  [ ] ตรวจสอบ robots.txt ให้ allow GPTBot, ClaudeBot, PerplexityBot
+  [ ] อัปเดต llms.txt ที่ root ให้รวม post นี้
+  ============================================================
+-->
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- HEAD META TAGS (วางใน <head> ของ WordPress theme)      -->
+<!-- ถ้า theme ไม่รองรับ custom head → ใช้ plugin           -->
+<!-- เช่น Rank Math / Yoast / Custom CSS & JS (head section) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  ✅ SEO Meta Tags
+  <title>แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน | Thrive Wellness Clinic</title>
+  <meta name="description" content="แอปเปิ้ลแดง vs แอปเปิ้ลเขียว ประโยชน์ต่างกันอย่างไร? ส่องสารอาหาร Quercetin ใยอาหาร และเบต้าแคโรทีน พร้อมคำแนะนำจาก Thrive Wellness Clinic กรุงเทพฯ">
+  <meta name="keywords" content="แอปเปิ้ลแดง, แอปเปิ้ลเขียว, ประโยชน์ของแอปเปิ้ล, quercetin, สารต้านอนุมูลอิสระ, ไฟเบอร์, ควบคุมน้ำหนัก, Thrive Wellness">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thrivewellnessth.com/apple-red-vs-green/">
+
+  ✅ Open Graph Tags (Social)
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน">
+  <meta property="og:description" content="แอปเปิ้ลแดง vs แอปเปิ้ลเขียว ประโยชน์ต่างกันอย่างไร? ส่องสารอาหาร Quercetin ใยอาหาร และเบต้าแคโรทีน พร้อมคำแนะนำจาก Thrive Wellness Clinic">
+  <meta property="og:url" content="https://thrivewellnessth.com/apple-red-vs-green/">
+  <meta property="og:image" content="[[HERO_IMAGE_URL]]">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="แอปเปิ้ลแดงและแอปเปิ้ลเขียว เปรียบเทียบประโยชน์ต่อสุขภาพ โดย Thrive Wellness Clinic">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="article:published_time" content="2026-04-18">
+  <meta property="article:modified_time" content="2026-04-18">
+  <meta property="article:section" content="Nutrition">
+  <meta property="article:tag" content="แอปเปิ้ล">
+  <meta property="article:tag" content="สารต้านอนุมูลอิสระ">
+  <meta property="article:tag" content="ควบคุมน้ำหนัก">
+
+  ✅ Twitter Card Tags
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน">
+  <meta name="twitter:description" content="แอปเปิ้ลแดง vs แอปเปิ้ลเขียว ประโยชน์ต่างกันอย่างไร? ส่องสารอาหาร Quercetin ใยอาหาร และเบต้าแคโรทีน พร้อมคำแนะนำจาก Thrive Wellness Clinic">
+  <meta name="twitter:image" content="[[HERO_IMAGE_URL]]">
+  <meta name="twitter:image:alt" content="แอปเปิ้ลแดงและแอปเปิ้ลเขียว เปรียบเทียบประโยชน์ต่อสุขภาพ">
+  <meta name="twitter:site" content="@thrivewellnessth">
+
+  ✅ GEO-Targeting Tags
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.7563889;100.5018332">
+  <meta name="ICBM" content="13.7563889, 100.5018332">
+
+  ✅ Language Hreflang Tags
+  <link rel="alternate" hreflang="th-TH" href="https://thrivewellnessth.com/apple-red-vs-green/">
+  <link rel="alternate" hreflang="x-default" href="https://thrivewellnessth.com/apple-red-vs-green/">
+</head>
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- STRUCTURED DATA — JSON-LD                              -->
+<!-- ═══════════════════════════════════════════════════════ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Clinic",
+      "url": "https://thrivewellnessth.com",
+      "logo": "https://thrivewellnessth.com/wp-content/uploads/logo.png",
+      "email": "thrivewellnessth@gmail.com",
+      "telephone": "+66959349640",
+      "priceRange": "฿฿",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+        "addressLocality": "ลาดพร้าว",
+        "addressRegion": "Bangkok",
+        "postalCode": "10230",
+        "addressCountry": "TH"
+      },
+      "medicalSpecialty": ["PreventiveMedicine", "Wellness", "IntegrativeMedicine"]
+    },
+
+    {
+      "@type": ["Article", "MedicalWebPage"],
+      "@id": "https://thrivewellnessth.com/apple-red-vs-green/#article",
+      "mainEntityOfPage": "https://thrivewellnessth.com/apple-red-vs-green/",
+      "headline": "แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน",
+      "description": "แอปเปิ้ลแดง vs แอปเปิ้ลเขียว ประโยชน์ต่างกันอย่างไร? ส่องสารอาหาร Quercetin ใยอาหาร และเบต้าแคโรทีน พร้อมคำแนะนำจาก Thrive Wellness Clinic กรุงเทพฯ",
+      "image": "[[HERO_IMAGE_URL]]",
+      "datePublished": "2026-04-18",
+      "dateModified": "2026-04-18",
+      "inLanguage": "th-TH",
+      "keywords": ["แอปเปิ้ลแดง", "แอปเปิ้ลเขียว", "ประโยชน์ของแอปเปิ้ล", "quercetin", "สารต้านอนุมูลอิสระ", "ไฟเบอร์", "ควบคุมน้ำหนัก", "wellness", "nutrition"],
+      "articleSection": "Nutrition",
+      "publisher": {"@id": "https://thrivewellnessth.com/#clinic"},
+      "about": [
+        {"@type": "Thing", "name": "Apple", "sameAs": "https://en.wikipedia.org/wiki/Apple"},
+        {"@type": "Thing", "name": "Quercetin", "sameAs": "https://en.wikipedia.org/wiki/Quercetin"},
+        {"@type": "Thing", "name": "Anthocyanin", "sameAs": "https://en.wikipedia.org/wiki/Anthocyanin"},
+        {"@type": "Thing", "name": "Dietary fiber", "sameAs": "https://en.wikipedia.org/wiki/Dietary_fiber"}
+      ],
+      "citation": [
+        "https://pubmed.ncbi.nlm.nih.gov/15140261/",
+        "https://pubmed.ncbi.nlm.nih.gov/22332082/",
+        "https://pubmed.ncbi.nlm.nih.gov/18630878/"
+      ]
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thrivewellnessth.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thrivewellnessth.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน", "item": "https://thrivewellnessth.com/apple-red-vs-green/"}
+      ]
+    }
+
+  ]
+}
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- VISIBLE CONTENT                                        -->
+<!-- ═══════════════════════════════════════════════════════ -->
+
+<article class="twc-post" itemscope itemtype="https://schema.org/MedicalWebPage" lang="th">
+
+  <!-- ── HERO ── -->
+  <header class="twc-hero">
+    <p class="twc-kicker">Nutrition · Wellness</p>
+    <h1 itemprop="headline">แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว ประโยชน์ดีๆ ที่ไม่เหมือนกัน</h1>
+    <p class="twc-dek">แอปเปิ้ลแดง vs แอปเปิ้ลเขียว ประโยชน์ต่างกันอย่างไร? ส่องสารอาหาร Quercetin ใยอาหาร และเบต้าแคโรทีน พร้อมคำแนะนำจาก Thrive Wellness Clinic</p>
+
+    <div class="twc-byline">
+      <span>โดย <strong>Thrive Wellness Clinic</strong></span>
+      <span>เผยแพร่ <time itemprop="datePublished" datetime="2026-04-18">18 เมษายน 2569</time></span>
+      <span>⏱ อ่าน 1 นาที</span>
+    </div>
+
+    <figure class="twc-hero-img">
+      <img
+        src="[[HERO_IMAGE_URL]]"
+        alt="แอปเปิ้ลแดงและแอปเปิ้ลเขียว เปรียบเทียบประโยชน์ต่อสุขภาพ โดย Thrive Wellness Clinic"
+        width="1200"
+        height="630"
+        loading="eager"
+      />
+    </figure>
+  </header>
+
+
+  <!-- ── TABLE OF CONTENTS ── -->
+  <nav class="twc-toc" aria-label="คลิกเลือกอ่านเนื้อหาที่สนใจ">
+    <p class="twc-toc-label">คลิกเลือกอ่านเนื้อหาที่สนใจ</p>
+    <ul>
+      <li><a href="#nutrients">รู้จักสารอาหารในแอปเปิ้ล</a></li>
+      <li><a href="#red-apple">แอปเปิ้ลแดง</a></li>
+      <li><a href="#green-apple">แอปเปิ้ลเขียว</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ── INTRO ── -->
+  <section class="twc-intro">
+    <p class="twc-lead">ทำไมแอปเปิ้ลถึงมี 2 สี? ความแตกต่างของแอปเปิ้ลสีเขียว และสีแดงเป็นอย่างไร นอกจากรสชาติและความชอบแล้ว เราควรเลือกประโยชน์จากอะไรอีกบ้าง ในวันที่ต้องการสารอาหารให้ร่างกาย</p>
+    <p>ไธรฟ์ เวลเนส คลินิก พาส่องประโยชน์ของ <strong>แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว</strong></p>
+  </section>
+
+
+  <!-- ── SECTION 1: สารอาหารในแอปเปิ้ล ── -->
+  <section id="nutrients">
+    <h2>รู้จักสารอาหารในแอปเปิ้ล</h2>
+    <p>ก่อนอื่นต้องรู้จักสารอาหารที่ร่างกายได้รับในแอปเปิ้ล 1 ลูก กันก่อน ที่ไม่ว่าจะเลือกสีไหนก็ได้ทั้งคู่</p>
+    <p>ในแอปเปิ้ล 1 ลูก จะอุดมไปด้วย คาร์โบไฮเดรต, สารต้านอนุมูลอิสระ Anthocyanin, Quercetin, Vitamin A, Vitamin C, Vitamin B1, Vitamin B2, Vitamin B6, Vitamin B9, Biotin, กรดแพนโทเธอนิค, เกลือแร่, คลอไรด์, เหล็ก, ทองแดง, แมกกานีส, แคลเซียม, ฟอสฟอรัส, โพแทสเซียม, โซเดียม, ซิลิคอน รวมถึงประโยชน์ที่ได้จากธรรมชาติ จึงเหมาะมากในผู้ที่ต้องการควบคุมน้ำหนัก เพราะอิ่มท้องนาน พลังงานน้อย ช่วยป้องกันโรคเบาหวาน โรคอ้วน โรคมะเร็ง โรคลำไส้ โรคหลอดเลือดได้เป็นอย่างดี แต่ไม่ควรรับประทานเกินวันละ 4 ลูกนะคะ</p>
+  </section>
+
+
+  <!-- ── SECTION 2: แอปเปิ้ลแดง ── -->
+  <section id="red-apple">
+    <h2>แอปเปิ้ลแดง</h2>
+    <ul class="twc-list">
+      <li>เหมาะกับผู้ที่ชอบรสหวาน กลิ่นหอม</li>
+      <li>เปลือกของแอปเปิ้ลแดงอุดมไปด้วยสารต้านอนุมูลอิสระ</li>
+      <li>ช่วยชะลอวัย ลดการเกิดริ้วรอย เสริมสร้างคอลลาเจนใต้ผิวหนัง</li>
+      <li>ลดการอักเสบในร่างกาย บำรุงหัวใจ บำรุงสมอง ลดคอเลสเตอรอลในหลอดเลือด ลดความเครียด ป้องกันโรคมะเร็ง</li>
+      <li>มี Quercetin ใยอาหาร วิตามินซี สารต้านอนุมูลอิสระ และเบต้าแคโรทีน ที่สูงกว่า แอปเปิ้ลเขียว แต่มีปริมาณน้ำตาลที่มากกว่า</li>
+    </ul>
+  </section>
+
+
+  <!-- ── SECTION 3: แอปเปิ้ลเขียว ── -->
+  <section id="green-apple">
+    <h2>แอปเปิ้ลเขียว</h2>
+    <ul class="twc-list">
+      <li>เหมาะกับผู้ที่ชอบรสหวานอมเปรี้ยว ผิวกรอบ</li>
+      <li>แอปเปิ้ลเขียวจะมีไฟเบอร์สูงจึงดีต่อการขับถ่ายและลำไส้</li>
+      <li>ช่วยบำรุงผิวพรรณ ผิวเปล่งปลั่ง หนังศีรษะแข็งแรง ลดการเกิดฝ้า</li>
+      <li>ช่วยป้องกันไข้หวัด ลดการอักเสบในร่างกาย ลดอาการเลือดออกตามไรฟัน บำรุงเส้นเลือดฝอย บำรุงจอประสาทตา เสริมสร้างข้อต่อและกระดูก</li>
+      <li>มีน้ำตาลน้อย Vitamin C และไฟเบอร์ที่สูงกว่าแอปเปิ้ลแดง จึงเหมาะกับผู้ที่ต้องการควบคุมน้ำหนัก เพราะให้แคลอรี่น้อยกว่า</li>
+    </ul>
+  </section>
+
+
+  <!-- ── CLOSING RECOMMENDATION ── -->
+  <section class="twc-recommendation">
+    <p>ไธรฟ์ แนะนำสำหรับผู้ที่ป่วยง่าย อยากบูสต์ร่างกายควรเลือกรับประทาน<strong>แอปเปิ้ลแดง</strong> แต่หากขับถ่ายไม่ดี อ้วนง่าย อยากคุมน้ำหนัก เลือกทาน<strong>แอปเปิ้ลเขียว</strong> หรือเลือกไม่ได้ก็เลือกรับประทานไปเลยทั้งแดงและเขียว เสริมประโยชน์แบบคูณ 2 ให้ดีต่อใจและผิวสวยไปเลยค่ะ</p>
+  </section>
+
+
+  <!-- ── REFERENCES ── -->
+  <section id="references">
+    <h2>แหล่งอ้างอิง</h2>
+    <ol class="twc-refs">
+      <li>Boyer J, Liu RH. Apple phytochemicals and their health benefits. <em>Nutr J.</em> 2004 May 12;3:5. doi: 10.1186/1475-2891-3-5. PMID: 15140261. <a href="https://pubmed.ncbi.nlm.nih.gov/15140261/" target="_blank" rel="noopener">PubMed</a></li>
+      <li>Hyson DA. A comprehensive review of apples and apple components and their relationship to human health. <em>Adv Nutr.</em> 2011 Sep;2(5):408-20. doi: 10.3945/an.111.000513. PMID: 22332082. <a href="https://pubmed.ncbi.nlm.nih.gov/22332082/" target="_blank" rel="noopener">PubMed</a></li>
+      <li>Wojdyło A, Oszmiański J, Laskowski P. Polyphenolic compounds and antioxidant activity of new and old apple varieties. <em>J Agric Food Chem.</em> 2008 Aug 27;56(15):6520-30. doi: 10.1021/jf800510j. PMID: 18630878. <a href="https://pubmed.ncbi.nlm.nih.gov/18630878/" target="_blank" rel="noopener">PubMed</a></li>
+    </ol>
+  </section>
+
+
+  <!-- ── CTA / CLINIC CONTACT ── -->
+  <section class="twc-bottom-cta">
+    <h2>อยากปรึกษาเรื่องโภชนาการและสุขภาพเฉพาะตัว?</h2>
+    <p>ที่ Thrive Wellness Clinic เรามีบริการดูแลสุขภาพเชิงป้องกัน และวาง nutrition plan ส่วนตัว</p>
+    <div class="twc-cta-buttons">
+      <a class="twc-cta twc-cta-line" href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener">
+        LINE: @thrivewellnessth
+      </a>
+      <a class="twc-cta twc-cta-tel" href="tel:+66959349640">
+        โทร: 095-934-9640
+      </a>
+    </div>
+    <address class="twc-address">
+      The Crystal Park (ชั้น 2) อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230
+    </address>
+  </section>
+
+</article>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- STYLES                                                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<style>
+/* ── Base ── */
+.twc-post {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #1e2460;
+  font-size: 1.05rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ── Hero ── */
+.twc-hero { margin-bottom: 2rem; }
+.twc-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: #00ab9e;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.twc-post h1 {
+  font-size: 1.85rem;
+  line-height: 1.3;
+  color: #2d358c;
+  margin: 0.25rem 0 0.75rem;
+}
+.twc-dek {
+  font-size: 1.1rem;
+  color: #5a6080;
+  margin-top: 0.25rem;
+  line-height: 1.7;
+}
+.twc-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #9ca5c8;
+  margin: 1rem 0 1.5rem;
+  border-top: 1px solid #eef0fb;
+  border-bottom: 1px solid #eef0fb;
+  padding: 0.65rem 0;
+}
+.twc-hero-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ── TOC ── */
+.twc-toc {
+  background: #f6f7fd;
+  border-left: 4px solid #2d358c;
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  margin: 1.75rem 0;
+}
+.twc-toc-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #2d358c;
+  margin: 0 0 0.6rem;
+}
+.twc-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.twc-toc a {
+  color: #2d358c;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #2d358c;
+  transition: color 0.2s;
+}
+.twc-toc a:hover { color: #00ab9e; border-bottom-color: #00ab9e; }
+
+/* ── Intro ── */
+.twc-intro { margin-bottom: 1rem; }
+.twc-lead { font-size: 1.1rem; color: #1e2460; font-weight: 500; }
+
+/* ── Sections ── */
+.twc-post h2 {
+  font-size: 1.45rem;
+  color: #2d358c;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #eef0fb;
+}
+
+/* ── Lists ── */
+.twc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.twc-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.75;
+}
+.twc-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00ab9e;
+  font-weight: 700;
+}
+
+/* ── Recommendation box ── */
+.twc-recommendation {
+  background: #e6f7f6;
+  border-left: 4px solid #00ab9e;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.twc-recommendation p { margin: 0; }
+
+/* ── References ── */
+.twc-refs {
+  font-size: 0.9rem;
+  color: #5a6080;
+  padding-left: 1.2rem;
+}
+.twc-refs li { margin: 0.5rem 0; line-height: 1.7; }
+.twc-refs a { color: #00ab9e; }
+
+/* ── CTA ── */
+.twc-bottom-cta {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #1f2568 0%, #2d358c 55%, #3d4aaa 100%);
+  border-radius: 16px;
+  margin-top: 2.5rem;
+  color: #fff;
+}
+.twc-bottom-cta h2 {
+  color: #fff;
+  border: none;
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+.twc-bottom-cta p { color: rgba(255,255,255,.85); margin-bottom: 1.25rem; }
+.twc-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.twc-cta {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s;
+}
+.twc-cta-line  { background: #06C755; color: #fff; }
+.twc-cta-line:hover  { background: #05a548; }
+.twc-cta-tel   { background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
+.twc-cta-tel:hover   { background: rgba(255,255,255,.25); }
+.twc-address {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.7);
+  font-style: normal;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .twc-post h1 { font-size: 1.45rem; }
+  .twc-post h2 { font-size: 1.2rem; }
+  .twc-cta-buttons { flex-direction: column; align-items: stretch; }
+  .twc-cta { text-align: center; }
+}
+</style>

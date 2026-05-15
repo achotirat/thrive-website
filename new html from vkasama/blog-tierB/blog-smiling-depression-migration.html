@@ -1,0 +1,463 @@
+<!--
+  ============================================================
+  BLOG MIGRATION — "SMILING DEPRESSION"
+  Source: Wix post — Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า
+  Target: WordPress (Custom HTML block หรือ Classic Editor > Text tab)
+  ============================================================
+
+  HOW TO USE
+  ----------
+  1. WordPress → Add New Post → Block Editor → ใส่ "Custom HTML" block
+     แล้ว paste ไฟล์นี้ทั้งหมด
+  2. อัปโหลดรูป hero ผ่าน Media Library แล้วแทนที่ URL รูปใน <img> ด้านล่าง
+  3. ตั้งค่า post slug เป็น "smiling-depression"
+  4. Validate JSON-LD ที่ https://validator.schema.org/
+  5. Test rich results ที่ https://search.google.com/test/rich-results
+  6. ตั้ง 301 redirect จาก /post/smiling-depression → /smiling-depression/
+     ด้วย Redirection plugin
+
+  📸 IMAGE NAME (ตั้งชื่อไฟล์รูปที่ดาวน์โหลดให้ตรงกัน):
+     blog-smiling-depression.jpg   ← รูป hero สำหรับโพสต์นี้
+     (แนะนำขนาด 1200 × 630 px, JPG ≤ 200 KB)
+
+  POST-PUBLISH CHECKLIST
+  ----------------------
+  [ ] Validate JSON-LD ที่ https://validator.schema.org/
+  [ ] Test rich results ที่ https://search.google.com/test/rich-results
+  [ ] ตั้ง 301 redirect: /post/smiling-depression → /smiling-depression/  (Redirection plugin)
+  [ ] Add to XML sitemap (Rank Math / Yoast)
+  [ ] Submit URL ใน Google Search Console
+  [ ] Submit ใน Bing Webmaster Tools
+  [ ] แชร์บน Facebook, LINE OA, Instagram
+  [ ] ตรวจว่า robots.txt อนุญาต GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+  [ ] อัปเดต llms.txt ที่ root ให้มีโพสต์นี้ใน /blog
+  ============================================================
+-->
+
+
+<!-- ================================================================= -->
+<!-- 0. HEAD META TAGS (วาง ใน WordPress SEO plugin เช่น Rank Math / Yoast) -->
+<!-- ================================================================= -->
+<!--
+  ✅ SEO Meta Tags
+  <title>Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า | Thrive Wellness Clinic</title>
+  <meta name="description" content="Smiling Depression คืออะไร? รู้จักภาวะซึมเศร้าแฝงที่ซ่อนอยู่ใต้รอยยิ้ม เช็กสัญญาณเตือน 9 ข้อ วิธีดูแลตนเอง และทางเลือก Bach Flower ที่ Thrive Wellness Clinic กรุงเทพฯ">
+  <meta name="keywords" content="Smiling Depression คืออะไร, ซึมเศร้าแฝง, high functioning depression, สัญญาณซึมเศร้า, Bach Flower, Thrive Wellness Clinic">
+  <link rel="canonical" href="https://thrivewellnessth.com/smiling-depression/">
+
+  ✅ Open Graph Tags (Social)
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า">
+  <meta property="og:description" content="Smiling Depression คืออะไร? รู้จักภาวะซึมเศร้าแฝงที่ซ่อนอยู่ใต้รอยยิ้ม เช็กสัญญาณเตือน 9 ข้อ วิธีดูแลตนเอง และทางเลือก Bach Flower ที่ Thrive Wellness Clinic">
+  <meta property="og:url" content="https://thrivewellnessth.com/smiling-depression/">
+  <meta property="og:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-smiling-depression.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า โดย Thrive Wellness Clinic">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:locale" content="th_TH">
+  <meta property="article:published_time" content="2026-04-20">
+  <meta property="article:modified_time" content="2026-04-20">
+  <meta property="article:section" content="Mental Health">
+  <meta property="article:tag" content="Smiling Depression, ซึมเศร้า, Mental Health, Bach Flower, สุขภาพจิต">
+
+  ✅ Twitter Card Tags
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า">
+  <meta name="twitter:description" content="Smiling Depression คืออะไร? รู้จักภาวะซึมเศร้าแฝงที่ซ่อนอยู่ใต้รอยยิ้ม เช็กสัญญาณเตือน 9 ข้อ วิธีดูแลตนเอง และทางเลือก Bach Flower">
+  <meta name="twitter:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-smiling-depression.jpg">
+  <meta name="twitter:image:alt" content="Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า โดย Thrive Wellness Clinic">
+  <meta name="twitter:site" content="@thrivewellnessth">
+
+  ✅ GEO-Targeting Tags
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8093;100.6074">
+  <meta name="ICBM" content="13.8093, 100.6074">
+
+  ✅ Language Hreflang Tags
+  <link rel="alternate" hreflang="th" href="https://thrivewellnessth.com/smiling-depression/">
+  <link rel="alternate" hreflang="x-default" href="https://thrivewellnessth.com/smiling-depression/">
+-->
+
+
+<!-- ================================================================= -->
+<!-- 1. STRUCTURED DATA — the AI-facing layer                           -->
+<!-- ================================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Clinic",
+      "url": "https://thrivewellnessth.com",
+      "logo": "https://thrivewellnessth.com/wp-content/uploads/logo.png",
+      "email": "thrivewellnessth@gmail.com",
+      "telephone": "+66959349640",
+      "priceRange": "฿฿",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "199 ถนนประดิษฐ์มนูธรรม อาคาร B ชั้น 2 The Crystal Park",
+        "addressLocality": "ลาดพร้าว",
+        "addressRegion": "Bangkok",
+        "postalCode": "10230",
+        "addressCountry": "TH"
+      },
+      "medicalSpecialty": ["MentalHealth","PreventiveMedicine","Wellness","IntegrativeMedicine"]
+    },
+
+    {
+      "@type": ["Article","MedicalWebPage"],
+      "@id": "https://thrivewellnessth.com/smiling-depression/#article",
+      "mainEntityOfPage": "https://thrivewellnessth.com/smiling-depression/",
+      "headline": "Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า",
+      "description": "Smiling Depression คืออะไร? รู้จักภาวะซึมเศร้าแฝงที่ซ่อนอยู่ใต้รอยยิ้ม เช็กสัญญาณเตือน 9 ข้อ วิธีดูแลตนเอง และทางเลือก Bach Flower ที่ Thrive Wellness Clinic กรุงเทพฯ",
+      "image": "https://thrivewellnessth.com/wp-content/uploads/blog-smiling-depression.jpg",
+      "datePublished": "2026-04-20",
+      "dateModified": "2026-04-20",
+      "inLanguage": "th-TH",
+      "keywords": ["Smiling Depression","ซึมเศร้าแฝง","high functioning depression","สัญญาณซึมเศร้า","Bach Flower","Mental Health","สุขภาพจิต","Thrive Wellness Clinic"],
+      "articleSection": "Mental Health",
+      "publisher": {"@id": "https://thrivewellnessth.com/#clinic"},
+      "about": [
+        {"@type":"Thing","name":"Smiling Depression","sameAs":"https://en.wikipedia.org/wiki/Dysthymia"},
+        {"@type":"Thing","name":"Bach Flower Remedies","sameAs":"https://en.wikipedia.org/wiki/Bach_flower_remedies"},
+        {"@type":"MedicalCondition","name":"Depression","sameAs":"https://en.wikipedia.org/wiki/Depression_(mood)"}
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://thrivewellnessth.com/smiling-depression/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Smiling Depression คืออะไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Smiling Depression หรือ high-functioning depression คืออาการซึมเศร้าที่สามารถใช้ชีวิตได้ตามปกติ ดูเป็นคนที่มีบุคลิกภายนอกสดใส ร่าเริง ยิ้มง่ายหัวเราะง่าย แต่เมื่ออยู่คนเดียวจะจมดิ่ง รู้สึกเศร้า และเก็บความรู้สึกแย่ไว้ข้างในโดยไม่เปิดเผยให้ใครรู้"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ใครเสี่ยงเป็น Smiling Depression บ้าง?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "กลุ่มเสี่ยงได้แก่ คนที่เป็น introvert ไม่แสดงออกทางอารมณ์ คนที่เป็น perfectionist ที่ต้องการทำทุกอย่างให้สมบูรณ์แบบ และคนที่มีความรับผิดชอบสูงทั้งในด้านครอบครัว การงาน หรือสังคม"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "สัญญาณเตือนของ Smiling Depression มีอะไรบ้าง?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "สัญญาณเตือน ได้แก่ นอนไม่หลับ เหนื่อยง่าย รู้สึกกระวนกระวายใจง่ายหรือบ่อย กังวลกับทุกๆ เรื่อง ตัดสินใจอะไรลำบาก หงุดหงิดง่ายโมโหง่าย น้อยใจกับเรื่องเล็กน้อย รู้สึกไร้ค่า และรู้สึกสิ้นหวัง"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "วิธีดูแลตนเองเมื่อตกอยู่ในสภาวะ Smiling Depression ทำอย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "วิธีดูแลตนเอง ได้แก่ หาที่ปรึกษาหรือคนที่ไว้วางใจที่เป็นผู้ฟังที่ดี ปรับเปลี่ยนพฤติกรรม เช่น ออกกำลังกายสม่ำเสมอ หากิจกรรมที่ชื่นชอบ และปรึกษาจิตแพทย์หรือผู้เชี่ยวชาญเฉพาะด้าน"
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://thrivewellnessth.com/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://thrivewellnessth.com/blog/"},
+        {"@type":"ListItem","position":3,"name":"Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า","item":"https://thrivewellnessth.com/smiling-depression/"}
+      ]
+    }
+
+  ]
+}
+</script>
+
+
+<!-- ================================================================= -->
+<!-- 2. VISIBLE CONTENT                                                  -->
+<!-- ================================================================= -->
+
+<article class="twc-post" itemscope itemtype="https://schema.org/MedicalWebPage">
+
+  <!-- HERO -->
+  <header class="twc-hero">
+    <p class="twc-kicker">Mental Health · Wellness</p>
+    <h1 itemprop="headline">Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า</h1>
+
+    <div class="twc-byline">
+      <span>เผยแพร่ <time itemprop="datePublished" datetime="2026-04-20">20 เมษายน 2569</time></span>
+      <span>อัปเดต <time itemprop="dateModified" datetime="2026-04-20">20 เมษายน 2569</time></span>
+      <span>⏱ อ่าน 1 นาที</span>
+    </div>
+
+    <figure class="twc-hero-img">
+      <img
+        src="https://thrivewellnessth.com/wp-content/uploads/blog-smiling-depression.jpg"
+        alt="Smiling Depression รอยยิ้มที่เป็นหน้ากากของความเศร้า โดย Thrive Wellness Clinic"
+        loading="eager"
+        width="1200"
+        height="630"
+      />
+    </figure>
+  </header>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <p class="twc-lead">คนที่มีภาวะซึมเศร้า อาจมีพฤติกรรมเปลี่ยนไปจากเดิม จนคนรอบตัวอาจจะคาดเดาได้ว่าเขากำลังป่วยเป็นภาวะซึมเศร้าอยู่ แต่ใครจะไปรู้ว่ายังมีคนอีกกลุ่มหนึ่งที่เวลาพบเจอมักจะเห็นแต่รอยยิ้มที่ดูสดใส ร่าเริง ใช้ชีวิตได้อย่างปกติ แต่ลึกในใจมีแต่ความเศร้าหมองเก็บฝังไว้ข้างใน ไม่แสดงออก หรือแสดงออกในทางตรงข้าม เราจะเรียกผู้ที่มีอาการซึมเศร้าแฝงแบบนี้ว่า <strong>Smiling Depression</strong> เป็นรอยยิ้มที่เป็นหน้ากากของความเศร้า ซึ่งในปัจจุบันคนที่ป่วยเป็นภาวะซึมเศร้าในประเทศไทยมีจำนวนเพิ่มสูงขึ้นถึง 1.5 ล้านคนต่อปี</p>
+  </section>
+
+  <!-- WHAT IS SMILING DEPRESSION -->
+  <section id="what-is">
+    <h2>Smiling Depression คืออะไร</h2>
+    <p>Smiling Depression ได้ถูกตีความหมายเป็น <strong>high-functioning depression</strong> หรืออาการซึมเศร้าที่สามารถใช้ชีวิตได้ตามปกติ ดูเป็นคนที่มีบุคลิกภายนอกสดใส ร่าเริง ยิ้มง่ายหัวเราะง่าย และยังเป็นคนที่คอยสร้างเสียงหัวเราะให้กับคนอื่นอีกด้วย แต่ถึงเวลาที่อยู่กับตัวเองจะจมดิ่ง รู้สึกเศร้า นำทุกเรื่องที่เก็บไว้มาคิดอยู่คนเดียว ไม่เปิดเผย บอกเล่าให้กับใคร</p>
+  </section>
+
+  <!-- WHO IS AT RISK -->
+  <section id="who-is-at-risk">
+    <h2>ใครที่เสี่ยงเป็น Smiling Depression</h2>
+    <ul class="twc-list">
+      <li><strong>คนที่เป็น introvert</strong> ไม่แสดงออกทางอารมณ์ ไม่กล้าที่จะระบายเรื่องราวให้ใครฟัง หรือสื่อสารให้ใครเข้าใจ จะเก็บเรื่องแย่ๆ ไว้กับตัวเองคนเดียว</li>
+      <li><strong>คนที่เป็น perfectionist</strong> คือ อะไรก็ต้องเนี๊ยบ เป็นไปตามมาตรฐานสูงที่ตนเองตั้งไว้ โดยเฉพาะการบอกตัวเองต้องทำให้ดีให้ได้ เมื่อไม่ได้ก็ลงโทษตนเองด้วยความรู้สึกที่แย่ และโทษแต่ตัวเอง</li>
+      <li><strong>คนที่มีความรับผิดชอบสูงมากๆ</strong> ไม่ว่าจะเป็นเรื่องของครอบครัว ไปจนถึงการงาน หรือสังคม</li>
+    </ul>
+  </section>
+
+  <!-- WARNING SIGNS -->
+  <section id="warning-signs">
+    <h2>สัญญาณเตือน Smiling Depression</h2>
+    <ul class="twc-list twc-list--check">
+      <li>นอนไม่หลับ</li>
+      <li>เหนื่อยง่าย</li>
+      <li>รู้สึกกระวนกระวายใจง่ายหรือบ่อย</li>
+      <li>กังวลกับทุกๆ เรื่อง</li>
+      <li>ตัดสินใจอะไรลำบาก</li>
+      <li>หงุดหงิดง่าย โมโหง่าย</li>
+      <li>น้อยใจกับเรื่องเล็กน้อย</li>
+      <li>รู้สึกไร้ค่า</li>
+      <li>รู้สึกสิ้นหวัง</li>
+    </ul>
+    <p>อาการของคนที่เป็น Smiling Depression จะเหมือนกับอาการของคนที่ป่วยเป็นโรคซึมเศร้าทั่วไป แต่จะแตกต่างตรงที่คนที่เป็น Smiling Depression จะไม่แสดงอาการหรือความรู้สึกเหล่านี้ออกมา แต่จะใช้รอยยิ้มกับความร่าเริงออกมากลบเกลื่อนความรู้สึกข้างในของตนเอง บางคนอาจเป็นคนที่คอยสร้างเสียงหัวเราะให้กับผู้อื่นด้วยซ้ำ แต่จะคอยกดความรู้สึกของตัวเองเก็บไว้ด้านใน</p>
+    <p>ทั้งนี้หากไม่แน่ใจหรือมีอาการดังกล่าวข้างต้น 4–5 ข้อ สามารถลองทำแบบทดสอบ Smiling Depression Test เพื่อดูว่าเราเข้าข่ายมีภาวะนี้หรือไม่</p>
+    <ul class="twc-list twc-list--links">
+      <li>Smiling Depression Test (English): <a href="https://calmerry.com/blog/tests/depression-test/" target="_blank" rel="noopener noreferrer">https://calmerry.com/blog/tests/depression-test/</a></li>
+      <li>Smiling Depression Test Thai จากโรงพยาบาลรามาธิบดี: <a href="https://www.rama.mahidol.ac.th/th/depression_risk" target="_blank" rel="noopener noreferrer">https://www.rama.mahidol.ac.th/th/depression_risk</a></li>
+    </ul>
+  </section>
+
+  <!-- SELF-CARE -->
+  <section id="self-care">
+    <h2>วิธีดูแลตนเองเมื่อตกอยู่ในสภาวะ Smiling Depression</h2>
+    <ul class="twc-list">
+      <li><strong>หาที่ปรึกษาหรือคนที่เรารู้สึกไว้วางใจ</strong> ควรเลือกผู้ที่มีวุฒิภาวะทางความคิดสูง เป็นผู้ฟังที่ดี นั่งฟังโดยไม่แสดงความคิดใดๆ จะสามารถช่วยลดอาการ Smiling Depression เบื้องต้นได้ และที่สำคัญยังทำให้รู้สึกสบายใจมากยิ่งขึ้นอีกด้วย</li>
+      <li><strong>ปรับเปลี่ยนพฤติกรรมบางอย่าง</strong> เช่น ออกกำลังกายสม่ำเสมอ หากิจกรรมที่ชื่นชอบทำเมื่อรู้สึกว่าง อยู่กับสิ่งที่ทำให้มีความสุข</li>
+      <li><strong>ปรึกษาจิตแพทย์หรือพบแพทย์ผู้เชี่ยวชาญเฉพาะด้าน</strong> เพื่อคอยให้คำแนะนำและคำปรึกษาที่ตรงจุด และวินิจฉัยที่เหมาะสม</li>
+    </ul>
+  </section>
+
+  <!-- BACH FLOWER CTA -->
+  <section id="bach-flower" class="twc-highlight-box">
+    <p>อีกหนึ่งทางเลือกสำหรับผู้ป่วย Smiling Depression ผู้ป่วยโรคซึมเศร้า หรือมีภาวะเครียดสะสม หรือ Mood Swing จากภาวะวัยทอง 💐 <strong>Bach Flower</strong> ศาสตร์แห่งการปรับสมดุลทางจิต ช่วยเสริมสร้าง Mental Health ให้คืนความสมดุล เหมาะสำหรับผู้ที่มีภาวะความเครียดสะสม โรคซึมเศร้า โรคซึมเศร้าแอบแฝง โรควิตกกังวล โรคแพนิค ผู้ที่เผชิญกับเหตุการณ์ที่รุนแรงในอดีตจนเป็นแผลฝังใจ ทั้งยังช่วยลดอาการฉุนเฉียวโมโห อารมณ์ไม่นิ่งได้อีกด้วย</p>
+    <p>หากท่านใดมีความสนใจสามารถเข้ามาปรึกษากับนักบำบัด <strong>คุณจันทร์ ชิดจันทร์ นวลแพง</strong><br>
+    Bach Flower Registered Practitioner จากสถาบัน Bach Flower Centre ประเทศอังกฤษ<br>
+    ได้ทุกวันศุกร์ เวลา 10:00–15:00 น. ที่ Thrive Wellness Clinic</p>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="twc-bottom-cta">
+    <h2>จองคิวตอนนี้</h2>
+    <div class="twc-cta-buttons">
+      <a class="twc-cta twc-cta--line" href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" rel="noopener noreferrer">
+        LINE: @thrivewellnessth
+      </a>
+      <a class="twc-cta twc-cta--phone" href="tel:+66959349640">
+        โทร: 095-934-9640
+      </a>
+    </div>
+    <p class="twc-address">📍 The Crystal Park (ชั้น 2) อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230</p>
+  </section>
+
+</article>
+
+
+<!-- ================================================================= -->
+<!-- 3. STYLING                                                          -->
+<!-- ================================================================= -->
+<style>
+/* Base */
+.twc-post {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #1e2460;
+  font-size: 1.05rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* Hero */
+.twc-post h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin: 0.5rem 0 1rem;
+  color: #2d358c;
+}
+.twc-post h2 {
+  font-size: 1.45rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #2d358c;
+}
+.twc-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #00ab9e;
+  margin: 0;
+  font-weight: 600;
+}
+.twc-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.88rem;
+  color: #5a6080;
+  margin: 1rem 0 1.5rem;
+  border-top: 1px solid #eef0fb;
+  border-bottom: 1px solid #eef0fb;
+  padding: 0.75rem 0;
+}
+.twc-hero-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* Lead */
+.twc-lead {
+  font-size: 1.08rem;
+  color: #1e2460;
+  line-height: 1.85;
+}
+
+/* Lists */
+.twc-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 1rem 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.twc-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: #1e2460;
+  line-height: 1.75;
+}
+.twc-list li::before {
+  content: '•';
+  color: #00ab9e;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+.twc-list--check li::before {
+  content: '✓';
+  color: #00ab9e;
+  font-weight: 700;
+}
+.twc-list--links {
+  list-style: none;
+  padding-left: 0;
+}
+.twc-list--links li::before {
+  content: '🔗';
+  font-weight: normal;
+}
+.twc-list--links a {
+  color: #00ab9e;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.twc-list--links a:hover {
+  color: #008a7f;
+}
+
+/* Highlight box */
+.twc-highlight-box {
+  background: #f0fbfa;
+  border-left: 4px solid #00ab9e;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  color: #1e2460;
+  line-height: 1.85;
+}
+.twc-highlight-box p + p {
+  margin-top: 1rem;
+}
+
+/* Bottom CTA */
+.twc-bottom-cta {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #1f2568 0%, #2d358c 55%, #3d4aaa 100%);
+  border-radius: 12px;
+  margin-top: 2.5rem;
+  color: #fff;
+}
+.twc-bottom-cta h2 {
+  color: #fff;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+.twc-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.twc-cta {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: 100px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+.twc-cta:hover { opacity: 0.88; }
+.twc-cta--line {
+  background: #06C755;
+  color: #fff !important;
+}
+.twc-cta--phone {
+  background: #fff;
+  color: #2d358c !important;
+}
+.twc-address {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .twc-post h1 { font-size: 1.6rem; }
+  .twc-post h2 { font-size: 1.25rem; }
+  .twc-cta-buttons { flex-direction: column; align-items: center; }
+  .twc-cta { width: 100%; text-align: center; }
+}
+</style>

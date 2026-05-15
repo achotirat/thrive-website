@@ -1,0 +1,747 @@
+<!--
+  ============================================================
+  BLOG MIGRATION — "ZINC / สังกะสี"
+  Source: Wix post — เพราะชีวิตขาด Zinc ไม่ได้
+  Target: WordPress (Custom HTML block หรือ Classic Editor > Text tab)
+  ============================================================
+
+  HOW TO USE
+  ----------
+  1. WordPress → Add New Post → Block Editor → ใส่ "Custom HTML" block
+     แล้ว paste ไฟล์นี้ทั้งหมด
+  2. อัปโหลดรูป hero ผ่าน Media Library แล้วแทนที่ [[HERO_IMAGE_URL]]
+  3. ตั้งค่า post slug เป็น "zinc"
+  4. Validate JSON-LD ที่ https://validator.schema.org/
+  5. Test rich results ที่ https://search.google.com/test/rich-results
+  6. ตั้ง 301 redirect จาก /post/zinc → /zinc/ ด้วย Redirection plugin
+
+  📸 IMAGE NAME (ตั้งชื่อไฟล์รูปที่ดาวน์โหลดให้ตรงกัน):
+     blog-zinc-minerals.jpg   ← รูป hero สำหรับโพสต์นี้
+     (แนะนำขนาด 1200 × 630 px, JPG ≤ 200 KB)
+
+  POST-PUBLISH CHECKLIST
+  ----------------------
+  [ ] Validate JSON-LD ที่ https://validator.schema.org/
+  [ ] Test rich results ที่ https://search.google.com/test/rich-results
+  [ ] ตั้ง 301 redirect: /post/zinc → /zinc/  (Redirection plugin)
+  [ ] Add to XML sitemap (Rank Math / Yoast)
+  [ ] Submit URL ใน Google Search Console
+  [ ] Submit ใน Bing Webmaster Tools
+  [ ] แชร์บน Facebook, LINE OA, Instagram
+  [ ] ตรวจว่า robots.txt อนุญาต GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+  [ ] อัปเดต llms.txt ที่ root ให้มีโพสต์นี้ใน /blog
+  ============================================================
+-->
+
+
+<!-- ================================================================= -->
+<!-- 0. HEAD META TAGS (วาง ใน WordPress SEO plugin เช่น Rank Math / Yoast) -->
+<!-- ================================================================= -->
+<!--
+  ✅ SEO Meta Tags
+  <title>เพราะชีวิตขาด Zinc ไม่ได้ พร้อม Checklist 7 อาการที่ควรรู้ก่อนสาย | Thrive Wellness Clinic</title>
+  <meta name="description" content="Zinc หรือสังกะสี แร่ธาตุที่ร่างกายขาดไม่ได้ ช่วยภูมิคุ้มกัน ผม เล็บ และอีกมาก เช็ก 7 อาการขาด Zinc และทางออกที่ Thrive Wellness Clinic">
+  <meta name="keywords" content="ขาด zinc อาการ, zinc สังกะสี, zinc คืออะไร, ประโยชน์ zinc, อาหารที่มี zinc, Thrive Wellness Clinic">
+  <link rel="canonical" href="https://thrivewellnessth.com/zinc/">
+
+  ✅ Open Graph Tags (Social)
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="เพราะชีวิตขาด Zinc ไม่ได้ พร้อม Checklist 7 อาการที่ควรรู้ก่อนสาย">
+  <meta property="og:description" content="Zinc หรือสังกะสี แร่ธาตุที่ร่างกายขาดไม่ได้ ช่วยภูมิคุ้มกัน ผม เล็บ และอีกมาก เช็ก 7 อาการขาด Zinc และทางออกที่ Thrive Wellness Clinic">
+  <meta property="og:url" content="https://thrivewellnessth.com/zinc/">
+  <meta property="og:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-zinc-minerals.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zinc สังกะสี แร่ธาตุสำคัญสำหรับร่างกาย โดย Thrive Wellness Clinic">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:locale" content="th_TH">
+  <meta property="article:published_time" content="2026-04-19">
+  <meta property="article:modified_time" content="2026-04-19">
+  <meta property="article:section" content="Nutrition">
+  <meta property="article:tag" content="Zinc, สังกะสี, แร่ธาตุ, ภูมิคุ้มกัน, สุขภาพ">
+
+  ✅ Twitter Card Tags
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="เพราะชีวิตขาด Zinc ไม่ได้ พร้อม Checklist 7 อาการที่ควรรู้ก่อนสาย">
+  <meta name="twitter:description" content="Zinc หรือสังกะสี แร่ธาตุที่ร่างกายขาดไม่ได้ ช่วยภูมิคุ้มกัน ผม เล็บ และอีกมาก เช็ก 7 อาการขาด Zinc">
+  <meta name="twitter:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-zinc-minerals.jpg">
+  <meta name="twitter:image:alt" content="Zinc สังกะสี แร่ธาตุสำคัญสำหรับร่างกาย โดย Thrive Wellness Clinic">
+  <meta name="twitter:site" content="@thrivewellnessth">
+
+  ✅ GEO-Targeting Tags
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8093;100.6074">
+  <meta name="ICBM" content="13.8093, 100.6074">
+
+  ✅ Language Hreflang Tags
+  <link rel="alternate" hreflang="th" href="https://thrivewellnessth.com/zinc/">
+  <link rel="alternate" hreflang="x-default" href="https://thrivewellnessth.com/zinc/">
+-->
+
+
+<!-- ================================================================= -->
+<!-- 1. STRUCTURED DATA — the AI-facing layer                           -->
+<!-- ================================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Clinic",
+      "url": "https://thrivewellnessth.com",
+      "logo": "https://thrivewellnessth.com/wp-content/uploads/logo.png",
+      "email": "thrivewellnessth@gmail.com",
+      "telephone": "+66959349640",
+      "priceRange": "฿฿",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "199 ถนนประดิษฐ์มนูธรรม The Crystal Park ชั้น 2 อาคาร B",
+        "addressLocality": "ลาดพร้าว",
+        "addressRegion": "Bangkok",
+        "postalCode": "10230",
+        "addressCountry": "TH"
+      },
+      "medicalSpecialty": ["PreventiveMedicine","Wellness","IntegrativeMedicine"]
+    },
+
+    {
+      "@type": ["Article","MedicalWebPage"],
+      "@id": "https://thrivewellnessth.com/zinc/#article",
+      "mainEntityOfPage": "https://thrivewellnessth.com/zinc/",
+      "headline": "เพราะชีวิตขาด Zinc ไม่ได้ พร้อม Checklist 7 อาการที่ควรรู้ก่อนสาย",
+      "description": "Zinc หรือสังกะสี แร่ธาตุที่ร่างกายขาดไม่ได้ ช่วยภูมิคุ้มกัน ผม เล็บ และอีกมาก เช็ก 7 อาการขาด Zinc และทางออกที่ Thrive Wellness Clinic",
+      "image": "https://thrivewellnessth.com/wp-content/uploads/blog-zinc-minerals.jpg",
+      "datePublished": "2026-04-19",
+      "dateModified": "2026-04-19",
+      "inLanguage": "th-TH",
+      "keywords": ["zinc","สังกะสี","ขาด zinc อาการ","ประโยชน์ zinc","zinc คืออะไร","อาหารที่มี zinc","Oligoscan","แร่ธาตุ"],
+      "articleSection": "Nutrition",
+      "timeRequired": "PT1M",
+      "author": {
+        "@type": "Physician",
+        "name": "Thrive Wellness Clinic",
+        "url": "https://thrivewellnessth.com/team/",
+        "affiliation": {"@id": "https://thrivewellnessth.com/#clinic"}
+      },
+      "publisher": {"@id": "https://thrivewellnessth.com/#clinic"},
+      "about": [
+        {"@type":"Thing","name":"Zinc","sameAs":"https://en.wikipedia.org/wiki/Zinc"},
+        {"@type":"Thing","name":"Zinc deficiency","sameAs":"https://en.wikipedia.org/wiki/Zinc_deficiency"},
+        {"@type":"MedicalCondition","name":"Zinc deficiency"}
+      ],
+      "citation": [
+        "https://pubmed.ncbi.nlm.nih.gov/33323322/",
+        "https://pubmed.ncbi.nlm.nih.gov/38719213/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4120804/",
+        "https://pubmed.ncbi.nlm.nih.gov/30009140/",
+        "https://pubmed.ncbi.nlm.nih.gov/32860489/"
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://thrivewellnessth.com/zinc/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zinc คืออะไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zinc (ซิงค์) หรือแร่ธาตุสังกะสี เป็นแร่ธาตุที่ร่างกายต้องการเพียงเล็กน้อย แต่ขาดไม่ได้ เพราะเป็นแร่ธาตุที่มีความจำเป็นต่อร่างกายในหลายๆ ด้าน เพื่อให้ระบบการทำงานของร่างกายดำเนินไปอย่างสมบูรณ์และมีประสิทธิภาพ Zinc เปรียบเสมือนกุญแจสำคัญของการมีสุขภาพที่ดี"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ทำไมเราถึงขาด Zinc ไม่ได้?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zinc มีส่วนช่วยในการควบคุมกระบวนการทำงานต่างๆ ของร่างกายกว่า 300 ชนิดของเอ็นไซม์ ครอบคลุมตั้งแต่การย่อยสารอาหาร การสังเคราะห์ DNA ระบบภูมิคุ้มกัน ระบบสืบพันธุ์ ระบบประสาท ไปจนถึงการเจริญเติบโต ที่สำคัญร่างกายไม่สามารถผลิต Zinc เองได้ ต้องได้รับจากสารอาหารเท่านั้น"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zinc มีในอาหารอะไรบ้าง?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zinc พบได้ในอาหารทะเล (ปู กุ้ง หอยนางรม หอยแมลงภู่) เนื้อสัตว์ (หมู ไก่ วัว แกะ) ไข่ ข้าวกล้อง ถั่วลิสง เมล็ดทานตะวัน เมล็ดฟักทอง เห็ด ปลา ธัญพืช ผักโขม ผักคะน้า หน่อไม้ฝรั่ง ผงโกโก้ ช็อคโกแลต นม โยเกิร์ต เนย และชีส"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zinc ควรกินตอนไหนถึงจะดี?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "สามารถรับประทาน Zinc ในช่วงเวลาไหนก็ได้ ไม่ว่าจะเป็นเช้า กลางวัน หรือเย็นตามที่สะดวก แต่ไม่ควรรับประทานพร้อมธัญพืช ถั่ว ยาเสริมธาตุเหล็ก ยาเสริมแคลเซียม หรือยาฆ่าเชื้อ เพราะจะทำให้ร่างกายดูดซึม Zinc ได้ลดลง หากรับประทานในช่วงท้องว่างจะช่วยเพิ่มประสิทธิภาพในการทำงาน"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ควรได้รับ Zinc วันละเท่าไหร่?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ควรได้รับ Zinc 9–10 มก./วัน แต่หากได้รับมากเกิน 40 มก./วัน ก็มากเกินความจำเป็นต่อร่างกาย"
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://thrivewellnessth.com/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://thrivewellnessth.com/blog/"},
+        {"@type":"ListItem","position":3,"name":"เพราะชีวิตขาด Zinc ไม่ได้","item":"https://thrivewellnessth.com/zinc/"}
+      ]
+    }
+
+  ]
+}
+</script>
+
+
+<!-- ================================================================= -->
+<!-- 2. VISIBLE CONTENT                                                  -->
+<!-- ================================================================= -->
+
+<article class="twc-post" itemscope itemtype="https://schema.org/MedicalWebPage">
+
+  <!-- HERO -->
+  <header class="twc-hero">
+    <p class="twc-kicker">Nutrition · Minerals · Wellness</p>
+    <h1 itemprop="headline">เพราะชีวิตขาด Zinc ไม่ได้<br>พร้อม Checklist 7 อาการที่ควรรู้ก่อนสาย</h1>
+    <p class="twc-dek">Zinc หรือสังกะสี แร่ธาตุที่ร่างกายขาดไม่ได้ ช่วยภูมิคุ้มกัน ผม เล็บ และอีกมาก เช็ก 7 อาการขาด Zinc และทางออกที่ Thrive Wellness Clinic</p>
+
+    <div class="twc-byline">
+      <span>โดย <strong itemprop="author">Thrive Wellness Clinic</strong></span>
+      <span>เผยแพร่ <time itemprop="datePublished" datetime="2026-04-19">19 เมษายน 2569</time></span>
+      <span>⏱ อ่าน 1 นาที</span>
+    </div>
+
+    <figure class="twc-hero-img">
+      <img
+        src="https://thrivewellnessth.com/wp-content/uploads/blog-zinc-minerals.jpg"
+        alt="Zinc สังกะสี แร่ธาตุสำคัญสำหรับร่างกาย โดย Thrive Wellness Clinic"
+        width="1200"
+        height="630"
+        loading="eager"
+        itemprop="image"
+      />
+    </figure>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="twc-toc" aria-label="สารบัญ">
+    <p class="twc-toc__title">สารบัญ</p>
+    <ol>
+      <li><a href="#checklist">Checklist 7 อาการขาด Zinc</a></li>
+      <li><a href="#what-is-zinc">Zinc คืออะไร?</a></li>
+      <li><a href="#why-essential">ทำไมเราถึงขาด Zinc ไม่ได้?</a></li>
+      <li><a href="#benefits">Zinc ช่วยอะไร?</a></li>
+      <li><a href="#food-sources">Zinc พบได้ในอาหารอะไรบ้าง?</a></li>
+      <li><a href="#when-to-take">Zinc ควรกินตอนไหนถึงจะดี?</a></li>
+      <li><a href="#clinic-cta">โปรแกรม Oligoscan ที่ Thrive</a></li>
+    </ol>
+  </nav>
+
+  <!-- LEAD / INTRO -->
+  <section>
+    <p class="twc-lead" itemprop="description">
+      หลังจากที่พาไปทำความเข้าใจกับแร่ธาตุกันแล้วในบทความก่อนหน้า
+      (<a href="https://thrivewellnessth.com/blog/minerals/">แร่ธาตุ คือ?</a>)
+      ครั้งนี้ ไธรฟ์ จะพาคุณลงลึกไปอีกสักนิด รู้จักกับ Zinc หรือ สังกะสี
+      แร่ธาตุที่คุณอาจจะคุ้นหูอยู่แล้ว แต่ก็อาจจะรู้ข้อมูลอย่างผิวเผิน
+      และอาจจะจินตนาการไม่ออกว่า Zinc มีส่วนช่วยร่างกายเราตั้งแต่เรื่องเล็กไปถึงเรื่องใหญ่ได้ขนาดไหนกัน
+    </p>
+  </section>
+
+  <!-- ─── SECTION: CHECKLIST ─── -->
+  <section id="checklist">
+    <h2>Checklist 7 อาการขาด Zinc ที่ควรรู้ก่อนสาย</h2>
+    <p>ลองเช็กดูค่ะ ถ้าคุณมีอาการเหล่านี้ อาจเป็นสัญญาณว่าร่างกายกำลังขาด Zinc อยู่</p>
+
+    <ul class="twc-checklist">
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>เจ็บป่วยบ่อย / ภูมิคุ้มกันต่ำ</strong>
+          <p>ป่วยง่าย หายช้า หรือรู้สึกร่างกายสู้โรคได้ไม่ดีเท่าที่ควร อาจเป็นสัญญาณว่า T-Cells ในระบบภูมิคุ้มกันขาด Zinc ไปสนับสนุน</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>เป็นหวัดบ่อยหรือหายจากหวัดช้า</strong>
+          <p>หวัดที่ลากยาวหลายสัปดาห์ หรือเป็นซ้ำบ่อยกว่าปกติ อาจสัมพันธ์กับระดับ Zinc ในร่างกายที่ต่ำ</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>ผมร่วงผิดปกติ / เล็บเปราะหักง่าย</strong>
+          <p>Zinc จำเป็นในกระบวนการเติบโตของเส้นผมและเล็บ รวมถึงซ่อมแซมเซลล์ที่อ่อนแอ และควบคุมต่อมไขมันบนหนังศีรษะ</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>แผลหายช้ากว่าปกติ</strong>
+          <p>Zinc เป็นส่วนสำคัญในโครงสร้างผิวหนังและการสร้างเซลล์ใหม่ หากขาด Zinc บาดแผลจะฟื้นตัวได้ช้ากว่าที่ควร</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>สิวอักเสบเรื้อรัง</strong>
+          <p>ปัญหาสิวส่วนใหญ่มักเกิดจากการอุดตันรูขุมขนจากไขมันที่มากเกินไป Zinc ทำหน้าที่ลดการอักเสบและยับยั้งการเติบโตของเชื้อแบคทีเรีย</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>สมรรถภาพทางเพศในผู้ชายลดลง (เฉพาะผู้ชาย)</strong>
+          <p>Zinc มีบทบาทต่อการทำงานของระบบสืบพันธุ์และการสร้างเชื้ออสุจิ การขาด Zinc อาจส่งผลต่อสมรรถภาพและความสมบูรณ์ของอสุจิ</p>
+        </div>
+      </li>
+      <li>
+        <span class="twc-check-icon">☐</span>
+        <div>
+          <strong>มองเห็นในที่มืดได้ไม่ดี</strong>
+          <p>Zinc มีส่วนสำคัญในการมองเห็นตอนกลางคืน หากพบว่าตาปรับตัวกับความมืดได้ช้าหรือมองเห็นไม่ชัดในที่แสงน้อย อาจเป็นสัญญาณเตือน</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="twc-note">
+      💡 หากคุณมีอาการเหล่านี้ ไม่ควรวินิจฉัยตัวเองค่ะ
+      เพราะอาการเหล่านี้อาจซ้ำกับสาเหตุอื่นของโรค
+      การตรวจระดับแร่ธาตุในร่างกายอย่างถูกต้องจะช่วยระบุสาเหตุที่แน่ชัด
+    </p>
+  </section>
+
+  <!-- ─── SECTION: WHAT IS ZINC ─── -->
+  <section id="what-is-zinc">
+    <h2>Zinc คืออะไร?</h2>
+    <p>
+      Zinc (ซิงค์) แร่ธาตุสังกะสี เป็นแร่ธาตุที่ร่างกายต้องการเพียงเล็กน้อยค่ะ
+      แต่ก็ขาดไม่ได้ เพราะเป็นแร่ธาตุที่มีความจำเป็นต่อร่างกายในหลายๆ ด้าน
+      เพื่อให้ระบบการทำงานของร่างกายดำเนินไปอย่างสมบูรณ์และมีประสิทธิภาพ
+      Zinc เปรียบเสมือนกุญแจสำคัญของการมีสุขภาพที่ดีเลยล่ะค่ะ
+    </p>
+  </section>
+
+  <!-- ─── SECTION: WHY ESSENTIAL ─── -->
+  <section id="why-essential">
+    <h2>ทำไมเราถึงขาด Zinc ไม่ได้?</h2>
+    <p>
+      Zinc นั้นเป็นแร่ธาตุที่ร่างกายต้องการเพียงเล็กน้อย แต่กลับมีส่วนช่วยในการควบคุมกระบวนการทำงานต่างๆ
+      ของร่างกายให้เป็นปกติอย่างมากมาย ได้แก่
+    </p>
+
+    <ul class="twc-icon-list">
+      <li>ช่วยการทำงานของเอ็นไซม์กว่า 300 ชนิด</li>
+      <li>กระบวนการย่อยและเผาผลาญสารอาหาร</li>
+      <li>สร้างโปรตีนที่ควบคุมการทำงานของร่างกาย</li>
+      <li>สังเคราะห์ DNA</li>
+      <li>ระบบสืบพันธุ์</li>
+      <li>ระบบประสาท</li>
+      <li>การทำงานของฮอร์โมน</li>
+      <li>ระบบภูมิคุ้มกัน</li>
+      <li>การเจริญเติบโต</li>
+    </ul>
+
+    <p>
+      ความสำคัญของ Zinc มีมากมายและเป็นกระบวนการสำคัญต่อชีวิตเราทั้งนั้นเลยใช่มั้ยล่ะคะ
+      แล้วที่น่ากังวลเพิ่มไปอีกคือ<strong>ร่างกายเราไม่สามารถผลิตขึ้นได้เองด้วย</strong>
+      ต้องได้รับจากสารอาหารเท่านั้น
+    </p>
+  </section>
+
+  <!-- ─── SECTION: BENEFITS ─── -->
+  <section id="benefits">
+    <h2>Zinc ช่วยอะไร?</h2>
+
+    <div class="twc-benefit-card">
+      <h3>🛡️ Zinc ช่วยเสริมสร้างภูมิคุ้มกัน</h3>
+      <p>
+        Zinc จำเป็นต่อการทำงานของเซลล์ระบบภูมิคุ้มกัน คือ T-Cells
+        ซึ่งเจ้า T-Cells นี้มีความสามารถในการจดจำเป้าหมาย
+        ซึ่งทำให้สามารถตอบสนองกับเชื้อโรคที่ร่างกายเราเคยเจอมา
+        ทำให้ระบบภูมิคุ้มกันเราทำงานได้อย่างรวดเร็ว
+        ช่วยต้านการเพิ่มขึ้นของปริมาณเชื้อไวรัส ช่วยลดการติดเชื้อได้ค่ะ
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>🤧 Zinc ช่วยลดความรุนแรงของอาการเป็นหวัด</h3>
+      <p>
+        Zinc ช่วยลดความรุนแรงของอาการเป็นหวัด และหายจากการเป็นหวัดได้เร็วขึ้นค่ะ
+        และหากได้รับพร้อมวิตามินซีจะช่วยป้องการเป็นหวัดได้ด้วยค่ะ
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>💇 Zinc ช่วยรักษาอาการผมร่วง และทำให้เล็บแข็งแรง</h3>
+      <p>
+        Zinc จำเป็นในกระบวนการเติบโตของเส้นผมและเล็บ และยังซ่อมแซมเซลล์ที่อ่อนแอ
+        ควบคุมการทำงานของต่อมไขมันบนหนังศีรษะช่วยลดการหลุดล่วงของเส้นผมด้วยค่ะ
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>🩹 Zinc ช่วยบาดแผลให้หายเร็วขึ้น</h3>
+      <p>
+        เพราะเป็นส่วนสำคัญในโครงสร้างผิวหนังและการสร้างเซลล์ใหม่
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>✨ Zinc รักษาสิวอักเสบ</h3>
+      <p>
+        ปัญหาสิวส่วนใหญ่มักเกิดจากการอุดตันรูขุมขนจากไขมันที่มากเกินไป
+        Zinc ทำหน้าที่ลดการอักเสบ ยับยั้งการเติบโตของเชื้อแบคทีเรีย
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>💪 Zinc ช่วยเพิ่มสมรรถภาพทางเพศในผู้ชาย</h3>
+      <p>
+        ช่วยเพิ่มปริมาณของเชื้ออสุจิในร่างกาย
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>🔬 Zinc ช่วยป้องกันโรคต่อมลูกหมากโตและมะเร็งต่อมลูกหมาก</h3>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>👁️ Zinc ช่วยเรื่องการมองเห็นในตอนกลางคืน</h3>
+      <p>
+        ร่วมทั้งป้องกันการเกิดต้อกระจก
+      </p>
+    </div>
+
+    <p class="twc-tagline">เพราะซิงค์ ช่วยให้ร่างกายแข็งแรง ออกไปทำงาน เผชิญไวรัสได้ทุกวัน</p>
+  </section>
+
+  <!-- ─── SECTION: FOOD SOURCES ─── -->
+  <section id="food-sources">
+    <h2>Zinc พบได้ในอาหารอะไรบ้าง?</h2>
+
+    <div class="twc-food-grid">
+      <div class="twc-food-group">
+        <h3>🦐 อาหารทะเล</h3>
+        <ul>
+          <li>ปู</li>
+          <li>กุ้ง</li>
+          <li>หอยนางรม</li>
+          <li>หอยแมลงภู่</li>
+        </ul>
+      </div>
+
+      <div class="twc-food-group">
+        <h3>🥩 เนื้อสัตว์ & ไข่</h3>
+        <ul>
+          <li>เนื้อหมู</li>
+          <li>เนื้อไก่</li>
+          <li>เนื้อวัว</li>
+          <li>เนื้อแกะ</li>
+          <li>ไข่</li>
+          <li>ปลา</li>
+        </ul>
+      </div>
+
+      <div class="twc-food-group">
+        <h3>🌾 ธัญพืช & ถั่ว</h3>
+        <ul>
+          <li>ข้าวกล้อง</li>
+          <li>ถั่วลิสง</li>
+          <li>เมล็ดทานตะวัน</li>
+          <li>เมล็ดฟักทอง</li>
+          <li>ธัญพืช</li>
+          <li>เครื่องเทศ</li>
+        </ul>
+      </div>
+
+      <div class="twc-food-group">
+        <h3>🥬 ผัก</h3>
+        <ul>
+          <li>ผักโขม</li>
+          <li>ผักคะน้า</li>
+          <li>หน่อไม้ฝรั่ง</li>
+          <li>เห็ด</li>
+        </ul>
+      </div>
+
+      <div class="twc-food-group">
+        <h3>🍫 ของหวาน & นม</h3>
+        <ul>
+          <li>ผงโกโก้</li>
+          <li>ช็อคโกแลต</li>
+          <li>นม</li>
+          <li>โยเกิร์ต</li>
+          <li>เนย</li>
+          <li>ชีส</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION: WHEN TO TAKE ─── -->
+  <section id="when-to-take">
+    <h2>Zinc ควรกินตอนไหนถึงจะดี?</h2>
+    <p>
+      สำหรับผู้ที่อยากรับประทานซิงค์ในรูปแบบของอาหารเสริมเพิ่มไปอีก
+      คงมีคำถามว่าควรทานตอนไหนดีกันอยู่ใช่ไหมคะ?
+    </p>
+    <p>
+      คุณสามารถเลือกรับประทาน Zinc ในช่วงเวลาไหนก็ได้ค่ะ
+      ไม่ว่าจะเป็นเช้า กลางวัน หรือเย็นตามที่สะดวก
+      แต่มีข้อห้ามเพียงอย่างเดียวคือ<strong>ไม่ควรรับประทานพร้อมธัญพืช ถั่ว ยาเสริมธาตุเหล็ก
+      ยาเสริมแคลเซียม หรือยาฆ่าเชื้อค่ะ</strong>
+      เพราะจะทำให้ร่างกายดูดซึม Zinc ได้ลดลง
+      หากรับประทานในช่วงที่ท้องว่างได้ก็จะช่วยเพิ่มประสิทธิภาพในการทำงานได้อย่างดีเลยล่ะค่ะ
+    </p>
+
+    <div class="twc-dosage-box">
+      <p>
+        Zinc จึงเป็นแร่ธาตุสำคัญที่ไม่ควรละเลย
+        ควรได้รับ <strong>9–10 มก./วัน</strong>
+        แต่หากได้รับมากเกิน <strong>40 มก./วัน</strong> ก็มากเกินความจำเป็นต่อร่างกายค่ะ
+      </p>
+      <p>
+        แล้วแบบนี้เราจะรู้ได้อย่างไรว่าร่างกายเรามี Zinc ที่พอกับร่างกายเราหรือเปล่า
+        เพราะอาการเบื้องต้นก็อาจไปซ้ำกับอีกหลายสาเหตุของโรค
+      </p>
+    </div>
+
+    <p class="twc-tagline">สุขภาพดี ห่างไกลไวรัสแค่มีซิงค์</p>
+  </section>
+
+  <!-- ─── SECTION: CLINIC CTA ─── -->
+  <section id="clinic-cta" class="twc-clinic-section">
+    <h2>ไธรฟ์ เวลเนส คลินิก<br>มีโปรแกรมการตรวจ Oligoscan</h2>
+    <p>
+      ให้คุณได้ทราบถึงแร่ธาตุในร่างกายของคุณได้อย่างครบถ้วน
+    </p>
+    <p>
+      เหมาะอย่างยิ่งกับผู้ที่คาดว่าขาดสารอาหาร แต่ไม่แน่ใจว่าเป็นแร่ธาตุชนิดใด
+      หรือต้องการวางแผนทางด้านสุขภาพที่ดีให้แก่ตนเอง
+    </p>
+    <p><strong>ได้รับทั้งการตรวจและคำปรึกษาจากหมอผู้เชี่ยวชาญ</strong></p>
+
+    <div class="twc-cta-group">
+      <a class="twc-cta twc-cta--phone" href="tel:+66959349640">
+        📞 โทร +66 95 934 9640
+      </a>
+      <a class="twc-cta twc-cta--line" href="https://line.me/R/ti/p/@thrivewellnessth">
+        💬 LINE: @thrivewellnessth
+      </a>
+    </div>
+
+    <address class="twc-address">
+      📍 The Crystal Park (ชั้น 2) อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230
+    </address>
+  </section>
+
+  <!-- FAQ — visible version -->
+  <section id="faq">
+    <h2>คำถามที่พบบ่อยเกี่ยวกับ Zinc</h2>
+
+    <details>
+      <summary>Zinc คืออะไร?</summary>
+      <p>Zinc (ซิงค์) หรือแร่ธาตุสังกะสี เป็นแร่ธาตุที่ร่างกายต้องการเพียงเล็กน้อย แต่ขาดไม่ได้ เพราะมีความจำเป็นต่อร่างกายในหลายๆ ด้าน เพื่อให้ระบบการทำงานของร่างกายดำเนินไปอย่างสมบูรณ์และมีประสิทธิภาพ Zinc เปรียบเสมือนกุญแจสำคัญของการมีสุขภาพที่ดีค่ะ</p>
+    </details>
+
+    <details>
+      <summary>ทำไมร่างกายถึงขาด Zinc ไม่ได้?</summary>
+      <p>Zinc มีส่วนช่วยในการควบคุมกระบวนการทำงานของเอ็นไซม์กว่า 300 ชนิด ครอบคลุมทั้งการย่อยสารอาหาร การสังเคราะห์ DNA ระบบภูมิคุ้มกัน ระบบสืบพันธุ์ ระบบประสาท และการเจริญเติบโต ที่สำคัญคือร่างกายไม่สามารถผลิต Zinc เองได้ ต้องได้รับจากสารอาหารเท่านั้นค่ะ</p>
+    </details>
+
+    <details>
+      <summary>Zinc มีในอาหารอะไรบ้าง?</summary>
+      <p>Zinc พบได้ในอาหารทะเล (ปู กุ้ง หอยนางรม หอยแมลงภู่) เนื้อสัตว์ทุกชนิด ไข่ ข้าวกล้อง ถั่วลิสง เมล็ดทานตะวัน เมล็ดฟักทอง เห็ด ปลา ธัญพืช ผักโขม ผักคะน้า หน่อไม้ฝรั่ง ผงโกโก้ ช็อคโกแลต นม โยเกิร์ต เนย และชีสค่ะ</p>
+    </details>
+
+    <details>
+      <summary>Zinc ควรกินตอนไหนถึงจะดี?</summary>
+      <p>สามารถรับประทาน Zinc ในช่วงเวลาไหนก็ได้ ไม่ว่าจะเช้า กลางวัน หรือเย็น แต่ไม่ควรรับประทานพร้อมธัญพืช ถั่ว ยาเสริมธาตุเหล็ก ยาเสริมแคลเซียม หรือยาฆ่าเชื้อ เพราะจะทำให้ร่างกายดูดซึม Zinc ได้ลดลง หากรับประทานตอนท้องว่างจะช่วยเพิ่มประสิทธิภาพได้ดีค่ะ</p>
+    </details>
+
+    <details>
+      <summary>ควรได้รับ Zinc วันละเท่าไหร่?</summary>
+      <p>ควรได้รับ Zinc 9–10 มก./วัน แต่หากได้รับมากเกิน 40 มก./วัน ก็มากเกินความจำเป็นต่อร่างกายค่ะ หากไม่แน่ใจระดับ Zinc ในร่างกายของตัวเอง แนะนำให้ตรวจ Oligoscan กับแพทย์ผู้เชี่ยวชาญค่ะ</p>
+    </details>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references">
+    <h2>แหล่งอ้างอิง</h2>
+    <ol class="twc-refs">
+      <li>
+        Wessels I, Rolles B, Rink L. "Update on the multi-layered levels of zinc-mediated immune regulation."
+        <em>Nutrients.</em> 2020 Dec 7;12(12):3703.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33323322/" target="_blank" rel="noopener noreferrer">PMID: 33323322</a>
+      </li>
+      <li>
+        Nault D, et al. "Zinc for prevention and treatment of the common cold."
+        <em>Cochrane Database Syst Rev.</em> 2024 May 2;5(5):CD014914.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/38719213/" target="_blank" rel="noopener noreferrer">PMID: 38719213</a>
+      </li>
+      <li>
+        Gupta M, Mahajan VK, Mehta KS, Chauhan PS. "Zinc therapy in dermatology: a review."
+        <em>Dermatol Res Pract.</em> 2014;2014:709152.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4120804/" target="_blank" rel="noopener noreferrer">PMC4120804</a>
+      </li>
+      <li>
+        Fallah A, Mohammad-Hasani A, Colagar AH. "Zinc is an Essential Element for Male Fertility: A Review of Zn Roles in Men's Health, Germination, Sperm Quality, and Fertilization."
+        <em>J Reprod Infertil.</em> 2018 Apr-Jun;19(2):69–81.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/30009140/" target="_blank" rel="noopener noreferrer">PMID: 30009140</a>
+      </li>
+      <li>
+        Decker A, et al. "Serum zinc levels and efficacy of zinc treatment in acne vulgaris: A systematic review and meta-analysis."
+        <em>Dermatol Ther.</em> 2020 Nov;33(6):e14252.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/32860489/" target="_blank" rel="noopener noreferrer">PMID: 32860489</a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="twc-related">
+    <h2>อ่านต่อ</h2>
+    <ul>
+      <li><a href="https://thrivewellnessth.com/blog/minerals/">แร่ธาตุ คือ? ทำไมร่างกายต้องการ</a></li>
+      <li><a href="https://thrivewellnessth.com/blog/">บทความสุขภาพทั้งหมดจาก Thrive Wellness</a></li>
+    </ul>
+  </section>
+
+</article>
+
+
+<!-- ================================================================= -->
+<!-- 3. STYLING                                                          -->
+<!-- ================================================================= -->
+<style>
+/* ── Base ── */
+.twc-post {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.75;
+  color: #1e2460;
+  font-size: 1.05rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ── Hero ── */
+.twc-hero { margin-bottom: 2rem; }
+.twc-post h1 { font-size: 1.9rem; line-height: 1.3; margin: 0.5rem 0 1rem; color: #2d358c; }
+.twc-post h2 { font-size: 1.45rem; margin-top: 2.5rem; color: #2d358c; border-bottom: 2px solid #00ab9e; padding-bottom: 0.4rem; }
+.twc-post h3 { font-size: 1.1rem; margin-top: 1.5rem; color: #2d358c; }
+.twc-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: #00ab9e; margin: 0; font-weight: 700; }
+.twc-dek { font-size: 1.1rem; color: #5a6080; margin-top: 0.5rem; line-height: 1.7; }
+.twc-byline { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.88rem; color: #9ca5c8; margin: 1rem 0 1.5rem; border-top: 1px solid #eef0fb; border-bottom: 1px solid #eef0fb; padding: 0.75rem 0; }
+.twc-hero-img img { width: 100%; height: auto; border-radius: 12px; }
+
+/* ── TOC ── */
+.twc-toc { background: #f6f7fd; border-left: 4px solid #2d358c; padding: 1.25rem 1.5rem; border-radius: 8px; margin: 2rem 0; }
+.twc-toc__title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #2d358c; margin: 0 0 0.75rem; }
+.twc-toc ol { margin: 0; padding-left: 1.25rem; }
+.twc-toc li { margin: 0.35rem 0; font-size: 0.95rem; }
+.twc-toc a { color: #2d358c; text-decoration: none; }
+.twc-toc a:hover { color: #00ab9e; text-decoration: underline; }
+
+/* ── Lead ── */
+.twc-lead { font-size: 1.1rem; color: #1e2460; line-height: 1.8; }
+.twc-lead a { color: #00ab9e; text-decoration: underline; }
+
+/* ── Checklist ── */
+.twc-checklist { list-style: none; padding: 0; margin: 1.5rem 0; }
+.twc-checklist li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #fff;
+  border: 1.5px solid #eef0fb;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(45,53,140,0.06);
+}
+.twc-checklist li:hover { border-color: #00ab9e; box-shadow: 0 4px 16px rgba(0,171,158,0.1); }
+.twc-check-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; color: #2d358c; }
+.twc-checklist strong { display: block; color: #2d358c; font-size: 1rem; margin-bottom: 0.25rem; }
+.twc-checklist p { margin: 0; font-size: 0.9rem; color: #5a6080; line-height: 1.65; }
+
+/* ── Note ── */
+.twc-note { background: #fff9e6; border-left: 3px solid #e8a020; padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem; color: #5a6080; }
+
+/* ── Icon list ── */
+.twc-icon-list { list-style: none; padding: 0; margin: 1rem 0; }
+.twc-icon-list li { padding: 0.4rem 0 0.4rem 1.75rem; position: relative; font-size: 0.95rem; color: #1e2460; }
+.twc-icon-list li::before { content: '✦'; color: #00ab9e; font-size: 0.75rem; position: absolute; left: 0.25rem; top: 0.5rem; }
+
+/* ── Benefit cards ── */
+.twc-benefit-card { background: #f0fbfa; border-radius: 10px; padding: 1.1rem 1.4rem; margin-bottom: 1rem; border: 1px solid #e6f7f6; }
+.twc-benefit-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; color: #2d358c; }
+.twc-benefit-card p { margin: 0; font-size: 0.95rem; color: #5a6080; line-height: 1.7; }
+
+/* ── Tagline ── */
+.twc-tagline { font-size: 1.1rem; font-weight: 600; color: #2d358c; text-align: center; padding: 1rem; background: linear-gradient(135deg, #eef0fb, #e6f7f6); border-radius: 8px; margin: 1.5rem 0; }
+
+/* ── Food grid ── */
+.twc-food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.twc-food-group { background: #fff; border: 1.5px solid #eef0fb; border-radius: 10px; padding: 1rem; }
+.twc-food-group h3 { font-size: 0.95rem; margin: 0 0 0.5rem; color: #2d358c; }
+.twc-food-group ul { list-style: none; padding: 0; margin: 0; }
+.twc-food-group li { font-size: 0.88rem; color: #5a6080; padding: 0.2rem 0; border-bottom: 1px solid #f0f0f8; }
+.twc-food-group li:last-child { border-bottom: none; }
+
+/* ── Dosage box ── */
+.twc-dosage-box { background: #eef0fb; border-left: 4px solid #2d358c; border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; font-size: 0.95rem; color: #1e2460; }
+.twc-dosage-box p { margin: 0 0 0.5rem; }
+.twc-dosage-box p:last-child { margin: 0; }
+
+/* ── Clinic section ── */
+.twc-clinic-section { background: linear-gradient(135deg, #2d358c 0%, #1f2568 100%); color: #fff; border-radius: 16px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+.twc-clinic-section h2 { color: #fff; border-bottom: none; padding-bottom: 0; font-size: 1.5rem; margin-top: 0; }
+.twc-clinic-section p { color: rgba(255,255,255,0.85); margin: 0.5rem 0; }
+.twc-clinic-section strong { color: #fff; }
+.twc-cta-group { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin: 1.5rem 0 1rem; }
+.twc-cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 1.5rem; border-radius: 100px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+.twc-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.twc-cta--phone { background: #00ab9e; color: #fff; }
+.twc-cta--line { background: #06C755; color: #fff; }
+.twc-address { color: rgba(255,255,255,0.75); font-size: 0.88rem; font-style: normal; margin-top: 0.75rem; }
+
+/* ── FAQ ── */
+.twc-post details { border: 1.5px solid #eef0fb; padding: 0.85rem 1rem; margin: 0.5rem 0; border-radius: 8px; background: #fff; }
+.twc-post details[open] { border-color: #00ab9e; }
+.twc-post summary { font-weight: 600; cursor: pointer; color: #2d358c; font-size: 1rem; }
+.twc-post details p { margin: 0.75rem 0 0; font-size: 0.93rem; color: #5a6080; line-height: 1.75; }
+
+/* ── References ── */
+.twc-refs { font-size: 0.88rem; color: #5a6080; padding-left: 1.25rem; }
+.twc-refs li { margin: 0.5rem 0; line-height: 1.6; }
+.twc-refs a { color: #00ab9e; }
+
+/* ── Related ── */
+.twc-related { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #eef0fb; }
+.twc-related h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #9ca5c8; border-bottom: none; padding-bottom: 0; }
+.twc-related ul { list-style: none; padding: 0; }
+.twc-related li { margin: 0.5rem 0; }
+.twc-related a { color: #2d358c; font-size: 0.95rem; text-decoration: none; }
+.twc-related a:hover { color: #00ab9e; text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .twc-post h1 { font-size: 1.5rem; }
+  .twc-post h2 { font-size: 1.25rem; }
+  .twc-cta-group { flex-direction: column; align-items: stretch; }
+  .twc-cta { justify-content: center; }
+  .twc-food-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>

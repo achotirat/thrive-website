@@ -849,8 +849,127 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | `/` (homepage) | สร้างหลังสุด รอ content ครบ | 🔴 Tier A |
 | `/doctors` | ข้ามไปก่อน — รอ content | 🟡 Tier A Secondary |
 | `/contact` | ข้ามไปก่อน | 🟡 Tier A Secondary |
-| Tier B pages | ยังไม่ได้วางแผน | 🟢 Tier B |
+| Tier B pages | ดูหัวข้อ Tier B ด้านล่าง — Blog Migration 87 posts | 🟢 Tier B |
 | Tier C pages | ยังไม่ได้วางแผน | ⚪ Tier C |
+
+---
+
+## Tier B — Blog Migration (87 posts)
+
+อ้างอิงจาก: `Blog-content-audit(Bucket123).xlsx`
+
+**สรุป:**
+- Bucket 1 (Keep As-Is): 34 posts ✅ เสร็จแล้ว
+- Bucket 2 (Rewrite for SEO/GEO): 36 posts ⏳ ยังไม่เริ่ม
+- Bucket 3 (Delete / Do Not Migrate): 17 posts 🗑️
+
+---
+
+### Bucket 1 — KEEP AS-IS ✅ เสร็จแล้ว (34 posts)
+
+| # | Post Title (TH) | URL Slug | Visits/mo | Backlinks | Notes |
+|---|----------------|----------|----------:|----------:|-------|
+| 1 | ประโยชน์ของพริก | `post/chili` | 1,771 | — | Top traffic. Add meta desc. |
+| 2 | คุณรู้จักแร่ธาตุดีแค่ไหน? | `post/แร่ธาตุ` | 1,077 | — | Strong traffic. Add meta desc. |
+| 3 | แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว | `post/apple-benefit` | 1,046 | 3 | 3 backlinks. Migrate as-is + meta desc. |
+| 4 | ประจำเดือนไม่มาเกิน 3 เดือน? | `post/abnormal-period` | 675 | 171 | ⭐ 171 backlinks — preserve URL exactly. |
+| 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | Good traffic. Add meta desc. |
+| 6 | ปวดท้องเมนส์ ต้องหาหมอหรือไม่? | `post/ประจำเดือนเคลื่อน` | 388 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
+| 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | Checklist format. Add meta + FAQ schema. |
+| 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | Add meta desc. |
+| 9 | Growth factor คืออะไร | `post/growth-factor` | 281 | — | Good traffic. Add meta desc. |
+| 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | 4 backlinks. Keep. Add meta desc. |
+| 11 | Glutathione กลูตาไธโอน | `gluta` | 214 | 3 | 3 backlinks. Service-adjacent — high priority. |
+| 12 | 7 ประโยชน์ของ CoQ10 | `post/ประโยชน์ของ-coq10` | 177 | 1 | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
+| 13 | Ashwagandha คืออะไร | `post/ashwagandha` | 159 | — | Good traffic. Add meta desc. |
+| 14 | ปวดท้องบ่อย ท้องเสียประจำ? | `post/ลำไส้อักเสบ` | 144 | — | Add meta desc. |
+| 15 | นอนไม่หลับ Tryptophan | `post/tryptophan` | 142 | 1 | 1 backlink. Keep. |
+| 16 | GABA สารสกัดจมูกข้าว | `post/_gaba` | 126 | 2 | 2 backlinks. MERGE with sleep-gaba (#82) before migrating. |
+| 17 | Mental Health ป่วย นำไปสู่โรคอะไร? | `post/mental-health` | 124 | 233 | ⭐ 233 backlinks — highest! Preserve URL exactly. |
+| 18 | ชวนรู้จัก Silica แร่ธาตุแห่งความงาม | `post/silica` | 122 | — | Add meta desc. |
+| 19 | ชวนรู้จักโบรมีเลน จากสับปะรด | `post/bromelain` | 118 | 6 | 6 backlinks. Keep. |
+| 20 | เสริม OMEGA 3 ลดความเครียด | `post/omega-3` | 111 | 1 | Add meta desc. |
+| 21 | สารสื่อประสาท คืออะไร | `post/neurotransmitters` | 105 | 1 | Add meta desc. |
+| 22 | ปัญหาสิวประจำเดือน | `post/ปัญหาสิวประจำเดือน` | 101 | — | Add meta desc. |
+| 23 | 7 อาหารที่มี Probiotic สูง | `post/อาหารที่มี-probiotic` | 89 | 2 | 2 backlinks. Keep. |
+| 24 | วิตามิน A ช่วยเสริมภูมิ | `post/vitamin-a` | 87 | — | Add meta desc. |
+| 25 | L-carnitine คืออะไร | `post/l-carnitine` | 82 | — | Add meta desc. |
+| 26 | ปวดท้องเมนส์ อาการปวดหน่วง | `post/menstrual-pain` | 82 | — | Check overlap with #6 before migrating. |
+| 27 | ผื่นลมพิษ แก้ไม่หายขาด | `post/ผื่นลมพิษ` | 67 | — | Add meta desc. |
+| 28 | Triglyceride ค่าที่ไม่ควรมองข้าม | `post/triglyceride` | 64 | 1 | Add meta desc. |
+| 29 | สาเหตุผมร่วงจากฮอร์โมน | `post/hairloss` | 63 | 2 | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
+| 30 | 5 วิตามินเสริมภูมิคุ้มกัน | `post/boost-ภูมิคุ้มกัน` | 63 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
+| 31 | NAD Plus คืออะไร | `nad` | 59 | 1 | Service page — very important. Keep. |
+| 32 | โครเมียม ลดความอยากน้ำตาล | `post/chromium` | 54 | — | Add meta desc. |
+| 33 | จะเกิดอะไรขึ้นเส้นเลือดตีบ | `post/cloggedarteries` | 51 | — | Add meta desc. |
+| 34 | แฟนไม่ได้หมดรัก สารสื่อประสาท | `post/neurotransmitter` | 41 | — | Add meta desc. |
+
+---
+
+### Bucket 2 — REWRITE FOR SEO/GEO ⏳ ยังไม่เริ่ม (36 posts)
+
+| # | Post Title (TH) | URL Slug | Visits/mo | Backlinks | Notes |
+|---|----------------|----------|----------:|----------:|-------|
+| 35 | ระบบภูมิคุ้มกัน Immune System | `immunesystem` | 20 | 201 | ⭐ 201 backlinks, 20 visits — rewrite urgently (high authority, weak content). |
+| 36 | โกรทฮอร์โมน (Growth Hormone) ลดลง | `post/growth-hormone-2` | 1 | 108 | ⭐ 108 backlinks, 1 visit — major missed opportunity. Rewrite urgently. |
+| 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | Rewrite with FAQ schema for GEO. |
+| 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | Wellness + GEO. Expand and add FAQ. |
+| 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | Practical guide — rewrite with Q&A format. |
+| 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | Service-adjacent. Rewrite more clinical, add FAQ. |
+| 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | MERGE #41 + #42 + #43 into one definitive post. |
+| 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | Duplicate of #41 — merge into #41. |
+| 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | 3rd duplicate — merge into #41. Do not migrate separately. |
+| 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | 2 backlinks. Rewrite. Add FAQ. |
+| 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | Rewrite with FAQ schema. |
+| 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | Rewrite Pre/Pro/Postbiotic. Good GEO topic. |
+| 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | Rewrite for clarity and search intent. |
+| 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | 3 backlinks. Medical — rewrite carefully with FAQ. |
+| 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | Rewrite with clinical detail + FAQ. |
+| 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | Rewrite. Expand significantly. |
+| 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | Rewrite as listicle with FAQ. Good GEO format. |
+| 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | Rewrite. Women's health cluster. |
+| 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | 3 backlinks. Rewrite with structured data. |
+| 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | Rewrite as practical checklist + FAQ. |
+| 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | Foundational women's health. Rewrite comprehensively. |
+| 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | Practical tips — GEO. Rewrite with numbered FAQ. |
+| 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | 19 FB shares. Rewrite with more depth. |
+| 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | Medical topic. Rewrite carefully + when to see doctor. |
+| 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | Rewrite with FAQ. Good sleep cluster. |
+| 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | Rewrite. Simplify URL slug. |
+| 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | Service-adjacent. Rewrite to link to NK Cell test service. |
+| 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ⭐ 8 backlinks, low traffic — strong authority. Rewrite urgently. |
+| 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | Women's health cluster. Rewrite with FAQ. |
+| 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | Service content. Add FAQ + link to check-up. |
+| 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | Women's health staple. Expand significantly. |
+| 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | Very searched topic. Rewrite comprehensively with FAQ. |
+| 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | Rewrite. Add FAQ + link to health check-up service. |
+| 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | 2 backlinks. Rewrite service-adjacent. Add FAQ. |
+| 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | Check overlap with #12 — merge or rewrite. |
+| 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | 0 visits but important topic. Rewrite comprehensively. |
+
+---
+
+### Bucket 3 — DELETE / DO NOT MIGRATE 🗑️ (17 posts)
+
+| # | Post Title (TH) | URL Slug | Issues | Notes |
+|---|----------------|----------|--------|-------|
+| 71 | All /blog/hashtags/ pages | `blog/hashtags/*` | 404 | Wix auto-generated. Do not migrate. |
+| 72 | All /members-area/ spam pages | `members-area/*` | 404 + spam | Spam bot registrations. Ignore completely. |
+| 73 | All /blog/categories/ pages | `blog/categories/*` | Thin <200w | Auto-generated, no meta. WordPress generates better. |
+| 74 | /pricing-plans/list | `pricing-plans/list` | 35 words | Wix-specific. Do not migrate. |
+| 75 | Service pages (/service-page/) | `service-page/*` | <50 words | Wix booking pages. Already rebuilt in new HTML. |
+| 76 | 6สูตร Buffet IV Drip Vitamin | `post/6สูตรbuffet-iv-drip-vitamin` | 124 words | Too thin. Rewrite as new post instead. |
+| 77 | Booster Quercetin ต้านไวรัส | `post/booster-to-quercetin` | Outdated COVID | COVID-era 2021. Delete. |
+| 78 | N-Acetylcysteine NAC vs COVID | `post/n-acetylsysteine-nac-against-covid-19` | Outdated COVID | COVID-era. Delete. |
+| 79 | 7 วิตามินเสริมภูมิ (duplicate 1) | `post/7-วิตามินเสริมภูมิคุ้มกัน` | Duplicate | Nearly identical to another post. Merge or delete. |
+| 80 | 7 วิตามินเสริมภูมิ (duplicate 2) | `post/7-วิตามินเสริมภูมิ-มีอะไรบ้าง` | Duplicate | Second duplicate. Delete. |
+| 81 | Healthy Food Series (ตอนที่ 1-5,7) | `post/healthy-food-series` | <200w each | Too thin. Merge into one post or delete. |
+| 82 | นอนไม่หลับ GABA (sleep-gaba) | `post/sleep-gaba` | Dup of #16 | Merge content into #16, then redirect this URL. |
+| 83 | โยคะฟลาย Yoga Fly | `post/yogafly` | Off-topic | Not related to Thrive services. Delete. |
+| 84 | /white-skin | `white-skin` | 404 | Page doesn't exist. Do not migrate. |
+| 85 | ตรวจภูมิแพ้ Antibody COVID (IgG) | `igg-antibody-covid` | Outdated | COVID antibody test. Delete or update entirely. |
+| 86 | การกอดที่มากกว่าการบอกรัก | `post/__hug` | Off-topic | Lifestyle fluff — no relevance to clinic. Delete. |
+| 87 | ลำไส้อักเสบ (broken URL) | `post/ลำไส้อักเสบ (404)` | 404 | URL encoding broken. Do not migrate. |
 
 ---
 

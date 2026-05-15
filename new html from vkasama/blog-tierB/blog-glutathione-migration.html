@@ -1,0 +1,609 @@
+<!--
+  ============================================================
+  BLOG MIGRATION — "GLUTATHIONE / กลูตาไธโอน"
+  Source: Wix post — กลูตาไธโอน ตัวช่วยผิวขาวและขับสารพิษในตับ
+  Target: WordPress (Custom HTML block หรือ Classic Editor > Text tab)
+  ============================================================
+
+  HOW TO USE
+  ----------
+  1. WordPress → Add New Post → Block Editor → ใส่ "Custom HTML" block
+     แล้ว paste ไฟล์นี้ทั้งหมด
+  2. อัปโหลดรูป hero ผ่าน Media Library แล้วแทนที่ [[HERO_IMAGE_URL]]
+  3. ตั้งค่า post slug เป็น "glutathione"
+  4. Validate JSON-LD ที่ https://validator.schema.org/
+  5. Test rich results ที่ https://search.google.com/test/rich-results
+  6. ตั้ง 301 redirect จาก /post/glutathione → /glutathione/ ด้วย Redirection plugin
+
+  📸 IMAGE NAME (ตั้งชื่อไฟล์รูปที่ดาวน์โหลดให้ตรงกัน):
+     blog-glutathione-skin-whitening.jpg   ← รูป hero สำหรับโพสต์นี้
+     (แนะนำขนาด 1200 × 630 px, JPG ≤ 200 KB)
+
+  POST-PUBLISH CHECKLIST
+  ----------------------
+  [ ] Validate JSON-LD ที่ https://validator.schema.org/
+  [ ] Test rich results ที่ https://search.google.com/test/rich-results
+  [ ] ตั้ง 301 redirect: /post/glutathione → /glutathione/  (Redirection plugin)
+  [ ] Add to XML sitemap (Rank Math / Yoast)
+  [ ] Submit URL ใน Google Search Console
+  [ ] Submit ใน Bing Webmaster Tools
+  [ ] แชร์บน Facebook, LINE OA, Instagram
+  [ ] ตรวจว่า robots.txt อนุญาต GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+  [ ] อัปเดต llms.txt ที่ root ให้มีโพสต์นี้ใน /blog
+  ============================================================
+-->
+
+
+<!-- ================================================================= -->
+<!-- 0. HEAD META TAGS (วาง ใน WordPress SEO plugin เช่น Rank Math / Yoast) -->
+<!-- ================================================================= -->
+<!--
+  ✅ SEO Meta Tags
+  <title>กลูตาไธโอน (กลูต้า) ตัวช่วยผิวขาวและขับสารพิษในตับ | Thrive Wellness Clinic</title>
+  <meta name="description" content="กลูตาไธโอน หรือ กลูต้า คืออะไร? รู้จักประโยชน์ 5 ด้าน ตั้งแต่ผิวขาวกระจ่างใส ไปถึงการขับสารพิษในตับ และทำไม IV Drip จึงได้ผลดีกว่าการทานแคปซูล ที่ Thrive Wellness Clinic">
+  <meta name="keywords" content="กลูตาไธโอน, กลูต้า, ผิวขาว, ฉีดกลูต้า, iv drip ผิวขาว, detox ตับ, กลูตาไธโอน คืออะไร, กลูต้าไธโอน ประโยชน์, Thrive Wellness Clinic">
+  <link rel="canonical" href="https://thrivewellnessth.com/glutathione/">
+
+  ✅ Open Graph Tags (Social)
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="กลูตาไธโอน (กลูต้า) ตัวช่วยผิวขาวและขับสารพิษในตับ">
+  <meta property="og:description" content="กลูตาไธโอน หรือ กลูต้า คืออะไร? รู้จักประโยชน์ 5 ด้าน ตั้งแต่ผิวขาวกระจ่างใส ไปถึงการขับสารพิษในตับ และทำไม IV Drip จึงได้ผลดีกว่าการทานแคปซูล">
+  <meta property="og:url" content="https://thrivewellnessth.com/glutathione/">
+  <meta property="og:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-glutathione-skin-whitening.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="กลูตาไธโอน ตัวช่วยผิวขาวและขับสารพิษ โดย Thrive Wellness Clinic">
+  <meta property="og:site_name" content="Thrive Wellness Clinic">
+  <meta property="og:locale" content="th_TH">
+  <meta property="article:published_time" content="2026-04-20">
+  <meta property="article:modified_time" content="2026-04-20">
+  <meta property="article:section" content="Beauty & Wellness">
+  <meta property="article:tag" content="กลูตาไธโอน, กลูต้า, ผิวขาว, IV Drip, Detox">
+
+  ✅ Twitter Card Tags
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="กลูตาไธโอน (กลูต้า) ตัวช่วยผิวขาวและขับสารพิษในตับ">
+  <meta name="twitter:description" content="กลูตาไธโอน หรือ กลูต้า คืออะไร? รู้จักประโยชน์ 5 ด้าน ตั้งแต่ผิวขาวกระจ่างใส ไปถึงการขับสารพิษในตับ">
+  <meta name="twitter:image" content="https://thrivewellnessth.com/wp-content/uploads/blog-glutathione-skin-whitening.jpg">
+  <meta name="twitter:image:alt" content="กลูตาไธโอน ตัวช่วยผิวขาวและขับสารพิษ โดย Thrive Wellness Clinic">
+  <meta name="twitter:site" content="@thrivewellnessth">
+
+  ✅ GEO-Targeting Tags
+  <meta name="geo.region" content="TH-10">
+  <meta name="geo.placename" content="Bangkok, Thailand">
+  <meta name="geo.position" content="13.8093;100.6074">
+  <meta name="ICBM" content="13.8093, 100.6074">
+
+  ✅ Language Hreflang Tags
+  <link rel="alternate" hreflang="th" href="https://thrivewellnessth.com/glutathione/">
+  <link rel="alternate" hreflang="x-default" href="https://thrivewellnessth.com/glutathione/">
+-->
+
+
+<!-- ================================================================= -->
+<!-- 1. STRUCTURED DATA — the AI-facing layer                           -->
+<!-- ================================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://thrivewellnessth.com/#clinic",
+      "name": "Thrive Wellness Clinic",
+      "url": "https://thrivewellnessth.com",
+      "logo": "https://thrivewellnessth.com/wp-content/uploads/logo.png",
+      "email": "thrivewellnessth@gmail.com",
+      "telephone": "+66959349640",
+      "priceRange": "฿฿",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "199 ถนนประดิษฐ์มนูธรรม The Crystal Park ชั้น 2 อาคาร B",
+        "addressLocality": "ลาดพร้าว",
+        "addressRegion": "Bangkok",
+        "postalCode": "10230",
+        "addressCountry": "TH"
+      },
+      "medicalSpecialty": ["PreventiveMedicine","Wellness","IntegrativeMedicine"]
+    },
+
+    {
+      "@type": ["Article","MedicalWebPage"],
+      "@id": "https://thrivewellnessth.com/glutathione/#article",
+      "mainEntityOfPage": "https://thrivewellnessth.com/glutathione/",
+      "headline": "กลูตาไธโอน (กลูต้า) ตัวช่วยผิวขาวและขับสารพิษในตับ",
+      "description": "กลูตาไธโอน หรือ กลูต้า คืออะไร? รู้จักประโยชน์ 5 ด้าน ตั้งแต่ผิวขาวกระจ่างใส ไปถึงการขับสารพิษในตับ และทำไม IV Drip จึงได้ผลดีกว่าการทานแคปซูล ที่ Thrive Wellness Clinic",
+      "image": "https://thrivewellnessth.com/wp-content/uploads/blog-glutathione-skin-whitening.jpg",
+      "datePublished": "2026-04-20",
+      "dateModified": "2026-04-20",
+      "inLanguage": "th-TH",
+      "keywords": ["กลูตาไธโอน","กลูต้า","ผิวขาว","ฉีดกลูต้า","iv drip ผิวขาว","detox ตับ","tyrosinase","ALA","IV Injection"],
+      "articleSection": "Beauty & Wellness",
+      "timeRequired": "PT2M",
+      "author": {
+        "@type": "Physician",
+        "name": "Thrive Wellness Clinic",
+        "url": "https://thrivewellnessth.com/team/",
+        "affiliation": {"@id": "https://thrivewellnessth.com/#clinic"}
+      },
+      "publisher": {"@id": "https://thrivewellnessth.com/#clinic"},
+      "about": [
+        {"@type":"Thing","name":"Glutathione","sameAs":"https://en.wikipedia.org/wiki/Glutathione"},
+        {"@type":"Thing","name":"Skin whitening","sameAs":"https://en.wikipedia.org/wiki/Skin_whitening"},
+        {"@type":"MedicalCondition","name":"Hyperpigmentation"}
+      ],
+      "citation": [
+        "https://pubmed.ncbi.nlm.nih.gov/27088927/",
+        "https://pubmed.ncbi.nlm.nih.gov/30895708/",
+        "https://pubmed.ncbi.nlm.nih.gov/23764898/",
+        "https://pubmed.ncbi.nlm.nih.gov/28490897/",
+        "https://pubmed.ncbi.nlm.nih.gov/36707132/",
+        "https://pubmed.ncbi.nlm.nih.gov/33670839/",
+        "https://pubmed.ncbi.nlm.nih.gov/37921175/"
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://thrivewellnessth.com/glutathione/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "กลูตาไธโอน คืออะไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "กลูตาไธโอน (Glutathione) หรือกลูต้า เป็นโปรตีนชนิดหนึ่งที่ร่างกายสามารถสร้างขึ้นเองได้ ประกอบด้วยกรดอะมิโน 3 ชนิด คือ Cysteine, Lysine และ Glutamic ซึ่งสาวไทยมีการผลิตสารกลูตาไธโอนในร่างกายได้น้อย เนื่องจากอยู่ในภูมิประเทศที่ใกล้เส้นศูนย์สูตร"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ทำไม IV Drip กลูต้าจึงได้ผลดีกว่าการทานแคปซูล?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "เมื่อทานแคปซูล กลูตาไธโอนต้องผ่านกระบวนการย่อยอาหาร ซึ่งอาจไม่หลงเหลือกลูต้าให้กับร่างกายเลย วิธี IV Drip จึงมีประสิทธิภาพและเห็นผลมากที่สุด เนื่องจากสารเข้าสู่กระแสเลือดโดยตรง"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "กลูตาไธโอนอันตรายไหม?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ในทางการแพทย์มีการนำกลูตาไธโอนมาใช้ในการรักษาโรคต่างๆ โดยการฉีดเข้าทางหลอดเลือดดำ (IV) หรือกล้ามเนื้อ ผลข้างเคียงที่พบคือผิวขาวขึ้น เนื่องจากกลูตาไธโอนยับยั้งเอนไซม์ไทโรซิเนส (tyrosinase) และเปลี่ยนเม็ดสีผิวจากน้ำตาลดำเป็นชมพูขาว ควรรับบริการจากคลินิกที่ได้มาตรฐานเท่านั้น"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "กลูตาไธโอนมีประโยชน์อะไรบ้างนอกจากผิวขาว?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "กลูตาไธโอนมีประโยชน์ 5 ด้านหลัก ได้แก่ เปลี่ยนเม็ดสีผิว, สร้างภูมิคุ้มกัน, กำจัดสารพิษออกจากร่างกาย, ต้านอนุมูลอิสระ และซ่อมแซม DNA"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ทำไมคนไทยถึงผลิตกลูตาไธโอนได้น้อย?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ยีนของคนไทยส่วนมากสร้างกลูต้าไธโอนได้เองน้อยมาก อาจเนื่องมาจากที่เราเคยอยู่ในสภาพแวดล้อมที่มีมลภาวะ เราจึงเสี่ยงต่อสารพิษสะสม ซึ่งอาจส่งผลต่อการเจ็บป่วย เช่น โรคเกี่ยวกับทางเดินหายใจ โรค Metabolic และโรคมะเร็ง"
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://thrivewellnessth.com/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://thrivewellnessth.com/blog/"},
+        {"@type":"ListItem","position":3,"name":"กลูตาไธโอน ตัวช่วยผิวขาวและขับสารพิษในตับ","item":"https://thrivewellnessth.com/glutathione/"}
+      ]
+    }
+
+  ]
+}
+</script>
+
+
+<!-- ================================================================= -->
+<!-- 2. VISIBLE CONTENT                                                  -->
+<!-- ================================================================= -->
+
+<article class="twc-post" itemscope itemtype="https://schema.org/MedicalWebPage">
+
+  <!-- HERO -->
+  <header class="twc-hero">
+    <p class="twc-kicker">Beauty · Detox · Skin Whitening</p>
+    <h1 itemprop="headline">Glutathione กลูตาไธโอน<br>ตัวช่วยผิวขาวและขับสารพิษในตับ</h1>
+    <p class="twc-dek">กลูตาไธโอน หรือ กลูต้า คืออะไร? รู้จักประโยชน์ 5 ด้าน ตั้งแต่ผิวขาวกระจ่างใส ไปถึงการขับสารพิษในตับ และทำไม IV Drip จึงได้ผลดีกว่าการทานแคปซูล</p>
+
+    <div class="twc-byline">
+      <span>โดย <strong itemprop="author">Thrive Wellness Clinic</strong></span>
+      <span>เผยแพร่ <time itemprop="datePublished" datetime="2026-04-20">20 เมษายน 2569</time></span>
+      <span>⏱ อ่าน 2 นาที</span>
+    </div>
+
+    <figure class="twc-hero-img">
+      <img
+        src="https://thrivewellnessth.com/wp-content/uploads/blog-glutathione-skin-whitening.jpg"
+        alt="กลูตาไธโอน ตัวช่วยผิวขาวและขับสารพิษ โดย Thrive Wellness Clinic"
+        width="1200"
+        height="630"
+        loading="eager"
+        itemprop="image"
+      />
+    </figure>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="twc-toc" aria-label="สารบัญ">
+    <p class="twc-toc__title">สารบัญ</p>
+    <ol>
+      <li><a href="#what-is-gluta">กลูตาไธโอน หรือ กลูต้า คืออะไร</a></li>
+      <li><a href="#why-important">กลูต้าไธโอน สำคัญอย่างไร?</a></li>
+      <li><a href="#iv-vs-capsule">เปรียบเทียบการฉีดผิวขาวกับการทานแคปซูล</a></li>
+      <li><a href="#safety">กลูต้าไธโอนไม่อันตรายอย่างที่คิด</a></li>
+      <li><a href="#five-functions">5 หน้าที่ของกลูต้าไธโอน</a></li>
+      <li><a href="#clinic-cta">Essential Booster Glutathione ที่ Thrive</a></li>
+    </ol>
+  </nav>
+
+  <!-- LEAD / INTRO -->
+  <section>
+    <p class="twc-lead" itemprop="description">
+      สำหรับสาวๆ ที่มีรสนิยมหลงใหลในผิวขาว สว่างกระจ่างใส คงหนีไม่พ้นตัวช่วยอย่างกลูตาไธโอน
+      ที่ทำให้นึกถึงกันเป็นอย่างแรก เสมือนว่า ผิวขาว = กลูตา หรือ กลูตา = ผิวขาว ก็ว่าได้
+      แต่คุณเองก็อาจจะไม่รู้ว่า กลูตาไธโอน มีประโยชน์ต่อสุขภาพร่างกายของเราได้มากกว่านั้น
+    </p>
+    <p>
+      กลูตาไธโอน เริ่มเข้ามาให้สาวไทยได้รู้จักหลายปีแล้วค่ะ จนในปัจจุบันนวัตกรรมที่ดี
+      สามารถทำให้เราได้รับสารอย่างปลอดภัยและมีประโยชน์ควบคู่ไปกับความสวยงามได้ด้วย
+      แม้ยุคปัจจุบันทุกสีผิวจะมีความดูดี งดงามในตัวเองอยู่แล้ว
+      แต่ก็มีสาวๆ ที่มีรสนิยมความชอบในเรื่องผิวขาว ผิวอมชมพู กระจ่างใสกันอยู่มากในทุกยุคทุกสมัย
+      กลูตาไธโอนจึงเป็นเรื่องแรกที่ยังได้รับความนิยมอยู่อย่างต่อเนื่อง
+    </p>
+
+    <blockquote class="twc-quote">
+      "สิ่งที่เราไม่ค่อยรู้ คือ ยีนของคนไทยส่วนมาก สร้างกลูต้าไธโอนได้เองน้อยมาก
+      อาจจะเนื่องมาจากที่เราเคยอยู่ในสภาพแวดล้อมที่มีมลภาวะ เราจึงเสี่ยงต่อสารพิษสะสม
+      ซึ่งอาจส่งผลต่อการเจ็บป่วยเช่น โรคเกี่ยวกับทางเดินหายใจ โรค Metabolic และโรคมะเร็ง
+      ซึ่งเป็นหนึ่งในสาเหตุหลักการเสียชีวิตของคนไทย"
+    </blockquote>
+  </section>
+
+  <!-- ─── SECTION: WHAT IS GLUTA ─── -->
+  <section id="what-is-gluta">
+    <h2>กลูตาไธโอน หรือ กลูต้า คืออะไร</h2>
+    <p>
+      กลูตาไธโอน (Glutathione) หรือ กลูต้า (Gluta) ที่สาวๆ นิยมเรียกกันแบบสั้นๆ
+      เป็นโปรตีนชนิดหนึ่งที่ร่างกายสามารถสร้างขึ้นเองได้ค่ะ
+    </p>
+    <p>
+      ประกอบด้วยกรดอะมิโน 3 ชนิดรวมกัน คือ <strong>Cysteine, Lysine, Glutamic</strong>
+      ซึ่งสาวไทยเรามีการผลิตสารกลูตาไธโอนในร่างกายได้น้อยค่ะ
+      เนื่องจากเราอยู่ในภูมิประเทศที่ใกล้เส้นศูนย์สูตร
+    </p>
+  </section>
+
+  <!-- ─── SECTION: WHY IMPORTANT ─── -->
+  <section id="why-important">
+    <h2>กลูต้าไธโอน สำคัญอย่างไร?</h2>
+    <p>
+      หลายคนอาจคิดว่า กลูตาไธโอน มีประโยชน์เพื่อผิวขาวใสเท่านั้น
+      แต่จริงๆ แล้วการที่ผิวสว่างกระจ่างใส คือ เอฟเฟกต์ที่ร่างกายได้รับค่ะ
+      เพราะกลูต้าจะเข้าไปยับยั้งการเกิดเอนไซม์ไทโรซิเนส (Tyrosinase)
+      ที่ช่วยให้การสร้างเมลานิน หรือเม็ดสีผิวเข้มของทางฝั่งเอเชียให้มีผิวขาว กระจ่างใสเพิ่มขึ้น
+    </p>
+    <p>
+      แต่สิ่งที่ส่งผลต่ออวัยวะในร่างกายเราก็มีประโยชน์และสำคัญไม่แพ้กันค่ะ
+      เพราะมีส่วนช่วยในการ Detox ตับของสาวๆ และช่วยขจัดสารพิษที่ไม่สามารถละลายในน้ำได้
+      รวมไปถึงมีส่วนช่วยกระบวนการหายใจในปอดของเราด้วย
+      เมื่อ ตับ และ ปอดของเรามีสารกลูต้าไธโอนอยู่มาก
+      ก็จะสามารถขจัดของเสียและสารพิษที่สะสมอยู่ในร่างกายออกมาได้มากขึ้นด้วยค่ะ
+    </p>
+  </section>
+
+  <!-- ─── SECTION: IV VS CAPSULE ─── -->
+  <section id="iv-vs-capsule">
+    <h2>เปรียบเทียบการฉีดผิวขาวกับการทานกลูต้าแคปซูล</h2>
+    <p>
+      สำหรับสาวๆ ที่กลัวการฉีดผิวขาว จึงหันไปใช้วิธีการทานกลูต้าแบบแคปซูลแทนนั้น
+      อาจไม่ช่วยและไม่ตอบโจทย์ใดๆ เพราะเมื่อผ่านกระบวนการย่อยอาหารแล้ว
+      อาจจะไม่หลงเหลือกลูต้าให้กับร่างกายคุณเลยแม้แต่น้อย
+      เพราะฉะนั้นวิธีการ <strong>IV DRIP</strong> จึงมีประสิทธิภาพและเห็นผลมากที่สุด
+      ดังนั้น คุณจึงต้องมองหาคลินิกที่ได้มาตรฐาน สะอาด ปลอดภัย สำหรับการฉีดผิวขาวโดยเฉพาะ
+    </p>
+
+    <blockquote class="twc-quote twc-quote--testimonial">
+      "ผิวขาวกระจ่างใสขึ้นมากกก ผิวดูมีน้ำมีนวล ดูมีออร่าผิวสว่างมากๆ"
+    </blockquote>
+  </section>
+
+  <!-- ─── SECTION: SAFETY ─── -->
+  <section id="safety">
+    <h2>กลูต้าไธโอนไม่อันตรายอย่างที่คิด</h2>
+    <p>
+      ในทางการแพทย์มีการนำกลูตาไธโอนมาทดลองใช้ในการรักษาโรคต่างๆ
+      โดยการฉีดเข้าทางหลอดเลือดดำ (IV) หรือ กล้ามเนื้อ
+    </p>
+    <p>
+      ผลข้างเคียงของการได้รับกลูต้าไธโอน คือ ผู้ที่ได้รับการรักษาด้วยการฉีดกลูตาไธโอนนั้น
+      มีสีผิวที่ขาวขึ้น เนื่องมาจากกลูตาไธโอนสามารถยับยั้งเอนไซม์ไทโรซิเนส (tyrosinase) ได้
+      และส่งผลให้เม็ดสีของผิวหนังเปลี่ยนจากเม็ดสีน้ำตาลดำเป็นเม็ดสีชมพูขาว
+    </p>
+  </section>
+
+  <!-- ─── SECTION: 5 FUNCTIONS ─── -->
+  <section id="five-functions">
+    <h2>5 หน้าที่ของกลูต้าไธโอน</h2>
+
+    <div class="twc-benefit-card">
+      <h3>1. เปลี่ยนเม็ดสีผิว</h3>
+      <p>
+        กลูตาไธโอนสามารถยับยั้งเอนไซม์ไทโรซิเนส (tyrosinase) ได้
+        และส่งผลให้เม็ดสีของผิวหนังเปลี่ยนจากเม็ดสีน้ำตาลดำเป็นเม็ดสีชมพูขาว
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>2. สร้างภูมิคุ้มกัน</h3>
+      <p>
+        กระตุ้นการสร้างเม็ดเลือดขาวเพื่อต่อสู้กับเชื้อโรค ไวรัส แบคทีเรีย สิ่งแปลกปลอมอื่นๆ
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>3. กำจัดสารพิษ</h3>
+      <p>
+        จับสารพิษที่ไม่ละลายน้ำและกำจัดออกทางไตหรือทางลำไส้
+        รวมทั้งกำจัดฝุ่นละอองและควันพิษที่ปอด
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>4. ต้านอนุมูลอิสระ</h3>
+      <p>
+        ผลิตขึ้นเองโดยทุกเซลล์ตามธรรมชาติ มีฤทธิ์ต้านการอักเสบ ช่วยการไหลเวียนของระบบเลือด
+        รักษาการทำงานของหัวใจ ช่วยชะลออายุของเซลล์ทุกเซลล์
+      </p>
+    </div>
+
+    <div class="twc-benefit-card">
+      <h3>5. ซ่อมแซม DNA</h3>
+      <p>
+        ช่วยกระตุ้นการสร้างและซ่อมแซมเซลล์และ DNA ที่สึกหรอ
+        นับเป็นกุญแจสำคัญในการสังเคราะห์โปรตีนและไขมัน
+        กระตุ้นการทำงานของเอ็นไซม์ชนิดต่างๆ
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── SECTION: CLINIC CTA ─── -->
+  <section id="clinic-cta" class="twc-clinic-section">
+    <h2>Essential Booster Glutathione<br>ที่ไธรฟ์ เวลเนส คลินิก</h2>
+    <p>
+      เพราะร่างกายของแต่ละคนแตกต่างกัน ไธรฟ์ เวลเนส คลินิก จึงมี
+      <strong>Essential Booster Glutathione</strong>
+      ที่ไม่ได้มีเพียงแค่สารกลูต้าเท่านั้น
+    </p>
+    <p>
+      ทางไธรฟ์คลินิกแตกต่างจากคลินิกอื่นๆ ตรงที่สูตร <strong>white perfect serum</strong>
+      มีส่วนผสมของสารต้านอนุมูลอิสระอย่าง <strong>ALA</strong>
+      ที่เป็นสารตั้งต้นทำให้ประสิทธิภาพของกลูต้าทำงานได้ดียิ่งขึ้น
+      ให้คุณมีผิวขาวกระจ่างใสอมชมพู และให้ตับทำงานได้ดีควบคู่ไปด้วย
+      ส่งผลให้สาวๆ ได้รับทั้ง <strong>Beauty</strong> และ <strong>Healthy</strong> ไปพร้อมกันค่ะ
+    </p>
+    <p>สามารถใช้ร่วมกับการให้ <strong>IV DRIP</strong> หรือ <strong>IV INJECTION</strong></p>
+
+    <div class="twc-cta-group">
+      <a class="twc-cta twc-cta--phone" href="tel:+66959349640">
+        📞 โทร +66 95 934 9640
+      </a>
+      <a class="twc-cta twc-cta--line" href="https://line.me/R/ti/p/@thrivewellnessth">
+        💬 LINE: @thrivewellnessth
+      </a>
+    </div>
+
+    <p class="twc-clinic-tagline">ปรึกษาที่ปรึกษาสุขภาพ ฟรี!</p>
+
+    <address class="twc-address">
+      📍 The Crystal Park (ชั้น 2) อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230
+    </address>
+  </section>
+
+  <!-- FAQ — visible version -->
+  <section id="faq">
+    <h2>คำถามที่พบบ่อยเกี่ยวกับกลูตาไธโอน</h2>
+
+    <details>
+      <summary>กลูตาไธโอน คืออะไร?</summary>
+      <p>กลูตาไธโอน (Glutathione) หรือกลูต้า เป็นโปรตีนชนิดหนึ่งที่ร่างกายสามารถสร้างขึ้นเองได้ ประกอบด้วยกรดอะมิโน 3 ชนิด คือ Cysteine, Lysine และ Glutamic สาวไทยผลิตสารนี้ได้น้อยเนื่องจากอยู่ในภูมิประเทศที่ใกล้เส้นศูนย์สูตรค่ะ</p>
+    </details>
+
+    <details>
+      <summary>ทำไม IV Drip กลูต้าจึงได้ผลดีกว่าการทานแคปซูล?</summary>
+      <p>เมื่อทานแคปซูล กลูตาไธโอนต้องผ่านกระบวนการย่อยอาหาร ซึ่งอาจไม่หลงเหลือกลูต้าให้กับร่างกายเลย วิธี IV Drip จึงมีประสิทธิภาพและเห็นผลมากที่สุด เนื่องจากสารเข้าสู่กระแสเลือดโดยตรงค่ะ</p>
+    </details>
+
+    <details>
+      <summary>กลูตาไธโอนอันตรายไหม?</summary>
+      <p>ในทางการแพทย์มีการนำกลูตาไธโอนมาใช้ในการรักษาโรคต่างๆ โดยการฉีดเข้าทางหลอดเลือดดำ (IV) หรือกล้ามเนื้อ ผลข้างเคียงที่พบคือผิวขาวขึ้น เนื่องจากกลูตาไธโอนยับยั้งเอนไซม์ไทโรซิเนส (tyrosinase) ควรรับบริการจากคลินิกที่ได้มาตรฐาน สะอาด และปลอดภัยเท่านั้นค่ะ</p>
+    </details>
+
+    <details>
+      <summary>กลูตาไธโอนมีประโยชน์อะไรบ้างนอกจากผิวขาว?</summary>
+      <p>กลูตาไธโอนมีประโยชน์ 5 ด้านหลัก ได้แก่ เปลี่ยนเม็ดสีผิว, สร้างภูมิคุ้มกัน, กำจัดสารพิษออกจากร่างกาย, ต้านอนุมูลอิสระ และซ่อมแซม DNA ค่ะ</p>
+    </details>
+
+    <details>
+      <summary>ทำไมคนไทยถึงผลิตกลูตาไธโอนได้น้อย?</summary>
+      <p>ยีนของคนไทยส่วนมากสร้างกลูต้าไธโอนได้เองน้อยมาก อาจเนื่องมาจากที่เราเคยอยู่ในสภาพแวดล้อมที่มีมลภาวะ ทำให้เสี่ยงต่อสารพิษสะสม ซึ่งอาจส่งผลต่อการเจ็บป่วย เช่น โรคเกี่ยวกับทางเดินหายใจ โรค Metabolic และโรคมะเร็งค่ะ</p>
+    </details>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references">
+    <h2>แหล่งอ้างอิง</h2>
+    <ol class="twc-refs">
+      <li>
+        Sonthalia S, Daulatabad D, Sarkar R. "Glutathione as a skin whitening agent: Facts, myths, evidence and controversies."
+        <em>Indian J Dermatol Venereol Leprol.</em> 2016 May-Jun;82(3):262–72.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/27088927/" target="_blank" rel="noopener noreferrer">PMID: 27088927</a>
+      </li>
+      <li>
+        Weschawalit S, Thongthip S, Phutrakool P, Asawanonda P. "Glutathione and its antiaging and antimelanogenic effects."
+        <em>Clin Cosmet Investig Dermatol.</em> 2017 Apr 27;10:147–153.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/28490897/" target="_blank" rel="noopener noreferrer">PMID: 28490897</a>
+      </li>
+      <li>
+        Watanabe F, Hashizume E, Chan GP, Kamimura A. "Skin-whitening and skin-condition-improving effects of topical oxidized glutathione: a double-blind and placebo-controlled clinical trial."
+        <em>Clin Cosmet Investig Dermatol.</em> 2014 Oct 17;7:267–74.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/25378941/" target="_blank" rel="noopener noreferrer">PMID: 25378941</a>
+      </li>
+      <li>
+        Dilokthornsakul W, Dhippayom T, Dilokthornsakul P. "The clinical effect of glutathione on skin color and other related skin conditions: A systematic review."
+        <em>J Cosmet Dermatol.</em> 2019 Jun;18(3):728–737.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/30895708/" target="_blank" rel="noopener noreferrer">PMID: 30895708</a>
+      </li>
+      <li>
+        Iida M, et al. "Reduced glutathione disrupts the intracellular trafficking of tyrosinase and tyrosinase-related protein-1 but not dopachrome tautomerase and Pmel17 to melanosomes."
+        <em>J Dermatol Sci.</em> 2013 Aug;71(2):134–41.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/23764898/" target="_blank" rel="noopener noreferrer">PMID: 23764898</a>
+      </li>
+      <li>
+        Forman HJ, Zhang H, Rinna A. "Glutathione: overview of its protective roles, measurement, and biosynthesis."
+        <em>Mol Aspects Med.</em> 2023 Feb;89:101111.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/36707132/" target="_blank" rel="noopener noreferrer">PMID: 36707132</a>
+      </li>
+      <li>
+        Ballatori N, et al. "Changes in Glutathione Content in Liver Diseases: An Update."
+        <em>Antioxidants (Basel).</em> 2021 Mar 3;10(3):364.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33670839/" target="_blank" rel="noopener noreferrer">PMID: 33670839</a>
+      </li>
+      <li>
+        Sies H, et al. "An Update on Glutathione's Biosynthesis, Metabolism, Functions, and Medicinal Purposes."
+        <em>Antioxidants (Basel).</em> 2023 Oct 18;12(10):1866.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/37921175/" target="_blank" rel="noopener noreferrer">PMID: 37921175</a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="twc-related">
+    <h2>อ่านต่อ</h2>
+    <ul>
+      <li><a href="https://thrivewellnessth.com/blog/zinc/">เพราะชีวิตขาด Zinc ไม่ได้</a></li>
+      <li><a href="https://thrivewellnessth.com/blog/growth-factor/">Growth Factor คืออะไร?</a></li>
+      <li><a href="https://thrivewellnessth.com/blog/">บทความสุขภาพทั้งหมดจาก Thrive Wellness</a></li>
+    </ul>
+  </section>
+
+</article>
+
+
+<!-- ================================================================= -->
+<!-- 3. STYLING                                                          -->
+<!-- ================================================================= -->
+<style>
+/* ── Base ── */
+.twc-post {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.75;
+  color: #1e2460;
+  font-size: 1.05rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ── Hero ── */
+.twc-hero { margin-bottom: 2rem; }
+.twc-post h1 { font-size: 1.9rem; line-height: 1.3; margin: 0.5rem 0 1rem; color: #2d358c; }
+.twc-post h2 { font-size: 1.45rem; margin-top: 2.5rem; color: #2d358c; border-bottom: 2px solid #00ab9e; padding-bottom: 0.4rem; }
+.twc-post h3 { font-size: 1.1rem; margin-top: 1.5rem; color: #2d358c; }
+.twc-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: #00ab9e; margin: 0; font-weight: 700; }
+.twc-dek { font-size: 1.1rem; color: #5a6080; margin-top: 0.5rem; line-height: 1.7; }
+.twc-byline { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.88rem; color: #9ca5c8; margin: 1rem 0 1.5rem; border-top: 1px solid #eef0fb; border-bottom: 1px solid #eef0fb; padding: 0.75rem 0; }
+.twc-hero-img img { width: 100%; height: auto; border-radius: 12px; }
+
+/* ── TOC ── */
+.twc-toc { background: #f6f7fd; border-left: 4px solid #2d358c; padding: 1.25rem 1.5rem; border-radius: 8px; margin: 2rem 0; }
+.twc-toc__title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #2d358c; margin: 0 0 0.75rem; }
+.twc-toc ol { margin: 0; padding-left: 1.25rem; }
+.twc-toc li { margin: 0.35rem 0; font-size: 0.95rem; }
+.twc-toc a { color: #2d358c; text-decoration: none; }
+.twc-toc a:hover { color: #00ab9e; text-decoration: underline; }
+
+/* ── Lead ── */
+.twc-lead { font-size: 1.1rem; color: #1e2460; line-height: 1.8; }
+
+/* ── Blockquote ── */
+.twc-quote {
+  border-left: 4px solid #00ab9e;
+  background: #f0fbfa;
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+  color: #1e2460;
+  line-height: 1.8;
+  font-style: italic;
+}
+.twc-quote--testimonial {
+  background: linear-gradient(135deg, #eef0fb, #e6f7f6);
+  border-left-color: #2d358c;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #2d358c;
+  text-align: center;
+  border-radius: 8px;
+  border-left: none;
+  padding: 1.25rem 1.75rem;
+}
+
+/* ── Benefit cards ── */
+.twc-benefit-card { background: #f0fbfa; border-radius: 10px; padding: 1.1rem 1.4rem; margin-bottom: 1rem; border: 1px solid #e6f7f6; }
+.twc-benefit-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; color: #2d358c; }
+.twc-benefit-card p { margin: 0; font-size: 0.95rem; color: #5a6080; line-height: 1.7; }
+
+/* ── Clinic section ── */
+.twc-clinic-section { background: linear-gradient(135deg, #2d358c 0%, #1f2568 100%); color: #fff; border-radius: 16px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+.twc-clinic-section h2 { color: #fff; border-bottom: none; padding-bottom: 0; font-size: 1.5rem; margin-top: 0; }
+.twc-clinic-section p { color: rgba(255,255,255,0.85); margin: 0.5rem 0; }
+.twc-clinic-section strong { color: #fff; }
+.twc-clinic-tagline { font-size: 1.1rem; font-weight: 700; color: #00c4b5 !important; margin-top: 1rem !important; }
+.twc-cta-group { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin: 1.5rem 0 1rem; }
+.twc-cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 1.5rem; border-radius: 100px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+.twc-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.twc-cta--phone { background: #00ab9e; color: #fff; }
+.twc-cta--line { background: #06C755; color: #fff; }
+.twc-address { color: rgba(255,255,255,0.75); font-size: 0.88rem; font-style: normal; margin-top: 0.75rem; }
+
+/* ── FAQ ── */
+.twc-post details { border: 1.5px solid #eef0fb; padding: 0.85rem 1rem; margin: 0.5rem 0; border-radius: 8px; background: #fff; }
+.twc-post details[open] { border-color: #00ab9e; }
+.twc-post summary { font-weight: 600; cursor: pointer; color: #2d358c; font-size: 1rem; }
+.twc-post details p { margin: 0.75rem 0 0; font-size: 0.93rem; color: #5a6080; line-height: 1.75; }
+
+/* ── References ── */
+.twc-refs { font-size: 0.88rem; color: #5a6080; padding-left: 1.25rem; }
+.twc-refs li { margin: 0.5rem 0; line-height: 1.6; }
+.twc-refs a { color: #00ab9e; }
+
+/* ── Related ── */
+.twc-related { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #eef0fb; }
+.twc-related h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #9ca5c8; border-bottom: none; padding-bottom: 0; }
+.twc-related ul { list-style: none; padding: 0; }
+.twc-related li { margin: 0.5rem 0; }
+.twc-related a { color: #2d358c; font-size: 0.95rem; text-decoration: none; }
+.twc-related a:hover { color: #00ab9e; text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .twc-post h1 { font-size: 1.5rem; }
+  .twc-post h2 { font-size: 1.25rem; }
+  .twc-cta-group { flex-direction: column; align-items: stretch; }
+  .twc-cta { justify-content: center; }
+}
+</style>
