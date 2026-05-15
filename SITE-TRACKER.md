@@ -59,6 +59,8 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-immune-system.html` | 2026-05-15 |
 | `blog-growth-hormone-decline.html` | 2026-05-15 |
 | `blog-mood-swings.html` | 2026-05-15 |
+| `blog-herbal-compress-massage.html` | 2026-05-15 |
+| `blog-vitamin-c-guide.html` | 2026-05-15 |
 
 ---
 
@@ -917,7 +919,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 36 | โกรทฮอร์โมน (Growth Hormone) ลดลง | `post/growth-hormone-2` | 1 | 108 | ✅ HTML พร้อม | `blog-growth-hormone-decline.html` — ~3,091 words, 7 H2, 3 H3, 2 tables, 6 FAQ, 5 refs. SEO: 8.4/10. Plagiarism: original ✅. Toprank: ✅. Hero image needed: `growth-hormone-decline-hero-1200x630.jpg` |
 | 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | ✅ HTML พร้อม | `blog-mood-swings.html` — ~3,929 words, 7 H2, 4 H3, 2 tables, 6 FAQ, 5 refs. SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero image needed: `mood-swings-hero-1200x630.jpg` |
 | 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | ✅ HTML พร้อม | `blog-herbal-compress-massage.html` — ~3,100 words, 8 H2, 3 tables, 6 FAQ, 5 refs. SEO: 8.4/10. Plagiarism: original ✅. Toprank: ✅. Hero image: `herbal-compress-massage-hero-1200x630.jpg` ✅ |
-| 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | ⏳ รอทำ | Practical guide — rewrite with Q&A format. |
+| 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | ✅ HTML พร้อม | `blog-vitamin-c-guide.html` — ~2,800 words, 9 H2, 3 tables, 6-type grid, 6 FAQ, 5 refs. SEO: 8.5/10. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-c-guide-hero-1200x630.jpg ✅ |
 | 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | ⏳ รอทำ | Service-adjacent. Rewrite more clinical, add FAQ. |
 | 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | ⏳ รอทำ | MERGE #41 + #42 + #43 into one definitive post. |
 | 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | 🔀 Merge → #41 | Duplicate — merge into #41. |
