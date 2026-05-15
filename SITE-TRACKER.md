@@ -67,6 +67,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-vitamin-b6.html` | 2026-05-15 |
 | `blog-gut-3p.html` | 2026-05-15 |
 | `blog-steroid-cortisol.html` | 2026-05-15 |
+| `blog-pid.html` | 2026-05-15 |
 
 ---
 
@@ -934,7 +935,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | ✅ HTML พร้อม | `blog-vitamin-b6.html` — ~3,000 words, 7 H2, 2 tables, 6-card grid, 5-step list, 6 FAQ, 5 refs (PMID7485315, PMID10334745, PMC5470355, PMC8469759, PMC2077351). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-b6-hero-1200x630.jpg ✅. Warm amber-gold gradient. |
 | 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | ✅ HTML พร้อม | `blog-gut-3p.html` — ~3,100 words, 6 H2, 3P card grid, SCFA grid, 2 tables, chip lists, 6 FAQ, 5 refs (PMC8387233 ISAPP postbiotics, PMC6522433 prebiotics, PMC4326510 probiotics, PMC3070119 butyrate, PMC4056765 microbiota immunity). SEO: 8.7/10. Plagiarism: original ✅. Toprank: ✅. Hero: probiotic-foods-gut-health-hero-1200x630.jpg ✅. Forest green gradient. |
 | 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | ✅ HTML พร้อม | `blog-steroid-cortisol.html` — ~3,100 words, 6 H2, 4-card steroid grid, Cortisol diurnal rhythm bar, DHEA age-decline table, chip lists, Cushing's/Addison's sections, 5-step balance list, 6 FAQ, 5 refs (PMID19488073 Chrousos, PMID12467951 Tsigos, PMC2386281 Nieman Cushing's, PMID12788587 Arlt Addison's, PMID10760297 Baulieu DHEA). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: steroid-cortisol-hero-1200x630.jpg ✅. Warm copper/sienna gradient. |
-| 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | ⏳ รอทำ | 3 backlinks. Medical — rewrite carefully with FAQ. |
+| 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | ✅ HTML พร้อม | `blog-pid.html` — ~3,000 words, 7 H2, 4-card organ grid, 4-step diag grid, bacteria table, complication stats (6× ectopic, 14× infertility), chip lists, 5-step treatment list, 6 FAQ, 5 refs (PMID25988104 Brunham, PMC5052677 Curry, Westrom 1975, Haggerty 2006, CDC 2021). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: pid-hero-1200x630.jpg ✅. Deep rose/magenta gradient. |
 | 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | ⏳ รอทำ | Rewrite with clinical detail + FAQ. |
 | 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | ⏳ รอทำ | Rewrite. Expand significantly. |
 | 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | ⏳ รอทำ | Rewrite as listicle with FAQ. Good GEO format. |
