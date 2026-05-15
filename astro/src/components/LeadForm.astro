@@ -67,6 +67,32 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
     dataLayer?: Array<Record<string, unknown>>;
   };
 
+  // Capture attribution on page load
+  (function captureAttribution() {
+    const attributionKeys = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_term',
+      'utm_content',
+      'gclid',
+      'fbclid',
+      'wbraid',
+      'gbraid',
+    ];
+
+    const url = new URL(window.location.href);
+
+    // Store current page URL as landing_page
+    sessionStorage.setItem('landing_page', window.location.href);
+
+    // Store each attribution param from URL query string
+    attributionKeys.forEach((key) => {
+      const value = url.searchParams.get(key);
+      if (value) sessionStorage.setItem(key, value);
+    });
+  })();
+
   document.querySelectorAll('.lead-form').forEach((element) => {
     if (!(element instanceof HTMLFormElement)) return;
 
