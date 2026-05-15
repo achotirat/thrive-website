@@ -61,6 +61,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-mood-swings.html` | 2026-05-15 |
 | `blog-herbal-compress-massage.html` | 2026-05-15 |
 | `blog-vitamin-c-guide.html` | 2026-05-15 |
+| `blog-allergy-ige.html` | 2026-05-15 |
 
 ---
 
@@ -920,7 +921,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | ✅ HTML พร้อม | `blog-mood-swings.html` — ~3,929 words, 7 H2, 4 H3, 2 tables, 6 FAQ, 5 refs. SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero image needed: `mood-swings-hero-1200x630.jpg` |
 | 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | ✅ HTML พร้อม | `blog-herbal-compress-massage.html` — ~3,100 words, 8 H2, 3 tables, 6 FAQ, 5 refs. SEO: 8.4/10. Plagiarism: original ✅. Toprank: ✅. Hero image: `herbal-compress-massage-hero-1200x630.jpg` ✅ |
 | 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | ✅ HTML พร้อม | `blog-vitamin-c-guide.html` — ~2,800 words, 9 H2, 3 tables, 6-type grid, 6 FAQ, 5 refs. SEO: 8.5/10. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-c-guide-hero-1200x630.jpg ✅ |
-| 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | ⏳ รอทำ | Service-adjacent. Rewrite more clinical, add FAQ. |
+| 40 | แพ้กุ้ง แพ้แป้ง IgE | `post/food-allergy-ige` | 35 | — | ✅ HTML พร้อม | `blog-allergy-ige.html` — ~3,000 words, 8 H2, 3 tables, severity grid, Big 8 grid, 6 FAQ, 5 refs. PMC evidence: Tropomyosin 68.8%, Omega-5 Gliadin 100% WDEIA. SEO: 8.5/10. Plagiarism: original ✅. Toprank: ✅. Hero: allergy-ige-hero-1200x630.jpg ✅ |
 | 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | ⏳ รอทำ | MERGE #41 + #42 + #43 into one definitive post. |
 | 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | 🔀 Merge → #41 | Duplicate — merge into #41. |
 | 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | 🔀 Merge → #41 | 3rd duplicate — do not migrate separately. |
