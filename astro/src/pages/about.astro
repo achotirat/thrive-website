@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalClinic',
+        '@id': 'https://www.thrivewellnessth.com/#clinic',
+        name: 'Thrive Wellness Clinic',
+        alternateName: 'ไธรฟ์ เวลเนส คลินิก',
+        url: 'https://www.thrivewellnessth.com',
+        telephone: '+66959349640',
+        image: 'https://www.thrivewellnessth.com/og-image.jpg',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา',
+          addressLocality: 'กรุงเทพมหานคร',
+          addressCountry: 'TH',
+        },
+        medicalSpecialty: ['Anti-Aging Medicine', 'Preventive Medicine', 'Functional Medicine'],
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://www.thrivewellnessth.com/#dr-chanakan',
+        name: 'พญ. ชนากานต์ ตระหง่านศรี',
+        alternateName: 'Chanakan Trangansri, MD.',
+        jobTitle: 'แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ',
+        worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
+        knowsAbout: ['Anti-aging Medicine', 'Nutrition Wellness', 'Hormone Balance', 'Lifestyle Medicine'],
+      },
+      {
+        '@type': 'AboutPage',
+        url: 'https://www.thrivewellnessth.com/about',
+        name: 'เกี่ยวกับ Thrive Wellness Clinic',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://www.thrivewellnessth.com' },
+          { '@type': 'ListItem', position: 2, name: 'เกี่ยวกับเรา', item: 'https://www.thrivewellnessth.com/about' },
+        ],
+      },
+    ],
+  },
+];
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'เกี่ยวกับเรา', href: '/about' },
+];
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="เกี่ยวกับ Thrive Wellness Clinic กรุงเทพ ลาดพร้าว | หมอนุ่น พญ.ชนากานต์"
+    description="รู้จัก Thrive Wellness Clinic คลินิกสุขภาพเชิงลึกที่ Crystal Park ลาดพร้าว ดูแลโดย พญ.ชนากานต์ ตระหง่านศรี (หมอนุ่น) ผู้เชี่ยวชาญ Anti-aging & Regenerative Medicine — โทร 095-934-9640"
+    canonicalPath="/about"
+    ogImage="/about-hero-1200x630.jpg"
+    noIndex={false}
+    jsonLd={jsonLd}
+  />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="service-hero">
+    <div class="service-hero__content">
+      <div class="service-hero__badge">เกี่ยวกับเรา</div>
+      <h1>Thrive Wellness Clinic ดูแลสุขภาพให้ลึกกว่าที่เคย</h1>
+      <p>เราเชื่อว่าสุขภาพที่ดีไม่ใช่แค่การไม่ป่วย แต่คือการที่ร่างกายและจิตใจทำงานได้เต็มศักยภาพ ด้วยวิทยาศาสตร์ที่แม่นยำและความใส่ใจที่แท้จริง</p>
+      <div class="service-hero__actions">
+        <a href="tel:+66959349640" class="btn btn-primary" data-gtm-event="call_click" data-gtm-label="โทรปรึกษา">โทรปรึกษา 095-934-9640</a>
+        <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-secondary" data-gtm-event="line_click" data-gtm-label="LINE ปรึกษาฟรี">LINE ปรึกษาฟรี</a>
+      </div>
+      <div class="service-hero__stats">
+        <div><strong>Crystal Park</strong><span>ลาดพร้าว กรุงเทพ</span></div>
+        <div><strong>ทุกวัน</strong><span>10:00-19:00 น.</span></div>
+        <div><strong>15+</strong><span>บริการเฉพาะทาง</span></div>
+      </div>
+    </div>
+    <div class="service-hero__media">
+      <img src="/about-hero-1200x630.jpg" alt="Thrive Wellness Clinic ลาดพร้าว กรุงเทพ" width="1200" height="630" loading="eager" fetchpriority="high" />
+    </div>
+  </section>
+
+  <main>
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">Our Philosophy</span>
+          <h2 class="section-title">เราเชื่ออะไร?</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card card-body">
+            <h3>วิทยาศาสตร์เป็นรากฐาน</h3>
+            <p class="text-muted">ใช้ข้อมูลจากการตรวจและการประเมินสุขภาพจริง เพื่อลดการเดาและช่วยให้วางแผนได้ตรงจุด</p>
+          </div>
+          <div class="card card-body">
+            <h3>เฉพาะบุคคลคือหัวใจ</h3>
+            <p class="text-muted">ร่างกายแต่ละคนไม่เหมือนกัน โปรแกรมที่ดีจึงควรถูกออกแบบจากอาการ เป้าหมาย และบริบทของแต่ละคน</p>
+          </div>
+          <div class="card card-body">
+            <h3>ดูแลต่อเนื่องระยะยาว</h3>
+            <p class="text-muted">เป้าหมายไม่ใช่แค่ตรวจแล้วจบ แต่คือการจัดลำดับสิ่งที่ควรดูแลและติดตามผลให้ไปต่อได้จริง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="grid-2" style="align-items:center;">
+          <div>
+            <span class="section-label">Medical Lead</span>
+            <h2 class="section-title">พญ. ชนากานต์ ตระหง่านศรี</h2>
+            <p class="text-muted text-lg">แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ ดูแลการประเมินสุขภาพเชิงลึก โภชนาการ ฮอร์โมน ไลฟ์สไตล์ และการออกแบบแผนดูแลสุขภาพเฉพาะบุคคล</p>
+            <div class="doctor-card__tags" style="margin-top:18px;">
+              <span>Anti-aging & Regenerative Medicine</span>
+              <span>Nutrition Wellness</span>
+              <span>Hormone Balance</span>
+              <span>Lifestyle Medicine</span>
+            </div>
+          </div>
+          <img src="/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี Thrive Wellness Clinic" style="width:100%;max-width:420px;margin-inline:auto;border-radius:var(--r-xl);box-shadow:var(--sh-lg);" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">What We Do</span>
+          <h2 class="section-title">บริการหลักของ Thrive</h2>
+        </div>
+        <div class="grid-3">
+          <a class="service-card" href="/check-up">
+            <span class="service-card__icon">🔬</span>
+            <h3>ตรวจสุขภาพเชิงลึก</h3>
+            <p>เลือกการตรวจตามอาการและเป้าหมาย เช่น Food IgG, ฮอร์โมน, DNA, NK Cell และสารอาหาร</p>
+          </a>
+          <a class="service-card" href="/iv-drip">
+            <span class="service-card__icon">💉</span>
+            <h3>IV Drip & Nutrition</h3>
+            <p>ดูแลวิตามิน สารอาหาร พลังงาน และการฟื้นฟูตามข้อมูลสุขภาพของแต่ละคน</p>
+          </a>
+          <a class="service-card" href="/hbot">
+            <span class="service-card__icon">🫁</span>
+            <h3>HBOT & Longevity</h3>
+            <p>ออกซิเจนบำบัดและโปรแกรม recovery สำหรับผู้ที่ต้องการดูแลสุขภาพเชิงป้องกัน</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-label">Location</span>
+            <h2 class="section-title">ที่ตั้งและการติดต่อ</h2>
+            <p class="text-muted">Thrive Wellness Clinic ตั้งอยู่ที่ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เดินทางสะดวก มีที่จอดรถ และเปิดให้บริการทุกวัน</p>
+          </div>
+          <div class="card card-body">
+            <p><strong>ที่อยู่:</strong> ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา กรุงเทพมหานคร</p>
+            <p><strong>โทร:</strong> <a href="tel:+66959349640">095-934-9640</a></p>
+            <p><strong>LINE:</strong> <a href="https://line.me/R/ti/p/@thrivewellnessth">@thrivewellnessth</a></p>
+            <p><strong>เวลาเปิด:</strong> ทุกวัน 10:00-19:30 น.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline="พร้อมเริ่มต้นรู้จักร่างกายตัวเองให้ลึกขึ้นไหม?"
+      subline="เล่าอาการหรือเป้าหมายสุขภาพให้ทีมงานฟัง แล้วเราจะช่วยแนะนำจุดเริ่มต้นที่เหมาะกับคุณ"
+      primaryBtn={{ label: 'โทรนัดหมาย', href: 'tel:+66959349640' }}
+      secondaryBtn={{ label: 'คุยทาง LINE', href: 'https://line.me/R/ti/p/@thrivewellnessth' }}
+    />
+  </main>
+  <Footer />
+</BaseLayout>
