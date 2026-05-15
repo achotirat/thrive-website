@@ -63,6 +63,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-vitamin-c-guide.html` | 2026-05-15 |
 | `blog-allergy-ige.html` | 2026-05-15 |
 | `blog-magnesium.html` | 2026-05-15 |
+| `blog-skin-immunity.html` | 2026-05-15 |
 
 ---
 
@@ -926,7 +927,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | ✅ HTML พร้อม | `blog-magnesium.html` — ~3,200 words, 9 H2, 2 tables, 5-type grid, 7 symptom cards, 5 benefits, 6 FAQ, 5 refs. PMC evidence: CSD migraine (PMC8912646), sleep RCT p=0.002 (PMC3703169), bisglycinate RCT p=0.049 (PMC12412596). SEO: 8.7/10. Plagiarism: original ✅. Toprank: ✅. Hero: magnesium-hero-1200x630.jpg ✅. Merged #41+#42+#43. |
 | 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | ✅ Merged → #41 | Merged into blog-magnesium.html — canonical post/magnesium. |
 | 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | ✅ Merged → #41 | Merged into blog-magnesium.html — canonical post/magnesium. |
-| 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | ⏳ รอทำ | 2 backlinks. Rewrite. Add FAQ. |
+| 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | ✅ HTML พร้อม | `blog-skin-immunity.html` — ~3,000 words, 5 H2 signs, 5 H3 mechanisms, 2 tables, 5-card grid, 6 FAQ, 5 refs (PMC6450064, PMC7215310, PMC8470589, PMC5793244, PMC4098727). SEO: 8.8/10. Plagiarism: original ✅. Toprank: ✅. Hero: skin-immunity-hero-1200x630.jpg ✅. Teal/cyan gradient. |
 | 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | ⏳ รอทำ | Rewrite with FAQ schema. |
 | 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | ⏳ รอทำ | Rewrite Pre/Pro/Postbiotic. Good GEO topic. |
 | 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | ⏳ รอทำ | Rewrite for clarity and search intent. |
