@@ -2126,7 +2126,7 @@ h1.th, h2.th, h3.th {
   background: var(--white);
   border: 2px solid var(--teal-l);
   border-radius: var(--r-xl);
-  padding: var(--sp-6) var(--sp-7);
+  padding: var(--sp-6) var(--sp-8);
   margin-bottom: var(--sp-5);
   text-decoration: none;
   color: inherit;
@@ -2265,7 +2265,7 @@ h1.th, h2.th, h3.th {
   flex-direction: column;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-7) var(--sp-5);
+  padding: var(--sp-8) var(--sp-5);
   border-radius: var(--r-xl);
   text-decoration: none;
   color: var(--white);
