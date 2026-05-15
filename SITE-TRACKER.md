@@ -906,46 +906,46 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 
 ---
 
-### Bucket 2 — REWRITE FOR SEO/GEO ⏳ ยังไม่เริ่ม (36 posts)
+### Bucket 2 — REWRITE FOR SEO/GEO 🔄 กำลังทำ (36 posts)
 
-| # | Post Title (TH) | URL Slug | Visits/mo | Backlinks | Notes |
-|---|----------------|----------|----------:|----------:|-------|
-| 35 | ระบบภูมิคุ้มกัน Immune System | `immunesystem` | 20 | 201 | ⭐ 201 backlinks, 20 visits — rewrite urgently (high authority, weak content). |
-| 36 | โกรทฮอร์โมน (Growth Hormone) ลดลง | `post/growth-hormone-2` | 1 | 108 | ⭐ 108 backlinks, 1 visit — major missed opportunity. Rewrite urgently. |
-| 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | Rewrite with FAQ schema for GEO. |
-| 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | Wellness + GEO. Expand and add FAQ. |
-| 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | Practical guide — rewrite with Q&A format. |
-| 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | Service-adjacent. Rewrite more clinical, add FAQ. |
-| 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | MERGE #41 + #42 + #43 into one definitive post. |
-| 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | Duplicate of #41 — merge into #41. |
-| 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | 3rd duplicate — merge into #41. Do not migrate separately. |
-| 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | 2 backlinks. Rewrite. Add FAQ. |
-| 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | Rewrite with FAQ schema. |
-| 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | Rewrite Pre/Pro/Postbiotic. Good GEO topic. |
-| 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | Rewrite for clarity and search intent. |
-| 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | 3 backlinks. Medical — rewrite carefully with FAQ. |
-| 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | Rewrite with clinical detail + FAQ. |
-| 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | Rewrite. Expand significantly. |
-| 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | Rewrite as listicle with FAQ. Good GEO format. |
-| 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | Rewrite. Women's health cluster. |
-| 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | 3 backlinks. Rewrite with structured data. |
-| 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | Rewrite as practical checklist + FAQ. |
-| 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | Foundational women's health. Rewrite comprehensively. |
-| 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | Practical tips — GEO. Rewrite with numbered FAQ. |
-| 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | 19 FB shares. Rewrite with more depth. |
-| 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | Medical topic. Rewrite carefully + when to see doctor. |
-| 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | Rewrite with FAQ. Good sleep cluster. |
-| 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | Rewrite. Simplify URL slug. |
-| 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | Service-adjacent. Rewrite to link to NK Cell test service. |
-| 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ⭐ 8 backlinks, low traffic — strong authority. Rewrite urgently. |
-| 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | Women's health cluster. Rewrite with FAQ. |
-| 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | Service content. Add FAQ + link to check-up. |
-| 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | Women's health staple. Expand significantly. |
-| 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | Very searched topic. Rewrite comprehensively with FAQ. |
-| 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | Rewrite. Add FAQ + link to health check-up service. |
-| 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | 2 backlinks. Rewrite service-adjacent. Add FAQ. |
-| 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | Check overlap with #12 — merge or rewrite. |
-| 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | 0 visits but important topic. Rewrite comprehensively. |
+| # | Post Title (TH) | URL Slug | Visits/mo | Backlinks | สถานะ | Notes |
+|---|----------------|----------|----------:|----------:|-------|-------|
+| 35 | ระบบภูมิคุ้มกัน Immune System | `immunesystem` | 20 | 201 | ✅ HTML พร้อม | `blog-immune-system.html` — ~6,400 words, 7 sections, 6 FAQ, 5 refs. Plagiarism check: original ✅. Hero image needed: `immune-system-hero-1200x630.jpg` |
+| 36 | โกรทฮอร์โมน (Growth Hormone) ลดลง | `post/growth-hormone-2` | 1 | 108 | ⏳ รอทำ | ⭐ 108 backlinks, 1 visit — major missed opportunity. Rewrite urgently. |
+| 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | ⏳ รอทำ | Rewrite with FAQ schema for GEO. |
+| 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | ⏳ รอทำ | Wellness + GEO. Expand and add FAQ. |
+| 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | ⏳ รอทำ | Practical guide — rewrite with Q&A format. |
+| 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | ⏳ รอทำ | Service-adjacent. Rewrite more clinical, add FAQ. |
+| 41 | แมกนีเซียม ลดปวดไมเกรน | `post/magnesium` | 34 | — | ⏳ รอทำ | MERGE #41 + #42 + #43 into one definitive post. |
+| 42 | Magnesium ช่วยนอนหลับ | `post/magnesium-1` | 26 | — | 🔀 Merge → #41 | Duplicate — merge into #41. |
+| 43 | Magnesium แร่ธาตุฮีโร่ | `post/magnesium-hero` | 2 | — | 🔀 Merge → #41 | 3rd duplicate — do not migrate separately. |
+| 44 | 5 สัญญาณผิวเตือนภูมิคุ้มกันพัง | `post/ภูมิคุ้มกันพัง` | 29 | 2 | ⏳ รอทำ | 2 backlinks. Rewrite. Add FAQ. |
+| 45 | วิตามินบี6 สำหรับคุณแม่ตั้งครรภ์ | `post/vitamin-b6` | 26 | — | ⏳ รอทำ | Rewrite with FAQ schema. |
+| 46 | Gut 3P ดีต่อลำไส้ | `post/postbiotic` | 25 | — | ⏳ รอทำ | Rewrite Pre/Pro/Postbiotic. Good GEO topic. |
+| 47 | สเตียรอยด์ ที่เราสร้างได้เอง | `post/สเตียรอยด์` | 24 | — | ⏳ รอทำ | Rewrite for clarity and search intent. |
+| 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | ⏳ รอทำ | 3 backlinks. Medical — rewrite carefully with FAQ. |
+| 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | ⏳ รอทำ | Rewrite with clinical detail + FAQ. |
+| 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | ⏳ รอทำ | Rewrite. Expand significantly. |
+| 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | ⏳ รอทำ | Rewrite as listicle with FAQ. Good GEO format. |
+| 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | ⏳ รอทำ | Rewrite. Women's health cluster. |
+| 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ⏳ รอทำ | 3 backlinks. Rewrite with structured data. |
+| 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | ⏳ รอทำ | Rewrite as practical checklist + FAQ. |
+| 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | ⏳ รอทำ | Foundational women's health. Rewrite comprehensively. |
+| 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | ⏳ รอทำ | Practical tips — GEO. Rewrite with numbered FAQ. |
+| 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | ⏳ รอทำ | 19 FB shares. Rewrite with more depth. |
+| 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | ⏳ รอทำ | Medical topic. Rewrite carefully + when to see doctor. |
+| 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | ⏳ รอทำ | Rewrite with FAQ. Good sleep cluster. |
+| 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | ⏳ รอทำ | Rewrite. Simplify URL slug. |
+| 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | ⏳ รอทำ | Service-adjacent. Rewrite to link to NK Cell test service. |
+| 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ⏳ รอทำ | ⭐ 8 backlinks, low traffic — strong authority. Rewrite urgently. |
+| 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | ⏳ รอทำ | Women's health cluster. Rewrite with FAQ. |
+| 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | ⏳ รอทำ | Service content. Add FAQ + link to check-up. |
+| 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | ⏳ รอทำ | Women's health staple. Expand significantly. |
+| 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | ⏳ รอทำ | Very searched topic. Rewrite comprehensively with FAQ. |
+| 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | ⏳ รอทำ | Rewrite. Add FAQ + link to health check-up service. |
+| 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | ⏳ รอทำ | 2 backlinks. Rewrite service-adjacent. Add FAQ. |
+| 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | ⏳ รอทำ | Check overlap with #12 — merge or rewrite. |
+| 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | ⏳ รอทำ | 0 visits but important topic. Rewrite comprehensively. |
 
 ---
 
@@ -975,7 +975,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 
 ## Standard Checklist สำหรับทุกหน้าใหม่
 
-ก่อน commit ทุกครั้ง ตรวจสอบ:
+ก่อน commit ทุกครั้ง ตรวจสอบ (**ใช้กับทั้ง Tier A และ Tier B Blog**):
 
 ### Meta Tags
 - [ ] `<title>` — keyword หลัก + brand + location (ไม่เกิน 60 chars)
@@ -990,7 +990,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 ### JSON-LD Schema
 - [ ] MedicalClinic (ใช้ @id เดิม `#clinic`)
 - [ ] Person — หมอนุ่น (ใช้ @id เดิม `#dr-chanakan`)
-- [ ] หน้าที่เหมาะสม: FAQPage, MedicalTest, MedicalProcedure, BreadcrumbList
+- [ ] หน้าที่เหมาะสม: FAQPage, MedicalTest, MedicalProcedure, BreadcrumbList, Article
 
 ### Images (ตรวจก่อนเริ่มเขียน HTML ทุกครั้ง)
 - [ ] `[topic]-hero-1200x630.jpg` — วางใน `image/`
@@ -1006,6 +1006,21 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 - [ ] Internal links ไปหน้า service ที่เกี่ยวข้อง (4 cards)
 - [ ] ข้อมูลคลินิกใน footer ถูกต้อง
 - [ ] Copy ไปยัง `new html from vkasama/` ก่อน commit
+
+### Content Quality (Bucket 2 Blog เพิ่มเติม)
+- [ ] Word count ≥ 3,000 คำ (ตรวจด้วย script หรือนับ chars ÷ 3)
+- [ ] มี H2 อย่างน้อย 5 หัวข้อ
+- [ ] มี Table หรือ Comparison อย่างน้อย 1 รายการ
+- [ ] เนื้อหาครอบคลุม search intent — ตอบคำถามหลักได้ครบ
+
+### ✅ Plagiarism Check (บังคับทุกหน้า)
+ทำหลังเขียนเนื้อหาเสร็จก่อน commit เสมอ:
+1. **Web search check** — ค้น 2–3 ประโยคเด่นจากเนื้อหาใน Google เพื่อตรวจว่าไม่ซ้ำกับเว็บอื่น
+2. **Phrase originality** — ตรวจว่า analogy, doctor quote, และ section framing เป็นของ Thrive เอง
+3. **Free tool** (optional แต่แนะนำ):
+   - [Quetext](https://www.quetext.com) — รองรับภาษาไทย, 5 checks/วันฟรี
+   - [Copyscape](https://www.copyscape.com) — ใช้หลัง publish (ตรวจ URL)
+4. **บันทึกผล** ในตาราง Bucket 2 ว่า `Plagiarism check: original ✅` ก่อน commit
 
 ---
 
