@@ -62,6 +62,40 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
 
 {turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
+<script is:inline>
+  // Capture attribution IMMEDIATELY on page load (before anything strips query params)
+  (function captureAttributionImmediate() {
+    const attributionKeys = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_term',
+      'utm_content',
+      'gclid',
+      'fbclid',
+      'wbraid',
+      'gbraid',
+    ];
+
+    const url = new URL(window.location.href);
+    sessionStorage.setItem('landing_page', window.location.href);
+
+    attributionKeys.forEach((key) => {
+      const value = url.searchParams.get(key);
+      if (value) {
+        sessionStorage.setItem(key, value);
+        console.log(`[LeadForm IMMEDIATE] Captured ${key}=${value}`);
+      }
+    });
+
+    console.log('[LeadForm IMMEDIATE] sessionStorage:', {
+      landing_page: sessionStorage.getItem('landing_page'),
+      gclid: sessionStorage.getItem('gclid'),
+      utm_source: sessionStorage.getItem('utm_source'),
+    });
+  })();
+</script>
+
 <script>
   type DataLayerWindow = Window & {
     dataLayer?: Array<Record<string, unknown>>;
