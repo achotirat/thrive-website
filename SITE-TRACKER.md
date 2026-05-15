@@ -58,6 +58,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `dna-test.html` | 2026-05-09 |
 | `blog-immune-system.html` | 2026-05-15 |
 | `blog-growth-hormone-decline.html` | 2026-05-15 |
+| `blog-mood-swings.html` | 2026-05-15 |
 
 ---
 
@@ -914,7 +915,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 |---|----------------|----------|----------:|----------:|-------|-------|
 | 35 | ระบบภูมิคุ้มกัน Immune System | `immunesystem` | 20 | 201 | ✅ HTML พร้อม | `blog-immune-system.html` — ~6,400 words, 7 sections, 6 FAQ, 5 refs. Plagiarism check: original ✅. Hero image needed: `immune-system-hero-1200x630.jpg` |
 | 36 | โกรทฮอร์โมน (Growth Hormone) ลดลง | `post/growth-hormone-2` | 1 | 108 | ✅ HTML พร้อม | `blog-growth-hormone-decline.html` — ~3,091 words, 7 H2, 3 H3, 2 tables, 6 FAQ, 5 refs. SEO: 8.4/10. Plagiarism: original ✅. Toprank: ✅. Hero image needed: `growth-hormone-decline-hero-1200x630.jpg` |
-| 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | ⏳ รอทำ | Rewrite with FAQ schema for GEO. |
+| 37 | Mood Swings | `health-concerns/mood-swings` | 37 | — | ✅ HTML พร้อม | `blog-mood-swings.html` — ~3,929 words, 7 H2, 4 H3, 2 tables, 6 FAQ, 5 refs. SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero image needed: `mood-swings-hero-1200x630.jpg` |
 | 38 | นวดประคบร้อนแบบไทยๆ | `post/herbal-compress-massage` | 36 | 1 | ⏳ รอทำ | Wellness + GEO. Expand and add FAQ. |
 | 39 | คู่มือทานวิตามินซี | `post/คู่มือทานวิตามินซี` | 36 | — | ⏳ รอทำ | Practical guide — rewrite with Q&A format. |
 | 40 | แพ้กุ้ง แพ้แป้ง IgE | `allergy-ige` | 35 | — | ⏳ รอทำ | Service-adjacent. Rewrite more clinical, add FAQ. |
