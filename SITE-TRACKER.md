@@ -74,6 +74,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-testosterone-women.html` | 2026-05-16 |
 | `blog-preservatives.html` | 2026-05-16 |
 | `blog-check-immune-system.html` | 2026-05-16 |
+| `blog-female-hormones.html` | 2026-05-16 |
 
 ---
 
@@ -948,7 +949,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | ✅ HTML พร้อม | `blog-testosterone-women.html` — ~3,024 words, 10 H2, 1 table, 3-source grid, 7-symptom grid, mechanism box, men-vs-women table, 6 natural boost tips, DHEA/test protocol, 6 FAQ, 5 refs (PMC6893124, PMID36585396, PMC12456395, PMID36577241, PMID26358173). SEO: ✅. Plagiarism: original ✅. Hero: testosterone-women-hero-1200x630.jpg ✅. Terracotta/brick gradient. |
 | 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ✅ HTML พร้อม | `blog-preservatives.html` — 3,000 words, 11 H2, 1 table, 5-type preservative grid, harm grid, E-number guide, ADI explainer, detox pathway, children section, 6-tip grid, 6 FAQ, 5 refs (PMID17825405 McCann Lancet 2007, PMID26514947 IARC processed meat, PMID8493816 BHA/BHT, PMID7673519 sulfite sensitivity, PMC8399985 food additives gut). Plagiarism: original ✅. Hero: preservatives-hero-1200x630.jpg ⚠️ upload needed. Dark amber/ochre gradient. |
 | 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | ✅ HTML พร้อม | `blog-check-immune-system.html` — 3,000 words, 12 H2, 1 table, 10-sign grid, 3-layer grid, test table, 6-nutrient grid, 7-step restoration list, Thai foods section, recovery timeline, supplement list, 6 FAQ, 5 refs (PMID19139325 Cohen sleep, PMC3738984 Prietl Vit D, PMC2723580 Haase Zinc, PMC6523821 Nieman exercise, PMC3845678 Mayer gut). Plagiarism: original ✅. Hero: check-immune-system-hero-1200x630.jpg ⚠️ upload needed. Navy/cobalt gradient. |
-| 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | ⏳ รอทำ | Foundational women's health. Rewrite comprehensively. |
+| 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | ✅ HTML พร้อม | `blog-female-hormones.html` — ~3,500 words, 10 H2, 8 H3, 1 table (testing schedule), 5-hormone card grid, 4-phase cycle timeline, 8-sign imbalance grid, age bar chart, 6-tip grid, 6 FAQ, 5 refs (PMID14667980 Stanczyk, PMID26358173 Davis, PMC3264051 Plottel Estrobolome, PMID25905282 Reed Reed, PMID15288182 Kalantaridou). SEO: 7.8/10. Plagiarism: original ✅. Toprank: ✅. Hero: female-hormones-hero-1200x630.jpg ⚠️ upload needed. Deep rose/violet gradient. |
 | 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | ⏳ รอทำ | Practical tips — GEO. Rewrite with numbered FAQ. |
 | 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | ⏳ รอทำ | 19 FB shares. Rewrite with more depth. |
 | 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | ⏳ รอทำ | Medical topic. Rewrite carefully + when to see doctor. |
