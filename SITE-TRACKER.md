@@ -82,6 +82,12 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-burnout-adrenal.html` | 2026-05-16 |
 | `blog-nk-cell.html` | 2026-05-16 |
 | `blog-progesterone.html` | 2026-05-16 |
+| `blog-menopause-hormones.html` | 2026-05-17 |
+| `blog-food-intolerance-igg.html` | 2026-05-17 |
+| `blog-pms.html` | 2026-05-17 |
+| `blog-pcos.html` | 2026-05-17 |
+| `blog-insulin.html` | 2026-05-17 |
+| `blog-adrenal-fatigue-post.html` | 2026-05-17 |
 
 ---
 
@@ -964,12 +970,12 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | ✅ HTML พร้อม | `blog-burnout-adrenal.html` — ~3,300 words, 7 H2, WHO ICD-11 3-dim box, Burnout vs Stress compare grid, 4-stage timeline, HPA Axis dysregulation flow, Cortisol diurnal pattern compare, symptoms table (7 systems), recovery grid (6 cards), nutrition grid (6 micronutrients), testing table (7 tests), 6 FAQ, 5 refs (WHO ICD-11, PMID27265691 Maslach 2016, PMID16248680 Toker, Witt 2017 BMC, PMID20888369 Clow CAR). SEO: ✅. Plagiarism: original ✅. Hero: burnout-adrenal-hero-1200x630.jpg ⚠️ upload needed. Amber/rust gradient. |
 | 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | ✅ HTML พร้อม | `blog-nk-cell.html` — ~8,867 words, 9 H2, 5 H3, 6 FAQ, 5 refs (PMID21212348, PMID31289370, PMID15250815, PMID31193280, PMC3738984). SEO: ✅. Plagiarism: original ✅. Hero: nk-cell-blog-hero-1200x630.jpg ⚠️ upload needed. Purple gradient. |
 | 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ✅ HTML พร้อม | `blog-progesterone.html` — ~8,490 words, 10 H2, 4 H3, 6 FAQ, 5 refs (PMC3987489, PMID24184390, PMID10432133, PMID18583056, Romm 2017). SEO: ✅. Plagiarism: original ✅. Hero: progesterone-hero-1200x630.jpg ⚠️ upload needed. Rose/mauve gradient. ⭐ 8 backlinks — high authority. |
-| 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | ⏳ รอทำ | Women's health cluster. Rewrite with FAQ. |
-| 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | ⏳ รอทำ | Service content. Add FAQ + link to check-up. |
-| 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | ⏳ รอทำ | Women's health staple. Expand significantly. |
-| 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | ⏳ รอทำ | Very searched topic. Rewrite comprehensively with FAQ. |
-| 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | ⏳ รอทำ | Rewrite. Add FAQ + link to health check-up service. |
-| 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | ⏳ รอทำ | 2 backlinks. Rewrite service-adjacent. Add FAQ. |
+| 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | ✅ HTML พร้อม | `blog-menopause-hormones.html` — ~3,200 words, 8 H2, 3 H3, 3-phase grid (Peri/Meno/Postmeno), 6 hormone cards, 4-stage timeline, symptom grids, hormone testing table, HRT comparison table, 6 FAQ, 5 refs (PMID22343510, PMID26444994, PMID12117397, PMC1199595, PMID27681935). SEO: ✅. Plagiarism: original ✅. Hero: menopause-hormones-hero-1200x630.jpg ⚠️ upload needed. Rose gradient. |
+| 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | ✅ HTML พร้อม | `blog-food-intolerance-igg.html` — ~3,100 words, 8 H2, 3 H3, IgE vs IgG compare grid, symptom grid, food trigger table, 5-step process, Leaky Gut section, 6 FAQ, 5 refs (PMID10895521, PMID23981825, PMID20203504, PMID18070223, PMC6893528). SEO: ✅. Plagiarism: original ✅. Hero: food-intolerance-igg-hero-1200x630.jpg ⚠️ upload needed. Teal gradient. |
+| 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | ✅ HTML พร้อม | `blog-pms.html` — ~3,100 words, 9 H2, 4-phase cycle timeline visual, physical + emotional symptom grids, 6 cause cards, PMS vs PMDD table, supplement tip grid, 6 FAQ, 5 refs (PMID18395582, PMID9731851, PMID10682869, PMC27878, PMID29095191). SEO: ✅. Plagiarism: original ✅. Hero: pms-hero-1200x630.jpg ⚠️ upload needed. Purple gradient. |
+| 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | ✅ HTML พร้อม | `blog-pcos.html` — ~3,200 words, 9 H2, Rotterdam Criteria grid (3-criterion), symptom grid, 6 mechanism cards, diagnostic table, treatment sections (lifestyle/supplements/meds), risk box, 6 FAQ, 5 refs (PMID14711538, PMID18950759, PMID9626083, PMC5655679, PMID30052961). SEO: ✅. Plagiarism: original ✅. Hero: pcos-hero-1200x630.jpg ⚠️ upload needed. Violet gradient. |
+| 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | ✅ HTML พร้อม | `blog-insulin.html` — ~3,000 words, 8 H2, 6 insulin function cards, 5-step mechanism cascade, symptom grid, IR diagnostic table, Fasting Glucose info box, diet/exercise/supplement sections, 6 FAQ, 5 refs (PMID2044434, PMID8039601, PMID18442638, PMID10683091, PMID29378044). SEO: ✅. Plagiarism: original ✅. Hero: insulin-hero-1200x630.jpg ⚠️ upload needed. Sky blue gradient. |
+| 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | ✅ HTML พร้อม | `blog-adrenal-fatigue-post.html` — ~3,200 words, 8 H2, 4 adrenal hormone cards, Cortisol rhythm bar chart (5 time points normal vs dysregulated), symptom grid, 4-stage HPA dysregulation table, testing section, Adrenal Fatigue vs Addison's box, recovery program, 6 FAQ, 5 refs (PMID19488073, PMID12377295, PMID20369498, PMID12788587, BMC 2017). SEO: ✅. Plagiarism: original ✅. Hero: adrenal-fatigue-post-hero-1200x630.jpg ⚠️ upload needed. Red/rose gradient. ⭐ 2 backlinks. |
 | 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | ⏳ รอทำ | Check overlap with #12 — merge or rewrite. |
 | 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | ⏳ รอทำ | 0 visits but important topic. Rewrite comprehensively. |
 
