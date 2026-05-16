@@ -88,6 +88,8 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-pcos.html` | 2026-05-17 |
 | `blog-insulin.html` | 2026-05-17 |
 | `blog-adrenal-fatigue-post.html` | 2026-05-17 |
+| `blog-coq10.html` | 2026-05-17 |
+| `blog-vitamin-d-immune.html` | 2026-05-17 |
 
 ---
 
@@ -976,8 +978,8 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 66 | PCOS สาเหตุและอาการ | `post/_pcos` | 10 | — | ✅ HTML พร้อม | `blog-pcos.html` — ~3,200 words, 9 H2, Rotterdam Criteria grid (3-criterion), symptom grid, 6 mechanism cards, diagnostic table, treatment sections (lifestyle/supplements/meds), risk box, 6 FAQ, 5 refs (PMID14711538, PMID18950759, PMID9626083, PMC5655679, PMID30052961). SEO: ✅. Plagiarism: original ✅. Hero: pcos-hero-1200x630.jpg ⚠️ upload needed. Violet gradient. |
 | 67 | อินซูลิน ฮอร์โมนป้องกันเบาหวาน | `post/insulin` | 11 | — | ✅ HTML พร้อม | `blog-insulin.html` — ~3,000 words, 8 H2, 6 insulin function cards, 5-step mechanism cascade, symptom grid, IR diagnostic table, Fasting Glucose info box, diet/exercise/supplement sections, 6 FAQ, 5 refs (PMID2044434, PMID8039601, PMID18442638, PMID10683091, PMID29378044). SEO: ✅. Plagiarism: original ✅. Hero: insulin-hero-1200x630.jpg ⚠️ upload needed. Sky blue gradient. |
 | 68 | ภาวะต่อมหมวกไตล้า Adrenal Fatigue | `adrenal-fatigue` | 7 | 2 | ✅ HTML พร้อม | `blog-adrenal-fatigue-post.html` — ~3,200 words, 8 H2, 4 adrenal hormone cards, Cortisol rhythm bar chart (5 time points normal vs dysregulated), symptom grid, 4-stage HPA dysregulation table, testing section, Adrenal Fatigue vs Addison's box, recovery program, 6 FAQ, 5 refs (PMID19488073, PMID12377295, PMID20369498, PMID12788587, BMC 2017). SEO: ✅. Plagiarism: original ✅. Hero: adrenal-fatigue-post-hero-1200x630.jpg ⚠️ upload needed. Red/rose gradient. ⭐ 2 backlinks. |
-| 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | ⏳ รอทำ | Check overlap with #12 — merge or rewrite. |
-| 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | ⏳ รอทำ | 0 visits but important topic. Rewrite comprehensively. |
+| 69 | Coenzyme Q10 หัวใจ | `post/coenzyme-q10` | 10 | 1 | ✅ HTML พร้อม | `blog-coq10.html` — ~3,200 words, 7 H2, 7-benefit card grid, Ubiquinone vs Ubiquinol compare, CoQ10 age-decline bar chart (5 points), Statin mechanism section, food table, dosage table, 6 FAQ, 5 refs (PMID15860267 Langsjoen, PMID24177285 Q-SYMBIO, PMC3136776 Statin myopathy, PMID16230184 Rosenfeldt BP, PMID17914161 Littarru). SEO: ✅. Plagiarism: original ✅. Hero: coq10-hero-1200x630.jpg ⚠️ upload needed. Amber/gold gradient. ⭐ 1 backlink. (#12 is 404 on Wix — no overlap.) |
+| 70 | Vitamin D สำหรับภูมิคุ้มกัน | `post/vitamin-d-immune` | — | — | ✅ HTML พร้อม | `blog-vitamin-d-immune.html` — ~3,300 words, 8 H2, 6 immunity pathway cards, Thai deficiency causes table, symptom grid (6 cards), 25(OH)D level table with badges, food table, dosage table, Myth vs Fact grid, 6 FAQ, 5 refs (PMC3738984 Prietl, PMID22264449 Holick, PMID20219962 Bergman, PMC5310969 Martineau BMJ 2017, PMID21646368 Endocrine Society guideline). SEO: ✅. Plagiarism: original ✅. Hero: vitamin-d-immune-hero-1200x630.jpg ⚠️ upload needed. Solar gold/amber gradient. |
 
 ---
 
