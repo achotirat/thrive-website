@@ -72,6 +72,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-vitamin-b3.html` | 2026-05-16 |
 | `blog-8-healthy-characteristics.html` | 2026-05-16 |
 | `blog-testosterone-women.html` | 2026-05-16 |
+| `blog-preservatives.html` | 2026-05-16 |
 
 ---
 
@@ -944,7 +945,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | ✅ HTML พร้อม | `blog-vitamin-b3.html` — ~10,000+ words, 7 H2, 8 H3, 6-card benefit grid, NAD+ age-decline bar chart, Pellagra 4D grid, 2 tables (food sources + RDA), 5-step supplement guide, 6 FAQ, 5 refs (PMID16029679 Bissett aging skin, PMC8389214 Rolfe niacinamide mechanisms, PMID18492135 Bissett yellowing/wrinkling, PMID26785476 Verdin NAD+ aging, PMC11727686 serum RCT). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-b3-hero-1200x630.jpg ✅. Deep wine/ruby gradient. |
 | 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | ✅ HTML พร้อม | `blog-8-healthy-characteristics.html` — ~9,600 words, 7 H2, 8 listicle cards (sleep, energy, digestion, skin/hair/nails, immunity, mood, weight, lab values), summary table, 6 FAQ, 5 refs (PMID29073412 NSF sleep, PMID19805654 metabolic syndrome, PMID30920354 sleep-immune, PMID31460832 gut-brain axis, PMC6380979 hair vitamins). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: 8-healthy-characteristics-hero-1200x630.jpg ✅. Sky blue/cerulean gradient. |
 | 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | ✅ HTML พร้อม | `blog-testosterone-women.html` — ~3,024 words, 10 H2, 1 table, 3-source grid, 7-symptom grid, mechanism box, men-vs-women table, 6 natural boost tips, DHEA/test protocol, 6 FAQ, 5 refs (PMC6893124, PMID36585396, PMC12456395, PMID36577241, PMID26358173). SEO: ✅. Plagiarism: original ✅. Hero: testosterone-women-hero-1200x630.jpg ✅. Terracotta/brick gradient. |
-| 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ⏳ รอทำ | 3 backlinks. Rewrite with structured data. |
+| 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ✅ HTML พร้อม | `blog-preservatives.html` — 3,000 words, 11 H2, 1 table, 5-type preservative grid, harm grid, E-number guide, ADI explainer, detox pathway, children section, 6-tip grid, 6 FAQ, 5 refs (PMID17825405 McCann Lancet 2007, PMID26514947 IARC processed meat, PMID8493816 BHA/BHT, PMID7673519 sulfite sensitivity, PMC8399985 food additives gut). Plagiarism: original ✅. Hero: preservatives-hero-1200x630.jpg ⚠️ upload needed. Dark amber/ochre gradient. |
 | 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | ⏳ รอทำ | Rewrite as practical checklist + FAQ. |
 | 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | ⏳ รอทำ | Foundational women's health. Rewrite comprehensively. |
 | 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | ⏳ รอทำ | Practical tips — GEO. Rewrite with numbered FAQ. |
