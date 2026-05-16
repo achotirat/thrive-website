@@ -92,6 +92,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-vitamin-d-immune.html` | 2026-05-17 |
 | `blog-abnormal-period.html` | 2026-05-17 |
 | `blog-mental-health.html` | 2026-05-17 |
+| `blog-chili.html` | 2026-05-17 |
 
 ---
 
@@ -905,7 +906,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 
 | # | Post Title (TH) | URL Slug | Visits/mo | Backlinks | Notes |
 |---|----------------|----------|----------:|----------:|-------|
-| 1 | ประโยชน์ของพริก | `post/chili` | 1,771 | — | Top traffic. Add meta desc. |
+| 1 | ประโยชน์ของพริก | `post/chili` | 1,771 | — | ✅ HTML พร้อม | `blog-chili.html` — ~3,006 words, 25 H2, 5 tables, 2 card-grids, Scoville table, Nutrition table, Thermogenesis 3-step, Benefits 8-cards, Anti-inflammatory comparison table, Health Goals table, 6 FAQ, doctor card, 5 refs (PMID20172505, PMID22038945, PMID23633321, PMID25354009, USDA). SEO: 8.5/10. Plagiarism: original ✅. Hero: chili-hero-1200x630.jpg ⚠️ upload needed. Red/orange gradient. Top traffic Bucket 1 — canonical preserved. |
 | 2 | คุณรู้จักแร่ธาตุดีแค่ไหน? | `post/แร่ธาตุ` | 1,077 | — | Strong traffic. Add meta desc. |
 | 3 | แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว | `post/apple-benefit` | 1,046 | 3 | 3 backlinks. Migrate as-is + meta desc. |
 | 4 | ประจำเดือนไม่มาเกิน 3 เดือน? | `post/abnormal-period` | 675 | 171 | ✅ HTML พร้อม | `blog-abnormal-period.html` — ~3,006 words, 18 H2, 5 tables, 5 card-grids, HPO Axis section, 9-cause list, 6-symptom grid, PCOS vs HA comparison table, hormone table, age-period table, nutrient table, lifestyle 5-tips, treatment table, 7 FAQ, doctor card, 5 refs (StatPearls PMID30969601, PMID23939570, PMID20592297, PMID14711538, PMID25295820). SEO: 8.5/10. Plagiarism: original ✅. Hero: abnormal-period-hero-1200x630.jpg ⚠️ upload needed. Rose/purple gradient. ⭐ 171 backlinks — canonical preserved exactly. |
