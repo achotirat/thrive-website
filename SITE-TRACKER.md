@@ -70,6 +70,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-pid.html` | 2026-05-15 |
 | `blog-menorrhagia.html` | 2026-05-16 |
 | `blog-vitamin-b3.html` | 2026-05-16 |
+| `blog-8-healthy-characteristics.html` | 2026-05-16 |
 
 ---
 
@@ -940,7 +941,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 48 | สาเหตุและอาการ PID อุ้งเชิงกราน | `post/pelvicinflammatorydisease` | 21 | 3 | ✅ HTML พร้อม | `blog-pid.html` — ~3,000 words, 7 H2, 4-card organ grid, 4-step diag grid, bacteria table, complication stats (6× ectopic, 14× infertility), chip lists, 5-step treatment list, 6 FAQ, 5 refs (PMID25988104 Brunham, PMC5052677 Curry, Westrom 1975, Haggerty 2006, CDC 2021). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: pid-hero-1200x630.jpg ✅. Deep rose/magenta gradient. |
 | 49 | ประจำเดือนมามากผิดปกติ | `post/menorrhagia` | 20 | — | ✅ HTML พร้อม | `blog-menorrhagia.html` — ~3,100 words, 6 H2, PALM-COEIN grid, practical-test box, bacteria/cause table, 6-card iron-deficiency grid, 5-step diag flow, treatment comparison table, 6 FAQ, 5 refs (PMID22023087 Munro PALM-COEIN, PMC3609940 Philipp VWD, Lethaby Cochrane LNG-IUS, PMID20859150 Lukes tranexamic, ACOG PB128). SEO: ✅. Plagiarism: original ✅. Hero: menorrhagia-hero-1200x630.jpg ✅. Purple/plum gradient. |
 | 50 | วิตามินบี3 ปัญหาผิวหย่อยคล้อย | `post/vitamin-b3` | 18 | — | ✅ HTML พร้อม | `blog-vitamin-b3.html` — ~10,000+ words, 7 H2, 8 H3, 6-card benefit grid, NAD+ age-decline bar chart, Pellagra 4D grid, 2 tables (food sources + RDA), 5-step supplement guide, 6 FAQ, 5 refs (PMID16029679 Bissett aging skin, PMC8389214 Rolfe niacinamide mechanisms, PMID18492135 Bissett yellowing/wrinkling, PMID26785476 Verdin NAD+ aging, PMC11727686 serum RCT). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: vitamin-b3-hero-1200x630.jpg ✅. Deep wine/ruby gradient. |
-| 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | ⏳ รอทำ | Rewrite as listicle with FAQ. Good GEO format. |
+| 51 | 8 ลักษณะสุขภาพดี | `post/8-ลักษณะสุขภาพดี` | 18 | — | ✅ HTML พร้อม | `blog-8-healthy-characteristics.html` — ~9,600 words, 7 H2, 8 listicle cards (sleep, energy, digestion, skin/hair/nails, immunity, mood, weight, lab values), summary table, 6 FAQ, 5 refs (PMID29073412 NSF sleep, PMID19805654 metabolic syndrome, PMID30920354 sleep-immune, PMID31460832 gut-brain axis, PMC6380979 hair vitamins). SEO: ✅. Plagiarism: original ✅. Toprank: ✅. Hero: 8-healthy-characteristics-hero-1200x630.jpg (⚠️ upload needed). Sky blue/cerulean gradient. |
 | 52 | สาวๆ อยากมีกล้าม Testosterone | `post/testosterone-woman` | 17 | — | ⏳ รอทำ | Rewrite. Women's health cluster. |
 | 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ⏳ รอทำ | 3 backlinks. Rewrite with structured data. |
 | 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | ⏳ รอทำ | Rewrite as practical checklist + FAQ. |
