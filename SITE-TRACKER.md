@@ -91,6 +91,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-coq10.html` | 2026-05-17 |
 | `blog-vitamin-d-immune.html` | 2026-05-17 |
 | `blog-abnormal-period.html` | 2026-05-17 |
+| `blog-mental-health.html` | 2026-05-17 |
 
 ---
 
@@ -920,7 +921,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 14 | ปวดท้องบ่อย ท้องเสียประจำ? | `post/ลำไส้อักเสบ` | 144 | — | Add meta desc. |
 | 15 | นอนไม่หลับ Tryptophan | `post/tryptophan` | 142 | 1 | 1 backlink. Keep. |
 | 16 | GABA สารสกัดจมูกข้าว | `post/_gaba` | 126 | 2 | 2 backlinks. MERGE with sleep-gaba (#82) before migrating. |
-| 17 | Mental Health ป่วย นำไปสู่โรคอะไร? | `post/mental-health` | 124 | 233 | ⭐ 233 backlinks — highest! Preserve URL exactly. |
+| 17 | Mental Health ป่วย นำไปสู่โรคอะไร? | `post/mental-health` | 124 | 233 | ✅ HTML พร้อม | `blog-mental-health.html` — ~3,019 words, 18 H2, 3 tables, 2 card-grids, HPA Axis 5-step, 8-system card grid, neurotransmitter 6-cards, Gut-Brain Axis, Burnout section, 6-warning-sign cards, 7 interventions, daily routine table, myths table, Functional Medicine, 6 FAQ, doctor card, 5 refs (PMID30099000, PMID28137247, PMID18073775, PMID22968153, PMID24417575). SEO: 8.5/10. Plagiarism: original ✅. Hero: mental-health-hero-1200x630.jpg ⚠️ upload needed. Indigo/violet gradient. ⭐ 233 backlinks — canonical preserved exactly. |
 | 18 | ชวนรู้จัก Silica แร่ธาตุแห่งความงาม | `post/silica` | 122 | — | Add meta desc. |
 | 19 | ชวนรู้จักโบรมีเลน จากสับปะรด | `post/bromelain` | 118 | 6 | 6 backlinks. Keep. |
 | 20 | เสริม OMEGA 3 ลดความเครียด | `post/omega-3` | 111 | 1 | Add meta desc. |
