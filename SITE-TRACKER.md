@@ -1,6 +1,6 @@
 # Thrive Website — Page Build & SEO Tracker
 
-อัปเดตล่าสุด: 2026-05-15
+อัปเดตล่าสุด: 2026-05-16
 ผู้รับผิดชอบ: Thrive Wellness Team + AI
 Repository: https://github.com/achotirat/thrive-website
 
@@ -75,6 +75,11 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-preservatives.html` | 2026-05-16 |
 | `blog-check-immune-system.html` | 2026-05-16 |
 | `blog-female-hormones.html` | 2026-05-16 |
+| `blog-hgh-natural-boost.html` | 2026-05-16 |
+| `blog-kombucha-benefits.html` | 2026-05-16 |
+| `blog-syncope-fainting.html` | 2026-05-16 |
+| `blog-sleepwalking.html` | 2026-05-16 |
+| `blog-burnout-adrenal.html` | 2026-05-16 |
 
 ---
 
@@ -950,11 +955,11 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 53 | สารกัดบูดในอาหาร | `post/preservatives` | 16 | 3 | ✅ HTML พร้อม | `blog-preservatives.html` — 3,000 words, 11 H2, 1 table, 5-type preservative grid, harm grid, E-number guide, ADI explainer, detox pathway, children section, 6-tip grid, 6 FAQ, 5 refs (PMID17825405 McCann Lancet 2007, PMID26514947 IARC processed meat, PMID8493816 BHA/BHT, PMID7673519 sulfite sensitivity, PMC8399985 food additives gut). Plagiarism: original ✅. Hero: preservatives-hero-1200x630.jpg ⚠️ upload needed. Dark amber/ochre gradient. |
 | 54 | เช็คภูมิคุ้มกัน ภูมิตก! | `post/check-immune-system` | 16 | — | ✅ HTML พร้อม | `blog-check-immune-system.html` — 3,000 words, 12 H2, 1 table, 10-sign grid, 3-layer grid, test table, 6-nutrient grid, 7-step restoration list, Thai foods section, recovery timeline, supplement list, 6 FAQ, 5 refs (PMID19139325 Cohen sleep, PMC3738984 Prietl Vit D, PMC2723580 Haase Zinc, PMC6523821 Nieman exercise, PMC3845678 Mayer gut). Plagiarism: original ✅. Hero: check-immune-system-hero-1200x630.jpg ⚠️ upload needed. Navy/cobalt gradient. |
 | 55 | ฮอร์โมนเพศหญิง ที่ต้องรู้จัก | `post/femaleshormones` | 15 | — | ✅ HTML พร้อม | `blog-female-hormones.html` — ~3,500 words, 10 H2, 8 H3, 1 table (testing schedule), 5-hormone card grid, 4-phase cycle timeline, 8-sign imbalance grid, age bar chart, 6-tip grid, 6 FAQ, 5 refs (PMID14667980 Stanczyk, PMID26358173 Davis, PMC3264051 Plottel Estrobolome, PMID25905282 Reed Reed, PMID15288182 Kalantaridou). SEO: 7.8/10. Plagiarism: original ✅. Toprank: ✅. Hero: female-hormones-hero-1200x630.jpg ⚠️ upload needed. Deep rose/violet gradient. |
-| 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | ⏳ รอทำ | Practical tips — GEO. Rewrite with numbered FAQ. |
-| 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | ⏳ รอทำ | 19 FB shares. Rewrite with more depth. |
-| 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | ⏳ รอทำ | Medical topic. Rewrite carefully + when to see doctor. |
-| 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | ⏳ รอทำ | Rewrite with FAQ. Good sleep cluster. |
-| 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | ⏳ รอทำ | Rewrite. Simplify URL slug. |
+| 56 | 8 วิธีเพิ่ม Human Growth Hormone | `post/human-growth-hormone` | 14 | — | ✅ HTML พร้อม | `blog-hgh-natural-boost.html` — ~3,100 words, 6 H2, 6-card HGH function grid, Somatopause decline chart, 8-way numbered list, food chips, testing table (IGF-1), 6 FAQ, 5 refs (PMID3127426 Ho 1988, PMID2355952 Rudman 1990, PMID12137173 Stokes sprint, PMID8491152 Corpas, PMID12086880 Chromiak amino acids). SEO: ✅. Plagiarism: original ✅. Hero: hgh-natural-boost-hero-1200x630.jpg ⚠️ upload needed. Deep teal/emerald gradient. |
+| 57 | 6 คุณประโยชน์ Kombucha | `post/6_benefits_kombucha` | 14 | — | ✅ HTML พร้อม | `blog-kombucha-benefits.html` — ~3,100 words, 6 H2, SCOBY composition box, 6-benefit card grid, organic acids table (6 acids), drinking guide, warning box, choosing guide, 6 FAQ, 5 refs (PMC8347189, PMID30670289 Kapp 2019, Jayabalan 2014, Essawet 2015, PMID34698580 gut microbiota). SEO: ✅. Plagiarism: original ✅. Hero: kombucha-benefits-hero-1200x630.jpg ⚠️ upload needed. Forest green/lime gradient. |
+| 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | ✅ HTML พร้อม | `blog-syncope-fainting.html` — ~3,200 words, 6 H2, 4-step mechanism timeline, 3-type danger cards (Vasovagal/Orthostatic/Cardiac), red flags section (8 signs), hormone connection table, 6 prevention tips, 6 FAQ, 5 refs (PMID29562304 Brignole 2018 ESC, PMID12239256 Soteriades NEJM 2002, PMID21193201 Freeman, PMID19713422 Moya 2009, PMID26477549 Wieling). SEO: ✅. Plagiarism: original ✅. Hero: syncope-fainting-hero-1200x630.jpg ⚠️ upload needed. Slate blue/indigo gradient. |
+| 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | ✅ HTML พร้อม | `blog-sleepwalking.html` — ~3,200 words, 6 H2, sleep architecture stage grid, mechanism box (4 steps), 8-trigger card grid, complexity scale (simple/complex/dangerous), hormone table, treatment cards (6 steps), safety guide, testing table, 6 FAQ, 5 refs (PMID25938617 Petit 2015, PMID23415567 Zadra 2013, PMC5096813 Stallman 2016, PMID17208473 Pressman, PMID18465379 Lam). SEO: ✅. Plagiarism: original ✅. Hero: sleepwalking-hero-1200x630.jpg ⚠️ upload needed. Deep indigo/midnight gradient. |
+| 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | ✅ HTML พร้อม | `blog-burnout-adrenal.html` — ~3,300 words, 7 H2, WHO ICD-11 3-dim box, Burnout vs Stress compare grid, 4-stage timeline, HPA Axis dysregulation flow, Cortisol diurnal pattern compare, symptoms table (7 systems), recovery grid (6 cards), nutrition grid (6 micronutrients), testing table (7 tests), 6 FAQ, 5 refs (WHO ICD-11, PMID27265691 Maslach 2016, PMID16248680 Toker, Witt 2017 BMC, PMID20888369 Clow CAR). SEO: ✅. Plagiarism: original ✅. Hero: burnout-adrenal-hero-1200x630.jpg ⚠️ upload needed. Amber/rust gradient. |
 | 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | ⏳ รอทำ | Service-adjacent. Rewrite to link to NK Cell test service. |
 | 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ⏳ รอทำ | ⭐ 8 backlinks, low traffic — strong authority. Rewrite urgently. |
 | 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | ⏳ รอทำ | Women's health cluster. Rewrite with FAQ. |
