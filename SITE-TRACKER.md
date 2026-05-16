@@ -80,6 +80,8 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-syncope-fainting.html` | 2026-05-16 |
 | `blog-sleepwalking.html` | 2026-05-16 |
 | `blog-burnout-adrenal.html` | 2026-05-16 |
+| `blog-nk-cell.html` | 2026-05-16 |
+| `blog-progesterone.html` | 2026-05-16 |
 
 ---
 
@@ -960,8 +962,8 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 58 | หน้ามืด วูบบ่อย อันตราย | `post/syncope` | 12 | — | ✅ HTML พร้อม | `blog-syncope-fainting.html` — ~3,200 words, 6 H2, 4-step mechanism timeline, 3-type danger cards (Vasovagal/Orthostatic/Cardiac), red flags section (8 signs), hormone connection table, 6 prevention tips, 6 FAQ, 5 refs (PMID29562304 Brignole 2018 ESC, PMID12239256 Soteriades NEJM 2002, PMID21193201 Freeman, PMID19713422 Moya 2009, PMID26477549 Wieling). SEO: ✅. Plagiarism: original ✅. Hero: syncope-fainting-hero-1200x630.jpg ⚠️ upload needed. Slate blue/indigo gradient. |
 | 59 | นอนละเมอ สาเหตุ | `post/sleepwalking` | 12 | — | ✅ HTML พร้อม | `blog-sleepwalking.html` — ~3,200 words, 6 H2, sleep architecture stage grid, mechanism box (4 steps), 8-trigger card grid, complexity scale (simple/complex/dangerous), hormone table, treatment cards (6 steps), safety guide, testing table, 6 FAQ, 5 refs (PMID25938617 Petit 2015, PMID23415567 Zadra 2013, PMC5096813 Stallman 2016, PMID17208473 Pressman, PMID18465379 Lam). SEO: ✅. Plagiarism: original ✅. Hero: sleepwalking-hero-1200x630.jpg ⚠️ upload needed. Deep indigo/midnight gradient. |
 | 60 | Burn Out Syndrome Adrenal Fatigue | `how-to-overcome-burn-out-syndrome` | 12 | — | ✅ HTML พร้อม | `blog-burnout-adrenal.html` — ~3,300 words, 7 H2, WHO ICD-11 3-dim box, Burnout vs Stress compare grid, 4-stage timeline, HPA Axis dysregulation flow, Cortisol diurnal pattern compare, symptoms table (7 systems), recovery grid (6 cards), nutrition grid (6 micronutrients), testing table (7 tests), 6 FAQ, 5 refs (WHO ICD-11, PMID27265691 Maslach 2016, PMID16248680 Toker, Witt 2017 BMC, PMID20888369 Clow CAR). SEO: ✅. Plagiarism: original ✅. Hero: burnout-adrenal-hero-1200x630.jpg ⚠️ upload needed. Amber/rust gradient. |
-| 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | ⏳ รอทำ | Service-adjacent. Rewrite to link to NK Cell test service. |
-| 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ⏳ รอทำ | ⭐ 8 backlinks, low traffic — strong authority. Rewrite urgently. |
+| 61 | NK Cell เม็ดเลือดขาว | `post/nkcell` | 3 | — | ✅ HTML พร้อม | `blog-nk-cell.html` — ~8,867 words, 9 H2, 5 H3, 6 FAQ, 5 refs (PMID21212348, PMID31289370, PMID15250815, PMID31193280, PMC3738984). SEO: ✅. Plagiarism: original ✅. Hero: nk-cell-blog-hero-1200x630.jpg ⚠️ upload needed. Purple gradient. |
+| 62 | Progesterone ฮอร์โมนเพศหญิง | `post/progesterone` | 8 | 8 | ✅ HTML พร้อม | `blog-progesterone.html` — ~8,490 words, 10 H2, 4 H3, 6 FAQ, 5 refs (PMC3987489, PMID24184390, PMID10432133, PMID18583056, Romm 2017). SEO: ✅. Plagiarism: original ✅. Hero: progesterone-hero-1200x630.jpg ⚠️ upload needed. Rose/mauve gradient. ⭐ 8 backlinks — high authority. |
 | 63 | ฮอร์โมนวัยทอง เริ่มตอนอายุเท่าไหร่ | `post/ฮอร์โมนวัยทอง` | 9 | — | ⏳ รอทำ | Women's health cluster. Rewrite with FAQ. |
 | 64 | ตรวจภูมิแพ้อาหารแฝง IgG | `post/ตรวจภูมิแพ้อาหารแฝง-igg` | 2 | — | ⏳ รอทำ | Service content. Add FAQ + link to check-up. |
 | 65 | PMS อาการก่อนเป็นประจำเดือน | `post/pms-premenstrualsyndrome` | 1 | — | ⏳ รอทำ | Women's health staple. Expand significantly. |
