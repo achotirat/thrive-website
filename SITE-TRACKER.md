@@ -97,6 +97,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-apple-benefit.html` | 2026-05-17 |
 | `blog-periodpain.html` | 2026-05-17 |
 | `blog-zinc.html` | 2026-05-17 |
+| `blog-immunity.html` | 2026-05-17 |
 
 ---
 
@@ -917,7 +918,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | ✅ HTML พร้อม | `blog-periodpain.html` — ~3,005 words, 14 H2, 2 tables (Hormone Cycle 4-phases, PMS vs PMDD), 7 symptom cards, 3 hormone phase cards, non-pharma relief 5-steps, Cycle Syncing 3-phase list, foods-to-avoid 5-items, nutrition 6-items, Estrobolome section, 6 FAQ, doctor card, 5 refs (PMID16880317, PMID37730536, PMID22611222, PMID37545015, PMID22069417). SEO: 8.5/10. Plagiarism: original ✅. Hero: periodpain-hero-1200x630.jpg ⚠️ upload needed. Rose/pink gradient. |
 | 6 | ปวดท้องเมนส์ ต้องหาหมอหรือไม่? | `post/ประจำเดือนเคลื่อน` | 388 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
 | 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | ✅ HTML พร้อม | `blog-zinc.html` — ~3,009 words, 14 H2, 2 tables (RDA table, Supplement forms), 4 stat cards, 7 checklist cards, 8 benefit cards, 4 food cards, absorption enhancers/inhibitors lists, FM at-risk 6-groups, Zinc vs Copper interaction, immunity section, 6 FAQ, doctor card, 5 refs (PMID33323322, PMID38719213, PMC4120804, PMID30009140, PMID32860489). SEO: 8.5/10. Plagiarism: original ✅. Hero: zinc-checklist-hero-1200x630.jpg ⚠️ upload needed. Sky-blue gradient. |
-| 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | Add meta desc. |
+| 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | ✅ HTML พร้อม | `blog-immunity.html` — ~3,004 words, 11 H2, 1 table (Dosage summary 6 nutrients), 6 vitamin cards (C/D/Zinc/Omega-3/Beta-Glucan/Vitamin A), 2 cause cards, synergy section (5 nutrient interactions), 5 immune-destroying behaviors, Oligoscan section, FM perspective (5 labs), IV Drip highlight box, 6 FAQ, doctor card, 6 refs (PMID29099763, PMID21527855, PMID27021581, PMID31614433, PMID17895634, PMID30200565). SEO: 8.5/10. Plagiarism: original ✅. Hero: immunity-hero-1200x630.jpg ⚠️ upload needed. Indigo/violet gradient. |
 | 9 | Growth factor คืออะไร | `post/growth-factor` | 281 | — | Good traffic. Add meta desc. |
 | 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | 4 backlinks. Keep. Add meta desc. |
 | 11 | Glutathione กลูตาไธโอน | `gluta` | 214 | 3 | 3 backlinks. Service-adjacent — high priority. |
