@@ -101,6 +101,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-growth-factor.html` | 2026-05-17 |
 | `blog-smiling-depression.html` | 2026-05-17 |
 | `blog-glutathione.html` | 2026-05-17 |
+| `blog-ashwagandha.html` | 2026-05-17 |
 
 ---
 
@@ -926,7 +927,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | ✅ HTML พร้อม | `blog-smiling-depression.html` — ~3,004 words, 12 H2, 2 tables (MDD vs Smiling Depression comparison, Treatment options), 4 stat cards, 9 sign cards, 4 risk profile cards, Neurobiology section (Serotonin/Dopamine/HPA/Gut-Brain), Nutritional Psychiatry section (5 nutrients), Functional Medicine Labs (5), Self-care (7 habits), When-to-seek-help (4 Red Flags), Bach Flower section (5 Remedies), 6 FAQ, doctor card, 5 refs (DSM-5, PMID17685742, PMID24733028, Beck CBT 1979, PMID35341804). SEO: 9/10 (YMYL). Plagiarism: original ✅. Hero: smiling-depression-hero-1200x630.jpg ⚠️ upload needed. Deep teal gradient. 4 backlinks preserved. |
 | 11 | Glutathione กลูตาไธโอน | `post/glutathione` | 214 | 3 | ✅ HTML พร้อม | `blog-glutathione.html` — ~3,995 words, 9 H2, 1 table (IV vs Oral delivery 4 methods), 4 stat cards, 7 function cards (Skin/Antioxidant/Liver/Immune/DNA/Mitochondria/Neuro), GSH decline timeline (5 age stages), Tyrosinase mechanism section, Liver Phase II Detox section, Collagen+Vitamin C synergy section, Oral vs IV comparison, IV Formula box (GSH+ALA+Vit C+B+AA), Check GSH at Thrive section, Warning box, 6 FAQ, doctor card, 6 refs (PMID27088927, PMID28490897, PMID30895708, PMID18796312, PMID19166318, PMID28441057). SEO: 8.5/10. Plagiarism: original ✅. Hero: gluta-hero-1200x630.jpg ⚠️ upload needed. Amber/gold gradient. 3 backlinks preserved. |
 | 12 | 7 ประโยชน์ของ CoQ10 | `post/ประโยชน์ของ-coq10` | 177 | 1 | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
-| 13 | Ashwagandha คืออะไร | `post/ashwagandha` | 159 | — | Good traffic. Add meta desc. |
+| 13 | Ashwagandha คืออะไร | `post/ashwagandha` | 159 | — | ✅ HTML พร้อม | `blog-ashwagandha.html` — ~3,525 words, 7 H2, 2 tables (KSM-66 vs Sensoril, Dosage by goal), 4 stat cards, 8 benefit cards, HPA Axis mechanism section, Withanolides section, Drug Interaction section, FM Labs section, Personalized Protocol box, Warning box, 6 FAQ, doctor card, 5 refs (PMID23439798, PMID32260271, PMID26609282, PMID24827700, PMID25038696). SEO: 8.5/10. Plagiarism: original ✅. Hero: ashwagandha-hero-1200x630.jpg ⚠️ upload needed. Deep forest green gradient. |
 | 14 | ปวดท้องบ่อย ท้องเสียประจำ? | `post/ลำไส้อักเสบ` | 144 | — | Add meta desc. |
 | 15 | นอนไม่หลับ Tryptophan | `post/tryptophan` | 142 | 1 | 1 backlink. Keep. |
 | 16 | GABA สารสกัดจมูกข้าว | `post/_gaba` | 126 | 2 | 2 backlinks. MERGE with sleep-gaba (#82) before migrating. |
