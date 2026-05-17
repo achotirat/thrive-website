@@ -94,6 +94,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-mental-health.html` | 2026-05-17 |
 | `blog-chili.html` | 2026-05-17 |
 | `blog-minerals.html` | 2026-05-17 |
+| `blog-apple-benefit.html` | 2026-05-17 |
 
 ---
 
@@ -909,7 +910,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 |---|----------------|----------|----------:|----------:|-------|
 | 1 | ประโยชน์ของพริก | `post/chili` | 1,771 | — | ✅ HTML พร้อม | `blog-chili.html` — ~3,006 words, 25 H2, 5 tables, 2 card-grids, Scoville table, Nutrition table, Thermogenesis 3-step, Benefits 8-cards, Anti-inflammatory comparison table, Health Goals table, 6 FAQ, doctor card, 5 refs (PMID20172505, PMID22038945, PMID23633321, PMID25354009, USDA). SEO: 8.5/10. Plagiarism: original ✅. Hero: chili-hero-1200x630.jpg ⚠️ upload needed. Red/orange gradient. Top traffic Bucket 1 — canonical preserved. |
 | 2 | คุณรู้จักแร่ธาตุดีแค่ไหน? | `post/แร่ธาตุ` | 1,077 | — | ✅ HTML พร้อม | `blog-minerals.html` — ~3,009 words, 10 H2, 2 tables (Minerals vs Vitamins, Deficiency symptoms), 7 macro mineral cards (Ca P K Mg Na S Cl), 11 trace mineral grid items, Mineral Synergy section, Food sources grid (12 items), Absorption inhibitors list, FM perspective + At-risk groups, Oligoscan 4-card grid, 6 FAQ, doctor card, 5 refs (PMID17405997, PMID31284298, PMID18787216, PMID25688738, NIH ODS). SEO: 8.5/10. Plagiarism: original ✅. Hero: minerals-hero-1200x630.jpg ⚠️ upload needed. Teal/emerald gradient. |
-| 3 | แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว | `post/apple-benefit` | 1,046 | 3 | 3 backlinks. Migrate as-is + meta desc. |
+| 3 | แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว | `post/apple-benefit` | 1,046 | 3 | ✅ HTML พร้อม | `blog-apple-benefit.html` — ~3,001 words, 9 H2, 3 nutrient cards, 8 benefit cards, 2 compare cards (red vs green), variety table (6 cultivars), anti-inflammatory markers table, application table (6 groups), Quercetin 4-step mechanism, Pectin 3-nutrient cards, Chlorogenic Acid + Phloridzin sections, FM guide, 6 FAQ, doctor card, 5 refs (PMID15140261, PMID22332082, PMID18630878, PMID18390796, USDA). SEO: 8.5/10. Plagiarism: original ✅. Hero: apple-benefit-hero-1200x630.jpg ⚠️ upload needed. Green gradient. |
 | 4 | ประจำเดือนไม่มาเกิน 3 เดือน? | `post/abnormal-period` | 675 | 171 | ✅ HTML พร้อม | `blog-abnormal-period.html` — ~3,006 words, 18 H2, 5 tables, 5 card-grids, HPO Axis section, 9-cause list, 6-symptom grid, PCOS vs HA comparison table, hormone table, age-period table, nutrient table, lifestyle 5-tips, treatment table, 7 FAQ, doctor card, 5 refs (StatPearls PMID30969601, PMID23939570, PMID20592297, PMID14711538, PMID25295820). SEO: 8.5/10. Plagiarism: original ✅. Hero: abnormal-period-hero-1200x630.jpg ⚠️ upload needed. Rose/purple gradient. ⭐ 171 backlinks — canonical preserved exactly. |
 | 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | Good traffic. Add meta desc. |
 | 6 | ปวดท้องเมนส์ ต้องหาหมอหรือไม่? | `post/ประจำเดือนเคลื่อน` | 388 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
