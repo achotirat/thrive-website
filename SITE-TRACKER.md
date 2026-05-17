@@ -95,6 +95,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-chili.html` | 2026-05-17 |
 | `blog-minerals.html` | 2026-05-17 |
 | `blog-apple-benefit.html` | 2026-05-17 |
+| `blog-periodpain.html` | 2026-05-17 |
 
 ---
 
@@ -912,7 +913,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 2 | คุณรู้จักแร่ธาตุดีแค่ไหน? | `post/แร่ธาตุ` | 1,077 | — | ✅ HTML พร้อม | `blog-minerals.html` — ~3,009 words, 10 H2, 2 tables (Minerals vs Vitamins, Deficiency symptoms), 7 macro mineral cards (Ca P K Mg Na S Cl), 11 trace mineral grid items, Mineral Synergy section, Food sources grid (12 items), Absorption inhibitors list, FM perspective + At-risk groups, Oligoscan 4-card grid, 6 FAQ, doctor card, 5 refs (PMID17405997, PMID31284298, PMID18787216, PMID25688738, NIH ODS). SEO: 8.5/10. Plagiarism: original ✅. Hero: minerals-hero-1200x630.jpg ⚠️ upload needed. Teal/emerald gradient. |
 | 3 | แอปเปิ้ลแดง Vs แอปเปิ้ลเขียว | `post/apple-benefit` | 1,046 | 3 | ✅ HTML พร้อม | `blog-apple-benefit.html` — ~3,001 words, 9 H2, 3 nutrient cards, 8 benefit cards, 2 compare cards (red vs green), variety table (6 cultivars), anti-inflammatory markers table, application table (6 groups), Quercetin 4-step mechanism, Pectin 3-nutrient cards, Chlorogenic Acid + Phloridzin sections, FM guide, 6 FAQ, doctor card, 5 refs (PMID15140261, PMID22332082, PMID18630878, PMID18390796, USDA). SEO: 8.5/10. Plagiarism: original ✅. Hero: apple-benefit-hero-1200x630.jpg ⚠️ upload needed. Green gradient. |
 | 4 | ประจำเดือนไม่มาเกิน 3 เดือน? | `post/abnormal-period` | 675 | 171 | ✅ HTML พร้อม | `blog-abnormal-period.html` — ~3,006 words, 18 H2, 5 tables, 5 card-grids, HPO Axis section, 9-cause list, 6-symptom grid, PCOS vs HA comparison table, hormone table, age-period table, nutrient table, lifestyle 5-tips, treatment table, 7 FAQ, doctor card, 5 refs (StatPearls PMID30969601, PMID23939570, PMID20592297, PMID14711538, PMID25295820). SEO: 8.5/10. Plagiarism: original ✅. Hero: abnormal-period-hero-1200x630.jpg ⚠️ upload needed. Rose/purple gradient. ⭐ 171 backlinks — canonical preserved exactly. |
-| 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | Good traffic. Add meta desc. |
+| 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | ✅ HTML พร้อม | `blog-periodpain.html` — ~3,005 words, 14 H2, 2 tables (Hormone Cycle 4-phases, PMS vs PMDD), 7 symptom cards, 3 hormone phase cards, non-pharma relief 5-steps, Cycle Syncing 3-phase list, foods-to-avoid 5-items, nutrition 6-items, Estrobolome section, 6 FAQ, doctor card, 5 refs (PMID16880317, PMID37730536, PMID22611222, PMID37545015, PMID22069417). SEO: 8.5/10. Plagiarism: original ✅. Hero: periodpain-hero-1200x630.jpg ⚠️ upload needed. Rose/pink gradient. |
 | 6 | ปวดท้องเมนส์ ต้องหาหมอหรือไม่? | `post/ประจำเดือนเคลื่อน` | 388 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
 | 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | Checklist format. Add meta + FAQ schema. |
 | 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | Add meta desc. |
