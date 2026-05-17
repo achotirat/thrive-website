@@ -99,6 +99,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-zinc.html` | 2026-05-17 |
 | `blog-immunity.html` | 2026-05-17 |
 | `blog-growth-factor.html` | 2026-05-17 |
+| `blog-smiling-depression.html` | 2026-05-17 |
 
 ---
 
@@ -921,7 +922,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | ✅ HTML พร้อม | `blog-zinc.html` — ~3,009 words, 14 H2, 2 tables (RDA table, Supplement forms), 4 stat cards, 7 checklist cards, 8 benefit cards, 4 food cards, absorption enhancers/inhibitors lists, FM at-risk 6-groups, Zinc vs Copper interaction, immunity section, 6 FAQ, doctor card, 5 refs (PMID33323322, PMID38719213, PMC4120804, PMID30009140, PMID32860489). SEO: 8.5/10. Plagiarism: original ✅. Hero: zinc-checklist-hero-1200x630.jpg ⚠️ upload needed. Sky-blue gradient. |
 | 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | ✅ HTML พร้อม | `blog-immunity.html` — ~3,004 words, 11 H2, 1 table (Dosage summary 6 nutrients), 6 vitamin cards (C/D/Zinc/Omega-3/Beta-Glucan/Vitamin A), 2 cause cards, synergy section (5 nutrient interactions), 5 immune-destroying behaviors, Oligoscan section, FM perspective (5 labs), IV Drip highlight box, 6 FAQ, doctor card, 6 refs (PMID29099763, PMID21527855, PMID27021581, PMID31614433, PMID17895634, PMID30200565). SEO: 8.5/10. Plagiarism: original ✅. Hero: immunity-hero-1200x630.jpg ⚠️ upload needed. Indigo/violet gradient. |
 | 9 | Growth factor คืออะไร | `post/growth-factor` | 281 | — | ✅ HTML พร้อม | `blog-growth-factor.html` — ~3,002 words, 11 H2, 1 table (Delivery methods: IV/IM/Topical/Oral), 4 stat cards, 8 GF-type cards (EGF/FGF/IGF-1/PDGF/VEGF/TGF-β/HGF/NGF), 7 benefit cards, GF decline timeline (5 age stages), Menopause/Andropause section, Skin Aging mechanism section, Safety/Contraindications section, Nutrition support section (5 factors), 6 FAQ, doctor card, 5 refs (PMID12843408, PMID11181640, PMID24722401, PMID21413228, PMID24966641). SEO: 8.5/10. Plagiarism: original ✅. Hero: growth-factor-hero-1200x630.jpg ⚠️ upload needed. Deep purple/magenta gradient. |
-| 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | 4 backlinks. Keep. Add meta desc. |
+| 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | ✅ HTML พร้อม | `blog-smiling-depression.html` — ~3,004 words, 12 H2, 2 tables (MDD vs Smiling Depression comparison, Treatment options), 4 stat cards, 9 sign cards, 4 risk profile cards, Neurobiology section (Serotonin/Dopamine/HPA/Gut-Brain), Nutritional Psychiatry section (5 nutrients), Functional Medicine Labs (5), Self-care (7 habits), When-to-seek-help (4 Red Flags), Bach Flower section (5 Remedies), 6 FAQ, doctor card, 5 refs (DSM-5, PMID17685742, PMID24733028, Beck CBT 1979, PMID35341804). SEO: 9/10 (YMYL). Plagiarism: original ✅. Hero: smiling-depression-hero-1200x630.jpg ⚠️ upload needed. Deep teal gradient. 4 backlinks preserved. |
 | 11 | Glutathione กลูตาไธโอน | `gluta` | 214 | 3 | 3 backlinks. Service-adjacent — high priority. |
 | 12 | 7 ประโยชน์ของ CoQ10 | `post/ประโยชน์ของ-coq10` | 177 | 1 | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
 | 13 | Ashwagandha คืออะไร | `post/ashwagandha` | 159 | — | Good traffic. Add meta desc. |
