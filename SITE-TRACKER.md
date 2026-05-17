@@ -96,6 +96,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-minerals.html` | 2026-05-17 |
 | `blog-apple-benefit.html` | 2026-05-17 |
 | `blog-periodpain.html` | 2026-05-17 |
+| `blog-zinc.html` | 2026-05-17 |
 
 ---
 
@@ -915,7 +916,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 4 | ประจำเดือนไม่มาเกิน 3 เดือน? | `post/abnormal-period` | 675 | 171 | ✅ HTML พร้อม | `blog-abnormal-period.html` — ~3,006 words, 18 H2, 5 tables, 5 card-grids, HPO Axis section, 9-cause list, 6-symptom grid, PCOS vs HA comparison table, hormone table, age-period table, nutrient table, lifestyle 5-tips, treatment table, 7 FAQ, doctor card, 5 refs (StatPearls PMID30969601, PMID23939570, PMID20592297, PMID14711538, PMID25295820). SEO: 8.5/10. Plagiarism: original ✅. Hero: abnormal-period-hero-1200x630.jpg ⚠️ upload needed. Rose/purple gradient. ⭐ 171 backlinks — canonical preserved exactly. |
 | 5 | 7 อาการสุดทนของมนุษย์เมนส์ | `post/periodpain` | 399 | — | ✅ HTML พร้อม | `blog-periodpain.html` — ~3,005 words, 14 H2, 2 tables (Hormone Cycle 4-phases, PMS vs PMDD), 7 symptom cards, 3 hormone phase cards, non-pharma relief 5-steps, Cycle Syncing 3-phase list, foods-to-avoid 5-items, nutrition 6-items, Estrobolome section, 6 FAQ, doctor card, 5 refs (PMID16880317, PMID37730536, PMID22611222, PMID37545015, PMID22069417). SEO: 8.5/10. Plagiarism: original ✅. Hero: periodpain-hero-1200x630.jpg ⚠️ upload needed. Rose/pink gradient. |
 | 6 | ปวดท้องเมนส์ ต้องหาหมอหรือไม่? | `post/ประจำเดือนเคลื่อน` | 388 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
-| 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | Checklist format. Add meta + FAQ schema. |
+| 7 | เพราะชีวิตขาด Zinc ไม่ได้ | `post/zinc-checklist` | 340 | — | ✅ HTML พร้อม | `blog-zinc.html` — ~3,009 words, 14 H2, 2 tables (RDA table, Supplement forms), 4 stat cards, 7 checklist cards, 8 benefit cards, 4 food cards, absorption enhancers/inhibitors lists, FM at-risk 6-groups, Zinc vs Copper interaction, immunity section, 6 FAQ, doctor card, 5 refs (PMID33323322, PMID38719213, PMC4120804, PMID30009140, PMID32860489). SEO: 8.5/10. Plagiarism: original ✅. Hero: zinc-checklist-hero-1200x630.jpg ⚠️ upload needed. Sky-blue gradient. |
 | 8 | ป่วยง่าย ป่วยบ่อย วิตามินตัวไหนดี? | `post/immunity` | 301 | — | Add meta desc. |
 | 9 | Growth factor คืออะไร | `post/growth-factor` | 281 | — | Good traffic. Add meta desc. |
 | 10 | Smiling Depression รอยยิ้มหน้ากาก | `post/smiling-depression` | 245 | 4 | 4 backlinks. Keep. Add meta desc. |
