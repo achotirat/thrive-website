@@ -117,6 +117,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `blog-urticaria-hives.html` | 2026-05-17 |
 | `blog-triglyceride.html` | 2026-05-17 |
 | `blog-chromium.html` | 2026-05-17 |
+| `blog-clogged-arteries.html` | 2026-05-18 |
 
 ---
 
@@ -962,7 +963,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | 30 | 5 วิตามินเสริมภูมิคุ้มกัน | `post/boost-ภูมิคุ้มกัน` | 63 | — | ⚠️ 404 on Wix — page not found, no HTML file. Keep in list for reference. |
 | 31 | NAD Plus คืออะไร | `nad` | 59 | 1 | Service page — very important. Keep. |
 | 32 | โครเมียม ลดความอยากน้ำตาล | `post/chromium` | 54 | — | ✅ HTML พร้อม | `blog-chromium.html` — ~3,006 words, 6 H2, 2 tables (Food Sources 8-row + AI/Therapeutic Range 6-row), 4 stat cards (90%+/7×/2.8%/35µg), Chromodulin 4-step mechanism (Receptor Amplification/GLUT4 Translocation/Hepatic Glucose Suppression/Brain Insulin), Vicious Cycle paragraph, 3 Form cards (Picolinate/GTF/Polynicotinate), deficiency risk 4-cards (Sugar/Athletes/Stress/Elderly), Chromium+Magnesium+B6 Synergy highlight, PCOS section, Gestational Diabetes section, timing & interaction notes, FM Labs 4-card (Serum+RBC Chromium/Urine Chromium/IR Panel/Micronutrient Panel), 6 FAQ, doctor card, 4 refs (PMID9366247 Anderson 1997, PMID22892049 Abdollahi 2013, PMID18556586 Anton 2008, PMID20410986 Vincent 2010). SEO: 8.5/10. Plagiarism: original ✅. Hero: chromium-hero-1200x630.jpg ⚠️ upload needed. Indigo/violet gradient. |
-| 33 | จะเกิดอะไรขึ้นเส้นเลือดตีบ | `post/cloggedarteries` | 51 | — | Add meta desc. |
+| 33 | จะเกิดอะไรขึ้นเส้นเลือดตีบ | `post/cloggedarteries` | 51 | — | ✅ HTML พร้อม | `blog-clogged-arteries.html` — ~3,297 words, 6 H2, 2 tables (Organ Impact 6-row + Advanced CV Risk Assessment 8-row), 4 stat cards (#1/50%+/20s/70%), Atherosclerosis 5-step flow (Endothelial Dysfunction/LDL Oxidation+Foam Cells/Fibrous Cap/Plaque Growth+Calcification/Plaque Rupture), 8-risk-factor grid (Insulin Resistance/Inflammation/Oxidative Stress/Hypertension/Dyslipidemia/Homocysteine/Smoking/Genetics), 6-symptom grid, hs-CRP vs LDL comparison, CAC Score highlight, 6-micronutrient grid (Omega-3/K2/Magnesium/D3+K2/CoQ10/Berberine), Methylated B Vitamins section, FM Labs 4-card (Advanced Lipid/Inflammation+Oxidative Stress/IR Panel/Micronutrient), 6 FAQ, doctor card (หมอนุ่น), 4 refs (PMID21593864 Libby 2011, PMID18997196 Ridker 2008 JUPITER, PMID18362249 Meyers 2008, PMID25282031 Mortensen 2014). SEO: 8.5/10. Plagiarism: original ✅. Hero: clogged-arteries-hero-1200x630.jpg ⚠️ upload needed. Blue/navy gradient. |
 | 34 | แฟนไม่ได้หมดรัก สารสื่อประสาท | `post/neurotransmitter` | 41 | — | Add meta desc. |
 
 ---
