@@ -35,6 +35,7 @@ create table if not exists public.leads (
   consent_version text,
 
   status text not null default 'new',
+  status_changed_at timestamptz default now(),
   assigned_to text,
   followup_at timestamptz,
   notes text,
@@ -50,7 +51,30 @@ create index if not exists leads_phone_idx on public.leads (phone);
 create index if not exists leads_campaign_idx on public.leads (utm_source, utm_medium, utm_campaign);
 create index if not exists leads_click_ids_idx on public.leads (gclid, fbclid, wbraid, gbraid);
 
+alter table public.leads
+add column if not exists status_changed_at timestamptz default now();
+
+create table if not exists public.lead_status_history (
+  history_id uuid primary key default gen_random_uuid(),
+  lead_id uuid not null references public.leads(lead_id) on delete cascade,
+  changed_at timestamptz not null default now(),
+  old_status text,
+  new_status text not null,
+  changed_by text,
+
+  constraint lead_status_history_new_status_check check (
+    new_status in ('new', 'qualified', 'contacted', 'booked', 'visited', 'paid', 'lost', 'spam')
+  ),
+  constraint lead_status_history_old_status_check check (
+    old_status is null or old_status in ('new', 'qualified', 'contacted', 'booked', 'visited', 'paid', 'lost', 'spam')
+  )
+);
+
+create index if not exists lead_status_history_lead_id_idx
+on public.lead_status_history (lead_id, changed_at desc);
+
 alter table public.leads enable row level security;
+alter table public.lead_status_history enable row level security;
 
 -- No anon policies are created intentionally.
 -- Inserts from the public website must go through Netlify Functions using
@@ -71,4 +95,3 @@ create trigger leads_set_updated_at
 before update on public.leads
 for each row
 execute function public.set_updated_at();
-
