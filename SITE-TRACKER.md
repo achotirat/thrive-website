@@ -15,7 +15,7 @@ Repository: https://github.com/achotirat/thrive-website
 | Phase 2 — Tier A Pages | 🔄 กำลังทำ | Priority 1 ✅ ครบ · Priority 2 เหลือ /contact |
 | Phase 3 — Ads Handover | ⏳ Deadline 1 Jun 2026 | |
 | Phase 4 — Lead Inbox | ⏳ ยังไม่เริ่ม | |
-| Phase 5 — Blog Migration | ⏳ ยังไม่เริ่ม | |
+| Phase 5 — Blog Migration | 🔄 กำลังทำ | Astro infra ✅ · Batch 1 (1-10) รอ Sanity entry · Batch 2 script พร้อม |
 
 ---
 
@@ -914,6 +914,59 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 | `/contact` | ข้ามไปก่อน | 🟡 Tier A Secondary |
 | Tier B pages | ดูหัวข้อ Tier B ด้านล่าง — Blog Migration 87 posts | 🟢 Tier B |
 | Tier C pages | ยังไม่ได้วางแผน | ⚪ Tier C |
+
+---
+
+## Phase 5 — Sanity Blog Migration Progress
+
+อัปเดต: 2026-05-23 | Branch: `feature/phase5-blog-batch2`
+
+### Infrastructure (เสร็จแล้ว ✅)
+
+| Component | สถานะ | หมายเหตุ |
+|-----------|-------|---------|
+| Sanity `blogPost` schema | ✅ | `sanity/schemaTypes/documents/blogPost.ts` |
+| Astro content loader | ✅ | `astro/src/lib/sanityBlogLoader.ts` |
+| `/blog` listing page | ✅ | Category filter + card grid |
+| `/blog/[slug]` detail page | ✅ | Portable Text body, FAQ, breadcrumbs |
+| `/post/[slug]` 301 redirect | ✅ | Covers all Wix backlink slugs |
+| BlogCard, CategoryFilter, BlogPostLayout | ✅ | Components + CSS |
+| CSP — cdn.sanity.io img-src | ✅ | `netlify.toml` |
+| Batch import script | ✅ | `scripts/import-blog-to-sanity.mjs` |
+
+### Batch 1 — Pilot Posts (Traffic rank 1–10) — รอ Content Team
+
+ต้องสร้างใน Sanity Studio ด้วยมือ หรือรัน `scripts/import-blog-to-sanity.mjs` หลังมี Write Token
+
+| # | Slug | Traffic | Category | Source HTML | Sanity Status |
+|---|------|--------:|----------|-------------|--------------|
+| 1 | chili | 1,771 | โภชนาการ | bucket1/blog-chili.html | ⏳ ยังไม่ได้สร้าง |
+| 2 | minerals | 1,077 | โภชนาการ | bucket1/blog-minerals.html | ⏳ ยังไม่ได้สร้าง |
+| 3 | apple-benefit | 1,046 | โภชนาการ | bucket1/blog-apple-benefit.html | ⏳ ยังไม่ได้สร้าง |
+| 4 | abnormal-period | 675 | สตรีสุขภาพ | bucket1/blog-abnormal-period.html | ⏳ ยังไม่ได้สร้าง |
+| 5 | periodpain | 399 | สตรีสุขภาพ | bucket1/blog-periodpain.html | ⏳ ยังไม่ได้สร้าง |
+| 6 | zinc-checklist | 340 | โภชนาการ | bucket1/blog-zinc.html | ⏳ ยังไม่ได้สร้าง |
+| 7 | immunity | 301 | ภูมิคุ้มกัน | bucket1/blog-immunity.html | ⏳ ยังไม่ได้สร้าง |
+| 8 | growth-factor | 281 | ฮอร์โมน | bucket2/blog-growth-factor.html | ⏳ ยังไม่ได้สร้าง |
+| 9 | smiling-depression | 245 | สุขภาพจิต | bucket1/blog-smiling-depression.html | ⏳ ยังไม่ได้สร้าง |
+| 10 | glutathione | 214 | ผิวหนัง | bucket1/blog-glutathione.html | ⏳ ยังไม่ได้สร้าง |
+
+### Batch 2 — Traffic rank 11–22
+
+Script: `SANITY_WRITE_TOKEN=<token> node scripts/import-blog-to-sanity.mjs`
+
+| # | Slug | Traffic | Category | Source HTML | Sanity Status |
+|---|------|--------:|----------|-------------|--------------|
+| 11 | ashwagandha | 159 | สุขภาพจิต | bucket2/blog-ashwagandha.html | ⏳ ยังไม่ได้สร้าง |
+| 12 | intestine | 144 | ระบบย่อยอาหาร | bucket1/blog-intestine.html | ⏳ ยังไม่ได้สร้าง |
+| 13 | tryptophan | 142 | สุขภาพจิต | bucket1/blog-tryptophan.html | ⏳ ยังไม่ได้สร้าง |
+| 14 | gaba | 126 | สุขภาพจิต | bucket1/blog-gaba.html | ⏳ ยังไม่ได้สร้าง |
+| 15 | mental-health | 124 | สุขภาพจิต | bucket1/blog-mental-health.html | ⏳ ยังไม่ได้สร้าง |
+| 16 | silica | 122 | ผิวหนัง | bucket1/blog-silica.html | ⏳ ยังไม่ได้สร้าง |
+| 17 | bromelain | 118 | ระบบย่อยอาหาร | bucket1/blog-bromelain.html | ⏳ ยังไม่ได้สร้าง |
+| 18 | omega3 | 111 | สุขภาพจิต | bucket1/blog-omega3.html | ⏳ ยังไม่ได้สร้าง |
+| 19 | neurotransmitters | 105 | สุขภาพจิต | bucket1/blog-neurotransmitters.html | ⏳ ยังไม่ได้สร้าง |
+| 20 | period-acne | 101 | สตรีสุขภาพ | bucket1/blog-period-acne.html | ⏳ ยังไม่ได้สร้าง |
 
 ---
 
