@@ -14,7 +14,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const d = post.data
 
-const bodyHtml = d.legacyHtml || portableTextToHtml(d.body ?? [])
+const hasLegacyHtml = Boolean(d.legacyHtml)
+const bodyHtml = hasLegacyHtml ? d.legacyHtml : portableTextToHtml(d.body ?? [])
 
 const faqItems = (d.faq ?? []).map((item: any) => ({
   question: item.question,
@@ -47,7 +48,7 @@ const faqItems = (d.faq ?? []).map((item: any) => ({
 
   <div class="blog-post__body" set:html={bodyHtml} />
 
-  {faqItems.length > 0 && (
+  {!hasLegacyHtml && faqItems.length > 0 && (
     <section class="section faq-section">
       <div class="section-title-center">
         <span class="section-label">FAQ</span>
