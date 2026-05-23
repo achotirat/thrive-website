@@ -1,6 +1,6 @@
 # Thrive Digital Platform Plan — 8 May 2026
 
-Last updated: 2026-05-15
+Last updated: 2026-05-23
 
 Supersedes: `PLAN.md`, `Plan_revised21Apr2026v2.md`  
 Incorporates: `GA4_MIGRATION_TIERS.md`, `PHASE0_STATUS.md`, `PHASE1_STATUS.md`, `PHASE2_STATUS.md`, `SITE-TRACKER.md`  
@@ -260,12 +260,12 @@ Every meaningful Wix URL must either:
 
 ### Must-Have Before Agency Handover
 
-- GA4 property confirmed.
-- GTM container installed on Wix and Astro staging.
-- Google Ads conversion actions configured.
-- UTM and click ID persistence across landing pages and forms.
-- Lead records store attribution data.
-- Basic funnel report works.
+- [ ] GA4 property confirmed.
+- [ ] GTM container installed on Wix and Astro staging. (blocked — need GTM container ID from Satemshi)
+- [x] Google Ads conversion actions configured. (Submit lead form as Primary; Contact, Get directions as Secondary — 2026-05-23)
+- [ ] UTM and click ID persistence across landing pages and forms.
+- [ ] Lead records store attribution data.
+- [ ] Basic funnel report works.
 
 Lead attribution fields:
 
@@ -492,10 +492,15 @@ Exit status: locally complete. All 20 pages built, all hero images in place, for
 
 ### Phase 3 — Ads Handover, By 1 Jun 2026
 
-- [ ] Get admin ownership of Google Ads.
-- [ ] Export campaigns, keywords, creatives, and settings.
+- [x] Get admin ownership of Google Ads. (account live under achotirat@gmail.com as of 2026-05-23)
+- [x] Google Ads conversion actions configured. (Submit lead form, Contact, Get directions — set up 2026-05-23)
+- [x] Campaign structure and ad copy written for all 3 campaigns — see `docs/phase3-google-ads-setup.md`
+- [ ] Export agency campaigns, keywords, creatives, and settings → save to `docs/agency-campaign-reference.md`
 - [ ] Link Google Ads and GA4 under Thrive-owned access.
-- [ ] Verify conversion tracking while agency is still available.
+- [ ] GTM container ID from Satemshi → install snippet in `astro/src/layouts/BaseLayout.astro`
+- [ ] Verify end-to-end conversion: test GCLID → Supabase → Google Ads conversion fires
+- [ ] Create and pause 3 campaigns in Google Ads UI (food intolerance, adrenal/hormone, IV drip/HBOT)
+- [ ] Set campaigns to Active after conversion verification passes
 - [ ] Set up read-only Google Ads API access if feasible.
 - [ ] Start weekly ads review ritual.
 
@@ -620,7 +625,15 @@ Defer until after cutover:
 7. Confirm GTM container ID/access and install GTM snippet in Astro production branch.
 8. Create redirect strategy file and complete Wix URL inventory for Tier C pages.
 9. Add redirect from legacy `/nad-plus` to canonical `/nad`.
-10. Request Google Ads admin access from agency and verify conversion tracking before 1 Jun 2026.
+10. ~~Request Google Ads admin access from agency~~ ✓ Done — account under achotirat@gmail.com, conversion actions set up 2026-05-23.
+
+**Phase 3 — Google Ads (in progress as of 2026-05-23):**
+11. Link Google Ads to GA4 (Tools → Linked accounts → Google Analytics 4).
+12. Get GTM container ID → install snippet in `astro/src/layouts/BaseLayout.astro`.
+13. Create all 3 campaigns in Google Ads UI (structure in `docs/phase3-google-ads-setup.md`) — keep paused.
+14. Run end-to-end conversion test: GCLID test URL → submit lead → verify in Supabase + Google Ads.
+15. Set campaigns to Active once test passes — deadline 1 Jun 2026.
+16. Export agency campaign data before 11 Jun 2026 → `docs/agency-campaign-reference.md`.
 
 ---
 
