@@ -2610,6 +2610,14 @@ h1.th, h2.th, h3.th {
   margin-bottom: 1.25rem;
 }
 
+.blog-post__body ul {
+  list-style: disc;
+}
+
+.blog-post__body ol {
+  list-style: decimal;
+}
+
 .blog-post__body li {
   margin-bottom: 0.4rem;
 }
