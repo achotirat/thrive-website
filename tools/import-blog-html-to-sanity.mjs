@@ -37,12 +37,17 @@ const FILENAME_SLUG_OVERRIDES = new Map([
   ['blog-growth-factor.html', 'growth-factor'],
   ['blog-smiling-depression.html', 'smiling-depression'],
   ['blog-glutathione.html', 'glutathione'],
+  ['blog-ashwagandha.html', 'ashwagandha'],
+]);
+
+const IMAGE_BASENAME_OVERRIDES = new Map([
+  ['ashwagandha-reduce-stress-depression-thrivewellness.jpg', 'ashwagandha-hero-1200x630.jpg'],
 ]);
 
 const CATEGORY_RULES = [
   [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone/i, 'ฮอร์โมน'],
   [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan/i, 'โภชนาการ'],
-  [/depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
+  [/ashwagandha|depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
   [/immunity|immune|allergy|nk|glutathione|urticaria/i, 'ภูมิคุ้มกัน'],
   [/acne|skin|silica|preservatives/i, 'ผิวหนัง'],
   [/gut|intestine|probiotic|digest/i, 'ระบบย่อยอาหาร'],
@@ -255,7 +260,8 @@ function publishedAtFrom(html) {
 function imageCandidate(html) {
   const remote = metaContent(html, 'og:image') || metaContent(html, 'twitter:image');
   if (!remote || remote.includes('[[')) return { remote: '', basename: '' };
-  const basename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
+  const rawBasename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
+  const basename = IMAGE_BASENAME_OVERRIDES.get(rawBasename) || rawBasename;
   return { remote, basename };
 }
 
@@ -601,7 +607,7 @@ async function uploadImage(client, result) {
 
 async function writeDocument(client, result, args) {
   const doc = structuredClone(result.doc);
-  doc._id = `${args.target === 'published' ? '' : 'drafts.'}blogPost.${result.slug}`;
+  doc._id = `${args.target === 'published' ? '' : 'drafts.'}blogPost.${documentIdSlug(result.slug)}`;
 
   if (args.uploadImages) {
     const asset = await uploadImage(client, result);
@@ -628,6 +634,24 @@ async function writeDocument(client, result, args) {
 
   await client.createOrReplace(doc);
   return doc._id;
+}
+
+function documentIdSlug(slug) {
+  const safe = slug
+    .normalize('NFKD')
+    .replace(/[^A-Za-z0-9._-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 96);
+  if (safe) return safe;
+  return `post-${hashString(slug)}`;
+}
+
+function hashString(value) {
+  let hash = 5381;
+  for (const char of value) {
+    hash = ((hash << 5) + hash) ^ char.codePointAt(0);
+  }
+  return (hash >>> 0).toString(36);
 }
 
 function report(results, writes, args) {
