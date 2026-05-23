@@ -1,9 +1,9 @@
 # Blog Import Report
 
-Generated: 2026-05-23T06:48:55.882Z
-Mode: write drafts
+Generated: 2026-05-23T12:51:33.910Z
+Mode: write published
 Files parsed: 10
-Drafts written: 10
+Documents written: 10
 
 ## Summary
 
@@ -20,15 +20,15 @@ Drafts written: 10
 | `new html from vkasama/blog-tierB-bucket1/blog-smiling-depression.html` | `smiling-depression` | สุขภาพจิต | 77 | 6 | smiling-depression-hero-1200x630.jpg | - |
 | `new html from vkasama/blog-tierB-bucket1/blog-glutathione.html` | `glutathione` | ภูมิคุ้มกัน | 125 | 6 | gluta-hero-1200x630.jpg | - |
 
-## Draft Writes
+## Document Writes
 
-- `drafts.blogPost.chili`
-- `drafts.blogPost.minerals`
-- `drafts.blogPost.apple-benefit`
-- `drafts.blogPost.abnormal-period`
-- `drafts.blogPost.periodpain`
-- `drafts.blogPost.zinc-checklist`
-- `drafts.blogPost.immunity`
-- `drafts.blogPost.growth-factor`
-- `drafts.blogPost.smiling-depression`
-- `drafts.blogPost.glutathione`
+- `blogPost.chili`
+- `blogPost.minerals`
+- `blogPost.apple-benefit`
+- `blogPost.abnormal-period`
+- `blogPost.periodpain`
+- `blogPost.zinc-checklist`
+- `blogPost.immunity`
+- `blogPost.growth-factor`
+- `blogPost.smiling-depression`
+- `blogPost.glutathione`

@@ -102,6 +102,13 @@ export const blogPost = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'legacyHtml',
+      title: 'Legacy HTML body',
+      type: 'text',
+      rows: 18,
+      description: 'Sanitized HTML imported from the source article. Used to preserve migrated article formatting.',
+    }),
+    defineField({
       name: 'faq',
       title: 'FAQ',
       type: 'array',

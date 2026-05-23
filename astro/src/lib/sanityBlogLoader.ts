@@ -15,6 +15,7 @@ const GROQ = `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publ
   "authorTitle": author->title,
   keyTakeaways,
   body,
+  legacyHtml,
   faq[] {
     question,
     shortAnswer

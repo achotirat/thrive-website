@@ -72,6 +72,8 @@ function parseArgs(argv) {
     limit: null,
     source: null,
     replace: true,
+    target: 'draft',
+    uploadImages: true,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -81,6 +83,8 @@ function parseArgs(argv) {
     else if (arg === '--no-replace') args.replace = false;
     else if (arg === '--limit') args.limit = Number.parseInt(argv[++index], 10);
     else if (arg === '--source') args.source = argv[++index];
+    else if (arg === '--target') args.target = argv[++index];
+    else if (arg === '--no-upload-images') args.uploadImages = false;
     else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -88,6 +92,9 @@ function parseArgs(argv) {
 
   if (args.limit !== null && (!Number.isFinite(args.limit) || args.limit <= 0)) {
     throw new Error('--limit must be a positive number');
+  }
+  if (!['draft', 'published'].includes(args.target)) {
+    throw new Error('--target must be either draft or published');
   }
 
   return args;
@@ -312,6 +319,116 @@ function mainHtml(html) {
     || withoutNoise;
 }
 
+function sanitizeLegacyHtml(html) {
+  const allowedTags = new Set([
+    'a',
+    'b',
+    'blockquote',
+    'br',
+    'caption',
+    'cite',
+    'code',
+    'div',
+    'em',
+    'figcaption',
+    'figure',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'hr',
+    'i',
+    'img',
+    'li',
+    'ol',
+    'p',
+    'span',
+    'strong',
+    'sub',
+    'sup',
+    'table',
+    'tbody',
+    'td',
+    'tfoot',
+    'th',
+    'thead',
+    'tr',
+    'u',
+    'ul',
+  ]);
+  const allowedAttrs = new Map([
+    ['a', new Set(['href', 'title', 'target', 'rel'])],
+    ['img', new Set(['src', 'alt', 'title', 'width', 'height', 'loading'])],
+    ['td', new Set(['colspan', 'rowspan'])],
+    ['th', new Set(['colspan', 'rowspan', 'scope'])],
+    ['table', new Set(['summary'])],
+  ]);
+
+  function isSafeUrl(value) {
+    const trimmed = decodeHtml(value || '').trim().toLowerCase();
+    return (
+      trimmed.startsWith('/') ||
+      trimmed.startsWith('#') ||
+      trimmed.startsWith('https://') ||
+      trimmed.startsWith('http://') ||
+      trimmed.startsWith('mailto:') ||
+      trimmed.startsWith('tel:')
+    );
+  }
+
+  function sanitizeAttrs(tagName, rawAttrs = '') {
+    const allowed = allowedAttrs.get(tagName);
+    if (!allowed) return '';
+    const attrs = [];
+    const attrPattern = /([:\w-]+)(?:\s*=\s*("([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
+    for (const match of rawAttrs.matchAll(attrPattern)) {
+      const name = match[1].toLowerCase();
+      if (!allowed.has(name)) continue;
+      const rawValue = match[3] ?? match[4] ?? match[5] ?? '';
+      if ((name === 'href' || name === 'src') && !isSafeUrl(rawValue)) continue;
+      if (name === 'target' && rawValue !== '_blank') continue;
+      const value = decodeHtml(rawValue)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      attrs.push(`${name}="${value}"`);
+    }
+    if (tagName === 'a') {
+      const hasTargetBlank = attrs.includes('target="_blank"');
+      const hasRel = attrs.some((attr) => attr.startsWith('rel='));
+      if (hasTargetBlank && !hasRel) attrs.push('rel="noopener noreferrer"');
+    }
+    if (tagName === 'img') {
+      const hasLoading = attrs.some((attr) => attr.startsWith('loading='));
+      if (!hasLoading) attrs.push('loading="lazy"');
+    }
+    return attrs.length > 0 ? ` ${attrs.join(' ')}` : '';
+  }
+
+  const source = mainHtml(html)
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[^>]*\/?>/gi, ' ');
+
+  const sanitized = source.replace(/<\/?([a-z][a-z0-9-]*)\b([^>]*)>/gi, (full, rawTag, attrs) => {
+    const tagName = rawTag.toLowerCase();
+    if (!allowedTags.has(tagName)) return '';
+    if (full.startsWith('</')) return `</${tagName}>`;
+    const selfClosing = /\/\s*>$/.test(full) || tagName === 'br' || tagName === 'hr' || tagName === 'img';
+    return `<${tagName}${sanitizeAttrs(tagName, attrs)}${selfClosing ? '>' : '>'}`;
+  });
+
+  return sanitized
+    .replace(/\sdata-[\w-]+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\saria-[\w-]+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\son\w+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\s(?:class|id|style)=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/<p>\s*<\/p>/gi, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function bodyBlocks(html) {
   const source = mainHtml(html);
   const tokens = [...source.matchAll(/<(h2|h3|p|li|blockquote|img)\b([^>]*)>([\s\S]*?)<\/\1>|<img\b([^>]*)>/gi)];
@@ -395,6 +512,7 @@ function parseFile(filePath) {
   const image = imageCandidate(html);
   const localImage = findLocalImage(image.basename);
   const body = bodyBlocks(html);
+  const legacyHtml = sanitizeLegacyHtml(html);
   const faq = faqItems(html);
 
   const warnings = [];
@@ -415,6 +533,7 @@ function parseFile(filePath) {
     publishedAt: publishedAtFrom(html),
     mainImage: localImage ? { _type: 'image', alt: title } : undefined,
     body,
+    legacyHtml,
     faq,
     seo: {
       _type: 'seoMeta',
@@ -465,21 +584,33 @@ async function uploadImage(client, result) {
   return asset;
 }
 
-async function writeDraft(client, result) {
+async function writeDocument(client, result, args) {
   const doc = structuredClone(result.doc);
-  const asset = await uploadImage(client, result);
-  if (asset) {
-    doc.mainImage = {
-      _type: 'image',
-      alt: result.title,
-      asset: {
-        _type: 'reference',
-        _ref: asset._id,
-      },
-    };
+  doc._id = `${args.target === 'published' ? '' : 'drafts.'}blogPost.${result.slug}`;
+
+  if (args.uploadImages) {
+    const asset = await uploadImage(client, result);
+    if (asset) {
+      doc.mainImage = {
+        _type: 'image',
+        alt: result.title,
+        asset: {
+          _type: 'reference',
+          _ref: asset._id,
+        },
+      };
+    } else {
+      delete doc.mainImage;
+    }
   } else {
-    delete doc.mainImage;
+    const existing = await client.fetch('*[_id == $id][0]{mainImage}', { id: doc._id });
+    if (existing?.mainImage) {
+      doc.mainImage = existing.mainImage;
+    } else {
+      delete doc.mainImage;
+    }
   }
+
   await client.createOrReplace(doc);
   return doc._id;
 }
@@ -489,9 +620,9 @@ function report(results, writes, args) {
     '# Blog Import Report',
     '',
     `Generated: ${new Date().toISOString()}`,
-    `Mode: ${args.dryRun ? 'dry-run' : 'write drafts'}`,
+    `Mode: ${args.dryRun ? 'dry-run' : `write ${args.target}`}`,
     `Files parsed: ${results.length}`,
-    `Drafts written: ${writes.length}`,
+    `Documents written: ${writes.length}`,
     '',
     '## Summary',
     '',
@@ -504,7 +635,7 @@ function report(results, writes, args) {
   }
 
   if (writes.length > 0) {
-    lines.push('', '## Draft Writes', '');
+    lines.push('', '## Document Writes', '');
     for (const write of writes) {
       lines.push(`- \`${write}\``);
     }
@@ -525,13 +656,13 @@ async function main() {
   if (!args.dryRun) {
     const client = await createSanityClient();
     for (const result of results) {
-      writes.push(await writeDraft(client, result));
+      writes.push(await writeDocument(client, result, args));
     }
   }
 
   report(results, writes, args);
   console.log(`Parsed ${results.length} file(s).`);
-  console.log(args.dryRun ? 'Dry-run only; no Sanity writes.' : `Wrote ${writes.length} Sanity draft(s).`);
+  console.log(args.dryRun ? 'Dry-run only; no Sanity writes.' : `Wrote ${writes.length} Sanity ${args.target} document(s).`);
   console.log(`Report: ${path.relative(ROOT, REPORT_PATH)}`);
 }
 
