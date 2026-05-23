@@ -12,8 +12,8 @@
 
 ## Current Checkpoint
 
-- 20 posts are published in Sanity.
-- Continue from `SITE-TRACKER.md` row #23: `blog-probiotic-foods.html`.
+- 30 posts are published in Sanity.
+- Continue from `SITE-TRACKER.md` row #36: `blog-growth-hormone-decline.html`.
 - Skip rows that are explicitly 404/no HTML, deleted, or merged into another canonical post.
 - Keep each batch small enough to review: 10 posts per batch is the default.
 
@@ -243,4 +243,3 @@ Use the actual next row after skipped and merged entries.
 - [ ] Add 301 redirects for deleted, merged, or old Wix URLs.
 - [ ] Stop importing when all HTML-ready Bucket 1 and Bucket 2 posts are either published or intentionally redirected.
 - [ ] Mark Phase 5 blog migration complete only after a crawl confirms every meaningful Wix URL has a live page or redirect.
-

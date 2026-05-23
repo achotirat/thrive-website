@@ -38,17 +38,25 @@ const FILENAME_SLUG_OVERRIDES = new Map([
   ['blog-smiling-depression.html', 'smiling-depression'],
   ['blog-glutathione.html', 'glutathione'],
   ['blog-ashwagandha.html', 'ashwagandha'],
+  ['blog-urticaria-hives.html', 'ผื่นลมพิษ'],
+  ['blog-immune-system.html', 'immunesystem'],
 ]);
 
 const IMAGE_BASENAME_OVERRIDES = new Map([
   ['ashwagandha-reduce-stress-depression-thrivewellness.jpg', 'ashwagandha-hero-1200x630.jpg'],
 ]);
 
+const FILENAME_IMAGE_OVERRIDES = new Map([
+  ['blog-vitamin-a.html', 'vitamin-a-hero-1200x630.jpg'],
+  ['blog-urticaria-hives.html', 'urticaria-hives-hero-1200x630.jpg'],
+  ['blog-triglyceride.html', 'triglyceride-hero-1200x630.jpg'],
+]);
+
 const CATEGORY_RULES = [
   [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone/i, 'ฮอร์โมน'],
   [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan/i, 'โภชนาการ'],
   [/ashwagandha|depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
-  [/immunity|immune|allergy|nk|glutathione|urticaria/i, 'ภูมิคุ้มกัน'],
+  [/immunity|immune|allergy|nk|glutathione|urticaria|ผื่นลมพิษ/i, 'ภูมิคุ้มกัน'],
   [/acne|skin|silica|preservatives|สิว/i, 'ผิวหนัง'],
   [/gut|intestine|probiotic|digest/i, 'ระบบย่อยอาหาร'],
   [/blood|triglyceride|coq10|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
@@ -257,7 +265,10 @@ function publishedAtFrom(html) {
   return valid ? new Date(valid).toISOString() : '2026-05-23T00:00:00.000Z';
 }
 
-function imageCandidate(html) {
+function imageCandidate(filePath, html) {
+  const filenameOverride = FILENAME_IMAGE_OVERRIDES.get(path.basename(filePath));
+  if (filenameOverride) return { remote: '', basename: filenameOverride };
+
   const remote = metaContent(html, 'og:image') || metaContent(html, 'twitter:image');
   if (!remote || remote.includes('[[')) return { remote: '', basename: '' };
   const rawBasename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
@@ -530,7 +541,7 @@ function parseFile(filePath) {
   const slug = slugFrom(filePath, html);
   const description = metaContent(html, 'description') || metaContent(html, 'og:description') || '';
   const { category, inferred } = categoryFor(slug, title);
-  const image = imageCandidate(html);
+  const image = imageCandidate(filePath, html);
   const localImage = findLocalImage(image.basename);
   const body = bodyBlocks(html);
   const legacyHtml = sanitizeLegacyHtml(html);

@@ -1,32 +1,45 @@
 # Blog Import Report
 
-Generated: 2026-05-23T15:20:32.642Z
+Generated: 2026-05-23T16:32:23Z
 Mode: write published
-Files parsed: 9
-Documents written: 9
+Files parsed: 10
+Documents written: 10
 
 ## Summary
 
 | File | Slug | Category | Body blocks | FAQ | Image | Warnings |
 | --- | --- | --- | ---: | ---: | --- | --- |
-| `new html from vkasama/blog-tierB-bucket1/blog-intestine.html` | `ลำไส้อักเสบ` | ระบบย่อยอาหาร | 106 | 6 | intestine-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-tryptophan.html` | `tryptophan` | โภชนาการ | 69 | 6 | tryptophan-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-gaba.html` | `_gaba` | สุขภาพจิต | 60 | 6 | gaba-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-mental-health.html` | `mental-health` | สุขภาพจิต | 94 | 6 | mental-health-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-silica.html` | `silica` | ผิวหนัง | 59 | 6 | silica-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-bromelain.html` | `bromelain` | โภชนาการ | 59 | 6 | bromelain-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-omega3.html` | `omega-3` | โภชนาการ | 46 | 6 | omega3-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-neurotransmitters.html` | `neurotransmitters` | สุขภาพจิต | 43 | 6 | neurotransmitters-hero-1200x630.jpg | - |
-| `new html from vkasama/blog-tierB-bucket1/blog-period-acne.html` | `ปัญหาสิวประจำเดือน` | ผิวหนัง | 108 | 6 | period-acne-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket1/blog-probiotic-foods.html` | `อาหารที่มี-probiotic` | โภชนาการ | 82 | 6 | probiotic-foods-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket2/blog-vitamin-a.html` | `vitamin-a` | โภชนาการ | 18 | 0 | vitamin-a-hero-1200x630.jpg | no FAQ detected; source HTML has no FAQ/FAQPage section |
+| `new html from vkasama/blog-tierB-bucket1/blog-l-carnitine.html` | `l-carnitine` | โภชนาการ | 59 | 6 | l-carnitine-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket1/blog-menstrual-pain.html` | `menstrual-pain` | สตรีสุขภาพ | 40 | 6 | menstrual-pain-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket2/blog-urticaria-hives.html` | `ผื่นลมพิษ` | ภูมิคุ้มกัน | 35 | 0 | urticaria-hives-hero-1200x630.jpg | no FAQ detected; source HTML has no FAQ/FAQPage section |
+| `new html from vkasama/blog-tierB-bucket2/blog-triglyceride.html` | `triglyceride` | หัวใจและหลอดเลือด | 32 | 0 | triglyceride-hero-1200x630.jpg | no FAQ detected; source HTML has no FAQ/FAQPage section |
+| `new html from vkasama/blog-tierB-bucket1/blog-chromium.html` | `chromium` | โภชนาการ | 35 | 6 | chromium-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket1/blog-clogged-arteries.html` | `cloggedarteries` | หัวใจและหลอดเลือด | 36 | 6 | clogged-arteries-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket1/blog-love-neurotransmitter.html` | `neurotransmitter` | สุขภาพจิต | 37 | 6 | love-neurotransmitter-hero-1200x630.jpg | - |
+| `new html from vkasama/blog-tierB-bucket2/blog-immune-system.html` | `immunesystem` | ภูมิคุ้มกัน | 44 | 6 | immune-system-hero-1200x630.jpg | - |
 
 ## Document Writes
 
-- `blogPost.post-glas49`
-- `blogPost.tryptophan`
-- `blogPost._gaba`
-- `blogPost.mental-health`
-- `blogPost.silica`
-- `blogPost.bromelain`
-- `blogPost.omega-3`
-- `blogPost.neurotransmitters`
-- `blogPost.post-wuyl3a`
+- `blogPost.probiotic`
+- `blogPost.vitamin-a`
+- `blogPost.l-carnitine`
+- `blogPost.menstrual-pain`
+- `blogPost.post-1vlup14`
+- `blogPost.triglyceride`
+- `blogPost.chromium`
+- `blogPost.cloggedarteries`
+- `blogPost.neurotransmitter`
+- `blogPost.immunesystem`
+
+## Verification
+
+- Sanity published `blogPost` count: 30
+- `npm run check`: 0 errors, 0 warnings, 0 hints
+- `npm run build` with Sanity env: loaded 30 blog posts, built 83 pages
+- Spot-checks:
+  - `/blog/อาหารที่มี-probiotic/`: 200, hero image present, FAQ rendered, tables/lists present
+  - `/blog/ผื่นลมพิษ/`: 200, canonical Thai slug preserved, hero image present
+  - `/blog/triglyceride/`: 200, hero image present
+  - `/post/ผื่นลมพิษ/`: generated redirect page to `/blog/ผื่นลมพิษ`
