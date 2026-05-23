@@ -30,7 +30,7 @@ const components = {
     imageWithAlt: ({ value }: any) => {
       if (!value?.asset) return ''
       const src = urlFor(value).width(900).auto('format').url()
-      const alt = value?.alt ?? ''
+      const alt = value?.alt ?? 'Blog image'
       return `<figure class="blog-figure"><img src="${src}" alt="${alt}" loading="lazy" width="900" /></figure>`
     },
   },
@@ -38,5 +38,10 @@ const components = {
 
 export function portableTextToHtml(blocks: any[]): string {
   if (!blocks || blocks.length === 0) return ''
-  return toHTML(blocks, { components } as any)
+  try {
+    return toHTML(blocks, { components } as any)
+  } catch (e) {
+    console.error('Portable Text render error:', e)
+    return ''
+  }
 }
