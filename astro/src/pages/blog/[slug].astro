@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content'
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
+import { portableTextToHtml } from '../../lib/portableTextToHtml'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogPosts')
+  return posts.map((post) => ({
+    params: { slug: post.data.slug.current },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const d = post.data
+
+const bodyHtml = portableTextToHtml(d.body ?? [])
+
+const faqItems = (d.faq ?? []).map((item: any) => ({
+  question: item.question,
+  answer: item.shortAnswer ?? '',
+}))
+---
+
+<BlogPostLayout
+  title={d.title}
+  publishedAt={d.publishedAt}
+  updatedAt={d.updatedAt}
+  authorName={d.authorName}
+  authorTitle={d.authorTitle}
+  category={d.category}
+  mainImage={d.mainImage}
+  seoTitle={d.seo?.seoTitle}
+  seoDescription={d.seo?.seoDescription}
+  noIndex={d.seo?.noIndex ?? false}
+  canonicalUrl={d.seo?.canonicalUrl}
+  slug={d.slug.current}
+>
+  {d.keyTakeaways && d.keyTakeaways.length > 0 && (
+    <div class="blog-post__takeaways">
+      <h2>สิ่งที่คุณจะได้เรียนรู้</h2>
+      <ul>
+        {d.keyTakeaways.map((point: string) => <li>{point}</li>)}
+      </ul>
+    </div>
+  )}
+
+  <div class="blog-post__body" set:html={bodyHtml} />
+
+  {faqItems.length > 0 && (
+    <section class="section faq-section">
+      <div class="section-title-center">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">คำถามที่พบบ่อย</h2>
+      </div>
+      <div class="faq-list">
+        {faqItems.map((item: any) => (
+          <details class="faq-item">
+            <summary><h3>{item.question}</h3></summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+</BlogPostLayout>

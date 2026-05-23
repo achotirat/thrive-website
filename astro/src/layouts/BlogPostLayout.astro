@@ -1,0 +1,125 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import SEO from '../components/SEO.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTASection from '../components/CTASection.astro'
+import { urlFor } from '../lib/sanity'
+
+export interface Props {
+  title: string
+  publishedAt: string
+  updatedAt?: string
+  authorName?: string
+  authorTitle?: string
+  category?: string
+  mainImage?: any
+  seoTitle?: string
+  seoDescription?: string
+  noIndex?: boolean
+  canonicalUrl?: string
+  slug: string
+}
+
+const {
+  title,
+  publishedAt,
+  updatedAt,
+  authorName,
+  authorTitle,
+  category,
+  mainImage,
+  seoTitle,
+  seoDescription,
+  noIndex = false,
+  canonicalUrl,
+  slug,
+} = Astro.props
+
+const heroSrc = mainImage?.asset
+  ? urlFor(mainImage).width(1200).height(630).auto('format').url()
+  : '/og-image.jpg'
+
+const heroAlt = mainImage?.alt ?? title
+
+const publishDate = new Date(publishedAt).toLocaleDateString('th-TH', {
+  year: 'numeric', month: 'long', day: 'numeric',
+})
+
+const updateDate = updatedAt
+  ? new Date(updatedAt).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บทความ', href: '/blog' },
+  { label: title, href: `/blog/${slug}` },
+]
+
+const seo = {
+  seoTitle: seoTitle ?? title,
+  description: seoDescription ?? '',
+  ogImage: heroSrc,
+  ogLocale: 'th_TH',
+  canonicalPath: canonicalUrl ?? `/blog/${slug}`,
+  noIndex,
+  hreflang: [],
+  geo: {
+    region: 'TH-10',
+    placename: 'Bangkok',
+    position: '13.7563;100.5018',
+    icbm: '13.7563, 100.5018',
+  },
+  publishedAt: new Date(publishedAt),
+  updatedAt: updatedAt ? new Date(updatedAt) : new Date(publishedAt),
+  lastMedicalReview: new Date(publishedAt),
+  reviewedBy: authorName ?? 'Dr. Noon Pichayaporn',
+  medicalSpecialty: 'Functional Medicine',
+}
+
+const cta = {
+  headline: 'ปรึกษาแพทย์ผู้เชี่ยวชาญของเรา',
+  subline: 'นัดหมายวันนี้ รับคำแนะนำเฉพาะบุคคลจากทีมแพทย์ Thrive',
+  primaryBtn: { label: 'นัดปรึกษาฟรี', href: '/contact' },
+  secondaryBtn: { label: 'ดูบริการทั้งหมด', href: '/' },
+}
+---
+
+<BaseLayout>
+  <SEO slot="head" {...seo} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+
+  <main class="blog-post-page">
+    <article class="blog-post">
+      <header class="blog-post__header">
+        <div class="section-container">
+          {category && <span class="blog-post__category">{category}</span>}
+          <h1 class="blog-post__title">{title}</h1>
+          <div class="blog-post__meta">
+            {authorName && (
+              <span class="blog-post__author">
+                โดย {authorName}{authorTitle ? `, ${authorTitle}` : ''}
+              </span>
+            )}
+            <time datetime={publishedAt}>เผยแพร่ {publishDate}</time>
+            {updateDate && <time datetime={updatedAt}>อัปเดต {updateDate}</time>}
+          </div>
+        </div>
+      </header>
+
+      <div class="blog-post__hero">
+        <img src={heroSrc} alt={heroAlt} width="1200" height="630" loading="eager" />
+      </div>
+
+      <div class="section-container blog-post__content">
+        <slot />
+      </div>
+    </article>
+
+    <CTASection {...cta} />
+  </main>
+
+  <Footer />
+</BaseLayout>

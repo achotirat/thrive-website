@@ -22,6 +22,25 @@ export const blogPost = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'ฮอร์โมน', value: 'ฮอร์โมน'},
+          {title: 'โภชนาการ', value: 'โภชนาการ'},
+          {title: 'สุขภาพจิต', value: 'สุขภาพจิต'},
+          {title: 'ภูมิคุ้มกัน', value: 'ภูมิคุ้มกัน'},
+          {title: 'ผิวหนัง', value: 'ผิวหนัง'},
+          {title: 'ระบบย่อยอาหาร', value: 'ระบบย่อยอาหาร'},
+          {title: 'หัวใจและหลอดเลือด', value: 'หัวใจและหลอดเลือด'},
+          {title: 'สตรีสุขภาพ', value: 'สตรีสุขภาพ'},
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',

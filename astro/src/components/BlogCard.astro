@@ -1,0 +1,41 @@
+---
+import { urlFor } from '../lib/sanity'
+
+export interface Props {
+  title: string
+  slug: string
+  excerpt: string
+  category: string
+  mainImage?: any
+  publishedAt: string
+}
+
+const { title, slug, excerpt, category, mainImage, publishedAt } = Astro.props
+
+const imgSrc = mainImage?.asset
+  ? urlFor(mainImage).width(600).height(340).auto('format').url()
+  : '/og-image.jpg'
+
+const imgAlt = mainImage?.alt ?? title
+
+const dateStr = new Date(publishedAt).toLocaleDateString('th-TH', {
+  year: 'numeric', month: 'long', day: 'numeric',
+})
+---
+
+<article class="blog-card" data-category={category}>
+  <a href={`/blog/${slug}`} class="blog-card__image-link">
+    <img src={imgSrc} alt={imgAlt} width="600" height="340" loading="lazy" class="blog-card__image" />
+  </a>
+  <div class="blog-card__body">
+    {category && <span class="blog-card__category">{category}</span>}
+    <h2 class="blog-card__title">
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h2>
+    <p class="blog-card__excerpt">{excerpt}</p>
+    <div class="blog-card__meta">
+      <time datetime={publishedAt}>{dateStr}</time>
+    </div>
+    <a href={`/blog/${slug}`} class="btn btn-secondary blog-card__read-more">อ่านต่อ →</a>
+  </div>
+</article>

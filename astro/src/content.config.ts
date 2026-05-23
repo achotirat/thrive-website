@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { sanityBlogLoader } from './lib/sanityBlogLoader';
 
 const buttonSchema = z.object({
   label: z.string(),
@@ -64,6 +65,35 @@ const servicesCollection = defineCollection({
   }),
 });
 
+const blogPostsCollection = defineCollection({
+  loader: sanityBlogLoader(),
+  schema: z.object({
+    _id: z.string(),
+    title: z.string(),
+    slug: z.object({ current: z.string() }),
+    excerpt: z.string().optional().default(''),
+    category: z.string().optional().default(''),
+    publishedAt: z.string(),
+    updatedAt: z.string().optional(),
+    mainImage: z.any().optional(),
+    authorName: z.string().optional(),
+    authorTitle: z.string().optional(),
+    keyTakeaways: z.array(z.string()).optional().default([]),
+    body: z.array(z.any()).optional().default([]),
+    faq: z.array(z.object({
+      question: z.string(),
+      shortAnswer: z.string().optional().default(''),
+    })).optional().default([]),
+    seo: z.object({
+      seoTitle: z.string().optional(),
+      seoDescription: z.string().optional(),
+      noIndex: z.boolean().optional().default(false),
+      canonicalUrl: z.string().optional(),
+    }).optional(),
+  }),
+});
+
 export const collections = {
   services: servicesCollection,
+  blogPosts: blogPostsCollection,
 };

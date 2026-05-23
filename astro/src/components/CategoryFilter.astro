@@ -1,0 +1,45 @@
+---
+export interface Props {
+  categories: string[]
+}
+
+const { categories } = Astro.props
+const all = ['ทั้งหมด', ...categories]
+---
+
+<div class="blog-filter" id="category-filter">
+  {all.map((cat) => (
+    <button
+      class={`blog-filter__btn${cat === 'ทั้งหมด' ? ' is-active' : ''}`}
+      data-filter={cat === 'ทั้งหมด' ? 'all' : cat}
+      aria-pressed={cat === 'ทั้งหมด' ? 'true' : 'false'}
+    >
+      {cat}
+    </button>
+  ))}
+</div>
+
+<script>
+  const filter = document.getElementById('category-filter')
+  const grid = document.getElementById('blog-grid')
+
+  if (filter && grid) {
+    filter.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-filter]')
+      if (!btn) return
+
+      filter.querySelectorAll('button').forEach((b) => {
+        b.classList.remove('is-active')
+        b.setAttribute('aria-pressed', 'false')
+      })
+      btn.classList.add('is-active')
+      btn.setAttribute('aria-pressed', 'true')
+
+      const chosen = btn.dataset.filter ?? 'all'
+      grid.querySelectorAll<HTMLElement>('.blog-card').forEach((card) => {
+        const match = chosen === 'all' || card.dataset.category === chosen
+        card.style.display = match ? '' : 'none'
+      })
+    })
+  }
+</script>
