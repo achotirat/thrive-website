@@ -16,6 +16,7 @@ const d = post.data
 
 const hasLegacyHtml = Boolean(d.legacyHtml)
 const bodyHtml = hasLegacyHtml ? d.legacyHtml : portableTextToHtml(d.body ?? [])
+const legacyHtmlHasFaq = hasLegacyHtml && /คำถามที่พบบ่อย|FAQ/i.test(d.legacyHtml)
 
 const faqItems = (d.faq ?? []).map((item: any) => ({
   question: item.question,
@@ -48,7 +49,7 @@ const faqItems = (d.faq ?? []).map((item: any) => ({
 
   <div class="blog-post__body" set:html={bodyHtml} />
 
-  {!hasLegacyHtml && faqItems.length > 0 && (
+  {!legacyHtmlHasFaq && faqItems.length > 0 && (
     <section class="section faq-section">
       <div class="section-title-center">
         <span class="section-label">FAQ</span>
