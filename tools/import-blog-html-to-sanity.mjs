@@ -49,7 +49,7 @@ const CATEGORY_RULES = [
   [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan/i, 'โภชนาการ'],
   [/ashwagandha|depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
   [/immunity|immune|allergy|nk|glutathione|urticaria/i, 'ภูมิคุ้มกัน'],
-  [/acne|skin|silica|preservatives/i, 'ผิวหนัง'],
+  [/acne|skin|silica|preservatives|สิว/i, 'ผิวหนัง'],
   [/gut|intestine|probiotic|digest/i, 'ระบบย่อยอาหาร'],
   [/blood|triglyceride|coq10|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
   [/period|menstrual|pms|pcos|menorrhagia|amenorrhea|dysmenorrhea|female|siw-prajam-duan/i, 'สตรีสุขภาพ'],

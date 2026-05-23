@@ -8,5 +8,5 @@ export async function getStaticPaths() {
   }))
 }
 
-return Astro.redirect(`/blog/${Astro.params.slug}`, 301)
+return Astro.redirect(`/blog/${encodeURIComponent(Astro.params.slug)}`, 301)
 ---
