@@ -1860,7 +1860,13 @@ h1.th, h2.th, h3.th {
   font-size: var(--text-sm);
 }
 
+.service-hero__media {
+  min-width: 0;
+}
+
 .service-hero__media img {
+  width: 100%;
+  height: auto;
   border-radius: var(--r-xl);
   box-shadow: var(--sh-lg);
   aspect-ratio: 1200 / 630;
