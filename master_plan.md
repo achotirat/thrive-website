@@ -520,6 +520,8 @@ Exit criteria: staff can follow up website leads and review basic campaign perfo
 
 ### Phase 5 — Tier B Blog Migration And Redirect Map, Jul-Sep 2026
 
+Working goal set on 2026-05-23: migrate/publish blog posts gradually in the order listed in `SITE-TRACKER.md` until every eligible Tier B post is live in Sanity/Astro. Eligible means entries marked HTML ready, excluding 404/no-HTML entries and merged duplicates. Current checkpoint: 20 published posts in Sanity; continue from `SITE-TRACKER.md` row #23.
+
 - [ ] Set up Sanity for blog posts, testimonials, doctors, and reusable FAQs.
 - [ ] Batch migrate top ~50 blog posts.
 - [ ] Human spot-check 10-15 high-value posts.
