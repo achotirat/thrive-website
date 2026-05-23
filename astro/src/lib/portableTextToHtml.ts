@@ -1,6 +1,18 @@
 import { toHTML } from '@portabletext/to-html'
 import { urlFor } from './sanity'
 
+function isSafeHref(href: string): boolean {
+  if (!href) return false
+  const lower = href.toLowerCase().trim()
+  return (
+    lower.startsWith('https://') ||
+    lower.startsWith('http://') ||
+    lower.startsWith('mailto:') ||
+    lower.startsWith('tel:') ||
+    lower.startsWith('/')
+  )
+}
+
 const components = {
   block: {
     h2: ({ children }: any) => `<h2>${children}</h2>`,
@@ -21,9 +33,14 @@ const components = {
     strong: ({ children }: any) => `<strong>${children}</strong>`,
     em: ({ children }: any) => `<em>${children}</em>`,
     link: ({ children, value }: any) => {
-      const rel = value?.rel ? ` rel="${value.rel}"` : ''
-      const target = value?.openInNewTab ? ' target="_blank" rel="noopener"' : ''
-      return `<a href="${value?.href ?? '#'}"${rel}${target}>${children}</a>`
+      const rawHref = value?.href ?? ''
+      const href = isSafeHref(rawHref) ? rawHref : '#'
+      const relParts: string[] = []
+      if (value?.rel) relParts.push(value.rel)
+      if (value?.openInNewTab) relParts.push('noopener', 'noreferrer')
+      const relAttr = relParts.length > 0 ? ` rel="${relParts.join(' ')}"` : ''
+      const targetAttr = value?.openInNewTab ? ' target="_blank"' : ''
+      return `<a href="${href}"${relAttr}${targetAttr}>${children}</a>`
     },
   },
   types: {
