@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client'
 import type { Loader, LoaderContext } from 'astro/loaders'
 import { hasSanityConfig } from './sanity'
 
-const GROQ = `*[_type == "blogPost"] | order(publishedAt desc) {
+const GROQ = `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -38,11 +38,14 @@ export function sanityBlogLoader(): Loader {
         return
       }
 
+      const token = import.meta.env.SANITY_API_TOKEN
+
       const client = createClient({
         projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
         dataset: import.meta.env.PUBLIC_SANITY_DATASET || 'production',
         apiVersion: '2024-01-01',
-        useCdn: true,
+        token,
+        useCdn: !token,
       })
 
       let posts: any[] = []
