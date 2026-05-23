@@ -1,5 +1,6 @@
 import { createClient } from '@sanity/client'
 import type { Loader, LoaderContext } from 'astro/loaders'
+import { hasSanityConfig } from './sanity'
 
 const GROQ = `*[_type == "blogPost"] | order(publishedAt desc) {
   _id,
@@ -30,9 +31,16 @@ export function sanityBlogLoader(): Loader {
   return {
     name: 'sanity-blog',
     load: async ({ store, logger }: LoaderContext) => {
+      store.clear()
+
+      if (!hasSanityConfig) {
+        logger.warn('Skipping Sanity blog load: PUBLIC_SANITY_PROJECT_ID and PUBLIC_SANITY_DATASET are not configured')
+        return
+      }
+
       const client = createClient({
         projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
-        dataset: import.meta.env.PUBLIC_SANITY_DATASET,
+        dataset: import.meta.env.PUBLIC_SANITY_DATASET || 'production',
         apiVersion: '2024-01-01',
         useCdn: true,
       })
@@ -43,8 +51,6 @@ export function sanityBlogLoader(): Loader {
       } catch (err: any) {
         logger.warn(`Failed to fetch blog posts from Sanity: ${err?.message ?? err}`)
       }
-
-      store.clear()
 
       for (const post of posts) {
         store.set({ id: post.slug.current, data: post })
