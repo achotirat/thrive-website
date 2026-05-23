@@ -319,6 +319,13 @@ function mainHtml(html) {
     || withoutNoise;
 }
 
+function removeLegacyFaqSection(html) {
+  return html.replace(
+    /<h2\b[^>]*>[^<]*(?:คำถามที่พบบ่อย|FAQ)[^<]*<\/h2>[\s\S]*?(?=<h2\b|$)/i,
+    ' ',
+  );
+}
+
 function sanitizeLegacyHtml(html) {
   const allowedTags = new Set([
     'a',
@@ -406,7 +413,7 @@ function sanitizeLegacyHtml(html) {
     return attrs.length > 0 ? ` ${attrs.join(' ')}` : '';
   }
 
-  const source = mainHtml(html)
+  const source = removeLegacyFaqSection(mainHtml(html))
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[^>]*\/?>/gi, ' ');
