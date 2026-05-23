@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import SEO from '../../components/SEO.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import BlogCard from '../../components/BlogCard.astro'
+import CategoryFilter from '../../components/CategoryFilter.astro'
+
+const posts = await getCollection('blogPosts')
+
+const categories = [...new Set(
+  posts.map((p) => p.data.category).filter(Boolean)
+)] as string[]
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บทความ', href: '/blog' },
+]
+
+const seo = {
+  seoTitle: 'บทความสุขภาพ | Thrive Wellness Center',
+  description: 'บทความสุขภาพจากทีมแพทย์ผู้เชี่ยวชาญ ด้านฮอร์โมน โภชนาการ สุขภาพจิต และภูมิคุ้มกัน',
+  ogImage: '/og-image.jpg',
+  ogLocale: 'th_TH',
+  canonicalPath: '/blog',
+  noIndex: false,
+  hreflang: [],
+  geo: {
+    region: 'TH-10',
+    placename: 'Bangkok',
+    position: '13.7563;100.5018',
+    icbm: '13.7563, 100.5018',
+  },
+  publishedAt: new Date('2026-01-01'),
+  updatedAt: new Date(),
+  lastMedicalReview: new Date('2026-01-01'),
+  reviewedBy: 'Dr. Noon Pichayaporn',
+  medicalSpecialty: 'Functional Medicine',
+}
+---
+
+<BaseLayout>
+  <SEO slot="head" {...seo} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+
+  <main class="blog-listing-page">
+    <section class="section section--hero blog-listing-hero">
+      <div class="section-container">
+        <div class="section-title-center">
+          <span class="section-label">Knowledge</span>
+          <h1 class="section-title">บทความสุขภาพ</h1>
+          <p class="section-subtitle">ความรู้จากทีมแพทย์ผู้เชี่ยวชาญ เพื่อสุขภาพที่ดีของคุณ</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-filter-section">
+      <div class="section-container">
+        {categories.length > 0 && <CategoryFilter categories={categories} />}
+      </div>
+    </section>
+
+    <section class="section blog-grid-section">
+      <div class="section-container">
+        {posts.length === 0 ? (
+          <p class="blog-empty">ยังไม่มีบทความในขณะนี้ กลับมาเยี่ยมชมเร็วๆ นี้</p>
+        ) : (
+          <div class="blog-grid" id="blog-grid">
+            {posts.map((post) => (
+              <BlogCard
+                title={post.data.title}
+                slug={post.data.slug.current}
+                excerpt={post.data.excerpt ?? ''}
+                category={post.data.category ?? ''}
+                mainImage={post.data.mainImage}
+                publishedAt={post.data.publishedAt}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
