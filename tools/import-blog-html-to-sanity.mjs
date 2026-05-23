@@ -14,6 +14,30 @@ const REPORT_PATH = path.join(ROOT, 'docs/blog-import-report.md');
 const DEFAULT_PROJECT_ID = 'fc8ot1td';
 const DEFAULT_DATASET = 'production';
 const BLOCK_LIMIT = 220;
+const PILOT_SLUGS = [
+  'chili',
+  'minerals',
+  'apple-benefit',
+  'abnormal-period',
+  'periodpain',
+  'zinc-checklist',
+  'immunity',
+  'growth-factor',
+  'smiling-depression',
+  'glutathione',
+];
+const FILENAME_SLUG_OVERRIDES = new Map([
+  ['blog-chili.html', 'chili'],
+  ['blog-minerals.html', 'minerals'],
+  ['blog-apple-benefit.html', 'apple-benefit'],
+  ['blog-abnormal-period.html', 'abnormal-period'],
+  ['blog-periodpain.html', 'periodpain'],
+  ['blog-zinc.html', 'zinc-checklist'],
+  ['blog-immunity.html', 'immunity'],
+  ['blog-growth-factor.html', 'growth-factor'],
+  ['blog-smiling-depression.html', 'smiling-depression'],
+  ['blog-glutathione.html', 'glutathione'],
+]);
 
 const CATEGORY_RULES = [
   [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone/i, 'ฮอร์โมน'],
@@ -102,7 +126,20 @@ async function discoverFiles(args) {
     .filter((file) => path.dirname(file) === ROOT)
     .filter((file) => path.basename(file).startsWith('blog-'));
 
-  return [...bucketFiles.sort(), ...rootFiles.sort()];
+  return [...bucketFiles.sort(), ...rootFiles.sort()].sort(compareImportPriority);
+}
+
+function compareImportPriority(a, b) {
+  const aSlug = FILENAME_SLUG_OVERRIDES.get(path.basename(a));
+  const bSlug = FILENAME_SLUG_OVERRIDES.get(path.basename(b));
+  const aIndex = aSlug ? PILOT_SLUGS.indexOf(aSlug) : -1;
+  const bIndex = bSlug ? PILOT_SLUGS.indexOf(bSlug) : -1;
+  if (aIndex !== -1 || bIndex !== -1) {
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  }
+  return a.localeCompare(b);
 }
 
 function decodeHtml(value = '') {
@@ -167,6 +204,9 @@ function titleFromHtml(html) {
 }
 
 function slugFrom(filePath, html) {
+  const filenameOverride = FILENAME_SLUG_OVERRIDES.get(path.basename(filePath));
+  if (filenameOverride) return filenameOverride;
+
   const canonical = canonicalUrl(html);
   const urlSlug = canonical.match(/\/(?:post|blog)\/([^/?#]+)/i)?.[1];
   if (urlSlug) return cleanSlug(urlSlug);
@@ -207,7 +247,8 @@ function publishedAtFrom(html) {
 
 function imageCandidate(html) {
   const remote = metaContent(html, 'og:image') || metaContent(html, 'twitter:image');
-  const basename = remote ? path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname) : '';
+  if (!remote || remote.includes('[[')) return { remote: '', basename: '' };
+  const basename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
   return { remote, basename };
 }
 
@@ -379,7 +420,6 @@ function parseFile(filePath) {
       _type: 'seoMeta',
       seoTitle: (metaContent(html, 'og:title') || title).slice(0, 70),
       seoDescription: stripTags(description).slice(0, 170),
-      canonicalUrl: canonicalUrl(html) || undefined,
       noIndex: false,
       includeInSitemap: true,
       schemaType: 'BlogPosting',
