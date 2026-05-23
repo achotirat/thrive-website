@@ -383,6 +383,14 @@ function sanitizeLegacyHtml(html) {
     );
   }
 
+  function normalizeLegacyAssetUrl(value) {
+    const trimmed = decodeHtml(value || '').trim();
+    if (trimmed === '/image/dr-noon-profile.jpg') {
+      return '/dr-chanakan-trangansri-thrive-400x400.jpg';
+    }
+    return trimmed;
+  }
+
   function sanitizeAttrs(tagName, rawAttrs = '') {
     const allowed = allowedAttrs.get(tagName);
     if (!allowed) return '';
@@ -391,7 +399,7 @@ function sanitizeLegacyHtml(html) {
     for (const match of rawAttrs.matchAll(attrPattern)) {
       const name = match[1].toLowerCase();
       if (!allowed.has(name)) continue;
-      const rawValue = match[3] ?? match[4] ?? match[5] ?? '';
+      const rawValue = normalizeLegacyAssetUrl(match[3] ?? match[4] ?? match[5] ?? '');
       if ((name === 'href' || name === 'src') && !isSafeUrl(rawValue)) continue;
       if (name === 'target' && rawValue !== '_blank') continue;
       const value = decodeHtml(rawValue)
