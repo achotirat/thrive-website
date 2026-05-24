@@ -76,8 +76,8 @@ Four agents run in parallel during full site sweep. Each agent processes all pag
 
 **Tools:**
 - `toprank:seo-page` — invoke for each Tier A page (deep on-page audit: title, headings, keyword density, search intent alignment, internal links, Core Web Vitals signals)
-- `toprank:geo-optimizer` — invoke for top 10 pages by traffic: `/food-intolerance`, `/adrenal-fatigue`, `/hormones-quiz`, `/hbot`, `/iv-drip`, `/gluta`, `/chelation`, `/personalized-vitamins`, `/nad`, `/nk-cell` (AI search optimization: cited claims, structured answers, entity coverage, AI snippet eligibility)
-- WebFetch — for remaining Tier B pages: manual check of title tag, H1, keyword in URL, meta description, internal link count
+- `toprank:geo-optimizer` — invoke for all Tier A pages (same set as `toprank:seo-page` above — every Tier A page gets both deep SEO and GEO audits)
+- WebFetch — for Tier B pages: manual check of title tag, H1, keyword in URL, meta description, internal link count
 
 **Output per page:** SEO score /10, GEO score /10, up to 3 issues flagged per dimension
 
@@ -258,7 +258,7 @@ The skill does no fetching, searching, or analysis until the user confirms.
 | Toprank Skill | When Used | Pages |
 |---|---|---|
 | `toprank:seo-page` | Deep on-page SEO | All Tier A pages |
-| `toprank:geo-optimizer` | AI search optimization | Top 10 pages by traffic |
+| `toprank:geo-optimizer` | AI search optimization | All Tier A pages |
 | `toprank:meta-tags-optimizer` | Meta tag quality + OG | Tier A pages spot-check |
 | `toprank:schema-markup-generator` | Schema validation + generation | Pages with missing/broken schema |
 
