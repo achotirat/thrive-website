@@ -316,3 +316,130 @@ Inspect the page HTML for the following signals:
 }
 ```
 ---
+
+## Step 5: Merge Results and Write Master Report
+
+After all 4 agents complete, merge their JSON outputs by URL key.
+
+**For each page**, combine results from all agents into one row:
+
+```
+url | SEO | GEO | Meta | Schema | Images | FAQ | E-E-A-T | Originality | Overall | Last Audited
+```
+
+`Overall` = average of all dimension scores (8 dimensions for Tier A, 6 for Tier B —
+omit SEO and GEO from Tier B average since those used the lighter check).
+
+**Merge algorithm:**
+1. Build a dictionary keyed by URL from each agent's results array
+2. For each URL, pull each score from the matching agent result
+3. Calculate overall as mean of all dimension scores, rounded to 1 decimal place
+4. If `originality_check_skipped: true`, mark originality as `?` and exclude from average
+
+**Write two files:**
+
+### File 1: docs/audits/master-audit.md (update in place)
+
+Load the existing file. For each audited URL:
+- If the URL already has a row in the scorecard table: replace the entire row and update
+  its `<details>` block
+- If the URL is new: append a new row and `<details>` block
+- When loading the existing master-audit.md, scan all `last_audited` dates. Any date
+  more than 30 days before today: append ` [stale]` to that cell if not already marked.
+
+Update the Executive Summary section at the top with fresh site-wide averages and
+recalculate "Pages Needing Attention" (overall score < 7.0).
+
+### File 2: docs/audits/[YYYY-MM-DD]-full-sweep-snapshot.md (create new)
+
+Write a full snapshot of this sweep. Same format as master-audit.md but named with
+today's date. Never overwrite an existing snapshot.
+
+**Print to terminal after writing:**
+
+```
+AUDIT COMPLETE
+──────────────
+Pages audited: [N] Tier A + [N] Tier B
+Site average:  [X.X]/10
+Needs attention (< 7.0): [N pages, list URLs]
+Master scorecard: docs/audits/master-audit.md
+Snapshot: docs/audits/[YYYY-MM-DD]-full-sweep-snapshot.md
+```
+
+**Commit both files:**
+```bash
+git add docs/audits/
+git commit -m "audit: full site sweep [YYYY-MM-DD] — [N] pages, avg [X.X]/10"
+```
+
+---
+
+## Incremental Mode (Single Page)
+
+This mode runs when a URL was provided as an argument to the skill invocation.
+
+### Step I-1: Confirm Scope
+
+Print:
+
+```
+THRIVE LAUNCH AUDIT — Single Page
+──────────────────────────────────
+Page:  [URL provided]
+Mode:  Incremental (updates master-audit.md for this page only)
+Audit: 8 dimensions (Tier A) or 6 dimensions (Tier B, auto-detected)
+       SEO · GEO · Meta · Schema · Images · FAQ · E-E-A-T · Originality
+
+Ready to start? (yes/no)
+```
+
+Auto-detect tier: if the URL contains `/blog/`, it is Tier B (6 dimensions).
+Otherwise it is Tier A (8 dimensions).
+
+### Step I-2: Run All 4 Audits Sequentially (single page, no parallel needed)
+
+Run each of the 4 audit sets described above, but for only the one page.
+For toprank skill invocations, pass the single page URL.
+
+**For Agent 1 (SEO+GEO):** Run `toprank:seo-page` and `toprank:geo-optimizer`
+directly (not via sub-agent). Parse scores and issues as defined in Agent 1 prompt above.
+
+**For Agent 2 (Meta+Schema):** Use WebFetch + manual JSON-LD checks as defined above.
+Run `toprank:meta-tags-optimizer` if Meta score < 8.
+
+**For Agent 3 (Images+FAQ):** Use WebFetch + manual checks as defined above.
+
+**For Agent 4 (Originality+E-E-A-T):** Use WebFetch + WebSearch as defined above.
+
+### Step I-3: Update Master File
+
+1. Load `docs/audits/master-audit.md`
+2. Find the row for this URL in the scorecard table
+3. Replace the row with updated scores and today's date as `last_audited`
+4. Replace the `<details>` block for this URL with fresh priority actions
+5. Scan all other rows: append ` [stale]` to any `last_audited` date more than 30 days old
+6. Recalculate site-wide averages in the Executive Summary
+7. Save the file
+
+### Step I-4: Print Result and Commit
+
+```
+SINGLE-PAGE AUDIT COMPLETE
+───────────────────────────
+Page:    [URL]
+Overall: [X.X]/10
+SEO [N] · GEO [N] · Meta [N] · Schema [N] · Images [N] · FAQ [N] · E-E-A-T [N] · Orig [N]
+
+Priority Actions:
+1. [action]
+2. [action]
+3. [action]
+
+Master scorecard updated: docs/audits/master-audit.md
+```
+
+```bash
+git add docs/audits/master-audit.md
+git commit -m "audit: single-page [slug] [YYYY-MM-DD] — [X.X]/10"
+```
