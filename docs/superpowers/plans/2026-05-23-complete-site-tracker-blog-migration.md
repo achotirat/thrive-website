@@ -12,8 +12,9 @@
 
 ## Current Checkpoint
 
-- 30 posts are published in Sanity.
-- Continue from `SITE-TRACKER.md` row #36: `blog-growth-hormone-decline.html`.
+- 63 posts are published in Sanity.
+- Bucket 1 and Bucket 2 are imported through `SITE-TRACKER.md` row #70: `blog-vitamin-d-immune.html`.
+- Continue with Bucket 3 redirect/delete decisions; do not migrate rows marked DELETE / DO NOT MIGRATE.
 - Skip rows that are explicitly 404/no HTML, deleted, or merged into another canonical post.
 - Keep each batch small enough to review: 10 posts per batch is the default.
 
@@ -224,7 +225,7 @@ Expected: Netlify deploy preview starts for the branch.
 After deploy verification, update the Current Checkpoint section in this plan and the Phase 5 note in `master_plan.md`:
 
 ```markdown
-Current checkpoint: 30 published posts in Sanity; continue from `SITE-TRACKER.md` row #36.
+Current checkpoint: 63 published posts in Sanity; Bucket 1 and Bucket 2 imported through `SITE-TRACKER.md` row #70.
 ```
 
 Use the actual next row after skipped and merged entries.

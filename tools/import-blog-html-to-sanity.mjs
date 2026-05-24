@@ -40,6 +40,8 @@ const FILENAME_SLUG_OVERRIDES = new Map([
   ['blog-ashwagandha.html', 'ashwagandha'],
   ['blog-urticaria-hives.html', 'ผื่นลมพิษ'],
   ['blog-immune-system.html', 'immunesystem'],
+  ['blog-growth-hormone-decline.html', 'growth-hormone-2'],
+  ['blog-burnout-adrenal.html', 'how-to-overcome-burn-out-syndrome'],
 ]);
 
 const IMAGE_BASENAME_OVERRIDES = new Map([
@@ -53,14 +55,15 @@ const FILENAME_IMAGE_OVERRIDES = new Map([
 ]);
 
 const CATEGORY_RULES = [
-  [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone/i, 'ฮอร์โมน'],
-  [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan/i, 'โภชนาการ'],
-  [/ashwagandha|depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
-  [/immunity|immune|allergy|nk|glutathione|urticaria|ผื่นลมพิษ/i, 'ภูมิคุ้มกัน'],
+  [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone|steroid|cortisol|insulin|burnout|overcome-burn-out|สเตียรอยด์|ฮอร์โมน/i, 'ฮอร์โมน'],
+  [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan|kombucha|วิตามิน|ลักษณะสุขภาพ/i, 'โภชนาการ'],
+  [/ashwagandha|depression|mental|gaba|neurotransmitter|mood|sleepwalking/i, 'สุขภาพจิต'],
+  [/immunity|immune|allergy|ige|igg|nk|glutathione|urticaria|ภูมิคุ้มกัน|ภูมิแพ้|ผื่นลมพิษ/i, 'ภูมิคุ้มกัน'],
   [/acne|skin|silica|preservatives|สิว/i, 'ผิวหนัง'],
   [/gut|intestine|probiotic|digest/i, 'ระบบย่อยอาหาร'],
-  [/blood|triglyceride|coq10|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
-  [/period|menstrual|pms|pcos|menorrhagia|amenorrhea|dysmenorrhea|female|siw-prajam-duan/i, 'สตรีสุขภาพ'],
+  [/blood|triglyceride|coq10|coenzyme|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
+  [/period|menstrual|pms|pcos|menorrhagia|amenorrhea|dysmenorrhea|female|pid|pelvic|สตรี|วัยทอง/i, 'สตรีสุขภาพ'],
+  [/herbal-compress|massage/i, 'เวชศาสตร์ฟื้นฟู'],
 ];
 
 function loadEnvLocal() {
