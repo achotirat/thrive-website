@@ -495,10 +495,10 @@ Exit status: locally complete. All 20 pages built, all hero images in place, for
 - [x] Get admin ownership of Google Ads. (account live under achotirat@gmail.com as of 2026-05-23)
 - [x] Google Ads conversion actions configured. (Submit lead form, Contact, Get directions — set up 2026-05-23)
 - [x] Campaign structure and ad copy written for all 3 campaigns — see `docs/phase3-google-ads-setup.md`
-- [ ] Export agency campaigns, keywords, creatives, and settings → save to `docs/agency-campaign-reference.md`
-- [ ] Link Google Ads and GA4 under Thrive-owned access.
-- [ ] GTM container ID from Satemshi → install snippet in `astro/src/layouts/BaseLayout.astro`
-- [ ] Verify end-to-end conversion: test GCLID → Supabase → Google Ads conversion fires
+- [x] Export agency campaigns, keywords, creatives, and settings → save to `docs/agency-campaign-reference.md`
+- [x] Link Google Ads and GA4 under Thrive-owned access.
+- [x] GTM container ID from Satemshi → install snippet in `astro/src/layouts/BaseLayout.astro`
+- [x] Verify end-to-end conversion: test GCLID → Supabase → Google Ads conversion fires
 - [ ] Create and pause 3 campaigns in Google Ads UI (food intolerance, adrenal/hormone, IV drip/HBOT)
 - [ ] Set campaigns to Active after conversion verification passes
 - [ ] Set up read-only Google Ads API access if feasible.
@@ -520,8 +520,8 @@ Exit criteria: staff can follow up website leads and review basic campaign perfo
 
 ### Phase 5 — Tier B Blog Migration And Redirect Map, Jul-Sep 2026
 
-- [ ] Set up Sanity for blog posts, testimonials, doctors, and reusable FAQs.
-- [ ] Batch migrate top ~50 blog posts.
+- [x] Set up Sanity for blog posts, testimonials, doctors, and reusable FAQs.
+- [x] Batch migrate top ~50 blog posts.
 - [ ] Human spot-check 10-15 high-value posts.
 - [ ] Create redirects for low-value Tier C pages.
 - [ ] Map all known Wix URLs.
