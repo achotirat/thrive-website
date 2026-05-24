@@ -328,7 +328,8 @@ url | SEO | GEO | Meta | Schema | Images | FAQ | E-E-A-T | Originality | Overall
 ```
 
 `Overall` = average of all dimension scores (8 dimensions for Tier A, 6 for Tier B —
-omit SEO and GEO from Tier B average since those used the lighter check).
+for Tier B, exclude `seo_score` and `geo_score` from the average calculation; keep them
+in the row for reference).
 
 **Merge algorithm:**
 1. Build a dictionary keyed by URL from each agent's results array
