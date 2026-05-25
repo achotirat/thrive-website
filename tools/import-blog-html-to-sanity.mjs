@@ -37,17 +37,33 @@ const FILENAME_SLUG_OVERRIDES = new Map([
   ['blog-growth-factor.html', 'growth-factor'],
   ['blog-smiling-depression.html', 'smiling-depression'],
   ['blog-glutathione.html', 'glutathione'],
+  ['blog-ashwagandha.html', 'ashwagandha'],
+  ['blog-urticaria-hives.html', 'ผื่นลมพิษ'],
+  ['blog-immune-system.html', 'immunesystem'],
+  ['blog-growth-hormone-decline.html', 'growth-hormone-2'],
+  ['blog-burnout-adrenal.html', 'how-to-overcome-burn-out-syndrome'],
+]);
+
+const IMAGE_BASENAME_OVERRIDES = new Map([
+  ['ashwagandha-reduce-stress-depression-thrivewellness.jpg', 'ashwagandha-hero-1200x630.jpg'],
+]);
+
+const FILENAME_IMAGE_OVERRIDES = new Map([
+  ['blog-vitamin-a.html', 'vitamin-a-hero-1200x630.jpg'],
+  ['blog-urticaria-hives.html', 'urticaria-hives-hero-1200x630.jpg'],
+  ['blog-triglyceride.html', 'triglyceride-hero-1200x630.jpg'],
 ]);
 
 const CATEGORY_RULES = [
-  [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone/i, 'ฮอร์โมน'],
-  [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan/i, 'โภชนาการ'],
-  [/depression|mental|gaba|neurotransmitter|mood/i, 'สุขภาพจิต'],
-  [/immunity|immune|allergy|nk|glutathione|urticaria/i, 'ภูมิคุ้มกัน'],
-  [/acne|skin|silica|preservatives/i, 'ผิวหนัง'],
+  [/hormone|adrenal|testosterone|progesterone|menopause|growth-factor|growth-hormone|steroid|cortisol|insulin|burnout|overcome-burn-out|สเตียรอยด์|ฮอร์โมน/i, 'ฮอร์โมน'],
+  [/chili|mineral|zinc|vitamin|apple|omega|probiotic|chromium|magnesium|bromelain|carnitine|tryptophan|kombucha|วิตามิน|ลักษณะสุขภาพ/i, 'โภชนาการ'],
+  [/ashwagandha|depression|mental|gaba|neurotransmitter|mood|sleepwalking/i, 'สุขภาพจิต'],
+  [/immunity|immune|allergy|ige|igg|nk|glutathione|urticaria|ภูมิคุ้มกัน|ภูมิแพ้|ผื่นลมพิษ/i, 'ภูมิคุ้มกัน'],
+  [/acne|skin|silica|preservatives|สิว/i, 'ผิวหนัง'],
   [/gut|intestine|probiotic|digest/i, 'ระบบย่อยอาหาร'],
-  [/blood|triglyceride|coq10|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
-  [/period|menstrual|pms|pcos|menorrhagia|amenorrhea|dysmenorrhea|female|siw-prajam-duan/i, 'สตรีสุขภาพ'],
+  [/blood|triglyceride|coq10|coenzyme|arter|heart|syncope/i, 'หัวใจและหลอดเลือด'],
+  [/period|menstrual|pms|pcos|menorrhagia|amenorrhea|dysmenorrhea|female|pid|pelvic|สตรี|วัยทอง/i, 'สตรีสุขภาพ'],
+  [/herbal-compress|massage/i, 'เวชศาสตร์ฟื้นฟู'],
 ];
 
 function loadEnvLocal() {
@@ -72,6 +88,8 @@ function parseArgs(argv) {
     limit: null,
     source: null,
     replace: true,
+    target: 'draft',
+    uploadImages: true,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -81,6 +99,8 @@ function parseArgs(argv) {
     else if (arg === '--no-replace') args.replace = false;
     else if (arg === '--limit') args.limit = Number.parseInt(argv[++index], 10);
     else if (arg === '--source') args.source = argv[++index];
+    else if (arg === '--target') args.target = argv[++index];
+    else if (arg === '--no-upload-images') args.uploadImages = false;
     else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -88,6 +108,9 @@ function parseArgs(argv) {
 
   if (args.limit !== null && (!Number.isFinite(args.limit) || args.limit <= 0)) {
     throw new Error('--limit must be a positive number');
+  }
+  if (!['draft', 'published'].includes(args.target)) {
+    throw new Error('--target must be either draft or published');
   }
 
   return args;
@@ -245,10 +268,14 @@ function publishedAtFrom(html) {
   return valid ? new Date(valid).toISOString() : '2026-05-23T00:00:00.000Z';
 }
 
-function imageCandidate(html) {
+function imageCandidate(filePath, html) {
+  const filenameOverride = FILENAME_IMAGE_OVERRIDES.get(path.basename(filePath));
+  if (filenameOverride) return { remote: '', basename: filenameOverride };
+
   const remote = metaContent(html, 'og:image') || metaContent(html, 'twitter:image');
   if (!remote || remote.includes('[[')) return { remote: '', basename: '' };
-  const basename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
+  const rawBasename = path.basename(new URL(remote, 'https://www.thrivewellnessth.com').pathname);
+  const basename = IMAGE_BASENAME_OVERRIDES.get(rawBasename) || rawBasename;
   return { remote, basename };
 }
 
@@ -310,6 +337,131 @@ function mainHtml(html) {
     || firstMatch(withoutNoise, /<article[^>]*>([\s\S]*?)<\/article>/i)
     || firstMatch(withoutNoise, /<body[^>]*>([\s\S]*?)<\/body>/i)
     || withoutNoise;
+}
+
+function removeLegacyFaqSection(html) {
+  return html.replace(
+    /<h2\b[^>]*>[^<]*(?:คำถามที่พบบ่อย|FAQ)[^<]*<\/h2>[\s\S]*?(?=<h2\b|$)/i,
+    ' ',
+  );
+}
+
+function sanitizeLegacyHtml(html) {
+  const allowedTags = new Set([
+    'a',
+    'b',
+    'blockquote',
+    'br',
+    'caption',
+    'cite',
+    'code',
+    'div',
+    'em',
+    'figcaption',
+    'figure',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'hr',
+    'i',
+    'img',
+    'li',
+    'ol',
+    'p',
+    'span',
+    'strong',
+    'sub',
+    'sup',
+    'table',
+    'tbody',
+    'td',
+    'tfoot',
+    'th',
+    'thead',
+    'tr',
+    'u',
+    'ul',
+  ]);
+  const allowedAttrs = new Map([
+    ['a', new Set(['href', 'title', 'target', 'rel'])],
+    ['img', new Set(['src', 'alt', 'title', 'width', 'height', 'loading'])],
+    ['td', new Set(['colspan', 'rowspan'])],
+    ['th', new Set(['colspan', 'rowspan', 'scope'])],
+    ['table', new Set(['summary'])],
+  ]);
+
+  function isSafeUrl(value) {
+    const trimmed = decodeHtml(value || '').trim().toLowerCase();
+    return (
+      trimmed.startsWith('/') ||
+      trimmed.startsWith('#') ||
+      trimmed.startsWith('https://') ||
+      trimmed.startsWith('http://') ||
+      trimmed.startsWith('mailto:') ||
+      trimmed.startsWith('tel:')
+    );
+  }
+
+  function normalizeLegacyAssetUrl(value) {
+    const trimmed = decodeHtml(value || '').trim();
+    if (trimmed === '/image/dr-noon-profile.jpg') {
+      return '/dr-chanakan-trangansri-thrive-400x400.jpg';
+    }
+    return trimmed;
+  }
+
+  function sanitizeAttrs(tagName, rawAttrs = '') {
+    const allowed = allowedAttrs.get(tagName);
+    if (!allowed) return '';
+    const attrs = [];
+    const attrPattern = /([:\w-]+)(?:\s*=\s*("([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
+    for (const match of rawAttrs.matchAll(attrPattern)) {
+      const name = match[1].toLowerCase();
+      if (!allowed.has(name)) continue;
+      const rawValue = normalizeLegacyAssetUrl(match[3] ?? match[4] ?? match[5] ?? '');
+      if ((name === 'href' || name === 'src') && !isSafeUrl(rawValue)) continue;
+      if (name === 'target' && rawValue !== '_blank') continue;
+      const value = decodeHtml(rawValue)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      attrs.push(`${name}="${value}"`);
+    }
+    if (tagName === 'a') {
+      const hasTargetBlank = attrs.includes('target="_blank"');
+      const hasRel = attrs.some((attr) => attr.startsWith('rel='));
+      if (hasTargetBlank && !hasRel) attrs.push('rel="noopener noreferrer"');
+    }
+    if (tagName === 'img') {
+      const hasLoading = attrs.some((attr) => attr.startsWith('loading='));
+      if (!hasLoading) attrs.push('loading="lazy"');
+    }
+    return attrs.length > 0 ? ` ${attrs.join(' ')}` : '';
+  }
+
+  const source = removeLegacyFaqSection(mainHtml(html))
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<(script|style|iframe|object|embed|form|input|button|svg|canvas)\b[^>]*\/?>/gi, ' ');
+
+  const sanitized = source.replace(/<\/?([a-z][a-z0-9-]*)\b([^>]*)>/gi, (full, rawTag, attrs) => {
+    const tagName = rawTag.toLowerCase();
+    if (!allowedTags.has(tagName)) return '';
+    if (full.startsWith('</')) return `</${tagName}>`;
+    const selfClosing = /\/\s*>$/.test(full) || tagName === 'br' || tagName === 'hr' || tagName === 'img';
+    return `<${tagName}${sanitizeAttrs(tagName, attrs)}${selfClosing ? '>' : '>'}`;
+  });
+
+  return sanitized
+    .replace(/\sdata-[\w-]+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\saria-[\w-]+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\son\w+=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\s(?:class|id|style)=(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/<p>\s*<\/p>/gi, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 function bodyBlocks(html) {
@@ -392,9 +544,10 @@ function parseFile(filePath) {
   const slug = slugFrom(filePath, html);
   const description = metaContent(html, 'description') || metaContent(html, 'og:description') || '';
   const { category, inferred } = categoryFor(slug, title);
-  const image = imageCandidate(html);
+  const image = imageCandidate(filePath, html);
   const localImage = findLocalImage(image.basename);
   const body = bodyBlocks(html);
+  const legacyHtml = sanitizeLegacyHtml(html);
   const faq = faqItems(html);
 
   const warnings = [];
@@ -415,6 +568,7 @@ function parseFile(filePath) {
     publishedAt: publishedAtFrom(html),
     mainImage: localImage ? { _type: 'image', alt: title } : undefined,
     body,
+    legacyHtml,
     faq,
     seo: {
       _type: 'seoMeta',
@@ -465,23 +619,53 @@ async function uploadImage(client, result) {
   return asset;
 }
 
-async function writeDraft(client, result) {
+async function writeDocument(client, result, args) {
   const doc = structuredClone(result.doc);
-  const asset = await uploadImage(client, result);
-  if (asset) {
-    doc.mainImage = {
-      _type: 'image',
-      alt: result.title,
-      asset: {
-        _type: 'reference',
-        _ref: asset._id,
-      },
-    };
+  doc._id = `${args.target === 'published' ? '' : 'drafts.'}blogPost.${documentIdSlug(result.slug)}`;
+
+  if (args.uploadImages) {
+    const asset = await uploadImage(client, result);
+    if (asset) {
+      doc.mainImage = {
+        _type: 'image',
+        alt: result.title,
+        asset: {
+          _type: 'reference',
+          _ref: asset._id,
+        },
+      };
+    } else {
+      delete doc.mainImage;
+    }
   } else {
-    delete doc.mainImage;
+    const existing = await client.fetch('*[_id == $id][0]{mainImage}', { id: doc._id });
+    if (existing?.mainImage) {
+      doc.mainImage = existing.mainImage;
+    } else {
+      delete doc.mainImage;
+    }
   }
+
   await client.createOrReplace(doc);
   return doc._id;
+}
+
+function documentIdSlug(slug) {
+  const safe = slug
+    .normalize('NFKD')
+    .replace(/[^A-Za-z0-9._-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 96);
+  if (safe) return safe;
+  return `post-${hashString(slug)}`;
+}
+
+function hashString(value) {
+  let hash = 5381;
+  for (const char of value) {
+    hash = ((hash << 5) + hash) ^ char.codePointAt(0);
+  }
+  return (hash >>> 0).toString(36);
 }
 
 function report(results, writes, args) {
@@ -489,9 +673,9 @@ function report(results, writes, args) {
     '# Blog Import Report',
     '',
     `Generated: ${new Date().toISOString()}`,
-    `Mode: ${args.dryRun ? 'dry-run' : 'write drafts'}`,
+    `Mode: ${args.dryRun ? 'dry-run' : `write ${args.target}`}`,
     `Files parsed: ${results.length}`,
-    `Drafts written: ${writes.length}`,
+    `Documents written: ${writes.length}`,
     '',
     '## Summary',
     '',
@@ -504,7 +688,7 @@ function report(results, writes, args) {
   }
 
   if (writes.length > 0) {
-    lines.push('', '## Draft Writes', '');
+    lines.push('', '## Document Writes', '');
     for (const write of writes) {
       lines.push(`- \`${write}\``);
     }
@@ -525,13 +709,13 @@ async function main() {
   if (!args.dryRun) {
     const client = await createSanityClient();
     for (const result of results) {
-      writes.push(await writeDraft(client, result));
+      writes.push(await writeDocument(client, result, args));
     }
   }
 
   report(results, writes, args);
   console.log(`Parsed ${results.length} file(s).`);
-  console.log(args.dryRun ? 'Dry-run only; no Sanity writes.' : `Wrote ${writes.length} Sanity draft(s).`);
+  console.log(args.dryRun ? 'Dry-run only; no Sanity writes.' : `Wrote ${writes.length} Sanity ${args.target} document(s).`);
   console.log(`Report: ${path.relative(ROOT, REPORT_PATH)}`);
 }
 

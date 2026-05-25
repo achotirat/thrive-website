@@ -2600,6 +2600,13 @@ h1.th, h2.th, h3.th {
   color: var(--navy);
 }
 
+.blog-post__body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.4rem;
+  color: var(--navy);
+}
+
 .blog-post__body p {
   margin-bottom: 1.25rem;
 }
@@ -2610,7 +2617,21 @@ h1.th, h2.th, h3.th {
   margin-bottom: 1.25rem;
 }
 
+.blog-post__body ul {
+  list-style: disc;
+}
+
+.blog-post__body ol {
+  list-style: decimal;
+}
+
 .blog-post__body li {
+  margin-bottom: 0.4rem;
+}
+
+.blog-post__body li > ul,
+.blog-post__body li > ol {
+  margin-top: 0.4rem;
   margin-bottom: 0.4rem;
 }
 
@@ -2626,6 +2647,56 @@ h1.th, h2.th, h3.th {
 .blog-post__body a {
   color: var(--teal);
   text-decoration: underline;
+}
+
+.blog-post__body strong,
+.blog-post__body b {
+  font-weight: 700;
+  color: var(--navy-d);
+}
+
+.blog-post__body em,
+.blog-post__body i {
+  font-style: italic;
+}
+
+.blog-post__body figure {
+  margin: 1.5rem 0;
+}
+
+.blog-post__body figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.blog-post__body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.blog-post__body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+
+.blog-post__body th,
+.blog-post__body td {
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-post__body th {
+  background: var(--navy-xl);
+  color: var(--navy);
+  font-weight: 700;
 }
 
 .blog-figure {

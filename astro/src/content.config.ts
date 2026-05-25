@@ -80,6 +80,7 @@ const blogPostsCollection = defineCollection({
     authorTitle: z.string().optional(),
     keyTakeaways: z.array(z.string()).optional().default([]),
     body: z.array(z.any()).optional().default([]),
+    legacyHtml: z.string().optional().default(''),
     faq: z.array(z.object({
       question: z.string(),
       shortAnswer: z.string().optional().default(''),

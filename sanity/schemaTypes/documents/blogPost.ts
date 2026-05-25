@@ -35,6 +35,7 @@ export const blogPost = defineType({
           {title: 'ระบบย่อยอาหาร', value: 'ระบบย่อยอาหาร'},
           {title: 'หัวใจและหลอดเลือด', value: 'หัวใจและหลอดเลือด'},
           {title: 'สตรีสุขภาพ', value: 'สตรีสุขภาพ'},
+          {title: 'เวชศาสตร์ฟื้นฟู', value: 'เวชศาสตร์ฟื้นฟู'},
         ],
         layout: 'radio',
       },
@@ -100,6 +101,13 @@ export const blogPost = defineType({
       title: 'Body',
       type: 'richText',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'legacyHtml',
+      title: 'Legacy HTML body',
+      type: 'text',
+      rows: 18,
+      description: 'Sanitized HTML imported from the source article. Used to preserve migrated article formatting.',
     }),
     defineField({
       name: 'faq',
