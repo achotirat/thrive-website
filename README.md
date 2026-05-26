@@ -4,6 +4,35 @@
 
 ---
 
+## Claude Skills (AI slash commands)
+
+สกิลสำหรับใช้กับ Claude Code อยู่ใน `skills/` — ทีมทุกคนใช้ได้ ไม่ต้องสร้างใหม่เอง
+
+| Skill | คำอธิบาย |
+|---|---|
+| `thrive-content-writer` | เขียน blog / landing page / service page สำหรับ Thrive — ตรวจ citation, ภาษาเข้าใจง่าย, GEO, anti-clickbait |
+| `thrive-launch-audit` | ตรวจ SEO/GEO ทุกหน้าก่อน go-live — สร้าง scorecard ใน `docs/audits/master-audit.md` |
+
+### วิธีเปิดใช้งาน (ทำครั้งเดียวต่อเครื่อง)
+
+Copy the skill folders into your personal Claude skills directory so they appear as slash commands:
+
+```bash
+cp -r skills/thrive-content-writer ~/.claude/skills/
+cp -r skills/thrive-launch-audit ~/.claude/skills/
+```
+
+จากนั้นใช้งานได้เลยใน Claude Code:
+
+```
+/thrive-content-writer write a blog post about adrenal fatigue
+/thrive-launch-audit
+```
+
+> **หมายเหตุ:** ถ้าสกิลมีการอัปเดต ให้ `cp` ซ้ำเพื่อ sync เวอร์ชันล่าสุด
+
+---
+
 ## 2026-04-18 — เปลี่ยนฟอนต์ทั้งเว็บเป็น Noto Sans Thai
 
 **คำสั่งจากผู้ใช้:** แก้ฟอนต์ในไฟล์ `thrive-styles.css` เป็น Noto Sans Thai ทั้งหมด โดยใช้น้ำหนักต่างๆ กัน
