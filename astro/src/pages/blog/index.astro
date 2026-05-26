@@ -8,8 +8,8 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import BlogCard from '../../components/BlogCard.astro'
 import CategoryFilter from '../../components/CategoryFilter.astro'
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+const posts = (await getCollection('blogPosts')).sort(
+  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 )
 
 const categories = [...new Set(
@@ -78,11 +78,11 @@ const seo = {
             {posts.map((post) => (
               <BlogCard
                 title={post.data.title}
-                slug={post.id}
+                slug={post.data.slug.current}
                 excerpt={post.data.excerpt}
                 category={post.data.category ?? ''}
                 mainImage={post.data.mainImage}
-                publishedAt={post.data.publishedAt.toISOString()}
+                publishedAt={post.data.publishedAt}
               />
             ))}
           </div>
