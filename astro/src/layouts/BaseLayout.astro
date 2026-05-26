@@ -39,6 +39,23 @@ const { lang = 'th' } = Astro.props;
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <slot />
+    <!-- PDPA Cookie Consent -->
+    <div id="pdpa-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a2b3c;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem;line-height:1.5;">
+      <p style="margin:0;max-width:640px;">เว็บไซต์นี้ใช้คุกกี้เพื่อพัฒนาประสบการณ์การใช้งานและวิเคราะห์การเข้าชม ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) การใช้งานเว็บไซต์ต่อไปถือว่าคุณยอมรับนโยบายคุกกี้ของเรา</p>
+      <button id="pdpa-accept" style="background:#00b4aa;color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;">ยอมรับ</button>
+    </div>
+    <script is:inline>
+      (function() {
+        if (!localStorage.getItem('pdpa_accepted')) {
+          document.getElementById('pdpa-banner').style.display = 'flex';
+        }
+        document.getElementById('pdpa-accept').addEventListener('click', function() {
+          localStorage.setItem('pdpa_accepted', '1');
+          document.getElementById('pdpa-banner').style.display = 'none';
+        });
+      })();
+    </script>
+
     <script is:inline>
       (() => {
         window.dataLayer = window.dataLayer || [];

@@ -4,7 +4,31 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const ABOUT_FAQ = [
+  {
+    q: 'Thrive Wellness Clinic คืออะไร?',
+    a: 'Thrive Wellness Clinic เป็นคลินิกสุขภาพเชิงลึกในกรุงเทพฯ ที่ใช้แนวทาง Functional Medicine — ตรวจวิเคราะห์หาต้นเหตุของอาการแทนการรักษาตามอาการ บริการครอบคลุมการตรวจภูมิแพ้อาหารแฝง, ฮอร์โมน, HBOT, IV Drip, และโปรแกรมดูแลสุขภาพเฉพาะบุคคล',
+  },
+  {
+    q: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น) คือใคร?',
+    a: 'พญ. ชนากานต์ ตระหง่านศรี เป็นแพทย์เวชศาสตร์ชะลอวัยและโภชนาการ ผู้เชี่ยวชาญด้าน Functional Medicine, Anti-aging Medicine, ฮอร์โมน, และการฟื้นฟูระดับเซลล์ ดูแลผู้ป่วยที่ Thrive Wellness Clinic ที่เดอะ คริสตัล พาร์ค ลาดพร้าว กรุงเทพฯ',
+  },
+  {
+    q: 'Thrive แตกต่างจากคลินิกทั่วไปอย่างไร?',
+    a: 'เราไม่รักษาเพียงอาการ แต่ค้นหาต้นเหตุจริงด้วยการตรวจเลือดและการประเมินเชิงลึก ทุกโปรแกรมออกแบบเฉพาะบุคคลตามผลตรวจและเป้าหมายสุขภาพ ไม่ใช่สูตรสำเร็จ นอกจากนี้ยังมีระบบติดตามผลระยะยาวเพื่อให้ผลดีต่อเนื่อง',
+  },
+  {
+    q: 'Thrive อยู่ที่ไหน เปิดวันไหนบ้าง?',
+    a: 'ตั้งอยู่ที่ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230 เปิดให้บริการทุกวัน (รวมเสาร์-อาทิตย์) เวลา 10:00–19:00 น. โทร 095-934-9640',
+  },
+  {
+    q: 'บริการของ Thrive มีอะไรบ้าง?',
+    a: 'บริการหลักได้แก่: ตรวจภูมิแพ้อาหารแฝง IgG, ตรวจฮอร์โมนเชิงลึก, HBOT ออกซิเจนบำบัด, IV Drip วิตามิน, Glutathione, NAD+, Chelation, ตรวจ DNA, NK Cell Therapy, ตรวจคัดกรองมะเร็ง, วิตามินเฉพาะบุคคล, และโปรแกรมดูแลสุขภาพแบบองค์รวม',
+  },
+];
 
 const jsonLd = [
   {
@@ -13,32 +37,77 @@ const jsonLd = [
       {
         '@type': 'MedicalClinic',
         '@id': 'https://www.thrivewellnessth.com/#clinic',
-        name: 'Thrive Wellness Clinic',
-        alternateName: 'ไธรฟ์ เวลเนส คลินิก',
+        name: 'Thrive Wellness Center',
+        alternateName: 'ไธรฟ์ เวลเนส เซ็นเตอร์',
         url: 'https://www.thrivewellnessth.com',
         telephone: '+66959349640',
         image: 'https://www.thrivewellnessth.com/og-image.jpg',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา',
-          addressLocality: 'กรุงเทพมหานคร',
+          streetAddress: '199 ถนนประดิษฐ์มนูธรรม ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค',
+          addressLocality: 'ลาดพร้าว',
+          addressRegion: 'กรุงเทพมหานคร',
+          postalCode: '10230',
           addressCountry: 'TH',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 13.8187,
+          longitude: 100.5739,
+        },
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '10:00',
+          closes: '19:00',
+        },
         medicalSpecialty: ['Anti-Aging Medicine', 'Preventive Medicine', 'Functional Medicine'],
+        hasMap: 'https://maps.google.com/?q=199+Pradit+Manutham+Road+Bangkok+10230',
+        sameAs: [
+          'https://www.facebook.com/thrivewellnessth',
+          'https://www.instagram.com/thrivewellnessth',
+          'https://line.me/R/ti/p/@thrivewellnessth',
+        ],
       },
       {
         '@type': 'Person',
         '@id': 'https://www.thrivewellnessth.com/#dr-chanakan',
         name: 'พญ. ชนากานต์ ตระหง่านศรี',
-        alternateName: 'Chanakan Trangansri, MD.',
-        jobTitle: 'แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ',
+        alternateName: ['Chanakan Trangansri, MD.', 'หมอนุ่น'],
+        jobTitle: 'Medical Director, Anti-aging & Regenerative Medicine',
         worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
-        knowsAbout: ['Anti-aging Medicine', 'Nutrition Wellness', 'Hormone Balance', 'Lifestyle Medicine'],
+        knowsAbout: ['Anti-aging Medicine', 'Functional Medicine', 'Nutrition Wellness', 'Hormone Balance', 'Lifestyle Medicine', 'Chelation Therapy', 'Regenerative Medicine', 'Weight Management'],
+        image: 'https://www.thrivewellnessth.com/dr-chanakan-trangansri-thrive-400x400.jpg',
+        url: 'https://www.thrivewellnessth.com/about',
+      },
+      {
+        '@type': 'Person',
+        name: 'Dr. Pijak Wongvisit',
+        alternateName: 'หมอบาย',
+        jobTitle: 'Physician, Preventive Medicine & Regenerative Medicine',
+        worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
+        knowsAbout: ['Preventive Medicine', 'Hormone Balance', 'Weight Management', 'Genetic Counseling', 'Regenerative Medicine'],
+      },
+      {
+        '@type': 'Person',
+        name: 'Dr. Uravadee Chanchamsang',
+        alternateName: 'หมอเอม',
+        jobTitle: 'Physician, Regenerative Medicine & Integrative Oncology',
+        worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
+        knowsAbout: ['Regenerative Medicine', 'Integrative Oncology', 'Cell Therapy', 'Chelation Therapy', 'Anthroposophic Medicine'],
       },
       {
         '@type': 'AboutPage',
         url: 'https://www.thrivewellnessth.com/about',
         name: 'เกี่ยวกับ Thrive Wellness Clinic',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: ABOUT_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -65,6 +134,11 @@ const crumbs = [
     canonicalPath="/about"
     ogImage="/about-hero-1200x630.jpg"
     noIndex={false}
+    hreflang={[
+      { lang: 'th-TH', href: 'https://www.thrivewellnessth.com/about' },
+      { lang: 'en', href: 'https://www.thrivewellnessth.com/about' },
+      { lang: 'x-default', href: 'https://www.thrivewellnessth.com/about' },
+    ]}
     jsonLd={jsonLd}
   />
   <Header />
@@ -116,19 +190,66 @@ const crumbs = [
 
     <section class="section section--white">
       <div class="container">
-        <div class="grid-2" style="align-items:center;">
-          <div>
-            <span class="section-label">Medical Lead</span>
-            <h2 class="section-title">พญ. ชนากานต์ ตระหง่านศรี</h2>
-            <p class="text-muted text-lg">แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ ดูแลการประเมินสุขภาพเชิงลึก โภชนาการ ฮอร์โมน ไลฟ์สไตล์ และการออกแบบแผนดูแลสุขภาพเฉพาะบุคคล</p>
-            <div class="doctor-card__tags" style="margin-top:18px;">
-              <span>Anti-aging & Regenerative Medicine</span>
-              <span>Nutrition Wellness</span>
-              <span>Hormone Balance</span>
-              <span>Lifestyle Medicine</span>
+        <div class="section-title-center">
+          <span class="section-label">Our Doctors</span>
+          <h2 class="section-title">ทีมแพทย์ผู้เชี่ยวชาญ</h2>
+          <p style="color:var(--text-2);max-width:560px;margin:0 auto;">แพทย์ทุกท่านที่ Thrive เชี่ยวชาญด้าน Functional Medicine และ Anti-aging — ดูแลโดยหาต้นเหตุ ไม่ใช่แค่รักษาอาการ</p>
+        </div>
+
+        <div style="background:#f8fafc;border-radius:16px;border:1.5px solid #e5e7eb;padding:40px;margin-bottom:28px;margin-top:40px;">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start;">
+            <div style="text-align:center;min-width:160px;">
+              <img src="/dr-chanakan-trangansri-thrive-400x400.jpg"
+                   alt="พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น Medical Director Thrive Wellness Center"
+                   style="width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,.12);"
+                   loading="lazy" />
+              <div style="margin-top:14px;">
+                <div style="font-weight:800;color:var(--navy);font-size:.95rem;">พญ. ชนากานต์ ตระหง่านศรี</div>
+                <div style="font-size:.78rem;color:var(--text-3);margin-top:2px;">Chanakan Trangansri, MD.</div>
+                <div style="font-size:.8rem;color:var(--sky);font-weight:700;margin-top:4px;">"หมอนุ่น"</div>
+              </div>
+            </div>
+            <div>
+              <span class="section-label" style="margin-bottom:10px;display:inline-block;">Medical Director · Anti-aging &amp; Regenerative Medicine</span>
+              <p style="color:var(--text-2);line-height:1.8;margin-bottom:16px;">หมอนุ่นออกแบบและดูแลโปรแกรมสุขภาพเฉพาะบุคคลที่ Thrive ด้วยแนวทาง Functional Medicine — ตรวจวิเคราะห์หาต้นเหตุของอาการจากผลตรวจเลือดและการประเมินเชิงลึก แล้วออกแบบแผนดูแลที่ตรงกับสภาพร่างกายของแต่ละคน มีประสบการณ์ดูแลผู้ป่วยมากกว่า 5,000 รายใน 7 ปีที่ผ่านมา</p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Anti-aging &amp; Regenerative Medicine</span>
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Nutrition Wellness</span>
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Hormone Balance</span>
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Lifestyle Medicine</span>
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Chelation &amp; Detox</span>
+                <span style="background:#e0f2fe;color:#0369a1;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;">Weight Management</span>
+              </div>
+              <div style="font-size:.85rem;color:var(--text-2);line-height:1.8;padding:12px 18px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+                <span style="font-weight:700;color:var(--navy);">วุฒิการศึกษา:</span> MD (Doctor of Medicine)
+                <span style="padding:0 12px;color:#d1d5db;">|</span>
+                <span style="font-weight:700;color:var(--navy);">ภาษา:</span> ภาษาไทย · English
+              </div>
             </div>
           </div>
-          <img src="/dr-chanakan-trangansri-thrive-400x400.jpg" alt="พญ. ชนากานต์ ตระหง่านศรี Thrive Wellness Clinic" style="width:100%;max-width:420px;margin-inline:auto;border-radius:var(--r-xl);box-shadow:var(--sh-lg);" loading="lazy" />
+        </div>
+
+        <div class="grid-2">
+          <div class="card card-body">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#e0f2fe;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">👨‍⚕️</div>
+              <div>
+                <div style="font-weight:700;color:var(--navy);">Dr. Pijak Wongvisit, MD.</div>
+                <div style="font-size:.78rem;color:var(--text-3);margin-bottom:8px;">"หมอบาย"</div>
+                <p class="text-muted" style="font-size:.85rem;line-height:1.7;">Preventive Medicine · Hormone Balance · Weight Management · Lifestyle Modification · Genetic Counseling · Regenerative Medicine</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-body">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#e0f2fe;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">👩‍⚕️</div>
+              <div>
+                <div style="font-weight:700;color:var(--navy);">Dr. Uravadee Chanchamsang, MD.</div>
+                <div style="font-size:.78rem;color:var(--text-3);margin-bottom:8px;">"หมอเอม" · MA in Sociology</div>
+                <p class="text-muted" style="font-size:.85rem;line-height:1.7;">Regenerative Medicine · Integrative Oncology · Enzyme Therapy · Cell Therapy · Chelation · Anthroposophic Medicine</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -159,23 +280,52 @@ const crumbs = [
       </div>
     </section>
 
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">Evidence-Based</span>
+          <h2 class="section-title">แนวทางที่มีวิทยาศาสตร์รองรับ</h2>
+          <p style="color:var(--text-2);max-width:560px;margin:0 auto;">Thrive ใช้แนวทาง Functional Medicine และ Precision Medicine ซึ่งได้รับการยืนยันจากงานวิจัยทางการแพทย์ระดับโลก</p>
+        </div>
+        <div class="grid-2" style="margin-top:40px;">
+          <div class="card card-body">
+            <h3 style="font-size:1rem;margin-bottom:12px;">Functional Medicine</h3>
+            <p class="text-muted" style="line-height:1.8;">แนวทางที่มุ่งค้นหาสาเหตุของโรคในระดับระบบ โดยพิจารณาปัจจัยทางชีววิทยา ไลฟ์สไตล์ และสิ่งแวดล้อมร่วมกัน แทนการรักษาอาการแบบแยกส่วน</p>
+          </div>
+          <div class="card card-body">
+            <h3 style="font-size:1rem;margin-bottom:12px;">Precision Medicine</h3>
+            <p class="text-muted" style="line-height:1.8;">งานวิจัยจาก NIH พบว่าการรักษาที่คำนึงถึงพันธุกรรม สิ่งแวดล้อม และไลฟ์สไตล์เฉพาะบุคคลให้ผลลัพธ์ที่ดีกว่าแนวทาง one-size-fits-all อย่างมีนัยสำคัญ [1]</p>
+          </div>
+        </div>
+        <div style="max-width:680px;margin:24px auto 0;padding:16px 20px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+          <div style="font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:8px;">Scientific References</div>
+          <ol style="font-size:.78rem;color:var(--text-3);line-height:1.8;padding-left:16px;margin:0;display:flex;flex-direction:column;gap:4px;">
+            <li>Collins FS, Varmus H. A new initiative on precision medicine. <em>N Engl J Med.</em> 2015;372(9):793–795. PMID: 25635347</li>
+            <li>Hood L, Flores M. A personal view on systems medicine and the emergence of proactive P4 medicine. <em>N Biotechnol.</em> 2012;29(6):613–624. PMID: 22450329</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--white">
       <div class="container">
         <div class="grid-2">
           <div>
             <span class="section-label">Location</span>
             <h2 class="section-title">ที่ตั้งและการติดต่อ</h2>
-            <p class="text-muted">Thrive Wellness Clinic ตั้งอยู่ที่ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา เดินทางสะดวก มีที่จอดรถ และเปิดให้บริการทุกวัน</p>
+            <p class="text-muted">Thrive Wellness Center ตั้งอยู่ที่ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค ประดิษฐ์มนูธรรม ลาดพร้าว เดินทางสะดวก มีที่จอดรถในห้างฯ และเปิดให้บริการทุกวัน</p>
           </div>
           <div class="card card-body">
-            <p><strong>ที่อยู่:</strong> ชั้น 2 เดอะ คริสตัล เอกมัย-รามอินทรา กรุงเทพมหานคร</p>
+            <p><strong>ที่อยู่:</strong> ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค<br />199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230</p>
             <p><strong>โทร:</strong> <a href="tel:+66959349640">095-934-9640</a></p>
             <p><strong>LINE:</strong> <a href="https://line.me/R/ti/p/@thrivewellnessth">@thrivewellnessth</a></p>
-            <p><strong>เวลาเปิด:</strong> ทุกวัน 10:00-19:30 น.</p>
+            <p><strong>เวลาเปิด:</strong> ทุกวัน 10:00–19:00 น.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <FAQSection items={ABOUT_FAQ} />
 
     <CTASection
       headline="พร้อมเริ่มต้นรู้จักร่างกายตัวเองให้ลึกขึ้นไหม?"

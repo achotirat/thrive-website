@@ -98,11 +98,89 @@ jsonLd:
         name: "Thrive Wellness Clinic"
         url: "https://www.thrivewellnessth.com"
         telephone: "+66959349640"
+        address:
+          "@type": "PostalAddress"
+          streetAddress: "The Crystal Park ชั้น 2 อาคาร B เลขที่ 199 ถนนประดิษฐ์มนูธรรม"
+          addressLocality: "ลาดพร้าว กรุงเทพมหานคร"
+          postalCode: "10230"
+          addressCountry: "TH"
+        geo:
+          "@type": "GeoCoordinates"
+          latitude: 13.8187
+          longitude: 100.5739
+        openingHours: "Mo-Su 10:00-19:00"
+        medicalSpecialty: "Nutrition Wellness"
+      - "@type": "Person"
+        "@id": "https://www.thrivewellnessth.com/#dr-chanakan"
+        name: "พญ. ชนากานต์ ตระหง่านศรี"
+        alternateName: "Chanakan Trangansri, MD."
+        jobTitle: "แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ"
+        worksFor:
+          "@id": "https://www.thrivewellnessth.com/#clinic"
+        knowsAbout: ["Nutrition Wellness", "Micronutrient Deficiency", "Anti-aging Medicine", "Lifestyle Medicine"]
+      - "@type": "MedicalTest"
+        name: "ตรวจวิตามินและแร่ธาตุ (Micronutrient Panel)"
+        alternateName: "Vitamins and Micronutrients Testing"
+        url: "https://www.thrivewellnessth.com/vitamins-and-micronutrients"
+        description: "การตรวจเลือดวิเคราะห์ระดับวิตามินและแร่ธาตุจำเป็นกว่า 20 ชนิด เพื่อระบุการขาดและออกแบบแผนเสริมที่แม่นยำเฉพาะบุคคล"
+        usedToDiagnose:
+          "@type": "MedicalCondition"
+          name: "Micronutrient Deficiency"
+        performer:
+          "@id": "https://www.thrivewellnessth.com/#clinic"
       - "@type": "MedicalWebPage"
         name: "วิตามินและแร่ธาตุ — คู่มือจากแพทย์"
         description: "คู่มือครบเรื่องวิตามินและแร่ธาตุที่จำเป็น อาการขาด วิธีตรวจระดับจริง และการเสริมอย่างถูกต้องภายใต้การดูแลของแพทย์"
         author: { "@type": "Person", "name": "พญ. ชนากานต์ ตระหง่านศรี" }
+      - "@type": "FAQPage"
+        mainEntity:
+          - "@type": "Question"
+            name: "ควรกินวิตามินรวมหรือเจาะจงตัว?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "ขึ้นกับความต้องการของแต่ละคน วิตามินรวมให้ปริมาณต่ำๆ ของหลายตัว เหมาะสำหรับผู้ที่ไม่มีการขาดชัดเจน แต่ถ้ามีอาการหรือตรวจพบการขาดตัวใดโดยเฉพาะ การเสริมตัวนั้นในปริมาณที่เพียงพอจะได้ผลมากกว่า"
+          - "@type": "Question"
+            name: "วิตามินที่ละลายในไขมันและน้ำต่างกันอย่างไร?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "วิตามิน A D E K ละลายในไขมัน สะสมในร่างกายได้ กินมากเกินไปเป็นพิษได้ ต้องกินพร้อมอาหารที่มีไขมัน วิตามิน B และ C ละลายในน้ำ ไม่สะสม ร่างกายขับส่วนเกินออก แต่ก็ต้องเสริมสม่ำเสมอเพราะไม่มีสำรอง"
+          - "@type": "Question"
+            name: "จะรู้ได้อย่างไรว่าขาดวิตามินอะไร?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "วิธีที่แม่นยำที่สุดคือตรวจเลือด แพทย์สามารถสั่งตรวจระดับวิตามิน D, B12, Folate, Iron/Ferritin, Zinc, Magnesium และอื่นๆ ได้โดยตรง อาการทางคลินิกช่วยชี้นำแต่ไม่จำเพาะเจาะจงพอสำหรับการวางแผนการรักษา"
+          - "@type": "Question"
+            name: "กินวิตามินพร้อมกันหลายตัวได้ไหม?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "ได้ในกรณีส่วนใหญ่ แต่มีบางคู่ที่ควรระวัง เช่น แคลเซียมและแมกนีเซียมแข่งการดูดซึมกัน ธาตุเหล็กและสังกะสีดูดซึมช่องเดียวกัน วิตามิน C ช่วยเพิ่มการดูดซึมธาตุเหล็ก แพทย์จะแนะนำเวลาและลำดับการกินที่เหมาะสม"
+          - "@type": "Question"
+            name: "IV Drip วิตามินดีกว่ากินเม็ดไหม?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "ขึ้นกับเป้าหมาย กินเม็ดดูดซึมผ่านลำไส้ได้ 10–50% ขึ้นกับสภาพลำไส้และชนิดวิตามิน IV Drip ส่งตรงเข้าเลือด 100% เหมาะสำหรับผู้ที่ต้องการเพิ่มระดับเร็ว มีปัญหาลำไส้ดูดซึมต่ำ หรือต้องการปริมาณสูงกว่าที่กินได้ปลอดภัย"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "หน้าแรก"
+            item: "https://www.thrivewellnessth.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "วิตามินและแร่ธาตุ"
+            item: "https://www.thrivewellnessth.com/vitamins-and-micronutrients"
 ---
+
+<div style="background:#ecfeff;border:1.5px solid #67e8f9;border-radius:12px;padding:24px 28px;margin:24px 0 40px;">
+  <div style="font-weight:800;color:#0c4a6e;margin-bottom:14px;font-size:.9rem;letter-spacing:.05em;">📋 สรุปประเด็นสำคัญ (Key Takeaways)</div>
+  <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;color:#0c4a6e;font-size:.9rem;line-height:1.75;">
+    <li><strong>วิตามินและแร่ธาตุมีบทบาทในปฏิกิริยาชีวเคมีนับพัน</strong> — ขาดแม้เพียงเล็กน้อยส่งผลต่อพลังงาน ฮอร์โมน ระบบประสาท และภูมิคุ้มกัน</li>
+    <li><strong>คนไทยในเมืองมักขาด</strong> — Vitamin D, B12, แมกนีเซียม, เหล็ก (Ferritin) และสังกะสี เป็น 5 อันดับแรกที่พบบ่อยในการตรวจ</li>
+    <li><strong>วิตามินละลายในน้ำต้องเสริมสม่ำเสมอ</strong> — B1–B12 และ C ร่างกายขับออกทุกวัน ส่วนละลายในไขมัน A, D, E, K สะสมได้ — เสริมเกินอันตราย</li>
+    <li><strong>การเสริมโดยไม่ตรวจก่อนมีความเสี่ยง 3 ด้าน</strong> — เสริมผิดตัว เสริมเกิน และรบกวนการดูดซึมแร่ธาตุชนิดอื่น เช่น Zinc เกินขัดขวาง Copper</li>
+    <li><strong>Thrive ตรวจก่อน เสริมตรง ติดตามผล</strong> — วัดซ้ำหลัง 3 เดือนเพื่อปรับแผนตามระดับจริงที่เปลี่ยนแปลง</li>
+  </ul>
+</div>
 
 ## Micronutrients — เล็กแต่ขาดไม่ได้
 

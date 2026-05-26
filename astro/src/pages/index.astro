@@ -78,6 +78,11 @@ const jsonLd = [
           opens: '10:00',
           closes: '19:00',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 13.8187,
+          longitude: 100.5739,
+        },
         medicalSpecialty: ['Anti-aging Medicine', 'Functional Medicine', 'Regenerative Medicine'],
         sameAs: [
           'https://www.facebook.com/thrivewellnessth',
@@ -94,6 +99,14 @@ const jsonLd = [
         worksFor: { '@id': 'https://www.thrivewellnessth.com/#clinic' },
         knowsAbout: ['Functional Medicine', 'Anti-aging Medicine', 'Hormone Therapy', 'IV Nutrition', 'Food Intolerance Testing'],
       },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQ_ITEMS.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      },
     ],
   },
 ];
@@ -107,6 +120,11 @@ const jsonLd = [
     canonicalPath="/"
     ogImage="/og-image.jpg"
     noIndex={false}
+    hreflang={[
+      { lang: 'th-TH', href: 'https://www.thrivewellnessth.com/' },
+      { lang: 'en', href: 'https://www.thrivewellnessth.com/' },
+      { lang: 'x-default', href: 'https://www.thrivewellnessth.com/' },
+    ]}
     jsonLd={jsonLd}
   />
   <Header />
