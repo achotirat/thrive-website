@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro'
 import SEO from '../components/SEO.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import CTASection from '../components/CTASection.astro'
+import DoctorAttribution from '../components/DoctorAttribution.astro'
 import { urlFor } from '../lib/sanity'
 
 export interface Props {
@@ -139,6 +140,15 @@ const cta = {
         <slot />
       </div>
     </article>
+
+    <DoctorAttribution doctor={{
+      name: 'พญ. ชนากานต์ ตระหง่านศรี',
+      title: 'แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ',
+      image: '/dr-chanakan-trangansri-thrive-400x400.jpg',
+      imageAlt: 'พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ Thrive Wellness',
+      bio: 'ผู้เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและโภชนาการ ดูแลการตรวจวิเคราะห์สุขภาพเชิงลึก พร้อมให้คำปรึกษาแผนสุขภาพเฉพาะบุคคลที่ Thrive Wellness Center',
+      specializations: ['Anti-aging & Regenerative Medicine', 'Nutrition Wellness', 'Functional Medicine'],
+    }} />
 
     <CTASection {...cta} />
   </main>

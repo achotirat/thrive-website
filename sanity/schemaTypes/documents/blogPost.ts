@@ -34,7 +34,7 @@ export const blogPost = defineType({
           {title: 'ผิวหนัง', value: 'ผิวหนัง'},
           {title: 'ระบบย่อยอาหาร', value: 'ระบบย่อยอาหาร'},
           {title: 'หัวใจและหลอดเลือด', value: 'หัวใจและหลอดเลือด'},
-          {title: 'สตรีสุขภาพ', value: 'สตรีสุขภาพ'},
+          {title: 'สุขภาพสตรี', value: 'สุขภาพสตรี'},
           {title: 'เวชศาสตร์ฟื้นฟู', value: 'เวชศาสตร์ฟื้นฟู'},
         ],
         layout: 'radio',
