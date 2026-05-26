@@ -36,6 +36,7 @@ const faqItems = (d.faq ?? []).map((item: any) => ({
   noIndex={d.seo?.noIndex ?? false}
   canonicalUrl={d.seo?.canonicalUrl}
   slug={d.slug.current}
+  faqItems={faqItems}
 >
   {d.keyTakeaways && d.keyTakeaways.length > 0 && (
     <div class="blog-post__takeaways">

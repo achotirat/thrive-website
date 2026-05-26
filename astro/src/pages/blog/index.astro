@@ -26,7 +26,11 @@ const seo = {
   ogLocale: 'th_TH',
   canonicalPath: '/blog',
   noIndex: false,
-  hreflang: [],
+  hreflang: [
+    { lang: 'th-TH', href: 'https://www.thrivewellnessth.com/blog' },
+    { lang: 'en', href: 'https://www.thrivewellnessth.com/blog' },
+    { lang: 'x-default', href: 'https://www.thrivewellnessth.com/blog' },
+  ],
   geo: {
     region: 'TH-10',
     placename: 'Bangkok',
