@@ -5,7 +5,7 @@ import { portableTextToHtml } from '../../lib/portableTextToHtml'
 
 const posts = await getCollection('blogPosts')
 const post = posts.find((p) => p.data.slug.current === 'ashwagandha')
-if (!post) throw new Error('Blog post "ashwagandha" not found in Sanity collection')
+if (!post) return Astro.redirect('/blog')
 
 const d = post.data
 
