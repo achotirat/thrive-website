@@ -49,15 +49,6 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://www.thrivewellnessth.com/hbot"/>
   </url>
 
-  <!-- Health Architect -->
-  <url>
-    <loc>https://www.thrivewellnessth.com/health-architect</loc>
-    <lastmod>2025-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.thrivewellnessth.com/health-architect"/>
-  </url>
-
   <!-- Knowledge Hub -->
   <url>
     <loc>https://www.thrivewellnessth.com/knowledge</loc>

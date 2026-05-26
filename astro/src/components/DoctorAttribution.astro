@@ -6,6 +6,7 @@ type Doctor = {
   imageAlt: string;
   bio: string;
   specializations: string[];
+  quote?: string;
 };
 
 export interface Props {
@@ -23,10 +24,15 @@ const { doctor } = Astro.props;
       <h2>{doctor.name}</h2>
       <p class="doctor-card__title">{doctor.title}</p>
       <p>{doctor.bio}</p>
+      {doctor.quote && (
+        <blockquote class="doctor-quote">
+          <p>"{doctor.quote}"</p>
+          <cite>— {doctor.name}, {doctor.title}</cite>
+        </blockquote>
+      )}
       <div class="doctor-card__tags">
         {doctor.specializations.map((item) => <span>{item}</span>)}
       </div>
     </div>
   </div>
 </section>
-

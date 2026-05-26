@@ -2708,3 +2708,49 @@ h1.th, h2.th, h3.th {
   max-width: 100%;
   border-radius: 0.5rem;
 }
+
+/* ─── TL;DR / Key Takeaways box ─── */
+.tldr-section {
+  padding-block: var(--sp-8);
+}
+
+.tldr-box {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-4) 0 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.tldr-box li {
+  padding: var(--sp-3) var(--sp-4) var(--sp-3) var(--sp-6);
+  border-left: 3px solid var(--teal);
+  background: var(--white);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--text-base);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ─── Doctor expert quote ─── */
+.doctor-quote {
+  margin: var(--sp-6) 0 0;
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 3px solid var(--teal);
+  background: var(--teal-xl);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+
+.doctor-quote p {
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.8;
+  margin: 0 0 var(--sp-2);
+}
+
+.doctor-quote cite {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-style: normal;
+}
