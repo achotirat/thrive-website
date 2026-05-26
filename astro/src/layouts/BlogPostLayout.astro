@@ -39,9 +39,11 @@ const {
   faqItems = [],
 } = Astro.props
 
-const heroSrc = mainImage?.asset
-  ? urlFor(mainImage).width(1200).height(630).auto('format').url()
-  : '/og-image.jpg'
+const heroSrc = typeof mainImage === 'string'
+  ? mainImage
+  : mainImage?.asset
+    ? urlFor(mainImage).width(1200).height(630).auto('format').url()
+    : '/og-image.jpg'
 
 const heroAlt = mainImage?.alt ?? title
 

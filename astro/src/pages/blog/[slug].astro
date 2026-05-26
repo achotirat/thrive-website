@@ -1,41 +1,37 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
-import { portableTextToHtml } from '../../lib/portableTextToHtml'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blogPosts')
+  const posts = await getCollection('blog')
   return posts.map((post) => ({
-    params: { slug: post.data.slug.current },
+    params: { slug: post.id },
     props: { post },
   }))
 }
 
 const { post } = Astro.props
 const d = post.data
+const { Content } = await render(post)
 
-const hasLegacyHtml = Boolean(d.legacyHtml)
-const bodyHtml = hasLegacyHtml ? d.legacyHtml : portableTextToHtml(d.body ?? [])
-
-const faqItems = (d.faq ?? []).map((item: any) => ({
+const faqItems = (d.faq ?? []).map((item) => ({
   question: item.question,
-  answer: item.shortAnswer ?? '',
+  answer: item.answer,
 }))
 ---
 
 <BlogPostLayout
   title={d.title}
-  publishedAt={d.publishedAt}
-  updatedAt={d.updatedAt}
+  publishedAt={d.publishedAt.toISOString()}
+  updatedAt={d.updatedAt?.toISOString()}
   authorName={d.authorName}
   authorTitle={d.authorTitle}
   category={d.category}
   mainImage={d.mainImage}
-  seoTitle={d.seo?.seoTitle}
-  seoDescription={d.seo?.seoDescription}
-  noIndex={d.seo?.noIndex ?? false}
-  canonicalUrl={d.seo?.canonicalUrl}
-  slug={d.slug.current}
+  seoTitle={d.seoTitle}
+  seoDescription={d.seoDescription}
+  noIndex={d.noIndex ?? false}
+  slug={post.id}
   faqItems={faqItems}
 >
   {d.keyTakeaways && d.keyTakeaways.length > 0 && (
@@ -47,7 +43,9 @@ const faqItems = (d.faq ?? []).map((item: any) => ({
     </div>
   )}
 
-  <div class="blog-post__body" set:html={bodyHtml} />
+  <div class="blog-post__body">
+    <Content />
+  </div>
 
   {faqItems.length > 0 && (
     <section class="section faq-section">

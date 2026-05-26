@@ -12,9 +12,11 @@ export interface Props {
 
 const { title, slug, excerpt, category, mainImage, publishedAt } = Astro.props
 
-const imgSrc = mainImage?.asset
-  ? urlFor(mainImage).width(600).height(340).auto('format').url()
-  : '/og-image.jpg'
+const imgSrc = typeof mainImage === 'string'
+  ? mainImage
+  : mainImage?.asset
+    ? urlFor(mainImage).width(600).height(340).auto('format').url()
+    : '/og-image.jpg'
 
 const imgAlt = mainImage?.alt ?? title
 

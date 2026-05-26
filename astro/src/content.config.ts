@@ -94,7 +94,27 @@ const blogPostsCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    excerpt: z.string(),
+    category: z.string().optional().default(''),
+    publishedAt: z.coerce.date(),
+    updatedAt: z.coerce.date().optional(),
+    authorName: z.string().optional().default('พญ. ชนากานต์ ตระหง่านศรี'),
+    authorTitle: z.string().optional().default('แพทย์ด้าน Anti-aging & Regenerative Medicine'),
+    mainImage: z.string().optional(),
+    keyTakeaways: z.array(z.string()).optional().default([]),
+    faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional().default([]),
+    noIndex: z.boolean().optional().default(false),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+  }),
+});
+
 export const collections = {
   services: servicesCollection,
   blogPosts: blogPostsCollection,
+  blog: blogCollection,
 };
