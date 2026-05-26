@@ -5,14 +5,38 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const CONTACT_FAQ = [
+  {
+    q: 'นัดหมายได้ทางไหนบ้าง?',
+    a: 'นัดหมายได้ 3 ช่องทาง: LINE @thrivewellnessth (เร็วที่สุด), โทร 095-934-9640, หรือกรอกแบบฟอร์มด้านล่าง ทีมงานจะตอบกลับภายใน 1 ชั่วโมงในเวลาทำการ',
+  },
+  {
+    q: 'คลินิกเปิดกี่โมง?',
+    a: 'เปิดทุกวัน รวมถึงวันเสาร์-อาทิตย์และวันหยุดนักขัตฤกษ์ เวลา 10:00–19:00 น. หากต้องการนัดนอกเวลา กรุณาแจ้งล่วงหน้าทาง LINE เพื่อตรวจสอบความพร้อม',
+  },
+  {
+    q: 'ต้องนัดล่วงหน้าไหม หรือ Walk-in ได้?',
+    a: 'รับ Walk-in ได้ แต่แนะนำให้นัดล่วงหน้าเพื่อให้แพทย์เตรียมข้อมูลและจัดสรรเวลาให้ครบถ้วน โดยเฉพาะสำหรับการตรวจเชิงลึกหรือโปรแกรมที่ต้องการข้อมูลเบื้องต้น',
+  },
+  {
+    q: 'Thrive อยู่ที่ไหน เดินทางอย่างไร?',
+    a: 'ตั้งอยู่ที่ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230 เดินทางได้ทั้ง MRT สายสีชมพู, BTS + รถต่อ, หรือรถยนต์ส่วนตัว มีที่จอดรถในห้างฯ',
+  },
+  {
+    q: 'มีบริการสำหรับชาวต่างชาติไหม?',
+    a: 'มีครับ/ค่ะ ทีมงานและแพทย์สื่อสารภาษาอังกฤษได้คล่อง เอกสาร ผลตรวจ และใบรายงานแพทย์ทั้งหมดจัดทำเป็นภาษาอังกฤษได้ตามคำขอ',
+  },
+];
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'MedicalClinic',
+        '@type': ['MedicalClinic', 'LocalBusiness'],
         '@id': 'https://www.thrivewellnessth.com/#clinic',
         name: 'Thrive Wellness Center',
         telephone: '+66959349640',
@@ -26,6 +50,11 @@ const jsonLd = [
           addressRegion: 'กรุงเทพมหานคร',
           postalCode: '10230',
           addressCountry: 'TH',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 13.8187,
+          longitude: 100.5739,
         },
         openingHoursSpecification: [
           {
@@ -45,6 +74,14 @@ const jsonLd = [
         '@type': 'ContactPage',
         url: 'https://www.thrivewellnessth.com/contact',
         name: 'ติดต่อนัดหมาย Thrive Wellness Center',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: CONTACT_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -188,6 +225,9 @@ const crumbs = [
         </div>
       </div>
     </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────────── -->
+    <FAQSection items={CONTACT_FAQ} />
 
     <!-- ── Final CTA ──────────────────────────────────────────── -->
     <CTASection

@@ -4,7 +4,31 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const ABOUT_FAQ = [
+  {
+    q: 'Thrive Wellness Clinic คืออะไร?',
+    a: 'Thrive Wellness Clinic เป็นคลินิกสุขภาพเชิงลึกในกรุงเทพฯ ที่ใช้แนวทาง Functional Medicine — ตรวจวิเคราะห์หาต้นเหตุของอาการแทนการรักษาตามอาการ บริการครอบคลุมการตรวจภูมิแพ้อาหารแฝง, ฮอร์โมน, HBOT, IV Drip, และโปรแกรมดูแลสุขภาพเฉพาะบุคคล',
+  },
+  {
+    q: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น) คือใคร?',
+    a: 'พญ. ชนากานต์ ตระหง่านศรี เป็นแพทย์เวชศาสตร์ชะลอวัยและโภชนาการ ผู้เชี่ยวชาญด้าน Functional Medicine, Anti-aging Medicine, ฮอร์โมน, และการฟื้นฟูระดับเซลล์ ดูแลผู้ป่วยที่ Thrive Wellness Clinic ที่เดอะ คริสตัล พาร์ค ลาดพร้าว กรุงเทพฯ',
+  },
+  {
+    q: 'Thrive แตกต่างจากคลินิกทั่วไปอย่างไร?',
+    a: 'เราไม่รักษาเพียงอาการ แต่ค้นหาต้นเหตุจริงด้วยการตรวจเลือดและการประเมินเชิงลึก ทุกโปรแกรมออกแบบเฉพาะบุคคลตามผลตรวจและเป้าหมายสุขภาพ ไม่ใช่สูตรสำเร็จ นอกจากนี้ยังมีระบบติดตามผลระยะยาวเพื่อให้ผลดีต่อเนื่อง',
+  },
+  {
+    q: 'Thrive อยู่ที่ไหน เปิดวันไหนบ้าง?',
+    a: 'ตั้งอยู่ที่ชั้น 2 อาคาร B เดอะ คริสตัล พาร์ค เลขที่ 199 ถนนประดิษฐ์มนูธรรม ลาดพร้าว กรุงเทพฯ 10230 เปิดให้บริการทุกวัน (รวมเสาร์-อาทิตย์) เวลา 10:00–19:00 น. โทร 095-934-9640',
+  },
+  {
+    q: 'บริการของ Thrive มีอะไรบ้าง?',
+    a: 'บริการหลักได้แก่: ตรวจภูมิแพ้อาหารแฝง IgG, ตรวจฮอร์โมนเชิงลึก, HBOT ออกซิเจนบำบัด, IV Drip วิตามิน, Glutathione, NAD+, Chelation, ตรวจ DNA, NK Cell Therapy, ตรวจคัดกรองมะเร็ง, วิตามินเฉพาะบุคคล, และโปรแกรมดูแลสุขภาพแบบองค์รวม',
+  },
+];
 
 const jsonLd = [
   {
@@ -39,6 +63,14 @@ const jsonLd = [
         '@type': 'AboutPage',
         url: 'https://www.thrivewellnessth.com/about',
         name: 'เกี่ยวกับ Thrive Wellness Clinic',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: ABOUT_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -181,6 +213,8 @@ const crumbs = [
         </div>
       </div>
     </section>
+
+    <FAQSection items={ABOUT_FAQ} />
 
     <CTASection
       headline="พร้อมเริ่มต้นรู้จักร่างกายตัวเองให้ลึกขึ้นไหม?"
