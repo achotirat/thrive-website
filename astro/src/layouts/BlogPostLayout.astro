@@ -20,6 +20,8 @@ export interface Props {
   noIndex?: boolean
   canonicalUrl?: string
   slug: string
+  jsonLd?: Record<string, unknown>[]
+  hreflang?: { lang: string; href: string }[]
 }
 
 const {
@@ -35,6 +37,8 @@ const {
   noIndex = false,
   canonicalUrl,
   slug,
+  jsonLd = [],
+  hreflang = [],
 } = Astro.props
 
 const heroSrc = mainImage?.asset
@@ -64,7 +68,7 @@ const seo = {
   ogLocale: 'th_TH',
   canonicalPath: canonicalUrl ?? `/blog/${slug}`,
   noIndex,
-  hreflang: [],
+  hreflang,
   geo: {
     region: 'TH-10',
     placename: 'Bangkok',
@@ -76,6 +80,7 @@ const seo = {
   lastMedicalReview: new Date(publishedAt),
   reviewedBy: authorName ?? 'Dr. Noon Pichayaporn',
   medicalSpecialty: 'Functional Medicine',
+  jsonLd,
 }
 
 const cta = {

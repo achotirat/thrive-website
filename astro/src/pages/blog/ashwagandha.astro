@@ -1,0 +1,121 @@
+---
+import { getCollection } from 'astro:content'
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
+import { portableTextToHtml } from '../../lib/portableTextToHtml'
+
+const posts = await getCollection('blogPosts')
+const post = posts.find((p) => p.data.slug.current === 'ashwagandha')
+if (!post) throw new Error('Blog post "ashwagandha" not found in Sanity collection')
+
+const d = post.data
+
+// Add loading="lazy" to all body images (hero is handled separately by BlogPostLayout)
+const rawHtml = d.legacyHtml
+  ? d.legacyHtml
+  : portableTextToHtml(d.body ?? [])
+const bodyHtml = rawHtml.replace(/<img(?![^>]*loading=)/g, '<img loading="lazy"')
+
+const faqItems: { question: string; answer: string }[] = (d.faq ?? []).map(
+  (item: { question: string; shortAnswer?: string }) => ({
+    question: item.question,
+    answer: item.shortAnswer ?? '',
+  })
+)
+
+const siteUrl = 'https://new.thrivewellnessth.com'
+const pageUrl = `${siteUrl}/blog/ashwagandha`
+
+const articleSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  headline: d.seo?.seoTitle ?? d.title,
+  description: d.seo?.seoDescription ?? d.excerpt ?? '',
+  url: pageUrl,
+  datePublished: d.publishedAt,
+  dateModified: d.updatedAt ?? d.publishedAt,
+  author: d.authorName
+    ? {
+        '@type': 'Person',
+        name: d.authorName,
+        jobTitle: d.authorTitle ?? 'Functional Medicine Physician',
+      }
+    : { '@type': 'Organization', name: 'Thrive Wellness Clinic' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Thrive Wellness Clinic',
+    url: siteUrl,
+  },
+  medicalAudience: {
+    '@type': 'MedicalAudience',
+    audienceType: 'Patient',
+  },
+}
+
+const faqSchema: Record<string, unknown> | null =
+  faqItems.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+      }
+    : null
+
+const jsonLd: Record<string, unknown>[] = [
+  articleSchema,
+  ...(faqSchema ? [faqSchema] : []),
+]
+
+const hreflang = [
+  { lang: 'th-TH', href: pageUrl },
+  { lang: 'x-default', href: pageUrl },
+]
+---
+
+<BlogPostLayout
+  title={d.title}
+  publishedAt={d.publishedAt}
+  updatedAt={d.updatedAt}
+  authorName={d.authorName}
+  authorTitle={d.authorTitle}
+  category={d.category}
+  mainImage={d.mainImage}
+  seoTitle={d.seo?.seoTitle}
+  seoDescription={d.seo?.seoDescription}
+  noIndex={d.seo?.noIndex ?? false}
+  canonicalUrl={d.seo?.canonicalUrl}
+  slug="ashwagandha"
+  jsonLd={jsonLd}
+  hreflang={hreflang}
+>
+  {d.keyTakeaways && d.keyTakeaways.length > 0 && (
+    <div class="blog-post__takeaways">
+      <h2>สิ่งที่คุณจะได้เรียนรู้</h2>
+      <ul>
+        {d.keyTakeaways.map((point: string) => <li>{point}</li>)}
+      </ul>
+    </div>
+  )}
+
+  <div class="blog-post__body" set:html={bodyHtml} />
+
+  {faqItems.length > 0 && (
+    <section class="section faq-section">
+      <div class="section-title-center">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">คำถามที่พบบ่อย</h2>
+      </div>
+      <div class="faq-list">
+        {faqItems.map((item) => (
+          <details class="faq-item">
+            <summary><h3>{item.question}</h3></summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+</BlogPostLayout>
