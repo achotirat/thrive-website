@@ -1,0 +1,35 @@
+---
+type CTA = { label: string; href: string };
+
+export interface Props {
+  title: string;
+  intro?: string;
+  items: string[];
+  cta?: CTA;
+}
+
+const { title, intro, items, cta } = Astro.props;
+---
+
+<section class="section symptom-section">
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">Self-check</span>
+      <h2 class="section-title">{title}</h2>
+      {intro && <p class="section-subtitle">{intro}</p>}
+    </div>
+    <ul class="symptom-list">
+      {items.map((item) => (
+        <li class="symptom-item">
+          <span class="symptom-item__check" aria-hidden="true">✓</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    {cta && (
+      <div class="symptom-cta">
+        <a href={cta.href} class="btn btn-primary" data-gtm-event="quiz_start" data-gtm-label={cta.label}>{cta.label}</a>
+      </div>
+    )}
+  </div>
+</section>

@@ -77,3 +77,29 @@ Inspected `thrive-website/astro/src/layouts/BaseLayout.astro` and found:
 **Next:** Create feature branch + commit docs → user approves push → continue to Task #7 (LP template).
 
 ---
+
+## 2026-05-27 — Session 1e: Docs PR #29 merged + Task #7 re-scoped after project discovery
+
+**Docs PR:** branch `feature/google-ads-rebuild-docs` pushed and merged via PR #29 (commit `7ceb7e1`).
+
+**Project discovery (changes Task #7 scope):**
+- Existing content collection at `src/content/services/` already has 18 MDX files (40–60 KB each, full Tier A pages with seo / hero / doctor / faqs frontmatter).
+- Per-service pages at `src/pages/<slug>.astro` (~50 lines, thin wrapper composing ServiceHero / FAQSection / DoctorAttribution / CTASection / LeadForm / ServiceCard).
+- URLs are `/<slug>` (root level), preserved from legacy site per CLAUDE.md rule.
+- 4 of 6 LP slugs already exist: food-intolerance, iv-drip, chelation, hbot.
+- Hormone LP → use existing `/hormones-quiz` (user choice A — fastest, content already rich).
+- Mental Health → must create new MDX + page wrapper (Task #14).
+
+**Spec amendments (in branch `feature/services-lp-template`):**
+- URL convention: `/services/<slug>` → `/<slug>` (5 places).
+- Section 2.4 tech implementation rewritten: extend existing schema + add 4 new Traffic Secrets components (SymptomChecklist, EpiphanyStory, OfferStack, RiskReversal) instead of building `[slug].astro` template from scratch.
+- Layer 2 ASCII diagram updated to reflect existing setup.
+- Week 1 Day-05-28 task reworded.
+- Inventory table URLs corrected.
+- `campaigns.tsv` `landing_page` column corrected to root URLs.
+
+**Task #14 added:** create `/mental-health` MDX + page wrapper (Week 2).
+
+**Next:** Start Task #7 — inspect current `src/content/config.ts` (likely missing), define services collection Zod schema with optional Traffic Secrets fields, build 4 new components, wire conditionally into existing service-page wrappers.
+
+---

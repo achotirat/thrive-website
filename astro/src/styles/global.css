@@ -2754,3 +2754,204 @@ h1.th, h2.th, h3.th {
   color: var(--text-2);
   font-style: normal;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Landing Page Blocks (Traffic Secrets)
+   Added 2026-05-27 for Google Ads campaign rebuild — design doc:
+   docs/superpowers/specs/2026-05-27-google-ads-campaign-rebuild-design.html
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Block 2: SymptomChecklist */
+.symptom-section {
+  background: var(--teal-xl);
+}
+.symptom-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-8) auto 0;
+  max-width: 640px;
+  display: grid;
+  gap: var(--sp-3);
+}
+.symptom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--white);
+  border-radius: var(--r-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+.symptom-item__check {
+  flex-shrink: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+.symptom-cta {
+  margin-top: var(--sp-8);
+  text-align: center;
+}
+
+/* Block 3: EpiphanyStory */
+.story-section {
+  background: var(--white);
+}
+.story-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .story-card {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+.story-card__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+  display: block;
+}
+.story-card__body h2 {
+  margin-top: var(--sp-2);
+}
+.story-quote {
+  margin: var(--sp-6) 0 0;
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 3px solid var(--teal);
+  background: var(--teal-xl);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+.story-quote p {
+  font-size: var(--text-base);
+  font-style: italic;
+  margin: 0 0 var(--sp-2);
+  line-height: 1.7;
+}
+.story-quote cite {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-style: normal;
+}
+
+/* Block 4: OfferStack */
+.offer-section {
+  background: var(--bg-alt, #fafbfb);
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+}
+@media (min-width: 640px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.offer-card {
+  background: var(--white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.offer-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.offer-card__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin: 0;
+}
+.offer-card__desc {
+  font-size: var(--text-base);
+  color: var(--text-2);
+  margin: 0;
+  line-height: 1.6;
+}
+.offer-footer {
+  margin-top: var(--sp-8);
+  text-align: center;
+}
+.offer-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.offer-price__label {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+.offer-price__amount {
+  font-size: var(--text-xl, 1.5rem);
+  font-weight: 700;
+  color: var(--teal);
+}
+.offer-price__note {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin: 0 0 var(--sp-4);
+}
+
+/* Block 6: RiskReversal */
+.reversal-section {
+  background: var(--white);
+}
+.reversal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+  max-width: 880px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .reversal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.reversal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: var(--teal-xl);
+  border-radius: var(--r-lg);
+}
+.reversal-item__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.reversal-item__title {
+  font-size: var(--text-md);
+  font-weight: 600;
+  margin: 0 0 var(--sp-1);
+}
+.reversal-item__desc {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin: 0;
+  line-height: 1.6;
+}
