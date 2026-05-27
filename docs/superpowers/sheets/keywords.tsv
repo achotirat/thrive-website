@@ -1,0 +1,15 @@
+campaign_name	keyword	match_type	bid_modifier	notes
+# match_type: exact | phrase | broad
+# bid_modifier: 1.0 = baseline (use 0.7-1.3 to lean bid lower/higher per keyword)
+
+# === EXAMPLES — vkasama / Satemshi fill the rest ===
+food-intol-s	ตรวจภูมิแพ้อาหารแฝง	phrase	1.0	high intent
+food-intol-s	ภูมิแพ้อาหารแฝง igg	phrase	1.0
+food-intol-s	food intolerance test bangkok	broad	0.8	English variant
+hormone-s	ตรวจฮอร์โมน คลินิก	phrase	1.0
+hormone-s	ฮอร์โมนไม่สมดุล รักษา	phrase	1.0
+chelation-s	คีเลชั่นบำบัด	phrase	1.0
+chelation-s	ดีท็อกซ์โลหะหนัก	phrase	1.0
+hbot-s	ออกซิเจนบำบัด hbot	phrase	1.0
+mental-health-s	บำบัดซึมเศร้า คลินิก	phrase	1.0
+mental-health-s	นอนไม่หลับ เครียด รักษา	broad	0.8

@@ -1,0 +1,28 @@
+campaign_name	asset_type	angle	text	variant	max_chars	notes
+# == Schema reference ==
+# asset_type: headline | long_headline | description
+# angle: pain | outcome | authority | specificity | urgency
+# max_chars: headline=30, long_headline=90, description=90
+# Aim for 15 headlines (3 per angle × 5) + 4 descriptions per Search campaign
+# variant: A / B / C for A/B test variants (start with all "A")
+
+# === EXAMPLE: food-intol-s — vkasama fills the rest following this pattern ===
+food-intol-s	headline	pain	ปวดท้องเรื้อรัง หาสาเหตุไม่เจอ?	A	30	example
+food-intol-s	headline	pain	(vkasama: pain headline 2)	A	30
+food-intol-s	headline	pain	(vkasama: pain headline 3)	A	30
+food-intol-s	headline	outcome	รู้ภายใน 7 วันว่าแพ้อาหารอะไร	A	30	example
+food-intol-s	headline	outcome	(vkasama: outcome headline 2)	A	30
+food-intol-s	headline	outcome	(vkasama: outcome headline 3)	A	30
+food-intol-s	headline	authority	ตรวจโดยแพทย์ ไม่ใช่เครื่อง	A	30	example
+food-intol-s	headline	authority	(vkasama: authority headline 2)	A	30
+food-intol-s	headline	authority	(vkasama: authority headline 3)	A	30
+food-intol-s	headline	specificity	ตรวจ 216 ชนิดอาหาร IgG	A	30	example
+food-intol-s	headline	specificity	(vkasama: specificity headline 2)	A	30
+food-intol-s	headline	specificity	(vkasama: specificity headline 3)	A	30
+food-intol-s	headline	urgency	ปรึกษาฟรีวันนี้ slot จำกัด	A	30	example
+food-intol-s	headline	urgency	(vkasama: urgency headline 2)	A	30
+food-intol-s	headline	urgency	(vkasama: urgency headline 3)	A	30
+food-intol-s	description	authority	ตรวจโดยแพทย์ ทุกขั้นตอน ที่ Thrive Wellness คลินิกครบวงจร	A	90	example
+food-intol-s	description	outcome	(vkasama: description 2)	A	90
+food-intol-s	description	pain	(vkasama: description 3)	A	90
+food-intol-s	description	urgency	(vkasama: description 4)	A	90
