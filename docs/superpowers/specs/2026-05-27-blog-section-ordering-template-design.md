@@ -187,7 +187,7 @@ For each published blog (especially PCOS):
 2. Populate `references[]` array in Sanity Studio
 3. Strip any duplicate references block from `legacyHtml` to avoid double-rendering
 
-This is a Facade/vkasama content task, flagged for their review after the branch is merged.
+This is Facade's responsibility — he is solely responsible for all content editing in Sanity Studio from this point forward.
 
 ---
 
