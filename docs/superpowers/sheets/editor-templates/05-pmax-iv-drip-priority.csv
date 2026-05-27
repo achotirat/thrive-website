@@ -1,0 +1,43 @@
+# Performance Max IV Drip asset group — fill via Google Ads Editor's PMax editor
+# (CSV bulk-import for PMax has limited support in Editor — usually configured in the UI or via Asset library bulk upload)
+#
+# Asset group: iv-drip-default
+# Final URL: https://www.thrivewellnessth.com/iv-drip
+#
+# Required assets (Google Ads requirements as of 2026):
+# - 1+ landscape image 1.91:1 (1200x628 minimum, up to 5)
+# - 1+ square image 1:1 (1200x1200 minimum, up to 5)
+# - 1+ portrait image 4:5 (960x1200 minimum, up to 5) [recommended]
+# - 1+ landscape logo 4:1 (1200x300) [recommended]
+# - 1+ square logo 1:1 (1200x1200)
+# - 1+ video 9:16 (vertical, 10s+ recommended for placements)
+# - 1+ video 16:9 (landscape, 10s+ recommended)
+# - 5 short headlines (max 30 chars each)
+# - 1 long headline (max 90 chars)
+# - 5 descriptions (max 90 chars each)
+# - 1 business name
+#
+# Asset filenames here are placeholders — vkasama / user replaces with real uploaded asset filenames
+#
+asset_type,filename_or_text,dimensions,notes
+landscape_image,iv-drip-landscape-1.jpg,1200x628,Hero shot of drip session
+landscape_image,iv-drip-landscape-2.jpg,1200x628,Clinic interior
+square_image,iv-drip-square-1.jpg,1200x1200,Drip pouch + vitamin
+square_image,iv-drip-square-2.jpg,1200x1200,Patient relaxed in chair
+portrait_image,iv-drip-portrait-1.jpg,960x1200,Vertical for Stories
+logo_landscape,thrive-logo-4x1.png,1200x300,Brand logo wide
+logo_square,thrive-logo-1x1.png,1200x1200,Brand logo square
+video_vertical,iv-drip-vertical-30s.mp4,9:16,30s product video for Shorts/Stories
+video_landscape,iv-drip-landscape-30s.mp4,16:9,30s YouTube/Display
+short_headline,[VKASAMA headline 1],,max 30 chars
+short_headline,[VKASAMA headline 2],,max 30 chars
+short_headline,[VKASAMA headline 3],,max 30 chars
+short_headline,[VKASAMA headline 4],,max 30 chars
+short_headline,[VKASAMA headline 5],,max 30 chars
+long_headline,[VKASAMA long headline],,max 90 chars
+description,[VKASAMA description 1],,max 90 chars
+description,[VKASAMA description 2],,max 90 chars
+description,[VKASAMA description 3],,max 90 chars
+description,[VKASAMA description 4],,max 90 chars
+description,[VKASAMA description 5],,max 90 chars
+business_name,Thrive Wellness Clinic,,

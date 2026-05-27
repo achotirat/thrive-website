@@ -132,3 +132,25 @@ Inspected `thrive-website/astro/src/layouts/BaseLayout.astro` and found:
 **Next:** commit Task #8 content + push to `feature/services-lp-template` → open PR (or continue to Task #14 mental-health page / Task #5 Ads Editor import).
 
 ---
+
+## 2026-05-28 — Session 2: Task #11 — Google Ads Editor import prep
+
+Built the bulk-import CSV templates for the 3 priority campaigns plus a step-by-step guide. Files in `docs/superpowers/sheets/editor-templates/` (numbered in import order):
+
+1. `01-campaigns-priority.csv` — Food Intolerance Search 150฿, Hormone Search 200฿, IV Drip PMax 100฿; all start in **Paused** state.
+2. `02-ad-groups-priority.csv` — one ad group per Search campaign.
+3. `03-keywords-priority.csv` — 16 seed keywords across the 2 Search campaigns, mix of phrase / broad / exact match.
+4. `04-responsive-search-ads-priority.csv` — RSA template with `[VKASAMA …]` placeholders to be filled from the Google Sheet master before import.
+5. `05-pmax-iv-drip-priority.csv` — PMax asset-group checklist (PMax has limited CSV import; the file is a reference, not a direct paste).
+
+Guide: `docs/superpowers/sheets/editor-import-guide.md`.
+
+**Open dependencies before launch:**
+- vkasama: complete copy in `Thrive Ads Master 2026` sheet for the 3 priority campaigns; replace `[VKASAMA …]` placeholders in CSV before importing.
+- Satemshi: confirm GTM tags are forwarding `lead_submit` / `line_click` / `call_click` to GA4, then import the GA4 conversion into Google Ads.
+- หมอนุ่น: medical review of the LP draft content (Task #8 commits).
+- IV Drip PMax assets: upload images / videos / logos to the Google Ads Asset library.
+
+All three campaigns deliberately start Paused — flip to Enabled only after verifying conversion tracking and LP rendering in production.
+
+---
