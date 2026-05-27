@@ -33,6 +33,7 @@ const faqItems = (d.faq ?? []).map((item) => ({
   canonicalUrl={d.seo?.canonicalUrl}
   slug={d.slug.current}
   faqItems={faqItems}
+  references={d.references}
 >
   {d.keyTakeaways && d.keyTakeaways.length > 0 && (
     <div class="blog-post__takeaways">

@@ -22,6 +22,7 @@ export interface Props {
   canonicalUrl?: string
   slug: string
   faqItems?: { question: string; answer: string }[]
+  references?: { title: string; source?: string; year?: number; url?: string }[]
 }
 
 const {
@@ -38,6 +39,7 @@ const {
   canonicalUrl,
   slug,
   faqItems = [],
+  references = [],
 } = Astro.props
 
 const heroSrc = typeof mainImage === 'string'
@@ -141,6 +143,8 @@ const cta = {
       </div>
     </article>
 
+    <CTASection {...cta} />
+
     <DoctorAttribution doctor={{
       name: 'พญ. ชนากานต์ ตระหง่านศรี',
       title: 'แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ',
@@ -150,7 +154,25 @@ const cta = {
       specializations: ['Anti-aging & Regenerative Medicine', 'Nutrition Wellness', 'Functional Medicine'],
     }} />
 
-    <CTASection {...cta} />
+    {references.length > 0 && (
+      <section class="blog-references">
+        <div class="section-container">
+          <h2 class="blog-references__heading">อ้างอิงทางวิทยาศาสตร์</h2>
+          <ol class="blog-references__list">
+            {references.map((ref) => (
+              <li class="blog-references__item">
+                {ref.url
+                  ? <a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.title}</a>
+                  : <span>{ref.title}</span>
+                }
+                {ref.source && <span class="blog-references__meta"> — {ref.source}</span>}
+                {ref.year && <span class="blog-references__meta"> ({ref.year})</span>}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )}
   </main>
 
   <Footer />

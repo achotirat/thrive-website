@@ -2754,3 +2754,44 @@ h1.th, h2.th, h3.th {
   color: var(--text-2);
   font-style: normal;
 }
+
+/* ── Blog References ─────────────────────────────────────── */
+.blog-references {
+  padding: var(--sp-10) 0;
+  background: var(--bg);
+}
+
+.blog-references__heading {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 var(--sp-4);
+}
+
+.blog-references__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: var(--sp-2);
+  max-width: 900px;
+}
+
+.blog-references__item {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.blog-references__item a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-references__item a:hover {
+  color: var(--navy);
+}
+
+.blog-references__meta {
+  color: var(--text-2);
+}

@@ -20,6 +20,12 @@ const GROQ = `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publ
     question,
     shortAnswer
   },
+  references[] {
+    title,
+    source,
+    year,
+    url
+  },
   seo {
     seoTitle,
     seoDescription,

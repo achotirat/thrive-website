@@ -85,6 +85,12 @@ const blogPostsCollection = defineCollection({
       question: z.string(),
       shortAnswer: z.string().optional().default(''),
     })).optional().default([]),
+    references: z.array(z.object({
+      title: z.string(),
+      source: z.string().optional(),
+      year: z.number().optional(),
+      url: z.string().optional(),
+    })).optional().default([]),
     seo: z.object({
       seoTitle: z.string().optional(),
       seoDescription: z.string().optional(),
