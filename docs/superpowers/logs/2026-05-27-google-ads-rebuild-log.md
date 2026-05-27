@@ -103,3 +103,32 @@ Inspected `thrive-website/astro/src/layouts/BaseLayout.astro` and found:
 **Next:** Start Task #7 — inspect current `src/content/config.ts` (likely missing), define services collection Zod schema with optional Traffic Secrets fields, build 4 new components, wire conditionally into existing service-page wrappers.
 
 ---
+
+## 2026-05-27 — Session 1f: Task #7 + Task #8 (priority LP draft content)
+
+**Task #7 — components built (PR #?):**
+- Branch `feature/services-lp-template`, commit `b97b4c6`.
+- 4 LP components in `astro/src/components/lp/`: SymptomChecklist, EpiphanyStory, OfferStack, RiskReversal.
+- Wired conditionally into food-intolerance.astro, iv-drip.astro, hormones-quiz.astro.
+- Initially skipped Zod schema (Task #7 commit b97b4c6 used type cast workaround) — but during Task #8 found that `astro/src/content.config.ts` already exists and enforces strict typing. Proper fix applied in Task #8 commit: added 4 optional LP block schemas to `content.config.ts`, removed the type cast, deleted `astro/src/types/lp-blocks.ts`. `npx astro check` and `npm run build` both pass with the clean schema.
+- CSS added to `astro/src/styles/global.css` (~200 lines under "Landing Page Blocks" section).
+
+**Task #8 — priority LP content (DRAFT, in same branch):**
+- Added 4 LP blocks (symptomChecklist / epiphanyStory / offerStack / riskReversal) to MDX frontmatter for food-intolerance.mdx, iv-drip.mdx, hormones-quiz.mdx.
+- All epiphanyStory entries marked `[DRAFT — placeholder]` in title. **Must not ship to production until vkasama collects real patient testimonials from clinic and หมอนุ่น approves wording.**
+- Other blocks (symptoms, offer, risk reversal) written from existing MDX body + FAQs — still need หมอนุ่น medical review for accuracy.
+- Quote attributions marked "placeholder คนไข้ Thrive Wellness Clinic" for the same reason.
+
+**Central pricing introduced (Q2 answer):**
+- New file `astro/src/data/pricing.json` — single source of truth for service prices.
+- New helper `astro/src/lib/pricing.ts` exposing `getServicePricing(slug)`.
+- Page wrappers merge: `priceFrom: d.offerStack.priceFrom ?? pricing?.from` — MDX can override per-page (e.g. promos).
+- 6 services seeded with `draft: true` flag — vkasama / user update actual prices and remove draft flag.
+
+**Quiz coordination:**
+- Detected another agent's work-in-progress in `hormones-quiz.astro` (added `QuizEngine` import + render); preserved as-is per instruction.
+- Other agent's files (`astro/src/lib/quizEngine.mjs`, `astro/tests/`, modified `astro/package.json`) left unstaged in this branch — not in scope of Task #7/#8.
+
+**Next:** commit Task #8 content + push to `feature/services-lp-template` → open PR (or continue to Task #14 mental-health page / Task #5 Ads Editor import).
+
+---

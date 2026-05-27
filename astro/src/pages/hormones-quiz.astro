@@ -15,12 +15,21 @@ import SymptomChecklist from '../components/lp/SymptomChecklist.astro';
 import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
 import OfferStack from '../components/lp/OfferStack.astro';
 import RiskReversal from '../components/lp/RiskReversal.astro';
-import type { LPBlocks } from '../types/lp-blocks';
+import QuizEngine from '../components/QuizEngine.astro';
+import { hormoneBalanceQuiz } from '../lib/quizDefinitions.mjs';
+import { getServicePricing } from '../lib/pricing';
 
 const entry = await getEntry('services', 'hormones-quiz');
 if (!entry) throw new Error('Missing hormones-quiz content entry');
 const { Content } = await render(entry);
-const d = entry.data as typeof entry.data & LPBlocks;
+const d = entry.data;
+
+const pricing = getServicePricing('hormones-quiz');
+const offerStackProps = d.offerStack ? {
+  ...d.offerStack,
+  priceFrom: d.offerStack.priceFrom ?? pricing?.from,
+  priceNote: d.offerStack.priceNote ?? pricing?.note,
+} : undefined;
 
 const crumbs = [
   { label: 'หน้าแรก', href: '/' },
@@ -38,8 +47,9 @@ const crumbs = [
     <article class="service-content">
       <Content />
     </article>
+    <QuizEngine quiz={hormoneBalanceQuiz} />
     {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
-    {d.offerStack && <OfferStack {...d.offerStack} />}
+    {offerStackProps && <OfferStack {...offerStackProps} />}
     <DoctorAttribution doctor={d.doctor} />
     {d.riskReversal && <RiskReversal {...d.riskReversal} />}
     <FAQSection items={d.faqs} />
