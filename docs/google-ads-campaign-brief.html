@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Ads Campaign Brief — Thrive Wellness 2026</title>
+  <style>
+    :root {
+      --navy: #1a2d4d;
+      --teal: #2a9d8f;
+      --teal-light: #e8f5f3;
+      --gold: #e9c46a;
+      --red: #e63946;
+      --text: #2d3748;
+      --text-2: #4a5568;
+      --text-3: #718096;
+      --border: #e2e8f0;
+      --bg: #f7fafc;
+      --white: #ffffff;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans Thai', 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Header ────────────────────────────────── */
+    .page-header {
+      background: var(--navy);
+      color: white;
+      padding: 32px 40px;
+    }
+    .page-header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .page-header p { font-size: 13px; color: rgba(255,255,255,0.75); max-width: 680px; }
+    .page-header .meta {
+      display: flex; gap: 24px; margin-top: 16px;
+      font-size: 12px; color: rgba(255,255,255,0.6);
+    }
+    .page-header .meta span strong { color: rgba(255,255,255,0.9); }
+
+    /* ── Instructions ──────────────────────────── */
+    .instructions {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      padding: 16px 24px;
+      margin: 24px 40px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .instructions h3 { font-size: 13px; font-weight: 700; color: var(--teal); margin-bottom: 8px; }
+    .instructions ul { padding-left: 20px; }
+    .instructions li { font-size: 12px; color: var(--text-2); margin-bottom: 4px; }
+
+    /* ── Campaign Cards ────────────────────────── */
+    .campaigns { padding: 0 40px 60px; }
+
+    .campaign-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .campaign-header {
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .campaign-header .num {
+      width: 32px; height: 32px;
+      background: var(--navy);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .campaign-header .title-block h2 { font-size: 16px; font-weight: 700; color: var(--navy); }
+    .campaign-header .title-block .sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+    .campaign-header .tags { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .tag {
+      font-size: 11px; font-weight: 600; padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .tag-search { background: #ebf8ff; color: #2b6cb0; }
+    .tag-pmax   { background: #fef3c7; color: #92400e; }
+    .tag-priority { background: #fed7d7; color: #9b2c2c; }
+
+    /* ── Form Grid ─────────────────────────────── */
+    .campaign-body { padding: 20px 24px; }
+
+    .section-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-3); margin: 20px 0 12px;
+      padding-bottom: 6px; border-bottom: 1px solid var(--border);
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .field-row:last-child { border-bottom: none; }
+
+    .field-label {
+      padding: 10px 14px 10px 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-2);
+      align-self: start;
+      padding-top: 12px;
+    }
+    .field-label .required { color: var(--red); margin-left: 2px; }
+    .field-label .hint {
+      display: block;
+      font-weight: 400;
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .field-input input[type="text"],
+    .field-input textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.15s;
+      resize: vertical;
+    }
+    .field-input {
+      padding: 8px 0;
+    }
+    .field-input input[type="text"]:focus,
+    .field-input textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: white;
+    }
+    .field-input .char-limit {
+      font-size: 11px; color: var(--text-3); margin-top: 4px;
+      text-align: right;
+    }
+
+    /* ── Media Asset section ───────────────────── */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 0;
+    }
+    .asset-box {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .asset-box .asset-name {
+      font-size: 12px; font-weight: 700; color: var(--text-2); margin-bottom: 4px;
+    }
+    .asset-box .asset-dim {
+      font-size: 11px; color: var(--text-3); margin-bottom: 10px;
+    }
+    .asset-box .asset-status {
+      font-size: 11px; padding: 3px 10px; border-radius: 100px;
+    }
+    .status-needed { background: #fed7d7; color: #9b2c2c; }
+    .status-optional { background: #fef3c7; color: #92400e; }
+    .status-na { background: var(--bg); color: var(--text-3); }
+
+    .asset-box input[type="text"] {
+      width: 100%; margin-top: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 12px; font-family: inherit; background: var(--bg);
+    }
+
+    /* ── Copy angles reminder ──────────────────── */
+    .angles-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .angle-chip {
+      font-size: 11px;
+      text-align: center;
+      padding: 8px 6px;
+      background: var(--teal-light);
+      border-radius: 6px;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* ── Print ─────────────────────────────────── */
+    @media print {
+      body { background: white; font-size: 12px; }
+      .page-header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .campaign-card { break-inside: avoid; page-break-inside: avoid; }
+      .field-input input[type="text"],
+      .field-input textarea { background: white; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════════════ -->
+<div class="page-header">
+  <h1>Google Ads Campaign Brief — Thrive Wellness 2026</h1>
+  <p>กรอกข้อมูลนี้ให้ครบก่อน Claude เขียน copy ให้ — ข้อมูลที่ขาดจะทำให้ headline เป็นภาษากลางที่ใช้กับทุกคลินิกได้เหมือนกัน ซึ่งเราไม่ต้องการ</p>
+  <div class="meta">
+    <span><strong>Account:</strong> Thrive Wellness Center (Bangkok)</span>
+    <span><strong>Timeline:</strong> Jun–Aug 2026</span>
+    <span><strong>Campaigns:</strong> 8 campaigns</span>
+    <span><strong>Owner:</strong> กรอกโดย _______________</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     INSTRUCTIONS
+══════════════════════════════════════════════ -->
+<div class="instructions">
+  <h3>วิธีกรอก</h3>
+  <ul>
+    <li>ช่องที่มีเครื่องหมาย <span style="color:var(--red);font-weight:700;">*</span> จำเป็นต้องกรอก — ถ้าไม่มีข้อมูล headline จะไม่เฉพาะเจาะจง</li>
+    <li><strong>Specific fact</strong> = ตัวเลขหรือข้อมูลที่เป็นเอกลักษณ์ของ Thrive เช่น "216 ชนิด", "3 วัน", "10 สาย", "40 marker"</li>
+    <li><strong>Patient outcome</strong> = ผลลัพธ์จริงที่คนไข้บอก 1 ประโยค เช่น "นอนหลับได้ดีขึ้นใน 2 สัปดาห์"</li>
+    <li><strong>Dr. Noon's credential</strong> = ความเชี่ยวชาญเฉพาะด้านนี้ เช่น "เชี่ยวชาญ Functional Medicine 8 ปี"</li>
+    <li>ถ้า PMax — ต้องมีไฟล์ภาพก่อน Claude เขียน asset group ได้</li>
+  </ul>
+</div>
+
+<div class="campaigns">
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 1 — FOOD INTOLERANCE
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">1</div>
+      <div class="title-block">
+        <h2>Food Intolerance — ภูมิแพ้อาหารแฝง IgG</h2>
+        <div class="sub">Landing page: /food-intolerance &nbsp;|&nbsp; ~~40% of site traffic</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-priority">Priority 1</span>
+        <span class="tag tag-search">Search</span>
+        <span class="tag tag-pmax">PMax</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">ตัวเลข/ข้อมูลที่ชัดเจน<br>เช่น "ตรวจ 216 ชนิด"</span>
+        </div>
+        <div class="field-input">
+          <input type="text" value="ตรวจ IgG 216 ชนิด ทราบผลใน 3 วัน" placeholder="ตัวเลขหรือข้อมูลเฉพาะ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Pricing / Offer<span class="required">*</span>
+          <span class="hint">ราคา, โปรโมชั่น, หรือข้อเสนอ<br>เพื่อสร้าง urgency</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคา 6,500 บาท, โปรลด 10% ถึง 30 มิ.ย.">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Dr. Noon's credential<span class="required">*</span>
+          <span class="hint">ความเชี่ยวชาญเฉพาะด้านนี้</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ประสบการณ์ด้าน Functional Medicine 8 ปี">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Patient outcome<span class="required">*</span>
+          <span class="hint">ผลลัพธ์จริง 1 ประโยค<br>(ไม่เปิดเผยชื่อได้)</span>
+        </div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น ปวดหัวเรื้อรัง 3 ปีหายภายใน 6 สัปดาห์หลังเลี่ยงอาหารตามผลตรวจ"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Current promotion
+          <span class="hint">โปรโมชั่นปัจจุบัน (ถ้ามี)</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ฟรีค่าแพทย์เมื่อตรวจ IgG ในเดือนมิ.ย.">
+        </div>
+      </div>
+
+      <div class="section-title">PMax Media Assets</div>
+      <div class="asset-grid">
+        <div class="asset-box">
+          <div class="asset-name">Landscape Image</div>
+          <div class="asset-dim">1200 × 628 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Square Image</div>
+          <div class="asset-dim">1200 × 1200 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Video Vertical</div>
+          <div class="asset-dim">9:16 ratio</div>
+          <span class="asset-status status-optional">Optional</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 2 — HORMONES / ADRENAL FATIGUE
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">2</div>
+      <div class="title-block">
+        <h2>Hormones — ตรวจฮอร์โมน / Adrenal Fatigue</h2>
+        <div class="sub">Landing page: /hormones-quiz &nbsp;|&nbsp; 1,344 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-priority">Priority 2</span>
+        <span class="tag tag-search">Search only</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">จำนวน marker/panel, ประเภทฮอร์โมนที่ตรวจ</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ตรวจฮอร์โมน 12 ชนิด ครอบคลุม Cortisol, Thyroid, Sex hormones">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Pricing / Offer<span class="required">*</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคา 4,500 บาท หรือโปรแพ็กเกจ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Dr. Noon's credential<span class="required">*</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น เชี่ยวชาญ Anti-aging & Hormone optimization">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Patient outcome<span class="required">*</span>
+        </div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น พลังงานกลับมาและน้ำหนักลดภายใน 3 เดือน"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Top 3 symptoms this campaign targets
+          <span class="hint">Keyword intent — ช่วยเลือก keyword ได้ดีขึ้น</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น อ่อนเพลียเรื้อรัง, นอนไม่หลับ, น้ำหนักขึ้นไม่ทราบสาเหตุ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 3 — IV DRIP
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">3</div>
+      <div class="title-block">
+        <h2>IV Drip — น้ำเกลือวิตามิน IV</h2>
+        <div class="sub">Landing page: /iv-drip &nbsp;|&nbsp; 492 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-priority">Priority 3</span>
+        <span class="tag tag-search">Search</span>
+        <span class="tag tag-pmax">PMax</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">จำนวนสูตร, ผลต่าง oral vs IV absorption</span>
+        </div>
+        <div class="field-input">
+          <input type="text" value="วิตามินทางเส้นเลือดดูดซึมได้ 100% เทียบกับกิน 20%" placeholder="">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Number of drip formulas<span class="required">*</span>
+          <span class="hint">มีกี่สูตร? อะไรบ้าง?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น 10 สูตร ได้แก่ Immune, Energy, Slim, Bright skin, ...">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Session duration
+          <span class="hint">ใช้เวลากี่นาทีต่อครั้ง?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น 45–60 นาที ไม่ต้องหยุดงาน">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Pricing / Offer<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น เริ่มต้น 1,500 บาท หรือโปรแพ็กเกจ 5 ครั้ง">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ออกแบบสูตร IV เฉพาะบุคคลตาม micronutrient test">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น คนไข้รู้สึก refreshed ทันทีหลัง session แรก พลังงานดีขึ้นต่อเนื่อง 1 สัปดาห์"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+      <div class="section-title">PMax Media Assets</div>
+      <div class="asset-grid">
+        <div class="asset-box">
+          <div class="asset-name">Landscape Image</div>
+          <div class="asset-dim">1200 × 628 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Square Image</div>
+          <div class="asset-dim">1200 × 1200 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Video Vertical</div>
+          <div class="asset-dim">9:16 ratio</div>
+          <span class="asset-status status-optional">Optional</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 4 — HBOT
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">4</div>
+      <div class="title-block">
+        <h2>HBOT — Hyperbaric Oxygen Therapy</h2>
+        <div class="sub">Landing page: /hbot &nbsp;|&nbsp; 705 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-search">Search</span>
+        <span class="tag tag-pmax">PMax</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">pressure level, session time, oxygen %</span>
+        </div>
+        <div class="field-input">
+          <input type="text" value="นอนพัก 60 นาที ออกซิเจน 100% ที่ความดัน 1.5–2.0 ATA" placeholder="">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Number of sessions recommended
+          <span class="hint">กี่ session ต่อ course?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น 10–20 session, เห็นผลตั้งแต่ session ที่ 5">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Pricing / Offer<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคาต่อครั้ง หรือโปรแพ็กเกจ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น certified HBOT physician, ดูแลคนไข้ HBOT มากกว่า X ราย">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น คนไข้ Long COVID สมาธิกลับมาและอาการ brain fog ลดลงใน 10 session"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Primary use cases at Thrive
+          <span class="hint">ใช้รักษา/ดูแลอะไรบ้างเป็นหลัก?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น Long COVID, wound healing, anti-aging, sports recovery">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+      <div class="section-title">PMax Media Assets</div>
+      <div class="asset-grid">
+        <div class="asset-box">
+          <div class="asset-name">Landscape Image</div>
+          <div class="asset-dim">1200 × 628 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Square Image</div>
+          <div class="asset-dim">1200 × 1200 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Video Vertical</div>
+          <div class="asset-dim">9:16 ratio</div>
+          <span class="asset-status status-optional">Optional</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 5 — GLUTA / GLUTATHIONE IV
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">5</div>
+      <div class="title-block">
+        <h2>Gluta — Glutathione IV Drip</h2>
+        <div class="sub">Landing page: /gluta &nbsp;|&nbsp; 252 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-search">Search</span>
+        <span class="tag tag-pmax">PMax</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">dose (mg), วิธีผสม, หรือข้อแตกต่างจากคลินิกอื่น</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น Glutathione 1,200 mg ผสม Vitamin C เพิ่มการดูดซึม">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Pricing / Offer<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคาต่อครั้ง หรือโปรแพ็กเกจ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ปรับ dose ตาม oxidative stress test ของแต่ละคน">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น ผิวใสขึ้นภายใน 4–6 session พลังงานดีขึ้นตั้งแต่ session แรก"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Primary use cases
+          <span class="hint">ผิว, detox, anti-aging, immune?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ผิวขาวกระจ่าง, detox ตับ, เพิ่ม antioxidant">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+      <div class="section-title">PMax Media Assets</div>
+      <div class="asset-grid">
+        <div class="asset-box">
+          <div class="asset-name">Landscape Image</div>
+          <div class="asset-dim">1200 × 628 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Square Image</div>
+          <div class="asset-dim">1200 × 1200 px</div>
+          <span class="asset-status status-needed">จำเป็น</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+        <div class="asset-box">
+          <div class="asset-name">Video Vertical</div>
+          <div class="asset-dim">9:16 ratio</div>
+          <span class="asset-status status-optional">Optional</span>
+          <input type="text" placeholder="ชื่อไฟล์หรือ Drive link">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 6 — NAD+
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">6</div>
+      <div class="title-block">
+        <h2>NAD+ — NAD Plus IV</h2>
+        <div class="sub">Landing page: /nad &nbsp;|&nbsp; 120 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-search">Search only</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">dose (mg), session time — NAD IV ใช้เวลานานกว่า IV ทั่วไป</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น NAD+ 500 mg ให้ทาง IV ช้า 2–3 ชั่วโมง ดูดซึมเต็ม 100%">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Pricing / Offer<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคาต่อ session 2,500–5,000 บาท">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ผู้เชี่ยวชาญ cellular longevity therapy">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น นักกีฬาฟื้นตัวเร็วขึ้น, คนทำงานหนักสมาธิดีขึ้นใน 3 session"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Primary use cases
+          <span class="hint">anti-aging, cognitive, addiction, energy?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น brain fog, anti-aging cell repair, energy metabolism">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 7 — PERSONALIZED VITAMINS
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">7</div>
+      <div class="title-block">
+        <h2>Personalized Vitamins — วิตามินเฉพาะบุคคล</h2>
+        <div class="sub">Landing page: /personalized-vitamins &nbsp;|&nbsp; 148 sessions</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-search">Search only</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">จำนวน micronutrient ที่ตรวจ, กระบวนการออกแบบ</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ตรวจ micronutrient 30 ชนิด แล้วออกแบบ supplement stack เฉพาะคน">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          What makes it different?<span class="required">*</span>
+          <span class="hint">ต่างจากซื้อวิตามินกินเองอย่างไร?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ออกแบบตามผลเลือดจริง ไม่ใช่ one-size-fits-all">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Pricing / Offer<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ราคาแพ็กเกจตรวจ + วิตามิน 3 เดือน">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น เชี่ยวชาญ Nutrition Wellness และ micronutrient testing">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น หยุดกิน supplement 5 ชนิดที่ไม่จำเป็น ประหยัดเงินและรู้สึกดีขึ้น"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       CAMPAIGN 8 — HEALTH CHECK-UP
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num">8</div>
+      <div class="title-block">
+        <h2>Health Check-up — ตรวจสุขภาพเชิงลึก</h2>
+        <div class="sub">Landing page: /check-up &nbsp;|&nbsp; 38 sessions (growth target)</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-search">Search only</span>
+      </div>
+    </div>
+    <div class="campaign-body">
+
+      <div class="section-title">Copy Inputs (Required)</div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Specific fact<span class="required">*</span>
+          <span class="hint">จำนวน item ที่ตรวจ, อะไรที่แตกต่างจาก check-up ทั่วไป</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ตรวจ 60+ biomarker รวม heavy metals, hormones, micronutrients ที่โรงพยาบาลทั่วไปไม่ตรวจ">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          Package options<span class="required">*</span>
+          <span class="hint">มีกี่แพ็กเกจ? ชื่อแพ็กเกจ?</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น Basic 2,500 / Advanced 5,500 / Comprehensive 9,900">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Dr. Noon's credential<span class="required">*</span></div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น ให้คำปรึกษา 1:1 พร้อม action plan หลังตรวจทุกราย">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Patient outcome<span class="required">*</span></div>
+        <div class="field-input">
+          <textarea rows="2" placeholder="เช่น พบว่า Vitamin D ต่ำมาก Thyroid ผิดปกติ ทั้งที่รู้สึกปกติ — รักษาได้ทันท่วงที"></textarea>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">
+          What does Thrive check that hospitals don't?
+          <span class="hint">differentiator — สำคัญมากสำหรับ ad copy</span>
+        </div>
+        <div class="field-input">
+          <input type="text" placeholder="เช่น Heavy metals, food sensitivity, microbiome, oxidative stress">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Current promotion</div>
+        <div class="field-input">
+          <input type="text" placeholder="ถ้ามี">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       COPY ANGLES REFERENCE
+  ════════════════════════════════════════════ -->
+  <div class="campaign-card">
+    <div class="campaign-header">
+      <div class="num" style="background:var(--teal);">i</div>
+      <div class="title-block">
+        <h2>5 Copy Angles — Claude จะใช้ต่อทุก campaign</h2>
+        <div class="sub">ข้อมูลด้านบนจะถูกนำไปใช้สร้าง 3 headlines ต่อ 1 angle = 15 headlines ต่อ campaign</div>
+      </div>
+    </div>
+    <div class="campaign-body">
+      <div class="angles-grid">
+        <div class="angle-chip">1. Symptom-aware<br><small style="font-weight:400">ฉันก็เป็นแบบนี้</small></div>
+        <div class="angle-chip">2. Specific fact<br><small style="font-weight:400">ตัวเลขชัดเจน</small></div>
+        <div class="angle-chip">3. Doctor trust<br><small style="font-weight:400">แพทย์เฉพาะทาง</small></div>
+        <div class="angle-chip">4. Outcome<br><small style="font-weight:400">ผลลัพธ์จริง</small></div>
+        <div class="angle-chip">5. Urgency / Offer<br><small style="font-weight:400">โปร / เวลาจำกัด</small></div>
+      </div>
+      <p style="font-size:12px; color:var(--text-3); margin-top:12px;">
+        Output: 15 headlines + 4 descriptions + keyword list per campaign → paste into Thrive Ads Sheet master → import via Google Ads Editor
+      </p>
+    </div>
+  </div>
+
+</div><!-- /campaigns -->
+
+</body>
+</html>
