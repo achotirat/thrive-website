@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Campaign Rebuild — Design Doc</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #2d6a4f;
+    --accent-light: #d8f3dc;
+    --warn: #c1440e;
+    --warn-light: #fde2cf;
+    --border: #e5e5e0;
+    --code-bg: #f0efe9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Sukhumvit Set", "IBM Plex Sans Thai", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.65;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    font-size: 16px;
+  }
+  h1 { font-size: 2rem; margin: 0 0 0.3rem; color: var(--accent); }
+  h2 { font-size: 1.4rem; margin: 2.8rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); color: var(--accent); }
+  h3 { font-size: 1.1rem; margin: 1.8rem 0 0.6rem; color: var(--fg); }
+  h4 { font-size: 1rem; margin: 1.2rem 0 0.4rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  p, li { margin: 0.5rem 0; }
+  code { background: var(--code-bg); padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.92em; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85em; line-height: 1.5; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.93em; }
+  th, td { border: 1px solid var(--border); padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: var(--accent-light); color: var(--accent); font-weight: 600; }
+  tr:nth-child(even) td { background: #fcfcf9; }
+  .meta { color: var(--muted); font-size: 0.9em; margin-bottom: 2rem; }
+  .callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 0.8rem 1rem; border-radius: 4px; margin: 1rem 0; }
+  .warn { background: var(--warn-light); border-left: 4px solid var(--warn); padding: 0.8rem 1rem; border-radius: 4px; margin: 1rem 0; }
+  .warn strong { color: var(--warn); }
+  .toc { background: #fff; border: 1px solid var(--border); padding: 1rem 1.5rem; border-radius: 6px; margin: 1.5rem 0 3rem; }
+  .toc ol { margin: 0.3rem 0 0; padding-left: 1.4rem; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .badge { display: inline-block; padding: 0.15em 0.6em; border-radius: 3px; font-size: 0.8em; font-weight: 600; }
+  .badge-pri { background: var(--accent); color: #fff; }
+  .badge-sec { background: var(--muted); color: #fff; }
+  .ascii { background: var(--code-bg); padding: 1rem; border-radius: 6px; font-family: "SF Mono", Menlo, monospace; white-space: pre; overflow-x: auto; font-size: 0.82em; line-height: 1.4; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+  ul.checklist { list-style: none; padding-left: 0; }
+  ul.checklist li::before { content: "✅ "; margin-right: 0.3rem; }
+  ul.x-list { list-style: none; padding-left: 0; }
+  ul.x-list li::before { content: "❌ "; margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>Google Ads Campaign Rebuild — Design Doc</h1>
+<div class="meta">
+  Created: 2026-05-27 · Project: <code>thrive-website</code> · Status: <strong>Approved, ready for implementation plan</strong>
+</div>
+
+<div class="callout">
+  <strong>Goal:</strong> Rebuild 8 Google Ads campaigns from scratch (not copy from agency report)
+  to replace iTOPPLUS agency before contract ends 2026-06-11. Optimise the workflow so creating
+  many campaigns + A/B copy variants is fast and repeatable.
+</div>
+
+<div class="warn">
+  <strong>Hard deadlines:</strong>
+  <ul style="margin: 0.3rem 0 0;">
+    <li><strong>2026-06-01</strong> — 3 priority campaigns live (Food Intolerance, Hormone, IV Drip)</li>
+    <li><strong>2026-06-11</strong> — All 8 campaigns live, agency contract ends, Thrive runs 100% in-house</li>
+  </ul>
+</div>
+
+<div class="toc">
+  <strong>Table of contents</strong>
+  <ol>
+    <li><a href="#s1">High-level architecture</a></li>
+    <li><a href="#s2">Landing page structure (Traffic Secrets)</a></li>
+    <li><a href="#s3">Copy A/B strategy + Sheet schema</a></li>
+    <li><a href="#s4">Tracking &amp; conversion setup</a></li>
+    <li><a href="#s5">Timeline &amp; rollout plan</a></li>
+    <li><a href="#refs">References &amp; appendix</a></li>
+  </ol>
+</div>
+
+<hr>
+
+<h2 id="s1">1. High-level architecture</h2>
+
+<p>4 layers, separated by responsibility, so adding/editing a campaign means editing one row in
+a spreadsheet — not touching code or the Google Ads UI for each variant.</p>
+
+<div class="ascii">┌─────────────────────────────────────────────────────────────┐
+│  Layer 1: Content Source (Google Sheet — single source)     │
+│  - tab "campaigns" : 8 rows × campaign config               │
+│  - tab "ad_copy"   : headlines/descriptions + A/B variants  │
+│  - tab "keywords"  : Search campaign keyword lists          │
+│  - tab "assets"    : image/video file paths + dimensions    │
+└─────────────────────────────────────────────────────────────┘
+           ↓ generate (Claude batch)         ↓ export CSV
+┌─────────────────────────────────────────────────────────────┐
+│  Layer 2: Landing Pages (Astro content collection)          │
+│  - 1 template: src/pages/services/[slug].astro              │
+│  - 6 content entries (Chelation, Food Intolerance, IV Drip, │
+│    Hormone, HBOT, Mental Health) in src/content/services/   │
+└─────────────────────────────────────────────────────────────┘
+           ↓ deploy
+┌─────────────────────────────────────────────────────────────┐
+│  Layer 3: Tracking (GTM-MKHTH4P9 + GA4 G-KTNWCHE7TM)         │
+│  - GTM snippet in BaseLayout.astro                          │
+│  - Conversion events: lead_submit, line_click, call_click  │
+│  - Google Ads conversion import from GA4                    │
+└─────────────────────────────────────────────────────────────┘
+           ↓ optimize against
+┌─────────────────────────────────────────────────────────────┐
+│  Layer 4: Google Ads (Editor bulk import)                   │
+│  - 8 campaigns (5 Search + 2 PMax + 1 Demand Gen)           │
+│  - RSA with 15 headlines × 4 descriptions = A/B at ad lvl   │
+│  - Experiments for campaign-level A/B (later)               │
+└─────────────────────────────────────────────────────────────┘</div>
+
+<div class="callout">
+  <strong>Key principle:</strong> Google Sheet = source of truth. Edit once → re-export CSV →
+  re-import in Google Ads Editor → all campaigns update together. No per-campaign UI editing.
+</div>
+
+<hr>
+
+<h2 id="s2">2. Landing page structure (Traffic Secrets applied)</h2>
+
+<h3>2.1 Why Traffic Secrets fits Thrive</h3>
+<p>The agency's Apr 2026 report shows <strong>FOOD_INTOLERANCE_Quiz = 530/572 conversions (92.66%)</strong>.
+That is a Brunson-style "bait" already working. We replicate the same pattern across all 6 services.</p>
+
+<h3>2.2 Dream customer × bait × value ladder per service</h3>
+<table>
+  <thead>
+    <tr><th>LP</th><th>Dream customer</th><th>Bait (lead magnet)</th><th>Value ladder</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ภูมิแพ้อาหารแฝง</td><td>คนปวดท้อง/ผื่น/อ่อนเพลียเรื้อรัง หาสาเหตุไม่เจอ</td><td><strong>Food Intolerance Quiz</strong> (มีอยู่แล้ว)</td><td>Quiz → IgG test → diet plan</td></tr>
+    <tr><td>ฮอร์โมน</td><td>ผู้หญิง 35+ นอนไม่หลับ อ้วน อารมณ์แปรปรวน</td><td>Hormone Symptom Quiz (สร้างใหม่)</td><td>Quiz → hormone panel → BHRT</td></tr>
+    <tr><td>ดริปผิว</td><td>ผู้หญิง 25-45 ผิวหมอง อยากสวยจากภายใน</td><td>Skin Type Quiz / ราคาดริป promotion</td><td>Quiz → drip 1 ครั้ง → คอร์ส</td></tr>
+    <tr><td>Chelation</td><td>คน 40+ กังวลโลหะหนัก/สารพิษ</td><td>Toxic Load Self-Assessment</td><td>Quiz → blood test → chelation</td></tr>
+    <tr><td>HBOT</td><td>นักกีฬา/ผู้ฟื้นฟู/anti-aging</td><td>Recovery Goals Quiz</td><td>Quiz → 1 session → package</td></tr>
+    <tr><td>Mental Health</td><td>คนเครียด/นอนไม่หลับ/burnout</td><td>Stress/Sleep Quiz</td><td>Quiz → consult → treatment</td></tr>
+  </tbody>
+</table>
+
+<h3>2.3 LP block structure (Hook–Story–Offer + Stack + Close)</h3>
+<div class="ascii">┌───────────────────────────────────────────────────────────┐
+│ 1. HOOK (Hero)                                            │
+│    - Pattern-interrupt headline ตรง pain ของ dream cust.  │
+│    - Sub: บอก "outcome" ไม่ใช่ feature                    │
+│    - Primary CTA: ทำ Quiz ฟรี (bait)                      │
+│    - Secondary: LINE / โทร (สำหรับคนพร้อม buy)            │
+├───────────────────────────────────────────────────────────┤
+│ 2. PRE-FRAME (Symptom Checklist)                          │
+│    - "คุณมีอาการเหล่านี้ไหม?" ✅ 5-7 ข้อ                  │
+│    - ทำให้ dream cust. รู้สึก "ใช่ ฉันนี่แหละ"            │
+├───────────────────────────────────────────────────────────┤
+│ 3. EPIPHANY BRIDGE (Story)                                │
+│    - story: ทำไมหมอนุ่นถึงทำคลินิกนี้                     │
+│    - หรือ patient transformation story                    │
+├───────────────────────────────────────────────────────────┤
+│ 4. OFFER STACK (What you get)                             │
+│    - ตรวจอะไร, ใครตรวจ, ใช้เวลากี่นาที, ราคา             │
+│    - ใส่ "doctor-led" เป็น differentiator                 │
+├───────────────────────────────────────────────────────────┤
+│ 5. SOCIAL PROOF                                           │
+│    - testimonials (Phase 5 ของจริงจาก Sanity)             │
+│    - หมอนุ่น credentials, certifications, partnerships    │
+├───────────────────────────────────────────────────────────┤
+│ 6. RISK REVERSAL                                          │
+│    - "ตรวจโดยแพทย์ ไม่ใช่ technician"                     │
+│    - "ปรึกษาฟรีก่อนตัดสินใจ"                              │
+├───────────────────────────────────────────────────────────┤
+│ 7. FAQ (Objection handling)                               │
+│    - 5-6 คำถามที่ block การ convert                       │
+├───────────────────────────────────────────────────────────┤
+│ 8. CLOSE (Final CTA)                                      │
+│    - LINE (primary) → ติดต่อง่ายสุดใน TH                 │
+│    - Phone + walk-in address                              │
+│    - LeadForm (สำหรับคนชอบกรอก)                          │
+└───────────────────────────────────────────────────────────┘</div>
+
+<h3>2.4 Tech implementation (Astro)</h3>
+<pre><code>src/content/services/
+  ├── food-intolerance.md
+  ├── hormone.md
+  ├── iv-drip.md
+  ├── chelation.md
+  ├── hbot.md
+  └── mental-health.md
+
+src/pages/services/[slug].astro    # 1 template, renders all 6 LPs
+src/components/lp/
+  ├── HookHero.astro
+  ├── SymptomChecklist.astro
+  ├── EpiphanyStory.astro
+  ├── OfferStack.astro
+  ├── SocialProof.astro
+  ├── RiskReversal.astro
+  ├── FAQBlock.astro          # reuse existing FAQSection
+  └── CloseCTA.astro
+</code></pre>
+<p>Quiz starts lightweight: embedded Google Form / Typeform, or a small Astro component that
+posts <code>lead_submit</code> event to GTM. Full quiz engine deferred to Phase 5.</p>
+
+<h3>2.5 Out of scope (YAGNI for this spec)</h3>
+<ul class="x-list">
+  <li>Dream 100 influencer outreach</li>
+  <li>Email nurture / Soap Opera Sequence (no email infra yet)</li>
+  <li>Perfect Webinar funnel</li>
+</ul>
+
+<h3>2.6 Promoted to its own major feature (separate spec)</h3>
+<div class="callout">
+  <strong>Quiz funnel — to be designed in a separate spec.</strong>
+  Per the Traffic Secrets framework each LP is anchored by a bait/lead-magnet quiz; the Apr 2026 agency report shows the existing Food Intolerance quiz drives <strong>92.66% of total conversions</strong>, so this is the largest single lever for ad performance. Treating it as a standalone feature so it can be designed properly rather than scoped in here.
+  <br><br>
+  <strong>For this spec:</strong> LPs ship with a lightweight bait — either embed an existing Google Form / Typeform, OR link to the existing <code>/hormones-quiz</code> / Food Intolerance quiz on the legacy site, OR fall back to the standard LeadForm. The full multi-question branching quiz engine is the quiz spec's job.
+</div>
+
+<hr>
+
+<h2 id="s3">3. Copy A/B strategy + Google Sheet schema</h2>
+
+<h3>3.1 Two layers of A/B testing</h3>
+<table>
+  <thead><tr><th>Layer</th><th>Mechanism</th><th>When</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>A: Ad-level</strong></td>
+      <td>Responsive Search Ads — Google rotates 15 headlines × 4 descriptions automatically; reports per-asset performance + Ad Strength</td>
+      <td>Day 1 — no setup overhead</td>
+    </tr>
+    <tr>
+      <td><strong>B: Campaign-level</strong></td>
+      <td>Google Ads Experiments — 50/50 split, statistical significance computed for you</td>
+      <td>After Layer A baseline exists (2026-06-11+)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>3.2 Copy angle framework</h3>
+<p>Every headline maps to one of 5 angles so Google's learning data is labeled and we can see
+which angle wins per service.</p>
+<table>
+  <thead><tr><th>Angle</th><th>Example (Food Intolerance)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Pain</strong></td><td>ปวดท้องบ่อย หาสาเหตุไม่เจอ?</td></tr>
+    <tr><td><strong>Outcome</strong></td><td>รู้ภายใน 7 วันว่าแพ้อาหารอะไร</td></tr>
+    <tr><td><strong>Authority</strong></td><td>ตรวจโดยแพทย์ ไม่ใช่เครื่อง</td></tr>
+    <tr><td><strong>Specificity</strong></td><td>ตรวจ 216 ชนิดอาหาร IgG</td></tr>
+    <tr><td><strong>Urgency / Offer</strong></td><td>ปรึกษาฟรีวันนี้ — limited slot</td></tr>
+  </tbody>
+</table>
+<p>15 headlines = 3 per angle × 5 angles.</p>
+
+<h3>3.3 Google Sheet schema (4 tabs)</h3>
+
+<h4>Tab <code>campaigns</code></h4>
+<pre><code>campaign_name | type      | budget | locations | landing_page         | status
+food-intol-s  | Search    | 150    | BKK,NB,PT | /services/food-...   | active
+food-intol-pm | PMax      | 100    | BKK       | /services/food-...   | active
+...</code></pre>
+
+<h4>Tab <code>ad_copy</code> (~152 rows for 8 campaigns)</h4>
+<pre><code>campaign_name | type        | angle     | text                          | variant
+food-intol-s  | headline    | pain      | ปวดท้องเรื้อรัง?            | A
+food-intol-s  | headline    | outcome   | รู้สาเหตุใน 7 วัน           | A
+food-intol-s  | description | authority | ตรวจโดยแพทย์ ทุกขั้นตอน...  | A</code></pre>
+
+<h4>Tab <code>keywords</code> (Search only)</h4>
+<pre><code>campaign_name | keyword                | match_type | bid_modifier
+food-intol-s  | ตรวจภูมิแพ้อาหารแฝง  | phrase     | 1.0
+food-intol-s  | igg test bangkok       | broad      | 0.8</code></pre>
+
+<h4>Tab <code>assets</code></h4>
+<pre><code>campaign_name | asset_type | filename            | dimensions | usage
+food-intol-pm | image      | food-intol-1.jpg    | 1200x628   | PMax landscape
+food-intol-pm | image      | food-intol-2.jpg    | 1200x1200  | PMax square
+food-intol-pm | video      | food-intol-30s.mp4  | 9:16       | PMax vertical</code></pre>
+
+<h3>3.4 Workflow to add/edit a campaign (target: &lt;30 min)</h3>
+<ol>
+  <li>Open Google Sheet → add row to <code>campaigns</code> tab</li>
+  <li><strong>vkasama</strong> (content writer) writes 15 headlines (3 per angle × 5 angles) + 4 descriptions in the <code>ad_copy</code> tab; can optionally use Claude as a brainstorming aid</li>
+  <li>User / หมอนุ่น reviews the copy for medical-compliance accuracy</li>
+  <li>List image filenames in <code>assets</code> tab (filenames must match the asset library)</li>
+  <li>Export each tab as CSV</li>
+  <li>Open Google Ads Editor → File → Import → CSV</li>
+  <li>Review preview → Post changes to Google Ads</li>
+</ol>
+<div class="callout">
+  <strong>Collaborators on copy:</strong>
+  <ul style="margin: 0.3rem 0 0;">
+    <li><strong>vkasama</strong> — content writer; owns headlines / descriptions / Thai tone; updates Sheet master directly.</li>
+    <li><strong>หมอนุ่น / user</strong> — reviews for medical claims, compliance, voice.</li>
+    <li><strong>Claude</strong> — on-demand brainstorming + scaffolding (for LP block content); not the owner of campaign copy.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2 id="s4">4. Tracking &amp; conversion setup</h2>
+
+<h3>4.1 IDs (confirmed 2026-05-27)</h3>
+<table>
+  <thead><tr><th>Service</th><th>ID</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>GTM container</td><td><code>GTM-MKHTH4P9</code></td><td>To install in BaseLayout.astro</td></tr>
+    <tr><td>GA4 measurement</td><td><code>G-KTNWCHE7TM</code></td><td>Already live + tested on a regular page</td></tr>
+  </tbody>
+</table>
+
+<h3>4.2 Conversion event matrix</h3>
+<table>
+  <thead><tr><th>Event</th><th>Trigger</th><th>Counted in Ads?</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td><code>lead_submit</code></td><td>LeadForm / Quiz submit</td><td><span class="badge badge-pri">Primary</span></td><td>100฿</td></tr>
+    <tr><td><code>line_click</code></td><td>LINE button click</td><td><span class="badge badge-pri">Primary</span></td><td>50฿</td></tr>
+    <tr><td><code>call_click</code></td><td><code>tel:</code> click (mobile)</td><td><span class="badge badge-pri">Primary</span></td><td>50฿</td></tr>
+    <tr><td><code>quiz_start</code></td><td>Quiz entry</td><td><span class="badge badge-sec">Observe</span></td><td>—</td></tr>
+    <tr><td><code>page_view_service</code></td><td>View <code>/services/*</code></td><td><span class="badge badge-sec">Audience</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h3>4.3 Setup chain</h3>
+<div class="ascii">GTM container → fires GA4 events → GA4 marks as "key event"
+  → import to Google Ads as conversion → campaigns optimize toward it</div>
+
+<ol>
+  <li>Paste GTM snippet → <code>BaseLayout.astro</code></li>
+  <li>GTM UI: configure 5 tags firing 5 events via CSS-selector triggers</li>
+  <li>GA4 → Admin → Events → mark <code>lead_submit</code>, <code>line_click</code>, <code>call_click</code> as "Key event"</li>
+  <li>Google Ads → Tools → Conversions → Import from GA4</li>
+  <li>Wait 24-48h for data to flow → enable campaigns</li>
+</ol>
+
+<h3>4.4 UTM convention</h3>
+<pre><code>utm_source   = google
+utm_medium   = cpc | display | pmax | demandgen
+utm_campaign = {service-slug}-{type}    e.g. food-intol-search
+utm_content  = {ad-variant}             e.g. hookA-headlineA
+utm_term     = {keyword}                (Search only)</code></pre>
+<p>Use Google Ads <strong>Final URL suffix</strong> template once, applies to all ads:
+<code>utm_source=google&amp;utm_medium={network}&amp;utm_campaign={campaignid}&amp;utm_content={creative}&amp;utm_term={keyword}</code></p>
+
+<hr>
+
+<h2 id="s5">5. Timeline &amp; rollout plan</h2>
+
+<p>Today: <strong>2026-05-27</strong>. 5 days to milestone 1, 15 days to milestone 2.</p>
+
+<h3>Week 1: 2026-05-27 – 05-31 — Foundation + 3 priority campaigns</h3>
+<ol>
+  <li><strong>05-27</strong> — Install GTM <code>GTM-MKHTH4P9</code> in BaseLayout.astro + deploy <em>(Claude / dev)</em></li>
+  <li><strong>05-27</strong> — Configure GA4 events in GTM UI: <code>lead_submit</code>, <code>line_click</code>, <code>call_click</code> <em>(Satemshi)</em></li>
+  <li><strong>05-27</strong> — Create Google Sheet master (4 tabs: campaigns / ad_copy / keywords / assets) and share with vkasama <em>(Claude / user)</em></li>
+  <li><strong>05-28</strong> — Astro <code>[slug].astro</code> template + 8 LP components <em>(Claude / dev)</em></li>
+  <li><strong>05-28 – 29</strong> — Write content for 3 priority LPs: Food Intolerance, Hormone, IV Drip <em>(Claude scaffold + user review)</em></li>
+  <li><strong>05-28 – 29</strong> — Write copy (headlines × 5 angles, descriptions, keywords) for the 3 priority campaigns into the Sheet master <em>(vkasama, content writer)</em></li>
+  <li><strong>05-30</strong> — Deploy 3 LPs to production + verify conversion events in GA4 DebugView <em>(dev)</em></li>
+  <li><strong>05-31</strong> — Google Ads Editor: import 3 priority campaigns — Food Intolerance Search, Hormone Search, IV Drip PMax — review → post <em>(user / Satemshi)</em></li>
+</ol>
+<div class="callout">🎯 <strong>Milestone 2026-06-01:</strong> 3 new campaigns live — Food Intolerance Search, Hormone Search, IV Drip PMax. (IV Drip uses PMax to inherit conversion-volume strength from the agency baseline; Food Intolerance + Hormone use Search for faster measurable feedback in week 1.)</div>
+
+<h3>Week 2: 2026-06-01 – 06-11 — Complete 5 campaigns + A/B</h3>
+<ol>
+  <li><strong>06-01 – 03</strong> — Build 3 remaining LPs: Chelation, HBOT, Mental Health <em>(Claude / dev + user review)</em></li>
+  <li><strong>06-04 – 05</strong> — Write copy into Sheet master for the 5 remaining campaigns: Chelation, HBOT, Mental Health, Food Intolerance PMax, Demand Gen <em>(vkasama)</em></li>
+  <li><strong>06-06 – 07</strong> — Google Ads Editor: import + deploy 5 remaining campaigns <em>(user / Satemshi)</em></li>
+  <li><strong>06-08 – 09</strong> — Verify all campaigns running + conversions firing + budget pacing <em>(user)</em></li>
+  <li><strong>06-10</strong> — Setup Google Ads Experiments (Layer B A/B) for 2 campaigns with enough data <em>(user / Satemshi)</em></li>
+  <li><strong>06-11</strong> — <strong>Agency contract ends</strong> — Thrive runs 100% in-house</li>
+</ol>
+<div class="callout">🎯 <strong>Milestone 2026-06-11:</strong> 8 new campaigns operational, A/B experiment running.</div>
+
+<h3>Week 3+: 2026-06-12 onwards — Optimize loop (BAU)</h3>
+<ul>
+  <li><strong>Weekly:</strong> Review ad strength + asset performance → pause underperformers → add new variants</li>
+  <li><strong>Monthly:</strong> Review CPA/conversion rate per LP → iterate LP content</li>
+  <li><strong>Quarterly:</strong> Scale budget on winners → sunset losers</li>
+</ul>
+
+<h3>Risks &amp; mitigations</h3>
+<table>
+  <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+  <tbody>
+    <tr><td>GTM events do not fire as expected</td><td>Test via GA4 DebugView before importing conversions</td></tr>
+    <tr><td>LP template bug breaks all 6 LPs at once</td><td>Ship first 3 LPs to staging → verify → ship next 3</td></tr>
+    <tr><td>Generated copy fails medical compliance</td><td>User / หมอนุ่น reviews every headline before import</td></tr>
+    <tr><td>PMax algorithm relearns slowly after reset</td><td>Expect 5–7 day learning phase — start earliest possible</td></tr>
+    <tr><td>Budget burns faster than expected</td><td>Cap daily spend at agency baseline (1,100฿/day total) until optimised</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="refs">6. References &amp; appendix</h2>
+
+<h3>Source documents</h3>
+<ul>
+  <li>Agency report: <code>/Users/temtem/Downloads/Plus-Adtech30Mar-29Apr.pdf</code> (iTOPPLUS, 31 Mar – 29 Apr 2026)</li>
+  <li>Phase 3 plan: <code>docs/superpowers/plans/2026-05-15-phase3-ads-tracking-setup.md</code></li>
+  <li>Methodology: Russell Brunson, <em>Traffic Secrets</em> (2020) — Hook–Story–Offer, dream customer, value ladder, bait/lead magnet</li>
+</ul>
+
+<h3>Existing baseline (agency, Apr 2026)</h3>
+<table>
+  <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td>Total spend</td><td>25,343฿</td></tr>
+    <tr><td>Total conversions</td><td>572 (530 from Food Intolerance Quiz)</td></tr>
+    <tr><td>Blended CPA</td><td>44฿</td></tr>
+    <tr><td>Conversion rate</td><td>9.40%</td></tr>
+    <tr><td>Top performer</td><td>Performance Max — Food Intolerance: 519 conv @ 2.69฿ CPC</td></tr>
+  </tbody>
+</table>
+
+<h3>Campaign inventory (target state)</h3>
+<table>
+  <thead><tr><th>#</th><th>Campaign</th><th>Type</th><th>Daily budget</th><th>Locations</th><th>LP</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Food Intolerance Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/food-intolerance</td></tr>
+    <tr><td>2</td><td>Food Intolerance PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/services/food-intolerance</td></tr>
+    <tr><td>3</td><td>Hormone Search</td><td>Search</td><td>200฿</td><td>BKK, NB, PT</td><td>/services/hormone</td></tr>
+    <tr><td>4</td><td>IV Drip PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/services/iv-drip</td></tr>
+    <tr><td>5</td><td>Chelation Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/chelation</td></tr>
+    <tr><td>6</td><td>HBOT Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/hbot</td></tr>
+    <tr><td>7</td><td>Mental Health Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/mental-health</td></tr>
+    <tr><td>8</td><td>Demand Gen (multi)</td><td>Demand Gen</td><td>200฿</td><td>BKK</td><td>4 LPs by ad group</td></tr>
+  </tbody>
+</table>
+<p>Total daily budget target: 1,200฿/day (~36,000฿/month), aligned with agency baseline.</p>
+
+</body>
+</html>

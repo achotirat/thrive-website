@@ -1,0 +1,15 @@
+campaign_name	asset_type	filename	dimensions	usage	notes
+# asset_type: image | video | logo
+# usage: PMax landscape (1.91:1) | PMax square (1:1) | PMax portrait (4:5) | PMax vertical-video (9:16) | Demand Gen | LP hero
+
+# === Required by Google Ads spec ===
+# PMax: 3+ landscape images, 3+ square images, 1+ portrait, 1+ video (9:16 + 16:9), logo
+# Search: no image needed (text-only)
+# Demand Gen: square + landscape + portrait + video
+
+# vkasama / user list filenames here once assets are uploaded to shared drive
+food-intol-pm	image	(filename.jpg)	1200x628	PMax landscape
+food-intol-pm	image	(filename.jpg)	1200x1200	PMax square
+food-intol-pm	image	(filename.jpg)	960x1200	PMax portrait
+food-intol-pm	video	(filename.mp4)	9:16	PMax vertical video
+food-intol-pm	logo	thrive-logo.png	1200x1200	PMax logo
