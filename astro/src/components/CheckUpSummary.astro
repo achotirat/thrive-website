@@ -1,0 +1,90 @@
+---
+export interface Props {
+  keyTests: string[];
+  targetAudience: string[];
+}
+
+const { keyTests, targetAudience } = Astro.props;
+---
+
+<section class="section bg-white">
+  <div class="container narrow">
+    <div class="check-up-summary">
+      <div class="check-up-summary__tests">
+        <h3 class="check-up-summary__heading">รายการตรวจหลัก</h3>
+        <ul class="check-up-summary__list">
+          {keyTests.map((test) => (
+            <li>
+              <span class="check-up-summary__dot"></span>
+              {test}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {targetAudience.length > 0 && (
+        <div class="check-up-summary__audience">
+          <h3 class="check-up-summary__heading">เหมาะสำหรับ</h3>
+          <div class="check-up-summary__chips">
+            {targetAudience.map((a) => <span class="chip">{a}</span>)}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .check-up-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 32px 0;
+  }
+  @media (max-width: 640px) {
+    .check-up-summary { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .check-up-summary__heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+  .check-up-summary__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .check-up-summary__list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  .check-up-summary__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+  .check-up-summary__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--blue-xl);
+    border: 1px solid var(--blue-l);
+    border-radius: var(--r-pill);
+    font-size: 0.82rem;
+    color: var(--blue-d);
+    font-weight: 500;
+  }
+</style>

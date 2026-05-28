@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SEO from '../../components/SEO.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import CheckUpSummary from '../../components/CheckUpSummary.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import DoctorAttribution from '../../components/DoctorAttribution.astro';
+import CTASection from '../../components/CTASection.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { getServicePricing } from '../../lib/pricing';
+
+export async function getStaticPaths() {
+  const programs = await getCollection('checkUpPrograms');
+  return programs.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const pricing = getServicePricing('check-up/' + entry.id);
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'ตรวจสุขภาพ Check-up', href: '/check-up' },
+  { label: d.title, href: `/check-up/${entry.id}` },
+];
+---
+
+<BaseLayout>
+  <SEO slot="head" {...d.seo} heroImage={d.hero.image} jsonLd={d.jsonLd} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+  <ServiceHero {...d.hero} />
+  <main class="service-page">
+    <CheckUpSummary keyTests={d.keyTests} targetAudience={d.targetAudience} />
+    <article class="service-content">
+      <Content />
+    </article>
+    {pricing && pricing.from && (
+      <section class="section" style="background:var(--blue-xl)">
+        <div class="container narrow" style="text-align:center">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px;">ราคาเริ่มต้น</p>
+          <strong style="font-size:1.8rem;color:var(--blue-d)">{pricing.from}</strong>
+          {pricing.note && <p style="font-size:.85rem;color:var(--text-muted);margin-top:8px">{pricing.note}</p>}
+          <div style="margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+            <a href="tel:+66959349640" class="btn btn-primary">โทร 095-934-9640</a>
+            <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-secondary">LINE @thrivewellnessth</a>
+          </div>
+        </div>
+      </section>
+    )}
+    <DoctorAttribution doctor={d.doctor} />
+    <FAQSection items={d.faqs} />
+    <section class="section related-services">
+      <div class="section-container">
+        <div class="section-title-center">
+          <span class="section-label">โปรแกรมที่เกี่ยวข้อง</span>
+          <h2 class="section-title">สำรวจโปรแกรมอื่น</h2>
+        </div>
+        <div class="related-services__grid">
+          {d.relatedPrograms.map((p) => <ServiceCard {...p} />)}
+        </div>
+      </div>
+    </section>
+    <CTASection {...d.cta} />
+    <LeadForm serviceSlug={`check-up/${entry.id}`} formTitle={`นัดปรึกษา ${d.title}`} />
+  </main>
+  <Footer />
+</BaseLayout>

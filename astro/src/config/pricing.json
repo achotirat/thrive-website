@@ -41,5 +41,96 @@
     "updatedAt": "2026-05-27",
     "draft": true,
     "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/young-balance": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/healthy-balance": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/optimum-balance": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/iconic-balance": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/food-intolerance": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/hormones": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/dna-health-life": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/vitamins-and-micronutrients": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/urine-organic-test": {
+    "from": "15,900 บาท",
+    "note": "ราคารวมตรวจ + รายงานผล | เพิ่มแพ็กเกจรักษา ฿19,000 (รวม IV Drip มูลค่า ฿4,000)",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/heavy-metal-trace-elements": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/acne-solution": {
+    "from": "2,990 บาท",
+    "note": "ต่อครั้ง หรือ ฿9,900 คอร์ส 5 ครั้ง (Skin Healing) | Strength Booster ฿3,800/ครั้ง หรือ ฿14,900 คอร์ส 5 ครั้ง",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/special-test": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/immune-check-up": {
+    "from": "TBD",
+    "note": "ราคากำลังรอ review",
+    "updatedAt": "2026-05-28",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
   }
 }
