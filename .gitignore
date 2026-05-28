@@ -25,3 +25,8 @@ build/
 .sanity/
 Icon?
 .worktrees/
+
+# Claude Code — ignore local session/settings, but track shared skills
+.claude/*
+!.claude/skills
+!.claude/skills/**
