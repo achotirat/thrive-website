@@ -16,11 +16,15 @@ Rough idea → [thrive-keyword-scout] → content brief → [thrive-content-writ
 
 ---
 
-## Skill File
+## Skill Files
 
-**Location:** `.claude/skills/thrive-keyword-scout/SKILL.md`
+**Primary (active):** `.claude/skills/thrive-keyword-scout/SKILL.md` — Claude Code loads skills from here at session start.
 
-Single file. No helper scripts, no references subfolder. All logic lives in the skill instructions; Claude uses `WebSearch` at runtime.
+**Team copy:** `skills/thrive-keyword-scout/SKILL.md` — mirrors `.claude/skills/` so team members can browse all project skills in one place (same pattern as `skills/thrive-content-writer/` and `skills/thrive-launch-audit/`).
+
+Both files are identical. Implementation must write both.
+
+Single file per location. No helper scripts, no references subfolder. All logic lives in the skill instructions; Claude uses `WebSearch` at runtime.
 
 ---
 
