@@ -62,6 +62,45 @@ const servicesCollection = defineCollection({
       description: z.string().optional(),
     })),
     jsonLd: z.array(z.any()).default([]),
+    // Landing-page blocks (Traffic Secrets) — all optional, see docs/superpowers/specs/2026-05-27-google-ads-campaign-rebuild-design.html §2.3
+    symptomChecklist: z.object({
+      title: z.string(),
+      intro: z.string().optional(),
+      items: z.array(z.string()),
+      cta: buttonSchema.optional(),
+    }).optional(),
+    epiphanyStory: z.object({
+      label: z.string().optional(),
+      title: z.string(),
+      body: z.string(),
+      quote: z.string().optional(),
+      attribution: z.string().optional(),
+      image: z.string().optional(),
+      imageAlt: z.string().optional(),
+      reviewStatus: z.enum(['draft', 'approved']).optional().default('approved'),
+      reviewRequiredBy: z.string().optional(),
+    }).optional(),
+    offerStack: z.object({
+      title: z.string(),
+      intro: z.string().optional(),
+      items: z.array(z.object({
+        icon: z.string().optional(),
+        title: z.string(),
+        description: z.string(),
+      })),
+      priceFrom: z.string().optional(),
+      priceNote: z.string().optional(),
+      cta: buttonSchema.optional(),
+    }).optional(),
+    riskReversal: z.object({
+      title: z.string().optional(),
+      intro: z.string().optional(),
+      guarantees: z.array(z.object({
+        icon: z.string().optional(),
+        title: z.string(),
+        description: z.string(),
+      })),
+    }).optional(),
   }),
 });
 

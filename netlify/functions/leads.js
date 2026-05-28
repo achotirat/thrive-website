@@ -29,6 +29,12 @@ const ALLOWED_FIELDS = [
   "user_agent",
   "session_id",
   "consent_version",
+  "quiz_id",
+  "quiz_result_id",
+  "quiz_result_title",
+  "quiz_scores",
+  "quiz_answers",
+  "nurture_segment",
 ];
 
 const ATTRIBUTION_FIELDS = [
@@ -67,6 +73,12 @@ const MAX_TEXT_LENGTHS = {
   user_agent: 500,
   session_id: 120,
   consent_version: 80,
+  quiz_id: 120,
+  quiz_result_id: 120,
+  quiz_result_title: 240,
+  quiz_scores: 4000,
+  quiz_answers: 4000,
+  nurture_segment: 160,
 };
 
 const emptyToNull = (value) => {
@@ -78,6 +90,16 @@ const emptyToNull = (value) => {
 const truncate = (value, maxLength) => {
   if (typeof value !== "string" || !maxLength) return value;
   return value.length > maxLength ? value.slice(0, maxLength) : value;
+};
+
+const parseJsonField = (value) => {
+  if (value == null || value === "") return null;
+  if (typeof value !== "string") return value;
+  try {
+    return JSON.parse(value);
+  } catch (error) {
+    return null;
+  }
 };
 
 const response = (statusCode, body) => ({
@@ -166,6 +188,8 @@ const buildLeadPayload = (data, event) => {
   payload.user_agent = payload.user_agent || event.headers["user-agent"] || null;
   fillAttributionFromUrl(payload, payload.landing_page);
   fillAttributionFromUrl(payload, payload.referrer);
+  payload.quiz_scores = parseJsonField(payload.quiz_scores);
+  payload.quiz_answers = parseJsonField(payload.quiz_answers);
   payload.status = "new";
   payload.consent_at = emptyToNull(data.consent_timestamp) || new Date().toISOString();
   payload.created_at = payload.consent_at;

@@ -107,10 +107,12 @@ a spreadsheet — not touching code or the Google Ads UI for each variant.</p>
 └─────────────────────────────────────────────────────────────┘
            ↓ generate (Claude batch)         ↓ export CSV
 ┌─────────────────────────────────────────────────────────────┐
-│  Layer 2: Landing Pages (Astro content collection)          │
-│  - 1 template: src/pages/services/[slug].astro              │
-│  - 6 content entries (Chelation, Food Intolerance, IV Drip, │
-│    Hormone, HBOT, Mental Health) in src/content/services/   │
+│  Layer 2: Landing Pages (Astro content collection — exists) │
+│  - Per-service pages at /<slug> e.g. /food-intolerance      │
+│  - Content in src/content/services/<slug>.mdx (18 already)  │
+│  - 6 services needed: food-intolerance, hormones-quiz,      │
+│    iv-drip, chelation, hbot, mental-health (new)            │
+│  - Extend MDX schema with Traffic Secrets blocks            │
 └─────────────────────────────────────────────────────────────┘
            ↓ deploy
 ┌─────────────────────────────────────────────────────────────┐
@@ -192,28 +194,36 @@ That is a Brunson-style "bait" already working. We replicate the same pattern ac
 │    - LeadForm (สำหรับคนชอบกรอก)                          │
 └───────────────────────────────────────────────────────────┘</div>
 
-<h3>2.4 Tech implementation (Astro)</h3>
-<pre><code>src/content/services/
-  ├── food-intolerance.md
-  ├── hormone.md
-  ├── iv-drip.md
-  ├── chelation.md
-  ├── hbot.md
-  └── mental-health.md
+<h3>2.4 Tech implementation (Astro) — extend what already exists</h3>
+<p>Project already has the content-collection + per-service-page pattern in place. We <strong>extend</strong>
+the existing MDX schema with Traffic Secrets blocks rather than build from scratch.</p>
+<pre><code># Existing today (do not refactor unnecessarily):
+src/content/services/*.mdx      # 18 service entries with seo/hero/doctor/faqs
+src/pages/&lt;slug&gt;.astro          # one Astro page per service, thin wrapper
+src/components/                  # ServiceHero, FAQSection, DoctorAttribution,
+                                 #   CTASection, LeadForm, ServiceCard
 
-src/pages/services/[slug].astro    # 1 template, renders all 6 LPs
+# New work for this spec — extend schema + add blocks:
+src/content/config.ts            # define services collection schema (Zod) including
+                                 #   optional symptomChecklist, epiphany, offerStack,
+                                 #   riskReversal, socialProof blocks
 src/components/lp/
-  ├── HookHero.astro
-  ├── SymptomChecklist.astro
-  ├── EpiphanyStory.astro
-  ├── OfferStack.astro
-  ├── SocialProof.astro
-  ├── RiskReversal.astro
-  ├── FAQBlock.astro          # reuse existing FAQSection
-  └── CloseCTA.astro
+  ├── SymptomChecklist.astro     # block 2 (NEW)
+  ├── EpiphanyStory.astro        # block 3 — patient transformation (NEW)
+  ├── OfferStack.astro           # block 4 — what's included (NEW)
+  └── RiskReversal.astro         # block 6 (NEW)
+
+# Existing components reused as Traffic Secrets blocks:
+  - ServiceHero.astro    → block 1 HOOK
+  - DoctorAttribution    → block 5 SOCIAL PROOF (author/credentials)
+  - FAQSection           → block 7 FAQ
+  - CTASection + LeadForm → block 8 CLOSE
 </code></pre>
-<p>Quiz starts lightweight: embedded Google Form / Typeform, or a small Astro component that
-posts <code>lead_submit</code> event to GTM. Full quiz engine deferred to Phase 5.</p>
+<p>Each priority page (food-intolerance, hormones-quiz, iv-drip) gets the 4 new blocks added to its
+MDX frontmatter + injected into its page wrapper. Pages without Traffic Secrets data render the
+existing layout unchanged (backwards-compatible — blocks are optional).</p>
+<p>The bait/quiz CTA in this spec stays lightweight (embed Google Form / Typeform / link to legacy
+quiz). Full quiz engine is its own future spec — see Section 2.6.</p>
 
 <h3>2.5 Out of scope (YAGNI for this spec)</h3>
 <ul class="x-list">
@@ -270,8 +280,8 @@ which angle wins per service.</p>
 
 <h4>Tab <code>campaigns</code></h4>
 <pre><code>campaign_name | type      | budget | locations | landing_page         | status
-food-intol-s  | Search    | 150    | BKK,NB,PT | /services/food-...   | active
-food-intol-pm | PMax      | 100    | BKK       | /services/food-...   | active
+food-intol-s  | Search    | 150    | BKK,NB,PT | /food-intolerance    | active
+food-intol-pm | PMax      | 100    | BKK       | /food-intolerance    | active
 ...</code></pre>
 
 <h4>Tab <code>ad_copy</code> (~152 rows for 8 campaigns)</h4>
@@ -331,7 +341,7 @@ food-intol-pm | video      | food-intol-30s.mp4  | 9:16       | PMax vertical</c
     <tr><td><code>line_click</code></td><td>LINE button click</td><td><span class="badge badge-pri">Primary</span></td><td>50฿</td></tr>
     <tr><td><code>call_click</code></td><td><code>tel:</code> click (mobile)</td><td><span class="badge badge-pri">Primary</span></td><td>50฿</td></tr>
     <tr><td><code>quiz_start</code></td><td>Quiz entry</td><td><span class="badge badge-sec">Observe</span></td><td>—</td></tr>
-    <tr><td><code>page_view_service</code></td><td>View <code>/services/*</code></td><td><span class="badge badge-sec">Audience</span></td><td>—</td></tr>
+    <tr><td><code>page_view_service</code></td><td>View any service LP page</td><td><span class="badge badge-sec">Audience</span></td><td>—</td></tr>
   </tbody>
 </table>
 
@@ -367,7 +377,7 @@ utm_term     = {keyword}                (Search only)</code></pre>
   <li><strong>05-27</strong> — Install GTM <code>GTM-MKHTH4P9</code> in BaseLayout.astro + deploy <em>(Claude / dev)</em></li>
   <li><strong>05-27</strong> — Configure GA4 events in GTM UI: <code>lead_submit</code>, <code>line_click</code>, <code>call_click</code> <em>(Satemshi)</em></li>
   <li><strong>05-27</strong> — Create Google Sheet master (4 tabs: campaigns / ad_copy / keywords / assets) and share with vkasama <em>(Claude / user)</em></li>
-  <li><strong>05-28</strong> — Astro <code>[slug].astro</code> template + 8 LP components <em>(Claude / dev)</em></li>
+  <li><strong>05-28</strong> — Add Zod schema for services collection + build 4 new Traffic Secrets components (SymptomChecklist, EpiphanyStory, OfferStack, RiskReversal); wire them into existing service-page wrappers <em>(Claude / dev)</em></li>
   <li><strong>05-28 – 29</strong> — Write content for 3 priority LPs: Food Intolerance, Hormone, IV Drip <em>(Claude scaffold + user review)</em></li>
   <li><strong>05-28 – 29</strong> — Write copy (headlines × 5 angles, descriptions, keywords) for the 3 priority campaigns into the Sheet master <em>(vkasama, content writer)</em></li>
   <li><strong>05-30</strong> — Deploy 3 LPs to production + verify conversion events in GA4 DebugView <em>(dev)</em></li>
@@ -432,13 +442,13 @@ utm_term     = {keyword}                (Search only)</code></pre>
 <table>
   <thead><tr><th>#</th><th>Campaign</th><th>Type</th><th>Daily budget</th><th>Locations</th><th>LP</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>Food Intolerance Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/food-intolerance</td></tr>
-    <tr><td>2</td><td>Food Intolerance PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/services/food-intolerance</td></tr>
-    <tr><td>3</td><td>Hormone Search</td><td>Search</td><td>200฿</td><td>BKK, NB, PT</td><td>/services/hormone</td></tr>
-    <tr><td>4</td><td>IV Drip PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/services/iv-drip</td></tr>
-    <tr><td>5</td><td>Chelation Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/chelation</td></tr>
-    <tr><td>6</td><td>HBOT Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/hbot</td></tr>
-    <tr><td>7</td><td>Mental Health Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/services/mental-health</td></tr>
+    <tr><td>1</td><td>Food Intolerance Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/food-intolerance</td></tr>
+    <tr><td>2</td><td>Food Intolerance PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/food-intolerance</td></tr>
+    <tr><td>3</td><td>Hormone Search</td><td>Search</td><td>200฿</td><td>BKK, NB, PT</td><td>/hormones-quiz</td></tr>
+    <tr><td>4</td><td>IV Drip PMax</td><td>PMax</td><td>100฿</td><td>BKK</td><td>/iv-drip</td></tr>
+    <tr><td>5</td><td>Chelation Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/chelation</td></tr>
+    <tr><td>6</td><td>HBOT Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/hbot</td></tr>
+    <tr><td>7</td><td>Mental Health Search</td><td>Search</td><td>150฿</td><td>BKK, NB, PT</td><td>/mental-health (new)</td></tr>
     <tr><td>8</td><td>Demand Gen (multi)</td><td>Demand Gen</td><td>200฿</td><td>BKK</td><td>4 LPs by ad group</td></tr>
   </tbody>
 </table>

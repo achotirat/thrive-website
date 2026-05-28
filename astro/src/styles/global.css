@@ -1900,6 +1900,21 @@ h1.th, h2.th, h3.th {
   margin-top: 16px;
 }
 
+.service-content .callout {
+  margin: 0 0 40px;
+  padding: 20px 22px;
+  border: 1px solid #f2c94c;
+  border-radius: var(--r-md);
+  background: #fffbeb;
+  color: var(--text);
+  font-size: var(--text-md);
+  line-height: 1.8;
+}
+
+.service-content .callout strong {
+  color: var(--navy);
+}
+
 .service-content ol {
   list-style: decimal;
   padding-left: 1.4rem;
@@ -2753,4 +2768,373 @@ h1.th, h2.th, h3.th {
   font-size: var(--text-sm);
   color: var(--text-2);
   font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Landing Page Blocks (Traffic Secrets)
+   Added 2026-05-27 for Google Ads campaign rebuild — design doc:
+   docs/superpowers/specs/2026-05-27-google-ads-campaign-rebuild-design.html
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Block 2: SymptomChecklist */
+.symptom-section {
+  background: var(--teal-xl);
+}
+.symptom-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-8) auto 0;
+  max-width: 640px;
+  display: grid;
+  gap: var(--sp-3);
+}
+.symptom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--white);
+  border-radius: var(--r-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+.symptom-item__check {
+  flex-shrink: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+.symptom-cta {
+  margin-top: var(--sp-8);
+  text-align: center;
+}
+
+/* Block 3: EpiphanyStory */
+.story-section {
+  background: var(--white);
+}
+.story-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .story-card {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+.story-card__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+  display: block;
+}
+.story-card__body h2 {
+  margin-top: var(--sp-2);
+}
+.story-quote {
+  margin: var(--sp-6) 0 0;
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 3px solid var(--teal);
+  background: var(--teal-xl);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+.story-quote p {
+  font-size: var(--text-base);
+  font-style: italic;
+  margin: 0 0 var(--sp-2);
+  line-height: 1.7;
+}
+.story-quote cite {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-style: normal;
+}
+
+/* Block 4: OfferStack */
+.offer-section {
+  background: var(--bg-alt, #fafbfb);
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+}
+@media (min-width: 640px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.offer-card {
+  background: var(--white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.offer-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.offer-card__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin: 0;
+}
+.offer-card__desc {
+  font-size: var(--text-base);
+  color: var(--text-2);
+  margin: 0;
+  line-height: 1.6;
+}
+.offer-footer {
+  margin-top: var(--sp-8);
+  text-align: center;
+}
+.offer-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.offer-price__label {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+.offer-price__amount {
+  font-size: var(--text-xl, 1.5rem);
+  font-weight: 700;
+  color: var(--teal);
+}
+.offer-price__note {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin: 0 0 var(--sp-4);
+}
+
+/* Block 6: RiskReversal */
+.reversal-section {
+  background: var(--white);
+}
+.reversal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+  max-width: 880px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .reversal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.reversal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: var(--teal-xl);
+  border-radius: var(--r-lg);
+}
+.reversal-item__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.reversal-item__title {
+  font-size: var(--text-md);
+  font-weight: 600;
+  margin: 0 0 var(--sp-1);
+}
+.reversal-item__desc {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Interactive quiz funnel */
+.quiz-engine-section {
+  background:
+    radial-gradient(circle at top left, rgba(0, 171, 158, 0.12), transparent 34rem),
+    linear-gradient(180deg, var(--white), var(--navy-xl));
+}
+
+.quiz-engine {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+.quiz-engine__intro {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--sp-6));
+}
+
+.quiz-engine__intro h2 {
+  margin-bottom: var(--sp-4);
+}
+
+.quiz-engine__intro p,
+.quiz-engine__question p,
+.quiz-engine__result p,
+.quiz-engine__lead-form p {
+  color: var(--text-2);
+}
+
+.quiz-engine__panel,
+.quiz-engine__lead-form {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-md);
+  padding: var(--sp-8);
+}
+
+.quiz-engine__progress {
+  position: relative;
+  color: var(--teal-d);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  margin-bottom: var(--sp-8);
+  padding-bottom: var(--sp-3);
+}
+
+.quiz-engine__progress::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--quiz-progress, 0%);
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--grad-teal);
+}
+
+.quiz-engine__question h3,
+.quiz-engine__result h3,
+.quiz-engine__lead-form h3 {
+  color: var(--navy);
+  font-size: var(--text-xl);
+  margin-bottom: var(--sp-3);
+  letter-spacing: 0;
+}
+
+.quiz-engine__answers {
+  display: grid;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.quiz-engine__answer {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--white);
+  color: var(--text);
+  padding: var(--sp-4) var(--sp-5);
+  text-align: left;
+  line-height: 1.65;
+  transition:
+    border-color var(--dur-base) var(--ease),
+    box-shadow var(--dur-base) var(--ease),
+    transform var(--dur-base) var(--ease);
+}
+
+.quiz-engine__answer:hover,
+.quiz-engine__answer:focus-visible {
+  border-color: var(--teal);
+  box-shadow: var(--sh-teal);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.quiz-engine__result ul {
+  display: grid;
+  gap: var(--sp-3);
+  margin: var(--sp-5) 0 var(--sp-6);
+}
+
+.quiz-engine__result li {
+  position: relative;
+  padding-left: var(--sp-6);
+  color: var(--text);
+}
+
+.quiz-engine__result li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.quiz-engine__lead-form {
+  grid-column: 2;
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.quiz-engine__lead-form[hidden] {
+  display: none;
+}
+
+.quiz-engine__lead-form label {
+  display: grid;
+  gap: var(--sp-2);
+  color: var(--navy);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.quiz-engine__lead-form input[type="text"],
+.quiz-engine__lead-form input[type="tel"] {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 13px 14px;
+  color: var(--text);
+  background: var(--white);
+}
+
+.quiz-engine__lead-form input:focus {
+  border-color: var(--teal);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 171, 158, 0.14);
+}
+
+@media (max-width: 860px) {
+  .quiz-engine {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-engine__intro {
+    position: static;
+  }
+
+  .quiz-engine__lead-form {
+    grid-column: auto;
+  }
 }

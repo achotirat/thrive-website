@@ -77,3 +77,80 @@ Inspected `thrive-website/astro/src/layouts/BaseLayout.astro` and found:
 **Next:** Create feature branch + commit docs → user approves push → continue to Task #7 (LP template).
 
 ---
+
+## 2026-05-27 — Session 1e: Docs PR #29 merged + Task #7 re-scoped after project discovery
+
+**Docs PR:** branch `feature/google-ads-rebuild-docs` pushed and merged via PR #29 (commit `7ceb7e1`).
+
+**Project discovery (changes Task #7 scope):**
+- Existing content collection at `src/content/services/` already has 18 MDX files (40–60 KB each, full Tier A pages with seo / hero / doctor / faqs frontmatter).
+- Per-service pages at `src/pages/<slug>.astro` (~50 lines, thin wrapper composing ServiceHero / FAQSection / DoctorAttribution / CTASection / LeadForm / ServiceCard).
+- URLs are `/<slug>` (root level), preserved from legacy site per CLAUDE.md rule.
+- 4 of 6 LP slugs already exist: food-intolerance, iv-drip, chelation, hbot.
+- Hormone LP → use existing `/hormones-quiz` (user choice A — fastest, content already rich).
+- Mental Health → must create new MDX + page wrapper (Task #14).
+
+**Spec amendments (in branch `feature/services-lp-template`):**
+- URL convention: `/services/<slug>` → `/<slug>` (5 places).
+- Section 2.4 tech implementation rewritten: extend existing schema + add 4 new Traffic Secrets components (SymptomChecklist, EpiphanyStory, OfferStack, RiskReversal) instead of building `[slug].astro` template from scratch.
+- Layer 2 ASCII diagram updated to reflect existing setup.
+- Week 1 Day-05-28 task reworded.
+- Inventory table URLs corrected.
+- `campaigns.tsv` `landing_page` column corrected to root URLs.
+
+**Task #14 added:** create `/mental-health` MDX + page wrapper (Week 2).
+
+**Next:** Start Task #7 — inspect current `src/content/config.ts` (likely missing), define services collection Zod schema with optional Traffic Secrets fields, build 4 new components, wire conditionally into existing service-page wrappers.
+
+---
+
+## 2026-05-27 — Session 1f: Task #7 + Task #8 (priority LP draft content)
+
+**Task #7 — components built (PR #?):**
+- Branch `feature/services-lp-template`, commit `b97b4c6`.
+- 4 LP components in `astro/src/components/lp/`: SymptomChecklist, EpiphanyStory, OfferStack, RiskReversal.
+- Wired conditionally into food-intolerance.astro, iv-drip.astro, hormones-quiz.astro.
+- Initially skipped Zod schema (Task #7 commit b97b4c6 used type cast workaround) — but during Task #8 found that `astro/src/content.config.ts` already exists and enforces strict typing. Proper fix applied in Task #8 commit: added 4 optional LP block schemas to `content.config.ts`, removed the type cast, deleted `astro/src/types/lp-blocks.ts`. `npx astro check` and `npm run build` both pass with the clean schema.
+- CSS added to `astro/src/styles/global.css` (~200 lines under "Landing Page Blocks" section).
+
+**Task #8 — priority LP content (DRAFT, in same branch):**
+- Added 4 LP blocks (symptomChecklist / epiphanyStory / offerStack / riskReversal) to MDX frontmatter for food-intolerance.mdx, iv-drip.mdx, hormones-quiz.mdx.
+- All epiphanyStory entries marked `[DRAFT — placeholder]` in title. **Must not ship to production until vkasama collects real patient testimonials from clinic and หมอนุ่น approves wording.**
+- Other blocks (symptoms, offer, risk reversal) written from existing MDX body + FAQs — still need หมอนุ่น medical review for accuracy.
+- Quote attributions marked "placeholder คนไข้ Thrive Wellness Clinic" for the same reason.
+
+**Central pricing introduced (Q2 answer):**
+- New file `astro/src/data/pricing.json` — single source of truth for service prices.
+- New helper `astro/src/lib/pricing.ts` exposing `getServicePricing(slug)`.
+- Page wrappers merge: `priceFrom: d.offerStack.priceFrom ?? pricing?.from` — MDX can override per-page (e.g. promos).
+- 6 services seeded with `draft: true` flag — vkasama / user update actual prices and remove draft flag.
+
+**Quiz coordination:**
+- Detected another agent's work-in-progress in `hormones-quiz.astro` (added `QuizEngine` import + render); preserved as-is per instruction.
+- Other agent's files (`astro/src/lib/quizEngine.mjs`, `astro/tests/`, modified `astro/package.json`) left unstaged in this branch — not in scope of Task #7/#8.
+
+**Next:** commit Task #8 content + push to `feature/services-lp-template` → open PR (or continue to Task #14 mental-health page / Task #5 Ads Editor import).
+
+---
+
+## 2026-05-28 — Session 2: Task #11 — Google Ads Editor import prep
+
+Built the bulk-import CSV templates for the 3 priority campaigns plus a step-by-step guide. Files in `docs/superpowers/sheets/editor-templates/` (numbered in import order):
+
+1. `01-campaigns-priority.csv` — Food Intolerance Search 150฿, Hormone Search 200฿, IV Drip PMax 100฿; all start in **Paused** state.
+2. `02-ad-groups-priority.csv` — one ad group per Search campaign.
+3. `03-keywords-priority.csv` — 16 seed keywords across the 2 Search campaigns, mix of phrase / broad / exact match.
+4. `04-responsive-search-ads-priority.csv` — RSA template with `[VKASAMA …]` placeholders to be filled from the Google Sheet master before import.
+5. `05-pmax-iv-drip-priority.csv` — PMax asset-group checklist (PMax has limited CSV import; the file is a reference, not a direct paste).
+
+Guide: `docs/superpowers/sheets/editor-import-guide.md`.
+
+**Open dependencies before launch:**
+- vkasama: complete copy in `Thrive Ads Master 2026` sheet for the 3 priority campaigns; replace `[VKASAMA …]` placeholders in CSV before importing.
+- Satemshi: confirm GTM tags are forwarding `lead_submit` / `line_click` / `call_click` to GA4, then import the GA4 conversion into Google Ads.
+- หมอนุ่น: medical review of the LP draft content (Task #8 commits).
+- IV Drip PMax assets: upload images / videos / logos to the Google Ads Asset library.
+
+All three campaigns deliberately start Paused — flip to Enabled only after verifying conversion tracking and LP rendering in production.
+
+---

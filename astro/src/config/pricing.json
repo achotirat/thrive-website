@@ -1,0 +1,45 @@
+{
+  "__comment": "Central pricing source for service LPs. Draft prices are hidden from LPs until reviewed. Price reviewer: GitHub @apanit-pueng.",
+  "food-intolerance": {
+    "from": "8,900 บาท",
+    "note": "ราคารวมตรวจ IgG 216 ชนิด + รายงานผล + คำปรึกษาแพทย์ 30–60 นาที",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "hormones-quiz": {
+    "from": "6,500 บาท",
+    "note": "ราคารวมตรวจฮอร์โมน + คำปรึกษาแพทย์เพื่อวางแผนปรับสมดุล",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "iv-drip": {
+    "from": "2,500 บาท",
+    "note": "ราคาเริ่มต้นต่อครั้ง — มีโปรโมชั่นคอร์สหลายครั้ง สอบถาม LINE",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "chelation": {
+    "from": "4,500 บาท",
+    "note": "ราคาต่อครั้ง คอร์ส 10 ครั้งมีส่วนลด สอบถามรายละเอียด",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "hbot": {
+    "from": "3,500 บาท",
+    "note": "ราคาต่อ session 60 นาที — คอร์สมีโปรโมชั่น",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "mental-health": {
+    "from": "TBD",
+    "note": "ราคารอ confirm จาก @apanit-pueng",
+    "updatedAt": "2026-05-27",
+    "draft": true,
+    "priceReviewRequiredBy": "apanit-pueng"
+  }
+}

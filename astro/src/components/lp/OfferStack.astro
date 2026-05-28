@@ -1,0 +1,51 @@
+---
+type OfferItem = {
+  icon?: string;
+  title: string;
+  description: string;
+};
+
+export interface Props {
+  title: string;
+  intro?: string;
+  items: OfferItem[];
+  priceFrom?: string;
+  priceNote?: string;
+  cta?: { label: string; href: string };
+}
+
+const { title, intro, items, priceFrom, priceNote, cta } = Astro.props;
+---
+
+<section class="section offer-section">
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">What you get</span>
+      <h2 class="section-title">{title}</h2>
+      {intro && <p class="section-subtitle">{intro}</p>}
+    </div>
+    <div class="offer-grid">
+      {items.map((item) => (
+        <div class="offer-card">
+          {item.icon && <div class="offer-card__icon" aria-hidden="true">{item.icon}</div>}
+          <h3 class="offer-card__title">{item.title}</h3>
+          <p class="offer-card__desc">{item.description}</p>
+        </div>
+      ))}
+    </div>
+    {(priceFrom || priceNote || cta) && (
+      <div class="offer-footer">
+        {priceFrom && (
+          <div class="offer-price">
+            <span class="offer-price__label">เริ่มต้น</span>
+            <span class="offer-price__amount">{priceFrom}</span>
+          </div>
+        )}
+        {priceNote && <p class="offer-price__note">{priceNote}</p>}
+        {cta && (
+          <a href={cta.href} class="btn btn-primary" data-gtm-event="cta_click" data-gtm-label={cta.label}>{cta.label}</a>
+        )}
+      </div>
+    )}
+  </div>
+</section>

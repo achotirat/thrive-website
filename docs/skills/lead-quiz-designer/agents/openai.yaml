@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lead Quiz Designer"
+  short_description: "Design conversion-focused lead qualification quizzes."
+  default_prompt: "Design a lead conversion quiz for a campaign landing page, including questions, scoring, results, nurture segments, and lead payload fields."

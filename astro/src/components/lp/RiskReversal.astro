@@ -1,0 +1,36 @@
+---
+type Guarantee = {
+  icon?: string;
+  title: string;
+  description: string;
+};
+
+export interface Props {
+  title?: string;
+  intro?: string;
+  guarantees: Guarantee[];
+}
+
+const { title = 'ความเสี่ยงเป็นศูนย์', intro, guarantees } = Astro.props;
+---
+
+<section class="section reversal-section">
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">Risk reversal</span>
+      <h2 class="section-title">{title}</h2>
+      {intro && <p class="section-subtitle">{intro}</p>}
+    </div>
+    <div class="reversal-grid">
+      {guarantees.map((g) => (
+        <div class="reversal-item">
+          {g.icon && <div class="reversal-item__icon" aria-hidden="true">{g.icon}</div>}
+          <div>
+            <h3 class="reversal-item__title">{g.title}</h3>
+            <p class="reversal-item__desc">{g.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

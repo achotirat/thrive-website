@@ -1,0 +1,49 @@
+---
+export interface Props {
+  label?: string;
+  title: string;
+  body: string;
+  quote?: string;
+  attribution?: string;
+  image?: string;
+  imageAlt?: string;
+  reviewStatus?: 'draft' | 'approved';
+  reviewRequiredBy?: string;
+}
+
+const {
+  label = 'Patient story',
+  title,
+  body,
+  quote,
+  attribution,
+  image,
+  imageAlt,
+  reviewStatus = 'approved',
+} = Astro.props;
+
+const canRender = reviewStatus === 'approved';
+---
+
+{canRender && (
+  <section class="section story-section">
+    <div class="section-container story-card">
+      {image && (
+        <div class="story-card__media">
+          <img src={image} alt={imageAlt ?? ''} width="600" height="600" loading="lazy" />
+        </div>
+      )}
+      <div class="story-card__body">
+        <span class="section-label">{label}</span>
+        <h2 class="section-title">{title}</h2>
+        <p>{body}</p>
+        {quote && (
+          <blockquote class="story-quote">
+            <p>"{quote}"</p>
+            {attribution && <cite>— {attribution}</cite>}
+          </blockquote>
+        )}
+      </div>
+    </div>
+  </section>
+)}
