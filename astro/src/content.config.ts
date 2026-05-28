@@ -104,6 +104,68 @@ const servicesCollection = defineCollection({
   }),
 });
 
+const checkUpProgramsCollection = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/check-up' }),
+  schema: z.object({
+    title: z.string(),
+    category: z.enum(['balance', 'specialty']),
+    tagline: z.string(),
+    targetAudience: z.array(z.string()),
+    keyTests: z.array(z.string()),
+    seo: z.object({
+      seoTitle: z.string(),
+      description: z.string().max(180),
+      ogImage: z.string(),
+      ogLocale: z.string().default('th_TH'),
+      canonicalPath: z.string(),
+      noIndex: z.boolean().default(false),
+      hreflang: z.array(z.object({ lang: z.string(), href: z.string() })).default([]),
+      geo: z.object({
+        region: z.string(),
+        placename: z.string(),
+        position: z.string(),
+        icbm: z.string(),
+      }),
+      publishedAt: z.coerce.date(),
+      updatedAt: z.coerce.date(),
+      lastMedicalReview: z.coerce.date(),
+      reviewedBy: z.string(),
+      medicalSpecialty: z.string(),
+    }),
+    hero: z.object({
+      headline: z.string(),
+      subline: z.string(),
+      image: z.string(),
+      imageAlt: z.string(),
+      primaryBtn: buttonSchema,
+      secondaryBtn: buttonSchema.optional(),
+      stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
+    }),
+    doctor: z.object({
+      name: z.string(),
+      title: z.string(),
+      image: z.string(),
+      imageAlt: z.string(),
+      bio: z.string(),
+      specializations: z.array(z.string()),
+    }),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })),
+    cta: z.object({
+      headline: z.string(),
+      subline: z.string().optional(),
+      primaryBtn: buttonSchema,
+      secondaryBtn: buttonSchema.optional(),
+    }),
+    relatedPrograms: z.array(z.object({
+      title: z.string(),
+      href: z.string(),
+      icon: z.string().optional(),
+      description: z.string().optional(),
+    })),
+    jsonLd: z.array(z.any()).default([]),
+  }),
+});
+
 const blogPostsCollection = defineCollection({
   loader: sanityBlogLoader(),
   schema: z.object({
@@ -154,6 +216,7 @@ const blogCollection = defineCollection({
 
 export const collections = {
   services: servicesCollection,
+  checkUpPrograms: checkUpProgramsCollection,
   blogPosts: blogPostsCollection,
   blog: blogCollection,
 };
