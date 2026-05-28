@@ -11,11 +11,25 @@ import DoctorAttribution from '../components/DoctorAttribution.astro';
 import CTASection from '../components/CTASection.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import SymptomChecklist from '../components/lp/SymptomChecklist.astro';
+import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
+import OfferStack from '../components/lp/OfferStack.astro';
+import RiskReversal from '../components/lp/RiskReversal.astro';
+import QuizEngine from '../components/QuizEngine.astro';
+import { chelationQuiz } from '../lib/quizDefinitions.mjs';
+import { getServicePricing } from '../lib/pricing';
 
 const entry = await getEntry('services', 'chelation');
 if (!entry) throw new Error('Missing chelation content entry');
 const { Content } = await render(entry);
 const d = entry.data;
+
+const pricing = getServicePricing('chelation');
+const offerStackProps = d.offerStack ? {
+  ...d.offerStack,
+  priceFrom: d.offerStack.priceFrom ?? pricing?.from,
+  priceNote: d.offerStack.priceNote ?? pricing?.note,
+} : undefined;
 
 const crumbs = [
   { label: 'หน้าแรก', href: '/' },
@@ -29,10 +43,15 @@ const crumbs = [
   <Header />
   <Breadcrumbs crumbs={crumbs} />
   <ServiceHero {...d.hero} />
+  {d.symptomChecklist && <SymptomChecklist {...d.symptomChecklist} />}
   <main class="service-page">
     <article class="service-content"><Content /></article>
-    <FAQSection items={d.faqs} />
+    <QuizEngine quiz={chelationQuiz} />
+    {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
+    {offerStackProps && <OfferStack {...offerStackProps} />}
     <DoctorAttribution doctor={d.doctor} />
+    {d.riskReversal && <RiskReversal {...d.riskReversal} />}
+    <FAQSection items={d.faqs} />
     <section class="section related-services">
       <div class="section-container">
         <div class="section-title-center">

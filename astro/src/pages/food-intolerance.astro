@@ -15,6 +15,8 @@ import SymptomChecklist from '../components/lp/SymptomChecklist.astro';
 import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
 import OfferStack from '../components/lp/OfferStack.astro';
 import RiskReversal from '../components/lp/RiskReversal.astro';
+import QuizEngine from '../components/QuizEngine.astro';
+import { foodIntoleranceQuiz } from '../lib/quizDefinitions.mjs';
 import { getServicePricing } from '../lib/pricing';
 
 const entry = await getEntry('services', 'food-intolerance');
@@ -45,6 +47,7 @@ const crumbs = [
     <article class="service-content">
       <Content />
     </article>
+    <QuizEngine quiz={foodIntoleranceQuiz} />
     {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
     {offerStackProps && <OfferStack {...offerStackProps} />}
     <DoctorAttribution doctor={d.doctor} />

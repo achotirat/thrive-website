@@ -77,6 +77,8 @@ const servicesCollection = defineCollection({
       attribution: z.string().optional(),
       image: z.string().optional(),
       imageAlt: z.string().optional(),
+      reviewStatus: z.enum(['draft', 'approved']).optional().default('approved'),
+      reviewRequiredBy: z.string().optional(),
     }).optional(),
     offerStack: z.object({
       title: z.string(),
