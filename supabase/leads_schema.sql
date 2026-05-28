@@ -34,6 +34,13 @@ create table if not exists public.leads (
   consent_at timestamptz,
   consent_version text,
 
+  quiz_id text,
+  quiz_result_id text,
+  quiz_result_title text,
+  quiz_scores jsonb,
+  quiz_answers jsonb,
+  nurture_segment text,
+
   status text not null default 'new',
   status_changed_at timestamptz default now(),
   assigned_to text,
@@ -53,6 +60,17 @@ create index if not exists leads_click_ids_idx on public.leads (gclid, fbclid, w
 
 alter table public.leads
 add column if not exists status_changed_at timestamptz default now();
+
+alter table public.leads
+add column if not exists quiz_id text,
+add column if not exists quiz_result_id text,
+add column if not exists quiz_result_title text,
+add column if not exists quiz_scores jsonb,
+add column if not exists quiz_answers jsonb,
+add column if not exists nurture_segment text;
+
+create index if not exists leads_quiz_segment_idx
+on public.leads (quiz_id, quiz_result_id, nurture_segment);
 
 create table if not exists public.lead_status_history (
   history_id uuid primary key default gen_random_uuid(),

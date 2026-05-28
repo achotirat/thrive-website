@@ -16,15 +16,15 @@ import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
 import OfferStack from '../components/lp/OfferStack.astro';
 import RiskReversal from '../components/lp/RiskReversal.astro';
 import QuizEngine from '../components/QuizEngine.astro';
-import { hbotQuiz } from '../lib/quizDefinitions.mjs';
+import { mentalHealthQuiz } from '../lib/quizDefinitions.mjs';
 import { getServicePricing } from '../lib/pricing';
 
-const entry = await getEntry('services', 'hbot');
-if (!entry) throw new Error('Missing hbot content entry');
+const entry = await getEntry('services', 'mental-health');
+if (!entry) throw new Error('Missing mental-health content entry');
 const { Content } = await render(entry);
 const d = entry.data;
 
-const pricing = getServicePricing('hbot');
+const pricing = getServicePricing('mental-health');
 const offerStackProps = d.offerStack ? {
   ...d.offerStack,
   priceFrom: d.offerStack.priceFrom ?? pricing?.from,
@@ -33,7 +33,7 @@ const offerStackProps = d.offerStack ? {
 
 const crumbs = [
   { label: 'หน้าแรก', href: '/' },
-  { label: 'HBOT', href: '/hbot' },
+  { label: 'Mental Health', href: '/mental-health' },
 ];
 ---
 
@@ -47,7 +47,7 @@ const crumbs = [
     <article class="service-content">
       <Content />
     </article>
-    <QuizEngine quiz={hbotQuiz} />
+    <QuizEngine quiz={mentalHealthQuiz} />
     {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
     {offerStackProps && <OfferStack {...offerStackProps} />}
     <DoctorAttribution doctor={d.doctor} />
@@ -65,7 +65,7 @@ const crumbs = [
       </div>
     </section>
     <CTASection {...d.cta} />
-    <LeadForm serviceSlug="hbot" formTitle="นัดปรึกษา HBOT" />
+    <LeadForm serviceSlug="mental-health" formTitle="นัดคุยกับนักบำบัด" />
   </main>
   <Footer />
 </BaseLayout>

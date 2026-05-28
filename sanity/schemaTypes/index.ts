@@ -3,6 +3,7 @@ import {clinicProfile} from './documents/clinicProfile'
 import {condition} from './documents/condition'
 import {doctor} from './documents/doctor'
 import {redirectMapping} from './documents/redirectMapping'
+import {quizFunnel} from './documents/quizFunnel'
 import {service} from './documents/service'
 import {symptom} from './documents/symptom'
 import {testimonial} from './documents/testimonial'
@@ -24,6 +25,7 @@ export const schemaTypes = [
   condition,
   symptom,
   redirectMapping,
+  quizFunnel,
   citation,
   externalLink,
   faqItem,

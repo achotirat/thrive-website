@@ -1,0 +1,68 @@
+---
+export interface Props {
+  quiz: {
+    id: string;
+    title: string;
+    eyebrow?: string;
+    intro?: string;
+    serviceSlug: string;
+    leadFormTitle?: string;
+  };
+}
+
+const { quiz } = Astro.props;
+const quizJson = JSON.stringify(quiz).replaceAll('</script', '<\\/script');
+---
+
+<section class="section quiz-engine-section" id="quiz">
+  <div class="section-container">
+    <div class="quiz-engine" data-quiz-root>
+      <script is:inline type="application/json" data-quiz-json set:html={quizJson}></script>
+      <div class="quiz-engine__intro">
+        <span class="section-label">{quiz.eyebrow || 'Quiz'}</span>
+        <h2>{quiz.title}</h2>
+        {quiz.intro && <p>{quiz.intro}</p>}
+      </div>
+
+      <div class="quiz-engine__panel">
+        <div class="quiz-engine__progress" data-quiz-progress></div>
+        <div class="quiz-engine__question" data-quiz-question></div>
+        <div class="quiz-engine__answers" data-quiz-answers></div>
+        <div class="quiz-engine__result" data-quiz-result hidden></div>
+      </div>
+
+      <form class="quiz-engine__lead-form" id="quiz-lead-form" data-quiz-lead-form hidden>
+        <h3>{quiz.leadFormTitle || 'ส่งผลแบบทดสอบให้ทีม Thrive ช่วยดูต่อ'}</h3>
+        <p>ทีมงานจะติดต่อกลับเพื่อแนะนำขั้นตอนถัดไปตามผลแบบทดสอบของคุณ</p>
+        <input type="hidden" name="quiz_result_id" />
+        <input type="hidden" name="nurture_segment" />
+        <label>
+          ชื่อ-นามสกุล *
+          <input name="name" type="text" autocomplete="name" required maxlength="120" />
+        </label>
+        <label>
+          เบอร์โทรศัพท์ *
+          <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
+        </label>
+        <label>
+          LINE ID
+          <input name="line_id" type="text" autocomplete="off" maxlength="80" />
+        </label>
+        <label class="lead-form__consent">
+          <input name="consent" type="checkbox" value="yes" required />
+          <span>ยินยอมให้ Thrive Wellness Center ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
+        </label>
+        <p class="lead-form__status" data-quiz-status aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary">ส่งผลแบบทดสอบ</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { mountQuizEngine } from '../lib/quizRuntime.mjs';
+
+  document.querySelectorAll('[data-quiz-root]').forEach((root) => {
+    mountQuizEngine(root);
+  });
+</script>
