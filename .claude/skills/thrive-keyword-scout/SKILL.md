@@ -27,14 +27,15 @@ This skill runs before `/thrive-content-writer`. It answers: is this topic worth
 | **Clinic** | Thrive Wellness Center, Bangkok |
 | **Audience** | Thai nationals + Bangkok expats, aged 30–55, health-conscious |
 | **Blog goal** | Drive organic search traffic that converts to clinic consultations |
-| **Services to link** | check-up, food-intolerance, adrenal-fatigue, hbot, iv-drip, chelation, nk-cell, dna-test, hormones-quiz, oligoscan, personalized-vitamins, vitamins-and-micronutrients, urine-organic-test |
-| **Blog URL pattern** | `/post/[slug]` on new.thrivewellnessth.com |
+| **Services to link** | check-up, food-intolerance, adrenal-fatigue, hbot, iv-drip, chelation, nk-cell, dna-test, hormones-quiz, oligoscan, personalized-vitamins, vitamins-and-micronutrients, urine-organic-test, gluta, nad, cancer-screening, mental-health, allergy-ige, vitamin-d |
+| **Blog URL pattern** | `/blog/[slug]` on new.thrivewellnessth.com |
+| **Contact for CTA** | LINE @thrivewellnessth \| Tel: 095-934-9640 |
 
 ---
 
 ## Step 1 — Seed Expansion
 
-Generate 8–10 keyword variations from the input topic across 4 angles:
+Generate 8–10 keyword variations from the input topic across 4 angles (aim for 2–3 per angle):
 
 | Angle | Purpose | Examples for LDL topic |
 |---|---|---|
@@ -49,7 +50,7 @@ Present the full list before moving to Step 2.
 
 ## Step 2 — SERP Snapshot
 
-Select the **4 most promising candidates** from Step 1 (highest relevance + actionable intent). Run `WebSearch` on each and record:
+Select the **top 5 candidates** from Step 1 (highest relevance + actionable intent). Run `WebSearch` on each and record:
 
 | Signal | What to look for |
 |---|---|
@@ -76,7 +77,8 @@ Score all 8–10 keywords on 5 dimensions (1–3 each, max 15):
 **Rules:**
 - Tie-breaking: equal scores → prefer stronger Thrive service link
 - Minimum threshold: do not recommend a keyword below 8/15 — flag as "not worth pursuing" and suggest a reformulated alternative
-- Expat English keywords: cap "Thai content gap" at 2 (always more English content)
+- Expat English keywords: cap "Thai content gap" at **1** — English content is denser so ranking is harder, meaning the gap score is genuinely lower for English-language targets
+- Keywords not searched in Step 2: score Intent fit and Thrive service link normally; set Volume signal, Thai content gap, and Ranking feasibility to **2 (medium estimate)** and mark with `*` in the table.
 
 Present the full scored table sorted by total score descending.
 
@@ -87,11 +89,11 @@ Present the full scored table sorted by total score descending.
 ### Part A: Ranked Table
 
 ```
-| # | Keyword (TH/EN)              | Intent   | Thai gap | Thrive link       | Feasibility | Score |
-|---|------------------------------|----------|----------|-------------------|-------------|-------|
-| 1 | วิธีลด LDL ตามธรรมชาติ       | info ✅   | medium   | check-up, chelation | medium    | 12/15 |
-| 2 | LDL สูงอันตรายไหม             | info ✅   | low gap  | check-up          | easy        | 11/15 |
-| 3 | LDL คืออะไร                   | info ✅   | high comp| —                 | hard        |  7/15 |
+| # | Keyword (TH/EN)              | Vol    | Thai gap | Intent   | Thrive link         | Feasibility | Score |
+|---|------------------------------|--------|----------|----------|---------------------|-------------|-------|
+| 1 | วิธีลด LDL ตามธรรมชาติ       | medium | medium   | info ✅   | check-up, chelation | medium      | 12/15 |
+| 2 | LDL สูงอันตรายไหม             | medium | low gap  | info ✅   | check-up            | easy        | 11/15 |
+| 3 | LDL คืออะไร                   | high   | high comp| info ✅   | —                   | hard        |  7/15 |
 ```
 
 ### Part B: Winner Declaration + Content Brief
@@ -104,11 +106,11 @@ Rationale: [one sentence — why this keyword, what gap it fills, which Thrive s
 CONTENT BRIEF — paste into /thrive-content-writer
 ────────────────────────────────────────────────
 TARGET KEYWORD:      [winner keyword]
-SECONDARY KEYWORDS:  [3–5 related terms to weave naturally into the post]
+SECONDARY KEYWORDS:  [3–5 terms — draw from positions 2–5 in the ranked table; weave naturally into the post]
 SUGGESTED H1:        "[Thai headline — compelling, includes keyword, ≤70 chars]"
 META DESCRIPTION:    "[Thai, ≤155 chars, includes keyword, not clickbait]"
 CONTENT LENGTH:      1,600–2,200 words
-SLUG:                [kebab-case, Thai or English]
+SLUG:                [kebab-case English translation — match site convention, e.g. lower-ldl-naturally]
 
 H2 OUTLINE:
   1. [What is X / establish the topic]
@@ -124,7 +126,7 @@ PEOPLE ALSO ASK (from SERP):
   - [Question 3]
 
 THRIVE SERVICE LINK:  /[service-slug]
-CTA:                  "[Thai CTA — references service, includes LINE or phone]"
+CTA:                  "[Thai CTA — references service; use LINE @thrivewellnessth or Tel: 095-934-9640]"
 ────────────────────────────────────────────────
 ```
 
