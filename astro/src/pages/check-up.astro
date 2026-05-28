@@ -11,6 +11,14 @@ import DoctorAttribution from '../components/DoctorAttribution.astro';
 import CTASection from '../components/CTASection.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPrograms = await getCollection('checkUpPrograms');
+const balanceOrder = ['young-balance', 'healthy-balance', 'optimum-balance', 'iconic-balance'];
+const balancePrograms = allPrograms
+  .filter(p => p.data.category === 'balance')
+  .sort((a, b) => balanceOrder.indexOf(a.id) - balanceOrder.indexOf(b.id));
+const specialtyPrograms = allPrograms.filter(p => p.data.category === 'specialty');
 
 const entry = await getEntry('services', 'check-up');
 if (!entry) throw new Error('Missing check-up content entry');
@@ -32,6 +40,35 @@ const crumbs = [
     <article class="service-content">
       <Content />
     </article>
+    <section class="section" style="background:var(--blue-xl)">
+      <div class="container">
+        <div class="section-label" style="color:var(--blue)">โปรแกรมตรวจสุขภาพ</div>
+        <h2 class="section-title">เลือกโปรแกรมที่เหมาะกับคุณ</h2>
+        <p class="section-desc">ทุกโปรแกรมรวมการปรึกษาและแปลผลกับแพทย์</p>
+
+        <h3 style="font-size:1rem;color:var(--blue-d);margin:32px 0 16px;font-weight:700;">Balance Check-up Programs</h3>
+        <div class="related-services__grid">
+          {balancePrograms.map((p) => (
+            <ServiceCard
+              title={p.data.title}
+              href={`/check-up/${p.id}`}
+              description={p.data.tagline}
+            />
+          ))}
+        </div>
+
+        <h3 style="font-size:1rem;color:var(--blue-d);margin:32px 0 16px;font-weight:700;">Specialty Tests</h3>
+        <div class="related-services__grid">
+          {specialtyPrograms.map((p) => (
+            <ServiceCard
+              title={p.data.title}
+              href={`/check-up/${p.id}`}
+              description={p.data.tagline}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
     <FAQSection items={d.faqs} />
     <DoctorAttribution doctor={d.doctor} />
     <section class="section related-services">
