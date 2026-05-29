@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import LpStickyBar from '../../components/lp/LpStickyBar.astro';
+import LpHero from '../../components/lp/LpHero.astro';
+import LpContextStrip from '../../components/lp/LpContextStrip.astro';
+import LpDoctorTrust from '../../components/lp/LpDoctorTrust.astro';
+import LpFooter from '../../components/lp/LpFooter.astro';
+import QuizEngine from '../../components/QuizEngine.astro';
+import { adrenalFatigueLpQuiz } from '../../data/lp-adrenal-fatigue-quiz.ts';
+import '../../styles/lp.css';
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="ประเมินอาการต่อมหมวกไตล้า | Thrive Wellness Clinic กรุงเทพ"
+    description="ทำแบบประเมินอาการ Adrenal Fatigue 6 ข้อ รู้ผลทันที ปรึกษาแพทย์เฉพาะทาง Thrive Wellness Clinic โทร 095-934-9640"
+    canonicalPath="/adrenal-fatigue"
+    ogImage="/adrenal-fatigue-hero-1200x630.jpg"
+    noIndex={true}
+  />
+
+  <LpStickyBar />
+  <main>
+    <LpHero />
+    <LpContextStrip />
+    <QuizEngine quiz={adrenalFatigueLpQuiz} showLeadForm={false} />
+    <LpDoctorTrust />
+  </main>
+  <LpFooter />
+</BaseLayout>
