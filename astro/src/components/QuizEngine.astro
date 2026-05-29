@@ -7,10 +7,12 @@ export interface Props {
     intro?: string;
     serviceSlug: string;
     leadFormTitle?: string;
+    [key: string]: unknown;
   };
+  showLeadForm?: boolean;
 }
 
-const { quiz } = Astro.props;
+const { quiz, showLeadForm = true } = Astro.props;
 const quizJson = JSON.stringify(quiz).replaceAll('</script', '<\\/script');
 ---
 
@@ -31,30 +33,32 @@ const quizJson = JSON.stringify(quiz).replaceAll('</script', '<\\/script');
         <div class="quiz-engine__result" data-quiz-result hidden></div>
       </div>
 
-      <form class="quiz-engine__lead-form" id="quiz-lead-form" data-quiz-lead-form hidden>
-        <h3>{quiz.leadFormTitle || 'ส่งผลแบบทดสอบให้ทีม Thrive ช่วยดูต่อ'}</h3>
-        <p>ทีมงานจะติดต่อกลับเพื่อแนะนำขั้นตอนถัดไปตามผลแบบทดสอบของคุณ</p>
-        <input type="hidden" name="quiz_result_id" />
-        <input type="hidden" name="nurture_segment" />
-        <label>
-          ชื่อ-นามสกุล *
-          <input name="name" type="text" autocomplete="name" required maxlength="120" />
-        </label>
-        <label>
-          เบอร์โทรศัพท์ *
-          <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
-        </label>
-        <label>
-          LINE ID
-          <input name="line_id" type="text" autocomplete="off" maxlength="80" />
-        </label>
-        <label class="lead-form__consent">
-          <input name="consent" type="checkbox" value="yes" required />
-          <span>ยินยอมให้ Thrive Wellness Center ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
-        </label>
-        <p class="lead-form__status" data-quiz-status aria-live="polite"></p>
-        <button type="submit" class="btn btn-primary">ส่งผลแบบทดสอบ</button>
-      </form>
+      {showLeadForm && (
+        <form class="quiz-engine__lead-form" id="quiz-lead-form" data-quiz-lead-form hidden>
+          <h3>{quiz.leadFormTitle || 'ส่งผลแบบทดสอบให้ทีม Thrive ช่วยดูต่อ'}</h3>
+          <p>ทีมงานจะติดต่อกลับเพื่อแนะนำขั้นตอนถัดไปตามผลแบบทดสอบของคุณ</p>
+          <input type="hidden" name="quiz_result_id" />
+          <input type="hidden" name="nurture_segment" />
+          <label>
+            ชื่อ-นามสกุล *
+            <input name="name" type="text" autocomplete="name" required maxlength="120" />
+          </label>
+          <label>
+            เบอร์โทรศัพท์ *
+            <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
+          </label>
+          <label>
+            LINE ID
+            <input name="line_id" type="text" autocomplete="off" maxlength="80" />
+          </label>
+          <label class="lead-form__consent">
+            <input name="consent" type="checkbox" value="yes" required />
+            <span>ยินยอมให้ Thrive Wellness Center ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
+          </label>
+          <p class="lead-form__status" data-quiz-status aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary">ส่งผลแบบทดสอบ</button>
+        </form>
+      )}
     </div>
   </div>
 </section>
