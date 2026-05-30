@@ -17,6 +17,8 @@ const faqItems = (d.faq ?? []).map((item) => ({
   question: item.question,
   answer: item.shortAnswer ?? '',
 }))
+
+const bodyHtml = (d.legacyHtml ?? '').replace(/<img(?![^>]*loading=)/g, '<img loading="lazy"')
 ---
 
 <BlogPostLayout
@@ -43,7 +45,7 @@ const faqItems = (d.faq ?? []).map((item) => ({
     </div>
   )}
 
-  <div class="blog-post__body" set:html={d.legacyHtml} />
+  <div class="blog-post__body" set:html={bodyHtml} />
 
   {faqItems.length > 0 && (
     <section class="section faq-section">
