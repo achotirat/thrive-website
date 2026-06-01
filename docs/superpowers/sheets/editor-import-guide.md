@@ -19,8 +19,14 @@ Numbered in the order to import:
 3. `03-keywords-priority.csv` — keywords for both Search campaigns
 4. `04-responsive-search-ads-priority.csv` — Responsive Search Ad template (placeholders for vkasama copy)
 5. `05-pmax-iv-drip-priority.csv` — Performance Max IV Drip asset group reference (PMax is harder to bulk-import; this is a checklist, not a direct paste)
+6. `06-rsa-all-campaigns.csv` — approved vkasama copy for all 8 campaigns, kept as the master copy archive and set to **Paused**
+7. `06a-rsa-search-campaigns.csv` — Search campaign RSA import file only
+8. `06b-pmax-copy-reference.csv` — PMax copy reference for Google Ads UI / asset-group setup, not a direct RSA import
+9. `06c-demand-gen-copy-reference.csv` — Demand Gen copy reference for Google Ads UI / asset setup, not a direct RSA import
 
 All three priority campaigns are pre-set to **Paused** status. Switch to **Enabled** only after a final review and tracking verification.
+
+All Week 2 ad-copy files are also pre-set to **Paused**. Price and testimonial copy in these files has been reviewed, but campaigns should still remain paused until Editor preview, tracking, and final URL suffix checks pass.
 
 ## Step-by-step
 
@@ -94,3 +100,10 @@ Before pressing **Post** (top-right):
 ## After launch (Week 2 plan)
 
 See spec section 5 Week 2 — add the remaining 5 campaigns (Chelation, HBOT, Mental Health, Food Intolerance PMax, Demand Gen).
+
+### Week 2 file split
+
+- Import Search RSAs from `06a-rsa-search-campaigns.csv`.
+- Use `06b-pmax-copy-reference.csv` when configuring Food Intolerance PMax and IV Drip PMax asset groups in Google Ads UI / Editor's PMax editor.
+- Use `06c-demand-gen-copy-reference.csv` when configuring Demand Gen creative assets.
+- Keep `06-rsa-all-campaigns.csv` as the reviewed master source. Do not use it as the first import file unless you intentionally want to preview every row together.
