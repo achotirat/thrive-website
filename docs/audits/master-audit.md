@@ -1,6 +1,6 @@
 # Thrive Launch Audit — Master Scorecard
 
-Last full sweep: 2026-05-26
+Last full sweep: 2026-05-30
 Site: https://new.thrivewellnessth.com/
 
 ---
@@ -8,32 +8,34 @@ Site: https://new.thrivewellnessth.com/
 ## Executive Summary
 
 **Pages audited:** 22 Tier A + 63 Tier B = 85 pages total
-**Tier A average:** 8.0/10 ↑ (was 7.2 on 2026-05-24)
-**Tier B live average:** 0/10 — ALL 63 blog posts return HTTP 404 on new subdomain
-**Site average (live pages only):** 8.0/10 (22 Tier A pages)
+**Tier A average:** 8.0/10 (last audited 2026-05-26)
+**Tier B live average:** **5.1/10** — all 63 blog posts are now live ✅ (was 404 on 2026-05-26)
+**Site average (all pages):** 6.4/10
 
-**🚨 #1 Pre-Launch Blocker — Blog Section Not Deployed**
-All 63 Tier B blog posts return HTTP 404 on `new.thrivewellnessth.com`. The `/blog/` index shows "ยังไม่มีบทความในขณะนี้" (no articles yet). The content exists in Sanity but the Astro blog build is not pulling from Sanity and rendering live pages. This must be resolved before any public launch announcement.
+**✅ Blog Deployment Blocker — RESOLVED (2026-05-30)**
+All 63 blog posts now return HTTP 200 on `new.thrivewellnessth.com`. Env vars fixed on Netlify. Blog index `/blog/` lists all 63 posts. Individual post pages load correctly.
 
-**Critical pages (< 6.0):**
-- `/thank-you` (3.8) — no real content, must be noindexed
-- `/contact` (6.1) — no FAQ, weak schema, low E-E-A-T
-- `/about` (6.8) — weak E-E-A-T signals, no doctor credentials shown
+**Critical pages (< 5.0):**
+- `/blog/ashwagandha` (3.8) — no FAQ section, citations from non-scientific sources only
+- `/blog/growth-factor` (3.8) — minimal OG tags, only 3 FAQ items, no citations, unsupported claims
 
-**Universal site-wide issues (affect all or most pages):**
-1. **All 63 blog posts HTTP 404** — blog section not deployed on new subdomain
-2. `hreflang` (th-TH, en, x-default) missing on all pages
-3. No doctor medical license number displayed anywhere
-4. Title tags too long on most service pages (target 50–60 chars; most are 70+)
-5. No `sitemap.xml` configured in Astro build (no sitemap integration)
-6. `adrenal-fatigue` and `/nad` pages have near-verbatim content sections — rewrite needed
+**Tier B universal issues (affect all 63 blog posts):**
+1. **Schema 0–1/10 site-wide** — No `FAQPage` or `Article/MedicalWebPage` JSON-LD in blog layout → fix: merge `feature/blog-tierb-seo` branch
+2. **Meta description missing** on most posts — seoDescription field empty in Sanity for most posts → fix: vkasama to populate in CMS
+3. **hreflang tags not rendering** — investigate SEO.astro component; hreflang prop is set in BlogPostLayout but not appearing in rendered HTML
+4. **og:description missing** on all posts — tied to seoDescription issue above
+5. **twitter:card missing** — investigate SEO.astro component
+6. **No price/cost FAQ** on any blog post — all FAQs cover what/how/why only
+7. **No "who is suitable" FAQ** on any blog post
 
-**Improvements confirmed since 2026-05-24 audit:**
-- `og:image` now present and HTTP 200 on all Tier A pages ✓
-- `loading="eager"` on hero images, `loading="lazy"` on secondary images — correctly implemented ✓
-- All service page images have descriptive `alt` text and keyword-rich filenames ✓
-- `FAQPage` + `BreadcrumbList` + `MedicalProcedure/Test` + `Person` JSON-LD present on all service pages ✓
-- FAQ sections present on all service pages with JSON-LD matching visible HTML ✓
+**Pending code improvement (branch ready, not yet merged):**
+- `feature/blog-tierb-seo`: Adds `MedicalWebPage` JSON-LD, sitemap integration, `loading="lazy"` on body images. Merge will raise Schema score from 0→7+ on all 63 posts.
+
+**Universal site-wide issues (Tier A + B):**
+1. `hreflang` (th-TH, en, x-default) still missing on all pages — investigate SEO.astro
+2. No doctor medical license number displayed anywhere
+3. Title tags too long on most service pages (target 50–60 chars)
+4. `adrenal-fatigue` and `/nad` pages have near-verbatim content sections — rewrite needed
 
 ---
 
@@ -43,104 +45,106 @@ All 63 Tier B blog posts return HTTP 404 on `new.thrivewellnessth.com`. The `/bl
 
 | Page | SEO | GEO | Meta | Schema | Images | FAQ | E-E-A-T | Orig | Overall | Last Audited |
 |------|-----|-----|------|--------|--------|-----|---------|------|---------|--------------|
-| / | 6 | 5 | 7 | 6 | 8 | 8 | 6 | 8 | **6.8** | 2026-05-26 |
-| /food-intolerance | 7 | 7 | 8 | 10 | 10 | 8 | 7 | 8 | **8.1** | 2026-05-26 |
-| /adrenal-fatigue | 6 | 7 | 8 | 10 | 10 | 9 | 9 | 8 | **8.4** | 2026-05-26 |
-| /hormones-quiz | 6 | 7 | 8 | 10 | 10 | 8 | 9 | 9 | **8.4** | 2026-05-26 |
-| /hbot | 7 | 7 | 8 | 10 | 10 | 10 | 8 | 9 | **8.6** | 2026-05-26 |
-| /iv-drip | 7 | 7 | 9 | 10 | 10 | 9 | 7 | 7 | **8.3** | 2026-05-26 |
-| /gluta | 6 | 7 | 9 | 10 | 10 | 9 | 7 | 9 | **8.4** | 2026-05-26 |
-| /chelation | 6 | 7 | 8 | 10 | 10 | 9 | 8 | 8 | **8.3** | 2026-05-26 |
-| /personalized-vitamins | 6 | 7 | 8 | 10 | 10 | 8 | 7 | 9 | **8.1** | 2026-05-26 |
-| /nad | 6 | 8 | 9 | 10 | 10 | 9 | 7 | 8 | **8.4** | 2026-05-26 |
-| /nk-cell | 6 | 7 | 8 | 10 | 10 | 10 | 7 | 8 | **8.3** | 2026-05-26 |
-| /allergy-ige | 6 | 8 | 8 | 10 | 10 | 8 | 9 | 9 | **8.5** | 2026-05-26 |
-| /urine-organic-test | 6 | 7 | 8 | 10 | 10 | 8 | 7 | 9 | **8.1** | 2026-05-26 |
-| /vitamin-d | 7 | 7 | 8 | 10 | 10 | 9 | 7 | 9 | **8.4** | 2026-05-26 |
-| /vitamins-and-micronutrients | 6 | 7 | 9 | 6 | 10 | 9 | 7 | 9 | **7.9** | 2026-05-26 |
-| /check-up | 6 | 7 | 8 | 10 | 10 | 9 | 9 | 9 | **8.5** | 2026-05-26 |
-| /about | 5 | 5 | 6 | 7 | 10 | 8 | 4 | 9 | **6.8** | 2026-05-26 |
-| /oligoscan | 6 | 7 | 9 | 10 | 9 | 9 | 8 | 9 | **8.4** | 2026-05-26 |
-| /cancer-screening | 7 | 7 | 8 | 10 | 10 | 8 | 8 | 9 | **8.4** | 2026-05-26 |
-| /dna-test | 6 | 7 | 9 | 10 | 10 | 9 | 8 | 9 | **8.5** | 2026-05-26 |
-| /contact | 5 | 4 | 8 | 5 | 7 | 7 | 4 | 9 | **6.1** | 2026-05-26 |
-| /thank-you | 2 | 2 | 6 | 1 | 7 | 0 | 3 | 9 | **3.8** | 2026-05-26 |
+| / | 6 | 5 | 7 | 6 | 8 | 8 | 6 | 8 | **6.8** | 2026-05-26 [stale] |
+| /food-intolerance | 7 | 7 | 8 | 10 | 10 | 8 | 7 | 8 | **8.1** | 2026-05-26 [stale] |
+| /adrenal-fatigue | 6 | 7 | 8 | 10 | 10 | 9 | 9 | 8 | **8.4** | 2026-05-26 [stale] |
+| /hormones-quiz | 6 | 7 | 8 | 10 | 10 | 8 | 9 | 9 | **8.4** | 2026-05-26 [stale] |
+| /hbot | 7 | 7 | 8 | 10 | 10 | 10 | 8 | 9 | **8.6** | 2026-05-26 [stale] |
+| /iv-drip | 7 | 7 | 9 | 10 | 10 | 9 | 7 | 7 | **8.3** | 2026-05-26 [stale] |
+| /gluta | 6 | 7 | 9 | 10 | 10 | 9 | 7 | 9 | **8.4** | 2026-05-26 [stale] |
+| /chelation | 6 | 7 | 8 | 10 | 10 | 9 | 8 | 8 | **8.3** | 2026-05-26 [stale] |
+| /personalized-vitamins | 6 | 7 | 8 | 10 | 10 | 8 | 7 | 9 | **8.1** | 2026-05-26 [stale] |
+| /nad | 6 | 8 | 9 | 10 | 10 | 9 | 7 | 8 | **8.4** | 2026-05-26 [stale] |
+| /nk-cell | 6 | 7 | 8 | 10 | 10 | 10 | 7 | 8 | **8.3** | 2026-05-26 [stale] |
+| /allergy-ige | 6 | 8 | 8 | 10 | 10 | 8 | 9 | 9 | **8.5** | 2026-05-26 [stale] |
+| /urine-organic-test | 6 | 7 | 8 | 10 | 10 | 8 | 7 | 9 | **8.1** | 2026-05-26 [stale] |
+| /vitamin-d | 7 | 7 | 8 | 10 | 10 | 9 | 7 | 9 | **8.4** | 2026-05-26 [stale] |
+| /vitamins-and-micronutrients | 6 | 7 | 9 | 6 | 10 | 9 | 7 | 9 | **7.9** | 2026-05-26 [stale] |
+| /check-up | 6 | 7 | 8 | 10 | 10 | 9 | 9 | 9 | **8.5** | 2026-05-26 [stale] |
+| /about | 5 | 5 | 6 | 7 | 10 | 8 | 4 | 9 | **6.8** | 2026-05-26 [stale] |
+| /oligoscan | 6 | 7 | 9 | 10 | 9 | 9 | 8 | 9 | **8.4** | 2026-05-26 [stale] |
+| /cancer-screening | 7 | 7 | 8 | 10 | 10 | 8 | 8 | 9 | **8.4** | 2026-05-26 [stale] |
+| /dna-test | 6 | 7 | 9 | 10 | 10 | 9 | 8 | 9 | **8.5** | 2026-05-26 [stale] |
+| /contact | 5 | 4 | 8 | 5 | 7 | 7 | 4 | 9 | **6.1** | 2026-05-26 [stale] |
+| /thank-you | 2 | 2 | 6 | 1 | 7 | 0 | 3 | 9 | **3.8** | 2026-05-26 [stale] |
 
 ### Tier B — Blog Posts
 
-> ⚠️ **All 63 blog posts return HTTP 404 on new.thrivewellnessth.com as of 2026-05-26.**
-> Scores below reflect content quality (audited from Sanity/source) for when pages are deployed.
-> Live score = 0/10 for all dimensions until deployment is fixed.
+_Overall = avg of 5 dimensions: Meta + Schema + Images + FAQ + E-E-A-T. SEO and GEO shown for reference only._
+_All 63 posts audited live on 2026-05-30. Deploy status: ✅ all live._
 
-_Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + GEO for reference only)._
+| Page | SEO† | GEO† | Meta | Schema | Images | FAQ | E-E-A-T | Overall | Last Audited |
+|------|------|------|------|--------|--------|-----|---------|---------|--------------|
+| /blog/_gaba | 5 | 10 | 0 | 0 | 8 | 7 | 9 | **4.8** | 2026-05-30 |
+| /blog/_pcos | 8 | 10 | 2 | 0 | 8 | 7 | 8 | **5.0** | 2026-05-30 |
+| /blog/6_benefits_kombucha | 7 | 7 | 2 | 0 | 7 | 5 | 8 | **4.4** | 2026-05-30 |
+| /blog/8-ลักษณะสุขภาพดี | 6 | 6 | 1 | 0 | 8 | 6 | 6 | **4.2** | 2026-05-30 |
+| /blog/abnormal-period | 8 | 10 | 2 | 0 | 8 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/adrenal-fatigue-post | 8 | 10 | 2 | 0 | 8 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/apple-benefit | 7 | 9 | 2 | 0 | 6 | 7 | 8 | **4.6** | 2026-05-30 |
+| /blog/ashwagandha | 8 | 10 | 2 | 0 | 10 | 0 | 7 | **3.8** ⚠️ | 2026-05-30 |
+| /blog/bromelain | 8 | 10 | 2 | 0 | 8 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/check-immune-system | 8 | 8 | 2 | 0 | 8 | 7 | 8 | **5.0** | 2026-05-30 |
+| /blog/chili | 9 | 10 | 2 | 0 | 10 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/chromium | 8 | 10 | 2 | 0 | 10 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/cloggedarteries | 8 | 10 | 2 | 0 | 10 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/coenzyme-q10 | 8 | 10 | 2 | 0 | 7 | 7 | 8 | **4.8** | 2026-05-30 |
+| /blog/femaleshormones | 8 | 8 | 2 | 0 | 9 | 6 | 8 | **5.0** | 2026-05-30 |
+| /blog/food-allergy-ige | 8 | 10 | 5 | 1 | 9 | 7 | 9 | **6.2** | 2026-05-30 |
+| /blog/glutathione | 9 | 10 | 2 | 0 | 10 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/growth-factor | 6 | 7 | 0 | 0 | 6 | 6 | 7 | **3.8** ⚠️ | 2026-05-30 |
+| /blog/growth-hormone-2 | 8 | 10 | 1 | 1 | 9 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/herbal-compress-massage | 6 | 10 | 1 | 0 | 10 | 7 | 7 | **5.0** | 2026-05-30 |
+| /blog/how-to-overcome-burn-out-syndrome | 8 | 9 | 2 | 1 | 7 | 7 | 6 | **4.6** | 2026-05-30 |
+| /blog/human-growth-hormone | 8 | 9 | 1 | 1 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/immunesystem | 8 | 10 | 3 | 0 | 10 | 7 | 7 | **5.4** | 2026-05-30 |
+| /blog/immunity | 8 | 8 | 2 | 0 | 8 | 6 | 8 | **4.8** | 2026-05-30 |
+| /blog/insulin | 8 | 10 | 2 | 0 | 7 | 7 | 8 | **4.8** | 2026-05-30 |
+| /blog/l-carnitine | 7 | 7 | 2 | 0 | 7 | 5 | 8 | **4.4** | 2026-05-30 |
+| /blog/magnesium | 6 | 10 | 1 | 0 | 8 | 7 | 9 | **5.0** | 2026-05-30 |
+| /blog/menorrhagia | 8 | 9 | 1 | 1 | 9 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/menstrual-pain | 7 | 8 | 2 | 0 | 8 | 6 | 7 | **4.6** | 2026-05-30 |
+| /blog/mental-health | 7 | 8 | 2 | 0 | 8 | 5 | 8 | **4.6** | 2026-05-30 |
+| /blog/minerals | 8 | 7 | 2 | 0 | 9 | 6 | 8 | **5.0** | 2026-05-30 |
+| /blog/mood-swings | 6 | 10 | 1 | 0 | 10 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/neurotransmitter | 8 | 9 | 2 | 0 | 10 | 7 | 8 | **5.4** | 2026-05-30 |
+| /blog/neurotransmitters | 7 | 8 | 1 | 0 | 8 | 6 | 7 | **4.4** | 2026-05-30 |
+| /blog/nkcell | 8 | 9 | 1 | 1 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/omega-3 | 8 | 8 | 2 | 0 | 8 | 5 | 7 | **4.4** | 2026-05-30 |
+| /blog/pelvicinflammatorydisease | 8 | 9 | 3 | 1 | 9 | 7 | 9 | **5.8** | 2026-05-30 |
+| /blog/periodpain | 8 | 10 | 2 | 0 | 8 | 6 | 9 | **5.0** | 2026-05-30 |
+| /blog/pms-premenstrualsyndrome | 8 | 10 | 2 | 0 | 8 | 7 | 8 | **5.0** | 2026-05-30 |
+| /blog/postbiotic | 8 | 10 | 1 | 1 | 9 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/preservatives | 8 | 10 | 3 | 1 | 9 | 7 | 7 | **5.4** | 2026-05-30 |
+| /blog/progesterone | 8 | 9 | 1 | 1 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/silica | 6 | 10 | 0 | 0 | 10 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/sleepwalking | 8 | 9 | 1 | 1 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/smiling-depression | 8 | 9 | 2 | 0 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/syncope | 8 | 9 | 5 | 5 | 9 | 7 | 8 | **6.8** ⭐ | 2026-05-30 |
+| /blog/testosterone-woman | 8 | 9 | 1 | 1 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/triglyceride | 6 | 10 | 1 | 0 | 10 | 7 | 7 | **5.0** | 2026-05-30 |
+| /blog/tryptophan | 6 | 10 | 0 | 0 | 10 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/vitamin-a | 8 | 10 | 3 | 0 | 9 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/vitamin-b3 | 8 | 10 | 1 | 1 | 9 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/vitamin-b6 | 8 | 10 | 5 | 1 | 9 | 7 | 9 | **6.2** | 2026-05-30 |
+| /blog/vitamin-d-immune | 6 | 7 | 1 | 0 | 7 | 6 | 6 | **4.0** | 2026-05-30 |
+| /blog/zinc-checklist | 8 | 7 | 2 | 0 | 8 | 6 | 8 | **4.8** | 2026-05-30 |
+| /blog/คู่มือทานวิตามินซี | 8 | 10 | 3 | 0 | 9 | 7 | 9 | **5.6** | 2026-05-30 |
+| /blog/ตรวจภูมิแพ้อาหารแฝง-igg | 8 | 10 | 2 | 0 | 8 | 7 | 8 | **5.0** | 2026-05-30 |
+| /blog/ปัญหาสิวประจำเดือน | 8 | 8 | 2 | 0 | 9 | 7 | 8 | **5.2** | 2026-05-30 |
+| /blog/ผื่นลมพิษ | 6 | 10 | 1 | 0 | 9 | 7 | 7 | **4.8** | 2026-05-30 |
+| /blog/ภูมิคุ้มกันพัง | 8 | 10 | 3 | 0 | 8 | 7 | 9 | **5.4** | 2026-05-30 |
+| /blog/ลำไส้อักเสบ | 8 | 8 | 2 | 0 | 8 | 6 | 8 | **4.8** | 2026-05-30 |
+| /blog/สเตียรอยด์ | 8 | 10 | 2 | 1 | 7 | 7 | 9 | **5.2** | 2026-05-30 |
+| /blog/อาหารที่มี-probiotic | 8 | 7 | 2 | 0 | 7 | 6 | 8 | **4.6** | 2026-05-30 |
+| /blog/ฮอร์โมนวัยทอง | 8 | 10 | 2 | 0 | 6 | 7 | 8 | **4.6** | 2026-05-30 |
 
-| Page | SEO | GEO | Meta | Schema | Images | FAQ | E-E-A-T | Orig | Content Score | Deploy Status |
-|------|-----|-----|------|--------|--------|-----|---------|------|---------------|---------------|
-| /blog/_gaba | 5 | 8 | 7 | 1 | 6 | 8 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/_pcos | 5 | 8 | 7 | 1 | 4 | 8 | 7 | 8 | **5.8** | ❌ 404 |
-| /blog/6_benefits_kombucha | 6 | 8 | 7 | 1 | 5 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/8-ลักษณะสุขภาพดี | 6 | 8 | 7 | 1 | 6 | 8 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/abnormal-period | 8 | 8 | 8 | 1 | 6 | 9 | 7 | 9 | **6.7** | ❌ 404 |
-| /blog/adrenal-fatigue-post | 5 | 8 | 7 | 1 | 7 | 9 | 8 | 9 | **6.8** | ❌ 404 |
-| /blog/apple-benefit | 6 | 8 | 7 | 1 | 5 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/ashwagandha | 7 | 8 | 8 | 1 | 6 | 0 | 4 | 9 | **4.7** | ❌ 404 |
-| /blog/bromelain | 6 | 8 | 6 | 1 | 6 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/check-immune-system | 6 | 8 | 6 | 1 | 5 | 8 | 7 | 8 | **5.8** | ❌ 404 |
-| /blog/chili | 7 | 8 | 7 | 1 | 4 | 9 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/chromium | 6 | 8 | 6 | 1 | 6 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/cloggedarteries | 6 | 8 | 6 | 1 | 6 | 8 | 7 | 9 | **6.2** | ❌ 404 |
-| /blog/coenzyme-q10 | 7 | 8 | 8 | 1 | 5 | 8 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/femaleshormones | 6 | 8 | 7 | 1 | 4 | 9 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/food-allergy-ige | 7 | 8 | 8 | 1 | 4 | 9 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/glutathione | 7 | 8 | 7 | 1 | 7 | 9 | 7 | 9 | **6.7** | ❌ 404 |
-| /blog/growth-factor | 6 | 8 | 6 | 1 | 5 | 3 | 2 | 6 | **3.8** | ❌ 404 |
-| /blog/growth-hormone-2 | 7 | 8 | 7 | 1 | 6 | 8 | 7 | 8 | **6.2** | ❌ 404 |
-| /blog/herbal-compress-massage | 7 | 8 | 8 | 1 | 5 | 9 | 7 | 9 | **6.5** | ❌ 404 |
-| /blog/how-to-overcome-burn-out-syndrome | 5 | 8 | 7 | 1 | 5 | 8 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/human-growth-hormone | 5 | 8 | 7 | 1 | 5 | 8 | 7 | 8 | **6.0** | ❌ 404 |
-| /blog/immunesystem | 5 | 8 | 7 | 1 | 6 | 8 | 6 | 9 | **6.2** | ❌ 404 |
-| /blog/immunity | 5 | 8 | 6 | 1 | 6 | 9 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/insulin | 5 | 8 | 7 | 1 | 6 | 8 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/l-carnitine | 7 | 8 | 7 | 1 | 7 | 9 | 7 | 9 | **6.7** | ❌ 404 |
-| /blog/magnesium | 7 | 8 | 8 | 1 | 7 | 8 | 7 | 8 | **6.5** | ❌ 404 |
-| /blog/menorrhagia | 6 | 8 | 7 | 1 | 7 | 9 | 8 | 9 | **6.8** | ❌ 404 |
-| /blog/menstrual-pain | 7 | 8 | 7 | 1 | 6 | 8 | 6 | 8 | **6.0** | ❌ 404 |
-| /blog/mental-health | 5 | 8 | 7 | 1 | 6 | 9 | 8 | 9 | **6.7** | ❌ 404 |
-| /blog/minerals | 5 | 8 | 7 | 1 | 5 | 9 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/mood-swings | 5 | 8 | 6 | 1 | 6 | 8 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/neurotransmitter | 5 | 8 | 6 | 1 | 7 | 8 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/neurotransmitters | 5 | 8 | 6 | 1 | 6 | 9 | 8 | 8 | **6.3** | ❌ 404 |
-| /blog/nkcell | 6 | 8 | 7 | 1 | 6 | 8 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/omega-3 | 5 | 8 | 6 | 1 | 6 | 9 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/pelvicinflammatorydisease | 6 | 8 | 6 | 1 | 6 | 9 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/periodpain | 7 | 8 | 7 | 1 | 7 | 5 | 6 | 9 | **5.8** | ❌ 404 |
-| /blog/pms-premenstrualsyndrome | 5 | 8 | 6 | 1 | 6 | 8 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/postbiotic | 5 | 8 | 7 | 1 | 4 | 9 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/preservatives | 6 | 8 | 6 | 1 | 5 | 8 | 7 | 6 | **5.5** | ❌ 404 |
-| /blog/progesterone | 5 | 8 | 7 | 1 | 6 | 8 | 8 | 9 | **6.5** | ❌ 404 |
-| /blog/silica | 5 | 8 | 6 | 1 | 4 | 8 | 7 | 9 | **5.8** | ❌ 404 |
-| /blog/sleepwalking | 5 | 8 | 7 | 1 | 6 | 9 | 7 | 9 | **6.5** | ❌ 404 |
-| /blog/smiling-depression | 7 | 8 | 7 | 1 | 5 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/syncope | 5 | 8 | 6 | 1 | 7 | 9 | 8 | 9 | **6.7** | ❌ 404 |
-| /blog/testosterone-woman | 6 | 8 | 6 | 1 | 7 | 8 | 6 | 9 | **6.2** | ❌ 404 |
-| /blog/triglyceride | 7 | 8 | 6 | 1 | 6 | 8 | 2 | 9 | **5.3** | ❌ 404 |
-| /blog/tryptophan | 5 | 8 | 6 | 1 | 4 | 8 | 8 | 9 | **6.0** | ❌ 404 |
-| /blog/vitamin-a | 7 | 8 | 8 | 1 | 6 | 9 | 5 | 9 | **6.3** | ❌ 404 |
-| /blog/vitamin-b3 | 5 | 8 | 6 | 1 | 6 | 8 | 5 | 9 | **5.8** | ❌ 404 |
-| /blog/vitamin-b6 | 7 | 8 | 7 | 1 | 7 | 9 | 8 | 9 | **6.8** | ❌ 404 |
-| /blog/vitamin-d-immune | 6 | 8 | 6 | 1 | 6 | 8 | 4 | 9 | **5.7** | ❌ 404 |
-| /blog/zinc-checklist | 5 | 8 | 7 | 1 | 4 | 9 | 8 | 9 | **6.3** | ❌ 404 |
-| /blog/คู่มือทานวิตามินซี | 7 | 8 | 7 | 1 | 6 | 9 | 7 | 8 | **6.3** | ❌ 404 |
-| /blog/ตรวจภูมิแพ้อาหารแฝง-igg | 5 | 8 | 6 | 1 | 6 | 9 | 7 | 9 | **6.3** | ❌ 404 |
-| /blog/ปัญหาสิวประจำเดือน | 5 | 8 | 7 | 1 | 7 | 9 | 8 | 9 | **6.8** | ❌ 404 |
-| /blog/ผื่นลมพิษ | 5 | 6 | 6 | 1 | 7 | 8 | 6 | 9 | **6.2** | ❌ 404 |
-| /blog/ภูมิคุ้มกันพัง | 7 | 8 | 8 | 1 | 7 | 8 | 7 | 9 | **6.7** | ❌ 404 |
-| /blog/ลำไส้อักเสบ | 5 | 8 | 6 | 1 | 6 | 8 | 7 | 8 | **6.0** | ❌ 404 |
-| /blog/สเตียรอยด์ | 5 | 8 | 7 | 1 | 6 | 9 | 8 | 9 | **6.7** | ❌ 404 |
-| /blog/อาหารที่มี-probiotic | 5 | 8 | 6 | 1 | 7 | 9 | 8 | 9 | **6.7** | ❌ 404 |
-| /blog/ฮอร์โมนวัยทอง | 5 | 8 | 7 | 1 | 7 | 9 | 8 | 8 | **6.7** | ❌ 404 |
-| /blog/ashwagandha | 7 | 8 | 8 | 1 | 6 | 0 | 4 | 9 | **4.7** | ❌ 404 |
-| /blog/growth-factor | 6 | 8 | 6 | 1 | 5 | 3 | 2 | 6 | **3.8** | ❌ 404 |
+† SEO and GEO shown for reference; not included in Tier B Overall average.
+
+**Tier B stats (2026-05-30):**
+- Average: **5.1/10**
+- Best: /blog/syncope (6.8), /blog/vitamin-b6 (6.2), /blog/food-allergy-ige (6.2)
+- Critical (< 4.5): /blog/ashwagandha (3.8), /blog/growth-factor (3.8), /blog/vitamin-d-immune (4.0), /blog/8-ลักษณะสุขภาพดี (4.2), /blog/6_benefits_kombucha (4.4), /blog/l-carnitine (4.4), /blog/neurotransmitters (4.4), /blog/omega-3 (4.4)
 
 ---
 
@@ -148,7 +152,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### / (Homepage) — 6.8/10 — Audited 2026-05-26
+### / (Homepage) — 6.8/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 5 · Meta 7 · Schema 6 · Images 8 · FAQ 8 · E-E-A-T 6 · Orig 8
 
@@ -168,7 +172,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /food-intolerance — 8.1/10 — Audited 2026-05-26
+### /food-intolerance — 8.1/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 7 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 7 · Orig 8
 
@@ -187,7 +191,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /adrenal-fatigue — 8.4/10 — Audited 2026-05-26
+### /adrenal-fatigue — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 9 · Orig 8
 
@@ -205,7 +209,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /hormones-quiz — 8.4/10 — Audited 2026-05-26
+### /hormones-quiz — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 9 · Orig 9
 
@@ -221,7 +225,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /hbot — 8.6/10 ⭐ Best Tier A — Audited 2026-05-26
+### /hbot — 8.6/10 ⭐ Best Tier A — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 7 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 10 · E-E-A-T 8 · Orig 9
 
@@ -237,7 +241,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /iv-drip — 8.3/10 — Audited 2026-05-26
+### /iv-drip — 8.3/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 7 · GEO 7 · Meta 9 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 7 · Orig 7
 
@@ -254,7 +258,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /gluta — 8.4/10 — Audited 2026-05-26
+### /gluta — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 9 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 7 · Orig 9
 
@@ -270,7 +274,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /chelation — 8.3/10 — Audited 2026-05-26
+### /chelation — 8.3/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 8 · Orig 8
 
@@ -286,7 +290,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /personalized-vitamins — 8.1/10 — Audited 2026-05-26
+### /personalized-vitamins — 8.1/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 7 · Orig 9
 
@@ -302,7 +306,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /nad — 8.4/10 — Audited 2026-05-26
+### /nad — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 8 · Meta 9 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 7 · Orig 8
 
@@ -318,7 +322,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /nk-cell — 8.3/10 — Audited 2026-05-26
+### /nk-cell — 8.3/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 10 · E-E-A-T 7 · Orig 8
 
@@ -334,7 +338,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /allergy-ige — 8.5/10 — Audited 2026-05-26
+### /allergy-ige — 8.5/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 8 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 9 · Orig 9
 
@@ -350,7 +354,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /urine-organic-test — 8.1/10 — Audited 2026-05-26
+### /urine-organic-test — 8.1/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 7 · Orig 9
 
@@ -366,7 +370,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /vitamin-d — 8.4/10 — Audited 2026-05-26
+### /vitamin-d — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 7 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 7 · Orig 9
 
@@ -382,7 +386,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /vitamins-and-micronutrients — 7.9/10 — Audited 2026-05-26
+### /vitamins-and-micronutrients — 7.9/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 9 · Schema 6 · Images 10 · FAQ 9 · E-E-A-T 7 · Orig 9
 
@@ -398,7 +402,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /check-up — 8.5/10 — Audited 2026-05-26
+### /check-up — 8.5/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 9 · Orig 9
 
@@ -414,7 +418,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /about — 6.8/10 — Audited 2026-05-26
+### /about — 6.8/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 5 · GEO 5 · Meta 6 · Schema 7 · Images 10 · FAQ 8 · E-E-A-T 4 · Orig 9
 
@@ -434,11 +438,10 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /oligoscan — 8.4/10 — Audited 2026-05-26
+### /oligoscan — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 9 · Schema 10 · Images 9 · FAQ 9 · E-E-A-T 8 · Orig 9
 
-**Image note:** 9/10 — WebFetch flagged a possible alt attribute issue on navbar logo; curl confirms alt="Thrive Wellness Center" is present. Score conservatively adjusted.
 **FAQ note:** 5 questions, answers 40–95 words. No price question.
 
 #### Priority Actions
@@ -451,7 +454,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /cancer-screening — 8.4/10 — Audited 2026-05-26
+### /cancer-screening — 8.4/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 7 · GEO 7 · Meta 8 · Schema 10 · Images 10 · FAQ 8 · E-E-A-T 8 · Orig 9
 
@@ -467,7 +470,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /dna-test — 8.5/10 — Audited 2026-05-26
+### /dna-test — 8.5/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 6 · GEO 7 · Meta 9 · Schema 10 · Images 10 · FAQ 9 · E-E-A-T 8 · Orig 9
 
@@ -483,7 +486,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /contact — 6.1/10 — Audited 2026-05-26
+### /contact — 6.1/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 5 · GEO 4 · Meta 8 · Schema 5 · Images 7 · FAQ 7 · E-E-A-T 4 · Orig 9
 
@@ -503,7 +506,7 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-### /thank-you — 3.8/10 — Audited 2026-05-26
+### /thank-you — 3.8/10 — Audited 2026-05-26 [stale]
 
 **Scores:** SEO 2 · GEO 2 · Meta 6 · Schema 1 · Images 7 · FAQ 0 · E-E-A-T 3 · Orig 9
 
@@ -517,68 +520,75 @@ _Overall = avg of 6 dimensions: Meta, Schema, Images, FAQ, E-E-A-T, Orig (SEO + 
 
 ---
 
-## Blog Section — Critical Deployment Blocker
+## Blog Section — Universal Actions (All 63 Posts)
 
-> All 63 blog posts return **HTTP 404** on `new.thrivewellnessth.com` as of 2026-05-26.
+> All 63 blog posts confirmed live on `new.thrivewellnessth.com` as of 2026-05-30. ✅
 
-### Root Cause
-The Astro blog build is not fetching from Sanity or the content collection is not generating static paths. The `/blog/` index page renders "ยังไม่มีบทความในขณะนี้" confirming the blog collection is empty at build time.
+### Code Fixes Required (Facade — branch `feature/blog-tierb-seo` ready)
 
-### Required Fix (Facade/Satemshi)
+| # | Severity | Action | Expected Impact |
+|---|----------|--------|-----------------|
+| 1 | 🔴 Critical | **Merge `feature/blog-tierb-seo`** — adds `MedicalWebPage` JSON-LD, sitemap, `loading="lazy"` | Schema 0→7+ on all 63 posts |
+| 2 | 🔴 Critical | **Investigate hreflang rendering** — BlogPostLayout passes hreflang to SEO.astro but tags not appearing in rendered HTML | Meta +2 on all 63 posts |
+| 3 | 🔴 Critical | **Investigate twitter:card and og:description** — SEO.astro may not be outputting these | Meta +2 on all 63 posts |
+| 4 | 🔴 Critical | **Investigate canonical tag** — not appearing in rendered HTML of most posts | Meta +1 on all 63 posts |
 
-| # | Action |
-|---|--------|
-| 1 | Verify `SANITY_PROJECT_ID`, `SANITY_DATASET`, and `SANITY_API_TOKEN` are set in Netlify environment variables for the `new.` deploy context |
-| 2 | Check `astro/src/content/config.ts` — confirm the `blog` collection loader points to Sanity (not a local files loader) |
-| 3 | Verify `getStaticPaths()` in `astro/src/pages/blog/[slug].astro` is calling `getCollection('blog')` and getting results |
-| 4 | Run `npm run build` locally with `.env.local` to verify blog pages build successfully |
-| 5 | After fix: re-audit all 63 blog pages on new subdomain for live scores |
+### Content Fixes Required (vkasama — in Sanity CMS)
 
-### Content Quality Issues (fix before re-launch after blog is live)
-
-All 63 blog pages share these issues when deployed:
-1. **Schema 1/10** — No `Article` or `FAQPage` JSON-LD in blog post layout
-2. **FAQ scores vary** — Ashwagandha has 0 FAQ items (critical); Growth-factor has only 3
-3. **E-E-A-T 2/10** on growth-factor and triglyceride — missing doctor attribution, unsupported medical claims on growth-factor
-4. **growth-factor unsupported claims** — must be reviewed by vkasama before any public exposure
-
-### Blog Universal Actions (apply to ALL 63 pages when deployed)
-
-| # | Severity | Who | Action |
-|---|----------|-----|--------|
-| 1 | 🔴 Critical | Facade | **Add `Article` + `FAQPage` JSON-LD schema template** to blog post layout, dynamically populated from Sanity |
-| 2 | 🔴 Critical | Facade | **Add hreflang tags** (th-TH, en, x-default) to blog post layout |
-| 3 | 🟡 High | Facade | **Add PDPA/data collection consent notice** to blog post footer or sidebar |
-| 4 | 🟡 High | Content | **Add doctor attribution** to all posts missing a byline |
+| # | Severity | Action |
+|---|----------|--------|
+| 1 | 🔴 Critical | **Populate `seoDescription` field** for all 63 posts in Sanity → fixes meta description + og:description |
+| 2 | 🟡 High | **Add price/cost FAQ question** to all posts (e.g., "ตรวจ X ราคาเท่าไหร่? ที่ Thrive") |
+| 3 | 🟡 High | **Add "สำหรับใคร" (who is suitable) FAQ question** to all posts |
+| 4 | 🟡 High | **Add ≥4 scientific citations** to posts currently showing 0 citations |
+| 5 | 🟢 Medium | **Upload hero images** for posts still using generic Sanity CDN hero (no keyword filename) |
 
 ---
 
-### /blog/growth-factor — 3.8/10 ⚠️ CRITICAL CONTENT RISK — Content Score Only
+### /blog/ashwagandha — 3.8/10 ⚠️ CRITICAL — Audited 2026-05-30
 
-**Scores:** SEO 6 · GEO 8 · Meta 6 · Schema 1 · Images 5 · FAQ 3 · E-E-A-T 2 · Orig 6
+**Scores:** SEO 8 · GEO 10 · Meta 2 · Schema 0 · Images 10 · FAQ 0 · E-E-A-T 7
 
-**This page makes unsupported medical claims about placenta extract treating migraines and tinnitus. Must be reviewed before any public exposure.**
-
-| # | Severity | Who | Action |
-|---|----------|-----|--------|
-| 1 | 🔴 Critical | Content (vkasama) | **Remove or qualify unsupported medical claims.** Claims not backed by cited research; potential Thai FDA advertising violation. |
-| 2 | 🔴 Critical | Content (vkasama) | **Add doctor attribution** — byline missing. |
-| 3 | 🔴 Critical | Content (vkasama) | **Add ≥4 scientific citations.** |
-| 4 | 🟡 High | Content (vkasama) | **Rewrite FAQ section** — only 3 questions. Expand to ≥5. |
-| 5 | 🟡 High | Content (vkasama) | **Check for duplicate content (Orig 6/10)** — overlaps with other placenta/growth factor pages online. |
-
----
-
-### /blog/ashwagandha — 4.7/10 — Content Score Only
-
-**Scores:** SEO 7 · GEO 8 · Meta 8 · Schema 1 · Images 6 · FAQ 0 · E-E-A-T 4 · Orig 9
+**Critical issue:** No FAQ section in page body. Citations use non-scientific sources (healthline.com, forbes.com). FAQ score 0/10 alone drops this post to 3.8 overall.
 
 | # | Severity | Who | Action |
 |---|----------|-----|--------|
-| 1 | 🔴 Critical | Content (vkasama) | **Add FAQ section (0/10)** — zero FAQ questions. Add ≥5 covering benefits, dosage, safety, who should take it. |
-| 2 | 🔴 Critical | Content (vkasama) | **Add doctor attribution** (E-E-A-T 4/10). |
-| 3 | 🟡 High | Content (vkasama) | **Add ≥2 more scientific citations.** |
+| 1 | 🔴 Critical | Content (vkasama) | **Add FAQ section with ≥5 Q&A pairs** — ashwagandha benefits, dosage, side effects, contraindications, price. |
+| 2 | 🔴 Critical | Content (vkasama) | **Replace citations** — healthline/forbes are not scientific. Add ≥4 PubMed references. |
+| 3 | 🔴 Critical | Content (vkasama) | **Add seoDescription** (140–160 chars) in Sanity. |
+| 4 | 🔴 Critical | Facade | **Merge feature/blog-tierb-seo** to get MedicalWebPage JSON-LD on this page. |
 
 ---
 
-_Remaining 60 blog pages all follow the universal blog actions above. Individual detail blocks available on request._
+### /blog/growth-factor — 3.8/10 ⚠️ CRITICAL CONTENT RISK — Audited 2026-05-30
+
+**Scores:** SEO 6 · GEO 7 · Meta 0 · Schema 0 · Images 6 · FAQ 6 · E-E-A-T 7
+
+**Critical issues:** No OG tags (og:image, og:title, og:description all absent), only 3 FAQ questions, no scientific citations, logo images missing alt text.
+
+| # | Severity | Who | Action |
+|---|----------|-----|--------|
+| 1 | 🔴 Critical | Content (vkasama) | **Review and remove unsupported medical claims** — Thai FDA advertising compliance risk. |
+| 2 | 🔴 Critical | Content (vkasama) | **Add ≥4 scientific citations** for growth factor / placenta therapy. |
+| 3 | 🔴 Critical | Content (vkasama) | **Expand FAQ to ≥5 Q&A pairs** including price and who-is-suitable. |
+| 4 | 🔴 Critical | Content (vkasama) | **Add seoDescription** in Sanity → fixes og:description, meta description. |
+| 5 | 🟡 High | Facade | **Fix logo alt attributes** — 2 logo images have no alt text. |
+
+---
+
+### /blog/syncope — 6.8/10 ⭐ Best Tier B — Audited 2026-05-30
+
+**Scores:** SEO 8 · GEO 9 · Meta 5 · Schema 5 · Images 9 · FAQ 7 · E-E-A-T 8
+
+**Best blog post on the site.** Has Article + BreadcrumbList JSON-LD, canonical tag, og: tags, and meta description. Use as reference for what populated Sanity data should look like.
+
+| # | Severity | Who | Action |
+|---|----------|-----|--------|
+| 1 | 🟡 High | Facade | **Add FAQPage JSON-LD** (via feature/blog-tierb-seo branch) |
+| 2 | 🟡 High | Content (vkasama) | **Add price/cost and who-is-suitable FAQ questions** |
+| 3 | 🟡 High | Content (vkasama) | **Add ≥4 formal journal citations** (currently stats without named sources) |
+| 4 | 🟡 High | Facade | **Investigate hreflang and twitter:card** not rendering |
+
+---
+
+_Full detail blocks for remaining 60 blog posts available on request. All share the universal blog actions above._

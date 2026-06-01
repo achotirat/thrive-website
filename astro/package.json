@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
+    "@astrojs/sitemap": "^3.7.3",
     "@portabletext/to-html": "^5.0.2",
     "@sanity/client": "^7.22.0",
     "@sanity/image-url": "^2.1.1",

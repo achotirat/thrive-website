@@ -65,6 +65,22 @@ const crumbs = [
 const baseUrl = 'https://www.thrivewellnessth.com'
 const pageUrl = `${baseUrl}/blog/${slug}`
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  headline: seoTitle ?? title,
+  description: seoDescription ?? '',
+  url: pageUrl,
+  datePublished: publishedAt,
+  dateModified: updatedAt ?? publishedAt,
+  author: authorName
+    ? { '@type': 'Person', name: authorName, jobTitle: authorTitle ?? 'Functional Medicine Physician' }
+    : { '@type': 'Organization', name: 'Thrive Wellness Center', url: baseUrl },
+  publisher: { '@type': 'Organization', name: 'Thrive Wellness Center', url: baseUrl },
+  image: heroSrc.startsWith('http') ? heroSrc : `${baseUrl}${heroSrc}`,
+  medicalAudience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+}
+
 const faqSchema = faqItems.length > 0 ? [{
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -87,7 +103,7 @@ const seo = {
     { lang: 'en', href: pageUrl },
     { lang: 'x-default', href: pageUrl },
   ],
-  jsonLd: faqSchema,
+  jsonLd: [articleSchema, ...faqSchema],
   geo: {
     region: 'TH-10',
     placename: 'Bangkok',

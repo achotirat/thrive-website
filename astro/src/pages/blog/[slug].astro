@@ -17,6 +17,16 @@ const faqItems = (d.faq ?? []).map((item) => ({
   question: item.question,
   answer: item.shortAnswer ?? '',
 }))
+
+const bodyHtml = (d.legacyHtml ?? '').replace(/<img(?![^>]*loading=)/g, '<img loading="lazy"')
+
+const seoDescriptionFallback = (d.legacyHtml ?? '')
+  .replace(/<[^>]+>/g, '')
+  .replace(/\s+/g, ' ')
+  .trim()
+  .slice(0, 155)
+  .trim()
+const seoDescription = d.seo?.seoDescription?.trim() || seoDescriptionFallback
 ---
 
 <BlogPostLayout
@@ -28,7 +38,7 @@ const faqItems = (d.faq ?? []).map((item) => ({
   category={d.category}
   mainImage={d.mainImage}
   seoTitle={d.seo?.seoTitle}
-  seoDescription={d.seo?.seoDescription}
+  seoDescription={seoDescription}
   noIndex={d.seo?.noIndex ?? false}
   canonicalUrl={d.seo?.canonicalUrl}
   slug={d.slug.current}
@@ -43,7 +53,7 @@ const faqItems = (d.faq ?? []).map((item) => ({
     </div>
   )}
 
-  <div class="blog-post__body" set:html={d.legacyHtml} />
+  <div class="blog-post__body" set:html={bodyHtml} />
 
   {faqItems.length > 0 && (
     <section class="section faq-section">
