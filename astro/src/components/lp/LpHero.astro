@@ -1,0 +1,48 @@
+---
+export interface Props {
+  quizAnchor?: string;
+}
+const { quizAnchor = '#quiz' } = Astro.props;
+---
+
+<section class="lp-hero">
+  <div class="lp-hero__inner">
+    <div class="lp-hero__copy">
+      <p class="lp-hero__eyebrow">Adrenal Fatigue · Bangkok</p>
+      <h1 class="lp-hero__headline">
+        อ่อนเพลียทุกเช้า<br />
+        <span>แม้นอนหลับพอ?</span>
+      </h1>
+      <p class="lp-hero__subline">
+        ร่างกายคุณอาจกำลังส่งสัญญาณ <strong>Adrenal Fatigue</strong> —
+        ภาวะที่ฮอร์โมน Cortisol และ DHEA ไม่สมดุลจากความเครียดสะสม
+      </p>
+
+      <ul class="lp-hero__symptoms" aria-label="อาการที่พบบ่อย">
+        <li>ตื่นนอนแล้วยังเหนื่อย ต้องใช้เวลานานกว่าจะตื่นตัว</li>
+        <li>ช่วงบ่ายง่วงหนักจนทำงานต่อไม่ได้</li>
+        <li>อยากของหวาน / กาแฟตลอดวัน</li>
+        <li>น้ำหนักลดไม่ลง ทั้งที่คุมอาหารและออกกำลังกายอยู่</li>
+      </ul>
+
+      <a href={quizAnchor} class="lp-hero__cta btn btn-primary">
+        ประเมินอาการตัวเอง 6 ข้อ → รู้ผลทันที
+      </a>
+
+      <p class="lp-hero__trust">
+        ออกแบบโดย <strong>พญ. ชนากานต์ ตระหง่านศรี</strong>
+        · แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ · Thrive Wellness Clinic
+      </p>
+    </div>
+
+    <div class="lp-hero__image" aria-hidden="true">
+      <img
+        src="/adrenal-fatigue-hero-1200x630.jpg"
+        alt="ภาวะต่อมหมวกไตล้า Adrenal Fatigue Thrive Wellness Clinic กรุงเทพ"
+        width="560"
+        height="420"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
