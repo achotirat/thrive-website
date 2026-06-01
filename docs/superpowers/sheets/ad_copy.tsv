@@ -1,28 +1,160 @@
 campaign_name	asset_type	angle	text	variant	max_chars	notes
-# == Schema reference ==
-# asset_type: headline | long_headline | description
-# angle: pain | outcome | authority | specificity | urgency
-# max_chars: headline=30, long_headline=90, description=90
-# Aim for 15 headlines (3 per angle × 5) + 4 descriptions per Search campaign
-# variant: A / B / C for A/B test variants (start with all "A")
-
-# === EXAMPLE: food-intol-s — vkasama fills the rest following this pattern ===
-food-intol-s	headline	pain	ปวดท้องเรื้อรัง หาสาเหตุไม่เจอ?	A	30	example
-food-intol-s	headline	pain	(vkasama: pain headline 2)	A	30
-food-intol-s	headline	pain	(vkasama: pain headline 3)	A	30
-food-intol-s	headline	outcome	รู้ภายใน 7 วันว่าแพ้อาหารอะไร	A	30	example
-food-intol-s	headline	outcome	(vkasama: outcome headline 2)	A	30
-food-intol-s	headline	outcome	(vkasama: outcome headline 3)	A	30
-food-intol-s	headline	authority	ตรวจโดยแพทย์ ไม่ใช่เครื่อง	A	30	example
-food-intol-s	headline	authority	(vkasama: authority headline 2)	A	30
-food-intol-s	headline	authority	(vkasama: authority headline 3)	A	30
-food-intol-s	headline	specificity	ตรวจ 216 ชนิดอาหาร IgG	A	30	example
-food-intol-s	headline	specificity	(vkasama: specificity headline 2)	A	30
-food-intol-s	headline	specificity	(vkasama: specificity headline 3)	A	30
-food-intol-s	headline	urgency	ปรึกษาฟรีวันนี้ slot จำกัด	A	30	example
-food-intol-s	headline	urgency	(vkasama: urgency headline 2)	A	30
-food-intol-s	headline	urgency	(vkasama: urgency headline 3)	A	30
-food-intol-s	description	authority	ตรวจโดยแพทย์ ทุกขั้นตอน ที่ Thrive Wellness คลินิกครบวงจร	A	90	example
-food-intol-s	description	outcome	(vkasama: description 2)	A	90
-food-intol-s	description	pain	(vkasama: description 3)	A	90
-food-intol-s	description	urgency	(vkasama: description 4)	A	90
+# == Schema reference ==						
+# asset_type: headline | long_headline | description						
+# angle: pain | outcome | authority | specificity | urgency | testimonial | offer						
+# max_chars: headline=30, long_headline=90, description=90						
+# Each campaign should have 15 headlines (3 per angle x 5) + 4 descriptions						
+# Source: editor-templates/06-rsa-all-campaigns.csv reviewed copy, status Paused						
+# Synced from reviewed Google Ads Editor CSV; keep this TSV aligned when copy changes						
+food-intol-s	headline	pain	ผื่น ปวดท้อง เหนื่อยง่าย?	A	30	reviewed; Paused; Headline 1
+food-intol-s	headline	pain	อาการเรื้อรัง มาจากอาหาร?	A	30	reviewed; Paused; Headline 2
+food-intol-s	headline	pain	แพ้อาหารไม่รู้ตัว ทำให้ป่วย	A	30	reviewed; Paused; Headline 3
+food-intol-s	headline	outcome	ตรวจ IgG 216 ชนิด ผล 3 วัน	A	30	reviewed; Paused; Headline 4
+food-intol-s	headline	outcome	ไม่ต้องงดอาหารก่อนตรวจ	A	30	reviewed; Paused; Headline 5
+food-intol-s	headline	outcome	Lab ยุโรปมาตรฐาน แม่นยำสูง	A	30	reviewed; Paused; Headline 6
+food-intol-s	headline	authority	วิเคราะห์ผลโดยแพทย์เฉพาะทาง	A	30	reviewed; Paused; Headline 7
+food-intol-s	headline	authority	Thrive Wellness แพทย์โดยตรง	A	30	reviewed; Paused; Headline 8
+food-intol-s	headline	authority	ปรึกษาแพทย์ฟรีก่อนเริ่มตรวจ	A	30	reviewed; Paused; Headline 9
+food-intol-s	headline	specificity	คุณปลา ผื่น 5 ปี หายแล้ว	A	30	reviewed; Paused; Headline 10
+food-intol-s	headline	specificity	รู้ต้นเหตุ หยุดอาการเรื้อรัง	A	30	reviewed; Paused; Headline 11
+food-intol-s	headline	specificity	ผิวใส ระบบย่อยดี ชีวิตดีขึ้น	A	30	reviewed; Paused; Headline 12
+food-intol-s	headline	urgency	ฟรี IV DRIP Detox 3 ครั้ง	A	30	reviewed; Paused; Headline 13
+food-intol-s	headline	urgency	ราคา 12,500 บาท โปรฯ จำกัด	A	30	reviewed; Paused; Headline 14
+food-intol-s	headline	urgency	จองวันนี้ สิทธิ์จำกัดเท่านั้น	A	30	reviewed; Paused; Headline 15
+food-intol-s	description	authority	ตรวจแพ้อาหาร IgG 216 ชนิด ผล 3 วัน ไม่ต้องงดอาหาร วิเคราะห์โดยแพทย์เฉพาะทาง	A	90	reviewed; Paused; Description 1
+food-intol-s	description	testimonial	คุณปลา ผื่นมา 5 ปี พบแพ้นม ไข่ กลูเตน เลิกกิน หายเลย ไม่ต้องพึ่งยาอีกต่อไป	A	90	reviewed; Paused; Description 2
+food-intol-s	description	offer	รับฟรี IV DRIP Detox 3 ครั้ง มูลค่า 8,970 บาท เมื่อตรวจ IgG 216 ชนิดวันนี้	A	90	reviewed; Paused; Description 3
+food-intol-s	description	authority	Thrive Wellness Bangkok แพทย์ดูแลตั้งแต่ตรวจถึงปรับแผนอาหาร ฟรีปรึกษาก่อนเริ่ม	A	90	reviewed; Paused; Description 4
+food-intol-pm	headline	pain	ผื่นเป็นๆหายๆ รักษาไม่หาย?	A	30	reviewed; Paused; Headline 1
+food-intol-pm	headline	pain	แพ้นม ไข่ ชีส ไม่รู้ตัวมาก่อน	A	30	reviewed; Paused; Headline 2
+food-intol-pm	headline	pain	ผิวพัง ท้องอืด เรื้อรังไม่หาย	A	30	reviewed; Paused; Headline 3
+food-intol-pm	headline	outcome	Package IgG+IV Detox ครบวงจร	A	30	reviewed; Paused; Headline 4
+food-intol-pm	headline	outcome	ตรวจ 216 ชนิด+ใบรับรองแพทย์	A	30	reviewed; Paused; Headline 5
+food-intol-pm	headline	outcome	ผล 3 วัน ไม่ต้องงดอาหาร	A	30	reviewed; Paused; Headline 6
+food-intol-pm	headline	authority	แพทย์เฉพาะทาง ดูแลตั้งแต่ต้น	A	30	reviewed; Paused; Headline 7
+food-intol-pm	headline	authority	Thrive Wellness คลินิกครบวงจร	A	30	reviewed; Paused; Headline 8
+food-intol-pm	headline	authority	ปรึกษาแพทย์ฟรีก่อนเริ่มโปรแกรม	A	30	reviewed; Paused; Headline 9
+food-intol-pm	headline	specificity	คุณบิ้ว แพ้นม ไข่ ชีส ดีขึ้น	A	30	reviewed; Paused; Headline 10
+food-intol-pm	headline	specificity	หยุดผื่น ปวดท้อง ชีวิตดีขึ้น	A	30	reviewed; Paused; Headline 11
+food-intol-pm	headline	specificity	รู้สาเหตุ หายจากอาการเรื้อรัง	A	30	reviewed; Paused; Headline 12
+food-intol-pm	headline	urgency	แพ็กเกจ 19,000 รับ IV ฟรี	A	30	reviewed; Paused; Headline 13
+food-intol-pm	headline	urgency	มูลค่ารวมกว่า 27,000 บาท	A	30	reviewed; Paused; Headline 14
+food-intol-pm	headline	urgency	สมัครวันนี้ โปรฯ จำกัดที่นั่ง	A	30	reviewed; Paused; Headline 15
+food-intol-pm	description	authority	Package IgG 216 ชนิด + IV DRIP Detox 3 ครั้ง + ใบรับรองแพทย์ ราคา 19,000 บาท	A	90	reviewed; Paused; Description 1
+food-intol-pm	description	testimonial	คุณบิ้ว ผื่นเป็นๆหายๆ พบว่าแพ้นม ไข่ขาว ชีส หลังปรับอาหารตามผล IgG ดีขึ้นมาก	A	90	reviewed; Paused; Description 2
+food-intol-pm	description	offer	ตรวจ IgG พร้อมรับ IV DRIP Detox 3 ครั้ง และใบรับรองแพทย์ ครบในชุดเดียว 19,000 บาท	A	90	reviewed; Paused; Description 3
+food-intol-pm	description	authority	Thrive Wellness Bangkok ดูแลตั้งแต่ตรวจ วิเคราะห์ผล ปรับแผนอาหาร ฟรีปรึกษาก่อนเริ่ม	A	90	reviewed; Paused; Description 4
+hormone-s	headline	pain	เหนื่อย อ้วน อารมณ์แปรปรวน?	A	30	reviewed; Paused; Headline 1
+hormone-s	headline	pain	ประจำเดือนห่าง นอนไม่หลับ?	A	30	reviewed; Paused; Headline 2
+hormone-s	headline	pain	ฮอร์โมนเสีย ทำให้ป่วยไม่รู้ตัว	A	30	reviewed; Paused; Headline 3
+hormone-s	headline	outcome	ตรวจ 9+ ฮอร์โมน ผล 1-2 วัน	A	30	reviewed; Paused; Headline 4
+hormone-s	headline	outcome	ตรวจ Estrogen Thyroid DHEA LH	A	30	reviewed; Paused; Headline 5
+hormone-s	headline	outcome	ไม่ต้องงดน้ำ ตรวจเช้า-เย็นได้	A	30	reviewed; Paused; Headline 6
+hormone-s	headline	authority	แพทย์เฉพาะทาง วิเคราะห์ผล	A	30	reviewed; Paused; Headline 7
+hormone-s	headline	authority	Thrive เชี่ยวชาญฮอร์โมน BKK	A	30	reviewed; Paused; Headline 8
+hormone-s	headline	authority	ปรึกษาแพทย์ฟรีก่อนเริ่มตรวจ	A	30	reviewed; Paused; Headline 9
+hormone-s	headline	specificity	คุณแนต เลือดจาง ประจำดีขึ้น	A	30	reviewed; Paused; Headline 10
+hormone-s	headline	specificity	ปรับสมดุล หายเหนื่อย นอนหลับดี	A	30	reviewed; Paused; Headline 11
+hormone-s	headline	specificity	มีบุตรได้ หลังปรับฮอร์โมนสมดุล	A	30	reviewed; Paused; Headline 12
+hormone-s	headline	urgency	ส่วนลด 15% ราคา 6,500 บาท	A	30	reviewed; Paused; Headline 13
+hormone-s	headline	urgency	ราคา 6,500 บาท จำกัดสิทธิ์	A	30	reviewed; Paused; Headline 14
+hormone-s	headline	urgency	จองวันนี้ รับส่วนลด 15% ทันที	A	30	reviewed; Paused; Headline 15
+hormone-s	description	authority	ตรวจฮอร์โมน 9+ ชนิด ผล 1-2 วัน วิเคราะห์โดยแพทย์เฉพาะทาง ที่ Thrive Wellness Bangkok	A	90	reviewed; Paused; Description 1
+hormone-s	description	testimonial	คุณแนต เลือดจาง ประจำเดือนห่าง หลังปรับฮอร์โมน ดีขึ้น 3 เดือน มีบุตรได้แล้ว	A	90	reviewed; Paused; Description 2
+hormone-s	description	offer	รับส่วนลด 15% เมื่อสมัคร Hormone Package วันนี้ จำกัดสิทธิ์เฉพาะผู้จองออนไลน์	A	90	reviewed; Paused; Description 3
+hormone-s	description	authority	ฮอร์โมนเสียสมดุลทำให้เหนื่อย อ้วน นอนไม่หลับ ปรึกษาแพทย์ฟรีวันนี้ที่ Thrive	A	90	reviewed; Paused; Description 4
+iv-drip-pm	headline	pain	ผิวหมอง เหนื่อย ฟื้นตัวช้า?	A	30	reviewed; Paused; Headline 1
+iv-drip-pm	headline	pain	ทานวิตามินแล้ว ยังไม่ดีขึ้น?	A	30	reviewed; Paused; Headline 2
+iv-drip-pm	headline	pain	ผิวหนังไม่สดใส ต้องการ Detox?	A	30	reviewed; Paused; Headline 3
+iv-drip-pm	headline	outcome	ดูดซึม 100% เร็วกว่ากินวิตามิน	A	30	reviewed; Paused; Headline 4
+iv-drip-pm	headline	outcome	7 สูตร NAD+ Gluta Chelation	A	30	reviewed; Paused; Headline 5
+iv-drip-pm	headline	outcome	ผลทันที 45 นาที ฟื้นฟูร่างกาย	A	30	reviewed; Paused; Headline 6
+iv-drip-pm	headline	authority	แพทย์เฉพาะทาง ดูแลทุกขั้นตอน	A	30	reviewed; Paused; Headline 7
+iv-drip-pm	headline	authority	Thrive Wellness คลินิกครบวงจร	A	30	reviewed; Paused; Headline 8
+iv-drip-pm	headline	authority	ปลอดภัย 100% ดูแลโดยแพทย์	A	30	reviewed; Paused; Headline 9
+iv-drip-pm	headline	specificity	คุณพริม ผิวใสสว่างใน 45 นาที	A	30	reviewed; Paused; Headline 10
+iv-drip-pm	headline	specificity	ฟื้นฟูเร็ว ผิวใส พลังงานเพิ่ม	A	30	reviewed; Paused; Headline 11
+iv-drip-pm	headline	specificity	หายเหนื่อย สดชื่น ใน 1 session	A	30	reviewed; Paused; Headline 12
+iv-drip-pm	headline	urgency	Unlimited IV DRIP 7,900/เดือน	A	30	reviewed; Paused; Headline 13
+iv-drip-pm	headline	urgency	ราคา 2,500/ครั้ง โปรฯ จำกัด	A	30	reviewed; Paused; Headline 14
+iv-drip-pm	headline	urgency	สมัคร Unlimited วันนี้ ประหยัด	A	30	reviewed; Paused; Headline 15
+iv-drip-pm	description	authority	IV DRIP ดูดซึม 100% เร็วกว่ากินวิตามิน 10 เท่า 7 สูตรดูแลโดยแพทย์เฉพาะทาง Thrive	A	90	reviewed; Paused; Description 1
+iv-drip-pm	description	testimonial	คุณพริม ผิวใสสว่าง Luminous Skin ใน 45 นาที ด้วย IV DRIP Glutathione ที่ Thrive Wellness	A	90	reviewed; Paused; Description 2
+iv-drip-pm	description	offer	IV DRIP Unlimited 7,900 บาท/เดือน ทำได้ไม่จำกัดครั้ง ประหยัดกว่าซื้อรายครั้ง	A	90	reviewed; Paused; Description 3
+iv-drip-pm	description	authority	ผิวหมอง เหนื่อย ฟื้นตัวช้า ลอง IV DRIP เพิ่มพลังงาน ฟื้นฟูเซลล์ ปรึกษาฟรีวันนี้	A	90	reviewed; Paused; Description 4
+chelation-s	headline	pain	โลหะหนักสะสม เสี่ยงโรคหัวใจ?	A	30	reviewed; Paused; Headline 1
+chelation-s	headline	pain	เหนื่อยง่าย ระบบเผาผลาญช้า?	A	30	reviewed; Paused; Headline 2
+chelation-s	headline	pain	สารพิษในเลือด ทำร่างกายเสื่อม	A	30	reviewed; Paused; Headline 3
+chelation-s	headline	outcome	EDTA กำจัดโลหะหนักออกจากเลือด	A	30	reviewed; Paused; Headline 4
+chelation-s	headline	outcome	ดูแลโดยแพทย์ ปลอดภัยมาตรฐานสูง	A	30	reviewed; Paused; Headline 5
+chelation-s	headline	outcome	วิธีเดียวกับที่ใช้ใน USA EU	A	30	reviewed; Paused; Headline 6
+chelation-s	headline	authority	แพทย์เชี่ยวชาญ Chelation	A	30	reviewed; Paused; Headline 7
+chelation-s	headline	authority	Thrive Wellness ดูแลโดยตรง	A	30	reviewed; Paused; Headline 8
+chelation-s	headline	authority	ปรึกษาฟรี ก่อนเริ่ม Chelation	A	30	reviewed; Paused; Headline 9
+chelation-s	headline	specificity	คุณเอก เผาผลาญดี น้ำหนักลง	A	30	reviewed; Paused; Headline 10
+chelation-s	headline	specificity	ระบบไหลเวียนดี หัวใจแข็งแรง	A	30	reviewed; Paused; Headline 11
+chelation-s	headline	specificity	หลังทำ Chelation พลังงานเพิ่ม	A	30	reviewed; Paused; Headline 12
+chelation-s	headline	urgency	10 ครั้ง Free 3 ครั้ง จำกัด	A	30	reviewed; Paused; Headline 13
+chelation-s	headline	urgency	ราคา 4,500/ครั้ง โปรฯ จำกัด	A	30	reviewed; Paused; Headline 14
+chelation-s	headline	urgency	จองวันนี้ ก่อนสิทธิ์หมด	A	30	reviewed; Paused; Headline 15
+chelation-s	description	authority	Chelation Therapy EDTA กำจัดโลหะหนักและสารพิษออกจากเลือด ดูแลโดยแพทย์เฉพาะทาง	A	90	reviewed; Paused; Description 1
+chelation-s	description	testimonial	คุณเอก ทำ Chelation 10 ครั้ง ระบบเผาผลาญดีขึ้น น้ำหนักลด หัวใจแข็งแรง ชีวิตดีขึ้น	A	90	reviewed; Paused; Description 2
+chelation-s	description	offer	โปร 10 ครั้ง Free 3 ครั้ง มูลค่า 13,500 บาท สมัครวันนี้ ก่อนสิทธิ์เต็ม	A	90	reviewed; Paused; Description 3
+chelation-s	description	authority	สารพิษโลหะหนักสะสมทำให้เสี่ยงโรคหัวใจ ปรึกษาแพทย์ฟรีก่อนเริ่ม Chelation Therapy	A	90	reviewed; Paused; Description 4
+hbot-s	headline	pain	ฟื้นตัวช้า หลังออกกำลังกาย?	A	30	reviewed; Paused; Headline 1
+hbot-s	headline	pain	เหนื่อยล้า ฟื้นฟูได้ไม่ดีพอ?	A	30	reviewed; Paused; Headline 2
+hbot-s	headline	pain	ต้องการชะลอวัย ฟื้นฟูเซลล์?	A	30	reviewed; Paused; Headline 3
+hbot-s	headline	outcome	100% Oxygen ที่ 1.5-2.0 ATA	A	30	reviewed; Paused; Headline 4
+hbot-s	headline	outcome	งานวิจัย Tel Aviv ยืดอายุเซลล์	A	30	reviewed; Paused; Headline 5
+hbot-s	headline	outcome	60 นาที ฟื้นฟูเซลล์อย่างล้ำลึก	A	30	reviewed; Paused; Headline 6
+hbot-s	headline	authority	ดูแลโดยแพทย์ตลอด 60 นาที	A	30	reviewed; Paused; Headline 7
+hbot-s	headline	authority	Thrive Wellness ระดับโลก	A	30	reviewed; Paused; Headline 8
+hbot-s	headline	authority	ปลอดภัย 100% ทีมแพทย์เชี่ยวชาญ	A	30	reviewed; Paused; Headline 9
+hbot-s	headline	specificity	คุณจ๊ะเอ๋ ฟื้นเร็ว สดชื่น	A	30	reviewed; Paused; Headline 10
+hbot-s	headline	specificity	กระตุ้น Collagen ฟื้นฟูกล้าม	A	30	reviewed; Paused; Headline 11
+hbot-s	headline	specificity	ชะลอวัย เพิ่มพลังงาน ผิวดีขึ้น	A	30	reviewed; Paused; Headline 12
+hbot-s	headline	urgency	ทดลอง 1 ครั้ง ราคา 1,900 บาท	A	30	reviewed; Paused; Headline 13
+hbot-s	headline	urgency	ราคาปกติ 5,000 บาท/session	A	30	reviewed; Paused; Headline 14
+hbot-s	headline	urgency	จองทดลองวันนี้ สิทธิ์จำกัด	A	30	reviewed; Paused; Headline 15
+hbot-s	description	authority	HBOT ออกซิเจน 100% ที่ 1.5-2.0 ATA ฟื้นฟูเซลล์ ชะลอวัย ดูแลโดยแพทย์ที่ Thrive Wellness	A	90	reviewed; Paused; Description 1
+hbot-s	description	testimonial	คุณจ๊ะเอ๋ ออกกำลังกายหนัก ฟื้นเร็วด้วย HBOT สดชื่น เต็มพลังทุกวัน ไม่มีอาการล้า	A	90	reviewed; Paused; Description 2
+hbot-s	description	offer	ทดลองครั้งแรก 1,900 บาท ราคาปกติ 5,000 บาท/session จองวันนี้ สิทธิ์จำกัด	A	90	reviewed; Paused; Description 3
+hbot-s	description	authority	งานวิจัย Tel Aviv University ยืนยัน HBOT ยืดอายุ Telomere ฟื้นฟูเซลล์ระดับ DNA	A	90	reviewed; Paused; Description 4
+mental-health-s	headline	pain	เครียด วิตกกังวล นอนไม่หลับ?	A	30	reviewed; Paused; Headline 1
+mental-health-s	headline	pain	หมดไฟ ซึมเศร้า ชีวิตไม่มีพลัง?	A	30	reviewed; Paused; Headline 2
+mental-health-s	headline	pain	ใจไม่สงบ หาทางออกไม่เจอ?	A	30	reviewed; Paused; Headline 3
+mental-health-s	headline	outcome	Bach Flower จิตบำบัดองค์รวม	A	30	reviewed; Paused; Headline 4
+mental-health-s	headline	outcome	60 นาที/session ผู้เชี่ยวชาญ	A	30	reviewed; Paused; Headline 5
+mental-health-s	headline	outcome	ปรึกษาฟรีครั้งแรก ไม่มีค่าใช้	A	30	reviewed; Paused; Headline 6
+mental-health-s	headline	authority	ผู้เชี่ยวชาญด้านจิตใจ Thrive	A	30	reviewed; Paused; Headline 7
+mental-health-s	headline	authority	ดูแลแบบองค์รวม จิตใจ-ร่างกาย	A	30	reviewed; Paused; Headline 8
+mental-health-s	headline	authority	Thrive จิตบำบัดแบบองค์รวม	A	30	reviewed; Paused; Headline 9
+mental-health-s	headline	specificity	โอ๋ ใจสงบ กลับมาเป็นตัวเอง	A	30	reviewed; Paused; Headline 10
+mental-health-s	headline	specificity	หยุดวิตกกังวล กลับมามีพลัง	A	30	reviewed; Paused; Headline 11
+mental-health-s	headline	specificity	นอนหลับดี ไม่เครียด ชีวิตดี	A	30	reviewed; Paused; Headline 12
+mental-health-s	headline	urgency	ปรึกษาครั้งแรกฟรี จองเลย	A	30	reviewed; Paused; Headline 13
+mental-health-s	headline	urgency	แพ็ก 3 ครั้ง เพียง 7,900 บาท	A	30	reviewed; Paused; Headline 14
+mental-health-s	headline	urgency	ราคา 2,900/session จำกัดสิทธิ์	A	30	reviewed; Paused; Headline 15
+mental-health-s	description	authority	จิตบำบัดแบบองค์รวม Bach Flower + CBT ดูแลโดยผู้เชี่ยวชาญด้านสุขภาพจิต Thrive Wellness	A	90	reviewed; Paused; Description 1
+mental-health-s	description	testimonial	โอ๋ รู้สึกเครียดหนัก หลังทำ Bach Flower ใจสงบขึ้น กลับมาเป็นตัวเองได้ ชีวิตดีขึ้น	A	90	reviewed; Paused; Description 2
+mental-health-s	description	offer	ปรึกษาครั้งแรกฟรี แพ็ก 3 session เพียง 7,900 บาท ประหยัดกว่าซื้อเดี่ยว	A	90	reviewed; Paused; Description 3
+mental-health-s	description	authority	เครียด วิตกกังวล หมดไฟ ปรึกษาผู้เชี่ยวชาญสุขภาพจิตองค์รวม Thrive Wellness วันนี้	A	90	reviewed; Paused; Description 4
+demand-gen	headline	pain	เหนื่อย ป่วยง่าย หาสาเหตุ?	A	30	reviewed; Paused; Headline 1
+demand-gen	headline	pain	ไม่รู้จะเริ่มดูแลสุขภาพที่ไหน	A	30	reviewed; Paused; Headline 2
+demand-gen	headline	pain	ร่างกายไม่ฟื้น แม้พักแล้ว?	A	30	reviewed; Paused; Headline 3
+demand-gen	headline	outcome	ตรวจลึก เทคโนโลยีชั้นนำ	A	30	reviewed; Paused; Headline 4
+demand-gen	headline	outcome	Hormone IV HBOT Chelation ครบ	A	30	reviewed; Paused; Headline 5
+demand-gen	headline	outcome	Lab มาตรฐาน ผลเร็ว แม่นยำ	A	30	reviewed; Paused; Headline 6
+demand-gen	headline	authority	แพทย์เฉพาะทาง ดูแลเฉพาะบุคคล	A	30	reviewed; Paused; Headline 7
+demand-gen	headline	authority	Thrive Wellness Bangkok	A	30	reviewed; Paused; Headline 8
+demand-gen	headline	authority	ทีมแพทย์ ประสบการณ์กว่า 10 ปี	A	30	reviewed; Paused; Headline 9
+demand-gen	headline	specificity	หายเหนื่อย สุขภาพดีขึ้น	A	30	reviewed; Paused; Headline 10
+demand-gen	headline	specificity	ลูกค้า 20+ ประเทศ ไว้ใจ Thrive	A	30	reviewed; Paused; Headline 11
+demand-gen	headline	specificity	ผลเห็นได้ใน 30-60 วัน	A	30	reviewed; Paused; Headline 12
+demand-gen	headline	urgency	ปรึกษาฟรีวันนี้ ไม่มีข้อผูกมัด	A	30	reviewed; Paused; Headline 13
+demand-gen	headline	urgency	โปรแกรมเริ่มต้น 1,900 บาท	A	30	reviewed; Paused; Headline 14
+demand-gen	headline	urgency	จองออนไลน์ ฟรีคำปรึกษาแพทย์	A	30	reviewed; Paused; Headline 15
+demand-gen	description	authority	Thrive Wellness Bangkok คลินิกสุขภาพองค์รวม ครอบคลุม Hormone IV DRIP HBOT Chelation	A	90	reviewed; Paused; Description 1
+demand-gen	description	testimonial	ลูกค้าจาก 20+ ประเทศเลือก Thrive ตรวจลึก แม่นยำ วิเคราะห์โดยแพทย์เฉพาะทาง	A	90	reviewed; Paused; Description 2
+demand-gen	description	offer	ปรึกษาฟรีวันนี้ ไม่มีข้อผูกมัด โปรแกรมเริ่มต้น 1,900 บาท จำกัดสิทธิ์	A	90	reviewed; Paused; Description 3
+demand-gen	description	authority	เหนื่อย ป่วยง่าย ฟื้นตัวช้า ตรวจหาสาเหตุกับทีมแพทย์เฉพาะทาง Thrive Wellness	A	90	reviewed; Paused; Description 4
