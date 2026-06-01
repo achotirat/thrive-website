@@ -1,17 +1,17 @@
 Campaign,Ad group,Keyword,Match type,Max CPC,Status
-food-intol-s,food-intolerance-general,ตรวจภูมิแพ้อาหารแฝง,Phrase,,Enabled
-food-intol-s,food-intolerance-general,ภูมิแพ้อาหารแฝง igg,Phrase,,Enabled
-food-intol-s,food-intolerance-general,ตรวจภูมิแพ้อาหาร,Phrase,,Enabled
-food-intol-s,food-intolerance-general,igg test bangkok,Broad,12,Enabled
-food-intol-s,food-intolerance-general,food intolerance test thailand,Broad,12,Enabled
-food-intol-s,food-intolerance-general,ตรวจ igg 216 ชนิด,Exact,,Enabled
-food-intol-s,food-intolerance-general,ปวดท้องเรื้อรัง รักษา,Broad,10,Enabled
-food-intol-s,food-intolerance-general,ผื่นเรื้อรัง ตรวจหาสาเหตุ,Broad,10,Enabled
-hormone-s,hormone-imbalance-general,ตรวจฮอร์โมน,Phrase,,Enabled
-hormone-s,hormone-imbalance-general,ตรวจสมดุลฮอร์โมน,Phrase,,Enabled
-hormone-s,hormone-imbalance-general,ฮอร์โมนไม่สมดุล รักษา,Phrase,,Enabled
-hormone-s,hormone-imbalance-general,คลินิกฮอร์โมน,Phrase,,Enabled
-hormone-s,hormone-imbalance-general,hormone test bangkok,Broad,12,Enabled
-hormone-s,hormone-imbalance-general,bhrt clinic thailand,Broad,12,Enabled
-hormone-s,hormone-imbalance-general,วัยทอง รักษา ฮอร์โมน,Broad,10,Enabled
-hormone-s,hormone-imbalance-general,นอนไม่หลับ ฮอร์โมน,Broad,10,Enabled
+food-intol-s,food-intolerance-general,ตรวจภูมิแพ้อาหารแฝง,Phrase,,Paused
+food-intol-s,food-intolerance-general,ภูมิแพ้อาหารแฝง igg,Phrase,,Paused
+food-intol-s,food-intolerance-general,ตรวจภูมิแพ้อาหาร,Phrase,,Paused
+food-intol-s,food-intolerance-general,igg test bangkok,Broad,12,Paused
+food-intol-s,food-intolerance-general,food intolerance test thailand,Broad,12,Paused
+food-intol-s,food-intolerance-general,ตรวจ igg 216 ชนิด,Exact,,Paused
+food-intol-s,food-intolerance-general,ปวดท้องเรื้อรัง รักษา,Broad,10,Paused
+food-intol-s,food-intolerance-general,ผื่นเรื้อรัง ตรวจหาสาเหตุ,Broad,10,Paused
+hormone-s,hormone-imbalance-general,ตรวจฮอร์โมน,Phrase,,Paused
+hormone-s,hormone-imbalance-general,ตรวจสมดุลฮอร์โมน,Phrase,,Paused
+hormone-s,hormone-imbalance-general,ฮอร์โมนไม่สมดุล รักษา,Phrase,,Paused
+hormone-s,hormone-imbalance-general,คลินิกฮอร์โมน,Phrase,,Paused
+hormone-s,hormone-imbalance-general,hormone test bangkok,Broad,12,Paused
+hormone-s,hormone-imbalance-general,bhrt clinic thailand,Broad,12,Paused
+hormone-s,hormone-imbalance-general,วัยทอง รักษา ฮอร์โมน,Broad,10,Paused
+hormone-s,hormone-imbalance-general,นอนไม่หลับ ฮอร์โมน,Broad,10,Paused

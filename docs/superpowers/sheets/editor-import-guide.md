@@ -23,6 +23,8 @@ Numbered in the order to import:
 7. `06a-rsa-search-campaigns.csv` — Search campaign RSA import file only
 8. `06b-pmax-copy-reference.csv` — PMax copy reference for Google Ads UI / asset-group setup, not a direct RSA import
 9. `06c-demand-gen-copy-reference.csv` — Demand Gen copy reference for Google Ads UI / asset setup, not a direct RSA import
+10. `01a-search-campaigns.csv` — Search-only campaign shell for all 5 Search campaigns used by `06a`
+11. `02a-search-ad-groups.csv` — Search-only ad groups for all 5 Search campaigns used by `06a`
 
 All three priority campaigns are pre-set to **Paused** status. Switch to **Enabled** only after a final review and tracking verification.
 
@@ -103,7 +105,18 @@ See spec section 5 Week 2 — add the remaining 5 campaigns (Chelation, HBOT, Me
 
 ### Week 2 file split
 
+- If you get `The entity does not exist for "Campaign: ..."` while importing `06a`, import `01a-search-campaigns.csv` first, then `02a-search-ad-groups.csv`, then retry `06a-rsa-search-campaigns.csv`.
 - Import Search RSAs from `06a-rsa-search-campaigns.csv`.
 - Use `06b-pmax-copy-reference.csv` when configuring Food Intolerance PMax and IV Drip PMax asset groups in Google Ads UI / Editor's PMax editor.
 - Use `06c-demand-gen-copy-reference.csv` when configuring Demand Gen creative assets.
 - Keep `06-rsa-all-campaigns.csv` as the reviewed master source. Do not use it as the first import file unless you intentionally want to preview every row together.
+
+### Search RSA import order for all 5 Search campaigns
+
+Use this order when importing the reviewed Search RSA file:
+
+1. Import `01a-search-campaigns.csv`.
+2. Import `02a-search-ad-groups.csv`.
+3. Import `06a-rsa-search-campaigns.csv`.
+
+All three files are set to **Paused** so the account can be reviewed before anything starts serving.
