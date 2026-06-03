@@ -1,10 +1,4 @@
 Row Type,Action,Keyword status,Campaign ID,Campaign,Ad group ID,Ad group,Keyword ID,Keyword,Type,Label,Default max. CPC,Max. CPV,Final URL,Mobile final URL,Final URL suffix,Tracking template,Custom parameter
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,ตรวจภูมิแพ้อาหารแฝง,Phrase match,,,,,,,,
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,ภูมิแพ้อาหารแฝง igg,Phrase match,,,,,,,,
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,ตรวจภูมิแพ้อาหาร,Phrase match,,,,,,,,
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,igg test bangkok,Broad match,,,,,,,,
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,food intolerance test thailand,Broad match,,,,,,,,
-Keyword,Add,Paused,,food-intol-s,,food-intolerance-general,,ตรวจ igg 216 ชนิด,Exact match,,,,,,,,
 Keyword,Add,Paused,,hormone-s,,hormone-imbalance-general,,ตรวจฮอร์โมน,Phrase match,,,,,,,,
 Keyword,Add,Paused,,hormone-s,,hormone-imbalance-general,,ตรวจสมดุลฮอร์โมน,Phrase match,,,,,,,,
 Keyword,Add,Paused,,hormone-s,,hormone-imbalance-general,,ฮอร์โมนไม่สมดุล รักษา,Phrase match,,,,,,,,

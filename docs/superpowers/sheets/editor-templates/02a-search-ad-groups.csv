@@ -1,6 +1,6 @@
-Campaign,Ad group,Status,Max CPC,Default URL
-food-intol-s,food-intolerance-general,Paused,15,https://www.thrivewellnessth.com/food-intolerance
-hormone-s,hormone-imbalance-general,Paused,15,https://www.thrivewellnessth.com/hormones-quiz
-chelation-s,chelation-general,Paused,15,https://www.thrivewellnessth.com/chelation
-hbot-s,hbot-general,Paused,15,https://www.thrivewellnessth.com/hbot
-mental-health-s,mental-health-general,Paused,15,https://www.thrivewellnessth.com/mental-health
+Row Type,Action,Ad group status,Campaign ID,Campaign,Ad group ID,Ad group,Ad group type,Ad rotation,Default max. CPC,CPC%,Max. CPM,Max. CPV,Target CPA,Target CPM,TrueView target CPV,Label,Tracking template,Final URL suffix,Custom parameter,Target ROAS
+Ad group,Add,Paused,,food-intol-s,,food-intolerance-general,Standard,Optimize,15,,,,,,,,,,,
+Ad group,Add,Paused,,hormone-s,,hormone-imbalance-general,Standard,Optimize,15,,,,,,,,,,,
+Ad group,Add,Paused,,chelation-s,,chelation-general,Standard,Optimize,15,,,,,,,,,,,
+Ad group,Add,Paused,,hbot-s,,hbot-general,Standard,Optimize,15,,,,,,,,,,,
+Ad group,Add,Paused,,mental-health-s,,mental-health-general,Standard,Optimize,15,,,,,,,,,,,
