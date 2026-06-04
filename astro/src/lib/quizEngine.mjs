@@ -70,6 +70,7 @@ export function buildQuizLeadPayload(quiz, session, result, input) {
     consent: 'yes',
     consent_at: input.consentAt,
     consent_version: input.consentVersion || 'quiz-engine-2026-05',
+    turnstile_token: input.turnstileToken || '',
     message: messageParts.join('\n'),
     quiz_id: quiz.id,
     quiz_result_id: result?.id || '',

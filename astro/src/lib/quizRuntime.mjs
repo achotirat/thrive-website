@@ -141,6 +141,7 @@ export function mountQuizEngine(root) {
         phone: formData.get('phone')?.toString() || '',
         lineId: formData.get('line_id')?.toString() || '',
         consentAt: new Date().toISOString(),
+        turnstileToken: formData.get('cf-turnstile-response')?.toString() || '',
         attribution,
       });
       const submitButton = leadForm.querySelector('button[type="submit"]');
@@ -169,6 +170,9 @@ export function mountQuizEngine(root) {
         if (statusEl) {
           statusEl.textContent = 'ยังส่งผลแบบทดสอบไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
           statusEl.dataset.state = 'error';
+        }
+        if (window.turnstile && leadForm.querySelector('.cf-turnstile')) {
+          window.turnstile.reset(leadForm.querySelector('.cf-turnstile'));
         }
       } finally {
         if (submitButton instanceof HTMLButtonElement) submitButton.disabled = false;

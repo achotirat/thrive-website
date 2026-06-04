@@ -154,3 +154,23 @@ Guide: `docs/superpowers/sheets/editor-import-guide.md`.
 All three campaigns deliberately start Paused — flip to Enabled only after verifying conversion tracking and LP rendering in production.
 
 ---
+
+## 2026-06-04 — Session 3: Campaigns enabled + dashboard/lead fixes
+
+**Done / observed:**
+- User turned on all Google Ads campaigns.
+- Landing pages checked live: `/food-intolerance`, `/hormones-quiz`, `/iv-drip`, `/chelation`, `/hbot`, `/mental-health`.
+- All checked landing pages include GTM `GTM-MKHTH4P9`, Google Ads tag `AW-18181967822`, lead forms, and `lead_submit` wiring.
+- `campaigns.tsv` updated from `pending` to `active`.
+
+**Fixes prepared:**
+- Quiz lead form root cause: quiz JSON submit did not include Cloudflare Turnstile token while production lead API requires it. Added Turnstile to quiz forms and included the token in the JSON payload.
+- CRM dashboard root cause: Lead Inbox was still mock/static because production dashboard did not have a real lead read/update API target. Added authenticated read/update support to the website `/api/leads` Netlify function and pointed the dashboard Lead Inbox to `https://new.thrivewellnessth.com`.
+- Hormone ad label root cause: `Ad report.csv` showed Hormone RSA as `approved labeled`; copy contained direct health-sensitive/personal outcome language. Added policy-safer replacement copy and `hormone-import-04b-rsa-policy-safe.csv`.
+
+**Next:**
+- Deploy website changes and dashboard changes.
+- Set dashboard Netlify env vars: `VITE_LEADS_USE_MOCK=false`, `VITE_LEADS_API_BASE=https://new.thrivewellnessth.com`, `VITE_LEADS_API_TOKEN=<same as DASHBOARD_API_KEY on website>`.
+- In Google Ads, pause old Hormone RSA if label persists and import the policy-safe replacement.
+
+---
