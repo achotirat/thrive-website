@@ -1,9 +1,9 @@
 campaign_name	type	budget_thb	locations	landing_page	status	notes
-food-intol-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/food-intolerance	pending	Week 1 priority
-food-intol-pm	PMax	100	Bangkok	/food-intolerance	pending	Week 2 — uses food-intolerance LP
-hormone-s	Search	200	Bangkok, Nonthaburi, Pathum Thani	/hormones-quiz	pending	Week 1 priority (existing slug)
-iv-drip-pm	PMax	100	Bangkok	/iv-drip	pending	Week 1 priority (PMax inherits agency baseline)
-chelation-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/chelation	pending	Week 2
-hbot-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/hbot	pending	Week 2
-mental-health-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/mental-health	pending	Week 2 — slug to be created (new MDX + page)
-demand-gen	Demand Gen	200	Bangkok	multi by ad group	pending	Week 2 — ad groups: Hormone / IV Drip / Food Intol / HBOT
+food-intol-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/food-intolerance	active	Live 2026-06-04
+food-intol-pm	PMax	100	Bangkok	/food-intolerance	active	Live 2026-06-04 — uses food-intolerance LP
+hormone-s	Search	200	Bangkok, Nonthaburi, Pathum Thani	/hormones-quiz	active	Live 2026-06-04 — use policy-safe RSA replacement if health label persists
+iv-drip-pm	PMax	100	Bangkok	/iv-drip	active	Live 2026-06-04 — PMax inherits agency baseline
+chelation-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/chelation	active	Live 2026-06-04
+hbot-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/hbot	active	Live 2026-06-04
+mental-health-s	Search	150	Bangkok, Nonthaburi, Pathum Thani	/mental-health	active	Live 2026-06-04
+demand-gen	Demand Gen	200	Bangkok	multi by ad group	active	Live 2026-06-04 — ad groups: Hormone / IV Drip / Food Intol / HBOT

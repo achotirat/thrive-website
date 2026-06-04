@@ -17,7 +17,7 @@
 # - 5 descriptions (max 90 chars each)
 # - 1 business name
 #
-# Asset filenames here are placeholders — vkasama / user replaces with real uploaded asset filenames
+# Asset filenames below are suggested upload names. Replace only if the actual uploaded filenames differ.
 #
 asset_type,filename_or_text,dimensions,notes
 landscape_image,iv-drip-landscape-1.jpg,1200x628,Hero shot of drip session
@@ -29,15 +29,15 @@ logo_landscape,thrive-logo-4x1.png,1200x300,Brand logo wide
 logo_square,thrive-logo-1x1.png,1200x1200,Brand logo square
 video_vertical,iv-drip-vertical-30s.mp4,9:16,30s product video for Shorts/Stories
 video_landscape,iv-drip-landscape-30s.mp4,16:9,30s YouTube/Display
-short_headline,[VKASAMA headline 1],,max 30 chars
-short_headline,[VKASAMA headline 2],,max 30 chars
-short_headline,[VKASAMA headline 3],,max 30 chars
-short_headline,[VKASAMA headline 4],,max 30 chars
-short_headline,[VKASAMA headline 5],,max 30 chars
-long_headline,[VKASAMA long headline],,max 90 chars
-description,[VKASAMA description 1],,max 90 chars
-description,[VKASAMA description 2],,max 90 chars
-description,[VKASAMA description 3],,max 90 chars
-description,[VKASAMA description 4],,max 90 chars
-description,[VKASAMA description 5],,max 90 chars
+short_headline,ผิวหมอง เหนื่อย ฟื้นตัวช้า?,,max 30 chars
+short_headline,ทานวิตามินแล้ว ยังไม่ดีขึ้น?,,max 30 chars
+short_headline,ผิวหนังไม่สดใส ต้องการ Detox?,,max 30 chars
+short_headline,ดูดซึม 100% เร็วกว่ากินวิตามิน,,max 30 chars
+short_headline,7 สูตร NAD+ Gluta Chelation,,max 30 chars
+long_headline,IV DRIP ดูดซึม 100% เร็วกว่ากินวิตามิน 10 เท่า ดูแลโดยแพทย์ Thrive,,max 90 chars
+description,IV DRIP ดูดซึม 100% เร็วกว่ากินวิตามิน 10 เท่า 7 สูตรดูแลโดยแพทย์เฉพาะทาง Thrive,,max 90 chars
+description,คุณพริม ผิวใสสว่าง Luminous Skin ใน 45 นาที ด้วย IV DRIP Glutathione ที่ Thrive Wellness,,max 90 chars
+description,"IV DRIP Unlimited 7,900 บาท/เดือน ทำได้ไม่จำกัดครั้ง ประหยัดกว่าซื้อรายครั้ง",,max 90 chars
+description,ผิวหมอง เหนื่อย ฟื้นตัวช้า ลอง IV DRIP เพิ่มพลังงาน ฟื้นฟูเซลล์ ปรึกษาฟรีวันนี้,,max 90 chars
+description,แพทย์เฉพาะทางดูแลทุกขั้นตอน เลือกสูตรวิตามินตามเป้าหมายสุขภาพของคุณ,,max 90 chars
 business_name,Thrive Wellness Clinic,,

@@ -37,6 +37,9 @@ Numbered in the order to import:
 9. `06c-demand-gen-copy-reference.csv` — Demand Gen copy reference for Google Ads UI / asset setup, not a direct RSA import
 10. `01a-search-campaigns.csv` — Search-only campaign shell for all 5 Search campaigns used by `06a`
 11. `02a-search-ad-groups.csv` — Search-only ad groups for all 5 Search campaigns used by `06a`
+12. `03a-keywords-week2-search.csv` — keyword import for `chelation-s`, `hbot-s`, and `mental-health-s`
+13. `03b-keywords-week2-policy-safe-retry.csv` — retry file for Mental Health if `บำบัดซึมเศร้า คลินิก` fails policy/error review
+14. `hormone-import-04b-rsa-policy-safe.csv` — policy-safe Hormone RSA replacement; use if Google Ads labels the original hormone ad for sensitive health wording
 
 All importable priority Search campaigns are pre-set to **Paused** status. Switch to **Enabled** only after a final review and tracking verification.
 
@@ -84,6 +87,9 @@ Do not continue with Performance Max for the Search campaign shells. PMax is onl
 1. Create the campaign using the settings above.
 2. Create the matching ad group from the table above.
 3. Add keywords from `03-keywords-priority.csv` for priority campaigns. For Week 2, use the `keywords` tab/source sheet as the reference.
+   - If `chelation-s`, `hbot-s`, or `mental-health-s` has no keywords, import `03a-keywords-week2-search.csv`.
+   - If Google Ads shows the campaign name as `Chelation-s` with a capital `C`, edit the `Campaign` column in `03a-keywords-week2-search.csv` from `chelation-s` to `Chelation-s` before importing.
+   - If `บำบัดซึมเศร้า คลินิก` fails with an error or policy issue, do not retry that keyword. Use `03b-keywords-week2-policy-safe-retry.csv` instead.
 4. Create one Responsive Search Ad per ad group.
 5. Copy headlines/descriptions from `04-responsive-search-ads-priority.csv` for priority campaigns or `06a-rsa-search-campaigns.csv` for all 5 Search campaigns.
 6. Confirm each RSA has 15 headlines, 4 descriptions, Path 1, Path 2, and the correct final URL.
@@ -123,6 +129,8 @@ Import in this order:
 The campaign is created as `hormone-s`, budget `200฿/day`, Search only, Maximize Conversions, Bangkok + Nonthaburi + Pathum Thani, Thai + English (`th; en` in the CSV), and **Paused**.
 
 The RSA file points to `https://new.thrivewellnessth.com/hormones-quiz`.
+
+If Google Ads labels the Hormone RSA because of health-sensitive wording, pause the old Hormone RSA and import `hormone-import-04b-rsa-policy-safe.csv`. The replacement removes direct personal-health claims such as weight, irregular periods, insomnia, fertility, and patient outcome wording.
 
 If keyword import shows **6 successful / 2 errors**, do not retry the English broad keywords. Continue to the RSA step. The English rows were removed from the import files because they can trigger generic import errors / policy review noise in this account.
 
