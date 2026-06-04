@@ -12,10 +12,10 @@ description: >
 
 ## Overview
 
-This skill wraps `toprank:content-writer` with Thrive-specific requirements.
+This skill wraps `notfair:content-writer` with Thrive-specific requirements.
 Run the base skill first, then apply every Thrive layer in order before delivering.
 
-**REQUIRED BASE SKILL:** Invoke `toprank:content-writer` to complete the standard
+**REQUIRED BASE SKILL:** Invoke `notfair:content-writer` to complete the standard
 SEO content workflow (intent → research → outline → write → quality gate).
 This skill adds layers on top — it does not replace the base.
 
@@ -164,9 +164,9 @@ Every piece must include:
 
 ## Step T6 — GEO Layer (AI Search Optimisation)
 
-After completing standard SEO deliverables from `toprank:content-writer`, apply GEO:
+After completing standard SEO deliverables from `notfair:content-writer`, apply GEO:
 
-**REQUIRED SKILL:** Use `toprank:geo-optimizer` for the full GEO workflow.
+**REQUIRED SKILL:** Use `notfair:geo-optimizer` for the full GEO workflow.
 
 ### Thrive-specific GEO priorities
 
@@ -197,7 +197,7 @@ Before delivering:
 
 ## Final Deliverables
 
-Deliver everything from `toprank:content-writer`, plus append:
+Deliver everything from `notfair:content-writer`, plus append:
 
 ```
 ## Thrive QA Checklist
@@ -226,6 +226,6 @@ Deliver everything from `toprank:content-writer`, plus append:
 | "Studies show…" without a link | Find and link the actual study on PubMed |
 | Writing for medically-literate readers | Re-read every paragraph as if you're a worried patient who just Googled this |
 | FAQ that only answers safe, easy questions | Include what patients are afraid to ask ("Is this safe?", "Will it hurt?", "How much does it cost?") |
-| Skipping the GEO layer | Run `toprank:geo-optimizer` — AI search is now Thrive's primary growth channel |
+| Skipping the GEO layer | Run `notfair:geo-optimizer` — AI search is now Thrive's primary growth channel |
 | Thai-only citations skipped | Thai-institution sources build local authority; include at least one per article |
 | Superlative left in without a source | Every "most", "best", "fastest" needs a citation or must be removed |

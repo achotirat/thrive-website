@@ -62,8 +62,8 @@ Mode:    Full site sweep
 Scope:   [N] Tier A pages (full 8-dimension audit)
          [N] Tier B blog posts (6-dimension audit)
 Agents:  4 parallel
-         · Agent 1 — SEO + GEO  (uses toprank:seo-page + toprank:geo-optimizer on all Tier A)
-         · Agent 2 — Meta + Schema  (HTML analysis + toprank:meta-tags-optimizer spot-checks)
+         · Agent 1 — SEO + GEO  (uses notfair:seo-page + notfair:geo-optimizer on all Tier A)
+         · Agent 2 — Meta + Schema  (HTML analysis + notfair:meta-tags-optimizer spot-checks)
          · Agent 3 — Images + FAQ  (HTML analysis, alt text, JSON-LD FAQ validation)
          · Agent 4 — Originality + E-E-A-T  (WebSearch plagiarism + doctor/reference checks)
 Output:  docs/audits/master-audit.md (updated in place)
@@ -103,11 +103,11 @@ You are running the SEO + GEO audit for the Thrive Wellness website pre-launch r
 
 **For each Tier A page**, do the following in order:
 
-1. Use the Skill tool to invoke `toprank:seo-page` with the page URL. Extract:
+1. Use the Skill tool to invoke `notfair:seo-page` with the page URL. Extract:
    - Overall SEO score (convert to /10 if not already)
    - Top 3 SEO issues identified
 
-2. Use the Skill tool to invoke `toprank:geo-optimizer` with the page URL. Extract:
+2. Use the Skill tool to invoke `notfair:geo-optimizer` with the page URL. Extract:
    - Overall GEO/AI-search score (convert to /10)
    - Top 3 GEO issues (e.g. "no direct-answer paragraph", "entities not explicit", "no FAQ structured for AI snippet")
 
@@ -181,7 +181,7 @@ Parse all `<script type="application/ld+json">` blocks. Check:
 - `Person` schema with `name: "Chanakan Trangansri"` or "ชนากานต์ ตระหง่านศรี" (+2 points)
 - No schema errors: required fields present, correct `@type` values (+1 point)
 
-For Tier A pages with Meta score <8, also invoke `toprank:meta-tags-optimizer` via the
+For Tier A pages with Meta score <8, also invoke `notfair:meta-tags-optimizer` via the
 Skill tool and include its top recommendation in the issues list.
 
 **Return results as JSON at the end of your response:**
@@ -403,11 +403,11 @@ Otherwise it is Tier A (8 dimensions).
 Run each of the 4 audit sets described above, but for only the one page.
 For toprank skill invocations, pass the single page URL.
 
-**For Agent 1 (SEO+GEO):** Run `toprank:seo-page` and `toprank:geo-optimizer`
+**For Agent 1 (SEO+GEO):** Run `notfair:seo-page` and `notfair:geo-optimizer`
 directly (not via sub-agent). Parse scores and issues as defined in Agent 1 prompt above.
 
 **For Agent 2 (Meta+Schema):** Use WebFetch + manual JSON-LD checks as defined above.
-Run `toprank:meta-tags-optimizer` if Meta score < 8.
+Run `notfair:meta-tags-optimizer` if Meta score < 8.
 
 **For Agent 3 (Images+FAQ):** Use WebFetch + manual checks as defined above.
 
