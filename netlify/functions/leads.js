@@ -142,10 +142,10 @@ const requireDashboardApiKey = (event) => {
 };
 
 const getSupabaseConfig = () => {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const table = process.env.SUPABASE_LEADS_TABLE || "leads";
-  const historyTable = process.env.SUPABASE_LEAD_STATUS_HISTORY_TABLE || "lead_status_history";
+  const supabaseUrl = process.env.SUPABASE_URL?.trim();
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+  const table = process.env.SUPABASE_LEADS_TABLE?.trim() || "leads";
+  const historyTable = process.env.SUPABASE_LEAD_STATUS_HISTORY_TABLE?.trim() || "lead_status_history";
 
   if (!supabaseUrl || !serviceRoleKey) return null;
   const restUrl = `${supabaseUrl.replace(/\/$/, "")}/rest/v1`;
@@ -163,7 +163,15 @@ const supabaseHeaders = (config, extra = {}) => ({
 });
 
 const supabaseJson = async (url, options = {}) => {
-  const result = await fetch(url, options);
+  let result;
+  try {
+    result = await fetch(url, options);
+  } catch (error) {
+    const message = error.cause?.message || error.message || "Supabase fetch failed";
+    const wrapped = new Error(`Supabase fetch failed: ${message}`);
+    wrapped.status = 502;
+    throw wrapped;
+  }
   const text = await result.text();
   const body = text ? JSON.parse(text) : null;
 
@@ -456,15 +464,15 @@ exports.handler = async (event) => {
     if (event.httpMethod === "GET") {
       const auth = requireDashboardApiKey(event);
       if (!auth.ok) return response(auth.statusCode, { error: auth.error }, event);
-      if (routeParts[0] && routeParts[1] === "history") return handleGetLeadHistory(event, config, routeParts[0]);
-      if (routeParts.length === 0) return handleGetLeads(event, config);
+      if (routeParts[0] && routeParts[1] === "history") return await handleGetLeadHistory(event, config, routeParts[0]);
+      if (routeParts.length === 0) return await handleGetLeads(event, config);
       return response(404, { error: "Not found" }, event);
     }
 
     if ((event.httpMethod === "PATCH" || event.httpMethod === "POST") && routeParts[0]) {
       const auth = requireDashboardApiKey(event);
       if (!auth.ok) return response(auth.statusCode, { error: auth.error }, event);
-      return handleUpdateLead(event, config, routeParts[0]);
+      return await handleUpdateLead(event, config, routeParts[0]);
     }
 
     if (event.httpMethod !== "POST") {
