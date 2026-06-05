@@ -145,6 +145,14 @@ export const blogPost = defineType({
       validation: (Rule) => Rule.unique().max(6),
     }),
     defineField({
+      name: 'ctaService',
+      title: 'Primary CTA service',
+      type: 'reference',
+      to: [{type: 'service'}],
+      description:
+        'The single service page this post drives readers toward. Used for the sticky CTA button. Leave blank to fall back to the general "Book a consultation" CTA.',
+    }),
+    defineField({
       name: 'references',
       title: 'References',
       type: 'array',
