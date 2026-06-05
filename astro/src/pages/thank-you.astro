@@ -37,6 +37,14 @@ import SEO from '../components/SEO.astro';
       service: params.get('service') || '',
       page_path: window.location.pathname,
     });
+    // Google Ads conversion — fires when thank-you page loads after successful lead form submit
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18181967822/dzvQCKLTorkcRM6f691D',
+        'value': 1.0,
+        'currency': 'THB'
+      });
+    }
   </script>
 </BaseLayout>
 
