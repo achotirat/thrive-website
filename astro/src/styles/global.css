@@ -3173,4 +3173,6 @@ h1.th, h2.th, h3.th {
 
 .blog-cta__btn {
   display: inline-block;
+  color: var(--white, #fff);
+  text-decoration: none;
 }

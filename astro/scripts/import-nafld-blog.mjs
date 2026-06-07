@@ -61,8 +61,13 @@ function stripHtmlComments(text) {
   return text.replace(/<!--[\s\S]*?-->/g, '')
 }
 
+function stripHeadingIds(text) {
+  // Remove Pandoc-style custom heading IDs: ## Title {#my-id}
+  return text.replace(/\s*\{#[^}]+\}/g, '')
+}
+
 async function buildBodyHtml(raw, imageUrlMap) {
-  let text = stripHtmlComments(raw)
+  let text = stripHeadingIds(stripHtmlComments(raw))
 
   // Body starts at the intro paragraph (after H1, metadata, separator, and featured image)
   const introMarker = 'ไขมันพอกตับไม่ใช่โรคของคนดื่มเหล้าเท่านั้น'
