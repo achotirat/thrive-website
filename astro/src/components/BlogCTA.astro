@@ -1,0 +1,30 @@
+---
+export interface Props {
+  serviceSlug: string
+  serviceTitle: string
+  serviceDescription?: string
+  blogSlug: string
+  position: 'top' | 'mid' | 'bottom'
+}
+
+const { serviceSlug, serviceTitle, serviceDescription, blogSlug, position } = Astro.props
+
+const href = `/${serviceSlug}?utm_source=blog&utm_medium=inline-cta&utm_campaign=${blogSlug}&utm_content=cta-${position}`
+const desc = serviceDescription ?? "Bangkok's functional medicine clinic — personalised care, science-backed."
+---
+
+<div class="blog-cta">
+  <div class="blog-cta__label">Thrive แนะนำ</div>
+  <div class="blog-cta__title">{serviceTitle}</div>
+  <p class="blog-cta__desc">{desc}</p>
+  <a
+    href={href}
+    class="btn btn-primary blog-cta__btn"
+    data-gtm-event="blog_cta_click"
+    data-gtm-label={serviceSlug}
+    data-gtm-blog={blogSlug}
+    data-gtm-position={position}
+  >
+    นัดตรวจที่ Thrive →
+  </a>
+</div>

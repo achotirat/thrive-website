@@ -186,6 +186,11 @@ const blogPostsCollection = defineCollection({
       question: z.string(),
       shortAnswer: z.string().optional().default(''),
     })).optional().default([]),
+    ctaService: z.object({
+      slug: z.string(),
+      title: z.string(),
+      shortDescription: z.string().optional(),
+    }).optional(),
     seo: z.object({
       seoTitle: z.string().optional(),
       seoDescription: z.string().optional(),

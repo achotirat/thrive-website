@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
+import BlogCTA from '../../components/BlogCTA.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blogPosts')
@@ -27,6 +28,14 @@ const seoDescriptionFallback = (d.legacyHtml ?? '')
   .slice(0, 155)
   .trim()
 const seoDescription = d.seo?.seoDescription?.trim() || seoDescriptionFallback
+
+const ctaSvc = d.ctaService
+const ctaProps = {
+  serviceSlug: ctaSvc?.slug ?? 'contact',
+  serviceTitle: ctaSvc?.title ?? 'Book your consultation at Thrive',
+  serviceDescription: ctaSvc?.shortDescription,
+  blogSlug: d.slug.current,
+}
 ---
 
 <BlogPostLayout
@@ -53,7 +62,26 @@ const seoDescription = d.seo?.seoDescription?.trim() || seoDescriptionFallback
     </div>
   )}
 
+  <BlogCTA {...ctaProps} position="top" />
+
   <div class="blog-post__body" set:html={bodyHtml} />
+
+  <!-- Mid CTA: pre-rendered into a hidden wrapper, moved after 3rd H2 by JS -->
+  <div id="blog-cta-mid-tpl" hidden aria-hidden="true">
+    <BlogCTA {...ctaProps} position="mid" />
+  </div>
+  <script>
+    const tpl = document.getElementById('blog-cta-mid-tpl')
+    const bodyEl = document.querySelector('.blog-post__body')
+    if (tpl && bodyEl) {
+      const h2s = bodyEl.querySelectorAll('h2')
+      if (h2s.length >= 3) {
+        const cta = tpl.firstElementChild?.cloneNode(true) as Element
+        if (cta) h2s[2].insertAdjacentElement('afterend', cta)
+      }
+      tpl.remove()
+    }
+  </script>
 
   {faqItems.length > 0 && (
     <section class="section faq-section">
@@ -71,4 +99,6 @@ const seoDescription = d.seo?.seoDescription?.trim() || seoDescriptionFallback
       </div>
     </section>
   )}
+
+  <BlogCTA {...ctaProps} position="bottom" />
 </BlogPostLayout>

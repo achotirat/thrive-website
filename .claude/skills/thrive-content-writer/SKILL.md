@@ -254,6 +254,78 @@ Every piece must include:
 
 ---
 
+## Step T5.1 — Image Prompts (MANDATORY — output with every post)
+
+Every Thrive blog post ships with **1 hero image + ≥ 3 inline images**. Image prompts
+must be delivered as a consolidated table at the end of the content, before structured
+data. Do not leave images as TODO — generate prompts during the writing pass.
+
+### Hero vs inline — different jobs, different styles
+
+**Hero image = emotional hook.** It is the og:image shown on LINE shares, Facebook previews, and Google Discover cards. Its only job is to make the target reader stop scrolling and click. Use lifestyle / editorial photography style — warm, human, Bangkok-relevant. A cold medical vector here loses the click.
+
+**Inline images = informational.** These earn their place by explaining something the prose cannot. Use medical diagrams, infographics, and flowcharts. No lifestyle stock here — every inline image must carry informational content.
+
+### Hero image rules
+
+| Rule | Requirement |
+|---|---|
+| **Style** | Lifestyle / editorial photography feel — warm, natural light, real-life setting |
+| **Subject** | A relatable Thai person (30–50s) in a recognisable Bangkok daily-life scene connected to the article topic. Create recognition ("that's me"), not alarm. |
+| **Mood** | Curious, quietly concerned, or health-aware — never sick, never fearful, never clinical |
+| **Avoid** | Stock-photo clichés (stethoscope on desk, pill bottles, hands clasped on white background), obvious AI-generated faces, white hospital settings |
+| **Brand** | Warm teal or amber colour grade; soft natural light; Bangkok context (café, market, home kitchen, morning routine) |
+| **Size** | 1200×630px landscape |
+
+### Inline image rules
+
+| Rule | Requirement |
+|---|---|
+| **Brand colors** | Teal `#2A9D8F` for positive/healthy states; warm amber for caution; deep red for risk/danger |
+| **Style** | Flat-vector illustration or clean medical diagram — NOT lifestyle photography |
+| **Labels** | Thai primary label + small English subtitle on every element |
+| **People** | No stock-photo people, no hands |
+| **Background** | Clean off-white or white |
+
+### Image types and placement
+
+| Image | Style | Role | Placement | Size |
+|---|---|---|---|---|
+| **Hero / Featured** | Lifestyle editorial | Emotional hook → click-through + OG image | Above H1 | 1200×630px |
+| **Inline 1** | Medical diagram | Core concept or anatomy | After first H2 | 1000×500px |
+| **Inline 2** | Infographic | Causes, mechanisms, or comparisons | Mid-body H2 | 1000×600px |
+| **Inline 3** | Flowchart / data viz | Progression, timeline, or process | Key H2 | 1200×450px |
+
+### Image prompt format
+
+Write each prompt as a single paragraph. It must specify:
+1. **Subject** — exactly what is depicted
+2. **Style** — flat-vector / medical diagram / data viz / flowchart
+3. **Labels** — Thai primary + English subtitle
+4. **Colors** — use Thrive palette
+5. **Avoid list** — end with "No stock-photo people, no generic gradients" (or specific exclusions)
+6. **Dimensions**
+
+### Consolidated image table format (append to deliverable)
+
+```markdown
+## Image Prompts
+
+| # | Filename | Size | Placement | Prompt |
+|---|---|---|---|---|
+| Hero | `[slug]-hero.webp` | 1200×630 | Above H1 | [full prompt] |
+| Inline 1 | `[slug]-diagram-1.webp` | 1000×500 | After H2: [section name] | [full prompt] |
+| Inline 2 | `[slug]-infographic.webp` | 1000×600 | After H2: [section name] | [full prompt] |
+| Inline 3 | `[slug]-flowchart.webp` | 1200×450 | After H2: [section name] | [full prompt] |
+```
+
+### File naming convention
+
+`[post-slug]-[descriptor].webp` — all lowercase, hyphens, no spaces.
+Examples: `adrenal-fatigue-cortisol-diagram.webp`, `hbot-oxygen-therapy-hero.webp`
+
+---
+
 ## Step T6 — GEO Layer (AI Search Optimisation)
 
 After completing standard SEO deliverables from `notfair:content-writer`, apply GEO:
@@ -299,6 +371,7 @@ Deliver everything from `notfair:content-writer`, plus append:
 - [ ] Dev note included at top of deliverable: CTA link + label + sticky component reminder
 - [ ] TL;DR summary box at top (3–5 bullets)
 - [ ] Table of Contents included ("In this article") linking to every H2
+- [ ] Image prompts table included (T5.1): 1 hero + ≥3 inline, all with Thrive brand colors, Thai labels, file names, and sizes
 - [ ] CTA block appears in Top position (within first 3 visible elements)
 - [ ] CTA block appears in Bottom position (after FAQ, before References)
 - [ ] 5+ citations, full references listed (include at least 1 Thai-language or
@@ -331,4 +404,6 @@ Deliver everything from `notfair:content-writer`, plus append:
 | CTA not identified before writing | Run T0.1 first — match the topic to a service page so the CTA is woven in naturally, not bolted on |
 | Missing dev note for sticky CTA | Always include the dev note with the matched CTA link — the Astro component needs this to wire up |
 | TOC skipped for "short" posts | TOC is required on ALL posts — length is not a condition |
+| Image prompts missing or vague | Run T5.1 — every post needs 4 prompts with Thrive colors, Thai labels, dimensions, and file names |
+| Stock-photo description in prompt | Prompts must end with explicit avoid list — no people, no gradients, no generic lifestyle scenes |
 | Skeleton order not followed | Deliverable must match the T0 skeleton exactly — reviewers check this before accepting |
