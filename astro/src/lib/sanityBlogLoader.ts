@@ -20,6 +20,11 @@ const GROQ = `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publ
     question,
     shortAnswer
   },
+  ctaService-> {
+    "slug": slug.current,
+    title,
+    shortDescription
+  },
   seo {
     seoTitle,
     seoDescription,
