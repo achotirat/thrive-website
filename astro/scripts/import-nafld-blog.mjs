@@ -287,7 +287,7 @@ async function main() {
   const result = await client.createOrReplace(doc)
   console.log(`  ✓ Document created/replaced: ${result._id}`)
   console.log(`\nView in Sanity Studio:`)
-  console.log(`  https://thrive-sanity-studio.sanity.studio/structure/blogPost;${result._id}`)
+  console.log(`  https://jx3ty6pl155yiizbs6ry5t4q.sanity.studio/structure/blogPost;${result._id}`)
   console.log(`\nDone! Run "npm run build" in astro/ to verify the page renders.`)
 }
 
