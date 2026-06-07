@@ -120,26 +120,24 @@ async function findOligoScanService() {
 }
 
 async function main() {
-  // 1. Upload images
+  // 1. Upload images sequentially to avoid connection timeouts
   console.log('\n── Uploading images ──')
-  const [hero, diagram1, infographic, flowchart] = await Promise.all([
-    uploadImage(
-      'matcha-nutrients-vitamins-hero.webp',
-      'หญิงไทยวัย 30 ปีนั่งในร้านกาแฟกรุงเทพฯ ยามเช้า ถือชามมัทฉะสีเขียวสด มองด้วยสายตาใคร่ครวญและอบอุ่น',
-    ),
-    uploadImage(
-      'matcha-nutrients-diagram-1.webp',
-      'แผนภาพเปรียบเทียบการดูดซึมสารอาหาร: มัทฉะ (100% จากใบทั้งใบ) vs ชาเขียวทั่วไป (20–30% ที่ละลายน้ำ)',
-    ),
-    uploadImage(
-      'matcha-nutrients-infographic.webp',
-      'อินโฟกราฟิกแสดงสารอาหาร 7 ชนิดในมัทฉะ 1 กรัม ได้แก่ วิตามิน K A C แคลเซียม แมกนีเซียม โพแทสเซียม และ EGCG',
-    ),
-    uploadImage(
-      'matcha-absorption-flowchart.webp',
-      'แผนภาพแสดงปัจจัยที่กระทบการดูดซึมสารอาหารจากมัทฉะ: วิธีดื่ม สุขภาพลำไส้ และเกรดมัทฉะ',
-    ),
-  ])
+  const hero = await uploadImage(
+    'matcha-nutrients-vitamins-hero.webp',
+    'หญิงไทยวัย 30 ปีนั่งในร้านกาแฟกรุงเทพฯ ยามเช้า ถือชามมัทฉะสีเขียวสด มองด้วยสายตาใคร่ครวญและอบอุ่น',
+  )
+  const diagram1 = await uploadImage(
+    'matcha-nutrients-diagram-1.webp',
+    'แผนภาพเปรียบเทียบการดูดซึมสารอาหาร: มัทฉะ (100% จากใบทั้งใบ) vs ชาเขียวทั่วไป (20–30% ที่ละลายน้ำ)',
+  )
+  const infographic = await uploadImage(
+    'matcha-nutrients-infographic.webp',
+    'อินโฟกราฟิกแสดงสารอาหาร 7 ชนิดในมัทฉะ 1 กรัม ได้แก่ วิตามิน K A C แคลเซียม แมกนีเซียม โพแทสเซียม และ EGCG',
+  )
+  const flowchart = await uploadImage(
+    'matcha-absorption-flowchart.webp',
+    'แผนภาพแสดงปัจจัยที่กระทบการดูดซึมสารอาหารจากมัทฉะ: วิธีดื่ม สุขภาพลำไส้ และเกรดมัทฉะ',
+  )
 
   // 2. Look up OligoScan service for ctaService field
   console.log('\n── Looking up CTA service ──')
