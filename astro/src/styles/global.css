@@ -39,9 +39,35 @@
   --navy-l:     #eef0fb;
   --navy-xl:    #f6f7fd;
 
-  --teal:       #00ab9e;
-  --teal-d:     #008a7f;
-  --teal-m:     #00c4b5;
+  /* Page-specific aliases used by MDX service pages */
+  --blue:       #2563eb;
+  --blue-d:     #1d4ed8;
+  --blue-l:     #dbeafe;
+  --blue-xl:    #eff6ff;
+
+  --sky:        #0891b2;
+  --sky-d:      #0e7490;
+  --sky-l:      #cffafe;
+  --sky-xl:     #ecfeff;
+
+  --amber:      #d97706;
+  --amber-d:    #92400e;
+  --amber-l:    #fde68a;
+  --amber-xl:   #fffbeb;
+
+  --rose:       #e11d48;
+  --rose-xl:    #fff1f2;
+  --green:      #16a34a;
+  --green-l:    #bbf7d0;
+  --green-xl:   #f0fdf4;
+  --indigo-l:   #e0e7ff;
+  --indigo-xl:  #eef2ff;
+  --plum:       #6d28d9;
+  --forest:     #065f46;
+
+  --teal:       #008a7f;
+  --teal-d:     #006f67;
+  --teal-m:     #00ab9e;
   --teal-l:     #e6f7f6;
   --teal-xl:    #f0fbfa;
 
@@ -55,14 +81,20 @@
 
   /* Text shades */
   --text:       #1e2460;
+  --text-1:     #1e2460;
   --text-2:     #5a6080;
   --text-3:     #9ca5c8;
+  --text-muted: #5a6080;
+  --text-dark:  #0f1328;
   --text-inv:   rgba(255,255,255,0.92);
   --text-inv-2: rgba(255,255,255,0.65);
 
   /* Borders */
   --border:     #dde0f0;
   --border-l:   #eef0fb;
+  --border-xl:  #f6f7fd;
+  --bg-l:       #f8fafc;
+  --bg-alt:     #f6f7fd;
 
   /* Semantic */
   --success:    #1aaa6a;
@@ -136,6 +168,7 @@
   --grad-warm:    linear-gradient(135deg, var(--navy) 0%, #1a3a6a 100%);
   --grad-card:    linear-gradient(160deg, var(--navy-xl) 0%, var(--teal-xl) 100%);
   --grad-overlay: linear-gradient(to bottom, rgba(15,19,40,.55) 0%, rgba(15,19,40,.85) 100%);
+  --quiz-progress: var(--teal);
 }
 
 
@@ -184,7 +217,7 @@ button, input, select, textarea {
 button { cursor: pointer; }
 
 ::selection {
-  background: var(--teal-l);
+  background: #c9f2ef;
   color: var(--navy-d);
 }
 
@@ -3171,8 +3204,15 @@ h1.th, h2.th, h3.th {
   margin-bottom: 0.75rem;
 }
 
-.blog-cta__btn {
-  display: inline-block;
+.blog-cta .blog-cta__btn,
+.blog-post__body .blog-cta .blog-cta__btn {
+  display: inline-flex;
+  color: var(--white, #fff);
+  text-decoration: none;
+}
+
+.blog-cta .blog-cta__btn:hover,
+.blog-post__body .blog-cta .blog-cta__btn:hover {
   color: var(--white, #fff);
   text-decoration: none;
 }
