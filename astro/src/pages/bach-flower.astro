@@ -1,0 +1,53 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import FAQSection from '../components/FAQSection.astro';
+import DoctorAttribution from '../components/DoctorAttribution.astro';
+import CTASection from '../components/CTASection.astro';
+import LeadForm from '../components/LeadForm.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const entry = await getEntry('services', 'bach-flower');
+if (!entry) throw new Error('Missing bach-flower content entry');
+const { Content } = await render(entry);
+const d = entry.data;
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'สุขภาพใจ', href: '/mental-health' },
+  { label: 'Bach Flower Remedies', href: '/bach-flower' },
+];
+---
+
+<BaseLayout>
+  <SEO slot="head" {...d.seo} heroImage={d.hero.image} jsonLd={d.jsonLd} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+  <ServiceHero {...d.hero} />
+  <main class="service-page">
+    <article class="service-content">
+      <Content />
+    </article>
+    <FAQSection items={d.faqs} />
+    <DoctorAttribution doctor={d.doctor} />
+    <section class="section related-services">
+      <div class="section-container">
+        <div class="section-title-center">
+          <span class="section-label">Related Services</span>
+          <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+        </div>
+        <div class="related-services__grid">
+          {d.relatedServices.map((service) => <ServiceCard {...service} />)}
+        </div>
+      </div>
+    </section>
+    <CTASection {...d.cta} />
+    <LeadForm serviceSlug="bach-flower" formTitle="นัดปรึกษา Bach Flower" />
+  </main>
+  <Footer />
+</BaseLayout>
