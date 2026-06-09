@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import SEO from '../../components/SEO.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import BlogCard from '../../components/BlogCard.astro'
+
+const allPosts = await getCollection('blogPosts')
+const posts = allPosts
+  .filter((p) => p.data.category === 'สุขภาพใจ')
+  .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime())
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บทความ', href: '/blog' },
+  { label: 'สุขภาพใจ', href: '/blog/mental-health' },
+]
+
+const seo = {
+  seoTitle: 'รวมบทความสุขภาพจิต | Thrive Wellness Center',
+  description: 'รวมบทความเรื่องสุขภาพจิต ซึมเศร้า ความเครียด และการดูแลจิตใจ จากทีมแพทย์ผู้เชี่ยวชาญที่ Thrive Wellness Center กรุงเทพฯ',
+  ogImage: '/og-image.jpg',
+  ogLocale: 'th_TH',
+  canonicalPath: '/blog/mental-health',
+  noIndex: false,
+  hreflang: [
+    { lang: 'th-TH', href: 'https://new.thrivewellnessth.com/blog/mental-health' },
+    { lang: 'x-default', href: 'https://new.thrivewellnessth.com/blog/mental-health' },
+  ],
+  geo: {
+    region: 'TH-10',
+    placename: 'Bangkok',
+    position: '13.7563;100.5018',
+    icbm: '13.7563, 100.5018',
+  },
+  publishedAt: new Date('2026-01-01'),
+  updatedAt: new Date(),
+  lastMedicalReview: new Date('2026-06-09'),
+  reviewedBy: 'Dr. Noon Pichayaporn',
+  medicalSpecialty: 'Functional Medicine',
+}
+---
+
+<BaseLayout>
+  <SEO slot="head" {...seo} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+
+  <main class="blog-listing-page">
+    <section class="section section--hero blog-listing-hero">
+      <div class="section-container">
+        <div class="section-title-center">
+          <span class="section-label">Mental Health</span>
+          <h1 class="section-title">รวมเรื่อง สุขภาพใจ</h1>
+          <p class="section-subtitle">บทความจากทีมแพทย์ผู้เชี่ยวชาญ ด้านสุขภาพจิต ความเครียด และการดูแลตัวเอง</p>
+          <a href="/mental-health" class="btn btn-primary" style="margin-top:1.5rem;">ดูบริการสุขภาพจิตที่ Thrive →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-grid-section">
+      <div class="section-container">
+        {posts.length === 0 ? (
+          <p class="blog-empty">ยังไม่มีบทความในหมวดนี้ กลับมาเยี่ยมชมเร็วๆ นี้</p>
+        ) : (
+          <div class="blog-grid">
+            {posts.map((post) => (
+              <BlogCard
+                title={post.data.title}
+                slug={post.data.slug.current}
+                excerpt={post.data.excerpt}
+                category={post.data.category ?? ''}
+                mainImage={post.data.mainImage}
+                publishedAt={post.data.publishedAt}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
