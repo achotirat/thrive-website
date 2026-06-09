@@ -37,6 +37,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 
 | หน้าที่ใส่ข้อมูลหมอนุ่นแล้ว | วันที่ |
 |--------------------------|-------|
+| `fit132.mdx` (Astro service page) | 2026-06-09 |
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
 | `hormones-quiz.html` | 2026-05-09 |
@@ -155,6 +156,7 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 
 | URL | Views | สถานะ |
 |-----|------:|-------|
+| `/fit132` | ranking #1 Wix | ✅ Astro เสร็จ (2026-06-09) — MDX + page |
 | `/allergy-ige` | 74 | ✅ เสร็จ |
 | `/urine-organic-test` | 55 | ✅ เสร็จ |
 | `/vitamin-d` | 47 | ✅ เสร็จ |

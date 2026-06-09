@@ -1,0 +1,69 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import FAQSection from '../components/FAQSection.astro';
+import DoctorAttribution from '../components/DoctorAttribution.astro';
+import CTASection from '../components/CTASection.astro';
+import LeadForm from '../components/LeadForm.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SymptomChecklist from '../components/lp/SymptomChecklist.astro';
+import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
+import OfferStack from '../components/lp/OfferStack.astro';
+import RiskReversal from '../components/lp/RiskReversal.astro';
+import { getServicePricing } from '../lib/pricing';
+
+const entry = await getEntry('services', 'fit132');
+if (!entry) throw new Error('Missing fit132 content entry');
+const { Content } = await render(entry);
+const d = entry.data;
+
+const pricing = getServicePricing('fit132');
+const offerStackProps = d.offerStack ? {
+  ...d.offerStack,
+  priceFrom: d.offerStack.priceFrom ?? pricing?.from,
+  priceNote: d.offerStack.priceNote ?? pricing?.note,
+} : undefined;
+
+const crumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'ตรวจสุขภาพเชิงลึก', href: '/check-up' },
+  { label: 'FIT 132', href: '/fit132' },
+];
+---
+
+<BaseLayout>
+  <SEO slot="head" {...d.seo} heroImage={d.hero.image} jsonLd={d.jsonLd} />
+  <Header />
+  <Breadcrumbs crumbs={crumbs} />
+  <ServiceHero {...d.hero} />
+  {d.symptomChecklist && <SymptomChecklist {...d.symptomChecklist} />}
+  <main class="service-page">
+    <article class="service-content">
+      <Content />
+    </article>
+    {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
+    {offerStackProps && <OfferStack {...offerStackProps} />}
+    <DoctorAttribution doctor={d.doctor} />
+    {d.riskReversal && <RiskReversal {...d.riskReversal} />}
+    <FAQSection items={d.faqs} />
+    <section class="section related-services">
+      <div class="section-container">
+        <div class="section-title-center">
+          <span class="section-label">Related Services</span>
+          <h2 class="section-title">บริการที่เกี่ยวข้อง</h2>
+        </div>
+        <div class="related-services__grid">
+          {d.relatedServices.map((service) => <ServiceCard {...service} />)}
+        </div>
+      </div>
+    </section>
+    <CTASection {...d.cta} />
+    <LeadForm serviceSlug="fit132" formTitle="นัดปรึกษาเรื่อง FIT 132 ตรวจภูมิแพ้อาหารแฝงเชิงลึก" />
+  </main>
+  <Footer />
+</BaseLayout>
