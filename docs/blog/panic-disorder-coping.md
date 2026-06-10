@@ -9,7 +9,7 @@ seo_title: วิธีรับมือเมื่อเกิดอากา
 seo_description: อาการแพนิครู้สึกน่ากลัวแต่ไม่อันตราย รู้จักวิธีรับมือทันทีที่ได้ผล ทั้งการหายใจ เทคนิค 5-4-3-2-1 และรู้ว่าเมื่อไหร่ควรพบผู้เชี่ยวชาญที่ Thrive Bangkok
 ---
 
-> **Dev note:** This post uses CTA link `/therapist-consult` with label `คุยกับนักบำบัดที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
+> **Dev note:** This post uses CTA link `/therapist-consult` with label `ปรึกษาทีม Thrive ฟรี →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
 
 <!-- Hero image: panic-disorder-coping-hero.webp -->
 
@@ -33,7 +33,7 @@ seo_description: อาการแพนิครู้สึกน่ากล
 
 ---
 **พร้อมคุยกับผู้เชี่ยวชาญ?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยวิธีที่เหมาะกับคุณ*
 
 ---
@@ -172,7 +172,7 @@ seo_description: อาการแพนิครู้สึกน่ากล
 
 ---
 **พร้อมคุยกับผู้เชี่ยวชาญ?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยวิธีที่เหมาะกับคุณ*
 
 ---

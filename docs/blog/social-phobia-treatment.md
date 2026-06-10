@@ -9,7 +9,7 @@ seo_title: โรคกลัวสังคม คืออะไร รัก�
 seo_description: โรคกลัวสังคมไม่ใช่แค่ขี้อาย แต่คือความกลัวที่รบกวนชีวิต รู้จักอาการ สาเหตุ และวิธีรักษาที่ได้ผลจริง รวมถึงเมื่อไหร่ควรพบผู้เชี่ยวชาญที่ Thrive Bangkok
 ---
 
-> **Dev note:** This post uses CTA link `/therapist-consult` with label `คุยกับนักบำบัดที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
+> **Dev note:** This post uses CTA link `/therapist-consult` with label `ปรึกษาทีม Thrive ฟรี →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
 
 <!-- Hero image: social-phobia-treatment-hero.webp -->
 
@@ -34,7 +34,7 @@ seo_description: โรคกลัวสังคมไม่ใช่แค่
 
 ---
 **พร้อมคุยกับนักบำบัด?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยแนวทางที่เหมาะกับคุณ*
 
 ---
@@ -160,7 +160,7 @@ seo_description: โรคกลัวสังคมไม่ใช่แค่
 
 ---
 **พร้อมคุยกับนักบำบัด?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยแนวทางที่เหมาะกับคุณ*
 
 ---

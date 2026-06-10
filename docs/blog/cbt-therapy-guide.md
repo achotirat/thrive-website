@@ -9,7 +9,7 @@ seo_title: จิตบำบัด CBT คืออะไร ช่วยอะ
 seo_description: CBT คือการบำบัดที่เปลี่ยนวิธีคิดและพฤติกรรมที่ทำให้รู้สึกแย่ รู้จักว่า CBT ช่วยอะไรได้บ้าง ต่างจากจิตแพทย์อย่างไร และควรเริ่มเมื่อไหร่
 ---
 
-> **Dev note:** This post uses CTA link `/therapist-consult` with label `คุยกับนักบำบัดที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
+> **Dev note:** This post uses CTA link `/therapist-consult` with label `ปรึกษาทีม Thrive ฟรี →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
 
 <!-- Hero image: cbt-therapy-guide-hero.webp -->
 
@@ -33,7 +33,7 @@ seo_description: CBT คือการบำบัดที่เปลี่�
 
 ---
 **พร้อมคุยกับนักบำบัด?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยแนวทางที่เหมาะกับคุณ*
 
 ---
@@ -158,7 +158,7 @@ CBT มีโครงสร้างชัดเจน มีการบ้า
 
 ---
 **พร้อมคุยกับนักบำบัด?**
-[คุยกับนักบำบัดที่ Thrive →](/therapist-consult)
+[ปรึกษาทีม Thrive ฟรี →](/contact)
 *Thrive Wellness Center Bangkok — ดูแลสุขภาพใจ ด้วยแนวทางที่เหมาะกับคุณ*
 
 ---
