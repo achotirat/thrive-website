@@ -91,6 +91,7 @@ relevant one. If none match, use the fallback.
 | OligoScan, mineral scan, tissue minerals, heavy metal scan | `/oligoscan` | "Learn about OligoScan at Thrive →" |
 | cancer screening, tumour marker, early detection, cancer risk | `/cancer-screening` | "Learn about cancer screening at Thrive →" |
 | DNA test, genetic test, gene, genome, MTHFR, genetic risk | `/dna-test` | "Explore DNA testing at Thrive →" |
+| epigenetic test, biological age, epigenetic clock, aging test, methylation, longevity test, DunedinPACE | `/epispan` | "Explore EpiSpan biological age testing at Thrive →" |
 | LDL, cholesterol, triglycerides, cardiovascular, heart health, lipid panel | `/check-up` | "Check your cholesterol with a Thrive health check-up →" |
 
 **Fallback (no matching service):**
