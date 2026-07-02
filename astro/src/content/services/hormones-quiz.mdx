@@ -259,7 +259,7 @@ jsonLd:
         <div style="font-size:.85rem;font-weight:700;color:var(--navy);">พลังงาน</div>
         <div style="font-size:.75rem;color:var(--text-3);margin-top:4px;">Cortisol · Thyroid</div>
       </div>
-      <div style="text-align:center;padding:20px 16px;background:#f3e8ff;border-radius:var(--r-lg);">
+      <div style="text-align:center;padding:20px 16px;background:#e6f7f6;border-radius:var(--r-lg);">
         <div style="font-size:1.8rem;margin-bottom:8px;">🔥</div>
         <div style="font-size:.85rem;font-weight:700;color:var(--navy);">เผาผลาญ</div>
         <div style="font-size:.75rem;color:var(--text-3);margin-top:4px;">Insulin · T3/T4</div>
@@ -288,191 +288,6 @@ jsonLd:
   </div>
 </section>
 
-{/* Interactive Quiz */}
-<section class="section section--cream" id="quiz">
-  <div class="container">
-    <div class="section-label">แบบทดสอบ</div>
-    <h2 class="section-title">เช็กสัญญาณฮอร์โมนของคุณ</h2>
-    <p class="section-desc">เลือกอาการที่คุณเป็นในช่วง 3 เดือนที่ผ่านมา (เลือกได้หลายข้อ)</p>
-
-    <div style="background:var(--white);border-radius:var(--r-xl);box-shadow:0 8px 48px rgba(0,0,0,.1);overflow:hidden;max-width:760px;margin:0 auto;">
-      <div style="background:linear-gradient(135deg,#4c1d95,#6d28d9);padding:28px 36px;">
-        <h2 style="color:#fff;font-size:1.35rem;font-weight:700;margin:0 0 6px;">แบบประเมินสัญญาณฮอร์โมน</h2>
-        <p style="color:rgba(255,255,255,.78);font-size:.88rem;margin:0;">เลือกอาการที่ตรงกับคุณ • ผลเบื้องต้นทันที • ไม่เก็บข้อมูลส่วนตัว</p>
-        <div style="height:5px;background:rgba(255,255,255,.2);border-radius:3px;margin-top:16px;"><div id="quizProgress" style="height:100%;background:#c084fc;border-radius:3px;transition:width .4s ease;width:0%;"></div></div>
-      </div>
-
-      <div style="padding:32px 36px;" id="quizBody">
-        <div style="font-size:.72rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">⚡ พลังงาน / การนอนหลับ</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">อ่อนเพลียเรื้อรัง แม้นอนหลับพักผ่อนครบ</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">นอนไม่หลับ หรือตื่นกลางดึกบ่อย</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ง่วงมากช่วงบ่าย แต่กลางคืนหลับยาก</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ตื่นนอนแล้วยังรู้สึกไม่สดชื่น</span>
-          </div>
-        </div>
-
-        <div style="font-size:.72rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">😤 อารมณ์ / จิตใจ</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">อารมณ์แปรปรวน หงุดหงิดง่ายผิดปกติ</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">วิตกกังวลมากขึ้น หรือรู้สึกหดหู่</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">สมาธิสั้น ความจำแย่ลง หัวหมอก</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">แรงจูงใจลดลง ไม่อยากทำอะไร</span>
-          </div>
-        </div>
-
-        <div style="font-size:.72rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">⚖️ น้ำหนัก / ร่างกาย</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">น้ำหนักขึ้นโดยเฉพาะรอบเอว แม้กินน้อย</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ลดน้ำหนักยากมาก แม้ออกกำลังกายแล้ว</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">มวลกล้ามเนื้อลดลง แม้ยังออกกำลังกาย</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ท้อง / หน้าบวมโดยไม่ทราบสาเหตุ</span>
-          </div>
-        </div>
-
-        <div style="font-size:.72rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">✨ ผิวพรรณ / ผม</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ผมร่วงมากขึ้น ผมบาง หรือเส้นผมเปราะ</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ผิวแห้ง หมองคล้ำ หรือเหี่ยวย่นเร็ว</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">สิวขึ้นบริเวณคาง / ขากรรไกร</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ร้อนวูบวาบ หรือเหงื่อออกมากผิดปกติ</span>
-          </div>
-        </div>
-
-        <div style="font-size:.72rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">💜 เพศ / สุขภาพทางเพศ</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">ความต้องการทางเพศลดลงชัดเจน</span>
-          </div>
-          <div onclick="toggleSymptom(this)" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border-l);border-radius:var(--r-md);cursor:pointer;transition:all .2s;user-select:none;">
-            <div style="width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:all .2s;"></div>
-            <span style="font-size:.88rem;color:var(--text-1);line-height:1.4;">รอบเดือนผิดปกติ หรือหมดระยะไปไม่สม่ำเสมอ</span>
-          </div>
-        </div>
-
-        <div style="margin-top:24px;text-align:center;">
-          <button onclick="showResult()" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:700;font-size:1rem;padding:16px 40px;border-radius:50px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 20px rgba(147,51,234,.35);">ดูผลประเมิน →</button>
-          <div id="quizCount" style="font-size:.8rem;color:var(--text-3);margin-top:10px;">เลือกแล้ว 0 อาการ</div>
-        </div>
-      </div>
-
-      <div id="quizResult" style="display:none;padding:32px 36px;text-align:center;">
-        <div id="resultIcon" style="font-size:3.5rem;margin-bottom:16px;"></div>
-        <div id="resultTitle" style="font-size:1.4rem;font-weight:800;margin-bottom:12px;"></div>
-        <div style="max-width:360px;margin:0 auto;">
-          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-3);margin-bottom:4px;"><span>ระดับความเสี่ยง</span><span id="resultScoreText"></span></div>
-          <div style="background:#f3e8ff;border-radius:50px;height:12px;overflow:hidden;"><div id="resultScoreFill" style="height:100%;border-radius:50px;transition:width 1s ease;"></div></div>
-        </div>
-        <div id="resultDesc" style="font-size:.95rem;color:var(--text-2);line-height:1.75;max-width:480px;margin:16px auto 24px;"></div>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px;">
-          <a href="https://line.me/R/ti/p/@thrivewellnessth" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#008f2a;color:#fff;font-weight:700;font-size:.9rem;padding:13px 26px;border-radius:50px;text-decoration:none;">LINE ปรึกษาแพทย์ฟรี</a>
-          <a href="tel:+66959349640" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:700;font-size:.9rem;padding:13px 26px;border-radius:50px;text-decoration:none;">📞 095-934-9640</a>
-        </div>
-        <div><button onclick="retakeQuiz()" style="background:none;border:none;color:#9333ea;font-size:.85rem;font-weight:600;cursor:pointer;margin-top:12px;text-decoration:underline;">ทำแบบทดสอบใหม่</button></div>
-      </div>
-    </div>
-
-    <p style="text-align:center;font-size:.78rem;color:var(--text-3);margin-top:16px;">⚠️ แบบทดสอบนี้ใช้เพื่อประเมินเบื้องต้นเท่านั้น ไม่ใช่การวินิจฉัยทางการแพทย์ กรุณาปรึกษาแพทย์เพื่อการตรวจวินิจฉัยที่ถูกต้อง</p>
-  </div>
-</section>
-
-<script>{`
-  let selectedCount = 0;
-  function toggleSymptom(el) {
-    el.classList.toggle('hq-selected');
-    const isSelected = el.classList.contains('hq-selected');
-    const check = el.querySelector('div');
-    if (isSelected) { el.style.borderColor='#9333ea'; el.style.background='#faf5ff'; check.style.background='#9333ea'; check.style.borderColor='#9333ea'; }
-    else { el.style.borderColor=''; el.style.background=''; check.style.background=''; check.style.borderColor=''; }
-    selectedCount = document.querySelectorAll('.hq-selected').length;
-    const total = document.querySelectorAll('[onclick="toggleSymptom(this)"]').length;
-    document.getElementById('quizCount').textContent = 'เลือกแล้ว ' + selectedCount + ' อาการ';
-    document.getElementById('quizProgress').style.width = (selectedCount / total * 100) + '%';
-  }
-  function showResult() {
-    let icon, title, desc, fillBg, titleColor, fillPct;
-    if (selectedCount <= 3) {
-      icon = '💚'; title = 'สัญญาณดี — ฮอร์โมนอาจยังสมดุล';
-      desc = 'คุณมีอาการที่อาจเกี่ยวกับฮอร์โมนน้อยมาก แต่ยังแนะนำให้ตรวจเป็น baseline อย่างน้อยปีละครั้ง เพื่อติดตามการเปลี่ยนแปลงและป้องกันก่อนมีอาการ';
-      fillBg = 'linear-gradient(90deg,#34d399,#10b981)'; titleColor = '#059669'; fillPct = Math.max(15,(selectedCount/18)*100);
-    } else if (selectedCount <= 8) {
-      icon = '🟡'; title = 'มีสัญญาณเตือน — แนะนำปรึกษาแพทย์';
-      desc = 'คุณมีอาการหลายอย่างที่เกี่ยวกับฮอร์โมนไม่สมดุล การตรวจเลือดเพื่อหาค่าฐาน (baseline) จะช่วยให้แพทย์วางแผนปรับสมดุลได้ตรงจุด ก่อนที่อาการจะรุนแรงขึ้น';
-      fillBg = 'linear-gradient(90deg,#f59e0b,#f97316)'; titleColor = '#d97706'; fillPct = (selectedCount/18)*100;
-    } else {
-      icon = '🔴'; title = 'สัญญาณชัดเจน — ควรตรวจโดยเร็ว';
-      desc = 'คุณมีอาการหลายข้อที่บ่งชี้ว่าฮอร์โมนอาจไม่สมดุลอย่างมีนัยสำคัญ แนะนำนัดปรึกษาแพทย์เพื่อตรวจเลือดและวางแผนรักษาโดยเร็ว การรักษาเนิ่นๆ ได้ผลดีกว่ามาก';
-      fillBg = 'linear-gradient(90deg,#f43f5e,#dc2626)'; titleColor = '#dc2626'; fillPct = Math.min(95,(selectedCount/18)*100);
-    }
-    document.getElementById('resultIcon').textContent = icon;
-    document.getElementById('resultTitle').textContent = title;
-    document.getElementById('resultTitle').style.color = titleColor;
-    document.getElementById('resultDesc').textContent = desc;
-    document.getElementById('resultScoreText').textContent = selectedCount + ' / 18 อาการ';
-    document.getElementById('resultScoreFill').style.background = fillBg;
-    document.getElementById('resultScoreFill').style.width = fillPct + '%';
-    document.getElementById('quizBody').style.display = 'none';
-    document.getElementById('quizResult').style.display = 'block';
-    document.getElementById('quizResult').scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  function retakeQuiz() {
-    document.querySelectorAll('.hq-selected').forEach(el => {
-      el.classList.remove('hq-selected'); el.style.borderColor=''; el.style.background='';
-      const check = el.querySelector('div'); check.style.background=''; check.style.borderColor='';
-    });
-    selectedCount = 0;
-    document.getElementById('quizCount').textContent = 'เลือกแล้ว 0 อาการ';
-    document.getElementById('quizProgress').style.width = '0%';
-    document.getElementById('quizBody').style.display = 'block';
-    document.getElementById('quizResult').style.display = 'none';
-  }
-`}</script>
-
 {/* Hormones we test */}
 <section class="section section--white" id="hormones-tested">
   <div class="container">
@@ -483,49 +298,49 @@ jsonLd:
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">👩</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Estrogen &amp; Progesterone</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Female Sex Hormones</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Female Sex Hormones</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">ควบคุมรอบเดือน การตั้งครรภ์ ผิวพรรณ และอารมณ์ในผู้หญิง ความไม่สมดุลเชื่อมโยงกับ PMS, วัยทอง และภาวะมีบุตรยาก</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">💪</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Testosterone</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Male &amp; Female Androgen</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Male &amp; Female Androgen</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">สำคัญทั้งชายและหญิง ควบคุมกล้ามเนื้อ พลังงาน อารมณ์ และความต้องการทางเพศ ลดลงตามอายุในทั้งสองเพศ</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">😓</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Cortisol &amp; DHEA</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Adrenal Hormones</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Adrenal Hormones</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">ฮอร์โมนจากต่อมหมวกไต ควบคุมการตอบสนองต่อความเครียด พลังงาน และระบบภูมิคุ้มกัน เกี่ยวข้องโดยตรงกับภาวะ Adrenal Fatigue</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">🦋</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Thyroid (T3 / T4 / TSH)</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Thyroid Hormones</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Thyroid Hormones</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">ควบคุมอัตราเผาผลาญทั้งร่างกาย ไทรอยด์ต่ำทำให้อ้วน เหนื่อย และซึมเศร้า ไทรอยด์สูงทำให้ใจสั่น น้ำหนักลดเร็ว</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">🌙</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Melatonin &amp; Sleep Panel</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Sleep Hormones</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Sleep Hormones</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">ควบคุมนาฬิกาชีวิต (Circadian Rhythm) และคุณภาพการนอนหลับ ระดับ Melatonin ลดลงตามอายุ ส่งผลต่อการฟื้นฟูร่างกาย</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">🔬</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Insulin &amp; Glucose Markers</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Metabolic Hormones</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Metabolic Hormones</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">ควบคุมน้ำตาลในเลือดและการสะสมไขมัน ภาวะดื้ออินซูลินเป็นต้นเหตุของโรคอ้วน เบาหวาน และฮอร์โมนเพศผิดปกติ</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">⚡</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">IGF-1 (Growth Hormone)</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Growth &amp; Repair Hormone</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Growth &amp; Repair Hormone</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">สำคัญสำหรับการซ่อมแซมเซลล์ กล้ามเนื้อ และกระดูก GH ลดลงตามอายุ เชื่อมโยงกับกระบวนการชราเร็ว และพลังงานต่ำ</div>
       </div>
       <div style="background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--r-xl);padding:24px;transition:all .28s;">
         <div style="font-size:2rem;margin-bottom:12px;">🫀</div>
         <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;">ออกแบบ Panel เฉพาะบุคคล</div>
-        <div style="font-size:.75rem;font-weight:600;color:#9333ea;margin-bottom:8px;letter-spacing:.03em;">Custom Hormone Panel</div>
+        <div style="font-size:.75rem;font-weight:600;color:#008a7f;margin-bottom:8px;letter-spacing:.03em;">Custom Hormone Panel</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.65;">แพทย์จะเลือกฮอร์โมนที่เหมาะกับอาการและวัตถุประสงค์ของคุณ ไม่ต้องตรวจทุกตัวในครั้งเดียว ประหยัดและตรงจุดกว่า</div>
       </div>
     </div>
@@ -538,32 +353,32 @@ jsonLd:
     <div class="section-label">ใครควรตรวจ</div>
     <h2 class="section-title">คุณเหมาะกับการตรวจฮอร์โมนไหม?</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px;">
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">👩‍💼</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ผู้หญิงอายุ 35 ปีขึ้นไป</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">รอบเดือนเริ่มผิดปกติ มีอาการ PMS รุนแรง หรือเริ่มเข้าสู่วัยทอง ตรวจเพื่อเตรียมพร้อมและปรับสมดุลก่อนที่อาการจะรุนแรง</div>
       </div>
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">👨‍💼</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ผู้ชายอายุ 40 ปีขึ้นไป</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">พลังงานลด กล้ามเนื้อลด น้ำหนักขึ้น หรือสมรรถภาพทางเพศลดลง อาจเป็นสัญญาณ Andropause (Male Menopause) ที่รักษาได้</div>
       </div>
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">😰</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ผู้ที่มีความเครียดสะสมสูง</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">ทำงานหนัก นอนน้อยเรื้อรัง หรืออยู่ในสภาวะกดดันนานๆ ความเครียดทำลายสมดุล Cortisol ซึ่งส่งผลต่อฮอร์โมนทุกตัวในร่างกาย</div>
       </div>
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">⚖️</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ลดน้ำหนักไม่ได้ผล</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">ออกกำลังกายสม่ำเสมอ ควบคุมอาหารแล้ว แต่น้ำหนักไม่ลด หรือลงแล้วกลับมาขึ้นเสมอ ฮอร์โมนอาจเป็นตัวขัดขวาง</div>
       </div>
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">🤰</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ต้องการเตรียมตั้งครรภ์</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">ตรวจฮอร์โมนก่อนวางแผนตั้งครรภ์เพื่อให้มั่นใจว่าร่างกายพร้อม เพิ่มโอกาสตั้งครรภ์และลดความเสี่ยงระหว่างตั้งครรภ์</div>
       </div>
-      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #e9d5ff;">
+      <div style="background:var(--white);border-radius:var(--r-xl);padding:24px;border:1.5px solid #cfeeea;">
         <div style="font-size:1.6rem;margin-bottom:10px;">🛡️</div>
         <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem;">ดูแลสุขภาพเชิงป้องกัน</div>
         <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">ต้องการรู้ baseline ฮอร์โมนของตัวเองก่อนที่จะมีอาการ เพื่อตรวจจับความเปลี่ยนแปลงได้เร็วและวางแผนป้องกันล่วงหน้า</div>
@@ -579,28 +394,28 @@ jsonLd:
     <h2 class="section-title">ตรวจฮอร์โมนที่ Thrive ทำอย่างไร</h2>
     <div style="margin-top:32px;">
       <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border-xl);">
-        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(147,51,234,.35);">1</div>
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#008a7f,#2d358c);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,138,127,.35);">1</div>
         <div>
           <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px;">ปรึกษาแพทย์เพื่อออกแบบ Panel</div>
           <div style="font-size:.85rem;color:var(--text-2);line-height:1.65;">แพทย์ซักประวัติ อาการ และเป้าหมายสุขภาพของคุณ แล้วเลือกฮอร์โมนที่ควรตรวจให้ตรงจุด ไม่ตรวจเกินความจำเป็น</div>
         </div>
       </div>
       <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border-xl);">
-        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(147,51,234,.35);">2</div>
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#008a7f,#2d358c);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,138,127,.35);">2</div>
         <div>
           <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px;">เจาะเลือด งดอาหาร 8–12 ชั่วโมงก่อน</div>
           <div style="font-size:.85rem;color:var(--text-2);line-height:1.65;">นัดเจาะเลือดช่วงเช้า ก่อน 10.00 น. สำหรับผู้หญิงแนะนำวันที่ 2–5 ของรอบเดือน เพื่อผลที่แม่นยำที่สุด ใช้เวลาประมาณ 10 นาที</div>
         </div>
       </div>
       <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border-xl);">
-        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(147,51,234,.35);">3</div>
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#008a7f,#2d358c);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,138,127,.35);">3</div>
         <div>
           <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px;">รอผล 1–3 วันทำการ</div>
           <div style="font-size:.85rem;color:var(--text-2);line-height:1.65;">ส่งตัวอย่างเลือดไปยังห้องแล็บมาตรฐาน ผลส่วนใหญ่ทราบภายใน 1 วันทำการ บางรายการอาจใช้เวลา 3 วัน</div>
         </div>
       </div>
       <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;">
-        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(147,51,234,.35);">4</div>
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#008a7f,#2d358c);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,138,127,.35);">4</div>
         <div>
           <div style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px;">แพทย์แปลผลและวางแผนรักษา</div>
           <div style="font-size:.85rem;color:var(--text-2);line-height:1.65;">แพทย์อธิบายผลเลือดโดยละเอียด เปรียบเทียบกับค่ามาตรฐาน และออกแบบแผนปรับสมดุลฮอร์โมนเฉพาะบุคคล ไม่ว่าจะเป็นการปรับไลฟ์สไตล์ โภชนาการ อาหารเสริม หรือการรักษาเพิ่มเติม</div>
@@ -617,8 +432,8 @@ jsonLd:
     <h2 class="section-title" style="font-size:1.2rem;">ผลต่างกันแค่ตัวเดียว — รักษาต่างกันสิ้นเชิง</h2>
     <p class="section-desc" style="font-size:.88rem;">สองเคสนี้มีอาการคล้ายกัน แต่ Panel ครบบอกต้นเหตุที่ต่างกันโดยสิ้นเชิง ถ้าตรวจแค่ 1–2 ตัว แพทย์อาจวินิจฉัยผิดทั้งสองราย</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;">
-      <div style="background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:16px;padding:20px;">
-        <div style="font-size:.68rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">เคส 1</div>
+      <div style="background:#f0fbfa;border:1.5px solid #cfeeea;border-radius:16px;padding:20px;">
+        <div style="font-size:.68rem;font-weight:700;color:#008a7f;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">เคส 1</div>
         <div style="font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:4px;">คุณ ก. อายุ 40 ปี</div>
         <div style="font-size:.8rem;color:var(--text-2);margin-bottom:10px;">ร้อนวูบวาบ น้ำหนักขึ้น ตัวบวม — ประจำเดือนยังปกติ</div>
         <div style="padding:10px 12px;background:#fff;border-radius:10px;margin-bottom:10px;">
@@ -626,8 +441,8 @@ jsonLd:
         </div>
         <div style="font-size:.78rem;font-weight:700;color:#059669;">→ Estrogen Dominance<br/><span style="font-weight:500;">ให้ Progesterone ถ่วงดุล</span></div>
       </div>
-      <div style="background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:16px;padding:20px;">
-        <div style="font-size:.68rem;font-weight:700;color:#9333ea;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">เคส 2</div>
+      <div style="background:#f0fbfa;border:1.5px solid #cfeeea;border-radius:16px;padding:20px;">
+        <div style="font-size:.68rem;font-weight:700;color:#008a7f;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">เคส 2</div>
         <div style="font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:4px;">คุณผึ้ง อายุ 43 ปี</div>
         <div style="font-size:.8rem;color:var(--text-2);margin-bottom:10px;">เหนื่อยง่าย นอนไม่หลับ — ประจำเดือนยังมา</div>
         <div style="padding:10px 12px;background:#fff;border-radius:10px;margin-bottom:10px;">
@@ -637,7 +452,7 @@ jsonLd:
       </div>
     </div>
     <div style="text-align:center;margin-top:20px;">
-      <a href="/blog/female-hormone-panel-age-40" style="display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:#7c3aed;text-decoration:none;border:1.5px solid #ddd6fe;padding:10px 22px;border-radius:50px;background:#fff;">
+      <a href="/blog/female-hormone-panel-age-40" style="display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:#2d358c;text-decoration:none;border:1.5px solid #cfeeea;padding:10px 22px;border-radius:50px;background:#fff;">
         อ่านรายละเอียดทั้งสองเคส พร้อมอธิบายว่าทำไมฮอร์โมนถึงต้องตรวจเป็นทีม →
       </a>
     </div>
@@ -647,7 +462,7 @@ jsonLd:
 {/* Mid-page CTA */}
 <section class="section section--cream">
   <div class="container">
-    <div style="background:linear-gradient(135deg,#4c1d95 0%,#6d28d9 50%,#7c3aed 100%);border-radius:var(--r-xl);padding:52px 40px;text-align:center;">
+    <div style="background:linear-gradient(135deg,#1f2568 0%,#008a7f 50%,#2d358c 100%);border-radius:var(--r-xl);padding:52px 40px;text-align:center;">
       <h2 style="color:#fff;font-size:1.55rem;font-weight:800;margin-bottom:10px;">พร้อมตรวจสมดุลฮอร์โมน?</h2>
       <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:28px;">ปรึกษาแพทย์ฟรี ออกแบบ Panel ที่เหมาะกับคุณโดยเฉพาะ<br />ผล 1 วัน · เปิดทุกวัน 10:00–19:00</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
