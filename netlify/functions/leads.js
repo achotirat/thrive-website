@@ -510,8 +510,27 @@ exports.handler = async (event) => {
 
     if (!result.ok) {
       const detail = await result.text();
-      console.error("Supabase insert failed", detail);
-      return response(502, { ok: false, error: "Could not save lead" }, event);
+      let parsed = null;
+      try {
+        parsed = detail ? JSON.parse(detail) : null;
+      } catch (parseError) {
+        parsed = null;
+      }
+      // Structured log so the real Postgres/PostgREST reason is greppable in
+      // Netlify function logs (e.g. PGRST204 "Could not find the 'X' column").
+      console.error("Supabase insert failed", {
+        status: result.status,
+        code: parsed?.code || null,
+        message: parsed?.message || detail || null,
+      });
+      const body = { ok: false, error: "Could not save lead" };
+      // Opt-in passthrough for debugging schema drift without digging logs.
+      // Leave LEAD_DEBUG_ERRORS unset in production to keep responses generic.
+      if (process.env.LEAD_DEBUG_ERRORS === "1") {
+        body.code = parsed?.code || null;
+        body.detail = parsed?.message || detail || null;
+      }
+      return response(502, body, event);
     }
 
     const saved = await result.json();

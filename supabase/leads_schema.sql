@@ -1,3 +1,19 @@
+-- ============================================================================
+-- IMPORTANT: This file is the source of truth for the Supabase `leads` schema,
+-- but editing it does NOT change the live database. You MUST apply changes to
+-- the production Supabase project by hand (SQL Editor) whenever you add or
+-- change a column here — otherwise the Netlify `leads` function will 502 with
+-- PostgREST error PGRST204 ("Could not find the 'X' column ... in the schema
+-- cache") because it writes every column listed here on every insert.
+--
+-- To apply: Supabase Dashboard -> SQL Editor -> paste this ENTIRE file -> Run.
+-- The whole file is idempotent (create ... if not exists / add column if not
+-- exists), so re-running it only fills in what the live table is missing.
+-- After DDL, PostgREST reloads its cache automatically; `notify pgrst,
+-- 'reload schema';` at the bottom forces it immediately.
+-- See docs/MIGRATIONS.md for the full checklist.
+-- ============================================================================
+
 create extension if not exists pgcrypto;
 
 create table if not exists public.leads (
@@ -113,3 +129,8 @@ create trigger leads_set_updated_at
 before update on public.leads
 for each row
 execute function public.set_updated_at();
+
+-- Force PostgREST to refresh its schema cache immediately after any DDL above,
+-- so new columns are visible to the Netlify function without waiting for the
+-- automatic reload. Safe to run every time.
+notify pgrst, 'reload schema';
