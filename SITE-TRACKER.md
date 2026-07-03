@@ -38,6 +38,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | หน้าที่ใส่ข้อมูลหมอนุ่นแล้ว | วันที่ |
 |--------------------------|-------|
 | `fit132.mdx` (Astro service page) | 2026-06-09 |
+| `epispan.mdx` (Astro service page) | 2026-07-02 |
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
 | `hormones-quiz.html` | 2026-05-09 |
