@@ -1886,6 +1886,7 @@ h1.th, h2.th, h3.th {
   display: block;
   color: var(--navy);
   font-size: var(--text-xl);
+  overflow-wrap: break-word;
 }
 
 .service-hero__stats span {
