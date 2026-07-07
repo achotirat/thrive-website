@@ -14,11 +14,12 @@ export function getServicePricing(slug: string): ServicePricing | undefined {
   const pricing = entry as ServicePricing;
 
   if (pricing.draft) {
-    const reviewer = pricing.priceReviewRequiredBy ?? 'apanit-pueng';
+    // Draft prices must never surface internal review workflow to visitors —
+    // show a customer-facing "ask us" line instead (same pattern as mental-health).
     return {
       ...pricing,
-      from: undefined,
-      note: `ราคากำลังรอ review โดย @${reviewer} ก่อนเผยแพร่`,
+      from: 'สอบถามราคา',
+      note: 'สอบถามราคาและโปรโมชันปัจจุบันได้ทาง LINE ทีมงานตอบไวภายในวันเดียวกัน',
     };
   }
 
