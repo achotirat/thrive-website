@@ -78,20 +78,17 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
     ];
 
     const url = new URL(window.location.href);
-    sessionStorage.setItem('landing_page', window.location.href);
+    // First-touch only — BaseLayout already captures the true landing page;
+    // overwriting here would report "page where the form lives" instead.
+    if (!sessionStorage.getItem('landing_page')) {
+      sessionStorage.setItem('landing_page', window.location.href);
+    }
 
     attributionKeys.forEach((key) => {
       const value = url.searchParams.get(key);
       if (value) {
         sessionStorage.setItem(key, value);
-        console.log(`[LeadForm IMMEDIATE] Captured ${key}=${value}`);
       }
-    });
-
-    console.log('[LeadForm IMMEDIATE] sessionStorage:', {
-      landing_page: sessionStorage.getItem('landing_page'),
-      gclid: sessionStorage.getItem('gclid'),
-      utm_source: sessionStorage.getItem('utm_source'),
     });
   })();
 </script>
@@ -117,23 +114,17 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
 
     const url = new URL(window.location.href);
 
-    // Store current page URL as landing_page
-    sessionStorage.setItem('landing_page', window.location.href);
+    // First-touch only — keep the page the visitor actually arrived on
+    if (!sessionStorage.getItem('landing_page')) {
+      sessionStorage.setItem('landing_page', window.location.href);
+    }
 
     // Store each attribution param from URL query string
     attributionKeys.forEach((key) => {
       const value = url.searchParams.get(key);
       if (value) {
         sessionStorage.setItem(key, value);
-        console.log(`[LeadForm] Captured ${key}=${value}`);
       }
-    });
-
-    // Debug log
-    console.log('[LeadForm] sessionStorage:', {
-      landing_page: sessionStorage.getItem('landing_page'),
-      gclid: sessionStorage.getItem('gclid'),
-      utm_source: sessionStorage.getItem('utm_source'),
     });
   })();
 
@@ -211,6 +202,11 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
           status.textContent = 'ยังส่งแบบฟอร์มไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
           status.dataset.state = 'error';
         }
+        // Turnstile tokens are single-use: without a reset, every retry re-sends
+        // the consumed token and fails until the page is reloaded.
+        const turnstile = (window as { turnstile?: { reset: (el: Element) => void } }).turnstile;
+        const widget = form.querySelector('.cf-turnstile');
+        if (turnstile && widget) turnstile.reset(widget);
       } finally {
         if (button instanceof HTMLButtonElement) button.disabled = false;
       }
