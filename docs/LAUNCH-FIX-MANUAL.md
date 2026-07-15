@@ -47,7 +47,25 @@ option. Decide the policy, then Claude can implement:
 2. Banner needs an explicit decline button either way.
 3. After implementation, re-test conversions in Tag Assistant in BOTH consent states.
 
-## 4. Cutover checklist (when the site goes public)
+## 4. Cutover checklist — 📅 SCHEDULED FOR OCTOBER 2026 (hard deadline: Wix expires November 2026)
+
+**Timeline (noted 2026-07-15):** execute the cutover in October 2026 so the new site is
+live, indexed, and redirects are proven BEFORE the Wix subscription lapses in November.
+Do not wait for November — once Wix expires you lose the ability to inspect the old
+site's URLs and content.
+
+**Prep to do while Wix is still accessible (September at the latest):**
+- Export the full list of live Wix URLs → this becomes the 301 redirect map (step 5).
+- Save any Wix content/images not yet migrated.
+
+**Decision still open (revisit in October):** an advisor proposed a separate ads-only
+domain (e.g. thriveclinicbangkok.com) with policy-safe LPs linking to the main site.
+Claude's assessment (2026-07-15): the "clean domain bridging to the real content"
+pattern risks Google's *circumventing systems* policy (account-level suspension) and
+splits SEO/entity signals — recommended alternative is scaling the existing `/lp/*`
+policy-safe landing pages on the main domain (same benefits, one domain). Decide
+before cutover; if the two-domain route is chosen anyway, the ads domain must be a
+fully self-sufficient compliant site, not a doorway.
 
 Everything is now normalized to the domain in ONE place, so cutover is short:
 
