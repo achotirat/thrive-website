@@ -1,7 +1,7 @@
 # CLAUDE.md — Thrive Website Repo
 
 ## What this repo
-Public marketing site for Thrive Wellness Center (Bangkok). Migrating from Wix to Astro.
+Public marketing site for Thrive Wellness Clinic (Bangkok). Migrating from Wix to Astro.
 **Source-of-truth plan:** `plan_08052026.md` — read this first if unsure about any decision.
 
 ## Stack (locked — do not change without updating plan)

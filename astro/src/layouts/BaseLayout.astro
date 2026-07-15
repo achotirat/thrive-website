@@ -11,6 +11,40 @@ const { lang = 'th' } = Astro.props;
 <!doctype html>
 <html lang={lang}>
   <head>
+    <!-- Google Consent Mode v2 — MUST run before GTM and gtag.js load.
+         PDPA opt-in: everything defaults to denied; the banner (bottom of
+         <body>) updates to granted on accept. Google models conversions for
+         denied traffic via cookieless pings. -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500,
+      });
+      gtag('set', 'ads_data_redaction', true);
+      gtag('set', 'url_passthrough', true);
+      (function () {
+        // Migrate the legacy accept-only flag, then restore a stored choice
+        // as early as possible so returning visitors keep full measurement.
+        var consent = localStorage.getItem('pdpa_consent');
+        if (!consent && localStorage.getItem('pdpa_accepted') === '1') {
+          consent = 'granted';
+          localStorage.setItem('pdpa_consent', 'granted');
+        }
+        if (consent === 'granted') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
+          });
+        }
+      })();
+    </script>
     <!-- Google Tag Manager -->
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,8 +55,6 @@ const { lang = 'th' } = Astro.props;
     <!-- Google tag (Google Ads) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18181967822"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18181967822');
     </script>
@@ -48,20 +80,37 @@ const { lang = 'th' } = Astro.props;
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <slot />
-    <!-- PDPA Cookie Consent -->
-    <div id="pdpa-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a2b3c;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem;line-height:1.5;">
-      <p style="margin:0;max-width:640px;">เว็บไซต์นี้ใช้คุกกี้เพื่อพัฒนาประสบการณ์การใช้งานและวิเคราะห์การเข้าชม ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) การใช้งานเว็บไซต์ต่อไปถือว่าคุณยอมรับนโยบายคุกกี้ของเรา</p>
-      <button id="pdpa-accept" style="background:#007a72;color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">ยอมรับ</button>
+    <!-- PDPA Cookie Consent (Consent Mode v2 — defaults set in <head>) -->
+    <div id="pdpa-banner" hidden style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a2b3c;color:#fff;padding:16px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem;line-height:1.5;">
+      <p style="margin:0;max-width:640px;">เว็บไซต์นี้ใช้คุกกี้เพื่อวิเคราะห์การเข้าชมและวัดผลการโฆษณา ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) คุณเลือกได้ว่าจะยอมรับคุกกี้ทั้งหมด หรือใช้เฉพาะคุกกี้ที่จำเป็นเท่านั้น</p>
+      <div style="display:flex;gap:10px;flex-shrink:0;">
+        <button id="pdpa-decline" style="background:transparent;color:#cbd5e1;border:1px solid #64748b;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">จำเป็นเท่านั้น</button>
+        <button id="pdpa-accept" style="background:#007a72;color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">ยอมรับทั้งหมด</button>
+      </div>
     </div>
     <script is:inline>
       (function() {
-        if (!localStorage.getItem('pdpa_accepted')) {
-          document.getElementById('pdpa-banner').style.display = 'flex';
+        var banner = document.getElementById('pdpa-banner');
+        if (!localStorage.getItem('pdpa_consent')) {
+          banner.hidden = false;
+          banner.style.display = 'flex';
         }
-        document.getElementById('pdpa-accept').addEventListener('click', function() {
-          localStorage.setItem('pdpa_accepted', '1');
-          document.getElementById('pdpa-banner').style.display = 'none';
-        });
+        function choose(value) {
+          localStorage.setItem('pdpa_consent', value);
+          banner.hidden = true;
+          banner.style.display = 'none';
+          if (value === 'granted') {
+            gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              analytics_storage: 'granted',
+            });
+          }
+          window.dataLayer.push({ event: 'pdpa_consent_' + value });
+        }
+        document.getElementById('pdpa-accept').addEventListener('click', function() { choose('granted'); });
+        document.getElementById('pdpa-decline').addEventListener('click', function() { choose('denied'); });
       })();
     </script>
 

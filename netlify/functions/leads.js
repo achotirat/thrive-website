@@ -162,6 +162,52 @@ const supabaseHeaders = (config, extra = {}) => ({
   ...extra,
 });
 
+// ---- Rate limiting (public POST /api/leads only) ---------------------------
+// Layer 1: in-memory per-IP throttle. State lives per warm function container,
+// so it resets on cold starts and is not shared across concurrent instances —
+// it is a cheap first line against dumb floods, not a guarantee.
+// Layer 2 (persistent, cross-instance): duplicate-phone cooldown backed by a
+// Supabase lookup — the same phone number cannot create more than one lead per
+// cooldown window, which also absorbs double-clicks and retry storms.
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX_POSTS = Number.parseInt(process.env.LEADS_RATE_LIMIT_PER_MINUTE || "5", 10);
+const DUPLICATE_COOLDOWN_MINUTES = Number.parseInt(process.env.LEADS_DUPLICATE_COOLDOWN_MINUTES || "10", 10);
+const rateBuckets = new Map();
+
+const isRateLimited = (ip) => {
+  if (!ip || !Number.isFinite(RATE_LIMIT_MAX_POSTS) || RATE_LIMIT_MAX_POSTS <= 0) return false;
+  const now = Date.now();
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  if (rateBuckets.size > 5000) {
+    for (const [key, times] of rateBuckets) {
+      if (!times.length || times[times.length - 1] <= cutoff) rateBuckets.delete(key);
+    }
+  }
+  const bucket = (rateBuckets.get(ip) || []).filter((t) => t > cutoff);
+  bucket.push(now);
+  rateBuckets.set(ip, bucket);
+  return bucket.length > RATE_LIMIT_MAX_POSTS;
+};
+
+const findRecentLeadByPhone = async (config, phone, minutes) => {
+  if (!phone || !Number.isFinite(minutes) || minutes <= 0) return null;
+  const since = new Date(Date.now() - minutes * 60_000).toISOString();
+  const url =
+    `${config.leadsUrl}?select=lead_id,created_at` +
+    `&phone=eq.${encodeURIComponent(phone)}` +
+    `&created_at=gte.${encodeURIComponent(since)}` +
+    `&order=created_at.desc&limit=1`;
+  try {
+    const result = await fetch(url, { headers: supabaseHeaders(config) });
+    if (!result.ok) return null; // fail open — a broken check must never block real leads
+    const rows = await result.json();
+    return Array.isArray(rows) && rows[0] ? rows[0] : null;
+  } catch (error) {
+    return null;
+  }
+};
+// -----------------------------------------------------------------------------
+
 const supabaseJson = async (url, options = {}) => {
   let result;
   try {
@@ -479,17 +525,23 @@ exports.handler = async (event) => {
       return response(405, { ok: false, error: "Method not allowed" }, event);
     }
 
+    const clientIp =
+      event.headers["x-nf-client-connection-ip"] ||
+      event.headers["x-forwarded-for"]?.split(",")[0]?.trim();
+
+    if (isRateLimited(clientIp)) {
+      console.warn("Lead POST rate-limited", { ip: clientIp });
+      return response(429, { ok: false, error: "Too many requests, please try again shortly" }, event);
+    }
+
     const data = await parseBody(event);
     if (emptyToNull(data.website)) {
       return response(200, { ok: true, lead_id: null }, event);
     }
 
     const turnstileToken = data["cf-turnstile-response"] || data.turnstile_token;
-    const ip =
-      event.headers["x-nf-client-connection-ip"] ||
-      event.headers["x-forwarded-for"]?.split(",")[0]?.trim();
 
-    const captchaOk = await verifyTurnstile(turnstileToken, ip);
+    const captchaOk = await verifyTurnstile(turnstileToken, clientIp);
     if (!captchaOk) {
       return response(400, { ok: false, error: "Captcha verification failed" }, event);
     }
@@ -497,6 +549,14 @@ exports.handler = async (event) => {
     const lead = buildLeadPayload(data, event);
     if (!lead.name || !lead.phone) {
       return response(400, { ok: false, error: "Name and phone are required" }, event);
+    }
+
+    // Duplicate-phone cooldown: same phone within the window returns the
+    // existing lead as a success (idempotent for double-clicks/retries, and a
+    // persistent cross-instance brake on phone-spam floods).
+    const recent = await findRecentLeadByPhone(config, lead.phone, DUPLICATE_COOLDOWN_MINUTES);
+    if (recent) {
+      return response(200, { ok: true, lead_id: recent.lead_id || null, duplicate: true }, event);
     }
 
     const result = await fetch(config.leadsUrl, {
