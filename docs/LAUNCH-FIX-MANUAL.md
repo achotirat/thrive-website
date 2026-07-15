@@ -6,7 +6,7 @@ access, real-world data, or a business decision. Ordered by priority.
 
 ---
 
-## 1. Turn Cloudflare Turnstile ON in production 🔴 (bot protection is currently OFF)
+## 1. Turn Cloudflare Turnstile ON in production — ✅ DONE 2026-07-13 (env vars set by owner)
 
 The built site has no Turnstile widget because `PUBLIC_TURNSTILE_SITE_KEY` was not set at
 build time, and the API deliberately skips verification when `TURNSTILE_SECRET_KEY` is
@@ -25,7 +25,7 @@ unset. Result: `/api/leads` accepts unlimited unverified POSTs.
 5. Optional hardening (code change — ask Claude): make the API fail **closed** in
    production when `TURNSTILE_SECRET_KEY` is missing instead of silently skipping.
 
-## 2. Rate-limit `/api/leads` 🔴
+## 2. Rate-limit `/api/leads` — ✅ DONE 2026-07-13 (PR #65: per-IP throttle + duplicate-phone cooldown)
 
 No throttling exists today; one script can create thousands of junk leads (and poison
 Google Ads conversion data). Two options:
@@ -35,7 +35,7 @@ Google Ads conversion data). Two options:
 - **Code-level** (ask Claude): duplicate-phone cooldown before insert (reject if the same
   phone submitted within N minutes) + per-IP counter. Works on any plan.
 
-## 3. PDPA / Google Consent Mode v2 🔴 (decision, then a code task)
+## 3. PDPA / Google Consent Mode v2 — ✅ DONE 2026-07-13 (PR #65: denied-by-default + accept/decline banner)
 
 Today GTM + the Google Ads tag fire before consent, and the banner has no "decline"
 option. Decide the policy, then Claude can implement:
@@ -93,14 +93,14 @@ Provide these and Claude wires them into the Physician JSON-LD site-wide:
    any hospital/university profile.
 3. One canonical credential string (jobTitle currently varies across pages).
 
-## 7. Brand-name consistency 🟡 (decision)
+## 7. Brand-name consistency — ✅ DONE 2026-07-13 (owner chose “Thrive Wellness Clinic”; normalized site-wide incl. llms.txt). Remaining: confirm Google Business Profile uses the same name.
 
 JSON-LD is split between "Thrive Wellness Clinic" (36 pages) and "Thrive Wellness Center"
 (home/about/contact). Check the exact name on your **Google Business Profile** and Thai
 clinic license, pick one, and tell Claude — one normalization pass fixes all pages.
 NAP consistency (name/address/phone matching GBP) is a local-SEO ranking factor.
 
-## 8. Titles & meta descriptions 🟡 (content team, use the audit as the worklist)
+## 8. Titles & meta descriptions — ✅ DONE 2026-07-13 (all 41 indexable pages: titles 45–60 chars, descriptions 140–160, Thai keyword first; check-up twins re-framed as แพ็กเกจ to reduce cannibalization)
 
 38/41 titles are 61–92 chars (Google truncates ~60). The dual Thai+English pattern is the
 cause — decide whether English keywords stay (expat audience) before trimming. Worst
@@ -108,7 +108,7 @@ first: /gluta (92), /chelation (85), /dna-test (84), /vitamins-and-micronutrient
 /urine-organic-test (82). Per-page targets are in each page's block in
 `docs/audits/master-audit.md`. Pattern that fits: `<Thai keyword phrase> | Thrive Wellness` ≤ 60 chars.
 
-## 9. Blog (Tier B) — the weakest area, unchanged 🟡
+## 9. Blog (Tier B) — 🔶 CODE SIDE DONE 2026-07-13 (BlogPosting+BreadcrumbList on posts, Blog/CollectionPage+ItemList on listings, domain from astro.config, doctor-name fix; meta-description fallback was already live). Still open: vkasama fills seoDescription in Sanity; verify /blog/female-hormone-panel-age-40 exists; re-audit 63 posts from a networked session.
 
 1. Verify whether `feature/blog-tierb-seo` branch (adds BlogPosting/MedicalWebPage
    JSON-LD to blog layout) is still valid → rebase + merge, or ask Claude to redo it.
