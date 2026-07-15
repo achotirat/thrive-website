@@ -21,9 +21,47 @@ const crumbs = [
   { label: 'บทความ', href: '/blog' },
 ]
 
+const baseUrl = new URL(Astro.site!).origin
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${baseUrl}/blog#blog`,
+  name: 'บทความสุขภาพ — Thrive Wellness Clinic',
+  url: `${baseUrl}/blog`,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Thrive Wellness Clinic',
+    url: baseUrl,
+    logo: { '@type': 'ImageObject', url: `${baseUrl}/Thrive-Logo-600px.png` },
+  },
+}
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: posts.slice(0, 20).map((post, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: post.data.title,
+    url: `${baseUrl}/blog/${post.data.slug.current}`,
+  })),
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.label,
+    item: `${baseUrl}${crumb.href}`,
+  })),
+}
+
 const seo = {
-  seoTitle: 'บทความสุขภาพ | Thrive Wellness Center',
-  description: 'บทความสุขภาพจากทีมแพทย์ผู้เชี่ยวชาญ ด้านฮอร์โมน โภชนาการ สุขภาพจิต และภูมิคุ้มกัน',
+  seoTitle: 'บทความสุขภาพจากทีมแพทย์ | Thrive Wellness Clinic',
+  description: 'บทความสุขภาพจากทีมแพทย์ Thrive Wellness Clinic กรุงเทพฯ — ฮอร์โมน โภชนาการ ภูมิแพ้อาหารแฝง สุขภาพจิต ภูมิคุ้มกัน และเวชศาสตร์ชะลอวัย อ่านฟรีทุกบทความ',
   ogImage: '/og-image.jpg',
   ogLocale: 'th_TH',
   canonicalPath: '/blog',
@@ -42,8 +80,9 @@ const seo = {
   publishedAt: new Date('2026-01-01'),
   updatedAt: new Date(),
   lastMedicalReview: new Date('2026-01-01'),
-  reviewedBy: 'Dr. Noon Pichayaporn',
+  reviewedBy: 'พญ. ชนากานต์ ตระหง่านศรี',
   medicalSpecialty: 'Functional Medicine',
+  jsonLd: [blogSchema, itemListSchema, breadcrumbSchema],
 }
 ---
 

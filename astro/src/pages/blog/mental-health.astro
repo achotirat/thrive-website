@@ -18,9 +18,42 @@ const crumbs = [
   { label: 'สุขภาพใจ', href: '/blog/mental-health' },
 ]
 
+const baseUrl = new URL(Astro.site!).origin
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${baseUrl}/blog/mental-health#collection`,
+  name: 'บทความสุขภาพจิต — Thrive Wellness Clinic',
+  url: `${baseUrl}/blog/mental-health`,
+  isPartOf: { '@type': 'Blog', '@id': `${baseUrl}/blog#blog` },
+}
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: posts.slice(0, 20).map((post, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: post.data.title,
+    url: `${baseUrl}/blog/${post.data.slug.current}`,
+  })),
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.label,
+    item: `${baseUrl}${crumb.href}`,
+  })),
+}
+
 const seo = {
-  seoTitle: 'รวมบทความสุขภาพจิต | Thrive Wellness Center',
-  description: 'รวมบทความเรื่องสุขภาพจิต ซึมเศร้า ความเครียด และการดูแลจิตใจ จากทีมแพทย์ผู้เชี่ยวชาญที่ Thrive Wellness Center กรุงเทพฯ',
+  seoTitle: 'บทความสุขภาพจิต ความเครียด ซึมเศร้า | Thrive Wellness Clinic',
+  description: 'รวมบทความสุขภาพจิต ซึมเศร้า ความเครียด นอนไม่หลับ และการดูแลจิตใจ เขียนและตรวจทานโดยทีมแพทย์ Thrive Wellness Clinic กรุงเทพฯ พร้อมแนวทางปรึกษานักบำบัดตัวต่อตัว',
   ogImage: '/og-image.jpg',
   ogLocale: 'th_TH',
   canonicalPath: '/blog/mental-health',
@@ -38,8 +71,9 @@ const seo = {
   publishedAt: new Date('2026-01-01'),
   updatedAt: new Date(),
   lastMedicalReview: new Date('2026-06-09'),
-  reviewedBy: 'Dr. Noon Pichayaporn',
+  reviewedBy: 'พญ. ชนากานต์ ตระหง่านศรี',
   medicalSpecialty: 'Functional Medicine',
+  jsonLd: [collectionSchema, itemListSchema, breadcrumbSchema],
 }
 ---
 

@@ -62,23 +62,42 @@ const crumbs = [
   { label: title, href: `/blog/${slug}` },
 ]
 
-const baseUrl = 'https://new.thrivewellnessth.com'
+const baseUrl = new URL(Astro.site!).origin
 const pageUrl = `${baseUrl}/blog/${slug}`
 
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalWebPage',
+  // BlogPosting makes the post eligible for Article rich results;
+  // MedicalWebPage keeps the health-content page context for E-E-A-T.
+  '@type': ['BlogPosting', 'MedicalWebPage'],
   headline: seoTitle ?? title,
   description: seoDescription ?? '',
   url: pageUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
   datePublished: publishedAt,
   dateModified: updatedAt ?? publishedAt,
   author: authorName
     ? { '@type': 'Person', name: authorName, jobTitle: authorTitle ?? 'Functional Medicine Physician' }
-    : { '@type': 'Organization', name: 'Thrive Wellness Center', url: baseUrl },
-  publisher: { '@type': 'Organization', name: 'Thrive Wellness Center', url: baseUrl },
+    : { '@type': 'Organization', name: 'Thrive Wellness Clinic', url: baseUrl },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Thrive Wellness Clinic',
+    url: baseUrl,
+    logo: { '@type': 'ImageObject', url: `${baseUrl}/Thrive-Logo-600px.png` },
+  },
   image: heroSrc.startsWith('http') ? heroSrc : `${baseUrl}${heroSrc}`,
   medicalAudience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.label,
+    item: `${baseUrl}${crumb.href}`,
+  })),
 }
 
 const faqSchema = faqItems.length > 0 ? [{
@@ -103,7 +122,7 @@ const seo = {
     { lang: 'en', href: pageUrl },
     { lang: 'x-default', href: pageUrl },
   ],
-  jsonLd: [articleSchema, ...faqSchema],
+  jsonLd: [articleSchema, breadcrumbSchema, ...faqSchema],
   geo: {
     region: 'TH-10',
     placename: 'Bangkok',
@@ -113,7 +132,7 @@ const seo = {
   publishedAt: new Date(publishedAt),
   updatedAt: updatedAt ? new Date(updatedAt) : new Date(publishedAt),
   lastMedicalReview: new Date(publishedAt),
-  reviewedBy: authorName ?? 'Dr. Noon Pichayaporn',
+  reviewedBy: authorName ?? 'พญ. ชนากานต์ ตระหง่านศรี',
   medicalSpecialty: 'Functional Medicine',
 }
 
@@ -162,7 +181,7 @@ const cta = {
       title: 'แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ',
       image: '/dr-chanakan-trangansri-thrive-400x400.jpg',
       imageAlt: 'พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น แพทย์เวชศาสตร์ชะลอวัยและโภชนาการ Thrive Wellness',
-      bio: 'ผู้เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและโภชนาการ ดูแลการตรวจวิเคราะห์สุขภาพเชิงลึก พร้อมให้คำปรึกษาแผนสุขภาพเฉพาะบุคคลที่ Thrive Wellness Center',
+      bio: 'ผู้เชี่ยวชาญด้านเวชศาสตร์ชะลอวัยและโภชนาการ ดูแลการตรวจวิเคราะห์สุขภาพเชิงลึก พร้อมให้คำปรึกษาแผนสุขภาพเฉพาะบุคคลที่ Thrive Wellness Clinic',
       specializations: ['Anti-aging & Regenerative Medicine', 'Nutrition Wellness', 'Functional Medicine'],
     }} />
 
