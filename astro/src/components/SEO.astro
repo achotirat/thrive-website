@@ -2,6 +2,7 @@
 import JsonLd from './JsonLd.astro';
 
 type Hreflang = { lang: string; href: string };
+type Faq = { q: string; a: string };
 type Geo = {
   region: string;
   placename: string;
@@ -25,6 +26,7 @@ export interface Props {
   reviewedBy?: string;
   medicalSpecialty?: string;
   jsonLd?: Record<string, unknown>[];
+  faqs?: Faq[];
 }
 
 const {
@@ -43,10 +45,62 @@ const {
   reviewedBy,
   medicalSpecialty,
   jsonLd = [],
+  faqs = [],
 } = Astro.props;
 
 const absoluteUrl = (path: string) => new URL(path, Astro.site).toString();
 const canonicalUrl = absoluteUrl(canonicalPath);
+const siteOrigin = new URL(Astro.site!).origin;
+
+// --- Normalization layer -----------------------------------------------------
+// Content frontmatter historically hardcoded www.thrivewellnessth.com in
+// hreflang hrefs and JSON-LD @ids while canonicals use Astro.site — rewrite
+// all of it to the configured site origin so the domain is set in exactly one
+// place (astro.config.mjs `site`) and cutover needs a single change.
+
+// hreflang: no English version of the site exists, so emit only th-TH +
+// x-default, both pointing at the canonical URL. Pages that pass no hreflang
+// (noindexed utility/LP pages) still emit none.
+const hreflangResolved: Hreflang[] = hreflang.length
+  ? [
+      { lang: 'th-TH', href: canonicalUrl },
+      { lang: 'x-default', href: canonicalUrl },
+    ]
+  : [];
+
+const SITE_HOST_RE = /^https?:\/\/(www\.|new\.)?thrivewellnessth\.com/;
+const isDoctorName = (v: unknown) =>
+  typeof v === 'string' && (v.includes('ชนากานต์') || v.includes('Chanakan'));
+
+const normalizeJsonLd = (node: unknown): unknown => {
+  if (Array.isArray(node)) return node.map(normalizeJsonLd);
+  if (node && typeof node === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(node as Record<string, unknown>)) {
+      out[k] = normalizeJsonLd(v);
+    }
+    // Dr. Chanakan is a physician — Person undersells the entity for medical E-E-A-T
+    if (out['@type'] === 'Person' && isDoctorName(out.name)) out['@type'] = 'Physician';
+    // FAQPage schema must mirror the visible FAQ accordion (Google content-match
+    // guideline) — rebuild it from the same `faqs` data FAQSection renders.
+    if (out['@type'] === 'FAQPage' && faqs.length) {
+      out.mainEntity = faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      }));
+    }
+    return out;
+  }
+  if (typeof node === 'string' && SITE_HOST_RE.test(node)) {
+    return node.replace(SITE_HOST_RE, siteOrigin);
+  }
+  return node;
+};
+
+const jsonLdResolved = jsonLd.map((s) => normalizeJsonLd(s) as Record<string, unknown>);
+// -----------------------------------------------------------------------------
+
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : absoluteUrl(ogImage);
 const heroImageUrl = heroImage ? (heroImage.startsWith('http') ? heroImage : absoluteUrl(heroImage)) : '';
 const formatDate = (date?: Date | string) => (date ? new Date(date).toISOString().slice(0, 10) : undefined);
@@ -88,9 +142,9 @@ const formatDate = (date?: Date | string) => (date ? new Date(date).toISOString(
   </>
 )}
 
-{hreflang.map((item) => (
+{hreflangResolved.map((item) => (
   <link rel="alternate" hreflang={item.lang} href={item.href} />
 ))}
 
-{jsonLd.map((schema) => <JsonLd schema={schema} />)}
+{jsonLdResolved.map((schema) => <JsonLd schema={schema} />)}
 

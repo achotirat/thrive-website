@@ -1,4 +1,4 @@
-# Thrive Launch Audit — Master Scorecard
+# Thrive Launch Audit — Full Sweep Snapshot 2026-07-13
 
 Last full sweep: 2026-07-13 (local production build — same commit as live deploy; Sanity blog posts not re-audited, see note)
 Site: https://new.thrivewellnessth.com/

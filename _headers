@@ -1,3 +1,7 @@
+# ⚠️ NOT DEPLOYED — legacy file. The Netlify publish dir is astro/dist, so headers
+# come from netlify.toml [[headers]] ONLY. This file has already drifted from the
+# live CSP. Do not copy it into astro/public/. Single source of truth: netlify.toml.
+
 /*
   X-Robots-Tag: noindex, nofollow, noarchive
   X-Frame-Options: DENY
