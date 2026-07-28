@@ -238,7 +238,7 @@ export const ivDripQuiz = {
 export const foodIntoleranceQuiz = {
   id: 'food-trigger',
   serviceSlug: 'food-intolerance',
-  title: 'เช็กสัญญาณภูมิแพ้อาหารแฝง',
+  title: 'เช็กสัญญาณ Food Sensitivity ภาวะความไวต่ออาหาร',
   eyebrow: 'Food Trigger Quiz',
   intro: 'ประเมินว่าอาการของคุณใกล้กับกลุ่มทางเดินอาหาร ผิว หรืออ่อนเพลียเรื้อรังที่ควรตรวจ IgG หรือไม่',
   startQuestionId: 'symptom',
