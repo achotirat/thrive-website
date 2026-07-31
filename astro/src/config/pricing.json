@@ -132,5 +132,12 @@
     "updatedAt": "2026-05-28",
     "draft": true,
     "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/advanced-lipid-profile": {
+    "from": "3,700 บาท",
+    "note": "ราคารวมตรวจไขมันเชิงลึก 7 ตัวบ่งชี้ + รายงานผล + คำปรึกษาแพทย์",
+    "updatedAt": "2026-07-28",
+    "draft": false,
+    "priceReviewRequiredBy": "apanit-pueng"
   }
 }
