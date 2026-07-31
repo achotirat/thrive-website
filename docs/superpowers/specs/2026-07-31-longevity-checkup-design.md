@@ -76,7 +76,7 @@ Add to `astro/src/config/pricing.json`:
 
 | Image | Purpose | Status |
 |---|---|---|
-| `check-up-longevity-check-up-1200x630.jpg` | Hero + OG/social | ❌ placeholder: reuse `check-up-hero-1200x630.jpg` for now, flag in SITE-TRACKER.md for a real photo swap |
+| `check-up-longevity-check-up-1200x630.jpg` | Hero + OG/social | ✅ real photo supplied by user, cropped/resized to 1200×630 |
 | `dr-chanakan-trangansri-thrive-400x400.jpg` | Doctor section | ✅ exists |
 
 ---
@@ -93,4 +93,3 @@ Add to `astro/src/config/pricing.json`:
 
 - No new shared "comparison table" Astro component — this is the first instance of this pattern for `checkUpPrograms`; revisit as a component only if a third page needs the same two-tier layout.
 - No retroactive fix to the `draft:true` pricing-display bug on other pages.
-- No real hero photography — placeholder only, tracked as follow-up.
