@@ -39,7 +39,6 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 |--------------------------|-------|
 | `fit132.mdx` (Astro service page) | 2026-06-09 |
 | `epispan.mdx` (Astro service page) | 2026-07-02 |
-| `check-up/longevity-check-up.mdx` (Astro check-up program page) | 2026-07-31 |
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
 | `hormones-quiz.html` | 2026-05-09 |
