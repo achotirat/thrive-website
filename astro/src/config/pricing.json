@@ -139,5 +139,12 @@
     "updatedAt": "2026-07-28",
     "draft": false,
     "priceReviewRequiredBy": "apanit-pueng"
+  },
+  "check-up/longevity-check-up": {
+    "from": "27,900 บาท",
+    "note": "แพ็กเกจ Optimal (ปกติ 32,570 บาท) — หรืออัพเกรดเป็น Advance 29,900 บาท (ปกติ 36,190 บาท) เพิ่ม SHBG, Anti-TPO/TG ab, Free Testosterone, PTH, IGF-BP3 | รวมตรวจ Body Composition และคำปรึกษาแพทย์ | ทราบผล 7–10 วัน",
+    "updatedAt": "2026-07-31",
+    "draft": false,
+    "priceReviewRequiredBy": "apanit-pueng"
   }
 }
