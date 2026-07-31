@@ -2247,7 +2247,7 @@ h1.th, h2.th, h3.th {
 .service-chip {
   display: flex;
   align-items: center;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: var(--r-lg);
@@ -2270,6 +2270,41 @@ h1.th, h2.th, h3.th {
   color: var(--teal);
   border-color: var(--teal);
   background: var(--teal-xl);
+  justify-content: center;
+  text-align: center;
+}
+
+.service-chip__photo {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.service-chip__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.service-chip__text--centered {
+  align-items: center;
+}
+
+.service-chip__title {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.service-chip--more .service-chip__title {
+  color: var(--teal);
+}
+
+.service-chip__subtitle {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--text-2);
 }
 
 /* ─── Homepage: Testimonials ──────────────────────────────────────── */
