@@ -95,6 +95,22 @@ async function buildBodyHtml(raw, imageUrlMap) {
   if (introIdx === -1) throw new Error('Could not find intro paragraph marker')
   let bodySection = text.slice(introIdx)
 
+  // Cut out the "## FAQ" section (raw Q&A text + the markdown bottom-CTA
+  // block that follows it): [slug].astro already renders FAQ from the
+  // `faq` array as an accordion, and the bottom CTA from `ctaService` via
+  // <BlogCTA position="bottom">. Leaving this markdown section in
+  // legacyHtml causes the FAQ to render a second time as plain paragraphs
+  // right before the accordion (confirmed reproduced on the already-published
+  // female-hormone-panel-age-40 post too — a bug in the shared import
+  // script template, not specific to this post).
+  const faqMarker = '## FAQ'
+  const referencesMarker = '## References'
+  const faqIdx = bodySection.indexOf(faqMarker)
+  const referencesIdx = bodySection.indexOf(referencesMarker)
+  if (faqIdx !== -1 && referencesIdx !== -1 && faqIdx < referencesIdx) {
+    bodySection = bodySection.slice(0, faqIdx) + bodySection.slice(referencesIdx)
+  }
+
   // Stop before Image Prompts section (end of real content)
   const imagePromptsMarker = '## Image Prompts'
   const imagePromptsIdx = bodySection.indexOf(imagePromptsMarker)
