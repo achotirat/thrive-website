@@ -1,4 +1,4 @@
-> **Dev note:** This post uses CTA link `/mental-health` with label `ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load.
+> **Dev note:** This post uses CTA link `/contact` with label `ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. (`mental-health` service is not yet in Sanity — `/contact` is the correct fallback, matching the same fix already applied to cbt-therapy-guide, panic-disorder-coping, and social-phobia-treatment on 2026-06-10.)
 
 ---
 
@@ -37,7 +37,7 @@
 ---
 
 **พร้อมก้าวแรกสู่ความเปลี่ยนแปลง?**
-[ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →](/mental-health)
+[ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →](/contact)
 *คลินิกเวชศาสตร์ฟื้นฟูกรุงเทพฯ — การดูแลแบบองค์รวม มีหลักฐานทางวิทยาศาสตร์*
 
 ---
@@ -229,7 +229,7 @@ Bach Flower เป็นการบำบัดเสริม ไม่ใช�
 ---
 
 **พร้อมก้าวแรกสู่ความเปลี่ยนแปลง?**
-[ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →](/mental-health)
+[ปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิตที่ Thrive →](/contact)
 *คลินิกเวชศาสตร์ฟื้นฟูกรุงเทพฯ — การดูแลแบบองค์รวม มีหลักฐานทางวิทยาศาสตร์ LINE @thrivewellnessth | Tel: 095-934-9640*
 
 ---
