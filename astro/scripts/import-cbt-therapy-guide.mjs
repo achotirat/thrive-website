@@ -87,6 +87,18 @@ async function buildBodyHtml(raw) {
   const h1Idx = text.indexOf('\n# ')
   if (h1Idx !== -1) text = text.slice(h1Idx)
 
+  // Cut out the "## FAQ" section — [slug].astro renders FAQ separately as
+  // an accordion from the faq[] field, so leaving it in legacyHtml causes
+  // it to render a second time as plain paragraphs. Keep the References
+  // section that follows it.
+  const faqMarker = '## FAQ'
+  const refsMarker = '## References'
+  const faqIdx = text.indexOf(faqMarker)
+  const refsIdx = text.indexOf(refsMarker)
+  if (faqIdx !== -1 && refsIdx !== -1 && faqIdx < refsIdx) {
+    text = text.slice(0, faqIdx) + text.slice(refsIdx)
+  }
+
   const endMarker = '## Image Prompts'
   const endIdx = text.indexOf(endMarker)
   if (endIdx !== -1) text = text.slice(0, endIdx)

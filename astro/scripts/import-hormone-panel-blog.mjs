@@ -97,6 +97,18 @@ async function buildBodyHtml(raw, imageUrlMap) {
   if (introIdx === -1) throw new Error('Could not find intro paragraph marker')
   let bodySection = text.slice(introIdx)
 
+  // Cut out the "## FAQ" section — [slug].astro renders FAQ separately as
+  // an accordion from the faq[] field, so leaving it in legacyHtml causes
+  // it to render a second time as plain paragraphs. Keep the References
+  // section that follows it.
+  const faqMarker = '## FAQ'
+  const refsMarker = '## References'
+  const faqIdx = bodySection.indexOf(faqMarker)
+  const refsIdx = bodySection.indexOf(refsMarker)
+  if (faqIdx !== -1 && refsIdx !== -1 && faqIdx < refsIdx) {
+    bodySection = bodySection.slice(0, faqIdx) + bodySection.slice(refsIdx)
+  }
+
   // Stop before Image Prompts section (end of real content)
   const imagePromptsMarker = '## Image Prompts'
   const imagePromptsIdx = bodySection.indexOf(imagePromptsMarker)
