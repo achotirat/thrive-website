@@ -125,6 +125,26 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 
 ---
 
+**นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์ (หมอบาย)**
+Dr. Pijak Wongvisit, MD. — Preventive & Regenerative Medicine
+
+Specializations: Preventive Medicine · Hormone Balance · Weight Management · Genetic Counseling · Regenerative Medicine
+
+| ไฟล์รูป | ขนาด | ใช้ใน |
+|---------|------|------|
+| `dr-pijak-wongvisit-thrive-400x400.jpg` | 400×400 | Doctor section / Team card |
+
+JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
+
+**กฎ:** ทุกครั้งที่สร้างหรืออัปเดตหน้าที่มีโปรไฟล์หมอบาย ต้องอัปเดตตารางนี้ทันที ก่อน commit — ตั้งแต่ 2026-08-04 ผู้ใช้กำหนดให้หมอบายเป็นแพทย์ที่อ้างอิงใน blog post ทุกฉบับ (แทนหมอนุ่น)
+
+| หน้าที่ใส่ข้อมูลหมอบายแล้ว | วันที่ |
+|--------------------------|-------|
+| `longevity-check-up.mdx` (Astro service page) | 2026-07-31 |
+| `about.astro` (Team section) | 2026-07-31 |
+
+---
+
 ## Clinic Contact (ใช้ข้อมูลนี้ทุกหน้า)
 
 ```
