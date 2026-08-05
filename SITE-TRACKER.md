@@ -142,6 +142,10 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 |--------------------------|-------|
 | `longevity-check-up.mdx` (Astro service page) | 2026-07-31 |
 | `about.astro` (Team section) | 2026-07-31 |
+| `blog/hyrox-overtraining-hormone-imbalance` (Sanity blog post — quote + Reviewed-by card) | 2026-08-05 |
+| `blog/red-s-relative-energy-deficiency-sport` (Sanity blog post — quote + Reviewed-by card) | 2026-08-05 |
+| `blog/low-testosterone-heavy-exercise-men` (Sanity blog post — quote + Reviewed-by card) | 2026-08-05 |
+| `blog/prevent-hormone-imbalance-heavy-training` (Sanity blog post — quote + Reviewed-by card) | 2026-08-05 |
 
 ---
 
