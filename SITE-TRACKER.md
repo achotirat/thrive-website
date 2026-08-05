@@ -146,6 +146,10 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/prevent-hormone-imbalance-heavy-training.md` (Sanity pipeline, doctor quote) | 2026-08-04 |
 | `docs/blog/low-testosterone-heavy-exercise-men.md` (Sanity pipeline, doctor quote) | 2026-08-04 |
 | `docs/blog/red-s-relative-energy-deficiency-sport.md` (Sanity pipeline, doctor quote) | 2026-08-04 |
+| `blog/hyrox-overtraining-hormone-imbalance` (Sanity blog post — Reviewed-by card added) | 2026-08-05 |
+| `blog/red-s-relative-energy-deficiency-sport` (Sanity blog post — Reviewed-by card added) | 2026-08-05 |
+| `blog/low-testosterone-heavy-exercise-men` (Sanity blog post — Reviewed-by card added) | 2026-08-05 |
+| `blog/prevent-hormone-imbalance-heavy-training` (Sanity blog post — Reviewed-by card added) | 2026-08-05 |
 
 ---
 

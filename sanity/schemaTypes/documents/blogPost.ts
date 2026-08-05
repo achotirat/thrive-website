@@ -90,6 +90,31 @@ export const blogPost = defineType({
       to: [{type: 'doctor'}],
     }),
     defineField({
+      name: 'reviewedByDoctor',
+      title: 'Reviewed by (bottom-of-post doctor card)',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น) — default', value: 'noon'},
+          {title: 'นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์ (หมอบาย)', value: 'pijak'},
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'noon',
+      description: 'Which doctor profile shows in the "Reviewed by" card at the bottom of this post.',
+    }),
+    defineField({
+      name: 'secondaryCta',
+      title: 'Secondary CTA (replaces the bottom CTA, removes the mid-article CTA)',
+      type: 'object',
+      description: 'Leave empty for the default behavior: the primary CTA service renders 3× (top/mid/bottom). When set, only 2 CTAs render on this post — the primary CTA service at top, and this one at bottom.',
+      fields: [
+        defineField({name: 'slug', title: 'Destination path (no leading slash, e.g. "hormones-quiz")', type: 'string'}),
+        defineField({name: 'title', title: 'Button/card title', type: 'string'}),
+        defineField({name: 'description', title: 'Card description', type: 'string'}),
+      ],
+    }),
+    defineField({
       name: 'keyTakeaways',
       title: 'Key takeaways',
       type: 'array',

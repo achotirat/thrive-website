@@ -191,6 +191,12 @@ const blogPostsCollection = defineCollection({
       title: z.string(),
       shortDescription: z.string().optional(),
     }).optional(),
+    reviewedByDoctor: z.enum(['noon', 'pijak']).optional().default('noon'),
+    secondaryCta: z.object({
+      slug: z.string(),
+      title: z.string(),
+      description: z.string().optional(),
+    }).optional(),
     seo: z.object({
       seoTitle: z.string().optional(),
       seoDescription: z.string().optional(),

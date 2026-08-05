@@ -25,6 +25,12 @@ const GROQ = `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publ
     title,
     shortDescription
   },
+  reviewedByDoctor,
+  secondaryCta {
+    slug,
+    title,
+    description
+  },
   seo {
     seoTitle,
     seoDescription,

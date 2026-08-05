@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
 import BlogCTA from '../../components/BlogCTA.astro'
+import { DOCTORS } from '../../lib/doctors'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blogPosts')
@@ -36,6 +37,18 @@ const ctaProps = {
   serviceDescription: ctaSvc?.shortDescription,
   blogSlug: d.slug.current,
 }
+
+const secondaryCta = d.secondaryCta
+const bottomCtaProps = secondaryCta
+  ? {
+      serviceSlug: secondaryCta.slug,
+      serviceTitle: secondaryCta.title,
+      serviceDescription: secondaryCta.description,
+      blogSlug: d.slug.current,
+    }
+  : ctaProps
+
+const reviewerDoctor = DOCTORS[d.reviewedByDoctor ?? 'noon']
 ---
 
 <BlogPostLayout
@@ -52,6 +65,7 @@ const ctaProps = {
   canonicalUrl={d.seo?.canonicalUrl}
   slug={d.slug.current}
   faqItems={faqItems}
+  doctor={reviewerDoctor}
 >
   {d.keyTakeaways && d.keyTakeaways.length > 0 && (
     <div class="blog-post__takeaways">
@@ -66,10 +80,13 @@ const ctaProps = {
 
   <div class="blog-post__body" set:html={bodyHtml} />
 
-  <!-- Mid CTA: pre-rendered into a hidden wrapper, moved after 3rd H2 by JS -->
-  <div id="blog-cta-mid-tpl" hidden aria-hidden="true">
-    <BlogCTA {...ctaProps} position="mid" />
-  </div>
+  <!-- Mid CTA: pre-rendered into a hidden wrapper, moved after 3rd H2 by JS.
+       Skipped when secondaryCta is set, capping this post at 2 total CTAs. -->
+  {!secondaryCta && (
+    <div id="blog-cta-mid-tpl" hidden aria-hidden="true">
+      <BlogCTA {...ctaProps} position="mid" />
+    </div>
+  )}
   <script>
     const tpl = document.getElementById('blog-cta-mid-tpl')
     const bodyEl = document.querySelector('.blog-post__body')
@@ -100,5 +117,5 @@ const ctaProps = {
     </section>
   )}
 
-  <BlogCTA {...ctaProps} position="bottom" />
+  <BlogCTA {...bottomCtaProps} position="bottom" />
 </BlogPostLayout>
