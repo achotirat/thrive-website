@@ -373,3 +373,61 @@ describe('crystalBoothQuiz — domain isolation', () => {
       `Skin domain should not return vitamin result, got: ${resultSkin.id}`);
   });
 });
+
+describe('crystalBoothQuiz — เครียด/นอนไม่หลับ domain', () => {
+  it('routes the "stress" choice into the stress-wake question', () => {
+    let session = createQuizSession(crystalBoothQuiz);
+    session = answerCurrentQuestion(crystalBoothQuiz, session, 'stress');
+    assert.equal(getCurrentQuestion(crystalBoothQuiz, session).id, 'stress-wake');
+  });
+
+  it('resolves stress-high when every answer is the highest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'stress', 'exhausted', 'severe-slump', 'daily', 'stuck-or-up', 'high', 'over-6-months',
+    ]);
+    assert.equal(session.completed, true);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'stress-high');
+    assert.equal(result.nurtureSegment, 'booth-stress-high');
+  });
+
+  it('resolves stress-early when every answer is the lowest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'stress', 'rested', 'normal', 'rare', 'no-change', 'low', 'new',
+    ]);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'stress-early');
+  });
+});
+
+describe('crystalBoothQuiz — full quiz integration', () => {
+  it('has unique question ids across every domain', () => {
+    const ids = crystalBoothQuiz.questions.map((q) => q.id);
+    assert.equal(new Set(ids).size, ids.length);
+  });
+
+  it('has exactly 6 domain choices and 18 results (3 tiers x 6 domains)', () => {
+    assert.equal(crystalBoothQuiz.questions[0].answers.length, 6);
+    assert.equal(crystalBoothQuiz.results.length, 18);
+  });
+
+  it('resolves a same-domain result for every domain, with in-page CTA and a booth nurture segment', () => {
+    const domainAnswerIds = crystalBoothQuiz.questions[0].answers.map((a) => a.id);
+
+    domainAnswerIds.forEach((domainAnswerId) => {
+      let session = createQuizSession(crystalBoothQuiz);
+      session = answerCurrentQuestion(crystalBoothQuiz, session, domainAnswerId);
+      while (!session.completed) {
+        const question = getCurrentQuestion(crystalBoothQuiz, session);
+        session = answerCurrentQuestion(crystalBoothQuiz, session, question.answers[0].id);
+      }
+      const result = getQuizResult(crystalBoothQuiz, session);
+      assert.ok(
+        result?.id?.startsWith(`${domainAnswerId}-`),
+        `${domainAnswerId} should resolve to a same-domain result, got ${result?.id}`,
+      );
+      assert.equal(result.cta.href, '#quiz-lead-form');
+      assert.ok(result.nurtureSegment.startsWith('booth-'), `${domainAnswerId} result should have a booth-* nurture segment`);
+    });
+  });
+});

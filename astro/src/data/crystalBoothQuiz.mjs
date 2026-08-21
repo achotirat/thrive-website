@@ -564,6 +564,106 @@ const vitaminResults = [
   },
 ];
 
+const stressQuestions = [
+  {
+    id: 'stress-wake',
+    text: 'ตื่นนอนตอนเช้ารู้สึกอย่างไร?',
+    helper: 'เลือกข้อที่ใกล้เคียงที่สุดในช่วงนี้',
+    answers: [
+      { id: 'rested', label: 'สดชื่น พร้อมเริ่มวันได้เลย', scores: { scoreStress: 1 }, nextQuestionId: 'stress-afternoon' },
+      { id: 'slow-start', label: 'พอไปได้ ต้องใช้เวลาหน่อยกว่าจะตื่นตัว', scores: { scoreStress: 1 }, nextQuestionId: 'stress-afternoon' },
+      { id: 'exhausted', label: 'เหนื่อยตั้งแต่ตื่น รู้สึกว่าไม่ได้นอนเลย', scores: { scoreStress: 3 }, nextQuestionId: 'stress-afternoon' },
+    ],
+  },
+  {
+    id: 'stress-afternoon',
+    text: 'ช่วงบ่าย 14:00–16:00 รู้สึกอย่างไร?',
+    answers: [
+      { id: 'normal', label: 'มีพลังงานปกติ ทำงานได้ตามปกติ', scores: { scoreStress: 0 }, nextQuestionId: 'stress-cravings' },
+      { id: 'mild-slump', label: 'ง่วงเล็กน้อย แต่พอสู้ต่อได้', scores: { scoreStress: 1 }, nextQuestionId: 'stress-cravings' },
+      { id: 'severe-slump', label: 'ง่วงมากจนทำงานต่อแทบไม่ได้ ต้องพึ่งกาแฟหรือของหวาน', scores: { scoreStress: 3 }, nextQuestionId: 'stress-cravings' },
+    ],
+  },
+  {
+    id: 'stress-cravings',
+    text: 'อยากของหวานหรือของเค็มบ่อยแค่ไหน?',
+    answers: [
+      { id: 'rare', label: 'แทบไม่เลย', scores: { scoreStress: 0 }, nextQuestionId: 'stress-weight' },
+      { id: 'some-days', label: 'บางวันอยาก โดยเฉพาะตอนเครียดหรือตอนบ่าย', scores: { scoreStress: 1 }, nextQuestionId: 'stress-weight' },
+      { id: 'daily', label: 'อยากเกือบทุกวัน ถ้าไม่ได้กินจะหงุดหงิดหรืออ่อนแรง', scores: { scoreStress: 2 }, nextQuestionId: 'stress-weight' },
+    ],
+  },
+  {
+    id: 'stress-weight',
+    text: 'น้ำหนักเปลี่ยนแปลงทั้งที่คุมอาหาร / ออกกำลังกายอยู่?',
+    answers: [
+      { id: 'no-change', label: 'ไม่เปลี่ยน ปกติดี', scores: { scoreStress: 0 }, nextQuestionId: 'stress-level' },
+      { id: 'slight-change', label: 'เปลี่ยนเล็กน้อย รู้สึกว่าร่างกายตอบสนองช้าลง', scores: { scoreStress: 1 }, nextQuestionId: 'stress-level' },
+      { id: 'stuck-or-up', label: 'ลดไม่ลงเลย หรือขึ้นทั้งที่พยายามมาก', scores: { scoreStress: 2 }, nextQuestionId: 'stress-level' },
+    ],
+  },
+  {
+    id: 'stress-level',
+    text: 'ความเครียดสะสมในชีวิตตอนนี้อยู่ระดับไหน?',
+    answers: [
+      { id: 'low', label: 'น้อย จัดการได้ดี', scores: { scoreStress: 0 }, nextQuestionId: 'stress-duration' },
+      { id: 'moderate', label: 'ปานกลาง มีบ้างแต่ผ่านได้', scores: { scoreStress: 1 }, nextQuestionId: 'stress-duration' },
+      { id: 'high', label: 'สูงมาก รู้สึกหนักและเหนื่อยตลอดเวลา', scores: { scoreStress: 2 }, nextQuestionId: 'stress-duration' },
+    ],
+  },
+  {
+    id: 'stress-duration',
+    text: 'อาการเหล่านี้เป็นมานานแค่ไหนแล้ว?',
+    answers: [
+      { id: 'new', label: 'ไม่ถึงเดือน เพิ่งเริ่มสังเกตเห็น', scores: { scoreStress: 0 } },
+      { id: '1-6-months', label: '1–6 เดือน เป็นๆ หายๆ', scores: { scoreStress: 2 } },
+      { id: 'over-6-months', label: 'มากกว่า 6 เดือน หรือรู้สึกว่าเป็นปัญหาเรื้อรัง', scores: { scoreStress: 3 } },
+    ],
+  },
+];
+
+const stressResults = [
+  {
+    id: 'stress-high',
+    title: 'ต่อมหมวกไตน่าจะต้องการความช่วยเหลือแล้ว',
+    summary: 'ผลประเมินแสดงระดับความเสี่ยงสูง อาการที่คุณมีสอดคล้องกับภาวะต่อมหมวกไตล้าในระยะที่ควรได้รับการดูแล ยิ่งเริ่มรักษาเร็วเท่าไหร่ ระยะเวลาฟื้นตัวยิ่งสั้นลง',
+    threshold: { scoreStress: 9 },
+    nurtureSegment: 'booth-stress-high',
+    recommendedSteps: [
+      'ตรวจระดับ Cortisol และ DHEA ด้วยการเจาะเลือด',
+      'วางแผนการรักษาเฉพาะบุคคลกับแพทย์',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์ — ควรพบแพทย์เพื่อการประเมินอย่างถูกต้อง',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'stress-moderate',
+    title: 'ฮอร์โมนเริ่มไม่สมดุล — ควรตรวจ Cortisol & DHEA',
+    summary: 'ผลประเมินชี้ว่าอาการของคุณตรงกับหลายสัญญาณของภาวะต่อมหมวกไตล้า การตรวจเลือดเพื่อวัดระดับฮอร์โมนโดยตรงจะช่วยยืนยันและวางแผนการรักษาเฉพาะบุคคลได้',
+    threshold: { scoreStress: 4 },
+    nurtureSegment: 'booth-stress-moderate',
+    recommendedSteps: [
+      'ตรวจระดับ Cortisol และ DHEA เพื่อยืนยัน',
+      'ปรึกษาแพทย์เรื่องการปรับวิถีชีวิตและอาหารเสริม',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์ — ควรพบแพทย์เพื่อการประเมินอย่างถูกต้อง',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'stress-early',
+    title: 'เริ่มมีสัญญาณเตือน — ดูแลก่อนสาย',
+    summary: 'ผลประเมินแสดงว่าคุณมีอาการบางส่วนที่อาจบ่งชี้ถึงภาวะเริ่มต้น การพูดคุยกับแพทย์เพื่อตรวจระดับ Cortisol และ DHEA จะช่วยให้รู้แน่ชัดและป้องกันได้ตั้งแต่เนิ่นๆ',
+    threshold: { scoreStress: 1 },
+    nurtureSegment: 'booth-stress-early',
+    recommendedSteps: [
+      'พูดคุยกับแพทย์เพื่อประเมินความเสี่ยงเบื้องต้น',
+      'ตรวจระดับ Cortisol และ DHEA เพื่อรู้แน่ชัด',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์ — ควรพบแพทย์เพื่อการประเมินอย่างถูกต้อง',
+    ],
+    cta: boothCta,
+  },
+];
+
 export const crystalBoothQuiz = {
   id: 'crystal-booth-checkup',
   serviceSlug: 'crystal-quiz',
@@ -579,6 +679,7 @@ export const crystalBoothQuiz = {
     ...liverQuestions,
     ...skinQuestions,
     ...vitaminQuestions,
+    ...stressQuestions,
   ],
   results: [
     ...hormoneResults,
@@ -586,5 +687,6 @@ export const crystalBoothQuiz = {
     ...liverResults,
     ...skinResults,
     ...vitaminResults,
+    ...stressResults,
   ],
 };
