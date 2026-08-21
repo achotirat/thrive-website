@@ -57,7 +57,9 @@ All 6 domains live in **one** `quiz.results` array, evaluated by `getQuizResult(
 | วิตามิน/แร่ธาตุ | `scoreVitamin` | 7 | new |
 | เครียด/นอนไม่หลับ | `scoreStress` | 6 | **reused wholesale** from `astro/src/data/lp-adrenal-fatigue-quiz.ts` |
 
-Each domain: 3 results (early / moderate / high), same shape as the existing adrenal-fatigue quiz — `high` needs a high threshold, `moderate` a mid threshold, `early` has `threshold: {}` (always eligible, acts as the fallback since it scores 0 and sorts last).
+Each domain: 3 results (early / moderate / high), same shape as the existing adrenal-fatigue quiz — `high` needs a high threshold, `moderate` a mid threshold, `early` acts as the fallback.
+
+> **Amendment (found during implementation, Task 3):** `early`'s threshold cannot actually be `{}` (or `{ scoreX: 0 }`, which is equivalent) — since all 6 domains' results share one `quiz.results` array, an unconditional catch-all is "eligible" for every session regardless of which domain it came from, and can win another domain's session on tie-break. Fix: each domain's first question's lowest-severity answer scores `1` instead of `0`, and `early`'s threshold is `{ scoreX: 1 }` — genuinely scoped to sessions that actually entered that domain. See the implementation plan's Global Constraints for the full explanation.
 
 **วัยทอง (menopause) lives inside the hormone domain**, not as a separate stress-domain branch — the reused adrenal-fatigue content doesn't cover menopause, and hormone-domain questions (cycle changes, hot flashes) already do it more naturally.
 
