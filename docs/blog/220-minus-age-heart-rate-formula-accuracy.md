@@ -128,7 +128,7 @@ VO2Max สามารถพัฒนาได้ด้วยการฝึก�
 
 [4] Wrist-Worn and Arm-Worn Wearables for Monitoring Heart Rate During Sedentary and Light-to-Vigorous Physical Activities: Device Validation Study. (2025). *JMIR Cardio*, 9, e67110. https://cardio.jmir.org/2025/1/e67110/
 
-[5] Karvonen, M. J., Kentala, E., & Mustala, O. (1957). The effects of training on heart rate; a longitudinal study. *Annales Medicinae Experimentalis et Biologiae Fenniae*, 35(3), 307–315.
+[5] Karvonen, M. J., Kentala, E., & Mustala, O. (1957). The effects of training on heart rate; a longitudinal study. *Annales Medicinae Experimentalis et Biologiae Fenniae*, 35(3), 307–315. https://pubmed.ncbi.nlm.nih.gov/13470504/
 
 ---
 
