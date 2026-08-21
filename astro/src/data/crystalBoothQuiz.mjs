@@ -348,6 +348,114 @@ const liverResults = [
   },
 ];
 
+const skinQuestions = [
+  {
+    id: 'skin-dryness',
+    text: 'ผิวคุณช่วงนี้เป็นอย่างไร?',
+    answers: [
+      { id: 'normal', label: 'ปกติดี', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-rash' },
+      { id: 'drier', label: 'แห้งขึ้น ตึงบ่อย', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-rash' },
+      { id: 'very-dry', label: 'แห้งมาก ลอก หรือคันร่วมด้วย', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-rash' },
+    ],
+  },
+  {
+    id: 'skin-rash',
+    text: 'มีผื่นแดง คัน หรือลมพิษขึ้นบ่อยไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreSkin: 0 }, nextQuestionId: 'skin-trigger' },
+      { id: 'occasional', label: 'มีบ้างเป็นครั้งคราว', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-trigger' },
+      { id: 'frequent', label: 'มีบ่อย เป็นๆ หายๆ หาสาเหตุไม่เจอ', scores: { scoreSkin: 3 }, nextQuestionId: 'skin-trigger' },
+    ],
+  },
+  {
+    id: 'skin-trigger',
+    text: 'ผื่นหรืออาการคันสัมพันธ์กับอาหาร ฝุ่น หรือสิ่งแวดล้อมบางอย่างไหม?',
+    answers: [
+      { id: 'unsure', label: 'ไม่แน่ใจ/ไม่เกี่ยว', scores: { scoreSkin: 0 }, nextQuestionId: 'skin-acne' },
+      { id: 'suspect', label: 'สงสัยว่าเกี่ยว แต่ไม่รู้ตัวกระตุ้นแน่ชัด', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-acne' },
+      { id: 'confident', label: 'มั่นใจว่าเกี่ยวกับบางอย่าง แต่ยังไม่เคยตรวจ', scores: { scoreSkin: 3 }, nextQuestionId: 'skin-acne' },
+    ],
+  },
+  {
+    id: 'skin-acne',
+    text: 'สิวหรือผิวมันขึ้นเป็นรอบ ๆ (สัมพันธ์กับฮอร์โมน) ไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreSkin: 0 }, nextQuestionId: 'skin-dullness' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-dullness' },
+      { id: 'cyclical', label: 'มีชัดเจนเป็นรอบ', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-dullness' },
+    ],
+  },
+  {
+    id: 'skin-dullness',
+    text: 'ผิวหมองคล้ำ ไม่สดใสเหมือนก่อนไหม?',
+    answers: [
+      { id: 'no', label: 'ไม่รู้สึก', scores: { scoreSkin: 0 }, nextQuestionId: 'skin-impact' },
+      { id: 'somewhat', label: 'รู้สึกบ้าง', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-impact' },
+      { id: 'clearly', label: 'รู้สึกชัดเจน', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-impact' },
+    ],
+  },
+  {
+    id: 'skin-impact',
+    text: 'อาการทางผิวกระทบความมั่นใจหรือชีวิตประจำวันแค่ไหน?',
+    answers: [
+      { id: 'low', label: 'ไม่ค่อยกระทบ', scores: { scoreSkin: 0 }, nextQuestionId: 'skin-duration' },
+      { id: 'some', label: 'กระทบบ้าง', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-duration' },
+      { id: 'high', label: 'กระทบค่อนข้างมาก', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-duration' },
+    ],
+  },
+  {
+    id: 'skin-duration',
+    text: 'เป็นมานานแค่ไหนแล้ว?',
+    answers: [
+      { id: 'new', label: 'ไม่ถึงเดือน', scores: { scoreSkin: 0 } },
+      { id: 'months', label: '1-6 เดือน', scores: { scoreSkin: 1 } },
+      { id: 'chronic', label: 'มากกว่า 6 เดือนหรือเรื้อรัง', scores: { scoreSkin: 2 } },
+    ],
+  },
+];
+
+const skinResults = [
+  {
+    id: 'skin-high',
+    title: 'มีสัญญาณผิวที่ควรให้แพทย์ตรวจแยกให้ชัดเจน',
+    summary: 'ผื่น อาการคัน หรือผิวแห้งของคุณค่อนข้างชัดเจน อาจเป็นผิวแห้งขาดความชุ่มชื้น หรือมีสารก่อภูมิแพ้ร่วมด้วย ควรให้แพทย์ตรวจแยกให้แน่ชัด',
+    threshold: { scoreSkin: 8 },
+    nurtureSegment: 'booth-skin-high',
+    recommendedSteps: [
+      'ปรึกษาทีมแพทย์เพื่อแยกว่าเป็นผิวแห้งขาดความชุ่มชื้นหรือมีสารก่อภูมิแพ้ร่วมด้วย',
+      'พิจารณาตรวจภูมิแพ้ IgE ถ้าสงสัยตัวกระตุ้น',
+      'เสริมความชุ่มชื้นและสารต้านอนุมูลอิสระจากภายในถ้าเน้นผิวแห้งหมองคล้ำ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'skin-moderate',
+    title: 'เริ่มมีสัญญาณผิวที่ควรจับตา',
+    summary: 'บางคำตอบชี้ไปที่ผิวแห้งหรือผื่นที่เริ่มรบกวน ควรสังเกตต่อเนื่องและปรึกษาแพทย์หากไม่ดีขึ้น',
+    threshold: { scoreSkin: 4 },
+    nurtureSegment: 'booth-skin-moderate',
+    recommendedSteps: [
+      'จดว่าผื่นหรือผิวแห้งเกิดขึ้นหลังสัมผัสอะไรบ้าง',
+      'ปรึกษาทีมแพทย์ที่บูธเพื่อประเมินเบื้องต้น',
+      'เสริมความชุ่มชื้นผิวสม่ำเสมอ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'skin-early',
+    title: 'ภาพรวมผิวยังค่อนข้างปกติ',
+    summary: 'คำตอบยังไม่ชี้ไปที่ความผิดปกติทางผิวชัดเจน เหมาะกับการดูแลผิวพื้นฐานต่อเนื่อง',
+    threshold: { scoreSkin: 1 },
+    nurtureSegment: 'booth-skin-early',
+    recommendedSteps: [
+      'ดูแลความชุ่มชื้นผิวและกันแดดสม่ำเสมอ',
+      'ทำแบบประเมินซ้ำเมื่ออาการเปลี่ยน',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์',
+    ],
+    cta: boothCta,
+  },
+];
+
 export const crystalBoothQuiz = {
   id: 'crystal-booth-checkup',
   serviceSlug: 'crystal-quiz',
@@ -361,10 +469,12 @@ export const crystalBoothQuiz = {
     ...hormoneQuestions,
     ...metabolismQuestions,
     ...liverQuestions,
+    ...skinQuestions,
   ],
   results: [
     ...hormoneResults,
     ...metabolismResults,
     ...liverResults,
+    ...skinResults,
   ],
 };

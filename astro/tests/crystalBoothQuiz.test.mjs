@@ -111,6 +111,32 @@ describe('crystalBoothQuiz — ตับ domain', () => {
   });
 });
 
+describe('crystalBoothQuiz — ผิว domain', () => {
+  it('routes the "skin" choice into the skin-dryness question', () => {
+    let session = createQuizSession(crystalBoothQuiz);
+    session = answerCurrentQuestion(crystalBoothQuiz, session, 'skin');
+    assert.equal(getCurrentQuestion(crystalBoothQuiz, session).id, 'skin-dryness');
+  });
+
+  it('resolves skin-high when every answer is the highest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'skin', 'very-dry', 'frequent', 'confident', 'cyclical', 'clearly', 'high', 'chronic',
+    ]);
+    assert.equal(session.completed, true);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'skin-high');
+    assert.equal(result.nurtureSegment, 'booth-skin-high');
+  });
+
+  it('resolves skin-early when every answer is the lowest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'skin', 'normal', 'none', 'unsure', 'none', 'no', 'low', 'new',
+    ]);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'skin-early');
+  });
+});
+
 describe('crystalBoothQuiz — domain isolation', () => {
   it('hormone-domain sessions never resolve to metabolism-* results', () => {
     // Test hormone path with lowest scores
