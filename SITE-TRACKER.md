@@ -154,6 +154,9 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/hbot-and-sleep.md` (Sanity pipeline, doctor quote) | 2026-08-07 |
 | `blog/hbot-after-cosmetic-surgery` (Sanity blog post — published, Reviewed-by card live) | 2026-08-07 |
 | `blog/hbot-and-sleep` (Sanity blog post — published, Reviewed-by card live) | 2026-08-07 |
+| `docs/blog/4-levels-heart-screening-coronary-artery-disease.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
+| `docs/blog/220-minus-age-heart-rate-formula-accuracy.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
+| `docs/blog/normal-ldl-still-at-risk-lipoprotein-a-apob.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 
 ---
 
