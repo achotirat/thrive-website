@@ -137,6 +137,32 @@ describe('crystalBoothQuiz — ผิว domain', () => {
   });
 });
 
+describe('crystalBoothQuiz — วิตามิน/แร่ธาตุ domain', () => {
+  it('routes the "vitamin" choice into the vitamin-fatigue question', () => {
+    let session = createQuizSession(crystalBoothQuiz);
+    session = answerCurrentQuestion(crystalBoothQuiz, session, 'vitamin');
+    assert.equal(getCurrentQuestion(crystalBoothQuiz, session).id, 'vitamin-fatigue');
+  });
+
+  it('resolves vitamin-high when every answer is the highest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'vitamin', 'frequent', 'clear', 'frequent', 'repetitive', 'frequent', 'frequent', 'tested-deficient',
+    ]);
+    assert.equal(session.completed, true);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'vitamin-high');
+    assert.equal(result.nurtureSegment, 'booth-vitamin-high');
+  });
+
+  it('resolves vitamin-early when every answer is the lowest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'vitamin', 'rare', 'none', 'rare', 'varied', 'rare', 'rare', 'tested-normal',
+    ]);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'vitamin-early');
+  });
+});
+
 describe('crystalBoothQuiz — domain isolation', () => {
   it('hormone-domain sessions never resolve to metabolism-* results', () => {
     // Test hormone path with lowest scores
@@ -274,5 +300,76 @@ describe('crystalBoothQuiz — domain isolation', () => {
     const resultLiver = getQuizResult(crystalBoothQuiz, sessionLiver);
     assert.ok(!resultLiver.id.startsWith('skin-'),
       `Liver domain should not return skin result, got: ${resultLiver.id}`);
+  });
+
+  it('vitamin-domain sessions never resolve to hormone-*, metabolism-*, liver-*, or skin-* results', () => {
+    // Test vitamin path with lowest scores - should not be hormone, metabolism, liver, or skin
+    const sessionVitamin = runPath(crystalBoothQuiz, [
+      'vitamin', 'rare', 'none', 'rare', 'varied', 'rare', 'rare', 'tested-normal',
+    ]);
+    const resultVitamin = getQuizResult(crystalBoothQuiz, sessionVitamin);
+    assert.ok(!resultVitamin.id.startsWith('hormone-'),
+      `Vitamin domain should not return hormone result, got: ${resultVitamin.id}`);
+    assert.ok(!resultVitamin.id.startsWith('metabolism-'),
+      `Vitamin domain should not return metabolism result, got: ${resultVitamin.id}`);
+    assert.ok(!resultVitamin.id.startsWith('liver-'),
+      `Vitamin domain should not return liver result, got: ${resultVitamin.id}`);
+    assert.ok(!resultVitamin.id.startsWith('skin-'),
+      `Vitamin domain should not return skin result, got: ${resultVitamin.id}`);
+
+    // Test vitamin path with high scores - should not be hormone, metabolism, liver, or skin
+    const sessionVitaminHigh = runPath(crystalBoothQuiz, [
+      'vitamin', 'frequent', 'clear', 'frequent', 'repetitive', 'frequent', 'frequent', 'tested-deficient',
+    ]);
+    const resultVitaminHigh = getQuizResult(crystalBoothQuiz, sessionVitaminHigh);
+    assert.ok(!resultVitaminHigh.id.startsWith('hormone-'),
+      `Vitamin domain should not return hormone result, got: ${resultVitaminHigh.id}`);
+    assert.ok(!resultVitaminHigh.id.startsWith('metabolism-'),
+      `Vitamin domain should not return metabolism result, got: ${resultVitaminHigh.id}`);
+    assert.ok(!resultVitaminHigh.id.startsWith('liver-'),
+      `Vitamin domain should not return liver result, got: ${resultVitaminHigh.id}`);
+    assert.ok(!resultVitaminHigh.id.startsWith('skin-'),
+      `Vitamin domain should not return skin result, got: ${resultVitaminHigh.id}`);
+  });
+
+  it('hormone-domain sessions never resolve to vitamin-* results', () => {
+    // Test hormone path with lowest scores
+    const sessionHormone = runPath(crystalBoothQuiz, [
+      'hormone', 'regular', 'none', 'stable', 'no-change',
+      'steady', 'no-change', 'rested', 'low',
+    ]);
+    const resultHormone = getQuizResult(crystalBoothQuiz, sessionHormone);
+    assert.ok(!resultHormone.id.startsWith('vitamin-'),
+      `Hormone domain should not return vitamin result, got: ${resultHormone.id}`);
+  });
+
+  it('metabolism-domain sessions never resolve to vitamin-* results', () => {
+    // Test metabolism path with lowest scores
+    const sessionMetabolism = runPath(crystalBoothQuiz, [
+      'metabolism', 'stable', 'no-change', 'rare', 'steady', 'as-expected', 'none', 'new',
+    ]);
+    const resultMetabolism = getQuizResult(crystalBoothQuiz, sessionMetabolism);
+    assert.ok(!resultMetabolism.id.startsWith('vitamin-'),
+      `Metabolism domain should not return vitamin result, got: ${resultMetabolism.id}`);
+  });
+
+  it('liver-domain sessions never resolve to vitamin-* results', () => {
+    // Test liver path with lowest scores
+    const sessionLiver = runPath(crystalBoothQuiz, [
+      'liver', 'rare', 'none', 'rare', 'none', 'never-or-normal', 'none', 'normal',
+    ]);
+    const resultLiver = getQuizResult(crystalBoothQuiz, sessionLiver);
+    assert.ok(!resultLiver.id.startsWith('vitamin-'),
+      `Liver domain should not return vitamin result, got: ${resultLiver.id}`);
+  });
+
+  it('skin-domain sessions never resolve to vitamin-* results', () => {
+    // Test skin path with lowest scores
+    const sessionSkin = runPath(crystalBoothQuiz, [
+      'skin', 'normal', 'none', 'unsure', 'none', 'no', 'low', 'new',
+    ]);
+    const resultSkin = getQuizResult(crystalBoothQuiz, sessionSkin);
+    assert.ok(!resultSkin.id.startsWith('vitamin-'),
+      `Skin domain should not return vitamin result, got: ${resultSkin.id}`);
   });
 });

@@ -456,6 +456,114 @@ const skinResults = [
   },
 ];
 
+const vitaminQuestions = [
+  {
+    id: 'vitamin-fatigue',
+    text: 'รู้สึกอ่อนเพลีย เพลียง่ายไหม ทั้งที่พักผ่อนพอ?',
+    answers: [
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
+      { id: 'frequent', label: 'มีบ่อย เพลียง่ายผิดปกติ', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-hairnails' },
+    ],
+  },
+  {
+    id: 'vitamin-hairnails',
+    text: 'ผมร่วง เล็บเปราะ หรือแผลหายช้าไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreVitamin: 0 }, nextQuestionId: 'vitamin-aches' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-aches' },
+      { id: 'clear', label: 'มีชัดเจน', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-aches' },
+    ],
+  },
+  {
+    id: 'vitamin-aches',
+    text: 'ปวดเมื่อยกล้ามเนื้อ ตะคริว หรือปวดกระดูกบ่อยไหม?',
+    answers: [
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 0 }, nextQuestionId: 'vitamin-diet' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-diet' },
+      { id: 'frequent', label: 'มีบ่อย', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-diet' },
+    ],
+  },
+  {
+    id: 'vitamin-diet',
+    text: 'กินผัก ผลไม้ หรืออาหารหลากหลายครบ 5 หมู่สม่ำเสมอไหม?',
+    answers: [
+      { id: 'varied', label: 'ครบและหลากหลายดี', scores: { scoreVitamin: 0 }, nextQuestionId: 'vitamin-immunity' },
+      { id: 'somewhat', label: 'พอได้ แต่ไม่ค่อยหลากหลาย', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-immunity' },
+      { id: 'repetitive', label: 'กินซ้ำๆ ไม่ค่อยหลากหลาย หรือกินไม่ตรงเวลา', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-immunity' },
+    ],
+  },
+  {
+    id: 'vitamin-immunity',
+    text: 'มีภูมิแพ้ง่าย ป่วยบ่อย หรือแผลในปากขึ้นบ่อยไหม?',
+    answers: [
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 0 }, nextQuestionId: 'vitamin-focus' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-focus' },
+      { id: 'frequent', label: 'มีบ่อย', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-focus' },
+    ],
+  },
+  {
+    id: 'vitamin-focus',
+    text: 'สมองล้า ความจำหรือสมาธิลดลงไหม?',
+    answers: [
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 0 }, nextQuestionId: 'vitamin-history' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-history' },
+      { id: 'frequent', label: 'มีบ่อย', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-history' },
+    ],
+  },
+  {
+    id: 'vitamin-history',
+    text: 'เคยตรวจระดับวิตามิน/แร่ธาตุมาก่อนไหม?',
+    answers: [
+      { id: 'tested-normal', label: 'เคยตรวจแล้วปกติ', scores: { scoreVitamin: 0 } },
+      { id: 'never-tested', label: 'ไม่เคยตรวจ อยากรู้ระดับตัวเอง', scores: { scoreVitamin: 2 } },
+      { id: 'tested-deficient', label: 'เคยตรวจแล้วพบว่าขาดบางตัว', scores: { scoreVitamin: 3 } },
+    ],
+  },
+];
+
+const vitaminResults = [
+  {
+    id: 'vitamin-high',
+    title: 'มีสัญญาณที่ควรตรวจระดับวิตามิน/แร่ธาตุ',
+    summary: 'อาการอ่อนเพลีย ผม เล็บ หรือภูมิคุ้มกันของคุณค่อนข้างชัดเจน อาจเกี่ยวข้องกับการขาดวิตามินหรือแร่ธาตุบางตัว ควรตรวจเพื่อรู้ระดับที่แน่ชัด',
+    threshold: { scoreVitamin: 8 },
+    nurtureSegment: 'booth-vitamin-high',
+    recommendedSteps: [
+      'พิจารณาตรวจ OligoScan (ไม่เจาะเลือด รู้ผลไว เหมาะกับวันนี้ที่บูธ)',
+      'ปรึกษาทีมแพทย์เรื่องอาหารเสริมที่เหมาะกับผลตรวจ',
+      'ปรับอาหารให้หลากหลายระหว่างรอผลตรวจ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'vitamin-moderate',
+    title: 'เริ่มมีสัญญาณที่ควรจับตา',
+    summary: 'บางคำตอบชี้ไปที่ความเป็นไปได้ที่จะขาดวิตามินหรือแร่ธาตุบางตัว ควรสังเกตต่อเนื่องและพิจารณาตรวจเช็ก',
+    threshold: { scoreVitamin: 4 },
+    nurtureSegment: 'booth-vitamin-moderate',
+    recommendedSteps: [
+      'ปรับอาหารให้หลากหลายและครบ 5 หมู่มากขึ้น',
+      'ปรึกษาทีมแพทย์ที่บูธเรื่อง OligoScan เบื้องต้น',
+      'สังเกตอาการอ่อนเพลียหรือภูมิคุ้มกันต่อเนื่อง',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'vitamin-early',
+    title: 'ภาพรวมยังไม่มีสัญญาณขาดวิตามินชัดเจน',
+    summary: 'คำตอบยังไม่ชี้ไปที่การขาดวิตามินหรือแร่ธาตุชัดเจน เหมาะกับการดูแลอาหารพื้นฐานต่อเนื่อง',
+    threshold: { scoreVitamin: 1 },
+    nurtureSegment: 'booth-vitamin-early',
+    recommendedSteps: [
+      'รักษาความหลากหลายของอาหารต่อเนื่อง',
+      'ทำแบบประเมินซ้ำเมื่ออาการเปลี่ยน',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์',
+    ],
+    cta: boothCta,
+  },
+];
+
 export const crystalBoothQuiz = {
   id: 'crystal-booth-checkup',
   serviceSlug: 'crystal-quiz',
@@ -470,11 +578,13 @@ export const crystalBoothQuiz = {
     ...metabolismQuestions,
     ...liverQuestions,
     ...skinQuestions,
+    ...vitaminQuestions,
   ],
   results: [
     ...hormoneResults,
     ...metabolismResults,
     ...liverResults,
     ...skinResults,
+    ...vitaminResults,
   ],
 };
