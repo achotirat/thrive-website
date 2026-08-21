@@ -59,7 +59,7 @@ All 6 domains live in **one** `quiz.results` array, evaluated by `getQuizResult(
 
 Each domain: 3 results (early / moderate / high), same shape as the existing adrenal-fatigue quiz — `high` needs a high threshold, `moderate` a mid threshold, `early` acts as the fallback.
 
-> **Amendment (found during implementation, Task 3):** `early`'s threshold cannot actually be `{}` (or `{ scoreX: 0 }`, which is equivalent) — since all 6 domains' results share one `quiz.results` array, an unconditional catch-all is "eligible" for every session regardless of which domain it came from, and can win another domain's session on tie-break. Fix: each domain's first question's lowest-severity answer scores `1` instead of `0`, and `early`'s threshold is `{ scoreX: 1 }` — genuinely scoped to sessions that actually entered that domain. See the implementation plan's Global Constraints for the full explanation.
+> **Amendment (found during implementation, Task 3):** `early`'s threshold cannot actually be `{}` (or `{ scoreX: 0 }`, which is equivalent) — since all 6 domains' results share one `quiz.results` array, an unconditional catch-all is "eligible" for every session regardless of which domain it came from, and can win another domain's session on tie-break. Fix: each domain's first question adds a per-domain marker key (e.g. `enteredHormone: 1`) to the `scores` object of every answer of that question, and `early`'s threshold is keyed on that marker (`{ enteredX: 1 }`) — genuinely scoped to sessions that actually entered that domain. The marker is separate from `scoreX`, so the original clinician-reviewed symptom-severity scoring (including the first question's lowest-severity answer scoring `0`) is preserved unchanged; isolation is achieved orthogonally, not by inflating scores. See the implementation plan's Global Constraints for the full explanation.
 
 **วัยทอง (menopause) lives inside the hormone domain**, not as a separate stress-domain branch — the reused adrenal-fatigue content doesn't cover menopause, and hormone-domain questions (cycle changes, hot flashes) already do it more naturally.
 
@@ -88,7 +88,7 @@ leadFormTitle: 'ฝากเบอร์ติดต่อ รับของร
 5. "สงสัยว่าขาดวิตามินหรือแร่ธาตุ" → `vitamin-q1`
 6. "เครียดสะสม นอนไม่หลับ" → `stress-q1` (= adrenal-fatigue quiz's `q1`, reused)
 
-### Domain: ฮอร์โมน (incl. วัยทอง) — `scoreHormone`, threshold high ≥10 / moderate ≥5 / early {}
+### Domain: ฮอร์โมน (incl. วัยทอง) — `scoreHormone`, threshold high ≥10 / moderate ≥5 / early keyed on `enteredHormone ≥1` marker
 
 1. **รอบเดือนช่วง 2-4 สัปดาห์ที่ผ่านมาเป็นอย่างไร?** (helper: ถ้าหมดประจำเดือนแล้วให้เลือกข้อ 3)
    - มาสม่ำเสมอตามปกติ (0)
@@ -114,7 +114,7 @@ Results:
 - **moderate** — "เริ่มมีสัญญาณฮอร์โมนไม่สมดุล ควรตรวจเพิ่มเติม" — nurtureSegment `booth-hormone-moderate`
 - **early** — "ภาพรวมยังค่อนข้างสมดุล แต่ควรติดตามสัญญาณเล็ก ๆ" — nurtureSegment `booth-hormone-early`
 
-### Domain: เผาผลาญ/น้ำหนัก — `scoreMetabolism`, threshold high ≥8 / moderate ≥4 / early {}
+### Domain: เผาผลาญ/น้ำหนัก — `scoreMetabolism`, threshold high ≥8 / moderate ≥4 / early keyed on `enteredMetabolism ≥1` marker
 
 1. **น้ำหนักช่วง 2-3 เดือนที่ผ่านมาเปลี่ยนไปอย่างไร ทั้งที่กินไม่ต่างจากเดิม?** — คงที่ (0) / ขึ้นเล็กน้อย (1) / ขึ้นชัดเจนหรือลดยากมาก (3)
 2. **รอบเอวหรือไขมันหน้าท้องเป็นอย่างไร?** — ไม่เปลี่ยน (0) / เพิ่มขึ้นเล็กน้อย (1) / เพิ่มขึ้นชัดเจนทั้งที่น้ำหนักตัวไม่ได้ขึ้นมาก (2)
@@ -126,7 +126,7 @@ Results:
 
 Results (high/moderate/early) — steps mention: จดพฤติกรรมการกินและน้ำหนัก 2 สัปดาห์ / ปรึกษาทีมแพทย์เรื่องตรวจระบบเผาผลาญและไทรอยด์ / ไม่ควรลดน้ำหนักแบบหักโหมเองก่อนตรวจหาสาเหตุ — nurtureSegments `booth-metabolism-{high,moderate,early}`
 
-### Domain: ตับ — `scoreLiver`, threshold high ≥9 / moderate ≥4 / early {}
+### Domain: ตับ — `scoreLiver`, threshold high ≥9 / moderate ≥4 / early keyed on `enteredLiver ≥1` marker
 
 1. **ดื่มแอลกอฮอล์บ่อยแค่ไหน?** — ไม่ดื่มเลย/น้อยมาก (0) / ดื่มเป็นครั้งคราว (1) / ดื่มบ่อยหรือปริมาณมากเมื่อดื่ม (3)
 2. **ใช้ยา อาหารเสริม หรือสมุนไพรต่อเนื่องเป็นประจำไหม?** — ไม่ได้ใช้ (0) / ใช้บางตัวเป็นครั้งคราว (1) / ใช้หลายอย่างต่อเนื่อง (2)
@@ -138,7 +138,7 @@ Results (high/moderate/early) — steps mention: จดพฤติกรรม�
 
 Results — steps mention: ตรวจการทำงานของตับ (Liver Function Test) / ปรึกษาทีมแพทย์เรื่องกลูต้าไธโอนดริปเพื่อดีท็อกซ์ตับ / ลดหรือเว้นแอลกอฮอล์ระหว่างรอผลตรวจ — nurtureSegments `booth-liver-{high,moderate,early}`
 
-### Domain: ผิว — `scoreSkin`, threshold high ≥8 / moderate ≥4 / early {}
+### Domain: ผิว — `scoreSkin`, threshold high ≥8 / moderate ≥4 / early keyed on `enteredSkin ≥1` marker
 
 1. **ผิวคุณช่วงนี้เป็นอย่างไร?** — ปกติดี (0) / แห้งขึ้น ตึงบ่อย (1) / แห้งมาก ลอก หรือคันร่วมด้วย (2)
 2. **มีผื่นแดง คัน หรือลมพิษขึ้นบ่อยไหม?** — ไม่มี (0) / มีบ้างเป็นครั้งคราว (2) / มีบ่อย เป็นๆ หายๆ หาสาเหตุไม่เจอ (3)
@@ -150,7 +150,7 @@ Results — steps mention: ตรวจการทำงานของตั�
 
 Results — steps mention: ปรึกษาทีมแพทย์เพื่อแยกว่าเป็นผิวแห้งขาดความชุ่มชื้นหรือมีสารก่อภูมิแพ้ร่วมด้วย / พิจารณาตรวจภูมิแพ้ IgE ถ้าสงสัยตัวกระตุ้น / เสริมความชุ่มชื้นและสารต้านอนุมูลอิสระจากภายในถ้าเน้นผิวแห้งหมองคล้ำ — nurtureSegments `booth-skin-{high,moderate,early}`
 
-### Domain: วิตามิน/แร่ธาตุ — `scoreVitamin`, threshold high ≥8 / moderate ≥4 / early {}
+### Domain: วิตามิน/แร่ธาตุ — `scoreVitamin`, threshold high ≥8 / moderate ≥4 / early keyed on `enteredVitamin ≥1` marker
 
 1. **รู้สึกอ่อนเพลีย เพลียง่ายไหม ทั้งที่พักผ่อนพอ?** — ไม่ค่อยมี (0) / มีบ้าง (1) / มีบ่อยผิดปกติ (2)
 2. **ผมร่วง เล็บเปราะ หรือแผลหายช้าไหม?** — ไม่มี (0) / มีบ้าง (1) / มีชัดเจน (2)
@@ -162,7 +162,7 @@ Results — steps mention: ปรึกษาทีมแพทย์เพื�
 
 Results — steps mention: พิจารณาตรวจ OligoScan (ไม่เจาะเลือด รู้ผลไว เหมาะกับวันนี้ที่บูธ) / ปรึกษาทีมแพทย์เรื่องอาหารเสริมที่เหมาะกับผลตรวจ / ปรับอาหารให้หลากหลายระหว่างรอผลตรวจ — nurtureSegments `booth-vitamin-{high,moderate,early}`
 
-### Domain: เครียด/นอนไม่หลับ — `scoreStress`, threshold high ≥9 / moderate ≥4 / early {}
+### Domain: เครียด/นอนไม่หลับ — `scoreStress`, threshold high ≥9 / moderate ≥4 / early keyed on `enteredStress ≥1` marker
 
 **Reused wholesale from `astro/src/data/lp-adrenal-fatigue-quiz.ts`** (questions `q1`-`q6`: ตื่นนอนรู้สึกอย่างไร / ช่วงบ่ายรู้สึกอย่างไร / อยากของหวานหรือเค็มบ่อยแค่ไหน / น้ำหนักเปลี่ยนทั้งที่คุมอาหาร / ความเครียดสะสมอยู่ระดับไหน / อาการเป็นมานานแค่ไหน). Only change: score key renamed `score` → `scoreStress`, result ids/nurtureSegments prefixed `booth-stress-{high,moderate,early}`, and the two existing results' `cta` (currently `tel:` call buttons) replaced with `#quiz-lead-form` to match this quiz's no-outbound-action rule. Copy text otherwise kept as-is (already reviewed, already live).
 

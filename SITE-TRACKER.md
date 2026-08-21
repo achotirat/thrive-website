@@ -211,8 +211,7 @@ Temporary campaign and event pages — not indexed in search engines, no organic
 
 | URL | Purpose | Built | Status |
 |-----|---------|-------|--------|
-| `/crystal-quiz` | Crystal Park booth event self-assessment quiz (26–30 Aug 2026) | 2026-08-21 | ✅ Complete |
-| `/thank-you` | Booth referral banner for Crystal Park quiz completers | 2026-08-21 | ✅ Complete |
+| `/crystal-quiz` | Crystal Park booth event self-assessment quiz (26–30 Aug 2026); on completion, redirects to `/thank-you` which shows a booth-specific claim banner when arriving from this quiz | 2026-08-21 | ✅ Complete |
 
 ---
 
