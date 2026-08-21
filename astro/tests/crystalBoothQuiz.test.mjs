@@ -84,3 +84,43 @@ describe('crystalBoothQuiz — เผาผลาญ/น้ำหนัก domai
     assert.equal(result.id, 'metabolism-early');
   });
 });
+
+describe('crystalBoothQuiz — domain isolation', () => {
+  it('hormone-domain sessions never resolve to metabolism-* results', () => {
+    // Test hormone path with lowest scores
+    const sessionHormone = runPath(crystalBoothQuiz, [
+      'hormone', 'regular', 'none', 'stable', 'no-change',
+      'steady', 'no-change', 'rested', 'low',
+    ]);
+    const resultHormone = getQuizResult(crystalBoothQuiz, sessionHormone);
+    assert.ok(!resultHormone.id.startsWith('metabolism-'),
+      `Hormone domain should not return metabolism result, got: ${resultHormone.id}`);
+
+    // Test hormone path with high scores
+    const sessionHormoneHigh = runPath(crystalBoothQuiz, [
+      'hormone', 'menopause', 'frequent', 'volatile', 'clear-change',
+      'always-tired', 'clear-gain', 'disrupted', 'high',
+    ]);
+    const resultHormoneHigh = getQuizResult(crystalBoothQuiz, sessionHormoneHigh);
+    assert.ok(!resultHormoneHigh.id.startsWith('metabolism-'),
+      `Hormone domain should not return metabolism result, got: ${resultHormoneHigh.id}`);
+  });
+
+  it('metabolism-domain sessions never resolve to hormone-* results', () => {
+    // Test metabolism path with lowest scores
+    const sessionMetabolism = runPath(crystalBoothQuiz, [
+      'metabolism', 'stable', 'no-change', 'rare', 'steady', 'as-expected', 'none', 'new',
+    ]);
+    const resultMetabolism = getQuizResult(crystalBoothQuiz, sessionMetabolism);
+    assert.ok(!resultMetabolism.id.startsWith('hormone-'),
+      `Metabolism domain should not return hormone result, got: ${resultMetabolism.id}`);
+
+    // Test metabolism path with high scores
+    const sessionMetabolismHigh = runPath(crystalBoothQuiz, [
+      'metabolism', 'stuck', 'clear', 'daily', 'always-tired', 'no-result', 'frequent', 'chronic',
+    ]);
+    const resultMetabolismHigh = getQuizResult(crystalBoothQuiz, sessionMetabolismHigh);
+    assert.ok(!resultMetabolismHigh.id.startsWith('hormone-'),
+      `Metabolism domain should not return hormone result, got: ${resultMetabolismHigh.id}`);
+  });
+});

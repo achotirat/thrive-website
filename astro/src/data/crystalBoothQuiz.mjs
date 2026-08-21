@@ -137,7 +137,7 @@ const metabolismQuestions = [
     id: 'metabolism-weight',
     text: 'น้ำหนักช่วง 2-3 เดือนที่ผ่านมาเปลี่ยนไปอย่างไร ทั้งที่กินไม่ต่างจากเดิม?',
     answers: [
-      { id: 'stable', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'stable', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
       { id: 'slight-gain', label: 'ขึ้นเล็กน้อย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
       { id: 'stuck', label: 'ขึ้นชัดเจน หรือลดยากมากแม้พยายามคุมอาหาร/ออกกำลังกาย', scores: { scoreMetabolism: 3 }, nextQuestionId: 'metabolism-waist' },
     ],
@@ -229,7 +229,7 @@ const metabolismResults = [
     id: 'metabolism-early',
     title: 'ภาพรวมเผาผลาญยังค่อนข้างปกติ',
     summary: 'คำตอบยังไม่ชี้ไปที่ความผิดปกติชัดเจน เหมาะกับการดูแลอาหารและการออกกำลังกายต่อเนื่อง',
-    threshold: { scoreMetabolism: 0 },
+    threshold: { scoreMetabolism: 1 },
     nurtureSegment: 'booth-metabolism-early',
     recommendedSteps: [
       'รักษาสมดุลอาหารและการออกกำลังกายต่อเนื่อง',
