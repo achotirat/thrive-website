@@ -58,3 +58,29 @@ describe('crystalBoothQuiz — ฮอร์โมน domain', () => {
     assert.equal(result.nurtureSegment, 'booth-hormone-early');
   });
 });
+
+describe('crystalBoothQuiz — เผาผลาญ/น้ำหนัก domain', () => {
+  it('routes the "metabolism" choice into the metabolism-weight question', () => {
+    let session = createQuizSession(crystalBoothQuiz);
+    session = answerCurrentQuestion(crystalBoothQuiz, session, 'metabolism');
+    assert.equal(getCurrentQuestion(crystalBoothQuiz, session).id, 'metabolism-weight');
+  });
+
+  it('resolves metabolism-high when every answer is the highest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'metabolism', 'stuck', 'clear', 'daily', 'always-tired', 'no-result', 'frequent', 'chronic',
+    ]);
+    assert.equal(session.completed, true);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'metabolism-high');
+    assert.equal(result.nurtureSegment, 'booth-metabolism-high');
+  });
+
+  it('resolves metabolism-early when every answer is the lowest-severity choice', () => {
+    const session = runPath(crystalBoothQuiz, [
+      'metabolism', 'stable', 'no-change', 'rare', 'steady', 'as-expected', 'none', 'new',
+    ]);
+    const result = getQuizResult(crystalBoothQuiz, session);
+    assert.equal(result.id, 'metabolism-early');
+  });
+});

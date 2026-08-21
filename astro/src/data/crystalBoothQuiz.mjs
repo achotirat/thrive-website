@@ -20,7 +20,7 @@ const hormoneQuestions = [
     text: 'รอบเดือนช่วง 2-4 สัปดาห์ที่ผ่านมาเป็นอย่างไร?',
     helper: 'ถ้าหมดประจำเดือนแล้วหรือไม่มีรอบเดือน ให้เลือกข้อสุดท้าย',
     answers: [
-      { id: 'regular', label: 'มาสม่ำเสมอตามปกติ', scores: { scoreHormone: 0 }, nextQuestionId: 'hormone-hotflash' },
+      { id: 'regular', label: 'มาสม่ำเสมอตามปกติ', scores: { scoreHormone: 1 }, nextQuestionId: 'hormone-hotflash' },
       { id: 'irregular', label: 'เริ่มมาไม่สม่ำเสมอ ห่างขึ้นหรือถี่ขึ้น', scores: { scoreHormone: 2 }, nextQuestionId: 'hormone-hotflash' },
       { id: 'menopause', label: 'ขาดหรือหมดไปแล้ว หรือมีอาการก่อนวัยทองชัดเจน', scores: { scoreHormone: 3 }, nextQuestionId: 'hormone-hotflash' },
     ],
@@ -121,10 +121,118 @@ const hormoneResults = [
     id: 'hormone-early',
     title: 'ภาพรวมยังค่อนข้างสมดุล แต่ควรติดตามสัญญาณเล็ก ๆ',
     summary: 'คำตอบยังไม่ชี้ไปที่กลุ่มอาการเด่นชัด เหมาะกับการดูแลพื้นฐานและติดตามอาการเมื่อเริ่มรบกวนชีวิตประจำวัน',
-    threshold: {},
+    threshold: { scoreHormone: 1 },
     nurtureSegment: 'booth-hormone-early',
     recommendedSteps: [
       'ดูแล sleep routine และโปรตีนในแต่ละมื้อ',
+      'ทำแบบประเมินซ้ำเมื่ออาการเปลี่ยน',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์',
+    ],
+    cta: boothCta,
+  },
+];
+
+const metabolismQuestions = [
+  {
+    id: 'metabolism-weight',
+    text: 'น้ำหนักช่วง 2-3 เดือนที่ผ่านมาเปลี่ยนไปอย่างไร ทั้งที่กินไม่ต่างจากเดิม?',
+    answers: [
+      { id: 'stable', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'slight-gain', label: 'ขึ้นเล็กน้อย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'stuck', label: 'ขึ้นชัดเจน หรือลดยากมากแม้พยายามคุมอาหาร/ออกกำลังกาย', scores: { scoreMetabolism: 3 }, nextQuestionId: 'metabolism-waist' },
+    ],
+  },
+  {
+    id: 'metabolism-waist',
+    text: 'รอบเอวหรือไขมันหน้าท้องเป็นอย่างไร?',
+    answers: [
+      { id: 'no-change', label: 'ไม่เปลี่ยน', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-cravings' },
+      { id: 'slight', label: 'เพิ่มขึ้นเล็กน้อย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-cravings' },
+      { id: 'clear', label: 'เพิ่มขึ้นชัดเจน ทั้งที่น้ำหนักตัวโดยรวมไม่ได้ขึ้นมาก', scores: { scoreMetabolism: 2 }, nextQuestionId: 'metabolism-cravings' },
+    ],
+  },
+  {
+    id: 'metabolism-cravings',
+    text: 'อยากของหวานหรือแป้งบ่อยแค่ไหน?',
+    answers: [
+      { id: 'rare', label: 'แทบไม่เลย', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-energy' },
+      { id: 'some-days', label: 'บางวัน โดยเฉพาะตอนเครียดหรือบ่าย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-energy' },
+      { id: 'daily', label: 'อยากเกือบทุกวัน หิวแกว่งจนหงุดหงิด', scores: { scoreMetabolism: 2 }, nextQuestionId: 'metabolism-energy' },
+    ],
+  },
+  {
+    id: 'metabolism-energy',
+    text: 'พลังงานระหว่างวันเป็นแบบไหน?',
+    answers: [
+      { id: 'steady', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-effort' },
+      { id: 'afternoon-crash', label: 'บ่ายแล้วหมดแรง ต้องพึ่งกาแฟ/ของหวาน', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-effort' },
+      { id: 'always-tired', label: 'เหนื่อยตลอดวันทั้งที่นอนพอ', scores: { scoreMetabolism: 2 }, nextQuestionId: 'metabolism-effort' },
+    ],
+  },
+  {
+    id: 'metabolism-effort',
+    text: 'ออกกำลังกายหรือคุมอาหารแล้วเห็นผลไหม?',
+    answers: [
+      { id: 'as-expected', label: 'เห็นผลตามที่ควรจะเป็น', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-digestion' },
+      { id: 'slower', label: 'เห็นผลช้ากว่าที่เคย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-digestion' },
+      { id: 'no-result', label: 'แทบไม่เห็นผลเลย ทั้งที่พยายามมาก', scores: { scoreMetabolism: 3 }, nextQuestionId: 'metabolism-digestion' },
+    ],
+  },
+  {
+    id: 'metabolism-digestion',
+    text: 'มีอาการท้องอืด บวมง่าย หรือขับถ่ายผิดปกติร่วมด้วยไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreMetabolism: 0 }, nextQuestionId: 'metabolism-duration' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-duration' },
+      { id: 'frequent', label: 'มีบ่อย', scores: { scoreMetabolism: 2 }, nextQuestionId: 'metabolism-duration' },
+    ],
+  },
+  {
+    id: 'metabolism-duration',
+    text: 'อาการเหล่านี้เป็นมานานแค่ไหนแล้ว?',
+    answers: [
+      { id: 'new', label: 'ไม่ถึงเดือน', scores: { scoreMetabolism: 0 } },
+      { id: 'months', label: '1-6 เดือน', scores: { scoreMetabolism: 1 } },
+      { id: 'chronic', label: 'มากกว่า 6 เดือน หรือเรื้อรัง', scores: { scoreMetabolism: 2 } },
+    ],
+  },
+];
+
+const metabolismResults = [
+  {
+    id: 'metabolism-high',
+    title: 'มีสัญญาณเผาผลาญ/น้ำหนักที่ควรตรวจเพิ่มเติม',
+    summary: 'น้ำหนัก รอบเอว และพลังงานที่เปลี่ยนไปค่อนข้างชัด อาจเกี่ยวกับระบบเผาผลาญ ไทรอยด์ หรือน้ำตาลในเลือด ควรตรวจเช็กเพื่อหาสาเหตุที่แท้จริง',
+    threshold: { scoreMetabolism: 8 },
+    nurtureSegment: 'booth-metabolism-high',
+    recommendedSteps: [
+      'จดพฤติกรรมการกินและน้ำหนัก 2 สัปดาห์',
+      'ปรึกษาทีมแพทย์เรื่องตรวจระบบเผาผลาญและไทรอยด์',
+      'ไม่ควรลดน้ำหนักแบบหักโหมเองก่อนตรวจหาสาเหตุ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'metabolism-moderate',
+    title: 'เริ่มมีสัญญาณเผาผลาญเปลี่ยนแปลง',
+    summary: 'บางคำตอบชี้ไปที่ระบบเผาผลาญที่เริ่มทำงานเปลี่ยนไป ควรสังเกตต่อเนื่องและปรึกษาแพทย์หากไม่ดีขึ้น',
+    threshold: { scoreMetabolism: 4 },
+    nurtureSegment: 'booth-metabolism-moderate',
+    recommendedSteps: [
+      'จดอาหารและน้ำหนักไว้เทียบ 1-2 สัปดาห์',
+      'ปรึกษาทีมแพทย์ที่บูธเพื่อประเมินเบื้องต้น',
+      'ไม่ควรลดน้ำหนักแบบหักโหมเองก่อนตรวจหาสาเหตุ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'metabolism-early',
+    title: 'ภาพรวมเผาผลาญยังค่อนข้างปกติ',
+    summary: 'คำตอบยังไม่ชี้ไปที่ความผิดปกติชัดเจน เหมาะกับการดูแลอาหารและการออกกำลังกายต่อเนื่อง',
+    threshold: { scoreMetabolism: 0 },
+    nurtureSegment: 'booth-metabolism-early',
+    recommendedSteps: [
+      'รักษาสมดุลอาหารและการออกกำลังกายต่อเนื่อง',
       'ทำแบบประเมินซ้ำเมื่ออาการเปลี่ยน',
       'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์',
     ],
@@ -143,8 +251,10 @@ export const crystalBoothQuiz = {
   questions: [
     topConcernQuestion,
     ...hormoneQuestions,
+    ...metabolismQuestions,
   ],
   results: [
     ...hormoneResults,
+    ...metabolismResults,
   ],
 };
