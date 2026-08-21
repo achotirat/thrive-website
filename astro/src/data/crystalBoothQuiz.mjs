@@ -240,6 +240,114 @@ const metabolismResults = [
   },
 ];
 
+const liverQuestions = [
+  {
+    id: 'liver-alcohol',
+    text: 'คุณดื่มแอลกอฮอล์บ่อยแค่ไหน?',
+    answers: [
+      { id: 'rare', label: 'ไม่ดื่มเลยหรือดื่มน้อยมาก', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-meds' },
+      { id: 'occasional', label: 'ดื่มเป็นครั้งคราว (1-2 ครั้ง/สัปดาห์)', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-meds' },
+      { id: 'frequent', label: 'ดื่มบ่อย หรือดื่มปริมาณมากเมื่อดื่ม', scores: { scoreLiver: 3 }, nextQuestionId: 'liver-meds' },
+    ],
+  },
+  {
+    id: 'liver-meds',
+    text: 'ใช้ยา อาหารเสริม หรือสมุนไพรต่อเนื่องเป็นประจำไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่ได้ใช้', scores: { scoreLiver: 0 }, nextQuestionId: 'liver-fatigue' },
+      { id: 'occasional', label: 'ใช้บางตัวเป็นครั้งคราว', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-fatigue' },
+      { id: 'regular', label: 'ใช้หลายอย่างต่อเนื่องเป็นประจำ', scores: { scoreLiver: 2 }, nextQuestionId: 'liver-fatigue' },
+    ],
+  },
+  {
+    id: 'liver-fatigue',
+    text: 'รู้สึกเหนื่อยง่าย อ่อนเพลียโดยไม่มีสาเหตุชัดเจนไหม?',
+    answers: [
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreLiver: 0 }, nextQuestionId: 'liver-skin' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-skin' },
+      { id: 'frequent', label: 'มีบ่อย เพลียง่ายผิดปกติ', scores: { scoreLiver: 2 }, nextQuestionId: 'liver-skin' },
+    ],
+  },
+  {
+    id: 'liver-skin',
+    text: 'ผิวหน้ามันมาก สิวขึ้นง่าย หรือผิวคล้ำผิดปกติไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreLiver: 0 }, nextQuestionId: 'liver-labs' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-labs' },
+      { id: 'clear', label: 'มีชัดเจน', scores: { scoreLiver: 2 }, nextQuestionId: 'liver-labs' },
+    ],
+  },
+  {
+    id: 'liver-labs',
+    text: 'เคยตรวจเลือดแล้วค่าตับ (SGOT/SGPT) สูงกว่าปกติไหม?',
+    answers: [
+      { id: 'never-or-normal', label: 'ไม่เคยตรวจ หรือตรวจแล้วปกติ', scores: { scoreLiver: 0 }, nextQuestionId: 'liver-digestion' },
+      { id: 'slightly-high', label: 'เคยสูงเล็กน้อย', scores: { scoreLiver: 2 }, nextQuestionId: 'liver-digestion' },
+      { id: 'clearly-high', label: 'เคยสูงชัดเจน หรือหมอแจ้งว่าต้องติดตาม', scores: { scoreLiver: 4 }, nextQuestionId: 'liver-digestion' },
+    ],
+  },
+  {
+    id: 'liver-digestion',
+    text: 'มีอาการท้องอืด แน่นใต้ชายโครงขวา หรือเบื่ออาหารไหม?',
+    answers: [
+      { id: 'none', label: 'ไม่มี', scores: { scoreLiver: 0 }, nextQuestionId: 'liver-weight' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-weight' },
+      { id: 'frequent', label: 'มีบ่อย', scores: { scoreLiver: 2 }, nextQuestionId: 'liver-weight' },
+    ],
+  },
+  {
+    id: 'liver-weight',
+    text: 'น้ำหนักตัวตอนนี้เป็นอย่างไร?',
+    answers: [
+      { id: 'normal', label: 'อยู่ในเกณฑ์ปกติ', scores: { scoreLiver: 0 } },
+      { id: 'slightly-over', label: 'เกินเกณฑ์เล็กน้อย', scores: { scoreLiver: 1 } },
+      { id: 'well-over', label: 'เกินเกณฑ์ค่อนข้างมาก (เสี่ยงไขมันพอกตับ)', scores: { scoreLiver: 2 } },
+    ],
+  },
+];
+
+const liverResults = [
+  {
+    id: 'liver-high',
+    title: 'มีสัญญาณที่ควรตรวจการทำงานของตับ',
+    summary: 'พฤติกรรมและอาการของคุณค่อนข้างชัดว่าอาจส่งผลต่อตับ เช่น การดื่ม การใช้ยา/อาหารเสริมต่อเนื่อง หรือค่าตับที่เคยสูง ควรตรวจเพิ่มเติม',
+    threshold: { scoreLiver: 9 },
+    nurtureSegment: 'booth-liver-high',
+    recommendedSteps: [
+      'ตรวจการทำงานของตับ (Liver Function Test)',
+      'ปรึกษาทีมแพทย์เรื่องกลูต้าไธโอนดริปเพื่อดีท็อกซ์ตับ',
+      'ลดหรือเว้นแอลกอฮอล์ระหว่างรอผลตรวจ',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'liver-moderate',
+    title: 'เริ่มมีปัจจัยเสี่ยงต่อตับที่ควรจับตา',
+    summary: 'บางคำตอบชี้ไปที่ปัจจัยเสี่ยงต่อตับ เช่น การดื่มหรือการใช้ยาต่อเนื่อง ควรติดตามและตรวจเช็กเป็นระยะ',
+    threshold: { scoreLiver: 4 },
+    nurtureSegment: 'booth-liver-moderate',
+    recommendedSteps: [
+      'ลดความถี่การดื่มแอลกอฮอล์',
+      'ปรึกษาทีมแพทย์ที่บูธเรื่องการตรวจตับเบื้องต้น',
+      'สังเกตอาการเหนื่อยง่ายหรือท้องอืดต่อเนื่อง',
+    ],
+    cta: boothCta,
+  },
+  {
+    id: 'liver-early',
+    title: 'ภาพรวมตับยังไม่มีสัญญาณเสี่ยงชัดเจน',
+    summary: 'คำตอบยังไม่ชี้ไปที่ปัจจัยเสี่ยงต่อตับ เหมาะกับการดูแลพื้นฐานต่อเนื่อง',
+    threshold: { scoreLiver: 1 },
+    nurtureSegment: 'booth-liver-early',
+    recommendedSteps: [
+      'ดูแลการดื่มแอลกอฮอล์และการใช้ยาให้อยู่ในปริมาณที่เหมาะสม',
+      'ตรวจสุขภาพประจำปีตามปกติ',
+      'แบบประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์',
+    ],
+    cta: boothCta,
+  },
+];
+
 export const crystalBoothQuiz = {
   id: 'crystal-booth-checkup',
   serviceSlug: 'crystal-quiz',
@@ -252,9 +360,11 @@ export const crystalBoothQuiz = {
     topConcernQuestion,
     ...hormoneQuestions,
     ...metabolismQuestions,
+    ...liverQuestions,
   ],
   results: [
     ...hormoneResults,
     ...metabolismResults,
+    ...liverResults,
   ],
 };
