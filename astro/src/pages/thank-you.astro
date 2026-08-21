@@ -17,10 +17,19 @@ import SEO from '../components/SEO.astro';
   <Header />
   <main class="thank-you-page">
     <section class="section">
-      <div class="section-container thank-you-card">
+      <div class="section-container thank-you-card" data-thank-you-default>
         <span class="section-label">Thank you</span>
         <h1>ส่งข้อมูลเรียบร้อยแล้ว</h1>
         <p>ทีมงาน Thrive Wellness Clinic จะติดต่อกลับเร็ว ๆ นี้เพื่อช่วยดูแลขั้นตอนถัดไป</p>
+        <div class="cta-section__actions">
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-primary" data-gtm-event="line_click">คุยกับเราทาง LINE</a>
+          <a href="/" class="btn btn-secondary">กลับหน้าแรก</a>
+        </div>
+      </div>
+      <div class="section-container thank-you-card" data-thank-you-booth hidden>
+        <span class="section-label">Thank you</span>
+        <h1>ทำแบบทดสอบสำเร็จ ✅</h1>
+        <p>แสดงหน้าจอนี้ให้พนักงานที่บูธ Thrive Wellness เพื่อรับของรางวัลได้เลย</p>
         <div class="cta-section__actions">
           <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-primary" data-gtm-event="line_click">คุยกับเราทาง LINE</a>
           <a href="/" class="btn btn-secondary">กลับหน้าแรก</a>
@@ -32,6 +41,13 @@ import SEO from '../components/SEO.astro';
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
     const params = new URLSearchParams(window.location.search);
+
+    // must stay in sync with crystalBoothQuiz.id in astro/src/data/crystalBoothQuiz.mjs
+    if (params.get('quiz') === 'crystal-booth-checkup') {
+      document.querySelector('[data-thank-you-default]')?.setAttribute('hidden', '');
+      document.querySelector('[data-thank-you-booth]')?.removeAttribute('hidden');
+    }
+
     window.dataLayer.push({
       event: 'lead_submit',
       service: params.get('service') || '',

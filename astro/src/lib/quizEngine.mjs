@@ -51,6 +51,27 @@ export function getQuizResult(quiz, session) {
   return quiz.results[0] || null;
 }
 
+export function getQuizProgress(quiz, session) {
+  const answered = session.answers.length;
+  const current = getCurrentQuestion(quiz, session);
+
+  if (!current) {
+    return { current: answered, total: answered };
+  }
+
+  let total = answered + 1;
+  let cursor = current;
+  let steps = 0;
+  const maxSteps = quiz.questions.length;
+  while (cursor.answers[0]?.nextQuestionId && steps < maxSteps) {
+    cursor = findQuestion(quiz, cursor.answers[0].nextQuestionId);
+    total += 1;
+    steps += 1;
+  }
+
+  return { current: answered + 1, total };
+}
+
 export function buildQuizLeadPayload(quiz, session, result, input) {
   const attribution = input.attribution || {};
   const messageParts = [

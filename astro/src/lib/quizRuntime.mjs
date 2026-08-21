@@ -3,6 +3,7 @@ import {
   buildQuizLeadPayload,
   createQuizSession,
   getCurrentQuestion,
+  getQuizProgress,
   getQuizResult,
 } from './quizEngine.mjs';
 
@@ -49,16 +50,11 @@ export function mountQuizEngine(root) {
 
   const render = () => {
     const question = getCurrentQuestion(quiz, session);
-    const currentIndex = question
-      ? quiz.questions.findIndex((candidate) => candidate.id === question.id) + 1
-      : quiz.questions.length;
+    const { current, total } = getQuizProgress(quiz, session);
 
     if (progressEl) {
-      progressEl.textContent = `ข้อ ${Math.min(currentIndex, quiz.questions.length)} จาก ${quiz.questions.length}`;
-      progressEl.style.setProperty(
-        '--quiz-progress',
-        `${Math.round((Math.min(currentIndex, quiz.questions.length) / quiz.questions.length) * 100)}%`,
-      );
+      progressEl.textContent = `ข้อ ${current} จาก ${total}`;
+      progressEl.style.setProperty('--quiz-progress', `${Math.round((current / total) * 100)}%`);
     }
 
     if (!question) {

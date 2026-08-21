@@ -11,9 +11,9 @@
 id_rsa*
 id_ed25519*
 PROJECT_LOG.md
-data/
-private/
-admin/
+/data/
+/private/
+/admin/
 .tmp.drivedownload/
 .tmp.driveupload/
 node_modules/
@@ -25,6 +25,7 @@ build/
 .sanity/
 Icon?
 .worktrees/
+.superpowers/
 
 # Claude Code — ignore local session/settings, but track shared skills
 .claude/*

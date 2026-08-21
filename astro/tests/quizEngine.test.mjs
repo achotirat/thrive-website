@@ -6,6 +6,7 @@ import {
   answerCurrentQuestion,
   getCurrentQuestion,
   getQuizResult,
+  getQuizProgress,
   buildQuizLeadPayload,
 } from '../src/lib/quizEngine.mjs';
 import { campaignQuizzes } from '../src/lib/quizDefinitions.mjs';
@@ -155,5 +156,74 @@ describe('quiz engine', () => {
       const result = getQuizResult(quiz, session);
       assert.ok(result?.id, `${serviceSlug} should resolve a result`);
     });
+  });
+});
+
+describe('getQuizProgress', () => {
+  const linearQuiz = {
+    id: 'linear-progress-test',
+    startQuestionId: 'q1',
+    questions: [
+      { id: 'q1', text: 'Q1', answers: [{ id: 'a', label: 'A', nextQuestionId: 'q2' }] },
+      { id: 'q2', text: 'Q2', answers: [{ id: 'a', label: 'A', nextQuestionId: 'q3' }] },
+      { id: 'q3', text: 'Q3', answers: [{ id: 'a', label: 'A' }] },
+    ],
+    results: [{ id: 'r', title: 'R', summary: 'S' }],
+  };
+
+  it('reports 1 of 3 at the start of a 3-question linear quiz', () => {
+    const session = createQuizSession(linearQuiz);
+    assert.deepEqual(getQuizProgress(linearQuiz, session), { current: 1, total: 3 });
+  });
+
+  it('advances current while total stays fixed for a linear quiz', () => {
+    let session = createQuizSession(linearQuiz);
+    session = answerCurrentQuestion(linearQuiz, session, 'a');
+    assert.deepEqual(getQuizProgress(linearQuiz, session), { current: 2, total: 3 });
+  });
+
+  it('reports current === total when the quiz is complete', () => {
+    let session = createQuizSession(linearQuiz);
+    session = answerCurrentQuestion(linearQuiz, session, 'a');
+    session = answerCurrentQuestion(linearQuiz, session, 'a');
+    session = answerCurrentQuestion(linearQuiz, session, 'a');
+    assert.equal(session.completed, true);
+    assert.deepEqual(getQuizProgress(linearQuiz, session), { current: 3, total: 3 });
+  });
+
+  const branchingQuiz = {
+    id: 'branching-progress-test',
+    startQuestionId: 'pick',
+    questions: [
+      {
+        id: 'pick',
+        text: 'Pick a path',
+        answers: [
+          { id: 'short', label: 'Short', nextQuestionId: 'short-1' },
+          { id: 'long', label: 'Long', nextQuestionId: 'long-1' },
+        ],
+      },
+      { id: 'short-1', text: 'Short 1', answers: [{ id: 'a', label: 'A' }] },
+      { id: 'long-1', text: 'Long 1', answers: [{ id: 'a', label: 'A', nextQuestionId: 'long-2' }] },
+      { id: 'long-2', text: 'Long 2', answers: [{ id: 'a', label: 'A' }] },
+    ],
+    results: [{ id: 'r', title: 'R', summary: 'S' }],
+  };
+
+  it('reflects the chosen branch length, not the flat total question count', () => {
+    let session = createQuizSession(branchingQuiz);
+    session = answerCurrentQuestion(branchingQuiz, session, 'short');
+    // Chosen path is pick -> short-1 = 2 questions total, NOT
+    // branchingQuiz.questions.length (4).
+    assert.deepEqual(getQuizProgress(branchingQuiz, session), { current: 2, total: 2 });
+  });
+
+  it('reflects a longer chosen branch independently of a shorter sibling branch', () => {
+    let session = createQuizSession(branchingQuiz);
+    session = answerCurrentQuestion(branchingQuiz, session, 'long');
+    // Chosen path is pick -> long-1 -> long-2 = 3 questions total.
+    assert.deepEqual(getQuizProgress(branchingQuiz, session), { current: 2, total: 3 });
+    session = answerCurrentQuestion(branchingQuiz, session, 'a');
+    assert.deepEqual(getQuizProgress(branchingQuiz, session), { current: 3, total: 3 });
   });
 });

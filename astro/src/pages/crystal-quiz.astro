@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import QuizEngine from '../components/QuizEngine.astro';
+import { crystalBoothQuiz } from '../data/crystalBoothQuiz.mjs';
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="เช็กสุขภาพเบื้องต้น | Thrive Wellness Clinic"
+    description="ทำแบบทดสอบสุขภาพเบื้องต้น ฝากเบอร์ติดต่อรับของรางวัลที่บูธ Thrive Wellness Clinic"
+    canonicalPath="/crystal-quiz"
+    ogImage="/og-image.jpg"
+    noIndex={true}
+  />
+  <Header />
+  <main class="crystal-quiz-page">
+    <section class="section">
+      <div class="section-container" style="text-align: center;">
+        <span class="section-label">Crystal Park Booth Check</span>
+        <h1>เช็กสุขภาพเบื้องต้นกับ Thrive Wellness</h1>
+        <p>สแกนจากบูธแล้วตอบคำถามสั้น ๆ เพื่อดูว่าตอนนี้ร่างกายคุณส่งสัญญาณอะไร</p>
+      </div>
+    </section>
+    <QuizEngine quiz={crystalBoothQuiz} />
+  </main>
+  <Footer />
+</BaseLayout>
