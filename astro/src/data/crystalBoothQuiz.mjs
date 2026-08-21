@@ -20,9 +20,9 @@ const hormoneQuestions = [
     text: 'รอบเดือนช่วง 2-4 สัปดาห์ที่ผ่านมาเป็นอย่างไร?',
     helper: 'ถ้าหมดประจำเดือนแล้วหรือไม่มีรอบเดือน ให้เลือกข้อสุดท้าย',
     answers: [
-      { id: 'regular', label: 'มาสม่ำเสมอตามปกติ', scores: { scoreHormone: 1 }, nextQuestionId: 'hormone-hotflash' },
-      { id: 'irregular', label: 'เริ่มมาไม่สม่ำเสมอ ห่างขึ้นหรือถี่ขึ้น', scores: { scoreHormone: 2 }, nextQuestionId: 'hormone-hotflash' },
-      { id: 'menopause', label: 'ขาดหรือหมดไปแล้ว หรือมีอาการก่อนวัยทองชัดเจน', scores: { scoreHormone: 3 }, nextQuestionId: 'hormone-hotflash' },
+      { id: 'regular', label: 'มาสม่ำเสมอตามปกติ', scores: { scoreHormone: 0, enteredHormone: 1 }, nextQuestionId: 'hormone-hotflash' },
+      { id: 'irregular', label: 'เริ่มมาไม่สม่ำเสมอ ห่างขึ้นหรือถี่ขึ้น', scores: { scoreHormone: 2, enteredHormone: 1 }, nextQuestionId: 'hormone-hotflash' },
+      { id: 'menopause', label: 'ขาดหรือหมดไปแล้ว หรือมีอาการก่อนวัยทองชัดเจน', scores: { scoreHormone: 3, enteredHormone: 1 }, nextQuestionId: 'hormone-hotflash' },
     ],
   },
   {
@@ -121,7 +121,7 @@ const hormoneResults = [
     id: 'hormone-early',
     title: 'ภาพรวมยังค่อนข้างสมดุล แต่ควรติดตามสัญญาณเล็ก ๆ',
     summary: 'คำตอบยังไม่ชี้ไปที่กลุ่มอาการเด่นชัด เหมาะกับการดูแลพื้นฐานและติดตามอาการเมื่อเริ่มรบกวนชีวิตประจำวัน',
-    threshold: { scoreHormone: 1 },
+    threshold: { enteredHormone: 1 },
     nurtureSegment: 'booth-hormone-early',
     recommendedSteps: [
       'ดูแล sleep routine และโปรตีนในแต่ละมื้อ',
@@ -137,9 +137,9 @@ const metabolismQuestions = [
     id: 'metabolism-weight',
     text: 'น้ำหนักช่วง 2-3 เดือนที่ผ่านมาเปลี่ยนไปอย่างไร ทั้งที่กินไม่ต่างจากเดิม?',
     answers: [
-      { id: 'stable', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
-      { id: 'slight-gain', label: 'ขึ้นเล็กน้อย', scores: { scoreMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
-      { id: 'stuck', label: 'ขึ้นชัดเจน หรือลดยากมากแม้พยายามคุมอาหาร/ออกกำลังกาย', scores: { scoreMetabolism: 3 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'stable', label: 'ค่อนข้างคงที่', scores: { scoreMetabolism: 0, enteredMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'slight-gain', label: 'ขึ้นเล็กน้อย', scores: { scoreMetabolism: 1, enteredMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
+      { id: 'stuck', label: 'ขึ้นชัดเจน หรือลดยากมากแม้พยายามคุมอาหาร/ออกกำลังกาย', scores: { scoreMetabolism: 3, enteredMetabolism: 1 }, nextQuestionId: 'metabolism-waist' },
     ],
   },
   {
@@ -229,7 +229,7 @@ const metabolismResults = [
     id: 'metabolism-early',
     title: 'ภาพรวมเผาผลาญยังค่อนข้างปกติ',
     summary: 'คำตอบยังไม่ชี้ไปที่ความผิดปกติชัดเจน เหมาะกับการดูแลอาหารและการออกกำลังกายต่อเนื่อง',
-    threshold: { scoreMetabolism: 1 },
+    threshold: { enteredMetabolism: 1 },
     nurtureSegment: 'booth-metabolism-early',
     recommendedSteps: [
       'รักษาสมดุลอาหารและการออกกำลังกายต่อเนื่อง',
@@ -245,9 +245,9 @@ const liverQuestions = [
     id: 'liver-alcohol',
     text: 'คุณดื่มแอลกอฮอล์บ่อยแค่ไหน?',
     answers: [
-      { id: 'rare', label: 'ไม่ดื่มเลยหรือดื่มน้อยมาก', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-meds' },
-      { id: 'occasional', label: 'ดื่มเป็นครั้งคราว (1-2 ครั้ง/สัปดาห์)', scores: { scoreLiver: 1 }, nextQuestionId: 'liver-meds' },
-      { id: 'frequent', label: 'ดื่มบ่อย หรือดื่มปริมาณมากเมื่อดื่ม', scores: { scoreLiver: 3 }, nextQuestionId: 'liver-meds' },
+      { id: 'rare', label: 'ไม่ดื่มเลยหรือดื่มน้อยมาก', scores: { scoreLiver: 0, enteredLiver: 1 }, nextQuestionId: 'liver-meds' },
+      { id: 'occasional', label: 'ดื่มเป็นครั้งคราว (1-2 ครั้ง/สัปดาห์)', scores: { scoreLiver: 1, enteredLiver: 1 }, nextQuestionId: 'liver-meds' },
+      { id: 'frequent', label: 'ดื่มบ่อย หรือดื่มปริมาณมากเมื่อดื่ม', scores: { scoreLiver: 3, enteredLiver: 1 }, nextQuestionId: 'liver-meds' },
     ],
   },
   {
@@ -337,7 +337,7 @@ const liverResults = [
     id: 'liver-early',
     title: 'ภาพรวมตับยังไม่มีสัญญาณเสี่ยงชัดเจน',
     summary: 'คำตอบยังไม่ชี้ไปที่ปัจจัยเสี่ยงต่อตับ เหมาะกับการดูแลพื้นฐานต่อเนื่อง',
-    threshold: { scoreLiver: 1 },
+    threshold: { enteredLiver: 1 },
     nurtureSegment: 'booth-liver-early',
     recommendedSteps: [
       'ดูแลการดื่มแอลกอฮอล์และการใช้ยาให้อยู่ในปริมาณที่เหมาะสม',
@@ -353,9 +353,9 @@ const skinQuestions = [
     id: 'skin-dryness',
     text: 'ผิวคุณช่วงนี้เป็นอย่างไร?',
     answers: [
-      { id: 'normal', label: 'ปกติดี', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-rash' },
-      { id: 'drier', label: 'แห้งขึ้น ตึงบ่อย', scores: { scoreSkin: 1 }, nextQuestionId: 'skin-rash' },
-      { id: 'very-dry', label: 'แห้งมาก ลอก หรือคันร่วมด้วย', scores: { scoreSkin: 2 }, nextQuestionId: 'skin-rash' },
+      { id: 'normal', label: 'ปกติดี', scores: { scoreSkin: 0, enteredSkin: 1 }, nextQuestionId: 'skin-rash' },
+      { id: 'drier', label: 'แห้งขึ้น ตึงบ่อย', scores: { scoreSkin: 1, enteredSkin: 1 }, nextQuestionId: 'skin-rash' },
+      { id: 'very-dry', label: 'แห้งมาก ลอก หรือคันร่วมด้วย', scores: { scoreSkin: 2, enteredSkin: 1 }, nextQuestionId: 'skin-rash' },
     ],
   },
   {
@@ -445,7 +445,7 @@ const skinResults = [
     id: 'skin-early',
     title: 'ภาพรวมผิวยังค่อนข้างปกติ',
     summary: 'คำตอบยังไม่ชี้ไปที่ความผิดปกติทางผิวชัดเจน เหมาะกับการดูแลผิวพื้นฐานต่อเนื่อง',
-    threshold: { scoreSkin: 1 },
+    threshold: { enteredSkin: 1 },
     nurtureSegment: 'booth-skin-early',
     recommendedSteps: [
       'ดูแลความชุ่มชื้นผิวและกันแดดสม่ำเสมอ',
@@ -461,9 +461,9 @@ const vitaminQuestions = [
     id: 'vitamin-fatigue',
     text: 'รู้สึกอ่อนเพลีย เพลียง่ายไหม ทั้งที่พักผ่อนพอ?',
     answers: [
-      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
-      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
-      { id: 'frequent', label: 'มีบ่อย เพลียง่ายผิดปกติ', scores: { scoreVitamin: 2 }, nextQuestionId: 'vitamin-hairnails' },
+      { id: 'rare', label: 'ไม่ค่อยมี', scores: { scoreVitamin: 0, enteredVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
+      { id: 'some', label: 'มีบ้าง', scores: { scoreVitamin: 1, enteredVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
+      { id: 'frequent', label: 'มีบ่อย เพลียง่ายผิดปกติ', scores: { scoreVitamin: 2, enteredVitamin: 1 }, nextQuestionId: 'vitamin-hairnails' },
     ],
   },
   {
@@ -553,7 +553,7 @@ const vitaminResults = [
     id: 'vitamin-early',
     title: 'ภาพรวมยังไม่มีสัญญาณขาดวิตามินชัดเจน',
     summary: 'คำตอบยังไม่ชี้ไปที่การขาดวิตามินหรือแร่ธาตุชัดเจน เหมาะกับการดูแลอาหารพื้นฐานต่อเนื่อง',
-    threshold: { scoreVitamin: 1 },
+    threshold: { enteredVitamin: 1 },
     nurtureSegment: 'booth-vitamin-early',
     recommendedSteps: [
       'รักษาความหลากหลายของอาหารต่อเนื่อง',
@@ -570,9 +570,9 @@ const stressQuestions = [
     text: 'ตื่นนอนตอนเช้ารู้สึกอย่างไร?',
     helper: 'เลือกข้อที่ใกล้เคียงที่สุดในช่วงนี้',
     answers: [
-      { id: 'rested', label: 'สดชื่น พร้อมเริ่มวันได้เลย', scores: { scoreStress: 1 }, nextQuestionId: 'stress-afternoon' },
-      { id: 'slow-start', label: 'พอไปได้ ต้องใช้เวลาหน่อยกว่าจะตื่นตัว', scores: { scoreStress: 1 }, nextQuestionId: 'stress-afternoon' },
-      { id: 'exhausted', label: 'เหนื่อยตั้งแต่ตื่น รู้สึกว่าไม่ได้นอนเลย', scores: { scoreStress: 3 }, nextQuestionId: 'stress-afternoon' },
+      { id: 'rested', label: 'สดชื่น พร้อมเริ่มวันได้เลย', scores: { scoreStress: 0, enteredStress: 1 }, nextQuestionId: 'stress-afternoon' },
+      { id: 'slow-start', label: 'พอไปได้ ต้องใช้เวลาหน่อยกว่าจะตื่นตัว', scores: { scoreStress: 1, enteredStress: 1 }, nextQuestionId: 'stress-afternoon' },
+      { id: 'exhausted', label: 'เหนื่อยตั้งแต่ตื่น รู้สึกว่าไม่ได้นอนเลย', scores: { scoreStress: 3, enteredStress: 1 }, nextQuestionId: 'stress-afternoon' },
     ],
   },
   {
@@ -653,7 +653,7 @@ const stressResults = [
     id: 'stress-early',
     title: 'เริ่มมีสัญญาณเตือน — ดูแลก่อนสาย',
     summary: 'ผลประเมินแสดงว่าคุณมีอาการบางส่วนที่อาจบ่งชี้ถึงภาวะเริ่มต้น การพูดคุยกับแพทย์เพื่อตรวจระดับ Cortisol และ DHEA จะช่วยให้รู้แน่ชัดและป้องกันได้ตั้งแต่เนิ่นๆ',
-    threshold: { scoreStress: 1 },
+    threshold: { enteredStress: 1 },
     nurtureSegment: 'booth-stress-early',
     recommendedSteps: [
       'พูดคุยกับแพทย์เพื่อประเมินความเสี่ยงเบื้องต้น',

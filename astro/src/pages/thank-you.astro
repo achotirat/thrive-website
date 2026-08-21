@@ -42,6 +42,7 @@ import SEO from '../components/SEO.astro';
     window.dataLayer = window.dataLayer || [];
     const params = new URLSearchParams(window.location.search);
 
+    // must stay in sync with crystalBoothQuiz.id in astro/src/data/crystalBoothQuiz.mjs
     if (params.get('quiz') === 'crystal-booth-checkup') {
       document.querySelector('[data-thank-you-default]')?.setAttribute('hidden', '');
       document.querySelector('[data-thank-you-booth]')?.removeAttribute('hidden');

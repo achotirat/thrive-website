@@ -61,9 +61,12 @@ export function getQuizProgress(quiz, session) {
 
   let total = answered + 1;
   let cursor = current;
-  while (cursor.answers[0]?.nextQuestionId) {
+  let steps = 0;
+  const maxSteps = quiz.questions.length;
+  while (cursor.answers[0]?.nextQuestionId && steps < maxSteps) {
     cursor = findQuestion(quiz, cursor.answers[0].nextQuestionId);
     total += 1;
+    steps += 1;
   }
 
   return { current: answered + 1, total };
