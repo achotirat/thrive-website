@@ -218,4 +218,61 @@ describe('crystalBoothQuiz — domain isolation', () => {
     assert.ok(!resultMetabolism.id.startsWith('liver-'),
       `Metabolism domain should not return liver result, got: ${resultMetabolism.id}`);
   });
+
+  it('skin-domain sessions never resolve to hormone-*, metabolism-*, or liver-* results', () => {
+    // Test skin path with lowest scores - should not be hormone, metabolism, or liver
+    const sessionSkin = runPath(crystalBoothQuiz, [
+      'skin', 'normal', 'none', 'unsure', 'none', 'no', 'low', 'new',
+    ]);
+    const resultSkin = getQuizResult(crystalBoothQuiz, sessionSkin);
+    assert.ok(!resultSkin.id.startsWith('hormone-'),
+      `Skin domain should not return hormone result, got: ${resultSkin.id}`);
+    assert.ok(!resultSkin.id.startsWith('metabolism-'),
+      `Skin domain should not return metabolism result, got: ${resultSkin.id}`);
+    assert.ok(!resultSkin.id.startsWith('liver-'),
+      `Skin domain should not return liver result, got: ${resultSkin.id}`);
+
+    // Test skin path with high scores - should not be hormone, metabolism, or liver
+    const sessionSkinHigh = runPath(crystalBoothQuiz, [
+      'skin', 'very-dry', 'frequent', 'confident', 'cyclical', 'clearly', 'high', 'chronic',
+    ]);
+    const resultSkinHigh = getQuizResult(crystalBoothQuiz, sessionSkinHigh);
+    assert.ok(!resultSkinHigh.id.startsWith('hormone-'),
+      `Skin domain should not return hormone result, got: ${resultSkinHigh.id}`);
+    assert.ok(!resultSkinHigh.id.startsWith('metabolism-'),
+      `Skin domain should not return metabolism result, got: ${resultSkinHigh.id}`);
+    assert.ok(!resultSkinHigh.id.startsWith('liver-'),
+      `Skin domain should not return liver result, got: ${resultSkinHigh.id}`);
+  });
+
+  it('hormone-domain sessions never resolve to skin-* results', () => {
+    // Test hormone path with lowest scores
+    const sessionHormone = runPath(crystalBoothQuiz, [
+      'hormone', 'regular', 'none', 'stable', 'no-change',
+      'steady', 'no-change', 'rested', 'low',
+    ]);
+    const resultHormone = getQuizResult(crystalBoothQuiz, sessionHormone);
+    assert.ok(!resultHormone.id.startsWith('skin-'),
+      `Hormone domain should not return skin result, got: ${resultHormone.id}`);
+  });
+
+  it('metabolism-domain sessions never resolve to skin-* results', () => {
+    // Test metabolism path with lowest scores
+    const sessionMetabolism = runPath(crystalBoothQuiz, [
+      'metabolism', 'stable', 'no-change', 'rare', 'steady', 'as-expected', 'none', 'new',
+    ]);
+    const resultMetabolism = getQuizResult(crystalBoothQuiz, sessionMetabolism);
+    assert.ok(!resultMetabolism.id.startsWith('skin-'),
+      `Metabolism domain should not return skin result, got: ${resultMetabolism.id}`);
+  });
+
+  it('liver-domain sessions never resolve to skin-* results', () => {
+    // Test liver path with lowest scores
+    const sessionLiver = runPath(crystalBoothQuiz, [
+      'liver', 'rare', 'none', 'rare', 'none', 'never-or-normal', 'none', 'normal',
+    ]);
+    const resultLiver = getQuizResult(crystalBoothQuiz, sessionLiver);
+    assert.ok(!resultLiver.id.startsWith('skin-'),
+      `Liver domain should not return skin result, got: ${resultLiver.id}`);
+  });
 });
