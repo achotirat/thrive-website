@@ -205,6 +205,17 @@ LINE@: @thrivewellnessth (https://line.me/R/ti/p/@thrivewellnessth)
 
 ---
 
+## Campaign Pages (noIndex, ชั่วคราว)
+
+Temporary campaign and event pages — not indexed in search engines, no organic traffic tracking.
+
+| URL | Purpose | Built | Status |
+|-----|---------|-------|--------|
+| `/crystal-quiz` | Crystal Park booth event self-assessment quiz (26–30 Aug 2026) | 2026-08-21 | ✅ Complete |
+| `/thank-you` | Booth referral banner for Crystal Park quiz completers | 2026-08-21 | ✅ Complete |
+
+---
+
 ## รายละเอียดแต่ละหน้า
 
 ---
