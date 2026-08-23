@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
+const concerns = [
+  { value: 'hormone', label: 'ฮอร์โมนแปรปรวน รอบเดือนไม่ปกติ หรือสงสัยวัยทอง' },
+  { value: 'metabolism', label: 'เผาผลาญพัง น้ำหนักขึ้นง่าย ลดยาก' },
+  { value: 'liver', label: 'กังวลเรื่องตับ เหนื่อยง่าย ดื่ม/ใช้ยาบ่อย' },
+  { value: 'skin', label: 'ผิวแห้ง คัน หรือมีผื่นแพ้' },
+  { value: 'vitamin', label: 'สงสัยว่าขาดวิตามินหรือแร่ธาตุ' },
+  { value: 'stress', label: 'เครียดสะสม นอนไม่หลับ' },
+];
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="เช็กสุขภาพเบื้องต้น | Thrive Wellness Clinic"
+    description="เลือกอาการที่กังวล ฝากเบอร์ติดต่อ รับของรางวัลที่บูธ Thrive Wellness Clinic"
+    canonicalPath="/crystal-quiz-express"
+    ogImage="/og-image.jpg"
+    noIndex={true}
+  />
+  <Header />
+  <main class="crystal-quiz-page">
+    <section class="section">
+      <div class="section-container" style="text-align: center;">
+        <span class="section-label">Crystal Park Booth Check</span>
+        <h1>เช็กสุขภาพเบื้องต้นกับ Thrive Wellness</h1>
+        <p>เลือกอาการที่กังวล (เลือกได้หลายข้อ) แล้วฝากเบอร์ติดต่อ รับของรางวัลที่บูธได้เลย</p>
+      </div>
+    </section>
+
+    <section class="section lead-form-section" id="express-form">
+      <div class="section-container lead-form-card">
+        <form class="lead-form" id="express-lead-form" data-service-slug="crystal-quiz-express">
+          <input type="hidden" name="service_interest" value="crystal-quiz-express" />
+          <input type="hidden" name="source_page" value="crystal-quiz-express" />
+          <input type="hidden" name="landing_page" />
+          <input type="hidden" name="referrer" />
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="utm_term" />
+          <input type="hidden" name="utm_content" />
+          <input type="hidden" name="gclid" />
+          <input type="hidden" name="fbclid" />
+          <input type="hidden" name="wbraid" />
+          <input type="hidden" name="gbraid" />
+          <input type="hidden" name="consent_version" value="crystal-quiz-express-2026-08" />
+          <input type="hidden" name="quiz_id" value="crystal-quiz-express" />
+          <input type="hidden" name="nurture_segment" value="booth-express" />
+          <input type="hidden" name="message" id="express-message" />
+          <input type="hidden" name="quiz_answers" id="express-quiz-answers" />
+
+          <h2>ตอนนี้อะไรกวนใจคุณบ้าง?</h2>
+          <p>เลือกได้มากกว่า 1 ข้อ</p>
+          <div class="express-concerns" data-concerns>
+            {concerns.map((c) => (
+              <label class="lead-form__consent">
+                <input type="checkbox" name="concerns" value={c.value} />
+                <span>{c.label}</span>
+              </label>
+            ))}
+          </div>
+          <p class="lead-form__status" data-concerns-error aria-live="polite" hidden>กรุณาเลือกอาการอย่างน้อย 1 ข้อ</p>
+
+          <label>
+            ชื่อ-นามสกุล *
+            <input name="name" type="text" autocomplete="name" required maxlength="120" />
+          </label>
+          <label>
+            เบอร์โทรศัพท์ *
+            <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
+          </label>
+          <label>
+            LINE ID
+            <input name="line_id" type="text" autocomplete="off" maxlength="80" />
+          </label>
+          <label class="lead-form__consent">
+            <input name="consent" type="checkbox" value="yes" required />
+            <span>ยินยอมให้ Thrive Wellness Clinic ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
+          </label>
+
+          {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>}
+          <p class="lead-form__status" data-submit-status aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary">ฝากเบอร์รับของรางวัล</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+{turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script is:inline>
+  (function captureAttributionImmediate() {
+    const attributionKeys = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+      'gclid', 'fbclid', 'wbraid', 'gbraid',
+    ];
+    const url = new URL(window.location.href);
+    if (!sessionStorage.getItem('landing_page')) {
+      sessionStorage.setItem('landing_page', window.location.href);
+    }
+    attributionKeys.forEach((key) => {
+      const value = url.searchParams.get(key);
+      if (value) sessionStorage.setItem(key, value);
+    });
+  })();
+</script>
+
+<script>
+  type DataLayerWindow = Window & { dataLayer?: Array<Record<string, unknown>> };
+
+  const CONCERN_LABELS: Record<string, string> = {
+    hormone: 'ฮอร์โมน',
+    metabolism: 'เผาผลาญ/น้ำหนัก',
+    liver: 'ตับ',
+    skin: 'ผิว',
+    vitamin: 'วิตามิน/แร่ธาตุ',
+    stress: 'เครียด/นอนไม่หลับ',
+  };
+
+  (function captureAttribution() {
+    const attributionKeys = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+      'gclid', 'fbclid', 'wbraid', 'gbraid',
+    ];
+    const url = new URL(window.location.href);
+    if (!sessionStorage.getItem('landing_page')) {
+      sessionStorage.setItem('landing_page', window.location.href);
+    }
+    attributionKeys.forEach((key) => {
+      const value = url.searchParams.get(key);
+      if (value) sessionStorage.setItem(key, value);
+    });
+  })();
+
+  const form = document.getElementById('express-lead-form');
+  if (form instanceof HTMLFormElement) {
+    const attributionKeys = [
+      'landing_page', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign',
+      'utm_term', 'utm_content', 'gclid', 'fbclid', 'wbraid', 'gbraid',
+    ];
+    let started = false;
+
+    const fillAttribution = () => {
+      attributionKeys.forEach((key) => {
+        const input = form.querySelector(`[name="${key}"]`);
+        if (input instanceof HTMLInputElement) input.value = sessionStorage.getItem(key) || '';
+      });
+    };
+
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      const dataLayerWindow = window as DataLayerWindow;
+      dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
+      dataLayerWindow.dataLayer.push({
+        event: 'form_start',
+        service: 'crystal-quiz-express',
+        page_path: window.location.pathname,
+      });
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const checked = Array.from(
+        form.querySelectorAll('input[name="concerns"]:checked'),
+      ) as HTMLInputElement[];
+      const errorEl = form.querySelector('[data-concerns-error]');
+
+      if (checked.length === 0) {
+        if (errorEl instanceof HTMLElement) errorEl.hidden = false;
+        checked[0]?.focus();
+        return;
+      }
+      if (errorEl instanceof HTMLElement) errorEl.hidden = true;
+
+      const values = checked.map((el) => el.value);
+      const labels = values.map((v) => CONCERN_LABELS[v] || v);
+
+      const messageInput = form.querySelector('#express-message');
+      const answersInput = form.querySelector('#express-quiz-answers');
+      if (messageInput instanceof HTMLInputElement) messageInput.value = `สนใจ: ${labels.join(', ')}`;
+      if (answersInput instanceof HTMLInputElement) answersInput.value = JSON.stringify(values);
+
+      fillAttribution();
+
+      const status = form.querySelector('[data-submit-status]');
+      const button = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      formData.set('consent_at', new Date().toISOString());
+
+      if (button instanceof HTMLButtonElement) button.disabled = true;
+      if (status instanceof HTMLElement) {
+        status.textContent = 'กำลังส่งข้อมูล...';
+        status.dataset.state = 'loading';
+      }
+
+      try {
+        const response = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+
+        if (!response.ok) throw new Error('Lead submission failed');
+        const dataLayerWindow = window as DataLayerWindow;
+        dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
+        dataLayerWindow.dataLayer.push({
+          event: 'lead_submit',
+          service: 'crystal-quiz-express',
+          page_path: window.location.pathname,
+        });
+        window.location.href = '/thank-you?quiz=crystal-booth-checkup&service=crystal-quiz-express';
+      } catch (error) {
+        if (status instanceof HTMLElement) {
+          status.textContent = 'ยังส่งข้อมูลไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
+          status.dataset.state = 'error';
+        }
+        const turnstile = (window as { turnstile?: { reset: (el: Element) => void } }).turnstile;
+        const widget = form.querySelector('.cf-turnstile');
+        if (turnstile && widget) turnstile.reset(widget);
+      } finally {
+        if (button instanceof HTMLButtonElement) button.disabled = false;
+      }
+    });
+  }
+</script>
