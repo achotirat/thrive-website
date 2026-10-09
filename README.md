@@ -12,6 +12,10 @@
 |---|---|
 | `thrive-content-writer` | เขียน blog / landing page / service page สำหรับ Thrive — ตรวจ citation, ภาษาเข้าใจง่าย, GEO, anti-clickbait |
 | `thrive-launch-audit` | ตรวจ SEO/GEO ทุกหน้าก่อน go-live — สร้าง scorecard ใน `docs/audits/master-audit.md` |
+| `thrive-site-inspect` | เก็บข้อมูลเว็บ Wix + Astro (crawl, Ubersuggest ผ่าน Chrome, URL map สำหรับ redirect) → `docs/site-reports/<date>/` |
+| `thrive-site-review` | ประเมิน SEO/cutover, brand ตาม Brand Cortex v2, UX/conversion, flag กฎโฆษณาสถานพยาบาล → `review.md` พร้อม finding ID |
+| `thrive-site-optimize` | แก้ตาม finding ID ที่อนุมัติ บน feature branch → verify → PR → deploy (ขออนุมัติทุก gate) |
+| `thrive-google-ads-optimize` | ตรวจและปรับบัญชี Google Ads ผ่าน Chrome (tracking, search terms, copy ตาม policy, งบ, final URL ตอน cutover) แก้ได้เฉพาะรายการที่อนุมัติ ข้อมูลตัวเลขเก็บใน `private/` |
 
 ### วิธีเปิดใช้งาน (ทำครั้งเดียวต่อเครื่อง)
 
@@ -20,6 +24,7 @@ Copy the skill folders into your personal Claude skills directory so they appear
 ```bash
 cp -r skills/thrive-content-writer ~/.claude/skills/
 cp -r skills/thrive-launch-audit ~/.claude/skills/
+cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-optimize skills/thrive-google-ads-optimize ~/.claude/skills/
 ```
 
 จากนั้นใช้งานได้เลยใน Claude Code:
@@ -30,6 +35,31 @@ cp -r skills/thrive-launch-audit ~/.claude/skills/
 ```
 
 > **หมายเหตุ:** ถ้าสกิลมีการอัปเดต ให้ `cp` ซ้ำเพื่อ sync เวอร์ชันล่าสุด
+
+---
+
+## 2026-10-09 — เพิ่ม skills inspect / review / optimize + Brand Cortex v2
+
+**คำสั่งจากผู้ใช้:** ทำต่อจาก handoff: สร้าง skill สำหรับ Inspect, Review (audit) และ Optimize ของเว็บ thrivewellnessth.com และ new.thrivewellnessth.com
+
+### สิ่งที่เปลี่ยน
+- `skills/thrive-site-inspect/` — SKILL.md + `scripts/crawl.mjs` (crawler แบบ read-only, ไม่มี dependency, Node 22+)
+- `skills/thrive-site-review/` — SKILL.md + `references/thai-medical-ad-flags.md`
+- `skills/thrive-site-optimize/` — SKILL.md (3 gate: แผน, push/PR, merge)
+- `skills/thrive-google-ads-optimize/` — SKILL.md (audit อ่านอย่างเดียว → รายงานพร้อม ID → apply เฉพาะรายการที่อนุมัติ)
+- `.claude/skills/` — symlink ไปที่ `skills/` ของ 4 skill ใหม่ ใช้ได้ทันทีเมื่อเปิด repo ใน Claude Code และไม่มีสำเนาซ้ำที่ต้อง sync
+- Brand Cortex v2 (xlsx + `brand-cortex-v2.md` ที่แยกข้อยืนยันแล้วกับร่าง) เก็บที่ `private/brand/` บนเครื่องคุณเต็ม ไม่ commit เพราะ repo เป็น public และมีเรื่องภายใน ถ้าต้องการไฟล์ให้ขอจากคุณเต็ม
+
+### ข้อเท็จจริงที่ยืนยันจาก repo / เว็บจริง
+- เว็บปัจจุบัน www = Wix (header `x-wix-request-id`, generator Wix) ส่วน Astro + Sanity ใช้กับเว็บใหม่เท่านั้น
+- Repo `achotirat/thrive-website` deploy ผ่าน Netlify (`netlify.toml` build `astro/`)
+- new.thrivewellnessth.com build จาก `astro/` (`astro.config.mjs` site) ไม่ใช่ static HTML 10 หน้า (root `*.html` เป็น reference เท่านั้น)
+
+### บทเรียน / หมายเหตุ
+- `new.thrivewellnessth.com/sitemap.xml` ยังเสิร์ฟ sitemap เก่า 14 URL ของ www (มี `/nad-plus` ที่ไม่มีแล้ว) แยกจาก `sitemap-index.xml` ของ Astro ต้องจัดการก่อน cutover
+- sitemap ของ Astro มี trailing slash (`/about/`) แต่ canonical ไม่มี (`/about`)
+- Ubersuggest มีข้อมูลเฉพาะเว็บ Wix เพราะเว็บใหม่ยังเป็น noindex
+- repo นี้เป็น public: export ของ Ubersuggest/Google Ads และตัวเลขค่าโฆษณาเก็บใน `private/` (gitignore) เท่านั้น
 
 ---
 
