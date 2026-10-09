@@ -63,7 +63,8 @@ function attr(tag, name) {
 }
 
 function analyze(html, url) {
-  const head = html.slice(0, html.search(/<\/head>/i) + 7 || html.length);
+  const headEnd = html.search(/<\/head>/i);
+  const head = headEnd >= 0 ? html.slice(0, headEnd + 7) : html; // some pages (e.g. redirect stubs) have no </head>
   const metas = [...head.matchAll(/<meta\b[^>]*>/gi)].map((m) => m[0]);
   const meta = (key) => {
     const t = metas.find((x) => new RegExp(`(name|property)\\s*=\\s*["']${key}["']`, 'i').test(x));
@@ -72,6 +73,9 @@ function analyze(html, url) {
   const links = [...head.matchAll(/<link\b[^>]*>/gi)].map((m) => m[0]);
   const canonical = links.find((l) => /rel\s*=\s*["']canonical["']/i.test(l));
   const hreflangs = links.filter((l) => /hreflang/i.test(l)).map((l) => `${attr(l, 'hreflang')}=${attr(l, 'href')}`);
+  // Static-site redirects (Astro output:'static') are 200 + meta refresh, not a real 301.
+  const refresh = metas.find((x) => /http-equiv\s*=\s*["']refresh["']/i.test(x));
+  const metaRefresh = refresh ? (attr(refresh, 'content').match(/url=(.*)$/i) || [])[1] || '' : '';
   const title = decode((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
   const h1s = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map((m) => decode(m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')));
   const ldTypes = new Set();
@@ -90,6 +94,7 @@ function analyze(html, url) {
   const anchors = [...html.matchAll(/<a\b[^>]*href\s*=\s*["']([^"'#]+)["']/gi)].map((m) => m[1]);
   const internal = anchors.filter((h) => h.startsWith('/') || h.includes(host));
   return {
+    metaRefresh,
     title,
     titleLen: [...title].length,
     description: meta('description'),

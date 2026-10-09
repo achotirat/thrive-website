@@ -47,6 +47,7 @@ status/redirect, title/description + ความยาว, robots meta, X-Robot
 จำนวนตัวอักษรเนื้อหา (ภาษาไทยไม่มีช่องว่างระหว่างคำ จึงนับตัวอักษร), รูปไม่มี alt, ลิงก์ภายใน, ลิงก์ LINE/tel
 
 Wix ช้า (ประมาณ 3 วินาทีต่อหน้า) ถ้ามีมากกว่า 150 URL ให้รันใน background
+หน้า redirect ของ Astro แบบ static เป็น 200 + meta refresh (ไม่ใช่ 301 จริง) สคริปต์บันทึกปลายทางไว้ในคอลัมน์ `metaRefresh`
 ถ้าต้องการลองก่อนให้ใส่ `--limit 10`
 
 ## Step 2: Ubersuggest ผ่าน Chrome (เว็บ Wix เท่านั้น)
@@ -65,7 +66,12 @@ Wix ช้า (ประมาณ 3 วินาทีต่อหน้า) ถ
 
 ## Step 3: URL map (Wix → Astro)
 
-สร้าง `$OUT/url-map.csv` คอลัมน์: `old_url, old_status, est_visits, top_keyword, backlinks, new_url, match_type, note`
+```bash
+node skills/thrive-site-inspect/scripts/url-map.mjs $OUT/crawl-old.json $OUT/crawl-new.json private/site-reports/<date>/url-map.csv private/site-reports/<date>/ubersuggest
+```
+
+ได้ `url-map.csv` (เก็บใน `private/` เพราะมีตัวเลข traffic ของ Ubersuggest) คอลัมน์: `old_url, old_status, est_visits, backlinks, top_keyword, new_url, match_type, note, sources`
+สคริปต์จับคู่ตามลำดับ: path ตรงกัน → ปลายทางของ meta refresh บนเว็บใหม่ → `RENAMES`/`PATTERNS` ในสคริปต์ → slug ท้าย URL ตรงกัน (`auto: ... verify`) แถวที่มี `verify` ต้องให้คนตรวจซ้ำ ถ้าตัดสินใจ mapping ใหม่ได้ ให้เพิ่มใน `RENAMES` แล้วรันใหม่
 
 - `match_type`: `exact` (slug เดียวกัน), `mapped` (คนละ slug แต่หัวข้อเดียวกัน), `none` (ยังไม่มีหน้าใหม่), `drop` (ไม่ต้อง redirect เช่น หน้า member หรือ booking ของ Wix)
 - เทียบกับ redirect ที่มีอยู่แล้วใน `netlify.toml` และ `astro/public/_redirects` (ถ้ามี)
@@ -81,7 +87,7 @@ Wix ช้า (ประมาณ 3 วินาทีต่อหน้า) ถ
 ## ตัวเลขหลัก       (จำนวน URL แต่ละเว็บ, organic traffic, keywords, backlinks)
 ## สิ่งที่เห็นจากข้อมูลดิบ (ข้อเท็จจริงเท่านั้น ยังไม่ประเมิน เช่น "12 หน้าไม่มี meta description")
 ## URL map         (exact/mapped/none/drop + รายการ none ที่มี traffic)
-## ไฟล์             (ลิงก์ไปยัง csv/json)
+## ไฟล์             (ลิงก์ไปยัง csv/json ใน repo และบอกว่าอะไรอยู่ใน private/)
 ```
 
 ห้ามให้คะแนนหรือเสนอวิธีแก้ในขั้นนี้ งานนั้นเป็นของ `thrive-site-review`
