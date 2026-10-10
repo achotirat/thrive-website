@@ -154,6 +154,27 @@ const stubs = [
     category: 'diagnostic-testing',
     shortDescription: 'ตรวจพันธุกรรม DNA — MTHFR, ความเสี่ยงโรค และการวางแผนสุขภาพเฉพาะบุคคล',
   },
+  {
+    _id: 'service-mental-health',
+    slug: 'mental-health',
+    title: 'Mental Health & Therapist Consult',
+    category: 'other',
+    shortDescription: 'คุยกับนักบำบัดเรื่องความเครียด นอนไม่หลับ อารมณ์แปรปรวน เป็นส่วนตัวและปลอดภัย',
+  },
+  {
+    _id: 'service-epispan',
+    slug: 'epispan',
+    title: 'EpiSpan Biological Age Test',
+    category: 'hormone-longevity',
+    shortDescription: 'ตรวจอายุชีวภาพระดับเซลล์จาก DNA methylation เพื่อวางแผนดูแลสุขภาพร่วมกับแพทย์',
+  },
+  {
+    _id: 'service-heavy-metal-trace-elements',
+    slug: 'check-up/heavy-metal-trace-elements',
+    title: 'Heavy Metal & Trace Elements Check-Up',
+    category: 'diagnostic-testing',
+    shortDescription: 'ตรวจโลหะหนักและแร่ธาตุ ด้วยการตรวจเลือด ปัสสาวะ หรือ OligoScan โดยแพทย์เลือกวิธีตามประวัติ',
+  },
 ]
 
 async function main() {
