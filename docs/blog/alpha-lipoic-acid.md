@@ -11,7 +11,7 @@ heroImage: alpha-lipoic-acid-hero.webp
 heroAlt: "ผู้หญิงวัยสี่สิบนั่งอ่านฉลากอาหารเสริมที่โต๊ะในครัวบ้านตอนเช้า มีผักโขมและบรอกโคลีวางอยู่ สื่อถึงการเลือกอาหารเสริมอย่างเข้าใจ"
 ---
 
-<!-- Dev note: This post uses CTA link `/iv-drip` with label `ปรึกษาแพทย์เรื่องดริปวิตามินที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ALA ไม่อยู่ในตาราง Tier A บทความ Wix เดิม /ala เป็นหน้า "Essential Booster ALA" ซึ่งเป็นส่วนผสมดริป จึงเลือก /iv-drip ตาม handoff **แต่หน้า /iv-drip ปัจจุบันไม่มีการพูดถึง ALA เลย** ต้องให้คุณเต็มยืนยันว่าคลินิกยังให้ ALA booster อยู่ไหม ถ้าไม่มี ให้เปลี่ยน CTA เป็น /personalized-vitamins -->
+<!-- Dev note: This post uses CTA link `/iv-drip` with label `ปรึกษาแพทย์เรื่องดริปวิตามินที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ALA ไม่อยู่ในตาราง Tier A บทความ Wix เดิม /ala เป็นหน้า "Essential Booster ALA" ซึ่งเป็นส่วนผสมดริป จึงเลือก /iv-drip (คุณเต็มยืนยัน 10 ต.ค. 2026 และเพิ่มการ์ด ALA Booster ที่ /iv-drip#ala แล้ว) -->
 <!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนหน้า Wix /ala (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
@@ -198,7 +198,7 @@ ALA มักถูกขายคู่กับกลูตาไธโอน�
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
-- [x] เลือก CTA ตาม T0.1: `/iv-drip` (ตาม handoff; **ต้องยืนยัน** ว่าคลินิกยังให้ ALA booster เพราะหน้า /iv-drip ไม่ได้พูดถึง ALA)
+- [x] เลือก CTA ตาม T0.1: `/iv-drip` (คุณเต็มยืนยันแล้ว หน้า /iv-drip มีการ์ด ALA Booster ที่ `#ala`)
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
