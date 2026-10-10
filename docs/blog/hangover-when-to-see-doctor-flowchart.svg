@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+  <title id="title">สัญญาณอันตรายหลังดื่ม: เมื่อไหร่ควรไปโรงพยาบาล</title>
+  <desc id="description">After drinking, check for confusion, difficulty waking, seizure, slow breathing, clammy skin, or nonstop vomiting. If yes, call 1669 or go to hospital immediately. If no, rest, drink fluids, eat light food, and do not drive.</desc>
+  <rect width="1200" height="450" fill="#FAFBF8"/>
+  <g font-family="Sarabun, Thonburi, sans-serif">
+    <text x="42" y="49" fill="#173B42" font-size="25" font-weight="700">สัญญาณอันตรายหลังดื่ม</text>
+    <text x="43" y="74" fill="#6C7F82" font-size="15">When to seek urgent help</text>
+
+    <rect x="42" y="152" width="218" height="146" rx="17" fill="#FFFFFF" stroke="#C8D6D7" stroke-width="2"/>
+    <circle cx="75" cy="185" r="15" fill="#E9F3F2"/>
+    <path d="M67 187a8 8 0 0 1 16 0M64 193h22M75 167v-6M59 174l-4-4M91 174l4-4" fill="none" stroke="#4D8E8A" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="70" y="235" fill="#193C42" font-size="25" font-weight="700">เช้าหลังดื่ม</text>
+    <text x="70" y="267" fill="#64777A" font-size="16">Morning after drinking</text>
+
+    <path d="M262 225H307" fill="none" stroke="#70878A" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="m299 217 10 8-10 8" fill="none" stroke="#70878A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M522 82 736 225 522 368 308 225Z" fill="#FFFFFF" stroke="#7FA9A9" stroke-width="2.5" stroke-linejoin="round"/>
+    <text x="522" y="173" text-anchor="middle" fill="#173B42" font-size="23" font-weight="700">มีอาการเหล่านี้ไหม?</text>
+    <text x="522" y="207" text-anchor="middle" fill="#344E53" font-size="19" font-weight="600">สับสน · ปลุกไม่ค่อยตื่น · ชัก</text>
+    <text x="522" y="234" text-anchor="middle" fill="#344E53" font-size="19" font-weight="600">หายใจช้า · ตัวเย็นชื้น</text>
+    <text x="522" y="261" text-anchor="middle" fill="#344E53" font-size="19" font-weight="600">อาเจียนไม่หยุด</text>
+    <text x="522" y="290" text-anchor="middle" fill="#708286" font-size="16">Any danger signs?</text>
+
+    <path d="M736 225H774" fill="none" stroke="#91A3A5" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="774" cy="225" r="5" fill="#91A3A5"/>
+    <path d="M774 225V151H828" fill="none" stroke="#A43E43" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m820 143 10 8-10 8" fill="none" stroke="#A43E43" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M774 225V339H828" fill="none" stroke="#2A9D8F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m820 331 10 8-10 8" fill="none" stroke="#2A9D8F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="832" y="86" width="326" height="138" rx="17" fill="#FFFFFF" stroke="#C16D71" stroke-width="2"/>
+    <rect x="832" y="86" width="8" height="138" rx="4" fill="#A43E43"/>
+    <text x="859" y="117" fill="#A43E43" font-size="17" font-weight="700">ใช่ / Yes</text>
+    <text x="859" y="152" fill="#842F34" font-size="23" font-weight="700">โทร 1669 หรือไป</text>
+    <text x="859" y="181" fill="#842F34" font-size="23" font-weight="700">โรงพยาบาลทันที</text>
+    <text x="860" y="207" fill="#916266" font-size="16">Call 1669</text>
+
+    <rect x="832" y="267" width="326" height="138" rx="17" fill="#FFFFFF" stroke="#88CFC3" stroke-width="2"/>
+    <rect x="832" y="267" width="8" height="138" rx="4" fill="#2A9D8F"/>
+    <text x="859" y="298" fill="#248679" font-size="17" font-weight="700">ไม่ / No</text>
+    <text x="859" y="333" fill="#1C625B" font-size="22" font-weight="700">ดื่มน้ำ กินอาหารอ่อน</text>
+    <text x="859" y="362" fill="#1C625B" font-size="22" font-weight="700">นอนพัก ไม่ขับรถ</text>
+    <text x="860" y="389" fill="#5D7775" font-size="15">Rest, fluids, light food, don't drive</text>
+  </g>
+</svg>
