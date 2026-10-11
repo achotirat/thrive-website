@@ -22,10 +22,10 @@
     "priceReviewRequiredBy": "apanit-pueng"
   },
   "chelation": {
-    "from": "4,500 บาท",
-    "note": "ราคาต่อครั้ง คอร์ส 10 ครั้งมีส่วนลด สอบถามรายละเอียด",
-    "updatedAt": "2026-05-27",
-    "draft": true,
+    "from": "3,800 บาท",
+    "note": "ราคาต่อครั้ง | คอร์ส 10 ครั้ง ฟรีอีก 3 ครั้ง (รวม 13 ครั้ง) จ่ายเพียง 38,000 บาท",
+    "updatedAt": "2026-10-11",
+    "draft": false,
     "priceReviewRequiredBy": "apanit-pueng"
   },
   "hbot": {
