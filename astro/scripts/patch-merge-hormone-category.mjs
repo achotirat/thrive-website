@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // One-off: merge the duplicate blog categories "สุขภาพฮอร์โมน" and
-// "ฮอร์โมนและการออกกำลังกาย" into a single "ฮอร์โมน" filter tag on /blog/.
+// "ฮอร์โมนและการออกกำลังกาย" (plus the female-hormone-panel post's
+// "สุขภาพผู้หญิง") into a single "ฮอร์โมน" filter tag on /blog/.
 //
 // Run from the repo root:
 //   node astro/scripts/patch-merge-hormone-category.mjs
@@ -39,7 +40,7 @@ const client = createClient({
   useCdn: false,
 })
 
-const OLD_CATEGORIES = ['สุขภาพฮอร์โมน', 'ฮอร์โมนและการออกกำลังกาย']
+const OLD_CATEGORIES = ['สุขภาพฮอร์โมน', 'ฮอร์โมนและการออกกำลังกาย', 'สุขภาพผู้หญิง']
 const NEW_CATEGORY = 'ฮอร์โมน'
 
 const docs = await client.fetch(

@@ -182,7 +182,7 @@ async function main() {
     _id: 'blog-female-hormone-panel-age-40',
     title: 'ฮอร์โมนทำงานเป็นทีม — ทำไมผู้หญิงวัย 40 ต้องตรวจครบ ไม่ใช่แค่ 1–2 ตัว',
     slug: { _type: 'slug', current: 'female-hormone-panel-age-40' },
-    category: 'สุขภาพผู้หญิง',
+    category: 'ฮอร์โมน',
     excerpt:
       'ฮอร์โมนเพศหญิงทำงานจับคู่กัน ถ้าตัวหนึ่งลด อีกตัวจะกระทบตามทันที รู้ว่าต้องตรวจ E2, FSH, LH, Progesterone, SHBG, DHEAS และไทรอยด์ครบ เพราะการตรวจแค่ 1–2 ตัวอาจพลาดต้นเหตุจริง',
     publishedAt: '2026-06-08T00:00:00.000Z',
