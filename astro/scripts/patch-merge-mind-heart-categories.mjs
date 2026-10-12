@@ -2,6 +2,7 @@
 // One-off: merge two duplicate blog category pairs on /blog/:
 //   สุขภาพจิต          -> สุขภาพใจ  (the tag /blog/mental-health filters on)
 //   หัวใจและหลอดเลือด   -> สุขภาพหัวใจและหลอดเลือด
+//   ฟิตเนสและสุขภาพหัวใจ -> สุขภาพหัวใจและหลอดเลือด
 //
 // Run from the repo root:
 //   node astro/scripts/patch-merge-mind-heart-categories.mjs
@@ -43,6 +44,7 @@ const client = createClient({
 const MERGES = {
   'สุขภาพจิต': 'สุขภาพใจ',
   'หัวใจและหลอดเลือด': 'สุขภาพหัวใจและหลอดเลือด',
+  'ฟิตเนสและสุขภาพหัวใจ': 'สุขภาพหัวใจและหลอดเลือด',
 }
 
 const docs = await client.fetch(

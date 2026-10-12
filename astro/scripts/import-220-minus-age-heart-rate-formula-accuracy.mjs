@@ -154,7 +154,7 @@ async function main() {
     _id: 'blog-220-minus-age-heart-rate-formula-accuracy',
     title: 'สูตร 220 ลบอายุ แม่นแค่ไหน? ทำไมโซนหัวใจที่คุณคำนวณอาจผิดถึง 15 ครั้ง/นาที',
     slug: { _type: 'slug', current: '220-minus-age-heart-rate-formula-accuracy' },
-    category: 'ฟิตเนสและสุขภาพหัวใจ',
+    category: 'สุขภาพหัวใจและหลอดเลือด',
     excerpt:
       'สูตร 220 ลบอายุ ที่คนใช้คำนวณโซนหัวใจกันมานาน มีค่าคลาดเคลื่อนเฉลี่ย 10-15 ครั้ง/นาที เปรียบเทียบกับสูตร Tanaka, Karvonen (ที่ Whoop ใช้) และการตรวจ EST จริงที่คลินิก',
     publishedAt: '2026-08-21T00:00:00.000Z',
