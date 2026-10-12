@@ -150,7 +150,7 @@ async function main() {
     _id: 'blog-red-s-relative-energy-deficiency-sport',
     title: 'RED-S คืออะไร — ภาวะที่นักกีฬาไทยแทบไม่รู้จัก แต่เสี่ยงทุกคนที่ซ้อมหนัก',
     slug: { _type: 'slug', current: 'red-s-relative-energy-deficiency-sport' },
-    category: 'ฮอร์โมนและการออกกำลังกาย',
+    category: 'ฮอร์โมน',
     excerpt:
       'RED-S (Relative Energy Deficiency in Sport) คือภาวะที่ร่างกายได้รับพลังงานไม่พอกับที่ใช้ไปในการซ้อม ส่งผลกระทบต่อฮอร์โมน กระดูก และภูมิคุ้มกันพร้อมกัน เกิดได้ทั้งชายและหญิง แต่แทบไม่มีใครในไทยรู้จักชื่อนี้',
     publishedAt: '2026-08-04T00:00:00.000Z',

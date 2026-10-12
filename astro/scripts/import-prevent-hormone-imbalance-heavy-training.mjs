@@ -150,7 +150,7 @@ async function main() {
     _id: 'blog-prevent-hormone-imbalance-heavy-training',
     title: '6 วิธีป้องกันฮอร์โมนพังก่อนแข่งใหญ่ ไม่ต้องหยุดซ้อม',
     slug: { _type: 'slug', current: 'prevent-hormone-imbalance-heavy-training' },
-    category: 'ฮอร์โมนและการออกกำลังกาย',
+    category: 'ฮอร์โมน',
     excerpt:
       'ก่อนเข้าสู่ช่วงซ้อมหนักที่สุดของโปรแกรม เช็ก 6 วิธีป้องกันฮอร์โมนพังที่ทำได้จริงโดยไม่ต้องหยุดซ้อมหรือลดเป้าหมาย ตั้งแต่การเพิ่มโหลดแบบขั้นบันไดไปจนถึงการตรวจฮอร์โมน baseline ก่อนเข้าสู่ช่วง peak training',
     publishedAt: '2026-08-04T00:00:00.000Z',

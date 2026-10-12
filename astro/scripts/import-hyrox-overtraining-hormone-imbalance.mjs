@@ -153,7 +153,7 @@ async function main() {
     _id: 'blog-hyrox-overtraining-hormone-imbalance',
     title: 'ซ้อม HYROX หนักแค่ไหนถึงเรียก Overtraining? เช็กฮอร์โมนก่อนแข่ง',
     slug: { _type: 'slug', current: 'hyrox-overtraining-hormone-imbalance' },
-    category: 'ฮอร์โมนและการออกกำลังกาย',
+    category: 'ฮอร์โมน',
     excerpt:
       'ก่อนแข่ง HYROX Bangkok 13-16 ส.ค. นี้ เช็กความแตกต่างระหว่างซ้อมหนักปกติกับ Overtraining Syndrome ที่ทำให้ฮอร์โมนทั้งระบบรวน พร้อมเช็กลิสต์สัญญาณเตือนและวิธีตรวจก่อนอาการลุกลาม',
     publishedAt: '2026-08-04T00:00:00.000Z',
