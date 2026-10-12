@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-// One-off: merge two duplicate blog category pairs on /blog/:
+// One-off: merge duplicate blog categories on /blog/:
 //   สุขภาพจิต          -> สุขภาพใจ  (the tag /blog/mental-health filters on)
 //   หัวใจและหลอดเลือด   -> สุขภาพหัวใจและหลอดเลือด
 //   ฟิตเนสและสุขภาพหัวใจ -> สุขภาพหัวใจและหลอดเลือด
+//   สุขภาพลำไส้         -> ระบบย่อยอาหาร
 //
 // Run from the repo root:
-//   node astro/scripts/patch-merge-mind-heart-categories.mjs
+//   node astro/scripts/patch-merge-blog-categories.mjs
 //
 // Token is loaded automatically from .env.local (SANITY_API_TOKEN).
 import { createClient } from '@sanity/client'
@@ -45,6 +46,7 @@ const MERGES = {
   'สุขภาพจิต': 'สุขภาพใจ',
   'หัวใจและหลอดเลือด': 'สุขภาพหัวใจและหลอดเลือด',
   'ฟิตเนสและสุขภาพหัวใจ': 'สุขภาพหัวใจและหลอดเลือด',
+  'สุขภาพลำไส้': 'ระบบย่อยอาหาร',
 }
 
 const docs = await client.fetch(
