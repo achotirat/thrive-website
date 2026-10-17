@@ -87,6 +87,7 @@ const jsonLd = [
         jobTitle: 'Physician, Preventive Medicine & Regenerative Medicine',
         worksFor: { '@id': 'https://new.thrivewellnessth.com/#clinic' },
         knowsAbout: ['Preventive Medicine', 'Hormone Balance', 'Weight Management', 'Genetic Counseling', 'Regenerative Medicine'],
+        image: 'https://new.thrivewellnessth.com/dr-pijak-wongvisit-thrive-400x400.jpg',
       },
       {
         '@type': 'Person',
@@ -232,7 +233,11 @@ const crumbs = [
         <div class="grid-2">
           <div class="card card-body">
             <div style="display:flex;gap:16px;align-items:flex-start;">
-              <div style="width:64px;height:64px;border-radius:50%;background:#e0f2fe;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">👨‍⚕️</div>
+              <img src="/dr-pijak-wongvisit-thrive-400x400.jpg"
+                   alt="นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์ หมอบาย Preventive & Regenerative Medicine Thrive Wellness Clinic"
+                   width="64" height="64"
+                   style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;"
+                   loading="lazy" />
               <div>
                 <div style="font-weight:700;color:var(--navy);">นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์</div>
                 <div style="font-size:.78rem;color:var(--text-3);">Dr. Pijak Wongvisit, MD.</div>

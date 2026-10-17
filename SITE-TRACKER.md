@@ -158,6 +158,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/220-minus-age-heart-rate-formula-accuracy.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/normal-ldl-still-at-risk-lipoprotein-a-apob.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/weight-loss-pen-who-should-use.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
+| Photo replaced site-wide (new portrait, `docs/blog/doctor Bye.jpg` → `dr-pijak-wongvisit-thrive-400x400.jpg`) + `about.astro` team card photo & JSON-LD image | 2026-10-17 |
 
 ---
 
