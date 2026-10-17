@@ -49,6 +49,34 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-10-10 — redirects (Wix → เว็บใหม่)
+
+**คำสั่งจากผู้ใช้:** ทำต่อจาก handoff session 3 หัวข้อ B: redirect URL เก่าของ Wix ไปเว็บใหม่ แยกเป็น PR ของตัวเอง ใช้ `astro/public/_redirects` และ merge หลังบทความใหม่ 12 บทความขึ้น Sanity แล้ว
+**Findings:** redirect map จาก `url-map.csv` และ `redirect-decisions.csv` (2026-10-09, อยู่ใน `private/`)
+
+### สิ่งที่เปลี่ยน
+- `astro/public/_redirects` (ใหม่): 301 ของ URL ที่เปลี่ยนชื่อ 17 รายการ, บทความ Wix ที่รวมเข้าหน้าที่มีอยู่ 20 รายการ, บทความ Wix ที่เขียนใหม่ 13 รายการ และ `/post/*` → `/blog/:splat` เป็นข้อสุดท้าย URL ภาษาไทยใส่ทั้งแบบดิบและแบบ percent-encoded
+- `astro/public/_redirects` (เพิ่มตามที่คุณเต็มอนุมัติ 2026-10-10): บทความ Wix ที่เดิมจะปล่อย 404 แต่ตอนนี้มีบทความใหม่ตรงเรื่อง 2 รายการ ให้ 301 ไปบทความใหม่ (ปลายประสาทอักเสบ → `/blog/alpha-lipoic-acid`, หน้าหมองจากเครียด → `/blog/chronic-stress`) ส่วนที่เหลือ 14 รายการตอบ 404 ตรงๆ ไม่ผ่าน catch-all
+- `astro/src/pages/404.astro` (ใหม่): หน้า 404 ของเว็บ (noindex) มีลิงก์ไปบทความ ตรวจสุขภาพ IV Drip, LINE และหน้าแรก แทนหน้า 404 เริ่มต้นของ Netlify
+- `astro/src/pages/post/[slug].astro`: ลบ (เดิมเป็นหน้า meta refresh ที่ตอบ 200 และอยู่ใน sitemap ทำให้ redirect ของ Netlify ไม่ทำงานเพราะมีไฟล์อยู่ที่ path นั้น)
+- `astro/public/sitemap.xml`: ลบ (sitemap เก่า 14 URL ของ www) sitemap จริงคือ `sitemap-index.xml` ส่วน `sitemap.xml` ที่ root ไม่ได้แตะ
+
+### ผลการตรวจ
+- astro check / build / test: ผ่าน (0 errors, 48 หน้า, 45 tests)
+- หน้า 404: screenshot 1440px และ 390px บน `npm run preview` แสดงผลถูกต้อง
+- ปลายทางของ redirect ทั้งหมด (ยกเว้น 13 บทความใหม่) ตอบ 200 บน new.thrivewellnessth.com
+- deploy preview: (ใส่หลังเปิด PR)
+
+### วิธีย้อนกลับ
+- revert PR
+
+### หมายเหตุ
+- 13 รายการของบทความใหม่จะชี้ไปหน้า 404 จนกว่าจะ import บทความขึ้น Sanity จึงต้อง merge หลัง import
+- บทความ Wix อื่นที่ไม่มีใน redirect map จะผ่าน catch-all ไป `/blog/<slug>` แล้วได้ 404
+- หลัง cutover: ตรวจรายงาน Pages ใน Google Search Console หา URL เก่าที่ยังมี impression แต่ได้ 404 แล้วเพิ่ม redirect ถ้ามีหน้าที่ตรงเรื่อง
+
+---
+
 ## 2026-10-09 — เพิ่ม skills inspect / review / optimize + Brand Cortex v2
 
 **คำสั่งจากผู้ใช้:** ทำต่อจาก handoff: สร้าง skill สำหรับ Inspect, Review (audit) และ Optimize ของเว็บ thrivewellnessth.com และ new.thrivewellnessth.com
