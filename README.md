@@ -38,6 +38,17 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-10-11 — ปรับราคา Chelation (เว็บ + Google Ads)
+
+**คำสั่งจากผู้ใช้:** แก้ราคาคีเลชั่นเป็น 3,800 บาท/ครั้ง โปร 10 ครั้ง ฟรี 3 ครั้ง จ่าย 38,000 บาท (แอดยังแสดง 4,500 และมูลค่า 13,500)
+**สิ่งที่เปลี่ยน:**
+- เว็บ: `astro/src/config/pricing.json` chelation → 3,800 บาท + note โปร 10+3, `draft: false` ให้หน้า `/chelation` แสดงราคาจริง
+- Google Ads (เจ้าของแก้เองใน UI, Claude ตรวจยืนยันแล้ว) G261011-01/02: แอด chelation-s ที่เปิดอยู่ headline "คีเลชั่น ราคา 4,500/ครั้ง" → "3,800/ครั้ง", description "มูลค่า 13,500 บาท" → "จ่าย 38,000 บาท ได้ 13 ครั้ง"; G261011-03 แอดที่ pause อยู่ แก้แบบเดียวกัน
+- สำเนาแอดใน repo: `docs/superpowers/sheets/ad_copy.tsv` + editor-templates CSV ให้ตรงกับแอดจริง
+**ติดตามผล:** 2026-10-25 (แอดที่แก้ถือเป็นแอดใหม่ ระบบต้องเรียนรู้ใหม่)
+
+---
+
 ## 2026-10-09 — เพิ่ม skills inspect / review / optimize + Brand Cortex v2
 
 **คำสั่งจากผู้ใช้:** ทำต่อจาก handoff: สร้าง skill สำหรับ Inspect, Review (audit) และ Optimize ของเว็บ thrivewellnessth.com และ new.thrivewellnessth.com

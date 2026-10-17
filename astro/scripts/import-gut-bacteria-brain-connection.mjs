@@ -168,7 +168,7 @@ async function main() {
     _id: 'blog-gut-bacteria-brain-connection',
     title: "แบคทีเรียในลำไส้ส่งผลต่อสมองอย่างไร? ความลับของ 'สมองที่สอง'",
     slug: { _type: 'slug', current: 'gut-bacteria-brain-connection' },
-    category: 'สุขภาพลำไส้',
+    category: 'ระบบย่อยอาหาร',
     excerpt:
       'แบคทีเรียในลำไส้ส่งผลต่อสมองและอารมณ์อย่างไร? เข้าใจกลไก SCFA และ gut-brain axis เบื้องหลัง "สมองที่สอง" พร้อมวิธีตรวจสมดุลลำไส้ที่ Thrive Bangkok',
     publishedAt: '2026-06-08T00:00:00.000Z',

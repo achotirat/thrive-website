@@ -150,7 +150,7 @@ async function main() {
     _id: 'blog-low-testosterone-heavy-exercise-men',
     title: 'ทำไมนักกีฬาซ้อมหนักถึงเทสโทสเตอโรนต่ำ — ไม่ใช่แค่เรื่องอายุ',
     slug: { _type: 'slug', current: 'low-testosterone-heavy-exercise-men' },
-    category: 'ฮอร์โมนและการออกกำลังกาย',
+    category: 'ฮอร์โมน',
     excerpt:
       'ผู้ชายที่ซ้อมหนักต่อเนื่อง โดยเฉพาะกีฬาแบบ Endurance และ Hybrid Training อย่าง HYROX อาจมีเทสโทสเตอโรนต่ำได้โดยไม่เกี่ยวกับอายุเลย ทำความเข้าใจ Exercise Hypogonadal Male Condition ภาวะที่นักกีฬาไทยแทบไม่รู้จัก',
     publishedAt: '2026-08-04T00:00:00.000Z',

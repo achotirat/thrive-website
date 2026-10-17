@@ -129,7 +129,7 @@ async function main() {
     _id: 'blog-lower-ldl-naturally',
     title: 'วิธีลด LDL ตามธรรมชาติ — 8 วิธีที่ได้ผล ไม่ต้องพึ่งยา',
     slug: { _type: 'slug', current: 'lower-ldl-naturally' },
-    category: 'หัวใจและหลอดเลือด',
+    category: 'สุขภาพหัวใจและหลอดเลือด',
     excerpt: 'LDL สูงลดได้โดยไม่ต้องกินยา ด้วยอาหาร ออกกำลังกาย และการดูแลแบบ Functional Medicine — Thrive Wellness Clinic ลาดพร้าว',
     publishedAt: '2026-05-29T00:00:00.000Z',
     mainImage: {
