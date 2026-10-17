@@ -24,7 +24,7 @@ export const pages: Record<'en' | 'zh-cn', Record<LocalizedSlug, LocalizedPageDa
         { heading: 'Visit us in Bangkok', body: 'Find Thrive on the second floor of Building B at The Crystal Park, Lat Phrao. We are open daily from 10:00 to 19:00.' },
       ],
       faq: [
-        { q: 'Do I need an appointment?', a: 'We recommend booking ahead. Contact our team on LINE @thrivewellnessth or call 095-934-9640.' },
+        { q: 'Do I need an appointment?', a: 'If you need English-speaking support, please request an appointment in advance. English-speaking staff are not available every day. Contact our team on LINE @thrivewellnessth or call 095-934-9640 to confirm a suitable date.' },
         { q: 'Can I discuss which programme suits me?', a: 'Yes. Tell our team about your goals and concerns, and we can help you arrange a consultation.' },
       ],
       cta: 'Ask about a consultation',
@@ -54,7 +54,7 @@ export const pages: Record<'en' | 'zh-cn', Record<LocalizedSlug, LocalizedPageDa
         { heading: 'Visit the clinic', body: 'Building B, second floor, The Crystal Park, 199 Pradit Manutham Road, Lat Phrao, Bangkok 10230. Parking is available at the centre.' },
       ],
       faq: [
-        { q: 'Can I walk in?', a: 'Walk-ins are welcome, but booking ahead helps us arrange enough time for your consultation.' },
+        { q: 'Can I walk in?', a: 'The clinic is open daily, but English-speaking staff are not available every day. Please contact us in advance if you need English-speaking support and wait for our team to confirm your appointment before visiting.' },
         { q: 'When is the clinic open?', a: 'We are open daily from 10:00 to 19:00.' },
       ],
       cta: 'Send an appointment request',

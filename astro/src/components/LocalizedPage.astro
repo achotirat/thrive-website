@@ -38,6 +38,7 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
         <span class="section-label">{data.eyebrow}</span>
         <h1>{data.heading}</h1>
         <p>{data.intro}</p>
+        {!zh && <p class="localized-booking-note"><strong>Please book in advance if you need English-speaking support.</strong> English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.</p>}
         <div class="localized-actions">
           <a class="btn btn-primary" href="#lead-form">{data.cta}</a>
           <a class="btn btn-secondary" href="https://line.me/R/ti/p/@thrivewellnessth" data-gtm-event="line_click" data-gtm-label={`${lang}-${slug || 'home'}-hero`}>{labels.line}</a>
@@ -83,6 +84,8 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
   .localized-hero__inner { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.92fr); align-items:center; gap:clamp(28px,5vw,72px); }
   .localized-hero h1 { font-size:clamp(2.4rem,4.7vw,4.2rem); line-height:1.15; color:var(--navy); margin:16px 0 20px; text-wrap:balance; }
   .localized-hero p { max-width:620px; font-size:clamp(1.05rem,1.8vw,1.25rem); color:var(--text-2); line-height:1.8; }
+  .localized-hero .localized-booking-note { margin:20px 0 0; padding:14px 18px; border-left:4px solid var(--teal); background:#fff; font-size:1rem; line-height:1.6; }
+  .localized-booking-note strong { color:var(--navy); }
   .localized-hero__photo, .localized-place figure { margin:0; }
   .localized-hero__photo img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px 26px 4px 26px; }
   .localized-hero__photo figcaption, .localized-place figcaption { color:var(--text-2); font-size:.78rem; line-height:1.5; margin-top:9px; }
