@@ -180,7 +180,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: '了解后续计划', detail: '讨论检查结果、实际建议，以及是否需要复诊。' },
       ],
       practicalTitle: '可亲自到访的实体诊所',
-      practicalBody: '诊所位于曼谷 Lat Phrao，Pradit Manutham Road 199 号 The Crystal Park B 栋二楼。每天 10:00–19:00 营业。到访前可致电 095-934-9640 确认预约。',
+      practicalBody: '诊所位于曼谷 Lat Phrao，Pradit Manutham Road 199 号 The Crystal Park B 栋二楼。每天 10:00–19:00 营业。如需中文沟通，请提前预约，以便团队确认可提供语言支持的时间。',
       moreFaq: [
         { q: '还没选好项目，也可以先咨询吗？', a: '可以。请告诉团队您的顾虑，我们可以协助安排咨询，不需要先从网站上选定服务。' },
         { q: '诊所在哪里？', a: 'Thrive 位于曼谷 Lat Phrao 的 The Crystal Park B 栋二楼。' },
@@ -201,7 +201,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: '回顾', detail: '如需跟进，可依据您的反应和新信息调整后续计划。' },
       ],
       practicalTitle: '欢迎亲自到访',
-      practicalBody: 'Thrive 是位于曼谷 The Crystal Park 的实体诊所。您可通过电话或 LINE 联系团队，或预约到访。每天 10:00–19:00 营业。',
+      practicalBody: 'Thrive 是位于曼谷 The Crystal Park 的实体诊所，每天 10:00–19:00 营业。如需中文沟通，请提前通过电话或 LINE 联系团队，确认合适的到访时间。',
       moreFaq: [
         { q: '谁负责诊所的医疗工作？', a: 'Chanakan Trangansri 医生（Dr. Noon）担任医疗总监。泰文“关于我们”页面也展示了她的资料和照片。' },
         { q: '每个人的方案都一样吗？', a: '团队会先了解您的病史、检查结果和目标，再讨论下一步，而非为每位访客使用同一个固定方案。' },
@@ -221,7 +221,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: '前往 The Crystal Park', detail: '诊所位于 Pradit Manutham Road 199 号 B 栋二楼。' },
       ],
       practicalTitle: '到访信息',
-      practicalBody: '诊所每天 10:00–19:00 营业，The Crystal Park 设有停车场。如果您希望接受特定检查或疗程，请先联系团队确认供应情况和准备事项。',
+      practicalBody: '诊所每天 10:00–19:00 营业，The Crystal Park 设有停车场。如需中文沟通，请提前提交预约申请。团队会确认可预约时间、语言支持、服务供应情况和准备事项。',
       moreFaq: [
         { q: '咨询时需要带什么？', a: '如有近期检查结果、药物清单或想问医生的问题，可一并带来。预约时请与团队确认所选服务的具体准备要求。' },
         { q: '预约前可以先问价格吗？', a: '可以。请说明您考虑的服务，团队可在您确认预约前解释当前价格和包含内容。' },

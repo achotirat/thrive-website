@@ -124,7 +124,7 @@ export const pages: Record<'en' | 'zh-cn', Record<LocalizedSlug, LocalizedPageDa
         { heading: '欢迎来到曼谷诊所', body: 'Thrive 位于曼谷 Lat Phrao 的 The Crystal Park B 栋二楼，每天 10:00–19:00 营业。' },
       ],
       faq: [
-        { q: '需要提前预约吗？', a: '建议提前预约。您可以通过 LINE @thrivewellnessth 或致电 095-934-9640 联系我们。' },
+        { q: '需要提前预约吗？', a: '如需中文沟通，请提前预约，以便我们安排合适的服务人员。您可以通过 LINE @thrivewellnessth 或致电 095-934-9640 联系团队，并等待预约确认。' },
         { q: '可以先咨询适合的项目吗？', a: '可以。请告诉团队您的健康目标和顾虑，我们可以协助安排咨询。' },
       ],
       cta: '咨询预约',
@@ -154,7 +154,7 @@ export const pages: Record<'en' | 'zh-cn', Record<LocalizedSlug, LocalizedPageDa
         { heading: '前往诊所', body: '曼谷 Lat Phrao，Pradit Manutham Road 199 号 The Crystal Park B 栋二楼。商场设有停车场。' },
       ],
       faq: [
-        { q: '可以直接到访吗？', a: '可以直接到访，但建议提前预约，以便我们为咨询安排充足时间。' },
+        { q: '可以直接到访吗？', a: '诊所每天营业。如需中文沟通，请先联系团队预约，并在团队确认时间及语言支持后再前来。' },
         { q: '诊所的营业时间是什么？', a: '每天 10:00–19:00 营业。' },
       ],
       cta: '发送预约申请',
