@@ -4,9 +4,15 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 export interface Props {
   serviceSlug: string;
   formTitle?: string;
+  lang?: 'th' | 'en' | 'zh-cn';
 }
 
-const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟรี' } = Astro.props;
+const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟรี', lang = 'th' } = Astro.props;
+const copy = lang === 'zh-cn'
+  ? { intro: '请留下您的联系方式，Thrive 团队将与您联系，讨论适合的服务。', name: '姓名', phone: '电话号码', line: 'LINE ID', message: '补充信息', consent: '我同意 Thrive Wellness Clinic 根据我提供的信息联系我，讨论预约和咨询事宜。', submit: '发送预约申请' }
+  : lang === 'en'
+    ? { intro: 'Leave your details and the Thrive team will contact you to discuss suitable services.', name: 'Full name', phone: 'Phone number', line: 'LINE ID', message: 'Additional message', consent: 'I agree that Thrive Wellness Clinic may contact me using the details I provide about appointments and consultations.', submit: 'Send appointment request' }
+    : { intro: 'ฝากข้อมูลไว้ ทีมงาน Thrive Wellness Clinic จะติดต่อกลับเพื่อช่วยเลือกโปรแกรมที่เหมาะกับคุณ', name: 'ชื่อ-นามสกุล', phone: 'เบอร์โทรศัพท์', line: 'LINE ID', message: 'ข้อความเพิ่มเติม', consent: 'ยินยอมให้ Thrive Wellness Clinic ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา', submit: 'ส่งข้อมูลนัดหมาย' };
 ---
 
 <section class="section lead-form-section" id="lead-form">
@@ -14,9 +20,9 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
     <div>
       <span class="section-label">Appointment</span>
       <h2>{formTitle}</h2>
-      <p>ฝากข้อมูลไว้ ทีมงาน Thrive Wellness Clinic จะติดต่อกลับเพื่อช่วยเลือกโปรแกรมที่เหมาะกับคุณ</p>
+      <p>{copy.intro}</p>
     </div>
-    <form class="lead-form" data-service-slug={serviceSlug}>
+    <form class="lead-form" data-service-slug={serviceSlug} data-lang={lang}>
       <input type="hidden" name="service_interest" value={serviceSlug} />
       <input type="hidden" name="source_page" value={serviceSlug} />
       <input type="hidden" name="landing_page" />
@@ -33,29 +39,29 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
       <input type="hidden" name="consent_version" value="phase1-2026-05" />
 
       <label>
-        ชื่อ-นามสกุล *
+        {copy.name} *
         <input name="name" type="text" autocomplete="name" required maxlength="120" />
       </label>
       <label>
-        เบอร์โทรศัพท์ *
+        {copy.phone} *
         <input name="phone" type="tel" autocomplete="tel" required maxlength="32" />
       </label>
       <label>
-        LINE ID
+        {copy.line}
         <input name="line_id" type="text" autocomplete="off" maxlength="80" />
       </label>
       <label>
-        ข้อความเพิ่มเติม
+        {copy.message}
         <textarea name="message" rows="4" maxlength="2000"></textarea>
       </label>
       <label class="lead-form__consent">
         <input name="consent" type="checkbox" value="yes" required />
-        <span>ยินยอมให้ Thrive Wellness Clinic ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
+        <span>{copy.consent}</span>
       </label>
 
       {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>}
       <p class="lead-form__status" aria-live="polite"></p>
-      <button type="submit" class="btn btn-primary">ส่งข้อมูลนัดหมาย</button>
+      <button type="submit" class="btn btn-primary">{copy.submit}</button>
     </form>
   </div>
 </section>
@@ -172,12 +178,13 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
       const status = form.querySelector('.lead-form__status');
       const button = form.querySelector('button[type="submit"]');
       const serviceSlug = form.dataset.serviceSlug || '';
+    const lang = form.dataset.lang || 'th';
       const formData = new FormData(form);
       formData.set('consent_at', new Date().toISOString());
 
       if (button instanceof HTMLButtonElement) button.disabled = true;
       if (status instanceof HTMLElement) {
-        status.textContent = 'กำลังส่งข้อมูล...';
+        status.textContent = lang === 'zh-cn' ? '正在发送...' : lang === 'en' ? 'Sending...' : 'กำลังส่งข้อมูล...';
         status.dataset.state = 'loading';
       }
 
@@ -196,10 +203,15 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
           service: serviceSlug,
           page_path: window.location.pathname,
         });
-        window.location.href = `/thank-you?service=${encodeURIComponent(serviceSlug)}`;
+        const thanksPath = lang === 'th' ? '/thank-you' : `/${lang}/thank-you`;
+        window.location.href = `${thanksPath}?service=${encodeURIComponent(serviceSlug)}`;
       } catch (error) {
         if (status instanceof HTMLElement) {
-          status.textContent = 'ยังส่งแบบฟอร์มไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
+          status.textContent = lang === 'zh-cn'
+            ? '暂时无法发送，请通过 LINE 联系我们或致电 095-934-9640。'
+            : lang === 'en'
+              ? 'The form could not be sent. Please contact us on LINE or call 095-934-9640.'
+              : 'ยังส่งแบบฟอร์มไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
           status.dataset.state = 'error';
         }
         // Turnstile tokens are single-use: without a reset, every retry re-sends

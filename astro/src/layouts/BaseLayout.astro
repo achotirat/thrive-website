@@ -6,6 +6,11 @@ export interface Props {
 }
 
 const { lang = 'th' } = Astro.props;
+const consentCopy = lang === 'zh-CN'
+  ? { message: '本网站使用 Cookie 分析访问情况并衡量广告效果。您可以接受所有 Cookie，或仅使用必要的 Cookie。', decline: '仅必要 Cookie', accept: '接受全部' }
+  : lang === 'en'
+    ? { message: 'This website uses cookies to analyse visits and measure advertising. You can accept all cookies or use essential cookies only.', decline: 'Essential only', accept: 'Accept all' }
+    : { message: 'เว็บไซต์นี้ใช้คุกกี้เพื่อวิเคราะห์การเข้าชมและวัดผลการโฆษณา ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) คุณเลือกได้ว่าจะยอมรับคุกกี้ทั้งหมด หรือใช้เฉพาะคุกกี้ที่จำเป็นเท่านั้น', decline: 'จำเป็นเท่านั้น', accept: 'ยอมรับทั้งหมด' };
 ---
 
 <!doctype html>
@@ -72,6 +77,8 @@ const { lang = 'th' } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    {lang === 'zh-CN' && <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />}
+    {lang === 'zh-CN' && <style is:global>{`:lang(zh-CN) { --font-en: 'Noto Sans SC', sans-serif; --font-th: 'Noto Sans SC', sans-serif; --font-serif: 'Noto Sans SC', sans-serif; }`}</style>}
     <slot name="head" />
   </head>
   <body>
@@ -82,10 +89,10 @@ const { lang = 'th' } = Astro.props;
     <slot />
     <!-- PDPA Cookie Consent (Consent Mode v2 — defaults set in <head>) -->
     <div id="pdpa-banner" hidden style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a2b3c;color:#fff;padding:16px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem;line-height:1.5;">
-      <p style="margin:0;max-width:640px;">เว็บไซต์นี้ใช้คุกกี้เพื่อวิเคราะห์การเข้าชมและวัดผลการโฆษณา ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) คุณเลือกได้ว่าจะยอมรับคุกกี้ทั้งหมด หรือใช้เฉพาะคุกกี้ที่จำเป็นเท่านั้น</p>
+      <p style="margin:0;max-width:640px;">{consentCopy.message}</p>
       <div style="display:flex;gap:10px;flex-shrink:0;">
-        <button id="pdpa-decline" style="background:transparent;color:#cbd5e1;border:1px solid #64748b;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">จำเป็นเท่านั้น</button>
-        <button id="pdpa-accept" style="background:#007a72;color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">ยอมรับทั้งหมด</button>
+        <button id="pdpa-decline" style="background:transparent;color:#cbd5e1;border:1px solid #64748b;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">{consentCopy.decline}</button>
+        <button id="pdpa-accept" style="background:#007a72;color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:.875rem;font-weight:700;cursor:pointer;white-space:nowrap;">{consentCopy.accept}</button>
       </div>
     </div>
     <script is:inline>
