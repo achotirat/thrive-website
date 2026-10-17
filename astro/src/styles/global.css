@@ -3041,6 +3041,35 @@ h1.th, h2.th, h3.th {
 }
 
 /* Interactive quiz funnel */
+.hormone-topics {
+  background: var(--navy-xl);
+  scroll-margin-top: calc(var(--nav-height) + 12px);
+}
+.hormone-topics__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+.hormone-topics__note {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  margin-top: var(--sp-5);
+}
+.hormone-topics__intro {
+  padding-top: var(--sp-8);
+}
+.hormone-topics__intro p {
+  color: var(--text-2);
+  margin-top: var(--sp-3);
+}
+.quiz-engine__disclaimer {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  grid-column: 1 / -1;
+}
 .quiz-engine-section {
   background:
     radial-gradient(circle at top left, rgba(0, 171, 158, 0.12), transparent 34rem),

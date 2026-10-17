@@ -1,0 +1,22 @@
+---
+import ServiceCard from './ServiceCard.astro';
+import { hormoneTopics } from '../lib/hormoneTopicQuizzes.mjs';
+export interface Props { id?: string; }
+const { id = 'hormone-topics' } = Astro.props;
+const icons = ['⚖️', '🌱', '🌸', '🧘', '🦋'];
+---
+<section class="section hormone-topics" id={id} aria-labelledby={`${id}-title`}>
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">แบบประเมินตามเรื่องที่คุณกังวล</span>
+      <h2 class="section-title" id={`${id}-title`}>เลือกเรื่องที่อยากเช็กก่อน</h2>
+      <p class="section-desc">ตอบคำถามสั้น ๆ แยกเรื่อง รับแนวทางถัดไปก่อนตัดสินใจส่งผลให้ทีม Thrive ติดต่อกลับ</p>
+    </div>
+    <div class="hormone-topics__grid">
+      {hormoneTopics.map((topic, index) => (
+        <ServiceCard title={topic.title} description={topic.description} href={topic.href} icon={icons[index]} />
+      ))}
+    </div>
+    <p class="hormone-topics__note">แบบประเมินนี้ไม่ใช่การวินิจฉัยโรคหรือการตรวจระดับฮอร์โมน ผลอาจเกิดได้จากหลายสาเหตุ โปรดปรึกษาแพทย์หากมีอาการหรือกังวล</p>
+  </div>
+</section>
