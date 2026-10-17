@@ -33,3 +33,10 @@ export function consumeLeadConversion(storage) {
     return null;
   }
 }
+
+export function conversionEventsFor(pending) {
+  if (!pending || !SOURCES.has(pending.source)) return null;
+  return pending.source === 'booth'
+    ? { dataLayerEvent: 'booth_lead_submit', sendTo: null }
+    : { dataLayerEvent: 'lead_submit', sendTo: 'AW-18181967822/dzvQCKLTorkcEM6f691D' };
+}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { stageLeadConversion, consumeLeadConversion } from '../src/lib/leadConversion.mjs';
+import { stageLeadConversion, consumeLeadConversion, conversionEventsFor } from '../src/lib/leadConversion.mjs';
 
 const memory = () => {
   const data = new Map();
@@ -59,4 +59,36 @@ test('storage failures do not stage or consume a conversion', () => {
   };
   assert.equal(stageLeadConversion(storage, { ok: true, lead_id: 'internal-123' }, 'quiz', () => 'opaque-456'), false);
   assert.equal(consumeLeadConversion(storage), null);
+});
+
+test('a form lead maps to the existing paid conversion action once', () => {
+  const storage = memory();
+  stageLeadConversion(storage, { ok: true, lead_id: 'internal-123' }, 'form', () => 'opaque-form');
+  assert.deepEqual(conversionEventsFor(consumeLeadConversion(storage)), {
+    dataLayerEvent: 'lead_submit',
+    sendTo: 'AW-18181967822/dzvQCKLTorkcEM6f691D',
+  });
+  assert.equal(conversionEventsFor(consumeLeadConversion(storage)), null);
+});
+
+test('a quiz lead maps to the paid conversion action', () => {
+  const storage = memory();
+  stageLeadConversion(storage, { ok: true, lead_id: 'internal-123' }, 'quiz', () => 'opaque-quiz');
+  assert.deepEqual(conversionEventsFor(consumeLeadConversion(storage)), {
+    dataLayerEvent: 'lead_submit',
+    sendTo: 'AW-18181967822/dzvQCKLTorkcEM6f691D',
+  });
+});
+
+test('a booth lead produces only a booth event', () => {
+  const storage = memory();
+  stageLeadConversion(storage, { ok: true, lead_id: 'internal-123' }, 'booth', () => 'opaque-booth');
+  assert.deepEqual(conversionEventsFor(consumeLeadConversion(storage)), {
+    dataLayerEvent: 'booth_lead_submit',
+    sendTo: null,
+  });
+});
+
+test('a direct or refreshed thank-you visit produces no event', () => {
+  assert.equal(conversionEventsFor(consumeLeadConversion(memory())), null);
 });
