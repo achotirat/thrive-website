@@ -116,6 +116,8 @@ const concerns = [
 </script>
 
 <script>
+  import { stageLeadConversion } from '../lib/leadConversion.mjs';
+
   type DataLayerWindow = Window & { dataLayer?: Array<Record<string, unknown>> };
 
   const CONCERN_LABELS: Record<string, string> = {
@@ -212,14 +214,11 @@ const concerns = [
           body: formData,
         });
 
-        if (!response.ok) throw new Error('Lead submission failed');
-        const dataLayerWindow = window as DataLayerWindow;
-        dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
-        dataLayerWindow.dataLayer.push({
-          event: 'lead_submit',
-          service: 'crystal-quiz-express',
-          page_path: window.location.pathname,
-        });
+        const result = await response.json();
+        if (!response.ok || result?.ok !== true) throw new Error('Lead submission failed');
+        let storage: Storage | undefined;
+        try { storage = window.sessionStorage; } catch { /* storage unavailable */ }
+        if (storage) stageLeadConversion(storage, result, 'booth');
         window.location.href = '/thank-you?quiz=crystal-booth-checkup&service=crystal-quiz-express';
       } catch (error) {
         if (status instanceof HTMLElement) {
