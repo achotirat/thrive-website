@@ -32,7 +32,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: 'Leave with a plan', detail: 'You can discuss results, practical next steps and whether follow-up is needed.' },
       ],
       practicalTitle: 'A real clinic you can visit',
-      practicalBody: 'We are on the second floor of Building B at The Crystal Park, 199 Pradit Manutham Road, Lat Phrao, Bangkok 10230. Open daily from 10:00 to 19:00. Call 095-934-9640 before visiting if you want to confirm an appointment.',
+      practicalBody: 'We are on the second floor of Building B at The Crystal Park, 199 Pradit Manutham Road, Lat Phrao, Bangkok 10230. The clinic is open daily from 10:00 to 19:00. If you need English-speaking support, please request an appointment in advance so we can confirm staff availability.',
       moreFaq: [
         { q: 'Can I visit before choosing a programme?', a: 'Yes. Contact us to arrange a consultation and explain what you would like help with. You do not need to choose a service from the website first.' },
         { q: 'Where is the clinic?', a: 'The clinic is on the second floor of Building B at The Crystal Park, Lat Phrao, Bangkok.' },
@@ -53,7 +53,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: 'Revisit', detail: 'When follow-up is useful, your plan can be reviewed in light of your response and new information.' },
       ],
       practicalTitle: 'Meet us in person',
-      practicalBody: 'Thrive is a physical clinic at The Crystal Park in Bangkok. You can speak with our team by phone or LINE, or arrange a visit. Opening hours are 10:00–19:00 every day.',
+      practicalBody: 'Thrive is a physical clinic at The Crystal Park in Bangkok. Opening hours are 10:00–19:00 every day. Please contact us in advance to arrange a visit if you need English-speaking support, as staff availability varies.',
       moreFaq: [
         { q: 'Who leads the clinic?', a: 'Dr. Chanakan Trangansri (Dr. Noon) is the medical director. Her profile and photo are also shown on the Thai About page.' },
         { q: 'Will I see the same plan as everyone else?', a: 'The team discusses your history, findings and goals before recommending next steps. Services are not selected from a single fixed plan for every visitor.' },
@@ -73,7 +73,7 @@ export const enhancements: Record<'en' | 'zh-cn', Record<LocalizedSlug, PageEnha
         { title: 'Come to The Crystal Park', detail: 'Find us in Building B, second floor, at 199 Pradit Manutham Road.' },
       ],
       practicalTitle: 'Plan your visit',
-      practicalBody: 'The clinic is open daily from 10:00 to 19:00. The Crystal Park has parking. If you are coming for a specific assessment or treatment, please contact us first to confirm availability and preparation.',
+      practicalBody: 'The clinic is open daily from 10:00 to 19:00. The Crystal Park has parking. Please request your appointment in advance if you need English-speaking support. Our team will confirm staff and service availability, along with any preparation, before your visit.',
       moreFaq: [
         { q: 'What should I bring to a consultation?', a: 'If you have recent test results, a medication list or questions for the clinician, bring them with you. Our team can confirm any service-specific preparation when you book.' },
         { q: 'Can I ask about price before booking?', a: 'Yes. Tell us which service you are considering. The team can explain the current price and what is included before you confirm an appointment.' },
