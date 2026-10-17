@@ -1,6 +1,10 @@
 const KEY = 'thrive_pending_ads_lead_v1';
 const SOURCES = new Set(['form', 'quiz', 'booth']);
 
+export function conversionSourceForQuiz(quiz) {
+  return quiz?.id === 'crystal-booth-checkup' ? 'booth' : 'quiz';
+}
+
 export function stageLeadConversion(storage, response, source, createId = () => crypto.randomUUID()) {
   try {
     // An unsuccessful retry must not reuse a token from a previous submission.

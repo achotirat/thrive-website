@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { stageLeadConversion, consumeLeadConversion, conversionEventsFor } from '../src/lib/leadConversion.mjs';
+import { stageLeadConversion, consumeLeadConversion, conversionEventsFor, conversionSourceForQuiz } from '../src/lib/leadConversion.mjs';
+import { crystalBoothQuiz } from '../src/data/crystalBoothQuiz.mjs';
+import { mentalHealthQuiz } from '../src/lib/quizDefinitions.mjs';
 
 const memory = () => {
   const data = new Map();
@@ -91,4 +93,17 @@ test('a booth lead produces only a booth event', () => {
 
 test('a direct or refreshed thank-you visit produces no event', () => {
   assert.equal(conversionEventsFor(consumeLeadConversion(memory())), null);
+});
+
+test('the full Crystal booth quiz is excluded from paid lead conversions', () => {
+  const storage = memory();
+  stageLeadConversion(storage, { ok: true, lead_id: 'booth-lead' }, conversionSourceForQuiz(crystalBoothQuiz), () => 'opaque-booth');
+  assert.deepEqual(conversionEventsFor(consumeLeadConversion(storage)), {
+    dataLayerEvent: 'booth_lead_submit',
+    sendTo: null,
+  });
+});
+
+test('the Mental Health quiz remains an eligible paid lead source', () => {
+  assert.equal(conversionSourceForQuiz(mentalHealthQuiz), 'quiz');
 });

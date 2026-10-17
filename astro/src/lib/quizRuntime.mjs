@@ -6,7 +6,7 @@ import {
   getQuizProgress,
   getQuizResult,
 } from './quizEngine.mjs';
-import { stageLeadConversion } from './leadConversion.mjs';
+import { conversionSourceForQuiz, stageLeadConversion } from './leadConversion.mjs';
 
 const attributionKeys = [
   'landing_page',
@@ -159,7 +159,7 @@ export function mountQuizEngine(root) {
         if (!response.ok || body?.ok !== true) throw new Error('Quiz lead submission failed');
         let storage;
         try { storage = window.sessionStorage; } catch { /* storage unavailable */ }
-        if (storage) stageLeadConversion(storage, body, 'quiz');
+        if (storage) stageLeadConversion(storage, body, conversionSourceForQuiz(quiz));
         window.location.href = `/thank-you?service=${encodeURIComponent(quiz.serviceSlug)}&quiz=${encodeURIComponent(
           quiz.id,
         )}&result=${encodeURIComponent(result.id)}`;
