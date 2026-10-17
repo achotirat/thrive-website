@@ -11,6 +11,9 @@ import type { LocalizedPageData } from '../i18n/pages';
 export interface Props { lang: 'en' | 'zh-cn'; slug: LocalizedSlug; data: LocalizedPageData }
 const { lang, slug, data } = Astro.props;
 const zh = lang === 'zh-cn';
+const bookingNote = zh
+  ? { heading: '如需中文沟通，请提前预约。', detail: '请提供希望到访的日期，以便我们安排中文沟通服务。团队确认可预约时间后再前来。' }
+  : { heading: 'Please book in advance if you need English-speaking support.', detail: 'English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.' };
 const detail = enhancements[lang][slug];
 const allFaq = [...data.faq, ...detail.moreFaq];
 const labels = zh
@@ -38,7 +41,7 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
         <span class="section-label">{data.eyebrow}</span>
         <h1>{data.heading}</h1>
         <p>{data.intro}</p>
-        {!zh && <p class="localized-booking-note"><strong>Please book in advance if you need English-speaking support.</strong> English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.</p>}
+        <p class="localized-booking-note"><strong>{bookingNote.heading}</strong> {bookingNote.detail}</p>
         <div class="localized-actions">
           <a class="btn btn-primary" href="#lead-form">{data.cta}</a>
           <a class="btn btn-secondary" href="https://line.me/R/ti/p/@thrivewellnessth" data-gtm-event="line_click" data-gtm-label={`${lang}-${slug || 'home'}-hero`}>{labels.line}</a>
