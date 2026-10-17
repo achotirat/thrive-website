@@ -94,6 +94,8 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
 </script>
 
 <script>
+  import { stageLeadConversion } from '../lib/leadConversion.mjs';
+
   type DataLayerWindow = Window & {
     dataLayer?: Array<Record<string, unknown>>;
   };
@@ -188,14 +190,11 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
           body: formData,
         });
 
-        if (!response.ok) throw new Error('Lead submission failed');
-        const dataLayerWindow = window as DataLayerWindow;
-        dataLayerWindow.dataLayer = dataLayerWindow.dataLayer || [];
-        dataLayerWindow.dataLayer.push({
-          event: 'lead_submit',
-          service: serviceSlug,
-          page_path: window.location.pathname,
-        });
+        const result = await response.json();
+        if (!response.ok || result?.ok !== true) throw new Error('Lead submission failed');
+        let storage: Storage | undefined;
+        try { storage = window.sessionStorage; } catch { /* storage unavailable */ }
+        if (storage) stageLeadConversion(storage, result, 'form');
         window.location.href = `/thank-you?service=${encodeURIComponent(serviceSlug)}`;
       } catch (error) {
         if (status instanceof HTMLElement) {
