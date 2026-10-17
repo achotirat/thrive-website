@@ -77,7 +77,7 @@ SUGGESTED H1:        "อาการดื้ออินซูลิน เช
 META DESCRIPTION:    "อาการดื้ออินซูลินที่สังเกตได้ เช่น พุงไม่ยุบ หิวบ่อย ง่วงหลังอาหาร คอดำ วิธีตรวจ HOMA-IR และการแก้ด้วยอาหาร การออกกำลังกาย และการนอน ก่อนกลายเป็นเบาหวาน"
 CONTENT LENGTH:      ≥ 3,000 words-equivalent (project blog checklist), 5+ H2, ≥1 table, 5+ FAQ
 SLUG:                insulin-resistance-symptoms
-CATEGORY:            การควบคุมน้ำหนัก  (alt: ฮอร์โมน — owner to confirm)
+CATEGORY:            การควบคุมน้ำหนัก  (owner confirmed 2026-10-17)
 
 H2 OUTLINE:
   1. ภาวะดื้ออินซูลินคืออะไร (plain analogy: insulin = key, cells' lock gets stiff;
@@ -109,7 +109,8 @@ THRIVE SERVICE LINK:  /check-up/healthy-balance  (includes fasting Insulin + bas
                       secondary: /check-up/hormones (Insulin in the 18-hormone panel)
 INTERNAL LINKS:       /blog/weight-loss-pen-who-should-use (GLP-1 section)
                       docs/blog/non-alcoholic-fatty-liver-real-causes.md (fatty liver ↔ insulin resistance)
-CTA:                  "ตรวจระดับอินซูลินและน้ำตาลกับ Thrive — LINE @thrivewellnessth | โทร 095-934-9640"
+CTA:                  "ตรวจระดับอินซูลินกับ Thrive — LINE @thrivewellnessth | โทร 095-934-9640"
+                      (do NOT promise "ตรวจ HOMA-IR" in CTA/service copy — fasting glucose in Healthy Balance™ unconfirmed)
 ────────────────────────────────────────────────
 ```
 
@@ -125,7 +126,7 @@ CTA:                  "ตรวจระดับอินซูลินแล
 | ADA Standards of Care — prediabetes/HbA1c thresholds | find current edition |
 
 ## Notes for the writer
-- **Confirm with the clinic** that the Healthy Balance™ basic panel includes fasting glucose, so HOMA-IR can actually be calculated. If not, the CTA copy must say "ตรวจอินซูลิน" rather than "ตรวจ HOMA-IR".
+- **Fasting glucose in Healthy Balance™ is unconfirmed (owner unsure, 2026-10-17).** So: explain HOMA-IR educationally in section 4 (what it is, that it needs fasting glucose + fasting insulin, that the doctor decides which tests), but CTA and any Thrive-specific copy must say "ตรวจระดับอินซูลิน" / "ปรึกษาแพทย์เพื่อเลือกการตรวจ", never "ตรวจ HOMA-IR ที่ Thrive". Revisit if the clinic confirms glucose is in the panel.
 - Avoid "หายขาด" (cure). Say "ดีขึ้นได้ / กลับมาตอบสนองต่ออินซูลินดีขึ้น".
 - Do not use the media "1 ใน 4 ของคนไทย" statistic unless a primary source is found.
 - Follow standing rules: 1 hero image only, doctor quote = Dr. Pijak (draft until approved), plagiarism check, SITE-TRACKER update.
