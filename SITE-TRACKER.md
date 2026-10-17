@@ -157,6 +157,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/4-levels-heart-screening-coronary-artery-disease.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/220-minus-age-heart-rate-formula-accuracy.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/normal-ldl-still-at-risk-lipoprotein-a-apob.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
+| `docs/blog/insulin-resistance-symptoms.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
 
 ---
 
