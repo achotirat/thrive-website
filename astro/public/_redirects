@@ -1,0 +1,103 @@
+# Netlify redirects: old Wix URLs -> new site (cutover, see docs/LAUNCH-FIX-MANUAL.md §4 step 5)
+# First match wins: specific rules first, /post/* catch-all last.
+# Thai paths are listed raw and percent-encoded.
+
+# Renamed pages (17, url-map.csv)
+/immunesystem  /blog/immunesystem/  301
+/health-concerns/mood-swings  /blog/mood-swings/  301
+/l-carnitine  /blog/l-carnitine/  301
+/how-to-overcome-burn-out-syndrome  /blog/how-to-overcome-burn-out-syndrome/  301
+/acne-solution  /check-up/acne-solution/  301
+/dna-health-life  /check-up/dna-health-life/  301
+/growth-factor  /blog/growth-factor/  301
+/healthy-balance-check-up  /check-up/healthy-balance/  301
+/heavy-metal-trace-elements-test  /check-up/heavy-metal-trace-elements/  301
+/hormones-check-up  /check-up/hormones/  301
+/iconic-balance-check-up  /check-up/iconic-balance/  301
+/optimum-balance-check-up  /check-up/optimum-balance/  301
+/post/food-intolerance  /check-up/food-intolerance/  301
+/post/iv-drip  /iv-drip/  301
+/post/vitamin-d  /vitamin-d/  301
+/special-test  /check-up/special-test/  301
+/young-balance-check-up  /check-up/young-balance/  301
+
+# Wix posts merged into existing pages (20, redirect-decisions.csv)
+/post/แร่ธาตุ  /blog/minerals/  301
+/post/%E0%B9%81%E0%B8%A3%E0%B9%88%E0%B8%98%E0%B8%B2%E0%B8%95%E0%B8%B8  /blog/minerals/  301
+/post/คู่มือทานวิตามินซี-ชนิดไหนไม่ควรทานด้วยกัน  /blog/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%8B%E0%B8%B5/  301
+/post/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%8B%E0%B8%B5-%E0%B8%8A%E0%B8%99%E0%B8%B4%E0%B8%94%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B1%E0%B8%99  /blog/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%8B%E0%B8%B5/  301
+/post/ประจำเดือนเคลื่อน-ไม่มาตามนัด-ปวดท้องประจำเดือน-ต้องไปหาหมอหรือไม่  /blog/abnormal-period/  301
+/post/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%84%E0%B8%A5%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99-%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%99%E0%B8%B1%E0%B8%94-%E0%B8%9B%E0%B8%A7%E0%B8%94%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99-%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%84%E0%B8%9B%E0%B8%AB%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%88  /blog/abnormal-period/  301
+/post/ฺboostภูมิคุ้มกัน  /blog/immunity/  301
+/post/%E0%B8%BAboost%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%84%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%99  /blog/immunity/  301
+/igg-antibody-covid  /blog/%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%81%E0%B8%9E%E0%B9%89%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%9D%E0%B8%87-igg/  301
+/post/ประโยชน-ของ-coq10  /blog/coenzyme-q10/  301
+/post/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99-%E0%B8%82%E0%B8%AD%E0%B8%87-coq10  /blog/coenzyme-q10/  301
+/post/cortisol  /blog/%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B8%AD%E0%B8%A2%E0%B8%94%E0%B9%8C/  301
+/post/oxytocin  /blog/neurotransmitter/  301
+/post/้hairloss  /blog/hairloss/  301
+/post/%E0%B9%89hairloss  /blog/hairloss/  301
+/post/magnesium-แร-ธาต-ฮ-โร-ท-คนส-วนใหญ-มองข-าม  /blog/magnesium/  301
+/post/magnesium-%E0%B9%81%E0%B8%A3-%E0%B8%98%E0%B8%B2%E0%B8%95-%E0%B8%AE-%E0%B9%82%E0%B8%A3-%E0%B8%97-%E0%B8%84%E0%B8%99%E0%B8%AA-%E0%B8%A7%E0%B8%99%E0%B9%83%E0%B8%AB%E0%B8%8D-%E0%B8%A1%E0%B8%AD%E0%B8%87%E0%B8%82-%E0%B8%B2%E0%B8%A1  /blog/magnesium/  301
+/post/phobia  /blog/social-phobia-treatment/  301
+/health-concerns  /blog/  301
+/post/amenorrhea  /blog/abnormal-period/  301
+/post/heavymetal  /check-up/heavy-metal-trace-elements/  301
+/post/magnesium-1  /blog/magnesium/  301
+/post/serotonin  /blog/neurotransmitters/  301
+/post/what-is-chelation  /chelation/  301
+/post/อาหารช่วยปรับฮอร์โมนเพศหญิง  /blog/femaleshormones/  301
+/post/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AE%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%A1%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%A8%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87  /blog/femaleshormones/  301
+/post/adrenal-fatigue-ภาวะต่อมหมวกไตล้า  /blog/adrenal-fatigue-post/  301
+/post/adrenal-fatigue-%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%81%E0%B9%84%E0%B8%95%E0%B8%A5%E0%B9%89%E0%B8%B2  /blog/adrenal-fatigue-post/  301
+/post/โลหะหนัก  /check-up/heavy-metal-trace-elements/  301
+/post/%E0%B9%82%E0%B8%A5%E0%B8%AB%E0%B8%B0%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81  /check-up/heavy-metal-trace-elements/  301
+
+# Wix posts replaced by new articles (13); targets need the Sanity import
+/post/hangover  /blog/hangover/  301
+/post/vitamin-b12  /blog/vitamin-b12/  301
+/post/bcaa-essential  /blog/bcaa/  301
+/post/booster-to-quercetin  /blog/quercetin/  301
+/post/stressdisorder  /blog/chronic-stress/  301
+/post/เครียดสะสม  /blog/chronic-stress/  301
+/post/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1  /blog/chronic-stress/  301
+/post/epigenetics-การควบคุมเหนือ-dna  /blog/epigenetics/  301
+/post/epigenetics-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD-dna  /blog/epigenetics/  301
+/ala  /blog/alpha-lipoic-acid/  301
+/post/testosterone-1  /blog/testosterone-booster/  301
+/post/fruit-with-happiness  /blog/happy-hormones/  301
+/post/mercury  /blog/mercury/  301
+/post/อาหารเสริม  /blog/supplements/  301
+/post/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%AA%E0%B8%A3%E0%B8%B4%E0%B8%A1  /blog/supplements/  301
+/post/vitamin-anti-stress  /blog/vitamin-anti-stress/  301
+
+# Dropped Wix posts re-pointed to new articles (2, owner 2026-10-10)
+/post/โรคปลายประสาทอักเสบ-peripheral-neuropathy  /blog/alpha-lipoic-acid/  301
+/post/%E0%B9%82%E0%B8%A3%E0%B8%84%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%9A-peripheral-neuropathy  /blog/alpha-lipoic-acid/  301
+/post/dullface-stress  /blog/chronic-stress/  301
+
+# Dropped Wix posts: answer 404 directly instead of falling into the /post/* catch-all
+/post/healthy-food-ตอนท-4-artichoke  /404.html  404
+/post/healthy-food-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97-4-artichoke  /404.html  404
+/post/บำรุงสมอง  /404.html  404
+/post/%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B8%87  /404.html  404
+/post/ภัย5ข้อจากอาหารfastfood  /404.html  404
+/post/%E0%B8%A0%E0%B8%B1%E0%B8%A25%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3fastfood  /404.html  404
+/post/fasting  /404.html  404
+/post/__hug  /404.html  404
+/post/human-placenta-extract-hpe  /404.html  404
+/post/barbecue  /404.html  404
+/post/world-heart-day  /404.html  404
+/post/yogafly  /404.html  404
+/post/กินยามากไปไม่ดีอย่างไร  /404.html  404
+/post/%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%81%E0%B9%84%E0%B8%9B%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%94%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3  /404.html  404
+/post/วิตามินช่วยลดน้ำหนัก  /404.html  404
+/post/%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%A5%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81  /404.html  404
+/post/สารให้ความหวานแทนน้ำตาลอันตรายกว่าน้ำตาล  /404.html  404
+/post/%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%97%E0%B8%99%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5  /404.html  404
+/post/ฮอร์โมนคนท้อง  /404.html  404
+/post/%E0%B8%AE%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%A1%E0%B8%99%E0%B8%84%E0%B8%99%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87  /404.html  404
+/post/skin-care  /404.html  404
+
+# Wix /post/<slug> -> /blog/<slug> (same slug in Sanity); unmatched slugs end in 404
+/post/*  /blog/:splat  301

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+---
+
+<BaseLayout>
+  <SEO
+    slot="head"
+    seoTitle="ไม่พบหน้าที่คุณค้นหา | Thrive Wellness Clinic"
+    description="หน้านี้อาจถูกย้ายหรือไม่มีแล้ว ดูบทความสุขภาพ โปรแกรมตรวจสุขภาพ และบริการของ Thrive Wellness Clinic ได้จากลิงก์ในหน้านี้"
+    canonicalPath="/404"
+    ogImage="/og-image.jpg"
+    noIndex={true}
+  />
+  <Header />
+  <main class="thank-you-page">
+    <section class="section">
+      <div class="section-container thank-you-card">
+        <span class="section-label">404</span>
+        <h1>ไม่พบหน้าที่คุณค้นหา</h1>
+        <p>หน้านี้อาจถูกย้ายหรือไม่มีแล้ว ลองดูบทความสุขภาพ โปรแกรมตรวจสุขภาพ หรือบริการของเราด้านล่าง หรือทักมาถามทีมงานทาง LINE ได้เลย</p>
+        <div class="cta-section__actions">
+          <a href="/blog" class="btn btn-primary">บทความสุขภาพ</a>
+          <a href="/check-up" class="btn btn-secondary">โปรแกรมตรวจสุขภาพ</a>
+          <a href="/iv-drip" class="btn btn-secondary">IV Drip</a>
+        </div>
+        <div class="cta-section__actions">
+          <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-primary" data-gtm-event="line_click">คุยกับเราทาง LINE</a>
+          <a href="/" class="btn btn-secondary">กลับหน้าแรก</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
