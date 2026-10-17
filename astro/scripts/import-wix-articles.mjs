@@ -107,6 +107,16 @@ function parseArticle(raw) {
     _type: 'faqItem',
     _key: `faq-${i + 1}`,
     question: plainText(m[1]),
+    // `answer` (rich text) is required by the faqItem schema; without it Studio refuses to publish
+    answer: [
+      {
+        _type: 'block',
+        _key: `faq-${i + 1}-a`,
+        style: 'normal',
+        markDefs: [],
+        children: [{ _type: 'span', _key: 's1', marks: [], text: plainText(m[2].replace(/\n/g, ' ')) }],
+      },
+    ],
     shortAnswer: plainText(m[2].replace(/\n/g, ' ')),
   }))
 
