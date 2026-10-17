@@ -1,13 +1,13 @@
 ---
 title: "ปากกาลดน้ำหนัก เหมาะกับใคร ใครไม่ควรใช้? คู่มือความปลอดภัยจากแพทย์"
 slug: weight-loss-pen-who-should-use
-category: "ฮอร์โมน"
+category: "การควบคุมน้ำหนัก"
 publishedAt: "2026-10-17"
 excerpt: "ปากกาลดน้ำหนักคือยาฉีดกลุ่ม GLP-1 ที่ช่วยคุมความหิว เหมาะกับผู้ที่มีภาวะอ้วนหรือมีโรคร่วมจากน้ำหนักเกิน ไม่ใช่ยาลดน้ำหนักเพื่อความสวยงาม บทความนี้สรุปว่าใครเหมาะ ใครห้ามใช้ ผลข้างเคียงที่ต้องรู้ และทำไมต้องให้แพทย์ประเมินและสั่งจ่ายเป็นรายบุคคล"
 seoTitle: "ปากกาลดน้ำหนัก เหมาะกับใคร ใครไม่ควรใช้ ข้อห้าม ผลข้างเคียง | Thrive"
 seoDescription: "ปากกาลดน้ำหนักคืออะไร เหมาะกับใคร ใครห้ามใช้ ผลข้างเคียงที่ต้องรู้ และทำไมตั้งแต่ 15 ก.ย. 2569 ต้องมีใบสั่งแพทย์ พร้อมแนวทางประเมินรายบุคคลก่อนเริ่มใช้"
 heroImage: weight-loss-pen-who-should-use-hero.webp
-heroAlt: "ผู้ชายวัยทำงานนั่งคุยกับแพทย์ในห้องตรวจที่อบอุ่น กำลังฟังคำอธิบายผลตรวจสุขภาพก่อนตัดสินใจเรื่องการควบคุมน้ำหนัก"
+heroAlt: "ผู้หญิงในชุดออกกำลังกายใช้สายวัดวัดรอบเอว สื่อถึงการติดตามรอบเอวซึ่งแพทย์ใช้ประเมินร่วมกับค่า BMI"
 ---
 
 <!-- Dev note: This post uses CTA link `/contact` with label `ปรึกษาแพทย์ Thrive →`. ctaService is intentionally left blank so the sticky CTA falls back to /contact (see astro/src/pages/blog/[slug].astro). Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ไม่มีหน้า Tier A เรื่องการควบคุมน้ำหนัก และยานี้ต้องให้แพทย์ประเมินก่อนสั่งจ่าย จึงใช้ปรึกษาแพทย์ (fallback /contact) -->
@@ -254,7 +254,7 @@ heroAlt: "ผู้ชายวัยทำงานนั่งคุยกั�
 
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
-| Hero | `weight-loss-pen-who-should-use-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai man in his early 40s, slightly heavy-set, sitting across a wooden desk from a friendly doctor in a warm, modern Bangkok clinic consultation room, listening attentively while the doctor points to a printed blood-test report, calm and reassured mood, soft natural window light, warm amber colour grade with teal accents, realistic and unposed. No injection pens, no needles, no syringes, no drug boxes or brand names, no scales, no before/after framing, no measuring tape around the waist, no white hospital setting, no obvious AI-generated face. 1200×630 landscape. |
+| Hero | `weight-loss-pen-who-should-use-hero.webp` | 1200×630 | Above H1 | **ส่งแล้ว (ผู้ใช้จัดหา 2026-10-17):** ภาพสต็อกผู้หญิงใส่ชุดออกกำลังกายวัดรอบเอวด้วยสายวัด พื้นหลังเทา ต้นฉบับ 8000×4500 ครอปส่วนล่างและย่อเป็น 1200×630 WebP q80 (33 KB) ⚠️ ภาพสายวัด/หุ่นผอมต่างจาก prompt เดิมที่ตั้งใจเลี่ยงไว้ ให้ฝ่ายดูแลกฎหมายโฆษณาตรวจด้วย |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
@@ -276,4 +276,4 @@ heroAlt: "ผู้ชายวัยทำงานนั่งคุยกั�
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจ 17 ต.ค. 2026): ผลค้นหาหลักเป็นสื่อข่าว (ไทยรัฐ, PPTV, Sanook, KTC, HDmall) ที่บอกแค่ "ควรปรึกษาแพทย์" บทความนี้มีรายการข้อห้ามและข้อควรระวังครบตามฉลาก, เกณฑ์ BMI สำหรับคนเอเชีย, กฎหมายยาควบคุมพิเศษ 15 ก.ย. 2569, ข้อมูลน้ำหนักเด้งกลับหลังหยุดยา และขั้นตอนดูแลรายเคส
 - [x] คำเตือนให้ปรึกษาแพทย์และ disclaimer ท้ายบทความ
 - [ ] **ไม่ได้ทำ:** base skill `notfair:content-writer` และ T6 `notfair:geo-optimizer` ไม่ได้รันแยก (ใช้โครง GEO ของ skill นี้แทน)
-- [ ] **ข้อจำกัด:** ข้อมูลกฎหมาย [10] มาจากข่าว Hfocus ไม่ได้เปิดราชกิจจานุเบกษาฉบับเต็ม ควรตรวจกับประกาศต้นฉบับก่อนเผยแพร่ หมวดหมู่ "ฮอร์โมน" เป็นการเลือกที่ใกล้ที่สุด ยังไม่มีหมวด "การควบคุมน้ำหนัก" ใน Sanity
+- [ ] **ข้อจำกัด:** ข้อมูลกฎหมาย [10] มาจากข่าว Hfocus ไม่ได้เปิดราชกิจจานุเบกษาฉบับเต็ม ควรตรวจกับประกาศต้นฉบับก่อนเผยแพร่ หมวดหมู่ "การควบคุมน้ำหนัก" เพิ่มใน sanity/schemaTypes/documents/blogPost.ts แล้ว (2026-10-17) ต้อง deploy Sanity Studio เพื่อให้เลือกได้ใน Studio
