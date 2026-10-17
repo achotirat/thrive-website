@@ -36,6 +36,7 @@ export const blogPost = defineType({
           {title: 'หัวใจและหลอดเลือด', value: 'หัวใจและหลอดเลือด'},
           {title: 'สุขภาพสตรี', value: 'สุขภาพสตรี'},
           {title: 'เวชศาสตร์ฟื้นฟู', value: 'เวชศาสตร์ฟื้นฟู'},
+          {title: 'การควบคุมน้ำหนัก', value: 'การควบคุมน้ำหนัก'},
         ],
         layout: 'radio',
       },
