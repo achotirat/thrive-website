@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title description">
+  <title id="title">แฮงค์เกิดจากหลายอย่างรวมกัน / Hangover has several causes</title>
+  <desc id="description">Four causes: inflammation, acetaldehyde, poor sleep, and dehydration. Inflammation has the clearest evidence; dehydration contributes but is not the main cause.</desc>
+  <rect width="1000" height="600" fill="#FFFFFF"/>
+  <g font-family="Sarabun, Thonburi, sans-serif">
+    <text x="64" y="75" fill="#153A42" font-size="38" font-weight="700">แฮงค์เกิดจากหลายอย่างรวมกัน</text>
+    <text x="65" y="111" fill="#657A80" font-size="21" font-weight="400">Hangover has several causes</text>
+    <path d="M64 139H936" stroke="#DCE7E8" stroke-width="2"/>
+
+    <g transform="translate(64 166)">
+      <rect width="424" height="178" rx="18" fill="#FFFFFF" stroke="#AFDCD5" stroke-width="2"/>
+      <rect x="20" y="23" width="70" height="70" rx="17" fill="#E9F6F3"/>
+      <g transform="translate(55 58)" fill="none" stroke="#2A9D8F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <circle r="15"/><circle r="5"/>
+        <path d="M0-29v7M0 22v7M-29 0h7M22 0h7M-20-20l5 5M15 15l5 5M20-20l-5 5M-15 15l-5 5"/>
+      </g>
+      <text x="111" y="54" fill="#193C42" font-size="28" font-weight="700">การอักเสบ</text>
+      <text x="112" y="84" fill="#5D7175" font-size="18">Inflammation</text>
+      <rect x="111" y="111" width="173" height="39" rx="19.5" fill="#2A9D8F"/>
+      <text x="129" y="137" fill="#FFFFFF" font-size="18" font-weight="700">หลักฐานชัดที่สุด</text>
+      <text x="383" y="35" fill="#8ABCB4" font-size="15" font-weight="700">01</text>
+    </g>
+
+    <g transform="translate(512 166)">
+      <rect width="424" height="178" rx="18" fill="#FFFFFF" stroke="#F0D1A1" stroke-width="2"/>
+      <rect x="20" y="23" width="70" height="70" rx="17" fill="#FFF4E5"/>
+      <g transform="translate(55 58)" fill="none" stroke="#BE7927" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="0" cy="0" r="8"/><circle cx="-22" cy="-13" r="5"/><circle cx="22" cy="-13" r="5"/><circle cx="0" cy="25" r="5"/>
+        <path d="M-7-5l-10-6M7-5l10-6M0 8v12"/>
+      </g>
+      <text x="111" y="54" fill="#193C42" font-size="27" font-weight="700">อะเซทัลดีไฮด์</text>
+      <text x="112" y="84" fill="#7F6648" font-size="18">Acetaldehyde</text>
+      <path d="M111 121H202" stroke="#DDA75E" stroke-width="4" stroke-linecap="round"/>
+      <text x="383" y="35" fill="#CDA36D" font-size="15" font-weight="700">02</text>
+    </g>
+
+    <g transform="translate(64 368)">
+      <rect width="424" height="178" rx="18" fill="#FFFFFF" stroke="#F0D1A1" stroke-width="2"/>
+      <rect x="20" y="23" width="70" height="70" rx="17" fill="#FFF4E5"/>
+      <g transform="translate(55 58)" fill="none" stroke="#BE7927" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11-24A26 26 0 1 0 24 13 24 24 0 0 1 11-24Z"/>
+        <path d="M16-20v10M11-15h10" stroke-width="2.5"/>
+      </g>
+      <text x="111" y="54" fill="#193C42" font-size="28" font-weight="700">การนอนแย่ลง</text>
+      <text x="112" y="84" fill="#7F6648" font-size="18">Poor sleep</text>
+      <path d="M111 121H202" stroke="#DDA75E" stroke-width="4" stroke-linecap="round"/>
+      <text x="383" y="35" fill="#CDA36D" font-size="15" font-weight="700">03</text>
+    </g>
+
+    <g transform="translate(512 368)">
+      <rect width="424" height="178" rx="18" fill="#FFFFFF" stroke="#DEE4E5" stroke-width="2"/>
+      <rect x="20" y="23" width="70" height="70" rx="17" fill="#F3F5F5"/>
+      <g transform="translate(55 58)" fill="none" stroke="#87989B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0-28C-7-16-22 1-22 14a22 22 0 0 0 44 0C22 1 7-16 0-28Z"/>
+        <path d="M-12 14c4 4 8 5 12 5 4 0 8-1 12-5"/>
+      </g>
+      <text x="111" y="54" fill="#45565A" font-size="28" font-weight="700">ขาดน้ำ</text>
+      <text x="112" y="84" fill="#76888B" font-size="18">Dehydration</text>
+      <rect x="111" y="111" width="222" height="39" rx="19.5" fill="#F1F4F4"/>
+      <text x="128" y="137" fill="#697B7E" font-size="18" font-weight="700">มีส่วน แต่ไม่ใช่ตัวหลัก</text>
+      <text x="383" y="35" fill="#A3B0B2" font-size="15" font-weight="700">04</text>
+    </g>
+  </g>
+</svg>
