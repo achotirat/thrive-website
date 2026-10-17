@@ -1,5 +1,6 @@
 ---
 import JsonLd from './JsonLd.astro';
+import { alternateLinks } from '../i18n/routes';
 
 type Hreflang = { lang: string; href: string };
 type Faq = { q: string; a: string };
@@ -58,14 +59,12 @@ const siteOrigin = new URL(Astro.site!).origin;
 // all of it to the configured site origin so the domain is set in exactly one
 // place (astro.config.mjs `site`) and cutover needs a single change.
 
-// hreflang: no English version of the site exists, so emit only th-TH +
-// x-default, both pointing at the canonical URL. Pages that pass no hreflang
-// (noindexed utility/LP pages) still emit none.
+// Only publish alternates when the same page is translated in both languages.
+// Other pages retain their Thai canonical until their content is translated.
 const hreflangResolved: Hreflang[] = hreflang.length
-  ? [
-      { lang: 'th-TH', href: canonicalUrl },
-      { lang: 'x-default', href: canonicalUrl },
-    ]
+  ? alternateLinks(canonicalPath, Astro.site!).length
+    ? alternateLinks(canonicalPath, Astro.site!)
+    : [{ lang: 'th-TH', href: canonicalUrl }, { lang: 'x-default', href: canonicalUrl }]
   : [];
 
 const SITE_HOST_RE = /^https?:\/\/(www\.|new\.)?thrivewellnessth\.com/;

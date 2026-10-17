@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import { localizedPath } from '../../i18n/routes';
+
+export function getStaticPaths() {
+  return (['en', 'zh-cn'] as const).map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const zh = lang === 'zh-cn';
+---
+<BaseLayout lang={zh ? 'zh-CN' : 'en'}>
+  <SEO slot="head" seoTitle={zh ? '感谢联系 Thrive' : 'Thank you for contacting Thrive'} description={zh ? '我们已收到您的预约申请。' : 'We have received your appointment request.'} canonicalPath={`/${lang}/thank-you`} ogImage="/og-image.jpg" noIndex />
+  <main class="section"><div class="section-container" style="max-width:700px;text-align:center;min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+    <h1>{zh ? '感谢您的联系' : 'Thank you for contacting us'}</h1>
+    <p>{zh ? '我们已收到您的预约申请。团队将在营业时间内与您联系，确认可预约时间及中文沟通安排。目前预约尚未确认。' : 'We have received your request. Our team will contact you during opening hours to confirm availability, including English-speaking support. Your appointment is not confirmed yet.'}</p>
+    <a class="btn btn-primary" href={localizedPath(lang, '')}>{zh ? '返回首页' : 'Back to home'}</a>
+  </div></main>
+</BaseLayout>
