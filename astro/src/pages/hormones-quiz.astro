@@ -17,6 +17,7 @@ import OfferStack from '../components/lp/OfferStack.astro';
 import RiskReversal from '../components/lp/RiskReversal.astro';
 import QuizEngine from '../components/QuizEngine.astro';
 import { hormoneBalanceQuiz } from '../lib/quizDefinitions.mjs';
+import HormoneTopicChooser from '../components/HormoneTopicChooser.astro';
 import { getServicePricing } from '../lib/pricing';
 
 const entry = await getEntry('services', 'hormones-quiz');
@@ -47,6 +48,7 @@ const crumbs = [
     <article class="service-content">
       <Content />
     </article>
+    <HormoneTopicChooser />
     <QuizEngine quiz={hormoneBalanceQuiz} />
     {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
     {offerStackProps && <OfferStack {...offerStackProps} />}

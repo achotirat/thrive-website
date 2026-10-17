@@ -15,6 +15,7 @@ export interface Props {
 const { quiz, showLeadForm = true } = Astro.props;
 const quizJson = JSON.stringify(quiz).replaceAll('</script', '<\\/script');
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const isHealthTopic = quiz.id.startsWith('hormone-topic-');
 ---
 
 <section class="section quiz-engine-section" id="quiz">
@@ -33,6 +34,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         <div class="quiz-engine__answers" data-quiz-answers></div>
         <div class="quiz-engine__result" data-quiz-result hidden></div>
       </div>
+      {isHealthTopic && <p class="quiz-engine__disclaimer">ผลนี้เป็นการสะท้อนคำตอบ ไม่ใช่การวินิจฉัยหรือผลตรวจฮอร์โมน หากมีอาการรุนแรงหรือกังวล โปรดพบแพทย์โดยตรง</p>}
 
       {showLeadForm && (
         <form class="quiz-engine__lead-form" id="quiz-lead-form" data-quiz-lead-form hidden>
@@ -56,6 +58,10 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             <input name="consent" type="checkbox" value="yes" required />
             <span>ยินยอมให้ Thrive Wellness Clinic ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา</span>
           </label>
+          {isHealthTopic && <label class="lead-form__consent">
+            <input name="health_consent" type="checkbox" value="yes" required />
+            <span>ยินยอมให้ Thrive Wellness Clinic รับและใช้คำตอบแบบประเมินซึ่งอาจเป็นข้อมูลสุขภาพ เพื่อพิจารณาคำแนะนำและติดต่อกลับ (ไม่ใช่ผลวินิจฉัย)</span>
+          </label>}
           {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>}
           <p class="lead-form__status" data-quiz-status aria-live="polite"></p>
           <button type="submit" class="btn btn-primary">ส่งผลแบบทดสอบ</button>
