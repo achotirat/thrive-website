@@ -6,6 +6,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://new.thrivewellnessth.com',
   output: 'static',
+  // Wix blog post replaced by the วางแผนมีบุตร service page
+  redirects: {
+    '/post/infertility': '/fertility-planning',
+  },
   integrations: [
     mdx(),
     sitemap({
