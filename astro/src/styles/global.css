@@ -1932,6 +1932,12 @@ h1.th, h2.th, h3.th {
   object-fit: cover;
 }
 
+.service-hero__media--portrait img {
+  display: block;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
 .service-page {
   overflow: clip;
 }
