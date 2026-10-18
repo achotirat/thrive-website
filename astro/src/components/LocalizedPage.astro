@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from './SEO.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import LeadForm from './LeadForm.astro';
+import { localizedPath, localizedSlugs } from '../i18n/routes';
+import { enhancements } from '../i18n/enhancements';
+import type { LocalizedSlug } from '../i18n/routes';
+import type { LocalizedPageData } from '../i18n/pages';
+
+export interface Props { lang: 'en' | 'zh-cn'; slug: LocalizedSlug; data: LocalizedPageData }
+const { lang, slug, data } = Astro.props;
+const zh = lang === 'zh-cn';
+const bookingNote = zh
+  ? { heading: '如需中文沟通，请提前预约。', detail: '请提供希望到访的日期，以便我们安排中文沟通服务。团队确认可预约时间后再前来。' }
+  : { heading: 'Please book in advance if you need English-speaking support.', detail: 'English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.' };
+const detail = enhancements[lang][slug];
+const allFaq = [...data.faq, ...detail.moreFaq];
+const labels = zh
+  ? { home: '首页', about: '关于我们', contact: '联系我们', 'iv-drip': '静脉营养', 'check-up': '健康检查', hbot: '高压氧 HBOT', 'mental-health': '心理健康', line: '通过 LINE 联系', hours: '每天 10:00–19:00', faq: '常见问题', explore: '了解服务', map: '查看地图' }
+  : { home: 'Home', about: 'About', contact: 'Contact', 'iv-drip': 'IV Drip', 'check-up': 'Health Check-ups', hbot: 'HBOT', 'mental-health': 'Mental Health', line: 'Message on LINE', hours: 'Open daily 10:00–19:00', faq: 'Frequently asked questions', explore: 'Explore our services', map: 'View map' };
+const path = localizedPath(lang, slug);
+const navSlugs: LocalizedSlug[] = ['', 'iv-drip', 'check-up', 'hbot', 'mental-health', 'about', 'contact'];
+const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
+---
+<BaseLayout lang={zh ? 'zh-CN' : 'en'}>
+  <SEO slot="head" seoTitle={data.title} description={data.description} canonicalPath={path} ogImage={detail.heroPhoto.src} heroImage={detail.heroPhoto.src} ogLocale={zh ? 'zh_CN' : 'en_US'} hreflang={[{ lang, href: path }]} faqs={allFaq} />
+  <div class="localized-topbar"><div class="section-container"><span>Thrive Wellness Clinic · Bangkok</span><span>{labels.hours} · 095-934-9640</span></div></div>
+  <header class="localized-header">
+    <div class="section-container localized-header__inner">
+      <a href={localizedPath(lang, '')} aria-label="Thrive Wellness Clinic"><img src="/Thrive-logo-160px.png" alt="Thrive Wellness Clinic" width="48" height="48" /></a>
+      <nav class="localized-nav" aria-label={zh ? '主导航' : 'Main navigation'}>
+        {navSlugs.map((item) => <a href={localizedPath(lang, item)} aria-current={item === slug ? 'page' : undefined}>{name(item)}</a>)}
+      </nav>
+      <LanguageSwitcher lang={lang} />
+    </div>
+  </header>
+  <main>
+    <section class="localized-hero"><div class="section-container localized-hero__inner">
+      <div class="localized-hero__copy">
+        <span class="section-label">{data.eyebrow}</span>
+        <h1>{data.heading}</h1>
+        <p>{data.intro}</p>
+        <p class="localized-booking-note"><strong>{bookingNote.heading}</strong> {bookingNote.detail}</p>
+        <div class="localized-actions">
+          <a class="btn btn-primary" href="#lead-form">{data.cta}</a>
+          <a class="btn btn-secondary" href="https://line.me/R/ti/p/@thrivewellnessth" data-gtm-event="line_click" data-gtm-label={`${lang}-${slug || 'home'}-hero`}>{labels.line}</a>
+        </div>
+      </div>
+      <figure class="localized-hero__photo">
+        <img src={detail.heroPhoto.src} alt={detail.heroPhoto.alt} fetchpriority="high" decoding="async" />
+        <figcaption>{detail.heroPhoto.caption}</figcaption>
+      </figure>
+    </div></section>
+    <section class="section localized-audience"><div class="section-container localized-audience__inner">
+      <div><span class="section-label">{data.eyebrow}</span><h2>{detail.audienceTitle}</h2><p>{detail.audienceIntro}</p></div>
+      <ul>{detail.audience.map((item) => <li>{item}</li>)}</ul>
+    </div></section>
+    <section class="section"><div class="section-container localized-grid">
+      {data.sections.map((section) => <article class="localized-card"><h2>{section.heading}</h2><p>{section.body}</p>{section.points && <ul>{section.points.map((point) => <li>{point}</li>)}</ul>}</article>)}
+    </div></section>
+    <section class="section localized-journey"><div class="section-container">
+      <div class="localized-journey__intro"><h2>{detail.journeyTitle}</h2><p>{detail.journeyIntro}</p></div>
+      <ol>{detail.steps.map((step) => <li><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>
+    </div></section>
+    <section class="section localized-place"><div class="section-container localized-place__inner">
+      <figure><img src={detail.placePhoto.src} alt={detail.placePhoto.alt} loading="lazy" decoding="async" /><figcaption>{detail.placePhoto.caption}</figcaption></figure>
+      <div><span class="section-label">Thrive Wellness Clinic</span><h2>{detail.practicalTitle}</h2><p>{detail.practicalBody}</p><div class="localized-place__links"><a href={localizedPath(lang, 'contact')}>{labels.contact} →</a><a href="https://maps.google.com/?q=199+Pradit+Manutham+Road+Bangkok+10230" target="_blank" rel="noopener noreferrer">{labels.map} →</a></div></div>
+    </div></section>
+    {slug === '' && <section class="section localized-services"><div class="section-container"><h2>{labels.explore}</h2><div class="localized-service-links">{localizedSlugs.filter((item) => item !== '' && item !== 'about' && item !== 'contact').map((item) => <a href={localizedPath(lang, item)}>{name(item)} <span aria-hidden="true">→</span></a>)}</div></div></section>}
+    <section class="section localized-faq"><div class="section-container"><h2>{labels.faq}</h2>{allFaq.map((item) => <details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+    <LeadForm serviceSlug={slug || 'homepage'} formTitle={data.cta} lang={lang} />
+  </main>
+  <footer class="localized-footer"><div class="section-container"><strong>Thrive Wellness Clinic</strong><p>{labels.hours} · 095-934-9640 · LINE @thrivewellnessth</p><nav aria-label={zh ? '页脚导航' : 'Footer navigation'}>{navSlugs.map((item) => <a href={localizedPath(lang, item)}>{name(item)}</a>)}</nav></div></footer>
+</BaseLayout>
+
+<style>
+  .localized-topbar { background:var(--navy); color:#fff; font-size:.8rem; padding:7px 0; }
+  .localized-topbar .section-container { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .localized-header { background:#fff; border-bottom:1px solid var(--border); }
+  .localized-header__inner { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:80px; flex-wrap:wrap; padding-top:12px; padding-bottom:12px; }
+  .localized-header img { display:block; object-fit:contain; }
+  .localized-nav { display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:.85rem; }
+  .localized-nav a { color:var(--text-2); }
+  .localized-nav a[aria-current="page"] { color:var(--navy); font-weight:700; }
+  .localized-hero { background:var(--navy-xl); padding:clamp(48px,7vw,92px) 0; }
+  .localized-hero__inner { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.92fr); align-items:center; gap:clamp(28px,5vw,72px); }
+  .localized-hero h1 { font-size:clamp(2.4rem,4.7vw,4.2rem); line-height:1.15; color:var(--navy); margin:16px 0 20px; text-wrap:balance; }
+  .localized-hero p { max-width:620px; font-size:clamp(1.05rem,1.8vw,1.25rem); color:var(--text-2); line-height:1.8; }
+  .localized-hero .localized-booking-note { margin:20px 0 0; padding:14px 18px; border-left:4px solid var(--teal); background:#fff; font-size:1rem; line-height:1.6; }
+  .localized-booking-note strong { color:var(--navy); }
+  .localized-hero__photo, .localized-place figure { margin:0; }
+  .localized-hero__photo img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px 26px 4px 26px; }
+  .localized-hero__photo figcaption, .localized-place figcaption { color:var(--text-2); font-size:.78rem; line-height:1.5; margin-top:9px; }
+  .localized-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+  .localized-audience { background:#fff; }
+  .localized-audience__inner { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1fr); gap:clamp(26px,6vw,80px); align-items:start; }
+  .localized-audience h2, .localized-journey h2, .localized-place h2 { color:var(--navy); font-size:clamp(1.65rem,2.8vw,2.5rem); line-height:1.25; margin:12px 0 16px; text-wrap:balance; }
+  .localized-audience p, .localized-journey__intro p, .localized-place p { max-width:650px; color:var(--text-2); line-height:1.8; }
+  .localized-audience ul { list-style:none; padding:0; margin:0; }
+  .localized-audience li { padding:16px 0 16px 32px; border-bottom:1px solid var(--border); position:relative; color:var(--text-2); line-height:1.65; }
+  .localized-audience li::before { content:'✓'; position:absolute; left:0; color:var(--teal); font-weight:800; }
+  .localized-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(24px,4vw,50px); }
+  .localized-card { border-left:3px solid var(--teal); padding:8px 0 8px 24px; background:#fff; }
+  .localized-card h2, .localized-services h2, .localized-faq h2 { color:var(--navy); font-size:clamp(1.35rem,2.5vw,2rem); margin:0 0 16px; }
+  .localized-card p { color:var(--text-2); line-height:1.8; }
+  .localized-card ul { margin:18px 0 0; padding-left:24px; color:var(--text-2); line-height:1.9; }
+  .localized-journey { background:var(--cream-xl); }
+  .localized-journey__intro { max-width:740px; margin-bottom:30px; }
+  .localized-journey ol { list-style:none; counter-reset:journey; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:24px; padding:0; margin:0; }
+  .localized-journey li { counter-increment:journey; border-top:1px solid var(--cream-d); padding-top:20px; }
+  .localized-journey li::before { content:counter(journey, decimal-leading-zero); color:var(--teal); display:block; font-size:.85rem; font-weight:800; margin-bottom:18px; }
+  .localized-journey h3 { color:var(--navy); font-size:1.16rem; margin:0 0 8px; }
+  .localized-journey li p { color:var(--text-2); line-height:1.7; margin:0; }
+  .localized-place__inner { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center; }
+  .localized-place img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:24px 4px 24px 4px; }
+  .localized-place__links { display:flex; flex-wrap:wrap; gap:20px; margin-top:22px; font-weight:700; }
+  .localized-place__links a { color:var(--teal-d); }
+  .localized-services, .localized-faq { background:var(--navy-xl); }
+  .localized-service-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:12px; }
+  .localized-service-links a { display:flex; justify-content:space-between; padding:18px; border-radius:var(--r-md); background:#fff; color:var(--navy); font-weight:700; border:1px solid var(--border); }
+  .localized-faq details { border-bottom:1px solid var(--border); padding:18px 0; }
+  .localized-faq summary { cursor:pointer; color:var(--navy); font-weight:700; }
+  .localized-faq p { color:var(--text-2); line-height:1.8; margin:12px 0 0; }
+  .localized-footer { background:var(--navy); color:#fff; padding:48px 0; }
+  .localized-footer p { opacity:.85; margin:10px 0 20px; }
+  .localized-footer nav { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:22px; }
+  .localized-footer nav a { color:#fff; font-size:.9rem; }
+  @media(max-width:800px) { .localized-header__inner { align-items:flex-start; } .localized-nav { order:3; width:100%; overflow:auto; flex-wrap:nowrap; padding-bottom:5px; } .localized-nav a { white-space:nowrap; } .localized-hero__inner, .localized-audience__inner, .localized-place__inner { grid-template-columns:1fr; } .localized-hero { padding:32px 0 44px; } .localized-hero h1 { font-size:clamp(2.2rem,9vw,3.2rem); margin:12px 0 14px; } .localized-hero p { font-size:1rem; line-height:1.7; } .localized-actions { margin-top:18px; } .localized-hero__photo img { aspect-ratio:16/10; } }
+</style>
