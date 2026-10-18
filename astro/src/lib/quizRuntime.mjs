@@ -160,7 +160,15 @@ export function mountQuizEngine(root) {
         if (!response.ok || body?.ok !== true) throw new Error('Quiz lead submission failed');
         let storage;
         try { storage = window.sessionStorage; } catch { /* storage unavailable */ }
-        if (storage) stageLeadConversion(storage, body, conversionSourceForQuiz(quiz));
+        if (storage) {
+          stageLeadConversion(storage, body, conversionSourceForQuiz(quiz), {
+            service: quiz.serviceSlug,
+            quiz_id: quiz.id,
+            quiz_result_id: result.id,
+            nurture_segment: result.nurtureSegment || '',
+            page_path: window.location.pathname,
+          });
+        }
         window.location.href = `/thank-you?service=${encodeURIComponent(quiz.serviceSlug)}&quiz=${encodeURIComponent(
           quiz.id,
         )}&result=${encodeURIComponent(result.id)}`;

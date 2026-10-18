@@ -194,7 +194,12 @@ const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟ�
         if (!response.ok || result?.ok !== true) throw new Error('Lead submission failed');
         let storage: Storage | undefined;
         try { storage = window.sessionStorage; } catch { /* storage unavailable */ }
-        if (storage) stageLeadConversion(storage, result, 'form');
+        if (storage) {
+          stageLeadConversion(storage, result, 'form', {
+            service: serviceSlug,
+            page_path: window.location.pathname,
+          });
+        }
         window.location.href = `/thank-you?service=${encodeURIComponent(serviceSlug)}`;
       } catch (error) {
         if (status instanceof HTMLElement) {

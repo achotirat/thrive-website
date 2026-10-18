@@ -58,7 +58,8 @@ import SEO from '../components/SEO.astro';
       type AdsWindow = Window & { dataLayer?: Array<Record<string, unknown>>; gtag?: (...args: unknown[]) => void };
       const adsWindow = window as AdsWindow;
       adsWindow.dataLayer = adsWindow.dataLayer || [];
-      adsWindow.dataLayer.push({ event: events.dataLayerEvent, page_path: window.location.pathname });
+      // page_path is the page the lead was submitted from, as before this event moved here.
+      adsWindow.dataLayer.push({ event: events.dataLayerEvent, ...pending.details });
       if (events.sendTo && typeof adsWindow.gtag === 'function') {
         adsWindow.gtag('event', 'conversion', {
           send_to: events.sendTo,
