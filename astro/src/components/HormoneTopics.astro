@@ -73,6 +73,7 @@ const topics = [
             <span class="hormone-topic__en">{t.en}</span>
             <h3>{t.th}</h3>
             <p>{t.desc}</p>
+            <span class="hormone-topic__cta">ทำแบบทดสอบ ฟรี! →</span>
           </div>
         </a>
       ))}
@@ -107,7 +108,7 @@ const topics = [
   }
   .hormone-topic:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(91, 71, 55, .18); }
   .hormone-topic img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
-  .hormone-topic__body { padding: var(--sp-4) var(--sp-5) var(--sp-5); }
+  .hormone-topic__body { display: flex; flex-direction: column; flex: 1; padding: var(--sp-4) var(--sp-5) var(--sp-5); }
   .hormone-topic__en {
     font-size: var(--text-xs);
     font-weight: 700;
@@ -116,5 +117,17 @@ const topics = [
     color: var(--topic-color);
   }
   .hormone-topic h3 { font-size: 1.05rem; line-height: 1.45; margin: var(--sp-1) 0 var(--sp-2); color: var(--navy); }
-  .hormone-topic p { font-size: .88rem; line-height: 1.7; color: var(--text-2); margin: 0; }
+  .hormone-topic p { font-size: .88rem; line-height: 1.7; color: var(--text-2); margin: 0 0 var(--sp-4); }
+  .hormone-topic__cta {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--topic-color);
+    color: #fff;
+    font-size: .88rem;
+    font-weight: 700;
+    transition: filter .2s ease;
+  }
+  .hormone-topic:hover .hormone-topic__cta { filter: brightness(1.08); }
 </style>
