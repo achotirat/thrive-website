@@ -4,6 +4,7 @@ const topics = [
   {
     th: 'ภาพรวมฮอร์โมนสมดุลหรือไม่',
     en: 'Hormone Balance',
+    color: '#008a7f',
     desc: 'เช็กภาพรวมฮอร์โมนหลักทั้งระบบ ทั้งไทรอยด์ ต่อมหมวกไต และฮอร์โมนเพศ ในการตรวจครั้งเดียว',
     image: '/hormones/topic-balance.jpg',
     alt: 'คู่รักยิ้มอย่างสดใส สื่อถึงฮอร์โมนที่สมดุล',
@@ -12,6 +13,7 @@ const topics = [
   {
     th: 'อยากมีน้อง เตรียมตัวตั้งครรภ์ไม่ใช้ยา',
     en: 'Fertility Program',
+    color: '#d4708a',
     desc: 'ประเมินฮอร์โมนที่เกี่ยวกับการเจริญพันธุ์ และวางแผนเตรียมร่างกายก่อนตั้งครรภ์ร่วมกับแพทย์',
     image: '/hormones/topic-fertility.jpg',
     alt: 'หญิงตั้งครรภ์ประคองท้องท่ามกลางธรรมชาติ',
@@ -20,6 +22,7 @@ const topics = [
   {
     th: 'สัญญาณเสี่ยง ภาวะหมดประจำเดือน',
     en: 'Menopause Hormone Support',
+    color: '#9a6fb0',
     desc: 'ร้อนวูบวาบ นอนไม่หลับ รอบเดือนเปลี่ยน ตรวจฮอร์โมนเพื่อดูแลตัวเองในช่วงเปลี่ยนผ่าน',
     image: '/hormones/topic-menopause.jpg',
     alt: 'ผู้หญิงวัย 40 ปีในชุดสีครีม ยิ้มอย่างมั่นใจ',
@@ -28,6 +31,7 @@ const topics = [
   {
     th: 'ฮอร์โมนการจัดการความเครียด',
     en: 'Stress Hormone',
+    color: '#d98c3a',
     desc: 'Cortisol และ DHEA สะท้อนว่าร่างกายรับมือกับความเครียดสะสมได้ดีแค่ไหน',
     image: '/hormones/topic-stress.jpg',
     alt: 'ผู้หญิงกุมศีรษะจากความเครียดระหว่างทำงาน',
@@ -36,6 +40,7 @@ const topics = [
   {
     th: 'วางแผนการลดน้ำหนัก และระบบเผาผลาญ',
     en: 'Thyroid Hormone',
+    color: '#5e8f5a',
     desc: 'ไทรอยด์และอินซูลินเกี่ยวข้องกับการเผาผลาญ น้ำหนักขึ้นง่าย และระดับพลังงานในแต่ละวัน',
     image: '/hormones/topic-thyroid.jpg',
     alt: 'ผู้หญิงใช้สายวัดวัดรอบเอว',
@@ -62,7 +67,7 @@ const topics = [
     </div>
     <div class="hormone-topics__grid">
       {topics.map((t) => (
-        <a class="hormone-topic" href="#quiz">
+        <a class="hormone-topic" href="#quiz" style={`--topic-color:${t.color}`}>
           <img src={t.image} alt={t.alt} loading="lazy" style={`object-position:${t.position}`} />
           <div class="hormone-topic__body">
             <span class="hormone-topic__en">{t.en}</span>
@@ -91,14 +96,16 @@ const topics = [
     display: flex;
     flex-direction: column;
     background: var(--white);
-    border: 1px solid var(--border);
+    border: 2px solid var(--topic-color);
+    border-top-width: 6px;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 6px 18px rgba(91, 71, 55, .08);
     color: inherit;
     text-decoration: none;
     transition: transform .2s ease, box-shadow .2s ease;
   }
-  .hormone-topic:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(91, 71, 55, .14); }
+  .hormone-topic:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(91, 71, 55, .18); }
   .hormone-topic img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
   .hormone-topic__body { padding: var(--sp-4) var(--sp-5) var(--sp-5); }
   .hormone-topic__en {
@@ -106,7 +113,7 @@ const topics = [
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--blue);
+    color: var(--topic-color);
   }
   .hormone-topic h3 { font-size: 1.05rem; line-height: 1.45; margin: var(--sp-1) 0 var(--sp-2); color: var(--navy); }
   .hormone-topic p { font-size: .88rem; line-height: 1.7; color: var(--text-2); margin: 0; }
