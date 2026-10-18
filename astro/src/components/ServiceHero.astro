@@ -7,12 +7,16 @@ export interface Props {
   subline: string;
   image: string;
   imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
   primaryBtn: Button;
   secondaryBtn?: Button;
   stats?: Stat[];
 }
 
-const { headline, subline, image, imageAlt, primaryBtn, secondaryBtn, stats = [] } = Astro.props;
+const { headline, subline, image, imageAlt, imageWidth = 1200, imageHeight = 630, primaryBtn, secondaryBtn, stats = [] } = Astro.props;
+// Images that are not the standard 1200x630 (e.g. a portrait banner with text) keep their own shape instead of being cropped
+const customShape = imageWidth !== 1200 || imageHeight !== 630;
 ---
 
 <section class="service-hero">
@@ -35,8 +39,16 @@ const { headline, subline, image, imageAlt, primaryBtn, secondaryBtn, stats = []
       </div>
     )}
   </div>
-  <div class="service-hero__media">
-    <img src={image} alt={imageAlt} width="1200" height="630" loading="eager" fetchpriority="high" />
+  <div class:list={['service-hero__media', { 'service-hero__media--natural': customShape, 'service-hero__media--portrait': imageHeight > imageWidth }]}>
+    <img
+      src={image}
+      alt={imageAlt}
+      width={imageWidth}
+      height={imageHeight}
+      loading="eager"
+      fetchpriority="high"
+      style={customShape ? `aspect-ratio:${imageWidth} / ${imageHeight}` : undefined}
+    />
   </div>
 </section>
 

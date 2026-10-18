@@ -167,8 +167,8 @@ const supabaseHeaders = (config, extra = {}) => ({
 // so it resets on cold starts and is not shared across concurrent instances —
 // it is a cheap first line against dumb floods, not a guarantee.
 // Layer 2 (persistent, cross-instance): duplicate-phone cooldown backed by a
-// Supabase lookup — the same phone number cannot create more than one lead per
-// cooldown window, which also absorbs double-clicks and retry storms.
+// Supabase lookup — quiz leads dedupe by phone + quiz ID, so someone can
+// complete two different assessments without silently losing the second.
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_POSTS = Number.parseInt(process.env.LEADS_RATE_LIMIT_PER_MINUTE || "5", 10);
 const DUPLICATE_COOLDOWN_MINUTES = Number.parseInt(process.env.LEADS_DUPLICATE_COOLDOWN_MINUTES || "10", 10);
@@ -189,12 +189,13 @@ const isRateLimited = (ip) => {
   return bucket.length > RATE_LIMIT_MAX_POSTS;
 };
 
-const findRecentLeadByPhone = async (config, phone, minutes) => {
+const findRecentLeadByPhone = async (config, phone, minutes, quizId) => {
   if (!phone || !Number.isFinite(minutes) || minutes <= 0) return null;
   const since = new Date(Date.now() - minutes * 60_000).toISOString();
   const url =
     `${config.leadsUrl}?select=lead_id,created_at` +
     `&phone=eq.${encodeURIComponent(phone)}` +
+    (quizId ? `&quiz_id=eq.${encodeURIComponent(quizId)}` : "") +
     `&created_at=gte.${encodeURIComponent(since)}` +
     `&order=created_at.desc&limit=1`;
   try {
@@ -554,7 +555,7 @@ exports.handler = async (event) => {
     // Duplicate-phone cooldown: same phone within the window returns the
     // existing lead as a success (idempotent for double-clicks/retries, and a
     // persistent cross-instance brake on phone-spam floods).
-    const recent = await findRecentLeadByPhone(config, lead.phone, DUPLICATE_COOLDOWN_MINUTES);
+    const recent = await findRecentLeadByPhone(config, lead.phone, DUPLICATE_COOLDOWN_MINUTES, lead.quiz_id);
     if (recent) {
       return response(200, { ok: true, lead_id: recent.lead_id || null, duplicate: true }, event);
     }

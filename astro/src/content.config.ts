@@ -36,6 +36,9 @@ const servicesCollection = defineCollection({
       subline: z.string(),
       image: z.string(),
       imageAlt: z.string(),
+      // Natural size of the hero image; set when it is not 1200x630 so it is shown uncropped
+      imageWidth: z.number().optional(),
+      imageHeight: z.number().optional(),
       primaryBtn: buttonSchema,
       secondaryBtn: buttonSchema.optional(),
       stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
@@ -137,6 +140,9 @@ const checkUpProgramsCollection = defineCollection({
       subline: z.string(),
       image: z.string(),
       imageAlt: z.string(),
+      // Natural size of the hero image; set when it is not 1200x630 so it is shown uncropped
+      imageWidth: z.number().optional(),
+      imageHeight: z.number().optional(),
       primaryBtn: buttonSchema,
       secondaryBtn: buttonSchema.optional(),
       stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
