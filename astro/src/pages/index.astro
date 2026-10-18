@@ -4,25 +4,135 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import LeadForm from '../components/LeadForm.astro';
-import DoctorAttribution from '../components/DoctorAttribution.astro';
 import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
 
-const DR_NOON = {
-  name: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น)',
-  title: 'Chanakan Trangansri, MD. — Anti-aging & Regenerative Medicine',
-  image: '/dr-chanakan-trangansri-thrive-400x400.jpg',
-  imageAlt: 'พญ. ชนากานต์ ตระหง่านศรี หมอนุ่น แพทย์ Anti-aging Thrive Wellness Clinic Bangkok',
-  bio: 'ผู้เชี่ยวชาญด้าน Functional Medicine และ Anti-aging ดูแลสุขภาพเชิงลึกโดยหาต้นเหตุ ไม่ใช่แค่รักษาอาการ เชี่ยวชาญด้านฮอร์โมน ภูมิแพ้ และการฟื้นฟูระดับเซลล์',
-  specializations: [
-    'Anti-aging & Regenerative Medicine',
-    'Nutrition Wellness',
-    'Lifestyle Medicine',
-    'Hormone Balance',
-    'Chelation & Detoxification',
-  ],
-  quote: 'ในการแพทย์แบบ Functional Medicine เราไม่ได้แค่รักษาอาการ — เราหาว่าทำไมร่างกายถึงส่งสัญญาณผิดปกติ เมื่อรู้ต้นเหตุจริง ร่างกายมีศักยภาพฟื้นฟูได้เองในระดับที่ยาแค่ระงับอาการไม่อาจทำได้',
-};
+const CARE_STEPS = [
+  { title: 'ปรึกษาและประเมินโดยแพทย์', desc: 'แพทย์ซักประวัติสุขภาพ อาการ ยาที่ใช้อยู่ และเป้าหมายด้านสุขภาพของท่าน' },
+  { title: 'ตรวจวิเคราะห์สุขภาพเชิงลึก', desc: 'แพทย์เลือกรายการตรวจที่เหมาะสม เพื่อประเมินสมดุลของร่างกายอย่างละเอียด' },
+  { title: 'วางแผนการดูแลเฉพาะบุคคล', desc: 'แพทย์กำหนดโปรแกรม สูตร และความเข้มข้นให้เหมาะกับร่างกายและเป้าหมายของแต่ละท่าน' },
+];
+
+const DEEP_TESTS = [
+  {
+    title: 'ตรวจสมดุลฮอร์โมน',
+    en: 'Hormone Balance',
+    href: '/check-up/hormones',
+    desc: 'ฮอร์โมนควบคุมพลังงาน การนอนหลับ อารมณ์ น้ำหนัก มวลกล้ามเนื้อ และสมรรถภาพทางเพศ เมื่อเข้าสู่วัยกลางคน ระดับฮอร์โมนจะเปลี่ยนแปลงตามธรรมชาติ เช่น ภาวะวัยทองในผู้หญิง หรือระดับเทสโทสเตอโรนที่ลดลงในผู้ชาย การตรวจฮอร์โมนที่เกี่ยวข้อง เช่น ฮอร์โมนเพศและฮอร์โมนไทรอยด์ ช่วยให้แพทย์ประเมินสาเหตุของอาการและวางแผนปรับสมดุลได้อย่างเหมาะสม ให้บริการทั้งผู้ชายและผู้หญิงทุกช่วงวัย',
+    fit: 'ผู้ที่อ่อนเพลียง่าย นอนหลับไม่สนิท อารมณ์แปรปรวน น้ำหนักเพิ่มโดยไม่ทราบสาเหตุ หรือมีอาการวัยทอง',
+  },
+  {
+    title: 'ตรวจระดับวิตามินและแร่ธาตุ',
+    en: 'Vitamin & Micronutrients',
+    href: '/vitamins-and-micronutrients',
+    desc: 'แม้จะรับประทานอาหารครบหมู่ ร่างกายก็อาจขาดวิตามินและแร่ธาตุบางชนิดได้ เนื่องจากการดูดซึมลดลงตามอายุ รวมถึงผลจากความเครียด การพักผ่อนไม่เพียงพอ และยาบางชนิด การขาดสารอาหารเพียงเล็กน้อยอาจไม่แสดงอาการชัดเจน แต่ส่งผลต่อพลังงาน ภูมิคุ้มกัน กระดูก และการทำงานของสมองในระยะยาว ผลตรวจช่วยให้แพทย์ออกแบบการเสริมวิตามินและแร่ธาตุเฉพาะบุคคล แทนการรับประทานแบบคาดเดา',
+    fit: 'ผู้ที่รับประทานวิตามินเสริมอยู่แล้วแต่ไม่แน่ใจว่าตรงกับความต้องการของร่างกาย ผู้ที่เหนื่อยล้าเรื้อรัง หรือเจ็บป่วยบ่อย',
+  },
+  {
+    title: 'ตรวจโลหะหนักสะสมในร่างกาย',
+    en: 'Heavy Metal Check-up',
+    href: '/check-up/heavy-metal-trace-elements',
+    desc: 'ร่างกายอาจได้รับโลหะหนักจากชีวิตประจำวันโดยไม่รู้ตัว เช่น มลพิษทางอากาศ อาหารทะเลบางชนิด น้ำดื่ม และผลิตภัณฑ์บางประเภท โลหะหนักอย่างตะกั่ว ปรอท แคดเมียม และสารหนู สามารถสะสมในร่างกายได้เป็นเวลานาน และอาจส่งผลต่อระบบประสาท ไต และสุขภาพโดยรวม การตรวจช่วยประเมินระดับการสะสม เพื่อให้แพทย์พิจารณาแนวทางดูแลที่เหมาะสม',
+    fit: 'ผู้ที่อาศัยหรือทำงานในเมืองที่มีมลพิษ ผู้ที่รับประทานอาหารทะเลเป็นประจำ และผู้ที่ต้องการประเมินความเสี่ยงเชิงป้องกัน',
+  },
+  {
+    title: 'ตรวจภาวะความไวต่ออาหาร ครอบคลุม 222 ชนิด',
+    en: 'Food Sensitivity – IgG',
+    href: '/food-intolerance',
+    desc: 'ภาวะความไวต่ออาหารแตกต่างจากการแพ้อาหารแบบเฉียบพลัน เพราะอาการมักเกิดขึ้นช้า อาจหลายชั่วโมงหรือหลายวันหลังรับประทาน จึงยากที่จะสังเกตได้ด้วยตนเองว่าอาหารชนิดใดเกี่ยวข้อง ผลตรวจระดับ IgG ต่ออาหาร 222 ชนิด ใช้เป็นข้อมูลประกอบให้แพทย์แนะนำการปรับรูปแบบการรับประทานอาหารให้เหมาะกับร่างกายแต่ละบุคคล',
+    fit: 'ผู้ที่มีอาการท้องอืด ระบบย่อยอาหารแปรปรวน ผื่นผิวหนัง ปวดศีรษะ หรืออ่อนเพลียหลังรับประทานอาหารเป็นประจำ',
+  },
+  {
+    title: 'ประเมินภาวะเหนื่อยล้าเรื้อรังที่เกี่ยวข้องกับต่อมหมวกไต',
+    en: 'Adrenal Fatigue',
+    href: '/adrenal-fatigue',
+    desc: 'ต่อมหมวกไตผลิตฮอร์โมนคอร์ติซอล ซึ่งช่วยให้ร่างกายรับมือกับความเครียด ผู้ที่อยู่ภายใต้แรงกดดันจากการทำงานหรือภาระความรับผิดชอบเป็นเวลานาน อาจมีการหลั่งฮอร์โมนความเครียดที่ไม่สมดุล ส่งผลให้อ่อนเพลียแม้พักผ่อนเพียงพอ ตื่นนอนไม่สดชื่น หรือพลังงานไม่สม่ำเสมอตลอดวัน การประเมินช่วยให้แพทย์เข้าใจการตอบสนองต่อความเครียดของร่างกาย และวางแผนฟื้นฟูได้อย่างเหมาะสม',
+    fit: 'ผู้บริหาร เจ้าของธุรกิจ และผู้ที่มีความเครียดสะสม นอนหลับไม่เพียงพอ หรือรู้สึกหมดพลังเรื้อรัง',
+  },
+  {
+    title: 'ตรวจสมดุลลำไส้ ภาวะลำไส้รั่ว และโปรไบโอติกส์',
+    en: 'Gut Health Assessment',
+    href: null,
+    desc: 'ในลำไส้มีจุลินทรีย์อาศัยอยู่นับล้านล้านตัว ทำหน้าที่ช่วยย่อยอาหาร สร้างวิตามินบางชนิด และสนับสนุนการทำงานของระบบภูมิคุ้มกัน สมดุลของจุลินทรีย์อาจเปลี่ยนแปลงได้จากอาหาร ความเครียด การใช้ยาปฏิชีวนะ และอายุที่เพิ่มขึ้น การตรวจครอบคลุม 3 ด้าน ดังนี้',
+    points: [
+      ['สมดุลจุลินทรีย์ในลำไส้ (Gut Microbiome)', 'ประเมินความหลากหลายและสัดส่วนของจุลินทรีย์ชนิดดีและชนิดที่อาจก่อปัญหา'],
+      ['ภาวะลำไส้รั่ว (Leaky Gut)', 'ประเมินการซึมผ่านของผนังลำไส้ เมื่อผนังลำไส้มีการซึมผ่านเพิ่มขึ้น สารที่ไม่ควรผ่านอาจเข้าสู่กระแสเลือด และอาจเกี่ยวข้องกับการอักเสบในร่างกาย'],
+      ['โปรไบโอติกส์ (Probiotics)', 'ประเมินปริมาณจุลินทรีย์ชนิดดี เพื่อให้แพทย์เลือกโปรไบโอติกส์และปรับอาหารได้ตรงกับความต้องการของร่างกาย แทนการรับประทานแบบคาดเดา'],
+    ],
+    note: 'ผลตรวจใช้ร่วมกับการตรวจ Food Sensitivity และสูตร Gut Health ในโปรแกรม IV Drip ได้ เพื่อการดูแลลำไส้อย่างครบวงจร',
+    fit: 'ผู้ที่มีอาการท้องอืด ท้องผูกหรือท้องเสียบ่อย ระบบขับถ่ายแปรปรวน ผู้ที่เคยใช้ยาปฏิชีวนะต่อเนื่อง หรือมีภาวะความไวต่ออาหาร',
+  },
+  {
+    title: 'ตรวจพันธุกรรม',
+    en: 'DNA Test',
+    href: '/dna-test',
+    desc: 'ข้อมูลพันธุกรรมบ่งบอกแนวโน้มเฉพาะตัวของร่างกาย เช่น การเผาผลาญสารอาหาร การตอบสนองต่ออาหารและการออกกำลังกาย รวมถึงแนวโน้มความเสี่ยงต่อภาวะสุขภาพบางประการ เนื่องจากข้อมูลพันธุกรรมไม่เปลี่ยนแปลงตลอดชีวิต การตรวจเพียงครั้งเดียวจึงใช้เป็นพื้นฐานในการวางแผนสุขภาพเชิงป้องกันได้ในระยะยาว',
+    fit: 'ผู้ที่มีประวัติโรคในครอบครัว หรือต้องการวางแผนสุขภาพเชิงป้องกันอย่างเป็นระบบ',
+  },
+];
+
+const IV_PROGRAMS = [
+  {
+    title: 'IV Drip Vitamin',
+    sub: 'สูตรเฉพาะที่ออกแบบโดยแพทย์ของ Thrive Wellness',
+    href: '/iv-drip',
+    desc: 'ทีมแพทย์ของ Thrive Wellness ออกแบบสูตรวิตามินและสารอาหารนี้ขึ้นโดยเฉพาะ มีให้เลือก 3 ระดับความเข้มข้น แพทย์จะเลือกระดับที่เหมาะสมจากสภาวะร่างกาย ผลการตรวจวิเคราะห์ และเป้าหมายด้านสุขภาพของแต่ละท่าน ครอบคลุมตั้งแต่การบำรุงร่างกายอย่างต่อเนื่อง ไปจนถึงการฟื้นฟูอย่างเข้มข้นในช่วงที่ร่างกายต้องการ',
+    fit: 'ผู้ที่ต้องการบำรุงร่างกายอย่างสม่ำเสมอ ผู้ที่อ่อนล้าจากการทำงาน หรือเดินทางบ่อย',
+  },
+  {
+    title: 'Chelation Therapy',
+    sub: 'คีเลชั่นบำบัด',
+    href: '/chelation',
+    desc: 'คีเลชั่นบำบัดคือการให้สารคีเลต (Chelating Agent) ทางหลอดเลือดดำ สารนี้จับกับโลหะหนักที่สะสมอยู่ในร่างกาย เช่น ตะกั่ว ปรอท และแคดเมียม แล้วนำออกทางปัสสาวะ จึงช่วยลดปริมาณโลหะหนักสะสม แพทย์จะพิจารณาความเหมาะสมจากผลการตรวจโลหะหนัก (Heavy Metal Check-up) และประเมินการทำงานของไตก่อนเริ่มการรักษา เพื่อความปลอดภัย',
+    fit: 'ผู้ที่ตรวจพบโลหะหนักสะสมเกินเกณฑ์ หรือผู้ที่สัมผัสโลหะหนักเป็นประจำ',
+  },
+  {
+    title: "Myers' Cocktail",
+    sub: 'สูตร IV Drip มาตรฐานในเวชศาสตร์เชิงฟังก์ชัน',
+    href: null,
+    desc: 'สูตร IV Drip ที่ใช้กันแพร่หลายในเวชศาสตร์เชิงฟังก์ชัน พัฒนาโดย Dr. John Myers แพทย์ชาวอเมริกัน สูตรดั้งเดิมประกอบด้วยแมกนีเซียม แคลเซียม วิตามินบีรวม และวิตามินซี ซึ่งร่างกายใช้ในการสร้างพลังงาน การทำงานของระบบประสาทและกล้ามเนื้อ และระบบภูมิคุ้มกัน นิยมใช้เพื่อฟื้นฟูความอ่อนล้าและดูแลสุขภาพโดยรวม',
+    fit: 'ผู้ที่อ่อนเพลียเรื้อรัง พักผ่อนไม่เพียงพอ หรือผู้ที่เริ่มรับ IV Drip เป็นครั้งแรก',
+  },
+  {
+    title: 'Megadose Vitamin C',
+    sub: 'วิตามินซีความเข้มข้นสูง',
+    href: null,
+    desc: 'ร่างกายดูดซึมวิตามินซีจากการรับประทานได้ในปริมาณจำกัด และขับส่วนเกินออก การให้ทางหลอดเลือดดำทำให้ระดับวิตามินซีในเลือดสูงกว่าการรับประทานหลายเท่า วิตามินซีเป็นสารต้านอนุมูลอิสระ สนับสนุนการทำงานของระบบภูมิคุ้มกัน และจำเป็นต่อการสร้างคอลลาเจนซึ่งช่วยให้ผิวพรรณแข็งแรง',
+    fit: 'ผู้ที่เจ็บป่วยบ่อย ผู้ที่ต้องการดูแลผิวพรรณ หรือสัมผัสมลภาวะเป็นประจำ',
+  },
+  {
+    title: 'Gut Health',
+    sub: 'สูตรฟื้นฟูลำไส้',
+    href: null,
+    desc: 'ลำไส้เป็นอวัยวะหลักในการดูดซึมสารอาหาร และเป็นที่อยู่ของเซลล์ภูมิคุ้มกันจำนวนมาก เมื่อเยื่อบุผนังลำไส้อ่อนแอจากความเครียด อาหาร หรือยาบางชนิด อาจส่งผลต่อการดูดซึมสารอาหาร ระบบย่อยอาหาร และภูมิคุ้มกัน สูตร Gut Health ประกอบด้วยสารอาหารที่มีบทบาทในการซ่อมแซมและบำรุงเยื่อบุผนังลำไส้ เช่น กลูตามีน (Glutamine) ใช้ร่วมกับการปรับอาหารตามผลตรวจ Food Sensitivity ได้ เพื่อการดูแลที่ครบวงจร',
+    fit: 'ผู้ที่มีอาการท้องอืด ระบบขับถ่ายแปรปรวน หรือมีภาวะความไวต่ออาหาร',
+  },
+];
+
+const HBOT_BENEFITS = [
+  'การฟื้นตัวจากความอ่อนล้าและการออกกำลังกาย',
+  'กระบวนการซ่อมแซมเนื้อเยื่อและการหายของแผล',
+  'การลดการอักเสบในร่างกาย',
+  'สุขภาพผิวพรรณ ผ่านการไหลเวียนเลือดและการสร้างคอลลาเจน',
+  'การทำงานของสมอง ความจำ และสมาธิ',
+];
+
+const DOCTORS = [
+  {
+    name: 'พญ. ชนากานต์ ตระหง่านศรี (หมอนุ่น)',
+    en: 'Dr. Chanakan Trangansri',
+    image: '/dr-chanakan-trangansri-thrive-400x400.jpg',
+    specialty: 'เวชศาสตร์ชะลอวัยและเวชศาสตร์ฟื้นฟู',
+    specialtyEn: 'Anti-aging & Regenerative Medicine',
+  },
+  {
+    name: 'นพ. พิจักษณ์ วงศ์วิศิษฎ์ (หมอบาย)',
+    en: 'Dr. Pijak Wongvisit',
+    image: '/dr-pijak-wongvisit-thrive-400x400.jpg',
+    specialty: 'เวชศาสตร์ป้องกันและเวชศาสตร์ฟื้นฟู',
+    specialtyEn: 'Preventive & Regenerative Medicine',
+  },
+];
 
 const FAQ_ITEMS = [
   {
@@ -169,20 +279,46 @@ const jsonLd = [
             </div>
           </div>
         </div>
+        <div class="hero__media">
+          <img
+            src="/home-hero-morning.jpg"
+            alt="ผู้หญิงยืดตัวบนเตียงยามเช้า สดชื่นพร้อมเริ่มวันใหม่"
+            width="1200"
+            height="630"
+            fetchpriority="high"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Key Takeaways ────────────────────────────────────────────── -->
-  <section class="section section--light tldr-section">
+  <!-- ── Overview + care approach ─────────────────────────────── -->
+  <section class="section home-overview">
+    <div class="section-container home-overview__inner">
+      <span class="section-label">ภาพรวม</span>
+      <h2 class="section-title">คลินิกเวชศาสตร์เชิงฟังก์ชันในกรุงเทพมหานคร</h2>
+      <p>Thrive Wellness เป็นคลินิกเวชศาสตร์เชิงฟังก์ชัน (Functional Medicine) ในกรุงเทพมหานคร ให้การดูแลด้านเวชศาสตร์ชะลอวัย (Anti-aging) การปรับสมดุลฮอร์โมน (Hormone Balance) และเวชศาสตร์ฟื้นฟู (Regenerative Medicine) โดยทีมแพทย์เฉพาะทาง</p>
+      <p>คลินิกมุ่งค้นหาต้นเหตุของปัญหาสุขภาพด้วยการตรวจวิเคราะห์เชิงลึก แล้วจึงวางแผนการดูแลที่ออกแบบเฉพาะบุคคล เพราะเราเชื่อว่าร่างกายของแต่ละบุคคลต่างกัน การดูแลจึงต่างกัน เราให้ความสำคัญกับการที่ร่างกายฟื้นฟูได้ด้วยตัวเอง โดยการเสริมวิตามิน แร่ธาตุ สารอาหารให้เหมาะกับร่างกาย รวมถึงการปรับเปลี่ยน Lifestyle ที่ช่วยเสริมความแข็งแรงของร่างกาย และชะลอความเสื่อมตามวัย เพื่อรักษาพลังงาน ความกระฉับกระเฉง และคุณภาพชีวิตที่ดีในระยะยาว</p>
+    </div>
+  </section>
+
+  <section class="section home-approach">
     <div class="section-container">
-      <span class="section-label">สรุปภาพรวม</span>
-      <ul class="tldr-box">
-        <li>Thrive คือคลินิก Functional Medicine กรุงเทพฯ เชี่ยวชาญ Anti-aging, Hormone Balance และ Regenerative Medicine ดูแลโดยแพทย์เฉพาะทาง</li>
-        <li>ให้บริการตรวจวิเคราะห์เชิงลึก: Food Sensitivity ภาวะความไวต่ออาหาร IgG 222 ชนิด, Adrenal Fatigue, ฮอร์โมน, HBOT, IV Drip, DNA Test และอื่นๆ อีก 14+ รายการ</li>
-        <li>ดูแลโดยทีมแพทย์ 3 ท่าน — Dr. Chanakan Trangansri (Anti-aging &amp; Regenerative Medicine), Dr. Pijak Wongvisit (Preventive &amp; Regenerative Medicine) และ Dr. Uravadee Chanchamsang (Regenerative Medicine &amp; Integrative Oncology)</li>
-        <li>เปิดให้บริการทุกวัน 10:00–19:00 ที่ The Crystal Park ลาดพร้าว กรุงเทพฯ โทร 095-934-9640</li>
-      </ul>
+      <div class="section-title-center">
+        <span class="section-label">แนวทางการดูแลของ Thrive Wellness</span>
+        <h2 class="section-title">ทุกการดูแลเริ่มต้นจากการประเมินโดยแพทย์</h2>
+        <p class="section-desc">วางแผนจากข้อมูลสุขภาพของแต่ละท่าน ใน 3 ขั้นตอน</p>
+      </div>
+      <ol class="home-steps">
+        {CARE_STEPS.map((step, i) => (
+          <li class="home-step">
+            <span class="home-step__num">{i + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="home-approach__note">ทุกขั้นตอนอยู่ภายใต้การดูแลของบุคลากรทางการแพทย์ตลอดการรับบริการ</p>
     </div>
   </section>
 
@@ -255,8 +391,116 @@ const jsonLd = [
     </div>
   </section>
 
-  <!-- ── Doctor trust ───────────────────────────────────────────── -->
-  <DoctorAttribution doctor={DR_NOON} />
+  <!-- ── Deep health testing ──────────────────────────────────── -->
+  <section class="section home-tests" id="deep-check-up">
+    <div class="section-container">
+      <div class="section-title-center">
+        <span class="section-label">ตรวจเชิงลึก · ชะลอวัย · เชิงป้องกัน</span>
+        <h2 class="section-title">การตรวจวิเคราะห์สุขภาพเชิงลึก ชะลอวัย และเชิงป้องกัน</h2>
+        <p class="section-desc">เมื่ออายุ 40 ปีขึ้นไป ร่างกายจะค่อยๆ เปลี่ยนแปลงในหลายระบบ ทั้งระดับฮอร์โมน การดูดซึมสารอาหาร และความสามารถในการรับมือกับความเครียด ความเปลี่ยนแปลงเหล่านี้มักเกิดขึ้นอย่างช้าๆ และอาจไม่ปรากฏชัดในการตรวจสุขภาพประจำปีทั่วไป การตรวจวิเคราะห์เชิงลึกช่วยให้แพทย์เห็นสมดุลของร่างกายอย่างละเอียด และนำผลไปวางแผนดูแลเชิงป้องกันได้อย่างตรงจุดตั้งแต่เนิ่นๆ</p>
+      </div>
+      <div class="home-cards">
+        {DEEP_TESTS.map((t, i) => (
+          <article class="home-card">
+            <span class="home-card__num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="home-card__en">{t.en}</span>
+            <h3>{t.title}</h3>
+            <p>{t.desc}</p>
+            {t.points && (
+              <ul class="home-card__points">
+                {t.points.map(([head, body]) => <li><strong>{head}:</strong> {body}</li>)}
+              </ul>
+            )}
+            {t.note && <p class="home-card__note">{t.note}</p>}
+            <p class="home-card__fit"><strong>เหมาะสำหรับ:</strong> {t.fit}</p>
+            {t.href && <a class="home-card__link" href={t.href}>ดูรายละเอียด →</a>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IV Drip Treatment Program ─────────────────────────────── -->
+  <section class="section home-iv" id="iv-drip-program">
+    <div class="section-container">
+      <div class="home-split">
+        <div>
+          <span class="section-label">การดูแลและฟื้นฟูสุขภาพ</span>
+          <h2 class="section-title">IV Drip Treatment Program</h2>
+          <p>การให้วิตามินและสารอาหารทางหลอดเลือดดำ (IV Drip) นำสารอาหารเข้าสู่กระแสเลือดโดยตรงโดยไม่ต้องผ่านระบบทางเดินอาหาร ร่างกายจึงได้รับวิตามินและแร่ธาตุได้อย่างรวดเร็ว และในปริมาณที่สูงกว่าการรับประทาน วิธีนี้เหมาะสำหรับผู้ที่การดูดซึมสารอาหารลดลงตามวัย ผู้ที่มีความเครียดสะสม และผู้ที่ต้องการฟื้นฟูร่างกายจากความอ่อนล้าภายในเวลาที่จำกัด</p>
+          <p>ไม่ว่าท่านจะให้ความสำคัญกับสุขภาพด้านใด IV Drip Treatment Program ของ Thrive Wellness ครอบคลุมการดูแลทั้งด้านผิวพรรณ ภูมิคุ้มกัน การขับสารพิษ (Detox) การควบคุมน้ำหนัก การบำรุงสมอง การฟื้นฟูลำไส้ และสุขภาพหลอดเลือด แพทย์จะเลือกสูตรและความเข้มข้นให้เหมาะกับร่างกายและเป้าหมายของแต่ละท่าน เพราะเราเชื่อว่าการดูแลสุขภาพที่ดีควรเริ่มต้นตั้งแต่วันนี้</p>
+        </div>
+        <img class="home-split__img" src="/iv-drip-customer-02.webp" alt="ลูกค้าพักผ่อนระหว่างรับ IV Drip ที่ Thrive Wellness Clinic" loading="lazy" />
+      </div>
+      <div class="home-cards">
+        {IV_PROGRAMS.map((p, i) => (
+          <article class="home-card">
+            <span class="home-card__num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="home-card__en">{p.sub}</span>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+            <p class="home-card__fit"><strong>เหมาะสำหรับ:</strong> {p.fit}</p>
+            {p.href && <a class="home-card__link" href={p.href}>ดูรายละเอียด →</a>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HBOT ───────────────────────────────────────────────────── -->
+  <section class="section home-hbot" id="hbot-program">
+    <div class="section-container">
+      <div class="home-split home-split--reverse">
+        <img class="home-split__img" src="/hbot-hero.jpg" alt="ห้องปรับแรงดันสำหรับการบำบัดด้วยออกซิเจน HBOT ที่ Thrive Wellness Clinic" loading="lazy" />
+        <div>
+          <span class="section-label">Hyperbaric Oxygen Therapy – HBOT</span>
+          <h2 class="section-title">การบำบัดด้วยออกซิเจนแรงดันสูง</h2>
+          <h3 class="home-sub">HBOT คืออะไร</h3>
+          <p>การบำบัดด้วยออกซิเจนแรงดันสูง คือการหายใจรับออกซิเจนความเข้มข้นสูงภายในห้องปรับแรงดัน (Hyperbaric Chamber) ซึ่งมีความดันสูงกว่าบรรยากาศปกติ ภายใต้ความดันนี้ ออกซิเจนจะละลายเข้าสู่พลาสมาในเลือดได้มากกว่าการหายใจตามปกติ จึงลำเลียงไปถึงเนื้อเยื่อและอวัยวะต่างๆ ได้อย่างทั่วถึง รวมถึงบริเวณที่มีการไหลเวียนเลือดน้อย</p>
+          <p>HBOT ใช้ในทางการแพทย์มาอย่างยาวนาน เช่น การรักษาโรคน้ำหนีบในนักดำน้ำ และการดูแลแผลเรื้อรังที่หายช้า ปัจจุบันมีการนำมาใช้ในเวชศาสตร์ฟื้นฟูและเวชศาสตร์ชะลอวัยมากขึ้น</p>
+        </div>
+      </div>
+      <div class="home-hbot__grid">
+        <div class="home-panel">
+          <h3 class="home-sub">ความสำคัญของออกซิเจนต่อการฟื้นฟูร่างกาย</h3>
+          <p>ออกซิเจนจำเป็นต่อการสร้างพลังงานของเซลล์และการซ่อมแซมเนื้อเยื่อ เมื่ออายุมากขึ้น หรือเมื่อร่างกายมีความเครียดและการอักเสบเรื้อรัง การไหลเวียนเลือดและการนำออกซิเจนไปใช้อาจมีประสิทธิภาพลดลง HBOT ช่วยเพิ่มปริมาณออกซิเจนที่เนื้อเยื่อได้รับ จึงนำมาใช้เพื่อสนับสนุนการฟื้นฟูร่างกายในด้านต่อไปนี้</p>
+          <ul class="home-checklist">
+            {HBOT_BENEFITS.map((b) => <li>{b}</li>)}
+          </ul>
+          <p class="home-card__fit"><strong>เหมาะสำหรับ:</strong> ผู้ที่อ่อนล้าเรื้อรัง ผู้ที่ต้องการฟื้นตัวจากการออกกำลังกาย ผู้ที่ต้องการดูแลผิวพรรณ และผู้ที่ต้องการดูแลสุขภาพเชิงป้องกันเมื่ออายุมากขึ้น</p>
+        </div>
+        <div class="home-panel home-panel--soft">
+          <h3 class="home-sub">ข้อควรทราบก่อนรับบริการ</h3>
+          <p>ระหว่างการบำบัด ผู้รับบริการจะพักผ่อนอยู่ภายในห้องปรับแรงดัน ขณะปรับความดันอาจรู้สึกตึงหูคล้ายขณะเครื่องบินขึ้นหรือลง ซึ่งบรรเทาได้ด้วยการกลืนน้ำลายหรือหาว</p>
+          <p>แพทย์จะประเมินสุขภาพก่อนเริ่มการบำบัด เนื่องจากบางภาวะต้องได้รับการพิจารณาเป็นพิเศษ เช่น โรคปอดบางชนิด ปัญหาเกี่ยวกับหูหรือไซนัส และภาวะกลัวที่แคบ แพทย์จะกำหนดระยะเวลาและจำนวนครั้งของการบำบัดตามสภาวะร่างกายและเป้าหมายของแต่ละท่าน</p>
+          <a class="home-card__link" href="/hbot">ดูรายละเอียด HBOT →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Doctor team ────────────────────────────────────────────── -->
+  <section class="section home-team" id="doctors">
+    <div class="section-container">
+      <div class="section-title-center">
+        <span class="section-label">ทีมแพทย์ผู้ดูแล</span>
+        <h2 class="section-title">ดูแลโดยทีมแพทย์ 2 ท่าน ซึ่งมีความเชี่ยวชาญเฉพาะด้าน</h2>
+      </div>
+      <div class="home-team__grid">
+        {DOCTORS.map((d) => (
+          <div class="home-doctor">
+            <img src={d.image} alt={`${d.name} Thrive Wellness Clinic`} width="120" height="120" loading="lazy" />
+            <div>
+              <h3>{d.name}</h3>
+              <p class="home-doctor__en">{d.en}, MD.</p>
+              <p>{d.specialty}<br /><span class="home-doctor__en">{d.specialtyEn}</span></p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="home-approach__note"><a href="/about">ดูประวัติทีมแพทย์ →</a></p>
+    </div>
+  </section>
 
   <!-- ── Testimonials ──────────────────────────────────────────── -->
   <section class="section section--light">
@@ -286,6 +530,21 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- ── Hours & booking ────────────────────────────────────────── -->
+  <section class="section home-info">
+    <div class="section-container">
+      <div class="home-info__box">
+        <h2 class="section-title">ข้อมูลการให้บริการและการนัดหมาย</h2>
+        <ul>
+          <li><strong>เวลาทำการ:</strong> ทุกวัน 10.00–19.00 น.</li>
+          <li><strong>สถานที่:</strong> The Crystal Park ลาดพร้าว กรุงเทพฯ</li>
+          <li><strong>นัดหมายและสอบถามข้อมูล:</strong> โทร <a href="tel:+66959349640" data-gtm-event="phone_click">095-934-9640</a></li>
+        </ul>
+        <p>เพื่อความเป็นส่วนตัวและความสะดวกในการรับบริการ ขอแนะนำให้นัดหมายล่วงหน้า</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Lead form ──────────────────────────────────────────────── -->
   <LeadForm serviceSlug="homepage" formTitle="นัดปรึกษาแพทย์ฟรี" />
 
@@ -302,3 +561,141 @@ const jsonLd = [
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .home-overview { background: var(--white); }
+  .home-overview__inner { max-width: 860px; }
+  .home-overview__inner p,
+  .home-split p,
+  .home-panel p { color: var(--text-2); line-height: 1.9; margin: 0 0 var(--sp-4); }
+
+  .home-approach { background: var(--cream-xl); }
+  .home-steps {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-8) 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-5);
+  }
+  .home-step {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: var(--sp-6);
+  }
+  .home-step__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: var(--sp-3);
+  }
+  .home-step h3 { font-size: 1.05rem; color: var(--navy); margin: 0 0 var(--sp-2); }
+  .home-step p { font-size: .92rem; color: var(--text-2); line-height: 1.75; margin: 0; }
+  .home-approach__note { text-align: center; color: var(--text-2); font-size: .92rem; margin: var(--sp-6) 0 0; }
+  .home-approach__note a { color: var(--teal); font-weight: 600; }
+
+  .home-tests { background: var(--white); }
+  .home-tests .section-desc { max-width: 820px; margin-inline: auto; }
+  .home-iv { background: var(--cream-xl); }
+  .home-hbot { background: var(--white); }
+  .home-team { background: var(--cream-xl); }
+
+  .home-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-8);
+  }
+  .home-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: var(--sp-6);
+  }
+  .home-iv .home-card { background: #fff; }
+  .home-card__num {
+    position: absolute;
+    top: var(--sp-5);
+    right: var(--sp-6);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--blue-l);
+  }
+  .home-card__en {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding-right: 48px;
+  }
+  .home-card h3 { font-size: 1.08rem; line-height: 1.5; color: var(--navy); margin: var(--sp-1) 0 var(--sp-3); padding-right: 40px; }
+  .home-card p { font-size: .9rem; line-height: 1.8; color: var(--text-2); margin: 0 0 var(--sp-3); }
+  .home-card__points { margin: 0 0 var(--sp-3); padding-left: 18px; font-size: .88rem; line-height: 1.75; color: var(--text-2); }
+  .home-card__points li { margin-bottom: var(--sp-2); }
+  .home-card__points strong { color: var(--navy); }
+  .home-card__note { font-style: italic; }
+  .home-card__fit {
+    margin-top: auto !important;
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--teal-xl);
+    border-radius: 12px;
+  }
+  .home-card__fit strong { color: var(--teal-d); }
+  .home-card__link { display: inline-block; margin-top: var(--sp-3); font-size: .9rem; font-weight: 700; color: var(--teal); }
+
+  .home-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--sp-10);
+    align-items: center;
+  }
+  .home-split--reverse { grid-template-columns: 1fr 1.2fr; }
+  .home-split__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 24px 24px 90px 24px;
+    box-shadow: 0 18px 40px rgba(91, 71, 55, .15);
+  }
+  .home-sub { font-size: 1.08rem; color: var(--navy); margin: var(--sp-2) 0 var(--sp-3); }
+
+  .home-hbot__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--sp-5); margin-top: var(--sp-8); }
+  .home-panel { background: var(--cream-xl); border: 1px solid var(--border); border-radius: 20px; padding: var(--sp-6); }
+  .home-panel--soft { background: var(--teal-xl); }
+  .home-checklist { list-style: none; padding: 0; margin: 0 0 var(--sp-4); }
+  .home-checklist li { position: relative; padding-left: 28px; margin-bottom: var(--sp-2); color: var(--text); font-size: .95rem; }
+  .home-checklist li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 800; }
+
+  .home-team__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); margin-top: var(--sp-8); max-width: 900px; margin-inline: auto; }
+  .home-doctor { display: flex; gap: var(--sp-5); align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: var(--sp-5); }
+  .home-doctor img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .home-doctor h3 { font-size: 1.05rem; color: var(--navy); margin: 0 0 var(--sp-1); }
+  .home-doctor p { font-size: .9rem; color: var(--text-2); margin: 0 0 var(--sp-1); line-height: 1.6; }
+  .home-doctor__en { font-size: .82rem; color: var(--text-3); }
+
+  .home-info { background: var(--white); padding-block: var(--sp-12); }
+  .home-info__box { max-width: 760px; margin-inline: auto; background: var(--cream); border: 1px solid var(--border); border-radius: 24px; padding: var(--sp-8); text-align: center; }
+  .home-info__box ul { list-style: none; padding: 0; margin: var(--sp-4) 0; line-height: 2; color: var(--text); }
+  .home-info__box a { color: var(--teal); font-weight: 700; }
+  .home-info__box p { color: var(--text-2); margin: 0; }
+
+  @media (max-width: 900px) {
+    .home-steps, .home-split, .home-split--reverse, .home-hbot__grid, .home-team__grid { grid-template-columns: 1fr; }
+    .home-split--reverse .home-split__img { order: -1; }
+  }
+  @media (max-width: 480px) {
+    .home-cards { grid-template-columns: 1fr; }
+    .home-doctor { flex-direction: column; text-align: center; }
+  }
+</style>
