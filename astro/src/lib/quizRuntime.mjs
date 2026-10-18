@@ -138,6 +138,7 @@ export function mountQuizEngine(root) {
         phone: formData.get('phone')?.toString() || '',
         lineId: formData.get('line_id')?.toString() || '',
         consentAt: new Date().toISOString(),
+        consentVersion: quiz.consentVersion,
         turnstileToken: formData.get('cf-turnstile-response')?.toString() || '',
         attribution,
       });

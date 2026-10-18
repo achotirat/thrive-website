@@ -12,6 +12,7 @@ import DoctorAttribution from '../../components/DoctorAttribution.astro';
 import CTASection from '../../components/CTASection.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import HormoneTopicChooser from '../../components/HormoneTopicChooser.astro';
 import { getServicePricing } from '../../lib/pricing';
 
 export async function getStaticPaths() {
@@ -42,6 +43,7 @@ const crumbs = [
   <ServiceHero {...d.hero} />
   <main class="service-page">
     <CheckUpSummary keyTests={d.keyTests} targetAudience={d.targetAudience} />
+    {entry.id === 'hormones' && <HormoneTopicChooser />}
     <article class="service-content">
       <Content />
     </article>

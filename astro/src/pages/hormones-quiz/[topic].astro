@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuizEngine from '../../components/QuizEngine.astro';
+import HormoneTopicChooser from '../../components/HormoneTopicChooser.astro';
+import { hormoneTopics } from '../../lib/hormoneTopicQuizzes.mjs';
+
+export function getStaticPaths() {
+  return hormoneTopics.map((topic) => ({ params: { topic: topic.slug }, props: { topic } }));
+}
+const { topic } = Astro.props;
+---
+<BaseLayout>
+  <SEO slot="head" seoTitle={`แบบประเมิน${topic.title} | Thrive Wellness`} description={`${topic.description} แบบประเมินเบื้องต้น ไม่ใช่การวินิจฉัย`} canonicalPath={topic.href} ogImage="/check-up-hormones-1200x630.jpg" noIndex={true} />
+  <Header />
+  <Breadcrumbs crumbs={[{ label: 'หน้าแรก', href: '/' }, { label: 'ตรวจสมดุลฮอร์โมน', href: '/check-up/hormones' }, { label: topic.title, href: topic.href }]} />
+  <main class="service-page">
+    <div class="section-container hormone-topics__intro">
+      <a href="/check-up/hormones#hormone-topics">← เลือกเรื่องอื่น</a>
+      <p>ใช้เวลาประมาณ 2 นาที · ดูผลเบื้องต้นก่อนกรอกข้อมูลติดต่อ · ไม่มีการส่งคำตอบไปยัง CRM จนกว่าคุณจะยินยอมและกดส่ง</p>
+    </div>
+    <QuizEngine quiz={topic.quiz} />
+    <HormoneTopicChooser />
+  </main>
+  <Footer />
+</BaseLayout>

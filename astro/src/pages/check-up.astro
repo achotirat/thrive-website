@@ -11,6 +11,7 @@ import DoctorAttribution from '../components/DoctorAttribution.astro';
 import CTASection from '../components/CTASection.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import HormoneTopicChooser from '../components/HormoneTopicChooser.astro';
 import { getCollection } from 'astro:content';
 
 const allPrograms = await getCollection('checkUpPrograms');
@@ -37,6 +38,7 @@ const crumbs = [
   <Breadcrumbs crumbs={crumbs} />
   <ServiceHero {...d.hero} />
   <main class="service-page">
+    <HormoneTopicChooser id="hormones" />
     <article class="service-content">
       <Content />
     </article>

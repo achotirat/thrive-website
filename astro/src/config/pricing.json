@@ -36,10 +36,10 @@
     "priceReviewRequiredBy": "apanit-pueng"
   },
   "mental-health": {
-    "from": "TBD",
-    "note": "ราคารอ confirm จาก @apanit-pueng",
-    "updatedAt": "2026-05-27",
-    "draft": true,
+    "from": "2,900 บาท",
+    "note": "คุยเบื้องต้นฟรีก่อนนัดหมาย | นัดครั้งแรก 2,900 บาท | แพ็กเกจ 3 ครั้ง 7,900 บาท",
+    "updatedAt": "2026-10-18",
+    "draft": false,
     "priceReviewRequiredBy": "apanit-pueng"
   },
   "check-up/young-balance": {

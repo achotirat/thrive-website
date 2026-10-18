@@ -62,13 +62,29 @@ Select the **top 5 candidates** from Step 1 (highest relevance + actionable inte
 
 ---
 
+## Step 2.5 — Real Search Volume (MANDATORY — Google Ads Keyword Planner)
+
+The owner wants real monthly search numbers in **every** scout, not just SERP-based estimates.
+
+1. Load the `claude-in-chrome` skill and open `https://ads.google.com/aw/keywordplanner/home` in the owner's logged-in Chrome (any account they can open works — volume data does not depend on the account).
+2. **Get search volume and forecasts** → paste ALL Step 1 keywords (comma-separated) → *Get started*. Confirm location = Thailand, language = all/Thai, network = Google, last 12 months.
+3. Read the table (`[role=row]` innerText via `javascript_tool`; switch *Show rows* to 500 and scroll to collect every row — the table is virtualised).
+4. Then **Keyword ideas** with the 1–2 core seeds → collect related queries people actually type. Note any idea with real volume that matches the article's angle — it may be a better target than the Step 1 phrasing.
+5. Read-only: never create campaigns, change bids, or add keywords to an ad group. Keyword Planner auto-saves a "Plan from <date>" — mention it to the owner (harmless, deletable).
+
+Record for each keyword: **avg. monthly searches**, 3-month change, YoY change, competition. `—` in Keyword Planner means volume is below Google's reporting threshold (≈ under 10/month) — write it as `<10`.
+
+If Chrome / Google Ads is unavailable, say so explicitly in the output, fall back to SERP-based Volume signal, and mark the column `est.`
+
+---
+
 ## Step 3 — Score All Keywords
 
 Score all 8–10 keywords on 5 dimensions (1–3 each, max 15):
 
 | Dimension | 1 | 2 | 3 |
 |---|---|---|---|
-| **Volume signal** (SERP density + ads) | Sparse, no ads | Moderate | Dense, multiple ads |
+| **Volume** (Keyword Planner avg. monthly searches, Thailand) | < 100 or `<10` | 100–999 | ≥ 1,000 |
 | **Thai content gap** (less Thai = easier) | Lots of strong Thai content | Some Thai content | Almost none |
 | **Intent fit** (informational = blog) | Transactional/navigational | Mixed | Pure informational |
 | **Thrive service link** (leads to service?) | No clear link | Loose link | Direct link |
@@ -78,7 +94,7 @@ Score all 8–10 keywords on 5 dimensions (1–3 each, max 15):
 - Tie-breaking: equal scores → prefer stronger Thrive service link
 - Minimum threshold: do not recommend a keyword below 8/15 — flag as "not worth pursuing" and suggest a reformulated alternative
 - Expat English keywords: cap "Thai content gap" at **1** — English content is denser so ranking is harder, meaning the gap score is genuinely lower for English-language targets
-- Keywords not searched in Step 2: score Intent fit and Thrive service link normally; set Volume signal, Thai content gap, and Ranking feasibility to **2 (medium estimate)** and mark with `*` in the table.
+- Keywords not searched in Step 2: score Intent fit and Thrive service link normally; set Thai content gap and Ranking feasibility to **2 (medium estimate)** (Volume still comes from Keyword Planner) and mark with `*` in the table.
 
 Present the full scored table sorted by total score descending.
 
@@ -89,11 +105,14 @@ Present the full scored table sorted by total score descending.
 ### Part A: Ranked Table
 
 ```
-| # | Keyword (TH/EN)              | Vol    | Thai gap | Intent   | Thrive link         | Feasibility | Score |
-|---|------------------------------|--------|----------|----------|---------------------|-------------|-------|
-| 1 | วิธีลด LDL ตามธรรมชาติ       | medium | medium   | info ✅   | check-up, chelation | medium      | 12/15 |
-| 2 | LDL สูงอันตรายไหม             | medium | low gap  | info ✅   | check-up            | easy        | 11/15 |
-| 3 | LDL คืออะไร                   | high   | high comp| info ✅   | —                   | hard        |  7/15 |
+| # | Keyword (TH/EN)              | Searches/mo | Trend (YoY) | Vol | Thai gap | Intent | Thrive link         | Feasibility | Score |
+|---|------------------------------|------------:|-------------|-----|----------|--------|---------------------|-------------|-------|
+| 1 | วิธีลด LDL ตามธรรมชาติ       |         590 | +22%        | 2   | 2        | 3      | check-up, chelation | 2           | 11/15 |
+| 2 | LDL สูงอันตรายไหม             |         170 | 0%          | 2   | 3        | 3      | check-up            | 3           | 13/15 |
+| 3 | LDL คืออะไร                   |       2,400 | -10%        | 3   | 1        | 3      | —                   | 1           |  9/15 |
+
+(Numbers above are illustrative only.) Always show the real **Searches/mo** number next to the 1–3 score — the owner reads the number, not the score.
+Add a short "Related queries with volume" list from Keyword ideas under the table.
 ```
 
 ### Part B: Winner Declaration + Content Brief

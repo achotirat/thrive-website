@@ -1,0 +1,23 @@
+---
+// Hormone-only intro (owner copy) + the 5 topic cards, shown above the general
+// hormone quiz on /hormones-quiz.
+import HormoneTopicChooser from './HormoneTopicChooser.astro';
+---
+
+<section class="section hormone-intro">
+  <div class="section-container hormone-intro__inner">
+    <span class="section-label">ฮอร์โมนคืออะไร</span>
+    <h2 class="section-title">ฮอร์โมน ปัจจัยสำคัญของสุขภาพกายและใจในทุกช่วงวัย</h2>
+    <p>ระบบฮอร์โมนมีหน้าที่ควบคุมการทำงานในทุกระบบของร่างกาย เมื่ออายุมากขึ้นร่างกายจะผลิตฮอร์โมนได้ลดลง จนอาจเกิดภาวะพร่องฮอร์โมนหรือฮอร์โมนไม่สมดุล ทำให้ร่างกายทำงานผิดปกติ และส่งผลให้เกิดปัญหาสุขภาพตามมาได้</p>
+    <p>ความสมดุลของฮอร์โมนเป็นสิ่งจำเป็น เพราะฮอร์โมนแต่ละตัวล้วนพึ่งพากัน ทำให้ร่างกายทำงานประสานกันอย่างเป็นระบบ</p>
+    <p>ความไม่สมดุลของฮอร์โมนเพียง 1–2 ตัว ก็อาจทำให้เกิดอาการผิดปกติต่าง ๆ เช่น ระบบเผาผลาญลดลง ไขมันสะสมเพิ่มขึ้น นอนหลับยากขึ้น หงุดหงิดง่าย ซึมเศร้า ผิวแห้งกร้านหมองคล้ำ หรือความต้องการทางเพศลดลง จึงควรตรวจเช็กระดับฮอร์โมนที่สำคัญ และปรับให้กลับเข้าสู่สมดุลอีกครั้ง</p>
+  </div>
+</section>
+
+<HormoneTopicChooser />
+
+<style>
+  .hormone-intro { background: var(--white); }
+  .hormone-intro__inner { max-width: 820px; }
+  .hormone-intro__inner p { color: var(--text-2); line-height: 1.9; margin: 0 0 var(--sp-4); }
+</style>

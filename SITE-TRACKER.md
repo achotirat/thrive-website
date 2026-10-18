@@ -39,6 +39,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 |--------------------------|-------|
 | `fit132.mdx` (Astro service page) | 2026-06-09 |
 | `epispan.mdx` (Astro service page) | 2026-07-02 |
+| `fertility-planning.mdx` (Astro service page, วางแผนมีบุตร) | 2026-10-18 |
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
 | `hormones-quiz.html` | 2026-05-09 |
@@ -157,6 +158,9 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/4-levels-heart-screening-coronary-artery-disease.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/220-minus-age-heart-rate-formula-accuracy.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
 | `docs/blog/normal-ldl-still-at-risk-lipoprotein-a-apob.md` (Sanity pipeline, doctor quote) | 2026-08-21 |
+| `docs/blog/insulin-resistance-symptoms.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
+| `docs/blog/weight-loss-pen-who-should-use.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
+| Photo replaced site-wide (new portrait, `docs/blog/doctor Bye.jpg` → `dr-pijak-wongvisit-thrive-400x400.jpg`) + `about.astro` team card photo & JSON-LD image | 2026-10-17 |
 
 ---
 
