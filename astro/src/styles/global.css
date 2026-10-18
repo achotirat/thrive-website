@@ -78,6 +78,8 @@
   --white:      #fffcf7;   /* warm white */
   --dark:       #2e261f;   /* espresso wood */
   --dark-2:     #3b3128;
+  --band-blue:  #3f55a6;   /* soft brand blue for top bar, footer and CTA bands */
+  --band-blue-l:#5a6fc0;
 
   /* Text shades */
   --text:       #1e2460;
@@ -163,9 +165,9 @@
   --topbar-height: 40px;
 
   /* Gradients */
-  --grad-hero:    linear-gradient(135deg, #3a2f27 0%, #5b4737 55%, #7d6249 100%);
+  --grad-hero:    linear-gradient(135deg, var(--band-blue) 0%, var(--band-blue-l) 100%);
   --grad-teal:    linear-gradient(135deg, var(--teal-d) 0%, var(--teal) 100%);
-  --grad-warm:    linear-gradient(135deg, #5b4737 0%, #3a2f27 100%);
+  --grad-warm:    linear-gradient(135deg, var(--band-blue) 0%, var(--band-blue-l) 100%);
   --grad-card:    linear-gradient(160deg, var(--navy-xl) 0%, var(--teal-xl) 100%);
   --grad-overlay: linear-gradient(to bottom, rgba(46,38,31,.5) 0%, rgba(46,38,31,.82) 100%);
   --quiz-progress: var(--teal);
@@ -786,7 +788,7 @@ h1.th, h2.th, h3.th {
 
 /* Topbar */
 .topbar {
-  background: var(--dark);
+  background: var(--band-blue);
   height: var(--topbar-height);
   display: flex;
   align-items: center;
@@ -1509,8 +1511,8 @@ h1.th, h2.th, h3.th {
    13. FOOTER
 ───────────────────────────────────────── */
 .footer {
-  background: var(--dark);
-  color: rgba(255,255,255,.75);
+  background: var(--band-blue);
+  color: rgba(255,255,255,.85);
   padding-block: var(--sp-16) var(--sp-8);
 }
 
@@ -1531,7 +1533,7 @@ h1.th, h2.th, h3.th {
 
 .footer__brand-tagline {
   font-size: var(--text-sm);
-  color: var(--teal-m);
+  color: #bfeee9;
   margin-bottom: var(--sp-4);
   font-family: var(--font-en);
 }
@@ -1540,7 +1542,7 @@ h1.th, h2.th, h3.th {
   font-size: var(--text-sm);
   line-height: 1.8;
   margin-bottom: var(--sp-5);
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.85);
 }
 
 .footer__social {
@@ -1552,7 +1554,7 @@ h1.th, h2.th, h3.th {
   width: 38px;
   height: 38px;
   border-radius: var(--r-md);
-  background: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.14);
   color: rgba(255,255,255,.7);
   display: flex;
   align-items: center;
@@ -1584,10 +1586,10 @@ h1.th, h2.th, h3.th {
 
 .footer__links a {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.85);
   transition: color var(--dur-fast);
 }
-.footer__links a:hover { color: var(--teal-m); }
+.footer__links a:hover { color: #bfeee9; }
 
 .footer__contact-item {
   display: flex;
@@ -1600,7 +1602,7 @@ h1.th, h2.th, h3.th {
 .footer__contact-icon {
   width: 32px;
   height: 32px;
-  background: rgba(0,171,158,.15);
+  background: rgba(255,255,255,.14);
   border-radius: var(--r-sm);
   display: flex;
   align-items: center;
@@ -1610,7 +1612,7 @@ h1.th, h2.th, h3.th {
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255,255,255,.14);
   padding-top: var(--sp-6);
   display: flex;
   align-items: center;
@@ -1621,7 +1623,7 @@ h1.th, h2.th, h3.th {
 
 .footer__copyright {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.7);
   font-family: var(--font-en);
 }
 
@@ -1632,7 +1634,7 @@ h1.th, h2.th, h3.th {
 
 .footer__legal-links a {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.7);
   font-family: var(--font-en);
   transition: color var(--dur-fast);
 }
@@ -2138,6 +2140,16 @@ h1.th, h2.th, h3.th {
 
 .cta-section__inner {
   text-align: center;
+}
+
+/* Outline button on the blue CTA band */
+.cta-section .btn-secondary {
+  color: #fff;
+  border-color: rgba(255,255,255,.85);
+}
+.cta-section .btn-secondary:hover {
+  background: #fff;
+  color: var(--band-blue);
 }
 
 .cta-section h2 {
