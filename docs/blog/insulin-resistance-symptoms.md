@@ -8,7 +8,7 @@ seoTitle: "อาการดื้ออินซูลิน สัญญา�
 seoDescription: "อาการดื้ออินซูลินที่สังเกตได้ เช่น พุงไม่ยุบ หิวบ่อย ง่วงหลังอาหาร คอดำ ใครเสี่ยง วิธีตรวจ HOMA-IR และการแก้ด้วยอาหาร การออกกำลังกาย และการนอน"
 ctaService: check-up
 heroImage: insulin-resistance-symptoms-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานนั่งพักหลังมื้อกลางวันในออฟฟิศกรุงเทพฯ ดูง่วงและเหนื่อยล้า สื่อถึงอาการง่วงหลังอาหารที่อาจเป็นสัญญาณของภาวะดื้ออินซูลิน"
+heroAlt: "น้ำตาลทรายโรยบนพื้นสีชมพูเขียนคำว่า NO ข้างแก้วกาแฟดำ ช้อนน้ำตาล และน้ำตาลก้อน สื่อถึงการลดน้ำตาลเพื่อดูแลภาวะดื้ออินซูลิน"
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/healthy-balance` with label `ตรวจระดับอินซูลินกับ Thrive →`. Sticky CTA uses ctaService `check-up` because Sanity has no service document for `check-up/healthy-balance` (only check-up/heavy-metal-trace-elements has a stub — see astro/scripts/seed-service-stubs.mjs). To point the sticky CTA at Healthy Balance™, add a service stub first. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): Healthy Balance™ มีการตรวจ Insulin + เลือดพื้นฐาน (ตาม brief docs/blog/briefs/insulin-resistance-symptoms-brief.md) -->
@@ -236,7 +236,7 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งพักห�
 
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
-| Hero | `insulin-resistance-symptoms-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her late 30s at her desk in a bright Bangkok office just after lunch, an empty lunch box and an iced milk tea beside her laptop, resting her chin on her hand and stifling a yawn, quietly tired but not ill, soft natural window light, warm amber colour grade with teal accents, realistic and unposed. No syringes, no glucose meters, no pills, no scales or tape measures, no hospital setting, no dark-neck close-up, no obvious AI-generated face. 1200×630 landscape. |
+| Hero | `insulin-resistance-symptoms-hero.webp` | 1200×630 | Above H1 | **Supplied by owner 2026-10-18** (stock flat lay: sugar spelling "NO" on pink, black coffee, spoon, sugar cubes; cropped from 5472×3648 to 1.9:1, 94 KB). Original prompt, unused: Thai woman in a Bangkok office stifling a yawn after lunch, warm amber grade, no syringes/glucose meters/pills/scales. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
