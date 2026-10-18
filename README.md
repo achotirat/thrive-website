@@ -43,6 +43,8 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 - เปลี่ยน design tokens ใน `astro/src/styles/global.css`: พื้นหลังครีม สีอ่อนโทนทราย ขอบสีไม้อ่อน แถบบนและ footer สีไม้เข้ม `--blue` เดิม (น้ำเงินสด) เป็นสีไม้ ส่วน navy/teal ของโลโก้ยังใช้เป็นสีหลัก
 - หน้าแรก: hero เป็นพื้นครีมตัวอักษรเข้ม เพิ่มรูป `/home-hero-morning.jpg` (ใช้รูปเดิมจากบทความ hbot-and-sleep) ข้อความ hero ยังไม่เปลี่ยน รอเนื้อหาจากเจ้าของ
 - `/hormones-quiz`: เพิ่ม `HormoneTopics.astro` (คำอธิบายฮอร์โมนตามที่เจ้าของให้มา + 5 กล่องหัวข้อพร้อมรูป) ย้าย quiz ขึ้นมาก่อนเนื้อหายาว เปลี่ยนชื่อ quiz เป็น "QUIZ แบบประเมินสมดุลฮอร์โมน" ตัดหัวข้อ "ฮอร์โมนคืออะไร" เดิม และเปลี่ยนบริการที่เกี่ยวข้องเป็นเรื่องฮอร์โมนทั้งหมด
+- หน้าแรก: แทนกล่อง "สรุปภาพรวม" ด้วยเนื้อหาจากเอกสาร "Thrive Wellness – ข้อมูลคลินิก" ของเจ้าของ: ภาพรวม, แนวทางการดูแล 3 ขั้นตอน, การตรวจเชิงลึก 7 รายการ, IV Drip Treatment Program 5 สูตร, HBOT, ทีมแพทย์ และข้อมูลการนัดหมาย
+- ทีมแพทย์เหลือ 2 ท่าน (หมอนุ่น, หมอบาย): เอา Dr. Uravadee ออกจากหน้าแรกและหน้า About (รวม JSON-LD)
 - รูปกล่องหัวข้อ (`astro/public/hormones/`): balance, menopause, thyroid มาจากรูปเดิมของเว็บ; fertility และ stress เป็นรูป CC0 จาก StockSnap (stocksnap.io/photo/pregnant-woman-6ENSM2NM1P, stocksnap.io/photo/woman-working-EIEHYTPCFT)
 
 ## 2026-10-11 — ปรับราคา Chelation (เว็บ + Google Ads)
