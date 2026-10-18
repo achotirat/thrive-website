@@ -7,7 +7,9 @@ import { hormoneTopics } from '../lib/hormoneTopicQuizzes.mjs';
 export interface Props { id?: string; }
 const { id = 'hormone-topics' } = Astro.props;
 
-const cardsBySlug = {
+type TopicCard = { th: string; en: string; color: string; desc: string; image: string; alt: string; position: string };
+
+const cardsBySlug: Record<string, TopicCard> = {
   balance: {
     th: 'ภาพรวมฮอร์โมนสมดุลหรือไม่',
     en: 'Hormone Balance',
