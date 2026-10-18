@@ -16,6 +16,7 @@ import EpiphanyStory from '../components/lp/EpiphanyStory.astro';
 import OfferStack from '../components/lp/OfferStack.astro';
 import RiskReversal from '../components/lp/RiskReversal.astro';
 import QuizEngine from '../components/QuizEngine.astro';
+import HormoneTopics from '../components/HormoneTopics.astro';
 import { hormoneBalanceQuiz } from '../lib/quizDefinitions.mjs';
 import { getServicePricing } from '../lib/pricing';
 
@@ -44,10 +45,11 @@ const crumbs = [
   <ServiceHero {...d.hero} />
   {d.symptomChecklist && <SymptomChecklist {...d.symptomChecklist} />}
   <main class="service-page">
+    <HormoneTopics />
+    <QuizEngine quiz={hormoneBalanceQuiz} />
     <article class="service-content">
       <Content />
     </article>
-    <QuizEngine quiz={hormoneBalanceQuiz} />
     {d.epiphanyStory && <EpiphanyStory {...d.epiphanyStory} />}
     {offerStackProps && <OfferStack {...offerStackProps} />}
     <DoctorAttribution doctor={d.doctor} />

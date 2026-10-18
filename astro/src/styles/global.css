@@ -36,19 +36,19 @@
   --navy:       #2d358c;
   --navy-d:     #1f2568;
   --navy-m:     #3d4aaa;
-  --navy-l:     #eef0fb;
-  --navy-xl:    #f6f7fd;
+  --navy-l:     #f1e8da;
+  --navy-xl:    #faf5ec;
 
   /* Page-specific aliases used by MDX service pages */
-  --blue:       #2563eb;
-  --blue-d:     #1d4ed8;
-  --blue-l:     #dbeafe;
-  --blue-xl:    #eff6ff;
+  --blue:       #8a6a4a;   /* warm wood (was bright blue) */
+  --blue-d:     #6e5238;
+  --blue-l:     #eadcc6;
+  --blue-xl:    #f8f1e6;
 
   --sky:        #0891b2;
   --sky-d:      #0e7490;
-  --sky-l:      #cffafe;
-  --sky-xl:     #ecfeff;
+  --sky-l:      #ecdfc9;
+  --sky-xl:     #f7f0e4;
 
   --amber:      #d97706;
   --amber-d:    #92400e;
@@ -60,41 +60,41 @@
   --green:      #16a34a;
   --green-l:    #bbf7d0;
   --green-xl:   #f0fdf4;
-  --indigo-l:   #e0e7ff;
-  --indigo-xl:  #eef2ff;
+  --indigo-l:   #ece0cd;
+  --indigo-xl:  #f7f0e5;
   --plum:       #6d28d9;
   --forest:     #065f46;
 
   --teal:       #008a7f;
   --teal-d:     #006f67;
   --teal-m:     #00ab9e;
-  --teal-l:     #e6f7f6;
-  --teal-xl:    #f0fbfa;
+  --teal-l:     #e6eee3;
+  --teal-xl:    #f4f3e8;
 
   --cream:      #FEF4E8;
   --cream-d:    #f5e6cc;
-  --cream-xl:   #fffcf7;
+  --cream-xl:   #fbf6ee;
 
-  --white:      #ffffff;
-  --dark:       #0f1328;
-  --dark-2:     #1a2040;
+  --white:      #fffcf7;   /* warm white */
+  --dark:       #2e261f;   /* espresso wood */
+  --dark-2:     #3b3128;
 
   /* Text shades */
   --text:       #1e2460;
   --text-1:     #1e2460;
-  --text-2:     #5a6080;
-  --text-3:     #9ca5c8;
-  --text-muted: #5a6080;
+  --text-2:     #6a6259;
+  --text-3:     #a89f94;
+  --text-muted: #6a6259;
   --text-dark:  #0f1328;
   --text-inv:   rgba(255,255,255,0.92);
   --text-inv-2: rgba(255,255,255,0.65);
 
   /* Borders */
-  --border:     #dde0f0;
-  --border-l:   #eef0fb;
-  --border-xl:  #f6f7fd;
-  --bg-l:       #f8fafc;
-  --bg-alt:     #f6f7fd;
+  --border:     #e8ddcc;
+  --border-l:   #f0e7d9;
+  --border-xl:  #f7f1e7;
+  --bg-l:       #faf6ef;
+  --bg-alt:     #f7f0e5;
 
   /* Semantic */
   --success:    #1aaa6a;
@@ -163,11 +163,11 @@
   --topbar-height: 40px;
 
   /* Gradients */
-  --grad-hero:    linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 55%, var(--navy-m) 100%);
+  --grad-hero:    linear-gradient(135deg, #3a2f27 0%, #5b4737 55%, #7d6249 100%);
   --grad-teal:    linear-gradient(135deg, var(--teal-d) 0%, var(--teal) 100%);
-  --grad-warm:    linear-gradient(135deg, var(--navy) 0%, #1a3a6a 100%);
+  --grad-warm:    linear-gradient(135deg, #5b4737 0%, #3a2f27 100%);
   --grad-card:    linear-gradient(160deg, var(--navy-xl) 0%, var(--teal-xl) 100%);
-  --grad-overlay: linear-gradient(to bottom, rgba(15,19,40,.55) 0%, rgba(15,19,40,.85) 100%);
+  --grad-overlay: linear-gradient(to bottom, rgba(46,38,31,.5) 0%, rgba(46,38,31,.82) 100%);
   --quiz-progress: var(--teal);
 }
 
@@ -191,7 +191,7 @@ body {
   font-family: var(--font-th);
   font-weight: 400;
   color: var(--text);
-  background: var(--white);
+  background: var(--cream-xl);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -252,7 +252,6 @@ h1.th, h2.th, h3.th {
 
 /* Headings inside dark/hero sections are always white */
 .page-hero h1, .page-hero h2, .page-hero h3,
-.hero h1, .hero h2, .hero h3,
 .section--dark h1, .section--dark h2, .section--dark h3,
 .cta-banner h1, .cta-banner h2, .cta-banner h3 {
   color: #ffffff;
@@ -787,7 +786,7 @@ h1.th, h2.th, h3.th {
 
 /* Topbar */
 .topbar {
-  background: var(--navy-d);
+  background: var(--dark);
   height: var(--topbar-height);
   display: flex;
   align-items: center;
@@ -1035,8 +1034,9 @@ h1.th, h2.th, h3.th {
    10. HERO SECTIONS
 ───────────────────────────────────────── */
 .hero {
-  background: var(--grad-hero);
-  color: var(--white);
+  /* Homepage hero: warm cream + soft wood, dark text */
+  background: linear-gradient(120deg, #fbf6ee 0%, #f5ebdc 55%, #ecdcc4 100%);
+  color: var(--text);
   padding-block: var(--sp-24) var(--sp-20);
   position: relative;
   overflow: hidden;
@@ -1046,7 +1046,7 @@ h1.th, h2.th, h3.th {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(0,171,158,.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 20% 30%, rgba(255,255,255,.7) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -1074,19 +1074,19 @@ h1.th, h2.th, h3.th {
 
 .hero__title {
   font-size: var(--text-4xl);
-  color: var(--white);
+  color: var(--navy);
   line-height: 1.2;
   margin-bottom: var(--sp-5);
 }
 
 .hero__title em {
   font-style: normal;
-  color: var(--teal-m);
+  color: var(--teal);
 }
 
 .hero__subtitle {
   font-size: var(--text-md);
-  color: rgba(255,255,255,.8);
+  color: var(--text-2);
   line-height: 1.8;
   margin-bottom: var(--sp-8);
   max-width: 520px;
@@ -1103,22 +1103,45 @@ h1.th, h2.th, h3.th {
   gap: var(--sp-8);
   margin-top: var(--sp-10);
   padding-top: var(--sp-8);
-  border-top: 1px solid rgba(255,255,255,.15);
+  border-top: 1px solid var(--border);
 }
 
 .hero__stat-number {
   font-family: var(--font-en);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   line-height: 1;
 }
 
 .hero__stat-label {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,.65);
+  color: var(--text-2);
   margin-top: var(--sp-1);
   font-family: var(--font-en);
+}
+
+.hero__media {
+  position: relative;
+}
+.hero__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 30% center;
+  border-radius: 28px 28px 120px 28px;
+  box-shadow: 0 24px 48px rgba(91, 71, 55, .18);
+}
+.hero__media::after {
+  content: '';
+  position: absolute;
+  inset: auto -14px -14px auto;
+  width: 46%;
+  height: 46%;
+  border-radius: 0 0 120px 0;
+  border: 2px solid #c9ab86;
+  z-index: -1;
 }
 
 /* Page hero (interior pages — shorter) */
@@ -1721,6 +1744,8 @@ h1.th, h2.th, h3.th {
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .hero__inner { grid-template-columns: 1fr; }
+  .hero__media img { aspect-ratio: 4 / 3; border-radius: 24px 24px 80px 24px; }
+  .hero__media::after { display: none; }
   .hero__form { display: none; }   /* hide side form on tablet */
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--sp-8); }
   .steps { grid-template-columns: repeat(2, 1fr); }

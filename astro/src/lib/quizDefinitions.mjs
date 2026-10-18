@@ -3,9 +3,9 @@ const resultCta = { label: 'ส่งผลให้ทีม Thrive ช่ว�
 export const hormoneBalanceQuiz = {
   id: 'hormone-balance',
   serviceSlug: 'hormones-quiz',
-  title: 'เช็กสมดุลฮอร์โมน',
+  title: 'QUIZ แบบประเมินสมดุลฮอร์โมน',
   eyebrow: '2-minute hormone quiz',
-  intro: 'ตอบคำถามสั้น ๆ เพื่อดูว่ากลุ่มอาการของคุณใกล้กับความเครียดสะสม พลังงานตก หรือฮอร์โมนเพศไม่สมดุลมากที่สุด',
+  intro: 'เพื่อประเมินเบื้องต้นว่า คุณมีอาการเข้าข่ายฮอร์โมนไม่สมดุลหรือไม่',
   startQuestionId: 'sleep',
   leadFormTitle: 'ส่งผลแบบทดสอบให้ทีมแพทย์ช่วยดูต่อ',
   questions: [
