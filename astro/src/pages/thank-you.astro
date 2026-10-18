@@ -39,7 +39,6 @@ import SEO from '../components/SEO.astro';
   </main>
   <Footer />
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
     const params = new URLSearchParams(window.location.search);
 
     // must stay in sync with crystalBoothQuiz.id in astro/src/data/crystalBoothQuiz.mjs
@@ -48,18 +47,27 @@ import SEO from '../components/SEO.astro';
       document.querySelector('[data-thank-you-booth]')?.removeAttribute('hidden');
     }
 
-    window.dataLayer.push({
-      event: 'lead_submit',
-      service: params.get('service') || '',
-      page_path: window.location.pathname,
-    });
-    // Google Ads conversion — fires when thank-you page loads after successful lead form submit
-    if (typeof gtag === 'function') {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18181967822/dzvQCKLTorkcEM6f691D',
-        'value': 1.0,
-        'currency': 'THB'
-      });
+  </script>
+  <script>
+    import { consumeLeadConversion, conversionEventsFor } from '../lib/leadConversion.mjs';
+
+    let pending = null;
+    try { pending = consumeLeadConversion(window.sessionStorage); } catch { /* storage unavailable */ }
+    const events = conversionEventsFor(pending);
+    if (events && pending) {
+      type AdsWindow = Window & { dataLayer?: Array<Record<string, unknown>>; gtag?: (...args: unknown[]) => void };
+      const adsWindow = window as AdsWindow;
+      adsWindow.dataLayer = adsWindow.dataLayer || [];
+      // page_path is the page the lead was submitted from, as before this event moved here.
+      adsWindow.dataLayer.push({ event: events.dataLayerEvent, ...pending.details });
+      if (events.sendTo && typeof adsWindow.gtag === 'function') {
+        adsWindow.gtag('event', 'conversion', {
+          send_to: events.sendTo,
+          transaction_id: pending.transactionId,
+          value: 1.0,
+          currency: 'THB',
+        });
+      }
     }
   </script>
 </BaseLayout>
