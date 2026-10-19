@@ -61,8 +61,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 
 ## ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง {#what-happens}
 
-<!-- Inline image: hangover-alcohol-metabolism-diagram.webp -->
-
 หลายคนเชื่อว่าแฮงค์คือ "ร่างกายขาดน้ำ" แต่ภาพจริงซับซ้อนกว่านั้น
 
 **1. การอักเสบ (ระบบภูมิคุ้มกันถูกกระตุ้น)**
@@ -76,8 +74,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 
 **4. ปัจจัยที่ไม่ได้ทำให้แฮงค์ แต่ทำให้แฮงค์หนักขึ้น**
 การนอนไม่พอ การสูบบุหรี่ สารที่ติดมากับเครื่องดื่มบางชนิด (congeners) สุขภาพพื้นฐาน และพันธุกรรม [2]
-
-<!-- Inline image: hangover-causes-infographic.webp -->
 
 > **สรุปกลไก:** แฮงค์เป็นผลรวมของการอักเสบ สารพิษจากการย่อยแอลกอฮอล์ และการนอนที่แย่ลง ส่วนการขาดน้ำเป็นแค่ส่วนหนึ่ง จึงไม่มีวิธีเดียวที่แก้ได้ทุกอย่าง [2]
 
@@ -126,8 +122,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 ---
 
 ## สัญญาณอันตรายที่ต้องไปโรงพยาบาล {#warning-signs}
-
-<!-- Inline image: hangover-when-to-see-doctor-flowchart.webp -->
 
 อาการต่อไปนี้ **ไม่ใช่แฮงค์ธรรมดา** แต่อาจเป็นภาวะแอลกอฮอล์เกินขนาด ซึ่งอันตรายถึงชีวิตได้ [9]
 
@@ -208,9 +202,6 @@ NIAAA ระบุว่าแนวทางโภชนาการของ�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `hangover-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s sitting by a window in a Bangkok condo on a quiet weekend morning, holding a glass of water with both hands, slightly tired but calm and health-aware expression, city skyline softly out of focus, natural morning light, warm amber colour grade with subtle teal accents, unposed and realistic. No alcohol bottles, no messy party scene, no pills, no hospital setting, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `hangover-alcohol-metabolism-diagram.webp` | 1000×500 | After H2: ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง | Clean flat-vector medical diagram of alcohol metabolism in the liver as three steps left to right: "แอลกอฮอล์ / Ethanol" → arrow labelled "เอนไซม์ ADH" → "อะเซทัลดีไฮด์ (สารพิษ) / Acetaldehyde" highlighted in deep red → arrow labelled "เอนไซม์ ALDH2" → "อะซิเตต (ไม่เป็นพิษ) / Acetate" in teal #2A9D8F. Small simplified liver icon above. Small note under the ALDH2 arrow: "ยีน ALDH2 ทำงานน้อย = กำจัดได้ช้า หน้าแดงง่าย / Low-activity ALDH2". Thai primary labels with small English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `hangover-causes-infographic.webp` | 1000×600 | Before callout "สรุปกลไก" (H2: ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง) | Flat-vector infographic titled "แฮงค์เกิดจากหลายอย่างรวมกัน / Hangover has several causes", four tiles: 1) "การอักเสบ / Inflammation" marked "หลักฐานชัดที่สุด" in teal #2A9D8F, 2) "อะเซทัลดีไฮด์ / Acetaldehyde" in amber, 3) "การนอนแย่ลง / Poor sleep" in amber, 4) "ขาดน้ำ / Dehydration" marked "มีส่วน แต่ไม่ใช่ตัวหลัก" in light grey. Simple line icons per tile, Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `hangover-when-to-see-doctor-flowchart.webp` | 1200×450 | After H2: สัญญาณอันตรายที่ต้องไปโรงพยาบาล | Horizontal flowchart: start box "เช้าหลังดื่ม / Morning after drinking" → decision diamond "มีอาการเหล่านี้ไหม? สับสน ปลุกไม่ค่อยตื่น ชัก หายใจช้า ตัวเย็นชื้น อาเจียนไม่หยุด / Any danger signs?" → "ใช่ / Yes" branch in deep red to "โทร 1669 หรือไปโรงพยาบาลทันที / Call 1669" → "ไม่ / No" branch in teal #2A9D8F to "ดื่มน้ำ กินอาหารอ่อน นอนพัก ไม่ขับรถ / Rest, fluids, light food, don't drive". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 (56 ตัวอักษร) → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → อ้างอิง

@@ -48,8 +48,6 @@ Quercetin (เควอซิทิน) คือสารในกลุ่ม�
 
 ## Quercetin คืออะไร มีในอาหารอะไร {#what-is-quercetin}
 
-<!-- Inline image: quercetin-food-sources-diagram.webp -->
-
 Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (flavonoid) ซึ่งเป็นสารที่พืชสร้างขึ้นและพบในผักผลไม้หลายชนิด [1] ในพืช quercetin ส่วนใหญ่จับอยู่กับน้ำตาล ไม่ได้อยู่ในรูปอิสระ [1]
 
 **อาหารที่มี quercetin สูงไม่ได้แปลว่าร่างกายดูดซึมได้มากเสมอไป** [1] งานทบทวนพบว่ารูปแบบที่พบในหัวหอมดูดซึมได้ดีกว่ารูปแบบที่พบในอาหารอื่นๆ [1] หอมแดงและหอมใหญ่ซึ่งใช้ในอาหารไทยแทบทุกจาน จึงเป็นแหล่ง quercetin ที่ใกล้ตัว
@@ -61,8 +59,6 @@ Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (fl
 ---
 
 ## ทำไมรูปแบบของ Quercetin จึงสำคัญ {#bioavailability}
-
-<!-- Inline image: quercetin-absorption-infographic.webp -->
 
 ข้อจำกัดใหญ่ของ quercetin คือร่างกายดูดซึมได้ไม่ดี การทบทวนงานวิจัยในคน 31 ชิ้นปี 2025 พบว่า [2]
 - รูปแบบที่จับกับน้ำตาลหลายโมเลกุล (oligoglucoside) ดูดซึมได้ดีกว่ารูปแบบอิสระ (aglycone) ประมาณ 20 เท่า
@@ -92,8 +88,6 @@ Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (fl
 ---
 
 ## ข้อควรระวังและความปลอดภัย {#safety}
-
-<!-- Inline image: quercetin-safety-flowchart.webp -->
 
 **แบบกิน:** งานทบทวนด้านความปลอดภัยพบว่า ผลข้างเคียงจากการกิน quercetin ในงานวิจัยในคนพบน้อยและไม่รุนแรง [7] แต่ **ยังไม่มีข้อมูลเพียงพอเรื่องความปลอดภัยของการกินขนาดสูง (ตั้งแต่ 1,000 มก. ต่อวัน) นานเกิน 12 สัปดาห์** [7]
 
@@ -168,9 +162,6 @@ quercetin อาจเปลี่ยนระดับยาบางชนิ�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `quercetin-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a Bangkok fresh market stall in the morning, choosing shallots and red apples, curious and health-aware expression, baskets of onions and fruit around her, soft natural light, warm amber colour grade with teal accents, realistic and unposed. No supplement bottles, no IV equipment, no hospital setting, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `quercetin-food-sources-diagram.webp` | 1000×500 | After H2: Quercetin คืออะไร มีในอาหารอะไร | Clean flat-vector diagram titled "แหล่งอาหารของเควอซิทิน / Food sources of quercetin": simple illustrations of shallot, onion, apple, tea leaves, and capers, each with a Thai name and English subtitle; onion and shallot highlighted with a teal #2A9D8F badge "ดูดซึมได้ดี / Well absorbed"; note at bottom "ส่วนใหญ่จับกับน้ำตาลในพืช / Mostly bound to sugars in plants". Off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `quercetin-absorption-infographic.webp` | 1000×600 | After H2: ทำไมรูปแบบของ Quercetin จึงสำคัญ | Flat-vector bar-style infographic titled "รูปแบบมีผลต่อการดูดซึม / Form changes absorption": horizontal bars comparing relative absorption, "แบบอิสระ (aglycone) / Aglycone = 1x" short amber bar, "phytosome ≈ 20x" long teal #2A9D8F bar, "oligoglucoside ≈ 20x" long teal bar, plus a separate icon row "กินพร้อมไขมันหรือใยอาหาร ≈ 2x / With fat or fibre ≈ 2x". Thai primary labels with English subtitles, white background, small footnote "ข้อมูลจากการทบทวนงานวิจัยในคน 31 ชิ้น / 31 human studies". No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `quercetin-safety-flowchart.webp` | 1200×450 | After H2: ข้อควรระวังและความปลอดภัย | Horizontal decision flowchart: start "สนใจ quercetin / Considering quercetin" → decision diamond "มีโรคไต ตั้งครรภ์ ประวัติมะเร็ง หรือกินยาประจำ? / Kidney disease, pregnancy, cancer history or regular medication?" → "ใช่ / Yes" branch in amber to "ปรึกษาแพทย์ก่อน / See a doctor first" → "ไม่ / No" branch in teal #2A9D8F to "เลือกรูปแบบและขนาดอย่างระมัดระวัง / Choose form and dose carefully" → final box for IV route in amber "แบบดริป: ตรวจไตและทบทวนยาก่อน / IV: check kidneys and medicines first". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

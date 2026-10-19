@@ -48,8 +48,6 @@ BCAA (Branched-Chain Amino Acids) คือกรดอะมิโนจำเ�
 
 ## BCAA คืออะไร {#what-is-bcaa}
 
-<!-- Inline image: bcaa-amino-acids-diagram.webp -->
-
 โปรตีนในร่างกายสร้างจากกรดอะมิโนประมาณ 20 ชนิด ในจำนวนนี้มี 9 ชนิดที่ร่างกายสร้างเองไม่ได้ เรียกว่า **กรดอะมิโนจำเป็น** BCAA คือ 3 ใน 9 ชนิดนั้น [1]
 
 ลองนึกภาพว่ากล้ามเนื้อคือบ้าน และกรดอะมิโนจำเป็นคือวัสดุ 9 ชนิด BCAA เปรียบเหมือนอิฐ 3 ชนิดที่สำคัญ แต่ถ้ามีอิฐอย่างเดียวโดยไม่มีปูนหรือเหล็ก ก็สร้างบ้านเพิ่มไม่ได้
@@ -77,8 +75,6 @@ BCAA พบอยู่แล้วในอาหารโปรตีนทั
 
 ## BCAA ช่วยอะไรได้บ้างตามงานวิจัย {#what-it-helps}
 
-<!-- Inline image: bcaa-evidence-infographic.webp -->
-
 **ลดอาการปวดกล้ามเนื้อหลังออกกำลังกาย (DOMS)**
 อาการปวดกล้ามเนื้อที่เริ่ม 1 ถึง 2 วันหลังออกกำลังกายหนัก เรียกว่า DOMS
 - การวิเคราะห์รวม 8 งานวิจัยพบว่า BCAA ช่วยลดอาการปวดได้ชัดเจนเมื่อเทียบกับยาหลอก [2]
@@ -96,8 +92,6 @@ BCAA พบอยู่แล้วในอาหารโปรตีนทั
 ---
 
 ## ผู้หญิงวัย 40 ขึ้นไปควรกิน BCAA ไหม {#women-over-40}
-
-<!-- Inline image: bcaa-women-muscle-flowchart.webp -->
 
 **กล้ามเนื้อของผู้หญิงลดลงในช่วงหมดประจำเดือน**
 งานทบทวนปี 2026 พบว่ามวลกล้ามเนื้อหรือมวลไร้ไขมันลดลงประมาณ 2.5% ในช่วงใกล้หมดประจำเดือน และประมาณ 5.7% หลังหมดประจำเดือน เมื่อเทียบกับก่อนหมดประจำเดือน [5] งานทบทวนเดียวกันยังพบว่า **ร่างกายผู้หญิงสูงวัยอาจตอบสนองต่อโปรตีนและการออกกำลังกายได้น้อยลง** [5]
@@ -182,9 +176,6 @@ BCAA อย่างเดียวไม่มีหลักฐานว่า
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `bcaa-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s in workout clothes sitting on a bench in a bright Bangkok gym after a strength session, drinking water from a reusable bottle, relaxed and confident expression, dumbbells softly out of focus, natural light, warm amber colour grade with teal accents, realistic and unposed. No supplement tubs or shaker branding in focus, no bodybuilder physique, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `bcaa-amino-acids-diagram.webp` | 1000×500 | After H2: BCAA คืออะไร | Clean flat-vector diagram titled "กรดอะมิโนจำเป็น 9 ชนิด / 9 essential amino acids": nine building blocks arranged as a small house; three blocks highlighted in teal #2A9D8F labelled "ลิวซีน / Leucine", "ไอโซลิวซีน / Isoleucine", "วาลีน / Valine" with a bracket "BCAA"; the other six blocks in light grey labelled "กรดอะมิโนจำเป็นอีก 6 ชนิด / 6 other essential amino acids". Caption: "สร้างกล้ามต้องใช้ครบทั้ง 9 / Muscle building needs all 9". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `bcaa-evidence-infographic.webp` | 1000×600 | After H2: BCAA ช่วยอะไรได้บ้างตามงานวิจัย | Flat-vector evidence infographic titled "BCAA: งานวิจัยบอกอะไร / What the evidence says", three rows with traffic-light markers: "สร้างกล้ามเนื้อ (BCAA อย่างเดียว) / Muscle building alone" deep red "ไม่มีหลักฐาน / No evidence"; "ลดปวดกล้ามเนื้อหลังออกกำลังกาย / Reduce post-exercise soreness" teal #2A9D8F "มีหลักฐาน / Supported"; "กินมากยิ่งดี / More is better" amber "ไม่แน่นอน / Uncertain". Simple icons, Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `bcaa-women-muscle-flowchart.webp` | 1200×450 | After H2: ผู้หญิงวัย 40 ขึ้นไปควรกิน BCAA ไหม | Horizontal priority flowchart for women 40+: step 1 teal #2A9D8F "โปรตีนให้พอทุกมื้อ / Enough protein every meal" → step 2 teal "เวทเทรนนิ่ง 2-3 ครั้งต่อสัปดาห์ / Strength training" → step 3 teal "นอนพอ ดูแลฮอร์โมน / Sleep and hormones" → optional step in amber "BCAA เฉพาะช่วงซ้อมหนัก / BCAA only for heavy training". Small side note "มวลกล้ามเนื้อลด 2.5-5.7% ช่วงหมดประจำเดือน / Muscle loss through menopause". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

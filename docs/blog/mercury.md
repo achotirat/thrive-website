@@ -48,8 +48,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 
 ## ปรอทคืออะไร มีกี่แบบ {#what-is-mercury}
 
-<!-- Inline image: mercury-three-forms-diagram.webp -->
-
 **ปรอทไม่ได้มีแบบเดียว** และนี่คือเรื่องที่บทความทั่วไปมักไม่ได้แยกให้ชัด
 
 | รูปแบบ | พบที่ไหน | เข้าร่างกายทางไหน | อวัยวะที่เสี่ยง |
@@ -86,8 +84,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 
 ## ปรอทอันตรายต่อร่างกายอย่างไร {#health-effects}
 
-<!-- Inline image: mercury-health-effects-infographic.webp -->
-
 **จากครีมหน้าขาว (ปรอทอนินทรีย์)** [2][11]
 - **ไต:** มีโปรตีนรั่วในปัสสาวะ ไปจนถึงกลุ่มอาการเนโฟรติก (ไตรั่ว บวมทั้งตัว)
 - **ปากและทางเดินอาหาร:** รู้สึกรสโลหะในปาก เหงือกอักเสบ น้ำลายมาก คลื่นไส้
@@ -105,8 +101,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 ---
 
 ## กินปลาอย่างไรให้ได้ประโยชน์และเสี่ยงปรอทน้อย {#fish}
-
-<!-- Inline image: mercury-fish-choice-flowchart.webp -->
 
 งานทบทวนจาก Harvard ใน JAMA พบว่า [8]
 - **การกินปลาสัปดาห์ละ 1 ถึง 2 มื้อ สัมพันธ์กับความเสี่ยงเสียชีวิตจากโรคหัวใจที่ลดลง 36%**
@@ -216,9 +210,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `mercury-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a fresh seafood stall in a Bangkok wet market in the morning, holding a cloth shopping bag and looking thoughtfully at a display of various fish on ice, vendor softly out of focus, natural light, warm amber colour grade with teal accents, realistic and unposed. No skull or poison symbols, no thermometers, no fearful expression, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `mercury-three-forms-diagram.webp` | 1000×500 | After H2: ปรอทคืออะไร มีกี่แบบ | Clean flat-vector diagram with three columns: "ปรอทโลหะ / Elemental" (thermometer icon, arrow to lungs, label "หายใจไอระเหย / Inhaled vapour" → brain); "ปรอทอนินทรีย์ / Inorganic" (unbranded cream jar icon, arrow through skin, label "ซึมผ่านผิว / Through skin" → kidney); "เมทิลเมอร์คิวรี / Methylmercury" (fish icon, arrow to stomach, label "กินเข้าไป / Eaten" → brain and fetus). Amber for caution arrows, deep red only for target organs. Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `mercury-health-effects-infographic.webp` | 1000×600 | After H2: ปรอทอันตรายต่อร่างกายอย่างไร | Flat-vector infographic split into two panels: left "จากครีมหน้าขาว / From whitening creams" with icons for kidney "ไตรั่ว บวม / Kidney leak, swelling", mouth "รสโลหะ เหงือกอักเสบ / Metallic taste, gum inflammation", skin "ผิวบาง ฝ้า / Thin skin, melasma"; right "จากปลา / From fish" with icons "ทารกในครรภ์ไวที่สุด / Fetus most sensitive" in amber and "ผู้ใหญ่: ประโยชน์ของปลามากกว่า / Adults: benefits outweigh risk" in teal #2A9D8F. Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `mercury-fish-choice-flowchart.webp` | 1200×450 | After H2: กินปลาอย่างไรให้ได้ประโยชน์และเสี่ยงปรอทน้อย | Horizontal guide: a food-chain row from small fish (teal #2A9D8F, "ปลาตัวเล็ก ปรอทน้อย / Small fish, low mercury") to medium to large predatory fish (amber to deep red, "ปลาใหญ่ล่าเหยื่อ ปรอทสูง / Large predators, higher mercury"), with arrows "ปรอทสะสมตามขนาด / Mercury builds up with size". Below, three teal tips: "กินปลา 2 มื้อ/สัปดาห์ / Fish twice a week", "สลับชนิด / Rotate species", "ตั้งครรภ์: เลี่ยงปลาปรอทสูง / Pregnant: avoid high-mercury fish". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

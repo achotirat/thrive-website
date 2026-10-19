@@ -48,8 +48,6 @@ ALA (alpha lipoic acid) คือสารที่ร่างกายสร�
 
 ## ALA คืออะไร {#what-is-ala}
 
-<!-- Inline image: alpha-lipoic-acid-antioxidant-diagram.webp -->
-
 ALA เป็นสารที่อยู่ใน **ไมโทคอนเดรีย (โรงไฟฟ้าเล็กๆ ในเซลล์)** ช่วยเปลี่ยนอาหารให้เป็นพลังงาน ร่างกายสร้างเองได้ และพบในอาหารบางชนิดในปริมาณน้อย [1]
 
 **ทำไม ALA จึงถูกพูดถึงในฐานะสารต้านอนุมูลอิสระ**
@@ -67,8 +65,6 @@ ALA เป็นสารที่อยู่ใน **ไมโทคอนเ�
 ---
 
 ## ALA ช่วยอะไรได้บ้างตามงานวิจัย {#what-it-helps}
-
-<!-- Inline image: alpha-lipoic-acid-evidence-infographic.webp -->
 
 **1. ปลายประสาทเสื่อมจากเบาหวาน (หลักฐานชัดที่สุด)**
 ปลายประสาทเสื่อมจากเบาหวานทำให้ปวดแสบร้อน เจ็บแปลบ หรือชาที่เท้าและมือ
@@ -101,8 +97,6 @@ ALA มักถูกขายคู่กับกลูตาไธโอน�
 ---
 
 ## ALA แบบกินกับแบบดริป ต่างกันอย่างไร {#oral-vs-iv}
-
-<!-- Inline image: alpha-lipoic-acid-oral-vs-iv-flowchart.webp -->
 
 | | แบบกิน | แบบให้ทางหลอดเลือด (IV) |
 |---|---|---|
@@ -192,9 +186,6 @@ ALA มักถูกขายคู่กับกลูตาไธโอน�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `alpha-lipoic-acid-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a bright home kitchen table in a Bangkok townhouse in the morning, reading the label on an unbranded supplement bottle with a thoughtful expression, a bowl of spinach and broccoli and a glass of water on the table, natural window light, warm amber colour grade with teal accents, realistic and unposed. No visible brand names, no IV bags, no pill piles, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `alpha-lipoic-acid-antioxidant-diagram.webp` | 1000×500 | After H2: ALA คืออะไร | Clean flat-vector diagram of a single cell with a mitochondrion labelled "ไมโทคอนเดรีย โรงไฟฟ้าของเซลล์ / Mitochondria"; a teal #2A9D8F molecule icon labelled "ALA" with three arrows: "จับอนุมูลอิสระ / Neutralises free radicals", "ฟื้นกลูตาไธโอน / Restores glutathione", "ช่วยสร้างพลังงาน / Supports energy". Side box in amber: "ALA ≠ โอเมก้า 3 (alpha-linolenic acid) / Not omega-3". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `alpha-lipoic-acid-evidence-infographic.webp` | 1000×600 | After H2: ALA ช่วยอะไรได้บ้างตามงานวิจัย | Flat-vector evidence infographic titled "ALA: งานวิจัยบอกอะไร / What the evidence says", four rows with traffic-light markers: "อาการชาจากเบาหวาน / Diabetic nerve symptoms" teal #2A9D8F "มีหลักฐาน / Supported"; "คุมน้ำตาล / Blood sugar" amber "ผลน้อย / Small effect"; "ลดน้ำหนัก / Weight loss" amber "~1.3 กก. / ~1.3 kg"; "ผิวขาวใส / Skin whitening" grey "ยังไม่มีหลักฐาน / No good evidence". Simple icons, Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `alpha-lipoic-acid-oral-vs-iv-flowchart.webp` | 1200×450 | After H2: ALA แบบกินกับแบบดริป ต่างกันอย่างไร | Horizontal decision flowchart: start "มีอาการชา แสบร้อนปลายมือปลายเท้า? / Numbness or burning in hands and feet?" → yes branch teal #2A9D8F "พบแพทย์ ตรวจน้ำตาลและเส้นประสาท / See a doctor, check sugar and nerves" → "แพทย์พิจารณา ALA กินหรือ IV / Doctor considers oral or IV ALA"; no branch grey "ไม่จำเป็นต้องใช้ ALA เป็นประจำ / ALA usually not needed". Amber side warning: "ใจสั่น เหงื่อแตก หิวมาก ขณะใช้ ALA → หยุดและพบแพทย์ / Low-sugar symptoms on ALA → stop and see a doctor". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
