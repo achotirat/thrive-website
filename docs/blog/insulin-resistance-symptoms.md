@@ -12,7 +12,6 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/healthy-balance` with label `ตรวจระดับอินซูลินกับ Thrive →`. Sticky CTA uses ctaService `check-up` because Sanity has no service document for `check-up/healthy-balance` (only check-up/heavy-metal-trace-elements has a stub — see astro/scripts/seed-service-stubs.mjs). To point the sticky CTA at Healthy Balance™, add a service stub first. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): Healthy Balance™ มีการตรวจ Insulin + เลือดพื้นฐาน (ตาม brief docs/blog/briefs/insulin-resistance-symptoms-brief.md) -->
-<!-- Review note: หัวข้อ "มุมมองจากแพทย์ Thrive" เป็นร่างตามแนวทางของคลินิก ต้องให้ นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำก่อนเผยแพร่ ไม่ใช่คำพูดจริงจนกว่าจะอนุมัติ -->
 <!-- Claim note: ยังไม่ยืนยันว่า Healthy Balance™ รวมน้ำตาลขณะอดอาหาร (ต้องใช้คำนวณ HOMA-IR) จึงห้ามเขียนว่า "ตรวจ HOMA-IR ที่ Thrive" ในบทความหรือ CTA จนกว่าคลินิกจะยืนยัน -->
 
 <!-- Hero image: insulin-resistance-symptoms-hero.webp -->
@@ -162,8 +161,6 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 
 ## มุมมองจากแพทย์ Thrive {#doctors-say}
 
-<!-- DRAFT — ต้องให้ นพ.พิจักษณ์ อนุมัติถ้อยคำก่อนเผยแพร่ -->
-
 **นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์ (หมอบาย)**
 *Preventive & Regenerative Medicine · Weight Management · Thrive Wellness Clinic*
 
@@ -255,7 +252,7 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 - [x] Anti-clickbait: ไม่ใช้คำว่า หายขาด/ดีที่สุด/การันตี ใช้ "ดีขึ้นได้" แทน
 - [x] ไม่อ้างว่า Thrive ตรวจ HOMA-IR (ยังไม่ยืนยันว่ามีน้ำตาลขณะอดอาหารใน Healthy Balance™)
 - [x] Intro สองประโยคแรกตอบ "อาการดื้ออินซูลิน" โดยตรง
-- [x] มีหัวข้อมุมมองแพทย์ attribute นพ.พิจักษณ์ (**ร่าง ต้องให้แพทย์อนุมัติก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองแพทย์ attribute นพ.พิจักษณ์ (อนุมัติโดย นพ.พิจักษณ์ 2026-10-19)
 - [x] มุมต่างจากที่ติดอันดับ: ผลค้นหาหลัก (Sanook, Dailynews, FatSecret, Thansettakij) ให้แค่รายการอาการและเคล็ดลับทั่วไป บทความนี้มีตารางอาการ→สาเหตุ→ควรตรวจอะไร, ข้อมูลความชุกในคนไทยจาก primary source, วิธีตรวจและข้อจำกัดของ HOMA-IR, ตารางเทียบกับภาวะก่อนเบาหวาน/เบาหวานตามเกณฑ์ ADA, และตัวเลข DPP
 - [x] คำเตือนให้ปรึกษาแพทย์และ disclaimer ท้ายบทความ
 - [x] Plagiarism check (2026-10-17): ค้นวลีเฉพาะ 2 วลี ("แม่กุญแจของเซลล์เริ่มฝืด", "สัญญาณเตือนล่วงหน้า ไม่ใช่คำตัดสิน") ไม่พบซ้ำ — original ✅
