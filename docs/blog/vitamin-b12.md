@@ -12,7 +12,6 @@ heroAlt: "วัตถุดิบบนโต๊ะหินอ่อน มี
 ---
 
 <!-- Dev note: This post uses CTA link `/vitamins-and-micronutrients` with label `เช็กระดับวิตามินและแร่ธาตุกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้อ B12 ตรงกับแถว "vitamins, micronutrients, minerals, B12" ในตาราง Tier A -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/vitamin-b12 (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: vitamin-b12-hero.webp -->
@@ -201,7 +200,7 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 9 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed/NCBI แล้ว (ยกเว้น [7] ตรวจจากหน้าวารสาร ThaiJO) มีแหล่งไทย 2 แหล่ง ([7] Bangkok Medical Journal, [8] ศิริราช)
 - [x] อธิบายศัพท์แพทย์ตั้งแต่ครั้งแรก (cobalamin, homocysteine, MMA, PPI, เมทฟอร์มิน)
@@ -211,7 +210,7 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี และไม่ขู่ให้กลัว
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "ขาดวิตามินบี12 ต้องกินอะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-19)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 9 ต.ค. 2026): ผลค้นหาหลักเป็นหน้าคู่มือผู้ป่วยภาษาอังกฤษ และ TruePlookpanya ซึ่งไม่พูดถึงเมทฟอร์มิน ไม่มีข้อมูลคนไทย ไม่เทียบแบบกินกับฉีด และอ้างแหล่งจากเว็บทั่วไป บทความนี้มีข้อมูลวีแกนไทย, ตัวเลขความเสี่ยงจากยาลดกรดและเมทฟอร์มิน, และหลักฐาน Cochrane เรื่องกินกับฉีด
 - [x] คำเตือนให้ปรึกษาแพทย์และห้ามหยุดยาเอง
 - [ ] **ไม่ได้ทำ:** base skill `notfair:content-writer` และ T6 `notfair:geo-optimizer` ไม่ได้ติดตั้งบนเครื่องนี้

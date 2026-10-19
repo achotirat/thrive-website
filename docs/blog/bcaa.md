@@ -12,7 +12,6 @@ heroAlt: "ผู้หญิงในชุดออกกำลังกาย�
 ---
 
 <!-- Dev note: This post uses CTA link `/personalized-vitamins` with label `วางแผนโภชนาการเฉพาะตัวกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): BCAA ไม่อยู่ในตาราง Tier A ตัวที่ตรงที่สุดคือแถว "custom supplements, supplement plan" → /personalized-vitamins -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/bcaa-essential (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: bcaa-hero.webp -->
@@ -183,7 +182,7 @@ BCAA อย่างเดียวไม่มีหลักฐานว่า
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 7 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed/NCBI แล้ว มีแหล่งไทย 1 แหล่ง ([6] ศิริราช ระดับประเทศ)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (กรดอะมิโนจำเป็น, DOMS, CK, sarcopenia, ภาวะดื้ออินซูลิน)
@@ -193,7 +192,7 @@ BCAA อย่างเดียวไม่มีหลักฐานว่า
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี และไม่ขู่ให้กลัว
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "BCAA คืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-19)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 9 ต.ค. 2026): ผลค้นหาหลัก (Healthline และหน้าผู้ขาย) ไม่พูดถึงข้อสรุปของ Wolfe 2017 ว่า BCAA อย่างเดียวไม่ช่วยสร้างกล้าม ไม่พูดถึงผู้หญิงวัยหมดประจำเดือนหรือข้อมูลคนไทย บทความนี้มีทั้ง 3 เรื่อง
 - [x] คำเตือนให้ปรึกษาแพทย์ (เบาหวาน, โรคไต)
 - [x] ลิงก์ภายในไป `/blog/hyrox-overtraining-hormone-imbalance`
