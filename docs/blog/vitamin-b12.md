@@ -8,7 +8,7 @@ seoTitle: "ขาดวิตามินบี12 ต้องกินอะไ
 seoDescription: "ขาดวิตามินบี12 ต้องกินอะไร อาการชามือชาเท้า เหนื่อยง่าย ใครเสี่ยงบ้าง ทั้งคนกินเจ คนกินยาเบาหวานหรือยาลดกรดนาน และวิธีตรวจเลือดก่อนเสริมวิตามิน"
 ctaService: vitamins-and-micronutrients
 heroImage: vitamin-b12-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานในครัวที่บ้านกำลังจัดจานอาหารที่มีปลา ไข่ และผัก สื่อถึงการเลือกอาหารเพื่อเติมวิตามินบี12"
+heroAlt: "วัตถุดิบบนโต๊ะหินอ่อน มีแซลมอน อกไก่ ไข่ ชีส เห็ด และผัก สื่อถึงการเลือกอาหารที่เป็นแหล่งวิตามินบี12"
 ---
 
 <!-- Dev note: This post uses CTA link `/vitamins-and-micronutrients` with label `เช็กระดับวิตามินและแร่ธาตุกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้อ B12 ตรงกับแถว "vitamins, micronutrients, minerals, B12" ในตาราง Tier A -->

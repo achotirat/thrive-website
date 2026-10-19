@@ -8,7 +8,7 @@ seoTitle: "BCAA คืออะไร ช่วยอะไร สร้าง�
 seoDescription: "BCAA คืออะไร ช่วยสร้างกล้ามได้จริงไหม งานวิจัยบอกว่าช่วยลดปวดกล้ามเนื้อหลังออกกำลังกาย ผู้หญิงวัย 40 ขึ้นไปที่กล้ามเนื้อลดลงควรกินไหม และโปรตีนต้องได้เท่าไหร่"
 ctaService: personalized-vitamins
 heroImage: bcaa-hero.webp
-heroAlt: "ผู้หญิงวัยสี่สิบในชุดออกกำลังกายนั่งพักดื่มน้ำหลังเวทเทรนนิ่งในฟิตเนส สื่อถึงการดูแลกล้ามเนื้อด้วยโภชนาการที่เหมาะสม"
+heroAlt: "ผู้หญิงในชุดออกกำลังกายยืนถือขวดเชคเกอร์ในฟิตเนส สื่อถึงการดูแลกล้ามเนื้อด้วยโภชนาการที่เหมาะสม"
 ---
 
 <!-- Dev note: This post uses CTA link `/personalized-vitamins` with label `วางแผนโภชนาการเฉพาะตัวกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): BCAA ไม่อยู่ในตาราง Tier A ตัวที่ตรงที่สุดคือแถว "custom supplements, supplement plan" → /personalized-vitamins -->

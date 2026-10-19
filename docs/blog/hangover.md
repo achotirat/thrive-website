@@ -8,7 +8,7 @@ seoTitle: "เมาค้าง แฮงค์ เกิดจากอะไ�
 seoDescription: "แฮงค์เกิดจากอะไร ทำไมดื่มน้ำเยอะแล้วยังไม่หาย วิธีสร่างเมาแบบไหนมีงานวิจัยรองรับ ผู้หญิงแฮงค์ง่ายกว่าจริงไหม และอาการแบบไหนต้องไปโรงพยาบาล สรุปจากงานวิจัย"
 ctaService: check-up
 heroImage: hangover-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานนั่งดื่มน้ำเปล่าข้างหน้าต่างในตอนเช้า สื่อถึงการพักฟื้นร่างกายหลังคืนที่ดื่มหนัก"
+heroAlt: "ผู้หญิงนั่งบนเตียงตอนเช้า มือหนึ่งถือแก้วเครื่องดื่ม อีกมือดึงผ้าห่มปิดหน้า สื่อถึงอาการเมาค้างหลังคืนที่ดื่มหนัก"
 ---
 
 <!-- Dev note: This post uses CTA link `/check-up` with label `ร่างกายฟื้นตัวช้ากว่าเดิม? ตรวจสุขภาพกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้อเมาค้างไม่มีในตาราง Tier A ตัวที่ใกล้ที่สุดคือ /iv-drip แต่บทความระบุตามหลักฐานว่าดริปวิตามินยังไม่มีหลักฐานว่าช่วยแก้แฮงค์ [4] จึงเลือก /check-up (preventive health) ให้ตรงกับ truth gate -->
