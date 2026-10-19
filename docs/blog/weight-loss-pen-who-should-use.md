@@ -11,7 +11,7 @@ heroAlt: "ผู้หญิงในชุดออกกำลังกาย�
 ---
 
 <!-- Dev note: This post uses CTA link `/contact` with label `ปรึกษาแพทย์ Thrive →`. ctaService is intentionally left blank so the sticky CTA falls back to /contact (see astro/src/pages/blog/[slug].astro). Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ไม่มีหน้า Tier A เรื่องการควบคุมน้ำหนัก และยานี้ต้องให้แพทย์ประเมินก่อนสั่งจ่าย จึงใช้ปรึกษาแพทย์ (fallback /contact) -->
-<!-- Review note: หัวข้อ "สิ่งที่แพทย์ Thrive พบจากเคสจริง" เป็นร่างตามแนวทางของคลินิก ต้องให้ นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำก่อนเผยแพร่ ไม่ใช่คำพูดจริงจนกว่าจะอนุมัติ -->
+<!-- Review note: หัวข้อ "มุมมองจากแพทย์ Thrive" เป็นร่างตามแนวทางของคลินิก ต้องให้ นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำก่อนเผยแพร่ ไม่ใช่คำพูดจริงจนกว่าจะอนุมัติ -->
 <!-- Compliance note: ยากลุ่มนี้เป็นยาควบคุมพิเศษ ห้ามโฆษณาต่อประชาชน บทความนี้จึงใช้ชื่อสามัญเท่านั้น ไม่ระบุยี่ห้อ ไม่ระบุราคา ไม่อ้างจำนวนกิโลที่ลดได้ ไม่มีภาพก่อน-หลัง ห้ามเพิ่มสิ่งเหล่านี้ตอนลง Sanity หรือโปรโมตบทความ ควรให้ฝ่ายที่ดูแลกฎหมายโฆษณาตรวจก่อนเผยแพร่ -->
 
 <!-- Hero image: weight-loss-pen-who-should-use-hero.webp -->
@@ -32,7 +32,7 @@ heroAlt: "ผู้หญิงในชุดออกกำลังกาย�
 - [ปากกาลดน้ำหนัก เหมาะกับใคร](#who-is-it-for)
 - [ใครไม่ควรใช้ปากกาลดน้ำหนัก](#who-should-not-use)
 - [ทำไมต้องให้แพทย์สั่งจ่าย และดูแลเป็นรายเคส](#doctor-prescribed)
-- [สิ่งที่แพทย์ Thrive พบจากเคสจริง](#doctors-say)
+- [มุมมองจากแพทย์ Thrive](#doctors-say)
 - [FAQ](#faq)
 
 ---
@@ -180,7 +180,7 @@ heroAlt: "ผู้หญิงในชุดออกกำลังกาย�
 
 ---
 
-## สิ่งที่แพทย์ Thrive พบจากเคสจริง {#doctors-say}
+## มุมมองจากแพทย์ Thrive {#doctors-say}
 
 <!-- DRAFT — ต้องให้ นพ.พิจักษณ์ อนุมัติถ้อยคำก่อนเผยแพร่ -->
 

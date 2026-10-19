@@ -11,7 +11,7 @@
 //   node astro/scripts/import-weight-loss-pen-who-should-use.mjs --publish  # go live
 //
 // --publish is refused while the .md still has the "<!-- Review note: ... -->" line
-// (remove it once Dr. Pijak has approved the "สิ่งที่แพทย์ Thrive พบจากเคสจริง" section)
+// (remove it once Dr. Pijak has approved the "มุมมองจากแพทย์ Thrive" section)
 // or the hero image is missing from docs/blog/.
 // --dump <dir> writes legacyHtml and the Sanity document (JSON) to <dir> for review.
 //
