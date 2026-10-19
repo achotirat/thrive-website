@@ -12,7 +12,7 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/healthy-balance` with label `ตรวจระดับอินซูลินกับ Thrive →`. Sticky CTA uses ctaService `check-up` because Sanity has no service document for `check-up/healthy-balance` (only check-up/heavy-metal-trace-elements has a stub — see astro/scripts/seed-service-stubs.mjs). To point the sticky CTA at Healthy Balance™, add a service stub first. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): Healthy Balance™ มีการตรวจ Insulin + เลือดพื้นฐาน (ตาม brief docs/blog/briefs/insulin-resistance-symptoms-brief.md) -->
-<!-- Review note: หัวข้อ "สิ่งที่แพทย์ Thrive พบจากเคสจริง" เป็นร่างตามแนวทางของคลินิก ต้องให้ นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำก่อนเผยแพร่ ไม่ใช่คำพูดจริงจนกว่าจะอนุมัติ -->
+<!-- Review note: หัวข้อ "มุมมองจากแพทย์ Thrive" เป็นร่างตามแนวทางของคลินิก ต้องให้ นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำก่อนเผยแพร่ ไม่ใช่คำพูดจริงจนกว่าจะอนุมัติ -->
 <!-- Claim note: ยังไม่ยืนยันว่า Healthy Balance™ รวมน้ำตาลขณะอดอาหาร (ต้องใช้คำนวณ HOMA-IR) จึงห้ามเขียนว่า "ตรวจ HOMA-IR ที่ Thrive" ในบทความหรือ CTA จนกว่าคลินิกจะยืนยัน -->
 
 <!-- Hero image: insulin-resistance-symptoms-hero.webp -->
@@ -33,7 +33,7 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 - [ตรวจภาวะดื้ออินซูลินอย่างไร](#testing)
 - [ดื้ออินซูลิน ภาวะก่อนเบาหวาน และเบาหวาน ต่างกันอย่างไร](#vs-diabetes)
 - [แก้อาการดื้ออินซูลินได้อย่างไร](#how-to-improve)
-- [สิ่งที่แพทย์ Thrive พบจากเคสจริง](#doctors-say)
+- [มุมมองจากแพทย์ Thrive](#doctors-say)
 - [FAQ](#faq)
 
 ---
@@ -160,14 +160,14 @@ heroAlt: "น้ำตาลทรายโรยบนพื้นสีชม�
 
 ---
 
-## สิ่งที่แพทย์ Thrive พบจากเคสจริง {#doctors-say}
+## มุมมองจากแพทย์ Thrive {#doctors-say}
 
 <!-- DRAFT — ต้องให้ นพ.พิจักษณ์ อนุมัติถ้อยคำก่อนเผยแพร่ -->
 
 **นายแพทย์พิจักษณ์ วงศ์วิศิษฎ์ (หมอบาย)**
 *Preventive & Regenerative Medicine · Weight Management · Thrive Wellness Clinic*
 
-"คนไข้หลายคนบอกหมอว่า 'ตรวจสุขภาพทุกปี น้ำตาลปกติตลอด แต่ทำไมพุงไม่ลดเลย' พอตรวจอินซูลินร่วมด้วย บางคนพบว่าร่างกายต้องใช้อินซูลินสูงกว่าปกติมากเพื่อคุมน้ำตาลให้อยู่ในเกณฑ์ นี่คือช่วงที่ยังแก้ไขได้ง่ายที่สุด
+"หนึ่งในคำถามที่หมอหลายๆท่านเจอมากที่สุดคือ 'ตรวจสุขภาพทุกปี น้ำตาลปกติตลอด แต่ทำไมพุงไม่ลดเลย' พอตรวจอินซูลินร่วมด้วย บางคนพบว่าร่างกายต้องใช้อินซูลินสูงกว่าปกติมากเพื่อคุมน้ำตาลให้อยู่ในเกณฑ์ นี่คือช่วงที่ยังแก้ไขได้ง่ายที่สุด
 
 สิ่งที่หมอดูไม่ใช่แค่ตัวเลขเดียว แต่ดูทั้งรอบเอว ไขมันในเลือด ค่าตับ การนอน และความเครียด เพราะทั้งหมดนี้เชื่อมกัน คนไข้บางคนแค่ปรับเวลานอน ลุกเดินระหว่างวัน และสลับให้กินผักก่อนข้าว ค่าก็ดีขึ้นในการตรวจรอบถัดไป
 
