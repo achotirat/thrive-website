@@ -12,7 +12,6 @@ heroAlt: "หญิงสาวก้มหน้า ใช้สองมือ
 ---
 
 <!-- Dev note: This post uses CTA link `/mental-health` with label `คุยเรื่องความเครียดกับนักบำบัดของ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตาราง Tier A จับคู่ "stress, burnout" กับ /adrenal-fatigue แต่บทความนี้เน้นผลต่อสุขภาพใจและการประเมินความเครียด และ "adrenal fatigue" ยังไม่ใช่การวินิจฉัยที่มีหลักฐานรองรับ จึงเลือก /mental-health (หน้าคุยกับนักบำบัดเรื่องความเครียด นอนไม่หลับ อารมณ์แปรปรวน) ซึ่งตรงกับเจตนาของผู้อ่านมากกว่า -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: รวมบทความ Wix 2 หน้า /post/stressdisorder และ /post/เครียดสะสม ไว้ในบทความเดียว ทั้งสอง URL ให้ 301 มาที่หน้านี้ (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: chronic-stress-hero.webp -->
@@ -236,7 +235,7 @@ heroAlt: "หญิงสาวก้มหน้า ใช้สองมือ
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี ไม่ใช้ "อันตราย 12 ประการ" แบบขู่ให้กลัวเหมือนบทความเดิม
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "เครียดสะสมคืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-20)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): เปิดหน้า Bangkok Hospital (how-to-reduce-stress) ไม่มีการอ้างอิงงานวิจัย ไม่มีข้อมูลไทย และไม่มีแบบประเมินตัวเอง หน้า prd.go.th ที่ติดอันดับขึ้น 404 บทความนี้มีแบบประเมิน ST-5/PSS-10 ของไทย ข้อมูลผู้หญิงช่วงใกล้หมดประจำเดือน และข้อมูลว่าความเครียดจากงานส่งผลผ่านพฤติกรรม
 - [x] คำเตือนให้ปรึกษาแพทย์ และสายด่วนสุขภาพจิต 1323
 - [x] ลิงก์ภายในไป `/blog/female-hormone-panel-age-40`, `/blog/cbt-therapy-guide`, `/blog/how-to-overcome-burn-out-syndrome`, `/blog/panic-disorder-coping`, `/blog/vitamin-anti-stress` (บทความใหม่ในชุดนี้)
