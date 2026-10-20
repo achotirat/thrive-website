@@ -8,7 +8,7 @@ seoTitle: "Epigenetics คืออะไร อายุชีวภาพ ต�
 seoDescription: "Epigenetics คืออะไร ต่างจากพันธุกรรมอย่างไร ไลฟ์สไตล์และวัยหมดประจำเดือนมีผลต่อการแก่ระดับเซลล์ไหม การตรวจอายุชีวภาพแม่นแค่ไหน และมีข้อจำกัดอะไร สรุปจากงานวิจัย"
 ctaService: epispan
 heroImage: epigenetics-hero.webp
-heroAlt: "ผู้หญิงวัยสี่สิบสองคนอายุใกล้กันเดินคุยกันในสวนสาธารณะกรุงเทพตอนเช้า คนหนึ่งดูกระฉับกระเฉงกว่า สื่อถึงการที่คนอายุเท่ากันแก่ไม่เท่ากัน"
+heroAlt: "ภาพจำลองสายดีเอ็นเอเกลียวคู่สีฟ้า สื่อถึงเอพิเจเนติกส์ที่ควบคุมการเปิดปิดการทำงานของยีน"
 ---
 
 <!-- Dev note: This post uses CTA link `/epispan` with label `ตรวจอายุชีวภาพ EpiSpan กับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตรงกับแถว "epigenetic test, biological age, epigenetic clock, DunedinPACE" → /epispan -->
@@ -224,7 +224,7 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 11 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed แล้ว มีแหล่งไทย 1 แหล่ง ([7] คณะแพทยศาสตร์ศิริราชพยาบาล)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (DNA methylation, histone, epigenetic clock, อายุชีวภาพ, frail)
