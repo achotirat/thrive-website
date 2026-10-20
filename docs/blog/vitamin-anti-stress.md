@@ -48,8 +48,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 
 ## ความเครียดเกี่ยวกับวิตามินอย่างไร {#stress-and-nutrients}
 
-<!-- Inline image: vitamin-anti-stress-nutrients-diagram.webp -->
-
 ร่างกายใช้วิตามินและแร่ธาตุหลายตัวในการสร้างสารสื่อประสาทที่ควบคุมอารมณ์ และในการทำงานของระบบรับมือความเครียด
 
 **วงจรแมกนีเซียมกับความเครียด**
@@ -65,8 +63,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 ---
 
 ## วิตามินคลายเครียดแต่ละตัว งานวิจัยบอกอะไร {#evidence}
-
-<!-- Inline image: vitamin-anti-stress-evidence-infographic.webp -->
 
 **1. วิตามินบีรวม**
 การวิเคราะห์รวม 16 งานวิจัย 2,015 คน ที่ให้วิตามินบีอย่างน้อย 3 ชนิดนานอย่างน้อย 4 สัปดาห์ พบว่า [1]
@@ -123,8 +119,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 ---
 
 ## ใครได้ประโยชน์จากวิตามินคลายเครียดมากที่สุด {#who-benefits}
-
-<!-- Inline image: vitamin-anti-stress-who-benefits-flowchart.webp -->
 
 จากงานวิจัยทั้งหมด จุดร่วมที่ชัดคือ **คนที่ขาดสารอาหารอยู่แล้ว หรือมีอาการชัดเจน ได้ประโยชน์มากกว่าคนทั่วไป** [1][4][5]
 
@@ -212,9 +206,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `vitamin-anti-stress-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s taking a calm lunch break at a bright café near offices in Bangkok, a plate with grilled fish, leafy greens and mixed nuts in front of her, phone face-down on the table, relaxed half-smile, natural window light, warm amber colour grade with teal accents, realistic and unposed. No supplement bottles or pills in focus, no stressed head-in-hands pose, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `vitamin-anti-stress-nutrients-diagram.webp` | 1000×500 | After H2: ความเครียดเกี่ยวกับวิตามินอย่างไร | Clean flat-vector circular diagram titled "วงจรแมกนีเซียมกับความเครียด / Magnesium–stress cycle": arrow 1 amber "เครียด / Stress" → "เสียแมกนีเซียมมากขึ้น / More magnesium lost" → "แมกนีเซียมต่ำ / Low magnesium" → "ไวต่อความเครียดขึ้น / More stress-sensitive" → back to stress. A teal #2A9D8F break-the-cycle marker labelled "ตรวจและเติมให้พอ / Test and replete". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `vitamin-anti-stress-evidence-infographic.webp` | 1000×600 | After H2: วิตามินคลายเครียดแต่ละตัว งานวิจัยบอกอะไร | Flat-vector evidence matrix: rows "วิตามินบีรวม / B complex", "แมกนีเซียม / Magnesium", "โอเมก้า 3 / Omega-3", "วิตามินดี / Vitamin D", "โสมอินเดีย / Ashwagandha"; columns "ความเครียด / Stress", "วิตกกังวล / Anxiety", "ซึมเศร้า / Depression". Cells use teal #2A9D8F for "ช่วยเล็กน้อย-ปานกลาง / Small-moderate benefit", amber for "หลักฐานต่ำ / Low-quality evidence", grey for "ไม่ช่วย / No effect" or "ไม่ได้ศึกษา / Not studied". Thai primary labels with English subtitles, white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `vitamin-anti-stress-who-benefits-flowchart.webp` | 1200×450 | After H2: ใครได้ประโยชน์จากวิตามินคลายเครียดมากที่สุด | Horizontal flowchart: start "เครียด อยากลองวิตามิน / Stressed, considering vitamins" → "ตรวจวิตามินดี บี12 แมกนีเซียม / Test vitamin D, B12, magnesium" → branch teal #2A9D8F "ขาด: เสริมเฉพาะตัว ตรวจซ้ำ 3 เดือน / Low: targeted dose, retest in 3 months" and branch grey "ปกติ: เน้นนอน ขยับร่างกาย คุยกับผู้เชี่ยวชาญ / Normal: sleep, movement, talk to a professional". Amber side note "ตัวเหลืองจากสมุนไพร → หยุดและพบแพทย์ / Jaundice from herbs → stop and see a doctor". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

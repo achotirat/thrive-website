@@ -8,12 +8,11 @@ seoTitle: "Quercetin เควอซิทิน คืออะไร ช่ว
 seoDescription: "Quercetin คืออะไร มีในอาหารอะไร ช่วยลดความดันได้จริงไหม ป้องกันหวัดได้ไหม รูปแบบไหนดูดซึมดี และข้อควรระวังเรื่องไตและการใช้ร่วมกับยา สรุปจากงานวิจัย"
 ctaService: iv-drip
 heroImage: quercetin-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานในตลาดสดกรุงเทพฯ กำลังเลือกหอมแดงและแอปเปิ้ล สื่อถึงแหล่งอาหารที่มีเควอซิทิน"
+heroAlt: "ผลไม้และเบอร์รี่หลากสีในถ้วยไม้และช้อนไม้ วางบนพื้นโทนอบอุ่น สื่อถึงอาหารจากพืชที่เป็นแหล่งเควอซิทินและสารต้านอนุมูลอิสระ"
 ---
 
 <!-- Dev note: This post uses CTA link `/iv-drip` with label `ปรึกษาแพทย์ก่อนเลือกสูตรดริปที่เหมาะกับคุณ →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หน้า /iv-drip มีสูตร "Quercetin Cell Boost" อยู่แล้ว แต่ label เน้นการปรึกษาแพทย์ก่อน เพราะบทความระบุตามหลักฐานว่าข้อมูลการให้ quercetin ทางหลอดเลือดในคนยังมีน้อย -->
 <!-- Owner note: หน้า /iv-drip ควรมีข้อมูลขนาดของ Quercetin Cell Boost และการตรวจไตก่อนให้ เพื่อให้สอดคล้องกับข้อควรระวังในบทความนี้ -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/booster-to-quercetin (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: quercetin-hero.webp -->
@@ -48,8 +47,6 @@ Quercetin (เควอซิทิน) คือสารในกลุ่ม�
 
 ## Quercetin คืออะไร มีในอาหารอะไร {#what-is-quercetin}
 
-<!-- Inline image: quercetin-food-sources-diagram.webp -->
-
 Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (flavonoid) ซึ่งเป็นสารที่พืชสร้างขึ้นและพบในผักผลไม้หลายชนิด [1] ในพืช quercetin ส่วนใหญ่จับอยู่กับน้ำตาล ไม่ได้อยู่ในรูปอิสระ [1]
 
 **อาหารที่มี quercetin สูงไม่ได้แปลว่าร่างกายดูดซึมได้มากเสมอไป** [1] งานทบทวนพบว่ารูปแบบที่พบในหัวหอมดูดซึมได้ดีกว่ารูปแบบที่พบในอาหารอื่นๆ [1] หอมแดงและหอมใหญ่ซึ่งใช้ในอาหารไทยแทบทุกจาน จึงเป็นแหล่ง quercetin ที่ใกล้ตัว
@@ -61,8 +58,6 @@ Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (fl
 ---
 
 ## ทำไมรูปแบบของ Quercetin จึงสำคัญ {#bioavailability}
-
-<!-- Inline image: quercetin-absorption-infographic.webp -->
 
 ข้อจำกัดใหญ่ของ quercetin คือร่างกายดูดซึมได้ไม่ดี การทบทวนงานวิจัยในคน 31 ชิ้นปี 2025 พบว่า [2]
 - รูปแบบที่จับกับน้ำตาลหลายโมเลกุล (oligoglucoside) ดูดซึมได้ดีกว่ารูปแบบอิสระ (aglycone) ประมาณ 20 เท่า
@@ -92,8 +87,6 @@ Quercetin เป็นสารกลุ่มฟลาโวนอยด์ (fl
 ---
 
 ## ข้อควรระวังและความปลอดภัย {#safety}
-
-<!-- Inline image: quercetin-safety-flowchart.webp -->
 
 **แบบกิน:** งานทบทวนด้านความปลอดภัยพบว่า ผลข้างเคียงจากการกิน quercetin ในงานวิจัยในคนพบน้อยและไม่รุนแรง [7] แต่ **ยังไม่มีข้อมูลเพียงพอเรื่องความปลอดภัยของการกินขนาดสูง (ตั้งแต่ 1,000 มก. ต่อวัน) นานเกิน 12 สัปดาห์** [7]
 
@@ -168,9 +161,6 @@ quercetin อาจเปลี่ยนระดับยาบางชนิ�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `quercetin-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a Bangkok fresh market stall in the morning, choosing shallots and red apples, curious and health-aware expression, baskets of onions and fruit around her, soft natural light, warm amber colour grade with teal accents, realistic and unposed. No supplement bottles, no IV equipment, no hospital setting, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `quercetin-food-sources-diagram.webp` | 1000×500 | After H2: Quercetin คืออะไร มีในอาหารอะไร | Clean flat-vector diagram titled "แหล่งอาหารของเควอซิทิน / Food sources of quercetin": simple illustrations of shallot, onion, apple, tea leaves, and capers, each with a Thai name and English subtitle; onion and shallot highlighted with a teal #2A9D8F badge "ดูดซึมได้ดี / Well absorbed"; note at bottom "ส่วนใหญ่จับกับน้ำตาลในพืช / Mostly bound to sugars in plants". Off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `quercetin-absorption-infographic.webp` | 1000×600 | After H2: ทำไมรูปแบบของ Quercetin จึงสำคัญ | Flat-vector bar-style infographic titled "รูปแบบมีผลต่อการดูดซึม / Form changes absorption": horizontal bars comparing relative absorption, "แบบอิสระ (aglycone) / Aglycone = 1x" short amber bar, "phytosome ≈ 20x" long teal #2A9D8F bar, "oligoglucoside ≈ 20x" long teal bar, plus a separate icon row "กินพร้อมไขมันหรือใยอาหาร ≈ 2x / With fat or fibre ≈ 2x". Thai primary labels with English subtitles, white background, small footnote "ข้อมูลจากการทบทวนงานวิจัยในคน 31 ชิ้น / 31 human studies". No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `quercetin-safety-flowchart.webp` | 1200×450 | After H2: ข้อควรระวังและความปลอดภัย | Horizontal decision flowchart: start "สนใจ quercetin / Considering quercetin" → decision diamond "มีโรคไต ตั้งครรภ์ ประวัติมะเร็ง หรือกินยาประจำ? / Kidney disease, pregnancy, cancer history or regular medication?" → "ใช่ / Yes" branch in amber to "ปรึกษาแพทย์ก่อน / See a doctor first" → "ไม่ / No" branch in teal #2A9D8F to "เลือกรูปแบบและขนาดอย่างระมัดระวัง / Choose form and dose carefully" → final box for IV route in amber "แบบดริป: ตรวจไตและทบทวนยาก่อน / IV: check kidneys and medicines first". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
@@ -178,7 +168,7 @@ quercetin อาจเปลี่ยนระดับยาบางชนิ�
 - [x] Dev note อยู่ด้านบน พร้อม owner note ให้หน้า /iv-drip ระบุขนาดและการตรวจไต
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 8 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed/NCBI แล้ว ([8] ไม่มี DOI ใช้ลิงก์ PubMed)
 - [ ] **ไม่มีแหล่งไทย:** หางานของมหิดลเรื่องฟลาโวนอยด์ในอาหารไทยเจอ แต่เปิดอ่านรายละเอียดและยืนยันการอ้างอิงไม่ได้ จึงไม่ได้ใส่
@@ -189,7 +179,7 @@ quercetin อาจเปลี่ยนระดับยาบางชนิ�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี และไม่อ้างว่าต้านไวรัสหรือต้านมะเร็ง
 - [x] ไม่มีคำอ้างว่ารักษาหาย และระบุชัดว่าไม่ใช้แทนยาความดันหรือวัคซีน
 - [x] Intro สองประโยคแรกตอบคำถาม "Quercetin คืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-20)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 9 ต.ค. 2026): Healthline และผลค้นหาภาษาไทยไม่พูดถึงรูปแบบที่ดูดซึมต่างกัน, การทดลองหวัด 1,002 คนที่ไม่พบผล, หรือผลต่อไตเมื่อให้ทางหลอดเลือดขนาดสูง บทความนี้มีทั้ง 3 เรื่อง
 - [x] คำเตือนให้ปรึกษาแพทย์
 - [x] ลิงก์ภายในไป `/blog/apple-benefit`

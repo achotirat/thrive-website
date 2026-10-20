@@ -8,11 +8,10 @@ seoTitle: "เครียดสะสม อาการ ผลต่อร่�
 seoDescription: "เครียดสะสม อาการเป็นอย่างไร ส่งผลต่อร่างกายและจิตใจแค่ไหน เช็กตัวเองด้วยแบบประเมินความเครียดของไทย ทำไมผู้หญิงวัย 40 เสี่ยงมากขึ้น และวิธีจัดการที่มีงานวิจัยรองรับ"
 ctaService: mental-health
 heroImage: chronic-stress-hero.webp
-heroAlt: "ผู้หญิงวัยสี่สิบนั่งพักที่โต๊ะทำงานริมหน้าต่างในคอนโดกรุงเทพตอนเย็น หลับตาหายใจลึก สื่อถึงการหยุดพักจากความเครียดสะสม"
+heroAlt: "หญิงสาวก้มหน้า ใช้สองมือกุมศีรษะ สีหน้าตึงเครียด สื่อถึงความเครียดสะสมที่ส่งผลต่อร่างกายและจิตใจ"
 ---
 
 <!-- Dev note: This post uses CTA link `/mental-health` with label `คุยเรื่องความเครียดกับนักบำบัดของ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตาราง Tier A จับคู่ "stress, burnout" กับ /adrenal-fatigue แต่บทความนี้เน้นผลต่อสุขภาพใจและการประเมินความเครียด และ "adrenal fatigue" ยังไม่ใช่การวินิจฉัยที่มีหลักฐานรองรับ จึงเลือก /mental-health (หน้าคุยกับนักบำบัดเรื่องความเครียด นอนไม่หลับ อารมณ์แปรปรวน) ซึ่งตรงกับเจตนาของผู้อ่านมากกว่า -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: รวมบทความ Wix 2 หน้า /post/stressdisorder และ /post/เครียดสะสม ไว้ในบทความเดียว ทั้งสอง URL ให้ 301 มาที่หน้านี้ (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: chronic-stress-hero.webp -->
@@ -49,8 +48,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 
 ## เครียดสะสมคืออะไร {#what-is-chronic-stress}
 
-<!-- Inline image: chronic-stress-acute-vs-chronic-diagram.webp -->
-
 เวลาเจอเรื่องกดดัน ร่างกายจะหลั่ง **คอร์ติซอล (ฮอร์โมนความเครียด)** และอะดรีนาลีน หัวใจเต้นเร็วขึ้น น้ำตาลในเลือดสูงขึ้น เพื่อให้เรามีแรงรับมือกับปัญหา เมื่อปัญหาผ่านไป ระบบนี้ควรกลับสู่ภาวะปกติ [2]
 
 ปัญหาเกิดเมื่อความเครียดไม่จบ เช่น งานกดดันทุกวัน ดูแลพ่อแม่ที่ป่วย หรือปัญหาการเงินที่ยืดเยื้อ ร่างกายจึงอยู่ในโหมดรับมือตลอดเวลา
@@ -85,8 +82,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 
 ## เครียดสะสมส่งผลต่อร่างกายอย่างไร {#effects-on-body}
 
-<!-- Inline image: chronic-stress-body-effects-infographic.webp -->
-
 บทความใน JAMA ปี 2007 สรุปว่าความเครียดทางจิตใจสัมพันธ์กับโรคหลายกลุ่ม โดยมีหลักฐานชัดที่สุดในเรื่องภาวะซึมเศร้าและโรคหัวใจ [13]
 
 | ระบบ | งานวิจัยพบอะไร |
@@ -116,8 +111,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 ---
 
 ## วิธีจัดการความเครียดสะสมที่มีหลักฐาน {#what-helps}
-
-<!-- Inline image: chronic-stress-coping-flowchart.webp -->
 
 **1. ฝึกสติ (mindfulness)**
 - การวิเคราะห์รวม 29 งานวิจัยในคนที่สุขภาพดี 2,668 คนพบว่าโปรแกรมฝึกสติ 8 สัปดาห์ (MBSR) **ลดความเครียดได้มาก** และผลยังคงอยู่ราว 19 สัปดาห์หลังจบโปรแกรม [9]
@@ -225,9 +218,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `chronic-stress-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a home work desk by a condo window in Bangkok at dusk, laptop half-closed, eyes closed and taking a slow deep breath, a cup of tea beside her, city lights softly blurred outside, warm amber colour grade with teal accents, natural and unposed, calm rather than distressed. No crying, no head-in-hands cliché, no pill bottles, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `chronic-stress-acute-vs-chronic-diagram.webp` | 1000×500 | After H2: เครียดสะสมคืออะไร | Clean flat-vector line chart comparing two stress-hormone curves over time: left panel "เครียดระยะสั้น / Acute stress" shows a teal #2A9D8F curve that rises then returns to baseline; right panel "เครียดสะสม / Chronic stress" shows an amber-to-deep-red curve that stays elevated with repeated spikes and never returns to baseline, labelled "ร่างกายไม่ได้พัก / No recovery". Small caption "ภาระสะสม (allostatic load) / Wear and tear". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `chronic-stress-body-effects-infographic.webp` | 1000×600 | After H2: เครียดสะสมส่งผลต่อร่างกายอย่างไร | Flat-vector infographic of a simple neutral body outline with four labelled callouts: brain "อารมณ์ ซึมเศร้า / Mood and depression", shield icon "ภูมิคุ้มกันลดลง / Lower immunity", moon icon "นอนไม่หลับ / Poor sleep", heart icon "พฤติกรรมเสี่ยงโรคหัวใจ / Heart-risk behaviours". Amber for caution items, deep red only for the heart callout. Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `chronic-stress-coping-flowchart.webp` | 1200×450 | After H2: วิธีจัดการความเครียดสะสมที่มีหลักฐาน | Horizontal flowchart: step 1 "เช็กระดับความเครียด ST-5 / Check your stress level" → step 2 teal #2A9D8F "นอนให้เป็นเวลา / Protect sleep" → step 3 teal "ขยับร่างกาย 20-30 นาที / Move 20-30 min" → step 4 teal "ฝึกสติ หายใจช้า / Mindfulness" → branch in amber "อาการเกิน 2 สัปดาห์ / Symptoms over 2 weeks" → "คุยกับนักบำบัดหรือแพทย์ / Talk to a professional". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
@@ -235,7 +225,7 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 13 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed แล้ว มีแหล่งไทย 2 แหล่ง ([7] ST-5 โรงพยาบาลศรีธัญญา จาก ThaiJO และ [12] PSS-10 ฉบับไทย มช.)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (คอร์ติซอล, allostatic load, mindfulness, MBSR, CBT)
@@ -245,7 +235,7 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งพัก�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี ไม่ใช้ "อันตราย 12 ประการ" แบบขู่ให้กลัวเหมือนบทความเดิม
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "เครียดสะสมคืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-20)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): เปิดหน้า Bangkok Hospital (how-to-reduce-stress) ไม่มีการอ้างอิงงานวิจัย ไม่มีข้อมูลไทย และไม่มีแบบประเมินตัวเอง หน้า prd.go.th ที่ติดอันดับขึ้น 404 บทความนี้มีแบบประเมิน ST-5/PSS-10 ของไทย ข้อมูลผู้หญิงช่วงใกล้หมดประจำเดือน และข้อมูลว่าความเครียดจากงานส่งผลผ่านพฤติกรรม
 - [x] คำเตือนให้ปรึกษาแพทย์ และสายด่วนสุขภาพจิต 1323
 - [x] ลิงก์ภายในไป `/blog/female-hormone-panel-age-40`, `/blog/cbt-therapy-guide`, `/blog/how-to-overcome-burn-out-syndrome`, `/blog/panic-disorder-coping`, `/blog/vitamin-anti-stress` (บทความใหม่ในชุดนี้)

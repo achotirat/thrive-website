@@ -49,8 +49,6 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 
 ## Testosterone booster คืออะไร {#what-is-booster}
 
-<!-- Inline image: testosterone-booster-ingredients-diagram.webp -->
-
 **เทสโทสเตอโรน** คือฮอร์โมนเพศชายหลัก ช่วยเรื่องความต้องการทางเพศ มวลกล้ามเนื้อ กระดูก และพลังงาน ระดับฮอร์โมนค่อยๆ ลดลงตามอายุหลังวัยกลางคน [4]
 
 **Testosterone booster** คืออาหารเสริมที่อ้างว่าช่วยให้ร่างกายสร้างเทสโทสเตอโรนเพิ่มเอง ต่างจาก **ฮอร์โมนทดแทน** ซึ่งเป็นยาที่ให้เทสโทสเตอโรนเข้าไปโดยตรงและต้องสั่งโดยแพทย์
@@ -63,8 +61,6 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 ---
 
 ## Testosterone booster ได้ผลจริงไหม {#does-it-work}
-
-<!-- Inline image: testosterone-booster-evidence-infographic.webp -->
 
 **ผลวิเคราะห์ผลิตภัณฑ์ 50 ยี่ห้อ** [1]
 - 90% อ้างว่า "เพิ่มเทสโทสเตอโรน"
@@ -105,8 +101,6 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 ---
 
 ## ควรตรวจอะไรก่อนซื้ออาหารเสริม {#testing}
-
-<!-- Inline image: testosterone-booster-testing-flowchart.webp -->
 
 แนวทางของ Endocrine Society ปี 2018 แนะนำว่า [5]
 1. **วินิจฉัยเฉพาะคนที่มีอาการ** และมีระดับเทสโทสเตอโรนต่ำชัดเจนต่อเนื่อง
@@ -209,9 +203,6 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `testosterone-booster-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai man in his mid-40s in smart-casual office clothes standing in a bright Bangkok pharmacy aisle, holding an unbranded supplement bottle and reading the label with a hesitant, thoughtful expression, shelves softly blurred, natural light, warm amber colour grade with teal accents, realistic and unposed. No visible brand names, no shirtless or bodybuilder imagery, no suggestive content, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `testosterone-booster-ingredients-diagram.webp` | 1000×500 | After H2: Testosterone booster คืออะไร | Clean flat-vector diagram comparing two paths: left "บูสเตอร์ กระตุ้นให้ร่างกายสร้างเอง / Booster: stimulates own production" with an unbranded capsule bottle and a cloud of ingredient icons (zinc, vitamin B, tribulus leaf, tongkat ali root, ashwagandha root) labelled in Thai and English; right "ฮอร์โมนทดแทน ต้องสั่งโดยแพทย์ / Testosterone therapy: prescription only" with a doctor-clipboard icon in teal #2A9D8F. Caption "109 ส่วนผสม เฉลี่ย 8 ชนิดต่อขวด / 109 ingredients, ~8 per product". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `testosterone-booster-evidence-infographic.webp` | 1000×600 | After H2: Testosterone booster ได้ผลจริงไหม | Flat-vector infographic titled "บูสเตอร์ 50 ยี่ห้อ อ้างกับหลักฐาน / 50 boosters: claims vs evidence": a large bar "อ้างว่าเพิ่มฮอร์โมน 90% / Claim to boost T 90%" in amber next to a small teal #2A9D8F bar "มีงานวิจัยสนับสนุน 24.8% / Supported by data 24.8%", a grey bar "ไม่มีข้อมูล 61.5% / No data 61.5%", and a deep red bar "อาจลดฮอร์โมน 10.1% / May lower T 10.1%". Thai primary labels with English subtitles, white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `testosterone-booster-testing-flowchart.webp` | 1200×450 | After H2: ควรตรวจอะไรก่อนซื้ออาหารเสริม | Horizontal flowchart: step 1 "มีอาการทางเพศ 3 อย่าง? / 3 sexual symptoms?" → step 2 teal #2A9D8F "ตรวจเลือดตอนเช้า งดอาหาร / Fasting morning blood test" → step 3 teal "ตรวจซ้ำยืนยัน / Repeat to confirm" → branch "ปกติ: ดูการนอน น้ำหนัก ความเครียด / Normal: check sleep, weight, stress" and amber branch "ต่ำจริง: แพทย์หาสาเหตุ / Truly low: doctor finds the cause". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

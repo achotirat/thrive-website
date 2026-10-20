@@ -48,8 +48,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 
 ## ฮอร์โมนแห่งความสุขมีอะไรบ้าง {#what-are-they}
 
-<!-- Inline image: happy-hormones-four-chemicals-diagram.webp -->
-
 ก่อนอื่นต้องรู้ว่า "ฮอร์โมนแห่งความสุข" เป็นชื่อเรียกง่ายๆ ที่ใช้กันทั่วไป **สารส่วนใหญ่ในกลุ่มนี้เป็นสารสื่อประสาท** คือสารที่เซลล์ประสาทใช้ส่งสัญญาณถึงกัน [1][2]
 
 | สาร | บทบาทหลัก | ร่างกายสร้างจากอะไร หรือกระตุ้นอย่างไร |
@@ -66,8 +64,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 ---
 
 ## กินผักผลไม้ช่วยให้มีความสุขจริงไหม {#fruit-and-veg}
-
-<!-- Inline image: happy-hormones-food-mood-infographic.webp -->
 
 **หลักฐานจากการติดตามคนจำนวนมาก**
 - งานวิจัยติดตามบันทึกอาหารของคนออสเตรเลีย 12,385 คนพบว่า **คนที่กินผักผลไม้มากขึ้นมีความสุขและพึงพอใจในชีวิตมากขึ้น** และเห็นผลภายใน 24 เดือน [4] ผู้วิจัยเทียบว่าการกินเพิ่มวันละ 8 ส่วน ให้ความพึงพอใจในชีวิตเพิ่มขึ้นใกล้เคียงกับการเปลี่ยนจากตกงานเป็นมีงานทำ [4]
@@ -98,8 +94,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 ---
 
 ## กิจกรรมที่ช่วยเพิ่มสารแห่งความสุข {#activities}
-
-<!-- Inline image: happy-hormones-daily-habits-flowchart.webp -->
 
 **1. ออกกำลังกาย (เอนดอร์ฟินและอารมณ์)**
 - งานวิจัยถ่ายภาพสมองนักวิ่ง 10 คนหลังวิ่ง 2 ชั่วโมง พบการหลั่งสารกลุ่มเอนดอร์ฟินในสมอง และยิ่งหลั่งมาก นักวิ่งยิ่งรู้สึกเบาสบาย [9]
@@ -195,9 +189,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบเลือกซื�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `happy-hormones-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s choosing fresh fruit (mango, papaya, guava, dragon fruit) at a morning market stall in Bangkok, smiling naturally while chatting with the vendor, a cloth shopping bag on her arm, soft morning light, warm amber colour grade with teal accents, realistic and unposed. No exaggerated laughing, no supplement bottles, no obvious AI-generated faces, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `happy-hormones-four-chemicals-diagram.webp` | 1000×500 | After H2: ฮอร์โมนแห่งความสุขมีอะไรบ้าง | Clean flat-vector diagram with four rounded tiles around a simple brain outline: "เซโรโทนิน / Serotonin — อารมณ์ การนอน / Mood, sleep" with a small gut icon note "ส่วนใหญ่อยู่ในลำไส้ / Mostly in the gut"; "โดพามีน / Dopamine — แรงจูงใจ / Motivation"; "ออกซิโทซิน / Oxytocin — ความผูกพัน / Bonding"; "เอนดอร์ฟิน / Endorphin — ลดปวด เบาสบาย / Pain relief". Each tile in a different tint of teal #2A9D8F. Footnote "ส่วนใหญ่เป็นสารสื่อประสาท / Mostly neurotransmitters". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `happy-hormones-food-mood-infographic.webp` | 1000×600 | After H2: กินผักผลไม้ช่วยให้มีความสุขจริงไหม | Flat-vector infographic with three data cards: teal #2A9D8F card "ผักผลไม้มากขึ้น มีความสุขขึ้นใน 2 ปี / More fruit and veg, happier within 2 years (n=12,385)"; teal card "ปรับอาหาร 12 สัปดาห์: หายซึมเศร้า 32% vs 8% / Diet support: 32% vs 8% remission"; amber card "น้ำหวานมากที่สุด เสี่ยงซึมเศร้า +31% / Most sugary drinks: +31% depression risk". Bottom strip with Thai flag-neutral icon "คนไทยกินผักผลไม้พอ 21.2% / Only 21.2% of Thais eat enough". Thai primary labels with English subtitles, white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `happy-hormones-daily-habits-flowchart.webp` | 1200×450 | After H2: กิจกรรมที่ช่วยเพิ่มสารแห่งความสุข | Horizontal day-timeline flowchart: morning "ผลไม้ 1 ส่วนกับมื้อเช้า / Fruit at breakfast" → midday "โปรตีนพอทุกมื้อ / Protein every meal" → evening teal #2A9D8F "เดินเร็ว 20-30 นาที / Brisk walk 20-30 min" → night "ใช้เวลากับคนที่รัก / Time with loved ones". Amber side note "เศร้าเกิน 2 สัปดาห์ → คุยกับผู้เชี่ยวชาญ / Low mood over 2 weeks → talk to a professional". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

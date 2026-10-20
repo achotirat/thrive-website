@@ -8,11 +8,10 @@ seoTitle: "ขาดวิตามินบี12 ต้องกินอะไ
 seoDescription: "ขาดวิตามินบี12 ต้องกินอะไร อาการชามือชาเท้า เหนื่อยง่าย ใครเสี่ยงบ้าง ทั้งคนกินเจ คนกินยาเบาหวานหรือยาลดกรดนาน และวิธีตรวจเลือดก่อนเสริมวิตามิน"
 ctaService: vitamins-and-micronutrients
 heroImage: vitamin-b12-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานในครัวที่บ้านกำลังจัดจานอาหารที่มีปลา ไข่ และผัก สื่อถึงการเลือกอาหารเพื่อเติมวิตามินบี12"
+heroAlt: "วัตถุดิบบนโต๊ะหินอ่อน มีแซลมอน อกไก่ ไข่ ชีส เห็ด และผัก สื่อถึงการเลือกอาหารที่เป็นแหล่งวิตามินบี12"
 ---
 
 <!-- Dev note: This post uses CTA link `/vitamins-and-micronutrients` with label `เช็กระดับวิตามินและแร่ธาตุกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้อ B12 ตรงกับแถว "vitamins, micronutrients, minerals, B12" ในตาราง Tier A -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/vitamin-b12 (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: vitamin-b12-hero.webp -->
@@ -48,8 +47,6 @@ heroAlt: "ผู้หญิงวัยทำงานในครัวที�
 
 ## วิตามินบี12 คืออะไร ทำไมร่างกายขาดไม่ได้ {#what-is-b12}
 
-<!-- Inline image: vitamin-b12-absorption-diagram.webp -->
-
 วิตามินบี12 (cobalamin) เป็นวิตามินที่ร่างกายใช้สร้างเม็ดเลือดแดง สร้างสารพันธุกรรม (DNA) และดูแลเส้นประสาท [2] ร่างกายสร้างเองไม่ได้ ต้องได้จากอาหารเท่านั้น
 
 การดูดซึม B12 มีหลายขั้นตอน คล้ายพัสดุที่ต้องผ่านหลายด่านกว่าจะถึงมือผู้รับ
@@ -82,8 +79,6 @@ heroAlt: "ผู้หญิงวัยทำงานในครัวที�
 ---
 
 ## ใครเสี่ยงขาดวิตามินบี12 {#who-is-at-risk}
-
-<!-- Inline image: vitamin-b12-risk-groups-infographic.webp -->
 
 **1. คนกินเจและมังสวิรัติระยะยาว**
 งานวิจัยในคนไทย 300 คนที่โรงพยาบาลในกรุงเทพฯ พบค่า homocysteine สูง (ตัวบ่งชี้ว่าร่างกายขาด B12) ในคนที่กินวีแกนทั่วไป 52% และในกลุ่มเสี่ยงสูง (กินวีแกนมากกว่า 20 ปี อายุเกิน 65 ปี หรือมีอาการ) 70% เทียบกับเพียง 1% ในคนที่กินเนื้อสัตว์ [7] การวิเคราะห์รวมงานวิจัยต่างประเทศก็พบแนวโน้มเดียวกัน และพบว่าคนที่กินวิตามินเสริมมีค่าดีขึ้นชัดเจน [6]
@@ -127,8 +122,6 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 ---
 
 ## ตรวจอย่างไร และเสริมแบบกินหรือฉีดดีกว่า {#testing-and-treatment}
-
-<!-- Inline image: vitamin-b12-testing-flowchart.webp -->
 
 **การตรวจ:** แพทย์จะดูระดับ B12 ในเลือดร่วมกับค่าอื่น เช่น homocysteine และ methylmalonic acid (MMA) รวมถึงขนาดเม็ดเลือดแดง เพราะค่า B12 ในเลือดเพียงค่าเดียวอาจบอกได้ไม่ครบ [2][8] เกณฑ์ตัดสินว่าขาดหรือไม่ยังเป็นเรื่องที่ผู้เชี่ยวชาญถกเถียงกันอยู่ [2] การแปลผลจึงควรทำร่วมกับแพทย์
 
@@ -200,9 +193,6 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `vitamin-b12-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s in a bright Bangkok home kitchen in the morning, plating a simple meal of grilled mackerel, a boiled egg and green vegetables, glancing thoughtfully at the plate, calm and health-aware mood, soft natural window light, warm amber colour grade with teal accents, realistic and unposed. No pill bottles, no supplements in frame, no hospital setting, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `vitamin-b12-absorption-diagram.webp` | 1000×500 | After H2: วิตามินบี12 คืออะไร ทำไมร่างกายขาดไม่ได้ | Clean flat-vector medical diagram of vitamin B12 absorption as a left-to-right pathway: "อาหารจากสัตว์ / Animal foods" → "กระเพาะ: กรดแยก B12 ออกจากโปรตีน / Stomach acid releases B12" → "จับกับโปรตีนพาหะ / Binds carrier protein" → "ลำไส้เล็กส่วนปลายดูดซึม / Absorbed in the ileum" → "เม็ดเลือดแดง + เส้นประสาท / Red blood cells + nerves" in teal #2A9D8F. Amber warning tags at the stomach step: "ยาลดกรด / Acid-reducing drugs" and "อายุมากขึ้น / Ageing". Thai primary labels with small English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `vitamin-b12-risk-groups-infographic.webp` | 1000×600 | After H2: ใครเสี่ยงขาดวิตามินบี12 | Flat-vector infographic titled "ใครเสี่ยงขาดวิตามินบี12 / Who is at risk of B12 deficiency", five tiles with simple line icons: "กินเจ/วีแกนระยะยาว / Long-term vegan", "ยาเบาหวานเมทฟอร์มิน / Metformin", "ยาลดกรดนาน 2 ปีขึ้นไป / Acid reducers 2+ years", "ผู้สูงอายุ / Older adults", "ผู้หญิงวัยทำงานที่กินไม่ครบ / Women with low intake". Each tile in warm amber with a teal "ตรวจได้ / Testable" badge. Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `vitamin-b12-testing-flowchart.webp` | 1200×450 | After H2: ตรวจอย่างไร และเสริมแบบกินหรือฉีดดีกว่า | Horizontal flowchart: "มีอาการหรือมีปัจจัยเสี่ยง / Symptoms or risk factors" → "ตรวจเลือด: B12, homocysteine, MMA / Blood tests" → decision diamond "ขาดจริงไหม? / Deficient?" → "ไม่ / No" branch in teal #2A9D8F to "ดูแลอาหารต่อเนื่อง / Maintain diet" → "ใช่ / Yes" branch in amber to "หาสาเหตุ: กินน้อย หรือดูดซึมไม่ได้ / Find the cause" → two end boxes "B12 แบบกินขนาดสูง / High-dose oral" and "B12 แบบฉีด / Injection", with small note "แพทย์เลือกตามสาเหตุ / Doctor decides by cause". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
@@ -210,7 +200,7 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 9 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed/NCBI แล้ว (ยกเว้น [7] ตรวจจากหน้าวารสาร ThaiJO) มีแหล่งไทย 2 แหล่ง ([7] Bangkok Medical Journal, [8] ศิริราช)
 - [x] อธิบายศัพท์แพทย์ตั้งแต่ครั้งแรก (cobalamin, homocysteine, MMA, PPI, เมทฟอร์มิน)
@@ -220,7 +210,7 @@ B12 พบในอาหารที่มาจากสัตว์เป็�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี และไม่ขู่ให้กลัว
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "ขาดวิตามินบี12 ต้องกินอะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-19)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 9 ต.ค. 2026): ผลค้นหาหลักเป็นหน้าคู่มือผู้ป่วยภาษาอังกฤษ และ TruePlookpanya ซึ่งไม่พูดถึงเมทฟอร์มิน ไม่มีข้อมูลคนไทย ไม่เทียบแบบกินกับฉีด และอ้างแหล่งจากเว็บทั่วไป บทความนี้มีข้อมูลวีแกนไทย, ตัวเลขความเสี่ยงจากยาลดกรดและเมทฟอร์มิน, และหลักฐาน Cochrane เรื่องกินกับฉีด
 - [x] คำเตือนให้ปรึกษาแพทย์และห้ามหยุดยาเอง
 - [ ] **ไม่ได้ทำ:** base skill `notfair:content-writer` และ T6 `notfair:geo-optimizer` ไม่ได้ติดตั้งบนเครื่องนี้

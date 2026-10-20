@@ -8,11 +8,10 @@ seoTitle: "Epigenetics คืออะไร อายุชีวภาพ ต�
 seoDescription: "Epigenetics คืออะไร ต่างจากพันธุกรรมอย่างไร ไลฟ์สไตล์และวัยหมดประจำเดือนมีผลต่อการแก่ระดับเซลล์ไหม การตรวจอายุชีวภาพแม่นแค่ไหน และมีข้อจำกัดอะไร สรุปจากงานวิจัย"
 ctaService: epispan
 heroImage: epigenetics-hero.webp
-heroAlt: "ผู้หญิงวัยสี่สิบสองคนอายุใกล้กันเดินคุยกันในสวนสาธารณะกรุงเทพตอนเช้า คนหนึ่งดูกระฉับกระเฉงกว่า สื่อถึงการที่คนอายุเท่ากันแก่ไม่เท่ากัน"
+heroAlt: "ภาพจำลองสายดีเอ็นเอเกลียวคู่สีฟ้า สื่อถึงเอพิเจเนติกส์ที่ควบคุมการเปิดปิดการทำงานของยีน"
 ---
 
 <!-- Dev note: This post uses CTA link `/epispan` with label `ตรวจอายุชีวภาพ EpiSpan กับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตรงกับแถว "epigenetic test, biological age, epigenetic clock, DunedinPACE" → /epispan -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/epigenetics-การควบคุมเหนือ-dna (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: epigenetics-hero.webp -->
@@ -49,8 +48,6 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 
 ## Epigenetics คืออะไร {#what-is-epigenetics}
 
-<!-- Inline image: epigenetics-switch-diagram.webp -->
-
 ลองนึกภาพว่า DNA คือหนังสือสูตรอาหารเล่มหนาที่ทุกเซลล์ในร่างกายมีเหมือนกัน แต่เซลล์ตับเปิดอ่านแค่สูตรของตับ เซลล์ผิวเปิดอ่านแค่สูตรของผิว
 
 **Epigenetics คือที่คั่นหน้าและสติกเกอร์ปิดหน้า** ที่บอกเซลล์ว่าหน้าไหนให้อ่าน หน้าไหนให้ข้าม ตัวหนังสือในเล่มไม่เปลี่ยน แต่การเลือกอ่านเปลี่ยน
@@ -67,8 +64,6 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 ---
 
 ## อะไรบ้างที่เปลี่ยน epigenetics ได้ {#what-changes-it}
-
-<!-- Inline image: epigenetics-factors-infographic.webp -->
 
 | ปัจจัย | งานวิจัยพบอะไร |
 |---|---|
@@ -118,8 +113,6 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 ---
 
 ## ตรวจอายุชีวภาพ แม่นแค่ไหน มีข้อจำกัดอะไร {#testing-limits}
-
-<!-- Inline image: epigenetics-testing-flowchart.webp -->
 
 นี่คือส่วนที่บทความส่วนใหญ่ไม่ได้บอก
 
@@ -223,9 +216,6 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `epigenetics-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of two Thai women in their mid-40s, friends of similar age, walking and chatting along a shaded path in Benjakitti Park, Bangkok, in early morning light; one carries a yoga mat, both relaxed and smiling naturally, city skyline softly blurred behind trees, warm amber colour grade with teal accents, realistic and unposed. No DNA helix overlays, no lab coats, no obvious AI-generated faces, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `epigenetics-switch-diagram.webp` | 1000×500 | After H2: Epigenetics คืออะไร | Clean flat-vector diagram: an open recipe book labelled "DNA / รหัสพันธุกรรม (ไม่เปลี่ยน)" with some pages marked by teal #2A9D8F bookmarks labelled "ยีนเปิด / Gene on" and other pages covered by small grey tags labelled "ป้ายเมทิล ยีนปิด / Methyl tag, gene off". Small inset showing DNA wrapped around spool-like histone proteins labelled "ฮิสโตน / Histone". Caption: "ตัวหนังสือเหมือนเดิม การเปิดอ่านต่างกัน / Same text, different reading". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `epigenetics-factors-infographic.webp` | 1000×600 | After H2: อะไรบ้างที่เปลี่ยน epigenetics ได้ | Flat-vector infographic with four icon tiles around a central DNA strand with small tag markers: "อาหารช่วงในครรภ์ / Prenatal nutrition", "บุหรี่ / Smoking" (deep red), "วัยหมดประจำเดือน / Menopause" (amber), "อายุ / Age" (neutral grey). A footnote strip in teal #2A9D8F: "ปัจจัยที่ปรับได้: นอน ออกกำลังกาย อาหาร / Modifiable: sleep, exercise, diet". Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `epigenetics-testing-flowchart.webp` | 1200×450 | After H2: ตรวจอายุชีวภาพ แม่นแค่ไหน มีข้อจำกัดอะไร | Horizontal flowchart for biological-age testing: step 1 "เลือกวิธีที่วัดซ้ำได้แม่น / Choose a reliable clock" → step 2 "ตรวจจากตัวอย่างเดิม / Same sample type" → step 3 teal #2A9D8F "อ่านผลกับแพทย์ / Review with a doctor" → step 4 teal "ปรับไลฟ์สไตล์ / Lifestyle plan" → step 5 "ตรวจซ้ำด้วยวิธีเดิม / Retest same method". Amber warning note under step 1: "นาฬิการุ่นดั้งเดิมคลาดเคลื่อนได้ถึง 9 ปี / Older clocks can vary up to 9 years". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References
@@ -233,7 +223,7 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 11 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed แล้ว มีแหล่งไทย 1 แหล่ง ([7] คณะแพทยศาสตร์ศิริราชพยาบาล)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (DNA methylation, histone, epigenetic clock, อายุชีวภาพ, frail)
@@ -243,7 +233,7 @@ Epigenetics (เอพิเจเนติกส์) คือกลไกท�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี ไม่อ้างว่า "ย้อนวัย" ได้แน่นอน ระบุข้อจำกัดของงานนำร่อง [11] ครบ
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "epigenetics คืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-20)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): เปิดหน้า PPTV (เครดิตสมิติเวช) และกรุงเทพธุรกิจ ทั้งสองหน้าไม่อ้างอิงงานวิจัย ไม่พูดถึงความแม่นยำหรือข้อจำกัดของการตรวจอายุชีวภาพ ไม่พูดถึงวัยหมดประจำเดือน และไม่มีงานวิจัยไทย บทความนี้มีทั้ง 4 เรื่อง
 - [x] คำเตือนให้ปรึกษาแพทย์ (ฮอร์โมนทดแทน, การอ่านผลตรวจ)
 - [x] ลิงก์ภายในไป `/blog/female-hormone-panel-age-40` และ `/dna-test`

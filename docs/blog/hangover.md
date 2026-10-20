@@ -8,11 +8,10 @@ seoTitle: "เมาค้าง แฮงค์ เกิดจากอะไ�
 seoDescription: "แฮงค์เกิดจากอะไร ทำไมดื่มน้ำเยอะแล้วยังไม่หาย วิธีสร่างเมาแบบไหนมีงานวิจัยรองรับ ผู้หญิงแฮงค์ง่ายกว่าจริงไหม และอาการแบบไหนต้องไปโรงพยาบาล สรุปจากงานวิจัย"
 ctaService: check-up
 heroImage: hangover-hero.webp
-heroAlt: "ผู้หญิงวัยทำงานนั่งดื่มน้ำเปล่าข้างหน้าต่างในตอนเช้า สื่อถึงการพักฟื้นร่างกายหลังคืนที่ดื่มหนัก"
+heroAlt: "ผู้หญิงนั่งบนเตียงตอนเช้า มือหนึ่งถือแก้วเครื่องดื่ม อีกมือดึงผ้าห่มปิดหน้า สื่อถึงอาการเมาค้างหลังคืนที่ดื่มหนัก"
 ---
 
 <!-- Dev note: This post uses CTA link `/check-up` with label `ร่างกายฟื้นตัวช้ากว่าเดิม? ตรวจสุขภาพกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้อเมาค้างไม่มีในตาราง Tier A ตัวที่ใกล้ที่สุดคือ /iv-drip แต่บทความระบุตามหลักฐานว่าดริปวิตามินยังไม่มีหลักฐานว่าช่วยแก้แฮงค์ [4] จึงเลือก /check-up (preventive health) ให้ตรงกับ truth gate -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/hangover (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: hangover-hero.webp -->
@@ -61,8 +60,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 
 ## ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง {#what-happens}
 
-<!-- Inline image: hangover-alcohol-metabolism-diagram.webp -->
-
 หลายคนเชื่อว่าแฮงค์คือ "ร่างกายขาดน้ำ" แต่ภาพจริงซับซ้อนกว่านั้น
 
 **1. การอักเสบ (ระบบภูมิคุ้มกันถูกกระตุ้น)**
@@ -76,8 +73,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 
 **4. ปัจจัยที่ไม่ได้ทำให้แฮงค์ แต่ทำให้แฮงค์หนักขึ้น**
 การนอนไม่พอ การสูบบุหรี่ สารที่ติดมากับเครื่องดื่มบางชนิด (congeners) สุขภาพพื้นฐาน และพันธุกรรม [2]
-
-<!-- Inline image: hangover-causes-infographic.webp -->
 
 > **สรุปกลไก:** แฮงค์เป็นผลรวมของการอักเสบ สารพิษจากการย่อยแอลกอฮอล์ และการนอนที่แย่ลง ส่วนการขาดน้ำเป็นแค่ส่วนหนึ่ง จึงไม่มีวิธีเดียวที่แก้ได้ทุกอย่าง [2]
 
@@ -126,8 +121,6 @@ heroAlt: "ผู้หญิงวัยทำงานนั่งดื่ม�
 ---
 
 ## สัญญาณอันตรายที่ต้องไปโรงพยาบาล {#warning-signs}
-
-<!-- Inline image: hangover-when-to-see-doctor-flowchart.webp -->
 
 อาการต่อไปนี้ **ไม่ใช่แฮงค์ธรรมดา** แต่อาจเป็นภาวะแอลกอฮอล์เกินขนาด ซึ่งอันตรายถึงชีวิตได้ [9]
 
@@ -208,9 +201,6 @@ NIAAA ระบุว่าแนวทางโภชนาการของ�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `hangover-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s sitting by a window in a Bangkok condo on a quiet weekend morning, holding a glass of water with both hands, slightly tired but calm and health-aware expression, city skyline softly out of focus, natural morning light, warm amber colour grade with subtle teal accents, unposed and realistic. No alcohol bottles, no messy party scene, no pills, no hospital setting, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `hangover-alcohol-metabolism-diagram.webp` | 1000×500 | After H2: ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง | Clean flat-vector medical diagram of alcohol metabolism in the liver as three steps left to right: "แอลกอฮอล์ / Ethanol" → arrow labelled "เอนไซม์ ADH" → "อะเซทัลดีไฮด์ (สารพิษ) / Acetaldehyde" highlighted in deep red → arrow labelled "เอนไซม์ ALDH2" → "อะซิเตต (ไม่เป็นพิษ) / Acetate" in teal #2A9D8F. Small simplified liver icon above. Small note under the ALDH2 arrow: "ยีน ALDH2 ทำงานน้อย = กำจัดได้ช้า หน้าแดงง่าย / Low-activity ALDH2". Thai primary labels with small English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `hangover-causes-infographic.webp` | 1000×600 | Before callout "สรุปกลไก" (H2: ร่างกายเกิดอะไรขึ้นเมื่อเมาค้าง) | Flat-vector infographic titled "แฮงค์เกิดจากหลายอย่างรวมกัน / Hangover has several causes", four tiles: 1) "การอักเสบ / Inflammation" marked "หลักฐานชัดที่สุด" in teal #2A9D8F, 2) "อะเซทัลดีไฮด์ / Acetaldehyde" in amber, 3) "การนอนแย่ลง / Poor sleep" in amber, 4) "ขาดน้ำ / Dehydration" marked "มีส่วน แต่ไม่ใช่ตัวหลัก" in light grey. Simple line icons per tile, Thai primary labels with English subtitles, white background. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `hangover-when-to-see-doctor-flowchart.webp` | 1200×450 | After H2: สัญญาณอันตรายที่ต้องไปโรงพยาบาล | Horizontal flowchart: start box "เช้าหลังดื่ม / Morning after drinking" → decision diamond "มีอาการเหล่านี้ไหม? สับสน ปลุกไม่ค่อยตื่น ชัก หายใจช้า ตัวเย็นชื้น อาเจียนไม่หยุด / Any danger signs?" → "ใช่ / Yes" branch in deep red to "โทร 1669 หรือไปโรงพยาบาลทันที / Call 1669" → "ไม่ / No" branch in teal #2A9D8F to "ดื่มน้ำ กินอาหารอ่อน นอนพัก ไม่ขับรถ / Rest, fluids, light food, don't drive". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 (56 ตัวอักษร) → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → อ้างอิง
@@ -218,7 +208,7 @@ NIAAA ระบุว่าแนวทางโภชนาการของ�
 - [x] Dev note อยู่ด้านบน: ลิงก์ CTA + label + sticky component
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2 (anchor แบบ `{#id}` ตามบทความอื่นใน repo)
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 พร้อมชื่อไฟล์และขนาด (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนอยู่ใน 3 องค์ประกอบแรกหลัง TL;DR/TOC
 - [x] CTA ล่างอยู่หลัง FAQ ก่อนอ้างอิง
 - [x] อ้างอิง 9 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed/NCBI แล้ว มีแหล่งจากสถาบันไทย 1 แหล่ง ([8] ScienceAsia)
@@ -229,7 +219,7 @@ NIAAA ระบุว่าแนวทางโภชนาการของ�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/ล้างสารพิษ/detox และไม่ขู่ให้กลัว (หัวข้ออันตรายเป็นข้อมูลความปลอดภัยพร้อมแหล่งอ้างอิง [9])
 - [x] ไม่มีคำอ้างว่ารักษาหาย และระบุตามหลักฐานว่าดริปวิตามินยังไม่มีหลักฐานว่าช่วยแก้แฮงค์
 - [x] สองประโยคแรกของ intro ตอบคำถามโดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-19)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 9 ต.ค. 2026): เทียบกับ Sanook /men/82881, HDmall /telepharmacy/hangover-medicine, Dailynews /news/5257415 ทั้ง 3 หน้าไม่พูดถึงผู้หญิงกับสัดส่วนน้ำในร่างกาย, ยีน ALDH2 ในคนไทย, งานทบทวนปี 2022 ว่ายังไม่มีวิธีแก้แฮงค์ที่มีหลักฐานดี และการทดลองลำดับเบียร์/ไวน์ Sanook กับ Dailynews ไม่มีแหล่งอ้างอิง และ Dailynews โปรโมตดริปว่า "เห็นผลรวดเร็ว"
 - [x] คำเตือนให้ปรึกษาแพทย์
 - [ ] **ไม่ได้ทำ:** base skill `notfair:content-writer` และ T6 `notfair:geo-optimizer` ไม่ได้ติดตั้งบนเครื่องนี้ ทำ GEO เองเฉพาะ intro ที่ตอบตรง, ประโยคแบบ "ตามงานวิจัย…" และหัวข้อมุมมองแพทย์

@@ -48,8 +48,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งที่�
 
 ## อาหารเสริมคืออะไร {#what-is-supplement}
 
-<!-- Inline image: supplements-types-diagram.webp -->
-
 อาหารเสริมมีหลายรูปแบบ ทั้งเม็ด แคปซูล ผง และน้ำ แบ่งคร่าวๆ ได้เป็น
 
 | กลุ่ม | ตัวอย่าง |
@@ -70,8 +68,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งที่�
 
 ## กินวิตามินรวมทุกวัน ช่วยให้สุขภาพดีขึ้นจริงไหม {#multivitamin}
 
-<!-- Inline image: supplements-evidence-infographic.webp -->
-
 นี่คือคำถามที่งานวิจัยใหญ่ตอบได้ชัดขึ้นในช่วงหลัง
 
 **คำแนะนำของ USPSTF ปี 2022** [2]
@@ -88,8 +84,6 @@ heroAlt: "ผู้หญิงวัยสี่สิบนั่งที่�
 ---
 
 ## ใครควรกินอาหารเสริม {#who-needs-it}
-
-<!-- Inline image: supplements-who-needs-flowchart.webp -->
 
 **1. ผู้หญิงที่วางแผนตั้งครรภ์หรือตั้งครรภ์**
 USPSTF แนะนำให้ผู้หญิงที่วางแผนหรืออาจตั้งครรภ์กินกรดโฟลิกวันละ 0.4 ถึง 0.8 มิลลิกรัม เพื่อป้องกันความพิการของท่อประสาทในทารก [4]
@@ -198,9 +192,6 @@ USPSTF แนะนำให้ผู้หญิงที่วางแผน�
 | # | Filename | Size | Placement | Prompt |
 |---|---|---|---|---|
 | Hero | `supplements-hero.webp` | 1200×630 | Above H1 | Editorial lifestyle photograph of a Thai woman in her early 40s at a wooden dining table in a Bangkok condo in the morning, several unbranded supplement bottles lined up in front of her, writing notes in a notebook with a calm, thoughtful expression, a glass of water and a plate of fruit beside her, natural window light, warm amber colour grade with teal accents, realistic and unposed. No visible brand names, no pill piles spilling, no obvious AI-generated face, no stock-photo clichés. 1200×630 landscape. |
-| Inline 1 | `supplements-types-diagram.webp` | 1000×500 | After H2: อาหารเสริมคืออะไร | Clean flat-vector diagram with four grouped icon tiles: "วิตามิน / Vitamins" (D, B12, C, multivitamin), "แร่ธาตุ / Minerals" (iron, calcium, magnesium, zinc), "ไขมันและโปรตีน / Fats and proteins" (fish oil capsule, protein scoop), "สมุนไพร / Herbal extracts" (turmeric root, ginkgo leaf, green tea leaf). Central caption in teal #2A9D8F "ขาดอะไร เสริมสิ่งนั้น / Supplement what you lack". Small note "52% ของคนกรุงเทพฯ ที่สำรวจ ใช้อาหารเสริมหรือสมุนไพร / 52% of surveyed Bangkok residents use them". Thai primary labels with English subtitles, off-white background. No stock-photo people, no hands, no generic gradients. 1000×500. |
-| Inline 2 | `supplements-evidence-infographic.webp` | 1000×600 | After H2: กินวิตามินรวมทุกวัน ช่วยให้สุขภาพดีขึ้นจริงไหม | Flat-vector evidence infographic with four rows and markers: "วิตามินรวม ป้องกันโรคหัวใจ/มะเร็ง / Multivitamin for heart disease or cancer" grey "หลักฐานไม่พอ / Insufficient"; "วิตามินรวม กับอายุยืน / Multivitamin and longevity" grey "ไม่พบประโยชน์ (390,124 คน) / No benefit found"; "เบตาแคโรทีน วิตามินอี / Beta-carotene, vitamin E" deep red "ไม่แนะนำ / Not recommended"; "กรดโฟลิกก่อนตั้งครรภ์ / Folic acid before pregnancy" teal #2A9D8F "แนะนำ / Recommended". Thai primary labels with English subtitles, white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1000×600. |
-| Inline 3 | `supplements-who-needs-flowchart.webp` | 1200×450 | After H2: ใครควรกินอาหารเสริม | Horizontal decision flowchart: start "อยากกินอาหารเสริม / Thinking about supplements" → question "วางแผนตั้งครรภ์? / Planning pregnancy?" yes → teal #2A9D8F "กรดโฟลิก / Folic acid"; no → "ตรวจเลือดก่อน / Blood test first" → branches "ขาดจริง: เสริมเฉพาะตัว ตรวจซ้ำ / Deficient: targeted dose, retest" in teal and "ไม่ขาด: เน้นอาหาร / Not deficient: focus on food" in grey. Amber side warning "ตัวเหลือง ใจสั่น เจ็บหน้าอก → หยุดและพบแพทย์ / Jaundice, palpitations → stop and see a doctor". Thai primary labels with English subtitles, off-white background, clean data-viz style. No stock-photo people, no hands, no generic gradients. 1200×450. |
 
 ## Thrive QA Checklist
 - [x] โครงบทความตาม T0: Hero → H1 → TL;DR → TOC → CTA บน → intro ตอบตรง → H2 → มุมมองแพทย์ → FAQ → CTA ล่าง → References

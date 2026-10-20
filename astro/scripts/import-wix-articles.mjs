@@ -15,8 +15,9 @@
 //   1. its .md still has the "<!-- Review note: ... -->" line (remove it once the
 //      doctor has approved the "มุมมองจากทีมแพทย์ Thrive" section), or
 //   2. its hero image is missing from docs/blog/.
-// Inline images are optional: a missing one is skipped, and re-running after
-// adding the file uploads it.
+// Blog posts use ONE hero image only (owner decision 2026-10-19). The importer
+// still understands "<!-- Inline image: file.webp -->" markers, but the 12
+// articles no longer contain any.
 // --dump <dir> writes each article's legacyHtml and Sanity document (JSON) to <dir> for review.
 //
 // Token is loaded automatically from .env.local (SANITY_API_TOKEN).
