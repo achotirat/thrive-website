@@ -12,7 +12,6 @@ heroAlt: "ลำตัวผู้ชายที่ออกกำลังก�
 ---
 
 <!-- Dev note: This post uses CTA link `/hormones-quiz` with label `เช็กสมดุลฮอร์โมนเบื้องต้นกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตรงกับแถว "hormones, testosterone" → /hormones-quiz -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/testosterone-1 (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: testosterone-booster-hero.webp -->
@@ -220,7 +219,7 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี ไม่ใช้ภาพหรือคำที่สื่อเรื่องเพศเกินจำเป็น
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "ได้ผลจริงไหม" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**) มีมุมคู่ชีวิตเพื่อเชื่อมกลุ่มเป้าหมายผู้หญิง 35 ถึง 55 ปี
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-22) มีมุมคู่ชีวิตเพื่อเชื่อมกลุ่มเป้าหมายผู้หญิง 35 ถึง 55 ปี
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): ผลภาษาอังกฤษส่วนใหญ่เป็นหน้าขายและบทความ PDF สแปม หน้าที่เปิดได้ (hdmall "8 อาหารเพิ่มฮอร์โมนเพศชาย") อ้างอิงแค่ WebMD/Healthline ไม่พูดถึงการตรวจเลือดตอนเช้าซ้ำ ผลิตภัณฑ์ปลอมปน ปลาไหลเผือก หรือตัวเลขเรื่องการนอน หน้า wildphysiofitness (404) และ travis.af.mil (403) เปิดไม่ได้ บทความนี้มีทั้งหมด
 - [x] คำเตือนให้ปรึกษาแพทย์ (ยาหัวใจ ยาความดัน การใช้ฮอร์โมนเอง)
 - [x] ลิงก์ภายในไป `/blog/low-testosterone-heavy-exercise-men`, `/blog/hyrox-overtraining-hormone-imbalance`, `/blog/testosterone-woman`

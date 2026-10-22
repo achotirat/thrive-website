@@ -12,7 +12,6 @@ heroAlt: "ภาพมาโครฟองอากาศในของเห�
 ---
 
 <!-- Dev note: This post uses CTA link `/iv-drip` with label `ปรึกษาแพทย์เรื่องดริปวิตามินที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ALA ไม่อยู่ในตาราง Tier A บทความ Wix เดิม /ala เป็นหน้า "Essential Booster ALA" ซึ่งเป็นส่วนผสมดริป จึงเลือก /iv-drip (คุณเต็มยืนยัน 10 ต.ค. 2026 และเพิ่มการ์ด ALA Booster ที่ /iv-drip#ala แล้ว) -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนหน้า Wix /ala (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: alpha-lipoic-acid-hero.webp -->
@@ -203,7 +202,7 @@ ALA มักถูกขายคู่กับกลูตาไธโอน�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี ไม่อ้างเรื่องผิวขาว (บทความ Wix เดิมขาย ALA คู่ NAC/กลูต้าเพื่อผิวขาว บทความนี้ระบุตรงๆ ว่ายังไม่มีหลักฐาน)
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "ALA คืออะไร" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-22)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): ผลภาษาไทยส่วนใหญ่เป็นหน้าขายสินค้า เปิดหน้า Medical News Today ไม่พูดถึงกลุ่มอาการ Hirata คนเอเชีย ดริป ผิว หรือข้อมูลไทย บทความนี้มีทั้งหมด รวมถึงคำเตือนเรื่องชื่อ ALA ซ้ำกับโอเมก้า 3
 - [x] คำเตือนให้ปรึกษาแพทย์ (ยาเบาหวาน, ตั้งครรภ์, อาการน้ำตาลต่ำ)
 - [x] ลิงก์ภายในไป `/blog/glutathione`

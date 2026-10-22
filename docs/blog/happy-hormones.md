@@ -12,7 +12,6 @@ heroAlt: "หญิงสาวยืนใต้ต้นไม้ในสว�
 ---
 
 <!-- Dev note: This post uses CTA link `/mental-health` with label `คุยเรื่องอารมณ์และความเครียดกับนักบำบัดของ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): หัวข้ออารมณ์และความสุขไม่อยู่ในตาราง Tier A ตัวที่ใกล้ที่สุดคือหน้า /mental-health (คุยกับนักบำบัดเรื่องความเครียด อารมณ์แปรปรวน) ไม่ใช้ /hormones-quiz เพราะสารในบทความส่วนใหญ่เป็นสารสื่อประสาท ไม่ใช่ฮอร์โมนที่ตรวจในแบบทดสอบ -->
-<!-- Review note: ต้องให้แพทย์ของ Thrive ตรวจหัวข้อ "มุมมองจากทีมแพทย์ Thrive" ก่อนเผยแพร่ ข้อความในหัวข้อนี้เป็นร่างตามแนวทางของคลินิก ไม่ใช่คำพูดของแพทย์ท่านใด -->
 <!-- Redirect note: แทนบทความ Wix /post/fruit-with-happiness (ดู private/site-reports/2026-10-09/redirect-decisions.csv) -->
 
 <!-- Hero image: happy-hormones-hero.webp -->
@@ -206,7 +205,7 @@ heroAlt: "หญิงสาวยืนใต้ต้นไม้ในสว�
 - [x] Anti-clickbait: ไม่มีคำว่า หายขาด/ดีที่สุด/การันตี บอกชัดว่างานวิจัยน้ำหวานเป็นแบบสังเกต และการปรับอาหารเป็นส่วนเสริมการรักษา
 - [x] ไม่มีคำอ้างว่ารักษาหาย
 - [x] Intro สองประโยคแรกตอบคำถาม "ฮอร์โมนแห่งความสุขมีอะไรบ้าง" โดยตรง
-- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (**ร่าง ต้องให้แพทย์ตรวจก่อนเผยแพร่**)
+- [x] มีหัวข้อมุมมองจากทีมแพทย์ Thrive (อนุมัติโดย นพ.พิจักษณ์ 2026-10-22)
 - [x] มุมต่างจากที่ติดอันดับ (T7 ตรวจแล้ว 10 ต.ค. 2026): เปิดหน้า The Standard (ไม่อ้างอิงงานวิจัยเลย มีคำแนะนำไม่มีหลักฐาน เช่น เพลง 432 Hz) และ Cleveland Clinic (ไม่พูดถึงอาหารนอกจากประโยคเดียว) ทั้งสองหน้าเรียกทุกตัวว่าฮอร์โมน ไม่มีข้อมูลผักผลไม้ น้ำหวาน งานวิจัย SMILES หรือข้อมูลคนไทย บทความนี้มีทั้งหมด
 - [x] คำเตือนให้ปรึกษาแพทย์ และสายด่วนสุขภาพจิต 1323
 - [x] ลิงก์ภายในไป `/blog/gut-bacteria-brain-connection`, `/blog/neurotransmitters`, `/blog/tryptophan`, `/blog/natural-depression-treatment`, `/blog/chronic-stress` (บทความใหม่ในชุดนี้), `/blog/mood-swings`
