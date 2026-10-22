@@ -8,7 +8,7 @@ seoTitle: "Testosterone Booster ได้ผลจริงไหม ควร�
 seoDescription: "อาหารเสริม testosterone booster ได้ผลจริงไหม งานวิจัยพบว่าส่วนใหญ่ไม่เพิ่มฮอร์โมน อาการแบบไหนบอกว่าฮอร์โมนเพศชายต่ำ ตรวจเลือดอย่างไร และการนอนกับน้ำหนักช่วยได้แค่ไหน"
 ctaService: hormones-quiz
 heroImage: testosterone-booster-hero.webp
-heroAlt: "ผู้ชายวัยสี่สิบกว่ายืนอ่านฉลากอาหารเสริมในร้านขายยาย่านกรุงเทพ สีหน้าลังเล สื่อถึงการตัดสินใจก่อนซื้ออาหารเสริมเพิ่มฮอร์โมน"
+heroAlt: "ลำตัวผู้ชายที่ออกกำลังกายสม่ำเสมอ ยืนกลางแจ้งในแสงแดด สวมสายรัดข้อมือติดตามการออกกำลังกาย สื่อถึงฮอร์โมนเพศชายกับการดูแลร่างกาย"
 ---
 
 <!-- Dev note: This post uses CTA link `/hormones-quiz` with label `เช็กสมดุลฮอร์โมนเบื้องต้นกับ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ตรงกับแถว "hormones, testosterone" → /hormones-quiz -->
@@ -210,7 +210,7 @@ Testosterone booster ส่วนใหญ่ไม่มีหลักฐา�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 10 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed แล้ว ตัวเลขของ [7] ตรวจจาก PMC4445839 มีแหล่งไทย 1 แหล่ง ([10] คณะแพทยศาสตร์ มช.)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (เทสโทสเตอโรน, booster, ฮอร์โมนทดแทน, free testosterone, ซิลเดนาฟิล)

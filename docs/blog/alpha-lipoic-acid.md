@@ -8,7 +8,7 @@ seoTitle: "ALA คืออะไร Alpha Lipoic Acid ช่วยอะไร�
 seoDescription: "ALA คืออะไร Alpha Lipoic Acid ช่วยอะไรได้จริง ลดอาการชาจากเบาหวาน ลดน้ำหนักได้แค่ไหน ปลอดภัยไหม ใครควรระวัง และต่างจาก ALA โอเมก้า 3 อย่างไร สรุปจากงานวิจัย"
 ctaService: iv-drip
 heroImage: alpha-lipoic-acid-hero.webp
-heroAlt: "ผู้หญิงวัยสี่สิบนั่งอ่านฉลากอาหารเสริมที่โต๊ะในครัวบ้านตอนเช้า มีผักโขมและบรอกโคลีวางอยู่ สื่อถึงการเลือกอาหารเสริมอย่างเข้าใจ"
+heroAlt: "ภาพมาโครฟองอากาศในของเหลวสีทอง สื่อถึงกรดอัลฟาไลโปอิกซึ่งเป็นสารต้านอนุมูลอิสระที่ละลายได้ทั้งในน้ำและในไขมัน"
 ---
 
 <!-- Dev note: This post uses CTA link `/iv-drip` with label `ปรึกษาแพทย์เรื่องดริปวิตามินที่ Thrive →`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): ALA ไม่อยู่ในตาราง Tier A บทความ Wix เดิม /ala เป็นหน้า "Essential Booster ALA" ซึ่งเป็นส่วนผสมดริป จึงเลือก /iv-drip (คุณเต็มยืนยัน 10 ต.ค. 2026 และเพิ่มการ์ด ALA Booster ที่ /iv-drip#ala แล้ว) -->
@@ -193,7 +193,7 @@ ALA มักถูกขายคู่กับกลูตาไธโอน�
 - [x] Dev note อยู่ด้านบน
 - [x] สรุปสั้น 5 ข้อ
 - [x] สารบัญลิงก์ครบทุก H2
-- [x] Prompt ภาพ (T5.1): hero 1 + inline 3 (**ยังไม่ได้สร้างภาพ**)
+- [x] Prompt ภาพ (T5.1): hero 1 ภาพ (มีแล้ว)
 - [x] CTA บนและ CTA ล่างอยู่ตามตำแหน่ง
 - [x] อ้างอิง 9 แหล่ง ตรวจชื่อผู้แต่ง ปี เล่ม หน้า และ DOI กับ PubMed แล้ว มีแหล่งไทย 1 แหล่ง ([9] RCT ม.ขอนแก่น ไม่มี DOI ใช้ลิงก์ PubMed)
 - [x] อธิบายศัพท์ตั้งแต่ครั้งแรก (ไมโทคอนเดรีย, กลูตาไธโอน, ปลายประสาทเสื่อม, HbA1c, Hirata)
