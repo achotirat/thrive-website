@@ -41,6 +41,7 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `epispan.mdx` (Astro service page) | 2026-07-02 |
 | `fertility-planning.mdx` (Astro service page, วางแผนมีบุตร) | 2026-10-18 |
 | `allergy-ige.mdx` (Astro service page — content fix: panels, timing, refs) | 2026-10-18 |
+| `about.astro` (clinic photo gallery added, profile unchanged) | 2026-10-23 |
 | `food-intolerance.html` | 2026-05-08 |
 | `adrenal-fatigue.html` | 2026-05-08 |
 | `hormones-quiz.html` | 2026-05-09 |

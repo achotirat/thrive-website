@@ -117,6 +117,40 @@ const crumbs = [
   { label: 'หน้าแรก', href: '/' },
   { label: 'เกี่ยวกับเรา', href: '/about' },
 ];
+
+// Clinic photos (owner-supplied, 2026-10-23). Landscape 960x720, portrait 900x1200.
+const GALLERY = [
+  {
+    src: '/about-clinic-reception-960x720.jpg', width: 960, height: 720, shape: 'landscape', position: '85% center',
+    caption: 'เคาน์เตอร์ต้อนรับ',
+    alt: 'เคาน์เตอร์ต้อนรับไม้โทนอบอุ่นและโลโก้ Thrive Wellness Clinic บนผนัง ที่เดอะ คริสตัล พาร์ค ลาดพร้าว',
+  },
+  {
+    src: '/about-clinic-doctor-consultation-960x720.jpg', width: 960, height: 720, shape: 'landscape',
+    caption: 'ห้องพบแพทย์',
+    alt: 'แพทย์ของ Thrive อธิบายผลตรวจให้ผู้รับบริการฟังในห้องให้คำปรึกษาส่วนตัว',
+  },
+  {
+    src: '/about-clinic-front-desk-960x720.jpg', width: 960, height: 720, shape: 'landscape',
+    caption: 'มุมผลิตภัณฑ์',
+    alt: 'ชั้นวางผลิตภัณฑ์และประกาศนียบัตรด้านหลังเคาน์เตอร์ต้อนรับ Thrive Wellness Clinic',
+  },
+  {
+    src: '/about-clinic-entrance-900x1200.jpg', width: 900, height: 1200, shape: 'portrait',
+    caption: 'หน้าคลินิก',
+    alt: 'ผู้รับบริการยืนยิ้มหน้าป้าย Thrive Clinic ทางเข้าคลินิก',
+  },
+  {
+    src: '/about-clinic-lounge-900x1200.jpg', width: 900, height: 1200, shape: 'portrait',
+    caption: 'มุมนั่งรอ',
+    alt: 'ผู้รับบริการนั่งอ่านเอกสารข้อมูลบริการที่โต๊ะหินอ่อนในมุมนั่งรอของคลินิก',
+  },
+  {
+    src: '/about-clinic-iv-drip-room-900x1200.jpg', width: 900, height: 1200, shape: 'portrait',
+    caption: 'ห้องให้วิตามินทางหลอดเลือด',
+    alt: 'ผู้รับบริการนั่งพักบนเก้าอี้ปรับเอนได้ในห้อง IV Drip ที่มีม่านกั้นเป็นสัดส่วน',
+  },
+];
 ---
 
 <BaseLayout>
@@ -182,6 +216,24 @@ const crumbs = [
     </section>
 
     <section class="section section--white">
+      <div class="container">
+        <div class="section-title-center">
+          <span class="section-label">Inside Thrive</span>
+          <h2 class="section-title">บรรยากาศภายในคลินิก</h2>
+          <p style="color:var(--text-2);max-width:560px;margin:0 auto;">พื้นที่เป็นส่วนตัว สงบ และอบอุ่น ตั้งแต่เคาน์เตอร์ต้อนรับ ห้องพบแพทย์ ไปจนถึงห้องพักผ่อนระหว่างให้วิตามินทางหลอดเลือด</p>
+        </div>
+        <div class="about-gallery">
+          {GALLERY.map((photo) => (
+            <figure class={`about-gallery__item about-gallery__item--${photo.shape}`}>
+              <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" style={photo.position && `object-position:${photo.position}`} />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
       <div class="container">
         <div class="section-title-center">
           <span class="section-label">Our Doctors</span>
@@ -324,3 +376,44 @@ const crumbs = [
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  .about-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .about-gallery__item {
+    position: relative;
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1f5f9;
+  }
+  .about-gallery__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-gallery__item--landscape { aspect-ratio: 4 / 3; }
+  .about-gallery__item--portrait { aspect-ratio: 3 / 4; }
+  .about-gallery__item figcaption {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .92);
+    color: var(--navy);
+    font-size: .78rem;
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .about-gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .about-gallery__item--landscape,
+    .about-gallery__item--portrait { aspect-ratio: 4 / 5; }
+    .about-gallery__item figcaption { left: 8px; bottom: 8px; font-size: .7rem; padding: 3px 10px; }
+  }
+</style>
