@@ -1,5 +1,6 @@
-# Staging site — noindex until cutover to www.thrivewellnessth.com
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
 
-# Remove this file and update netlify.toml X-Robots-Tag at cutover
+Sitemap: https://www.thrivewellnessth.com/sitemap-index.xml
