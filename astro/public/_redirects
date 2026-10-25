@@ -2,6 +2,9 @@
 # First match wins: specific rules first, /post/* catch-all last.
 # Thai paths are listed raw and percent-encoded.
 
+# Wix sitemap path (Search Console may still have it submitted)
+/sitemap.xml  /sitemap-index.xml  301
+
 # Renamed pages (17, url-map.csv)
 /immunesystem  /blog/immunesystem/  301
 /health-concerns/mood-swings  /blog/mood-swings/  301
