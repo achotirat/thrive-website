@@ -11,17 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Netlify preview site
+      - name: Check live site
         run: |
           curl --fail --silent --show-error --location --max-time 20 \
-            https://new.thrivewellnessth.com \
+            https://www.thrivewellnessth.com \
             --output /tmp/new-site.html
           test -s /tmp/new-site.html
 
-      - name: Confirm preview site remains noindex
+      - name: Confirm live site is indexable
         run: |
-          curl --fail --silent --show-error --head --max-time 20 \
-            https://new.thrivewellnessth.com \
+          ! curl --fail --silent --show-error --head --max-time 20 \
+            https://www.thrivewellnessth.com \
             | grep -i "x-robots-tag: noindex"
 
       - name: Check lead API health endpoint

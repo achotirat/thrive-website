@@ -47,7 +47,7 @@ option. Decide the policy, then Claude can implement:
 2. Banner needs an explicit decline button either way.
 3. After implementation, re-test conversions in Tag Assistant in BOTH consent states.
 
-## 4. Cutover checklist — 📅 SCHEDULED FOR OCTOBER 2026 (hard deadline: Wix expires November 2026)
+## 4. Cutover checklist — 🔶 DNS MOVED 2026-10-25 (www + apex → Netlify, SSL issued, www primary; steps 2–5 in PR #94/#116; steps 6–7 owner)
 
 **Timeline (noted 2026-07-15):** execute the cutover in October 2026 so the new site is
 live, indexed, and redirects are proven BEFORE the Wix subscription lapses in November.

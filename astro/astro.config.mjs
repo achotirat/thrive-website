@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://new.thrivewellnessth.com',
+  site: 'https://www.thrivewellnessth.com',
   output: 'static',
   // Wix blog post replaced by the วางแผนมีบุตร service page
   redirects: {
