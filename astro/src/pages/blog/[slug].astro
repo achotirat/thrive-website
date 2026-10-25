@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
 import BlogCTA from '../../components/BlogCTA.astro'
 import { DOCTORS } from '../../lib/doctors'
+import { normalizeBodyHeadings } from '../../lib/blogBodyHeadings.mjs'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blogPosts')
@@ -20,7 +21,7 @@ const faqItems = (d.faq ?? []).map((item) => ({
   answer: item.shortAnswer ?? '',
 }))
 
-const bodyHtml = (d.legacyHtml ?? '').replace(/<img(?![^>]*loading=)/g, '<img loading="lazy"')
+const bodyHtml = normalizeBodyHeadings(d.legacyHtml ?? '', d.title).replace(/<img(?![^>]*loading=)/g, '<img loading="lazy"')
 
 const seoDescriptionFallback = (d.legacyHtml ?? '')
   .replace(/<[^>]+>/g, '')
