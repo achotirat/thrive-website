@@ -197,6 +197,7 @@ for English content).
 | Intravenous | delivered directly into the bloodstream (IV) |
 | Inflammation | your immune system's "on" switch — helpful short-term, harmful when chronic |
 | Bioavailability | how much of a nutrient your body actually absorbs and uses |
+| Functional Medicine (Thai copy) | write **Functional Medicine** or **การแพทย์แบบองค์รวม** — never "เวชศาสตร์เชิงฟังก์ชัน" (owner rule, 2026-10-25) |
 
 ---
 

@@ -6,7 +6,7 @@
 <!-- URL slug: /blog/gut-bacteria-brain-connection -->
 <!-- Target keyword: แบคทีเรียในลำไส้ส่งผลต่อสมองอย่างไร -->
 <!-- Secondary keywords: กรดไขมันสายสั้น SCFA, สมองที่สอง, จุลินทรีย์ในลำไส้กับอารมณ์, gut-brain axis ภาษาไทย, ลำไส้รั่วส่งผลต่อสุขภาพจิต -->
-<!-- Author: ทีมแพทย์เวชศาสตร์เชิงฟังก์ชัน, Thrive Wellness Center -->
+<!-- Author: ทีมแพทย์ Functional Medicine, Thrive Wellness Center -->
 <!-- Date published: 2026-06-08 -->
 <!-- Date modified: 2026-06-08 -->
 
