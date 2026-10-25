@@ -38,6 +38,11 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-10-25 — ลิงก์โซเชียล + รูปหน้าตรวจฮอร์โมน
+
+- ปุ่ม Facebook / YouTube / Instagram ที่แถบบนสุดและ footer ลิงก์ไปเพจจริงแล้ว (เปิดแท็บใหม่) และเพิ่ม YouTube ใน `sameAs` ของ JSON-LD หน้าแรก / about / contact
+- รูป hero ของ `/check-up/hormones` เปลี่ยนเป็น `check-up-hormones-imbalance-1200x630.jpg` (ฮอร์โมนไม่สมดุล ไม่น่ากลัวเท่าไม่รู้ว่าฮอร์โมนไม่สมดุล)
+
 ## 2026-10-18 — กล่องหัวข้อฮอร์โมนแบบ V3+V2
 
 - รวม PR #95 (แบบทดสอบแยก 5 หัวข้อที่ `/hormones-quiz/<slug>`) เข้ากับกล่องรูปของ PR #104
