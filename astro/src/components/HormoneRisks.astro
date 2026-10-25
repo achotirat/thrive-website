@@ -1,0 +1,156 @@
+---
+// "Common risks of untreated hormone imbalance": three cards (owner copy) shown
+// on /check-up/hormones above the topic quiz cards.
+type Risk = {
+  th: string;
+  en: string;
+  color: string;
+  image: string;
+  alt: string;
+  position: string;
+  intro: string;
+  signs: string[];
+  longTerm: string;
+  link: { label: string; href: string };
+};
+
+const risks: Risk[] = [
+  {
+    th: 'วัยทองก่อนวัย',
+    en: 'Early Menopause',
+    color: '#9a6fb0',
+    image: '/hormones/risk-early-menopause.jpg',
+    alt: 'ผู้หญิงวัย 40 ปี ช่วงที่ฮอร์โมนเพศเริ่มแปรปรวน',
+    position: 'center top',
+    intro: 'ผู้หญิงจำนวนไม่น้อยเริ่มเข้าสู่ช่วงก่อนหมดประจำเดือน (Perimenopause) ตั้งแต่ช่วงอายุ 40 ปี ระดับเอสโตรเจนและโปรเจสเตอโรนจะเริ่มแปรปรวน จนเกิดอาการที่กระทบทั้งชีวิตประจำวันและการทำงาน การหมดประจำเดือนก่อนอายุ 45 ปี ถือว่าเร็วกว่าปกติ',
+    signs: [
+      'ประจำเดือนมาไม่ตรงรอบ หรือมามากน้อยผิดปกติ',
+      'ร้อนวูบวาบ เหงื่อออกตอนกลางคืน',
+      'อารมณ์แปรปรวน หงุดหงิดง่าย',
+      'นอนหลับยาก หลับไม่สนิท',
+    ],
+    longTerm: 'เอสโตรเจนช่วยปกป้องกระดูกและหลอดเลือด การหมดประจำเดือนเร็วจึงเพิ่มความเสี่ยงต่อโรคกระดูกพรุนและโรคหัวใจและหลอดเลือด หากตรวจพบความเปลี่ยนแปลงตั้งแต่ระยะแรก แพทย์จะวางแผนดูแลได้อย่างทันท่วงที',
+    link: { label: 'ประเมินสัญญาณวัยทอง', href: '/hormones-quiz/menopause' },
+  },
+  {
+    th: 'ภาวะต่อมหมวกไตล้า',
+    en: 'Adrenal Fatigue',
+    color: '#d98c3a',
+    image: '/hormones/risk-adrenal-fatigue.jpg',
+    alt: 'ผู้หญิงเครียดและอ่อนล้าจากความกดดันสะสม',
+    position: 'center top',
+    intro: 'ต่อมหมวกไตผลิตคอร์ติซอล (Cortisol) เพื่อช่วยให้ร่างกายรับมือกับความเครียด ผู้ที่อยู่ภายใต้แรงกดดันจากการทำงานและความรับผิดชอบเป็นเวลานาน อาจมีจังหวะการหลั่งคอร์ติซอลผิดปกติ ตัวอย่างเช่น คอร์ติซอลต่ำในช่วงเช้าซึ่งร่างกายควรตื่นตัว แต่กลับสูงในช่วงกลางคืนซึ่งร่างกายควรได้พักผ่อน',
+    signs: [
+      'ตื่นนอนไม่สดชื่น แม้นอนหลับเพียงพอ',
+      'ต้องพึ่งกาแฟหรือของหวานเพื่อให้มีแรงทำงาน',
+      'อ่อนล้าในช่วงบ่าย แต่ตาสว่างเมื่อถึงเวลานอน',
+      'เจ็บป่วยบ่อย และฟื้นตัวช้า',
+    ],
+    longTerm: 'หากปล่อยไว้นาน ร่างกายจะฟื้นตัวจากความเหนื่อยล้าได้ยากขึ้น ความไม่สมดุลของคอร์ติซอลยังส่งผลต่อเนื่องไปยังฮอร์โมนเพศ ไทรอยด์ และระบบเผาผลาญ',
+    link: { label: 'อ่านเรื่องต่อมหมวกไตล้า', href: '/adrenal-fatigue' },
+  },
+  {
+    th: 'ระบบเผาผลาญเสียสมดุล',
+    en: 'Metabolic Imbalance',
+    color: '#5e8f5a',
+    image: '/hormones/risk-metabolic.jpg',
+    alt: 'กาแฟและน้ำตาล สื่อถึงความอยากอาหารหวานจากระบบเผาผลาญที่เสียสมดุล',
+    position: 'center',
+    intro: 'ฮอร์โมนหลายชนิดควบคุมการเผาผลาญพลังงาน ได้แก่ ฮอร์โมนไทรอยด์ อินซูลิน คอร์ติซอล และฮอร์โมนเพศ เมื่อฮอร์โมนเหล่านี้เสียสมดุล ร่างกายจะเผาผลาญได้น้อยลงและสะสมไขมันได้ง่ายขึ้น โดยเฉพาะบริเวณหน้าท้อง แม้จะควบคุมอาหารและออกกำลังกายอย่างสม่ำเสมอ',
+    signs: [
+      'น้ำหนักเพิ่มขึ้น ทั้งที่รับประทานอาหารเท่าเดิม',
+      'ไขมันสะสมบริเวณหน้าท้องและรอบเอว',
+      'มวลกล้ามเนื้อลดลง',
+      'หิวบ่อย และอยากอาหารหวาน',
+    ],
+    longTerm: 'ไขมันสะสมในช่องท้อง (Visceral Fat) เพิ่มความเสี่ยงต่อภาวะดื้ออินซูลิน เบาหวานชนิดที่ 2 ไขมันในเลือดสูง และโรคหัวใจและหลอดเลือด',
+    link: { label: 'ประเมินระบบเผาผลาญ', href: '/hormones-quiz/weight-thyroid' },
+  },
+];
+---
+
+<section class="section hormone-risks" aria-labelledby="hormone-risks-title">
+  <div class="section-container">
+    <div class="section-title-center">
+      <span class="section-label">ทำไมไม่ควรรอ</span>
+      <h2 class="section-title" id="hormone-risks-title">ความเสี่ยงที่พบบ่อย หากปล่อยให้ฮอร์โมนไม่สมดุล</h2>
+      <p class="section-desc">ความไม่สมดุลของฮอร์โมนมักเริ่มต้นอย่างเงียบๆ อาการในระยะแรกจึงมักถูกมองว่าเป็นเรื่องของอายุหรือความเหนื่อยล้าจากการทำงาน แต่หากปล่อยไว้โดยไม่ได้รับการดูแล ความไม่สมดุลเหล่านี้อาจส่งผลต่อสุขภาพในระยะยาว</p>
+    </div>
+    <div class="hormone-risks__grid">
+      {risks.map((r, i) => (
+        <article class="hormone-risk" style={`--risk-color:${r.color}`}>
+          <img src={r.image} alt={r.alt} loading="lazy" width="800" height="600" style={`object-position:${r.position}`} />
+          <div class="hormone-risk__body">
+            <span class="hormone-risk__en">{i + 1}. {r.en}</span>
+            <h3>{r.th}</h3>
+            <p>{r.intro}</p>
+            <h4>สัญญาณที่ควรสังเกต</h4>
+            <ul>
+              {r.signs.map((s) => <li>{s}</li>)}
+            </ul>
+            <div class="hormone-risk__long">
+              <strong>ความเสี่ยงระยะยาว:</strong> {r.longTerm}
+            </div>
+            <a class="hormone-risk__link" href={r.link.href}>{r.link.label} →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hormone-risks { background: var(--cream-xl); }
+  .hormone-risks .section-desc { max-width: 760px; margin-inline: auto; }
+  .hormone-risks__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-6);
+    margin-top: var(--sp-8);
+  }
+  .hormone-risk {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 2px solid var(--risk-color);
+    border-top-width: 6px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(91, 71, 55, .08);
+  }
+  .hormone-risk img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .hormone-risk__body { display: flex; flex-direction: column; flex: 1; padding: var(--sp-4) var(--sp-5) var(--sp-5); }
+  .hormone-risk__en {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--risk-color);
+  }
+  .hormone-risk h3 { font-size: 1.15rem; line-height: 1.45; margin: var(--sp-1) 0 var(--sp-2); color: var(--navy); }
+  .hormone-risk p { font-size: .9rem; line-height: 1.75; color: var(--text-2); margin: 0 0 var(--sp-4); }
+  .hormone-risk h4 { font-size: .95rem; margin: 0 0 var(--sp-2); color: var(--navy); }
+  .hormone-risk ul { margin: 0 0 var(--sp-4); padding-left: 1.2em; }
+  .hormone-risk li { font-size: .9rem; line-height: 1.7; color: var(--text-2); }
+  .hormone-risk li::marker { color: var(--risk-color); }
+  .hormone-risk__long {
+    font-size: .88rem;
+    line-height: 1.7;
+    color: var(--text-2);
+    background: color-mix(in srgb, var(--risk-color) 9%, white);
+    border-left: 4px solid var(--risk-color);
+    border-radius: 10px;
+    padding: var(--sp-3) var(--sp-4);
+    margin-bottom: var(--sp-4);
+  }
+  .hormone-risk__long strong { color: var(--risk-color); }
+  .hormone-risk__link {
+    margin-top: auto;
+    align-self: flex-start;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--risk-color);
+    text-decoration: none;
+  }
+  .hormone-risk__link:hover { text-decoration: underline; }
+</style>
