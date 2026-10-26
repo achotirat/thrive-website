@@ -15,8 +15,13 @@ export default defineConfig({
     sitemap({
       // noindexed pages don't belong in the sitemap: /thank-you (conversion
       // confirmation), /lp/* (ads landing pages, canonical to service pages),
-      // and /crystal-quiz (booth event quiz, noIndex: true)
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/lp/') && !page.includes('/crystal-quiz'),
+      // /crystal-quiz (booth event quiz, noIndex: true) and the per-topic
+      // hormone quizzes /hormones-quiz/<topic>/ (noIndex: true)
+      filter: (page) =>
+        !page.includes('/thank-you') &&
+        !page.includes('/lp/') &&
+        !page.includes('/crystal-quiz') &&
+        !/\/hormones-quiz\/[^/]+\/$/.test(page),
     }),
   ],
 });
