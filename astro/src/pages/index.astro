@@ -244,7 +244,7 @@ const jsonLd = [
   <!-- ── Hero ──────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner hero__inner--banner">
         <div>
           <h1 class="hero__title">เหนื่อยไม่หาย<br>ไม่ใช่เรื่องปกติ</h1>
           <p class="hero__subtitle">
@@ -280,10 +280,10 @@ const jsonLd = [
             </div>
           </div>
         </div>
-        <div class="hero__media">
+        <div class="hero__media hero__media--banner">
           <img
-            src="/home-hero-morning.jpg"
-            alt="ผู้หญิงยืดตัวบนเตียงยามเช้า สดชื่นพร้อมเริ่มวันใหม่"
+            src="/home-hero-warning-signs-1200x630.webp"
+            alt="สัญญาณเตือน ร่างกายคุณจะไม่ไหว: ผู้หญิงเอามือกุมศีรษะ ล้อมด้วยอาการ เวียนศีรษะ ฮอร์โมนเพศพร่อง การขจัดสารพิษไม่ดี สิวอักเสบ ผดผื่นแพ้ระคายเคืองง่าย ความเครียดความกังวลพุ่งสูง ขาดแร่ธาตุ และนอนไม่หลับร้อนวูบวาบ"
             width="1200"
             height="630"
             fetchpriority="high"
@@ -295,11 +295,23 @@ const jsonLd = [
 
   <!-- ── Overview + care approach ─────────────────────────────── -->
   <section class="section home-overview">
-    <div class="section-container home-overview__inner">
+    <div class="section-container home-overview__grid">
+      <div class="home-overview__inner">
       <span class="section-label">ภาพรวม</span>
       <h2 class="section-title">คลินิกเวชศาสตร์เชิงฟังก์ชันในกรุงเทพมหานคร</h2>
       <p>Thrive Wellness เป็นคลินิกเวชศาสตร์เชิงฟังก์ชัน (Functional Medicine) ในกรุงเทพมหานคร ให้การดูแลด้านเวชศาสตร์ชะลอวัย (Anti-aging) การปรับสมดุลฮอร์โมน (Hormone Balance) และเวชศาสตร์ฟื้นฟู (Regenerative Medicine) โดยทีมแพทย์เฉพาะทาง</p>
       <p>คลินิกมุ่งค้นหาต้นเหตุของปัญหาสุขภาพด้วยการตรวจวิเคราะห์เชิงลึก แล้วจึงวางแผนการดูแลที่ออกแบบเฉพาะบุคคล เพราะเราเชื่อว่าร่างกายของแต่ละบุคคลต่างกัน การดูแลจึงต่างกัน เราให้ความสำคัญกับการที่ร่างกายฟื้นฟูได้ด้วยตัวเอง โดยการเสริมวิตามิน แร่ธาตุ สารอาหารให้เหมาะกับร่างกาย รวมถึงการปรับเปลี่ยน Lifestyle ที่ช่วยเสริมความแข็งแรงของร่างกาย และชะลอความเสื่อมตามวัย เพื่อรักษาพลังงาน ความกระฉับกระเฉง และคุณภาพชีวิตที่ดีในระยะยาว</p>
+      </div>
+      <figure class="home-overview__media">
+        <img
+          src="/home-clinic-overview-720x653.webp"
+          alt="Thrive Wellness Clinic Discover a Healthier You: บรรยากาศในคลินิก แพทย์ให้คำปรึกษา ผู้รับบริการรับวิตามินทางหลอดเลือด และบริการด้าน Nutrition, Hormone, Detoxification, Gut Health, Mental Health, Vitamin & Anti-Oxidant"
+          width="720"
+          height="653"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
     </div>
   </section>
 
@@ -564,8 +576,36 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+  /* Hero banner: show the full 1200x630 artwork (it carries text), never crop */
+  .hero__inner--banner { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
+  .hero__media--banner img {
+    aspect-ratio: 1200 / 630;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+  .hero__media--banner::after { display: none; }
+
   .home-overview { background: var(--white); }
-  .home-overview__inner { max-width: 860px; }
+  .home-overview__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    gap: var(--sp-12);
+    align-items: center;
+  }
+  .home-overview__media { margin: 0; }
+  .home-overview__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(91, 71, 55, .14);
+  }
+  @media (max-width: 1024px) {
+    .hero__inner--banner { grid-template-columns: 1fr; }
+    .home-overview__grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+    .home-overview__media { max-width: 560px; margin: 0 auto; }
+  }
   .home-overview__inner p,
   .home-split p,
   .home-panel p { color: var(--text-2); line-height: 1.9; margin: 0 0 var(--sp-4); }
