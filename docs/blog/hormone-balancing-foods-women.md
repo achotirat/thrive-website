@@ -12,7 +12,6 @@ heroAlt: "งาดำเต็มช้อนไม้วางบนผ้า�
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/hormones` with label `ตรวจสมดุลฮอร์โมนกับ Thrive →`. Sticky CTA uses ctaService `hormones-quiz`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): topic = hormones / menopause → /hormones-quiz (sticky) + /check-up/hormones (package lists Estradiol, Testosterone, Progesterone, FSH/LH context). Brief: docs/blog/briefs/hormone-balancing-foods-women-brief.md -->
-<!-- Review note: หัวข้อ "มุมมองจากแพทย์ Thrive" — นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำแล้ว 2026-10-28 -->
 <!-- Claim note: ห้ามเขียนว่างาดำ "เพิ่มฮอร์โมน" "รักษาวัยทอง" หรือ "แทนฮอร์โมนบำบัด" งานวิจัยในคนมีขนาดเล็ก ผลต่อฮอร์โมนเพศยังไม่ชัด (Wu 2006: SHBG ต่างจากยาหลอกแบบไม่มีนัยสำคัญ P = 0.065) -->
 
 <!-- Hero image: hormone-balancing-foods-women-hero.webp -->

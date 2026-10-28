@@ -12,7 +12,6 @@ heroAlt: "สมุดโน้ตเขียนคำว่า HORMONES บน
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/hormones` with label `ตรวจฮอร์โมนกับ Thrive →`. Sticky CTA uses ctaService `hormones-quiz`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): topic = hormones / testosterone / PCOS → /hormones-quiz (sticky) + /check-up/hormones (package lists Testosterone, DHEA-S, Insulin). Brief: docs/blog/briefs/high-androgen-in-women-brief.md -->
-<!-- Review note: หัวข้อ "มุมมองจากแพทย์ Thrive" — นพ.พิจักษณ์ (หมอบาย) อ่านและอนุมัติถ้อยคำแล้ว 2026-10-28 -->
 <!-- Claim note: แพ็กเกจ /check-up/hormones ระบุ Testosterone, DHEA-S, Insulin แต่ไม่ได้ระบุ SHBG / free testosterone / 17-OHP / AMH จึงห้ามเขียนว่า "ตรวจ SHBG หรือ free testosterone ที่ Thrive" จนกว่าคลินิกจะยืนยัน ยาเขียนเป็นกลุ่มยาเท่านั้น ห้ามใส่ชื่อการค้า (กฎโฆษณายา) -->
 
 <!-- Hero image: high-androgen-in-women-hero.webp -->

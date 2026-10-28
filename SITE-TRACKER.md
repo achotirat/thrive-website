@@ -163,8 +163,8 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | `docs/blog/insulin-resistance-symptoms.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
 | `docs/blog/weight-loss-pen-who-should-use.md` (Sanity pipeline, doctor quote — DRAFT, pending หมอบาย approval) | 2026-10-17 |
 | Photo replaced site-wide (new portrait, `docs/blog/doctor Bye.jpg` → `dr-pijak-wongvisit-thrive-400x400.jpg`) + `about.astro` team card photo & JSON-LD image | 2026-10-17 |
-| `docs/blog/hormone-balancing-foods-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `hormone-balancing-foods-women-hero.webp` added) | 2026-10-28 |
-| `docs/blog/high-androgen-in-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `high-androgen-in-women-hero.webp` added) | 2026-10-28 |
+| `docs/blog/hormone-balancing-foods-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `hormone-balancing-foods-women-hero.webp` — published to Sanity, live after PR #120 merge) | 2026-10-28 |
+| `docs/blog/high-androgen-in-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `high-androgen-in-women-hero.webp` — published to Sanity, live after PR #120 merge) | 2026-10-28 |
 
 ---
 
