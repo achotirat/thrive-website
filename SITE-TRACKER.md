@@ -165,6 +165,8 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-pijak`
 | Photo replaced site-wide (new portrait, `docs/blog/doctor Bye.jpg` → `dr-pijak-wongvisit-thrive-400x400.jpg`) + `about.astro` team card photo & JSON-LD image | 2026-10-17 |
 | `docs/blog/hormone-balancing-foods-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `hormone-balancing-foods-women-hero.webp` — published to Sanity, live after PR #120 merge) | 2026-10-28 |
 | `docs/blog/high-androgen-in-women.md` (Sanity pipeline, doctor quote — หมอบาย approved, hero `high-androgen-in-women-hero.webp` — published to Sanity, live after PR #120 merge) | 2026-10-28 |
+| `docs/blog/hypothyroidism-symptoms.md` (Sanity pipeline, doctor quote — หมอบาย approved 2026-10-31, hero `hypothyroidism-symptoms-hero.webp` — published to Sanity; ~5,000 words, 8 H2, 4 tables, 6 FAQ, 13 refs; plagiarism check: original ✅) | 2026-10-31 |
+| `docs/blog/hypothyroidism-foods-to-avoid.md` (Sanity pipeline, doctor quote — หมอบาย approved 2026-10-31, hero `hypothyroidism-foods-to-avoid-hero.webp` — published to Sanity; ~3,900 words, 7 H2, 3 tables, 7 FAQ, 12 refs; plagiarism check: original ✅) | 2026-10-31 |
 
 ---
 
