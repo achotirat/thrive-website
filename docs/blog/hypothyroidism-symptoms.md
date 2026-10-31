@@ -8,13 +8,12 @@ seoTitle: "ไทรอยด์ต่ำ อาการเป็นอย่�
 seoDescription: "ไทรอยด์ต่ำ อาการมีอะไรบ้าง เหนื่อยง่าย น้ำหนักขึ้น ขี้หนาว ผิวแห้ง ซ้อมหนักพร้อมอดอาหารทำค่า T3 ต่ำได้อย่างไร อ่านค่า TSH FT4 อย่างไร แพทย์ Thrive อธิบาย"
 ctaService: hormones-quiz
 heroImage: hypothyroidism-symptoms-hero.webp
-heroAlt: "ชายไทยวัย 30 ปลายนั่งพักบนม้านั่งในยิมหลังซ้อม มือถือขวดน้ำ สีหน้าเหนื่อยล้าและครุ่นคิด แสงธรรมชาติยามเช้า"
+heroAlt: "ผู้หญิงไทยวัยทำงานใช้มือแตะบริเวณลำคอด้านหน้า หลับตา สีหน้าอ่อนล้า พื้นหลังสีเทาอ่อน"
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/hormones` with label `ตรวจไทรอยด์ครบชุดกับ Thrive →`. Sticky CTA uses ctaService `hormones-quiz`. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. CTA choice (T0.1): topic = hormones / thyroid → /hormones-quiz (sticky) + /check-up/hormones (package includes Free T3, Free T4, TSH, Anti-TPO). Brief: docs/blog/briefs/hypothyroidism-symptoms-brief.md -->
 <!-- Claim note: ห้ามเขียนว่า "ออกกำลังกายหนักทำให้เป็นโรคไฮโปไทรอยด์" งานวิจัยชี้ว่าที่ทำให้ T3 ลดคือพลังงานไม่พอ (Loucks 1993: ปริมาณ/ความหนักของการออกกำลังกายไม่มีผลเมื่อกินพอ) และ low-T3 จากการขาดพลังงานคนละภาวะกับโรคไฮโปไทรอยด์ปฐมภูมิ (TSH สูง FT4 ต่ำ) -->
 <!-- Celebrity note: กล่าวถึงณเดชน์ 1 ครั้งในหัวข้อ #exercise-energy เท่านั้น อ้างข่าว [13] ห้ามใช้ชื่อใน H1, slug, meta, alt หรือภาพ ไม่เขียนเป็นการรับรองคลินิก ไม่ตีความผลตรวจของเขาเกินกว่าที่ข่าวรายงาน -->
-<!-- Review note: คำพูดในหัวข้อมุมมองแพทย์ — DRAFT รอหมอบายอนุมัติถ้อยคำก่อนเผยแพร่ -->
 
 <!-- Hero image: hypothyroidism-symptoms-hero.webp -->
 

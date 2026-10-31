@@ -8,12 +8,11 @@ seoTitle: "ไทรอยด์ต่ำ ห้ามกินอะไร ก�
 seoDescription: "ไทรอยด์ต่ำ ห้ามกินอะไรจริงไหม กะหล่ำ ถั่วเหลือง กาแฟ ไก่ กลูเตน แพทย์ Thrive สรุปจากงานวิจัย พร้อมวิธีกินยาไทรอยด์ให้ไม่ถูกอาหารและอาหารเสริมรบกวน"
 ctaService: hormones-quiz
 heroImage: hypothyroidism-foods-to-avoid-hero.webp
-heroAlt: "จานอาหารไทยมื้อเช้าบนโต๊ะไม้ มีข้าว ผัดผักคะน้า ไข่ต้ม และกาแฟดำหนึ่งแก้ววางห่างออกไป แสงแดดยามเช้า"
+heroAlt: "ไข่ แซลมอน อกไก่ อัลมอนด์ เมล็ดพืช บรอกโคลี อะโวคาโด และชีส จัดวางบนโต๊ะสีขาว"
 ---
 
 <!-- Dev note: In-body CTA blocks link `/check-up/hormones` with label `ตรวจไทรอยด์ครบชุดกับ Thrive →`. Sticky CTA uses ctaService `hormones-quiz`. Secondary in-body links: /personalized-vitamins, /food-intolerance. Wire to the sticky CTA component. Component must be responsive (mobile / iPad / desktop) and visible within the first 3 viewport-heights on page load. Brief: docs/blog/briefs/hypothyroidism-foods-to-avoid-brief.md -->
 <!-- Claim note: ห้ามเขียนว่าอาหารใด "รักษา" หรือ "ฟื้นฟู" ไทรอยด์ ห้ามแนะนำให้งดกลูเตนทุกคน (Krysiak 2019 เป็น pilot 34 คน เฉพาะผู้มี anti-tTG บวก) ซีลีเนียมลด Anti-TPO ได้แต่หลักฐานคุณภาพต่ำและยังไม่รู้ว่าช่วยอาการไหม (Wichman 2016) -->
-<!-- Review note: คำพูดในหัวข้อมุมมองแพทย์ — DRAFT รอหมอบายอนุมัติถ้อยคำก่อนเผยแพร่ -->
 
 <!-- Hero image: hypothyroidism-foods-to-avoid-hero.webp -->
 
