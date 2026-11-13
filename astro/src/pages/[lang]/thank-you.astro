@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import { localizedPath } from '../../i18n/routes';
+
+export function getStaticPaths() {
+  return (['en'] as const).map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+---
+<BaseLayout lang="en">
+  <SEO slot="head" seoTitle="Thank you for contacting Thrive" description="We have received your appointment request." canonicalPath={`/${lang}/thank-you`} ogImage="/og-image.jpg" noIndex />
+  <main class="section"><div class="section-container" style="max-width:700px;text-align:center;min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+    <h1>Thank you for contacting us</h1>
+    <p>We have received your request. Our team will contact you during opening hours to confirm availability, including English-speaking support. Your appointment is not confirmed yet.</p>
+    <a class="btn btn-primary" href={localizedPath(lang, '')}>Back to home</a>
+  </div></main>
+</BaseLayout>

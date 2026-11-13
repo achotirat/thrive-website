@@ -38,6 +38,15 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-11-13 — แยกเว็บภาษาอังกฤษออกจาก PR #93 (English only)
+
+- เจ้าของต้องการ merge เฉพาะภาษาอังกฤษก่อน: rebase `feature/i18n-english-chinese` (PR #93) บน `main` ล่าสุด แก้ conflict ใน `LeadForm.astro` โดยใช้ logic ของ main (`stageLeadConversion`, Turnstile reset) แล้วต่อด้วย `thanksPath` ตามภาษา
+- ตัดภาษาจีนออกจาก routes, language switcher, hreflang, `pages.ts`, `enhancements.ts`, `LeadForm`, `BaseLayout` (consent + ฟอนต์ Noto Sans SC), หน้า thank-you และ `SITE-TRACKER.md` → เหลือ `/en/` 7 หน้า + `/en/thank-you`
+- `astro check` 0 errors, build 62 หน้า, `npm test` 68 ผ่าน, ไม่มี `zh-cn` ใน `dist/`
+- งานภาษาจีนยังอยู่ที่ branch `feature/i18n-english-chinese` ไว้ทำ PR ถัดไป
+- ยังต้องทำก่อนเปิดจริง: ให้ผู้เชี่ยวชาญตรวจคำแพทย์/consent ภาษาอังกฤษ, ยืนยันสิทธิ์ใช้รูป (โดยเฉพาะรูป IV drip), รูป HBOT จริง, เช็กว่า sitemap ที่ Astro generate ใช้ได้บน deploy preview
+- บทเรียน: เมื่อ feature แชร์ไฟล์ร่วมกับโค้ดเดิม (LeadForm/BaseLayout) ให้ rebase ก่อนตัด scope เพื่อไม่ต้องแก้ conflict ซ้ำ
+
 ## 2026-10-25 — ลิงก์โซเชียล + รูปหน้าตรวจฮอร์โมน
 
 - ปุ่ม Facebook / YouTube / Instagram ที่แถบบนสุดและ footer ลิงก์ไปเพจจริงแล้ว (เปิดแท็บใหม่) และเพิ่ม YouTube ใน `sameAs` ของ JSON-LD หน้าแรก / about / contact
