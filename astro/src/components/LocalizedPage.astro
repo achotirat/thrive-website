@@ -8,28 +8,23 @@ import { enhancements } from '../i18n/enhancements';
 import type { LocalizedSlug } from '../i18n/routes';
 import type { LocalizedPageData } from '../i18n/pages';
 
-export interface Props { lang: 'en' | 'zh-cn'; slug: LocalizedSlug; data: LocalizedPageData }
+export interface Props { lang: 'en'; slug: LocalizedSlug; data: LocalizedPageData }
 const { lang, slug, data } = Astro.props;
-const zh = lang === 'zh-cn';
-const bookingNote = zh
-  ? { heading: '如需中文沟通，请提前预约。', detail: '请提供希望到访的日期，以便我们安排中文沟通服务。团队确认可预约时间后再前来。' }
-  : { heading: 'Please book in advance if you need English-speaking support.', detail: 'English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.' };
+const bookingNote = { heading: 'Please book in advance if you need English-speaking support.', detail: 'English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.' };
 const detail = enhancements[lang][slug];
 const allFaq = [...data.faq, ...detail.moreFaq];
-const labels = zh
-  ? { home: '首页', about: '关于我们', contact: '联系我们', 'iv-drip': '静脉营养', 'check-up': '健康检查', hbot: '高压氧 HBOT', 'mental-health': '心理健康', line: '通过 LINE 联系', hours: '每天 10:00–19:00', faq: '常见问题', explore: '了解服务', map: '查看地图' }
-  : { home: 'Home', about: 'About', contact: 'Contact', 'iv-drip': 'IV Drip', 'check-up': 'Health Check-ups', hbot: 'HBOT', 'mental-health': 'Mental Health', line: 'Message on LINE', hours: 'Open daily 10:00–19:00', faq: 'Frequently asked questions', explore: 'Explore our services', map: 'View map' };
+const labels = { home: 'Home', about: 'About', contact: 'Contact', 'iv-drip': 'IV Drip', 'check-up': 'Health Check-ups', hbot: 'HBOT', 'mental-health': 'Mental Health', line: 'Message on LINE', hours: 'Open daily 10:00–19:00', faq: 'Frequently asked questions', explore: 'Explore our services', map: 'View map' };
 const path = localizedPath(lang, slug);
 const navSlugs: LocalizedSlug[] = ['', 'iv-drip', 'check-up', 'hbot', 'mental-health', 'about', 'contact'];
 const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
 ---
-<BaseLayout lang={zh ? 'zh-CN' : 'en'}>
-  <SEO slot="head" seoTitle={data.title} description={data.description} canonicalPath={path} ogImage={detail.heroPhoto.src} heroImage={detail.heroPhoto.src} ogLocale={zh ? 'zh_CN' : 'en_US'} hreflang={[{ lang, href: path }]} faqs={allFaq} />
+<BaseLayout lang="en">
+  <SEO slot="head" seoTitle={data.title} description={data.description} canonicalPath={path} ogImage={detail.heroPhoto.src} heroImage={detail.heroPhoto.src} ogLocale="en_US" hreflang={[{ lang, href: path }]} faqs={allFaq} />
   <div class="localized-topbar"><div class="section-container"><span>Thrive Wellness Clinic · Bangkok</span><span>{labels.hours} · 095-934-9640</span></div></div>
   <header class="localized-header">
     <div class="section-container localized-header__inner">
       <a href={localizedPath(lang, '')} aria-label="Thrive Wellness Clinic"><img src="/Thrive-logo-160px.png" alt="Thrive Wellness Clinic" width="48" height="48" /></a>
-      <nav class="localized-nav" aria-label={zh ? '主导航' : 'Main navigation'}>
+      <nav class="localized-nav" aria-label="Main navigation">
         {navSlugs.map((item) => <a href={localizedPath(lang, item)} aria-current={item === slug ? 'page' : undefined}>{name(item)}</a>)}
       </nav>
       <LanguageSwitcher lang={lang} />
@@ -71,7 +66,7 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
     <section class="section localized-faq"><div class="section-container"><h2>{labels.faq}</h2>{allFaq.map((item) => <details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
     <LeadForm serviceSlug={slug || 'homepage'} formTitle={data.cta} lang={lang} />
   </main>
-  <footer class="localized-footer"><div class="section-container"><strong>Thrive Wellness Clinic</strong><p>{labels.hours} · 095-934-9640 · LINE @thrivewellnessth</p><nav aria-label={zh ? '页脚导航' : 'Footer navigation'}>{navSlugs.map((item) => <a href={localizedPath(lang, item)}>{name(item)}</a>)}</nav></div></footer>
+  <footer class="localized-footer"><div class="section-container"><strong>Thrive Wellness Clinic</strong><p>{labels.hours} · 095-934-9640 · LINE @thrivewellnessth</p><nav aria-label="Footer navigation">{navSlugs.map((item) => <a href={localizedPath(lang, item)}>{name(item)}</a>)}</nav></div></footer>
 </BaseLayout>
 
 <style>

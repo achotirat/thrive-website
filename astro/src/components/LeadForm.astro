@@ -4,13 +4,11 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 export interface Props {
   serviceSlug: string;
   formTitle?: string;
-  lang?: 'th' | 'en' | 'zh-cn';
+  lang?: 'th' | 'en';
 }
 
 const { serviceSlug, formTitle = 'นัดปรึกษาแพทย์ฟรี', lang = 'th' } = Astro.props;
-const copy = lang === 'zh-cn'
-  ? { intro: '如需中文沟通，请提前提交预约申请，以便我们安排。请填写希望到访的日期；团队会与您联系确认。提交表单不代表预约已确认。', name: '姓名', phone: '电话号码', line: 'LINE ID', message: '补充信息', consent: '我同意 Thrive Wellness Clinic 根据我提供的信息联系我，讨论预约和咨询事宜。', submit: '发送预约申请' }
-  : lang === 'en'
+const copy = lang === 'en'
     ? { intro: 'Please request your visit in advance so we can arrange English-speaking support. Staff availability varies by day. We will contact you to confirm your appointment; submitting this form does not reserve a time.', name: 'Full name', phone: 'Phone number', line: 'LINE ID', message: 'Additional message', consent: 'I agree that Thrive Wellness Clinic may contact me using the details I provide about appointments and consultations.', submit: 'Send appointment request' }
     : { intro: 'ฝากข้อมูลไว้ ทีมงาน Thrive Wellness Clinic จะติดต่อกลับเพื่อช่วยเลือกโปรแกรมที่เหมาะกับคุณ', name: 'ชื่อ-นามสกุล', phone: 'เบอร์โทรศัพท์', line: 'LINE ID', message: 'ข้อความเพิ่มเติม', consent: 'ยินยอมให้ Thrive Wellness Clinic ติดต่อกลับตามข้อมูลที่ให้ไว้เพื่อการนัดหมายและให้คำปรึกษา', submit: 'ส่งข้อมูลนัดหมาย' };
 ---
@@ -51,7 +49,7 @@ const copy = lang === 'zh-cn'
         <input name="line_id" type="text" autocomplete="off" maxlength="80" />
       </label>
       {lang !== 'th' && <label>
-        {lang === 'en' ? 'Preferred visit date (optional)' : '希望到访日期（选填）'}
+        Preferred visit date (optional)
         <input name="preferred_date" type="date" />
       </label>}
       <label>
@@ -190,7 +188,7 @@ const copy = lang === 'zh-cn'
 
       if (button instanceof HTMLButtonElement) button.disabled = true;
       if (status instanceof HTMLElement) {
-        status.textContent = lang === 'zh-cn' ? '正在发送...' : lang === 'en' ? 'Sending...' : 'กำลังส่งข้อมูล...';
+        status.textContent = lang === 'en' ? 'Sending...' : 'กำลังส่งข้อมูล...';
         status.dataset.state = 'loading';
       }
 
@@ -215,9 +213,7 @@ const copy = lang === 'zh-cn'
         window.location.href = `${thanksPath}?service=${encodeURIComponent(serviceSlug)}`;
       } catch (error) {
         if (status instanceof HTMLElement) {
-          status.textContent = lang === 'zh-cn'
-            ? '暂时无法发送，请通过 LINE 联系我们或致电 095-934-9640。'
-            : lang === 'en'
+          status.textContent = lang === 'en'
               ? 'The form could not be sent. Please contact us on LINE or call 095-934-9640.'
               : 'ยังส่งแบบฟอร์มไม่ได้ กรุณาติดต่อผ่าน LINE หรือโทร 095-934-9640';
           status.dataset.state = 'error';

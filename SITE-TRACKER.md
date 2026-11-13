@@ -59,7 +59,6 @@ JSON-LD `@id`: `https://www.thrivewellnessth.com/#dr-chanakan`
 | `check-up.html` | 2026-05-09 |
 | `about.html` | 2026-05-09 |
 | `/en/about` (Astro, Dr. Noon profile and photo) | 2026-10-17 |
-| `/zh-cn/about` (Astro, Dr. Noon profile and photo) | 2026-10-17 |
 | `oligoscan.html` | 2026-05-09 |
 | `cancer-screening.html` | 2026-05-09 |
 | `dna-test.html` | 2026-05-09 |

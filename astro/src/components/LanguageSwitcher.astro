@@ -8,11 +8,10 @@ const slug = routeSlug(Astro.url.pathname);
 const links = slug === null ? null : [
   { code: 'th' as const, label: 'ไทย', path: localizedPath('th', slug) },
   { code: 'en' as const, label: 'English', path: localizedPath('en', slug) },
-  { code: 'zh-cn' as const, label: '中文', path: localizedPath('zh-cn', slug) },
 ];
 ---
-{links && <nav class="language-switcher" aria-label="Language / ภาษา / 语言">
-  {links.map((link) => <a href={link.path} lang={link.code === 'zh-cn' ? 'zh-CN' : link.code} hreflang={link.code === 'zh-cn' ? 'zh-CN' : link.code} aria-current={lang === link.code ? 'page' : undefined}>{link.label}</a>)}
+{links && <nav class="language-switcher" aria-label="Language / ภาษา">
+  {links.map((link) => <a href={link.path} lang={link.code} hreflang={link.code} aria-current={lang === link.code ? 'page' : undefined}>{link.label}</a>)}
 </nav>}
 <style>
   .language-switcher { display:flex; flex-wrap:wrap; align-items:center; gap:4px; font-size:.75rem; }
