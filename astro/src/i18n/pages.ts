@@ -9,6 +9,7 @@ export interface LocalizedPageData {
   sections: { heading: string; body: string; points?: string[] }[];
   faq: { q: string; a: string }[];
   cta: string;
+  references?: { text: string; url?: string }[];
 }
 
 export const pages: Record<'en', Record<LocalizedSlug, LocalizedPageData>> = {
@@ -97,6 +98,36 @@ export const pages: Record<'en', Record<LocalizedSlug, LocalizedPageData>> = {
       ],
       faq: [{ q: 'Should I consult a clinician before HBOT?', a: 'Yes. Please discuss your medical history and goals with our team so suitability can be assessed.' }],
       cta: 'Ask about HBOT',
+    },
+    chelation: {
+      title: 'EDTA Chelation Therapy in Bangkok | Thrive Wellness Clinic',
+      description: 'Honest guide to EDTA chelation therapy in Bangkok: approved uses, evidence limits, safety checks and how to book a doctor consultation at Thrive.',
+      eyebrow: 'EDTA Chelation',
+      heading: "EDTA Chelation Therapy in Bangkok: What It Treats and What It Doesn't",
+      intro: 'EDTA chelation is an IV drip that uses a medicine called EDTA to bind certain metals in the blood, so the body can pass them out. Its established medical use is treating poisoning from heavy metals such as lead [2][3]. For other goals, such as heart health or general detox, the evidence is limited, and we explain that plainly below.',
+      sections: [
+        { heading: 'What is chelation?', body: 'Chelation (say "kee-LAY-shun") comes from a Greek word meaning "to grab." The medicine works like a claw. It attaches to certain metals in the blood, and the kidneys then help remove them in the urine [3][4]. EDTA is one of these medicines. It is given slowly through a vein, which is called an IV drip.' },
+        { heading: 'What it is approved to treat', body: 'The clear medical use is poisoning from heavy metals such as lead, mercury, arsenic or cadmium. The US Food and Drug Administration (FDA) has approved chelation only for conditions caused by a harmful build-up of heavy metals [3]. In Thailand, the Ramathibodi Poison Centre publishes a guideline on chelation for adult lead poisoning [5]. Different metals need different medicines, so EDTA is not the answer for every metal [3].', points: ['Confirmed heavy metal poisoning is the established use [2][3]', 'The right medicine depends on the metal [3]', 'A diagnosis comes first, then a treatment plan'] },
+        { heading: 'Heart disease: what the research shows', body: 'The largest study is TACT, a US trial of 1,708 adults who had already had a heart attack. People who received 40 EDTA infusions had slightly fewer heart events than people given a placebo (26.5% compared with 30.0%) [6]. The authors said this was not enough evidence to support routine use of chelation for heart disease, and they called for more research [6]. The US National Institutes of Health and the Merck Manual both say chelation is not an established heart treatment [1][2]. If you have heart disease, please keep following your cardiologist\'s advice.' },
+        { heading: 'What about "detox"?', body: 'Many clinics promote chelation for general detox, tiredness or anti-ageing. We found no good evidence that it helps these goals in people without confirmed metal poisoning [2][3]. EDTA can also lower the calcium level in your blood [2]. For that reason we do not describe chelation as a routine wellness drip.' },
+        { heading: 'Safety: what to know before you decide', body: 'Possible side effects include a burning feeling where the needle goes in, headache, nausea, rash and stomach pain [3][4]. More serious risks include low blood calcium and, rarely, kidney injury [1][2]. Because the kidneys clear the medicine, your kidney function should be checked before any drip.', points: ['Tell the doctor about kidney disease, heart failure, pregnancy or breastfeeding', 'Bring a list of your medicines and supplements', 'Ask who will monitor you during and after the drip'] },
+        { heading: 'Testing comes first', body: 'A responsible plan starts with one question: is there a metal problem to treat? Your doctor will ask about work, hobbies, diet and past exposure, then choose tests. Different tests show different things, so the doctor should explain what each result means before suggesting any drip. If tests do not show a problem, chelation may not be the right choice.' },
+        { heading: 'How Thrive approaches chelation', body: 'At Thrive Wellness Clinic in Bangkok, the first step is a consultation, not a drip. The team reviews your history, medicines and test results, and explains the evidence in plain language. If an EDTA drip is suitable, we plan the visits and checks with you. If it is not, we will say so and talk through other options.' },
+      ],
+      faq: [
+        { q: 'Is EDTA chelation safe?', a: 'Many people tolerate it when it is given by a trained doctor after proper checks, but it has real risks. These include low blood calcium and, rarely, kidney injury [1][2]. Safety depends on your health, your kidney function and who gives the drip. Please discuss your history with our doctor first.' },
+        { q: 'Does chelation help heart disease?', a: 'It has not been shown to be a proven heart treatment. The TACT trial found a small difference in some heart events, but its authors said this was not enough to recommend routine use [6]. Please keep following your cardiologist\'s advice.' },
+        { q: 'Is chelation a good way to detox?', a: 'For general detox in people without confirmed heavy metal poisoning, we found no good evidence of benefit [2][3]. It is better understood as a medical treatment for confirmed metal problems than as a wellness routine.' },
+      ],
+      cta: 'Ask about EDTA chelation',
+      references: [
+        { text: 'National Center for Complementary and Integrative Health (NIH). Chelation for Coronary Heart Disease: What You Need to Know.', url: 'https://www.nccih.nih.gov/health/chelation-for-coronary-heart-disease-what-you-need-to-know' },
+        { text: 'Merck Manual (Consumer Version). Chelation Therapy.', url: 'https://www.merckmanuals.com/home/special-subjects/complementary-and-alternative-medicine-cam/chelation-therapy' },
+        { text: 'WebMD. What Is Chelation Therapy?', url: 'https://www.webmd.com/balance/what-is-chelation-therapy' },
+        { text: 'PeaceHealth (Healthwise). Chelation Therapy.', url: 'https://www.peacehealth.org/medical-topics/id/ty3205spec' },
+        { text: 'Ramathibodi Poison Centre, Mahidol University. Chelation for Lead (adult poisoning guideline, Thai).', url: 'https://www.rama.mahidol.ac.th/poisoncenter/sites/default/files/public/Protocol/9_Chelation%20for%20Lead.pdf' },
+        { text: 'Lamas GA, et al. Effect of disodium EDTA chelation regimen on cardiovascular events in patients with previous myocardial infarction: the TACT randomized trial. JAMA. 2013;309(12):1241-1250.', url: 'https://doi.org/10.1001/jama.2013.2107' },
+      ],
     },
     'mental-health': {
       title: 'Mental Health Support Bangkok | Thrive Wellness Clinic',

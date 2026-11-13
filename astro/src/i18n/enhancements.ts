@@ -142,6 +142,27 @@ export const enhancements: Record<'en', Record<LocalizedSlug, PageEnhancement>> 
         { q: 'Is the chamber shown in these photos?', a: 'No. These are photographs of the clinic. Ask the team for current HBOT equipment photos or to see the chamber in person.' },
       ],
     },
+    chelation: {
+      heroPhoto: { src: '/iv-drip-hero.jpg', alt: 'IV drip treatment chairs inside Thrive Wellness Clinic', caption: 'The IV drip room at Thrive Wellness Clinic. This photo shows the room, not a chelation session.' },
+      placePhoto: { src: '/dr-chanakan-trangansri-thrive-400x400.jpg', alt: 'Dr. Chanakan Trangansri at Thrive Wellness Clinic', caption: 'Dr. Chanakan Trangansri (Dr. Noon) leads care at Thrive Wellness Clinic' },
+      audienceTitle: 'Who this page is for',
+      audienceIntro: 'Chelation is a medical decision. It works best when it starts with a clear question and a test result.',
+      audience: ['You have a test result showing a high level of a heavy metal, such as lead', 'You had a known exposure at work or at home and want a medical opinion', 'You were told chelation helps the heart or "detoxes" the body and want to check the facts', 'You want a clear, honest explanation before deciding anything'],
+      journeyTitle: 'What a visit involves',
+      journeyIntro: 'The aim is to decide together whether an EDTA drip makes sense for you, before any drip is planned.',
+      steps: [
+        { title: 'Ask first', detail: 'Contact the clinic by form, phone or LINE. Say what you are hoping to understand and request English-speaking support in advance.' },
+        { title: 'Review your history', detail: 'The doctor asks about your health, medicines, work and possible exposure, and looks at any test results you bring.' },
+        { title: 'Check suitability', detail: 'Kidney function and other safety checks come before any drip. The doctor explains the benefits, limits and risks in plain language.' },
+        { title: 'Plan and monitor', detail: 'If an EDTA drip is suitable, the doctor sets out the plan and follow-up checks. If not, you will hear why and what other options exist.' },
+      ],
+      practicalTitle: 'Before you book',
+      practicalBody: 'Bring previous blood or urine results and a list of your medicines and supplements. Please do not start a chelation product on your own. If you have heart disease or kidney disease, tell the team when you contact us. We do not promise outcomes, and a consultation does not mean a drip will be recommended.',
+      moreFaq: [
+        { q: 'How long does a session take?', a: 'It depends on the plan your doctor sets. At Thrive, a drip is usually planned at about 60 to 90 minutes. Please ask the team to confirm the timing for your plan.' },
+        { q: 'Is chelation given by IV or by mouth?', a: 'Chelation medicines can be given by mouth or by IV, depending on the metal and the treatment plan [3]. This page covers the IV EDTA drip. Ask our doctor which route, if any, suits your situation.' },
+      ],
+    },
     'mental-health': {
       heroPhoto: { src: '/thrive-clinic-home.jpg', alt: 'Quiet seating area inside Thrive Wellness Clinic', caption: 'A quiet space inside Thrive Wellness Clinic' },
       placePhoto: { src: '/about-clinic.jpg', alt: 'Thrive Wellness Clinic reception desk', caption: 'The clinic reception at The Crystal Park' },
