@@ -38,6 +38,16 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-11-13 — เพิ่มหน้า /en/chelation (EDTA) ภาษาอังกฤษ
+
+- branch `feature/en-chelation` ต่อจาก PR #122 (English only) — คีย์เวิร์ดหลัก "EDTA chelation therapy" (+ Bangkok ใน title/H1) เลือกด้วย thrive-keyword-scout; ไม่มีข้อมูล Keyword Planner (ไม่มี Chrome ใน cloud session) ตัวเลข volume เป็นค่าประมาณ
+- เนื้อหาเขียนแบบ evidence-conservative ตาม NCCIH / Merck / WebMD / PeaceHealth / Ramathibodi / TACT (JAMA 2013) — ไม่มีราคา, ไม่ใช้ claim ของหน้าไทย ("1 เซสชัน", "50+ ปี") เพราะแหล่งอิสระระบุว่าการใช้ที่ยืนยันคือพิษโลหะหนัก; ผลต่อหัวใจ/ดีท็อกซ์ทั่วไปยังไม่พิสูจน์
+- เพิ่ม `references` ใน `LocalizedPageData` + section References ใน `LocalizedPage.astro`; เพิ่ม slug `chelation` ใน `routes.ts` → หน้าไทย `/chelation` ได้ hreflang คู่ + language switcher อัตโนมัติ
+- รูป: ใช้ `/iv-drip-hero.jpg` + รูปหมอ เพราะ `/chelation-hero-1200x630.jpg` (AVIF นามสกุล .jpg) มีข้อความไทยเรื่อง "หลอดเลือดอุดตัน" ซึ่งเป็น claim หัวใจ
+- ต้องให้หมอตรวจก่อน publish: ข้อความทางการแพทย์, "60–90 นาที/เซสชัน", ย่อหน้า "How Thrive approaches chelation" (ไม่ได้ใส่คำพูดของหมอ)
+- ข้อสังเกต: หน้าไทย `/chelation` ยังใช้ claim แรงกว่าแหล่งอ้างอิง ควรรีวิวความเสี่ยงโฆษณาแยกต่างหาก
+- บทเรียน: ตรวจรูปเดิมก่อนนำกลับมาใช้ (ข้อความในรูปอาจขัดกับ tone ของหน้าใหม่)
+
 ## 2026-11-13 — แยกเว็บภาษาอังกฤษออกจาก PR #93 (English only)
 
 - เจ้าของต้องการ merge เฉพาะภาษาอังกฤษก่อน: rebase `feature/i18n-english-chinese` (PR #93) บน `main` ล่าสุด แก้ conflict ใน `LeadForm.astro` โดยใช้ logic ของ main (`stageLeadConversion`, Turnstile reset) แล้วต่อด้วย `thanksPath` ตามภาษา

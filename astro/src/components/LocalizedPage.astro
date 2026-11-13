@@ -13,13 +13,13 @@ const { lang, slug, data } = Astro.props;
 const bookingNote = { heading: 'Please book in advance if you need English-speaking support.', detail: 'English-speaking staff are not available every day. Send us your preferred date, and our team will confirm availability before your visit.' };
 const detail = enhancements[lang][slug];
 const allFaq = [...data.faq, ...detail.moreFaq];
-const labels = { home: 'Home', about: 'About', contact: 'Contact', 'iv-drip': 'IV Drip', 'check-up': 'Health Check-ups', hbot: 'HBOT', 'mental-health': 'Mental Health', line: 'Message on LINE', hours: 'Open daily 10:00–19:00', faq: 'Frequently asked questions', explore: 'Explore our services', map: 'View map' };
+const labels = { home: 'Home', about: 'About', contact: 'Contact', 'iv-drip': 'IV Drip', 'check-up': 'Health Check-ups', hbot: 'HBOT', chelation: 'Chelation', 'mental-health': 'Mental Health', line: 'Message on LINE', hours: 'Open daily 10:00–19:00', faq: 'Frequently asked questions', explore: 'Explore our services', map: 'View map' };
 const path = localizedPath(lang, slug);
-const navSlugs: LocalizedSlug[] = ['', 'iv-drip', 'check-up', 'hbot', 'mental-health', 'about', 'contact'];
+const navSlugs: LocalizedSlug[] = ['', 'iv-drip', 'check-up', 'hbot', 'chelation', 'mental-health', 'about', 'contact'];
 const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
 ---
 <BaseLayout lang="en">
-  <SEO slot="head" seoTitle={data.title} description={data.description} canonicalPath={path} ogImage={detail.heroPhoto.src} heroImage={detail.heroPhoto.src} ogLocale="en_US" hreflang={[{ lang, href: path }]} faqs={allFaq} />
+  <SEO slot="head" seoTitle={data.title} description={data.description} canonicalPath={path} ogImage={detail.heroPhoto.src} heroImage={detail.heroPhoto.src} ogLocale="en_US" hreflang={[{ lang, href: path }]} faqs={allFaq.map((item) => ({ ...item, a: item.a.replace(/\s?\[\d+\]/g, '') }))} />
   <div class="localized-topbar"><div class="section-container"><span>Thrive Wellness Clinic · Bangkok</span><span>{labels.hours} · 095-934-9640</span></div></div>
   <header class="localized-header">
     <div class="section-container localized-header__inner">
@@ -64,6 +64,7 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
     </div></section>
     {slug === '' && <section class="section localized-services"><div class="section-container"><h2>{labels.explore}</h2><div class="localized-service-links">{localizedSlugs.filter((item) => item !== '' && item !== 'about' && item !== 'contact').map((item) => <a href={localizedPath(lang, item)}>{name(item)} <span aria-hidden="true">→</span></a>)}</div></div></section>}
     <section class="section localized-faq"><div class="section-container"><h2>{labels.faq}</h2>{allFaq.map((item) => <details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+    {data.references && <section class="section localized-references"><div class="section-container"><h2>References</h2><ol>{data.references.map((ref) => <li>{ref.url ? <a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.text}</a> : ref.text}</li>)}</ol></div></section>}
     <LeadForm serviceSlug={slug || 'homepage'} formTitle={data.cta} lang={lang} />
   </main>
   <footer class="localized-footer"><div class="section-container"><strong>Thrive Wellness Clinic</strong><p>{labels.hours} · 095-934-9640 · LINE @thrivewellnessth</p><nav aria-label="Footer navigation">{navSlugs.map((item) => <a href={localizedPath(lang, item)}>{name(item)}</a>)}</nav></div></footer>
@@ -94,6 +95,9 @@ const name = (s: LocalizedSlug) => s === '' ? labels.home : labels[s];
   .localized-audience p, .localized-journey__intro p, .localized-place p { max-width:650px; color:var(--text-2); line-height:1.8; }
   .localized-audience ul { list-style:none; padding:0; margin:0; }
   .localized-audience li { padding:16px 0 16px 32px; border-bottom:1px solid var(--border); position:relative; color:var(--text-2); line-height:1.65; }
+  .localized-references ol { margin:0; padding-left:1.5rem; list-style:decimal; font-size:.875rem; color:var(--text-2); }
+  .localized-references li { margin:0 0 .5rem; padding-left:.25rem; }
+  .localized-references a { color:var(--navy); text-decoration:underline; text-underline-offset:2px; }
   .localized-audience li::before { content:'✓'; position:absolute; left:0; color:var(--teal); font-weight:800; }
   .localized-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(24px,4vw,50px); }
   .localized-card { border-left:3px solid var(--teal); padding:8px 0 8px 24px; background:#fff; }

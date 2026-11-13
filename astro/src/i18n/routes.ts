@@ -1,4 +1,4 @@
-export const localizedSlugs = ['', 'about', 'contact', 'iv-drip', 'check-up', 'hbot', 'mental-health'] as const;
+export const localizedSlugs = ['', 'about', 'contact', 'iv-drip', 'check-up', 'hbot', 'chelation', 'mental-health'] as const;
 export type LocalizedSlug = typeof localizedSlugs[number];
 export type SiteLanguage = 'th' | 'en';
 
