@@ -11,11 +11,13 @@ import DoctorAttribution from '../components/DoctorAttribution.astro';
 import CTASection from '../components/CTASection.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import { getServicePricing } from '../lib/pricing';
 
 const entry = await getEntry('services', 'oligoscan');
 if (!entry) throw new Error('Missing oligoscan content entry');
 const { Content } = await render(entry);
 const d = entry.data;
+const pricing = getServicePricing('oligoscan');
 
 const crumbs = [
   { label: 'หน้าแรก', href: '/' },
@@ -31,6 +33,19 @@ const crumbs = [
   <ServiceHero {...d.hero} />
   <main class="service-page">
     <article class="service-content"><Content /></article>
+    {pricing && pricing.from && (
+      <section class="section" style="background:var(--blue-xl)">
+        <div class="container narrow" style="text-align:center">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px;">ราคา</p>
+          <strong style="font-size:1.8rem;color:var(--blue-d)">{pricing.from}</strong>
+          {pricing.note && <p style="font-size:.85rem;color:var(--text-muted);margin-top:8px">{pricing.note}</p>}
+          <div style="margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+            <a href="tel:+66959349640" class="btn btn-primary">โทร 095-934-9640</a>
+            <a href="https://line.me/R/ti/p/@thrivewellnessth" class="btn btn-secondary">LINE @thrivewellnessth</a>
+          </div>
+        </div>
+      </section>
+    )}
     <FAQSection items={d.faqs} />
     <DoctorAttribution doctor={d.doctor} />
     <section class="section related-services">

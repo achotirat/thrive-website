@@ -105,6 +105,13 @@
     "draft": true,
     "priceReviewRequiredBy": "apanit-pueng"
   },
+  "oligoscan": {
+    "from": "6,500 บาท",
+    "note": "ราคาต่อครั้ง — ตรวจแร่ธาตุ 21 รายการ + โลหะหนัก 16 รายการ พร้อมแพทย์แปลผล",
+    "updatedAt": "2026-11-19",
+    "draft": false,
+    "priceReviewRequiredBy": "apanit-pueng"
+  },
   "check-up/heavy-metal-trace-elements": {
     "from": "TBD",
     "note": "ราคากำลังรอ review",
