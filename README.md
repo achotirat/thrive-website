@@ -38,6 +38,22 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-11-19 — แก้จำนวนธาตุ OligoScan ตามโบรชัวร์ (โลหะหนัก 16 / แร่ธาตุ 21)
+
+- ที่มา: โบรชัวร์ OligoScan ของคลินิก ระบุ **โลหะหนัก 16 รายการ + แร่ธาตุ 21 รายการ, รอผล 10 นาที, ราคา 6,500 บาท/ครั้ง**
+- ตรวจก่อนแก้: ทุกหน้าในเว็บเขียนว่า **โลหะหนัก 14 ชนิด / รวม 35 ตัวชี้วัด / ผลใน 3 นาที (หรือ "ผลทันที")**
+- `/oligoscan` (`services/oligoscan.mdx`): 14→16, 35→37, 3 นาที→10 นาที (meta, hero, stats, JSON-LD, เนื้อหา, CTA)
+  - รายชื่อแร่ธาตุ: เพิ่ม Sodium, Potassium, Fluor; ย้าย Nickel ไปกลุ่มโลหะหนัก (ครบ 21)
+  - รายชื่อโลหะหนัก: เพิ่ม Nickel, Thorium, Gadolinium; ลบ Titanium (ไม่อยู่ในโบรชัวร์) (ครบ 16)
+  - ขั้นตอนที่ 2 เปลี่ยนจาก "วางฝ่ามือบนอุปกรณ์ 3 นาที" เป็น "วางฝ่ามือสแกน 4 จุดบนอุปกรณ์"
+  - เพิ่มกล่องราคา 6,500 บาท (`pricing.json` key `oligoscan`, `draft: false`) แบบเดียวกับหน้า check-up
+- `/check-up/heavy-metal-trace-elements`: 14→16, 35→37, "ผลทันที"→"รู้ผลใน 10 นาที"; การ์ดที่เขียนว่า "แร่ธาตุ 35 ตัว" แก้เป็น "แร่ธาตุ 21 + โลหะหนัก 16" (35 คือยอดรวม ไม่ใช่จำนวนแร่ธาตุ)
+- `docs/blog/matcha-nutrients-vitamins.md` (ร่าง): "แร่ธาตุ 20 / โลหะหนัก 14 / 20 นาที" → 21 / 16 / 10 นาที — **ถ้าเผยแพร่บน Sanity แล้ว ต้องแก้ใน Studio ด้วย**
+- ไม่แตะ: ไฟล์ HTML เก่าที่ root (กฎ repo), ราคาหน้า heavy-metal check-up (ยัง TBD เพราะรวม 3 วิธีตรวจ)
+- บทเรียน: ข้อมูลบริการ (จำนวนรายการ/เวลา/ราคา) ควรยึดโบรชัวร์ล่าสุดของคลินิก และค้นด้วย `grep` ให้ครบทั้ง "ผลทันที" และ "X นาที" เพราะเขียนได้หลายแบบ
+
+---
+
 ## 2026-11-13 — เพิ่มหน้า /en/chelation (EDTA) ภาษาอังกฤษ
 
 - branch `feature/en-chelation` ต่อจาก PR #122 (English only) — คีย์เวิร์ดหลัก "EDTA chelation therapy" (+ Bangkok ใน title/H1) เลือกด้วย thrive-keyword-scout; ไม่มีข้อมูล Keyword Planner (ไม่มี Chrome ใน cloud session) ตัวเลข volume เป็นค่าประมาณ
