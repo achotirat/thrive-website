@@ -38,6 +38,15 @@ cp -r skills/thrive-site-inspect skills/thrive-site-review skills/thrive-site-op
 
 ---
 
+## 2026-11-25 — ปุ่มเปลี่ยนภาษา EN บนมือถือ (หน้าไทย)
+
+- ปัญหา: บนมือถือ (≤768px) `.topbar` ถูกซ่อน ปุ่มภาษาเหลือแค่ในเมนู hamburger และแสดงเฉพาะ 8 หน้าที่มีฉบับ `/en/`
+- แก้: เพิ่ม `LanguageSwitcher compact` (ปุ่ม "EN" เล็ก) ข้างปุ่ม hamburger ใน `Header.astro` แสดงเฉพาะมือถือ
+- หน้าไทยที่ยังไม่มีฉบับอังกฤษ (เช่น `/nad`, `/blog`) → ปุ่ม EN พาไป `/en/` (ตัวเลือก 1b ที่เจ้าของเลือก) ทั้งปุ่มบน navbar และในเมนู
+- หน้า `/en/*` มี switcher ใน header ของตัวเองซึ่งเห็นบนมือถืออยู่แล้ว ไม่ได้แก้
+- `astro check` 0 errors, build 63 หน้า, `npm test` ผ่าน, ตรวจ screenshot 390px ไม่มี horizontal scroll
+- บทเรียน: เวลาซ่อน `.topbar` บนมือถือ ต้องเช็กว่าสิ่งสำคัญใน topbar (เช่นปุ่มภาษา) มีทางเข้าบนมือถือที่เห็นได้ทันที
+
 ## 2026-11-13 — เพิ่มหน้า /en/chelation (EDTA) ภาษาอังกฤษ
 
 - branch `feature/en-chelation` ต่อจาก PR #122 (English only) — คีย์เวิร์ดหลัก "EDTA chelation therapy" (+ Bangkok ใน title/H1) เลือกด้วย thrive-keyword-scout; ไม่มีข้อมูล Keyword Planner (ไม่มี Chrome ใน cloud session) ตัวเลข volume เป็นค่าประมาณ

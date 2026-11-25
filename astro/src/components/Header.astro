@@ -73,9 +73,12 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
       <a href="tel:0959349640" class="btn btn-sm" style="border:1.5px solid var(--border);color:var(--text-2);border-radius:var(--r-pill);background:transparent;">095-934-9640</a>
       <a href="/contact" class="btn btn-primary btn-sm">ปรึกษาฟรี</a>
     </div>
-    <button class="navbar__hamburger" onclick="toggleDrawer()">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="navbar__mobile-actions">
+      <LanguageSwitcher compact />
+      <button class="navbar__hamburger" onclick="toggleDrawer()" aria-label="เมนู">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -123,3 +126,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   }
   (window as any).toggleDrawer = toggleDrawer;
 </script>
+
+<style>
+  .navbar__mobile-actions { display:flex; align-items:center; gap:8px; }
+</style>
